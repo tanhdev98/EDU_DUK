@@ -2774,6 +2774,7 @@ h2 .dodbogi,
     background-position: 13px 11px;
     background-color: #ffbc47;
     border-radius: 30px;
+    cursor: pointer;
 }
 
 .dodbogi:hover {
@@ -5805,4 +5806,90 @@ tr.ta-c td {
 
 .quot-close {
     margin-right: -18px;
+}
+
+.endUnit {
+    position: absolute;
+    display: inline-block;
+    height: 42px;
+    padding: 0 16px;
+    color: #000;
+    font-size: 20px;
+    font-family: 'YGJAL';
+    line-height: 42px;
+    border-radius: 30px;
+    background: #00D045;
+    z-index: 1;
+}
+
+.thinkingPlayground {
+    position: absolute;
+    display: inline-block;
+    height: 42px;
+    padding: 0 16px;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'YGJAL';
+    line-height: 42px;
+    border-radius: 30px;
+    background: #FF6600;
+    z-index: 1;
+}
+
+.btn-praise {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    position: absolute !important;
+    top: 40px;
+    right: 0;
+    width: 70px;
+    padding: 10px;
+    background: #00A0E9;
+    border: 5px solid #9ED8F5;
+    border-right: 0;
+    border-top-left-radius: 60px;
+    border-bottom-left-radius: 60px;
+    z-index: 1;
+    pointer-events: all;
+}
+
+.btn-praise:hover {
+    background: #0068b7;
+}
+
+.btn-praise .item-title {
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+    font-family: 'YGJAL';
+    margin-right: -10px;
+}
+
+.additional-question {
+    position: absolute;
+    display: inline-flex;
+    height: 42px;
+    align-items: center;
+    line-height: 42px;
+    letter-spacing: 0;
+    padding: 0 16px 0 48px;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'YGJAL';
+    text-align: center;
+    border-radius: 45px;
+    box-sizing: border-box;
+    background: #5E3E18 url('../images/icon_star.png') 15px center / 26px no-repeat;
+    z-index: 1;
+}
+
+.additional-question.small {
+    font-size: 15px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 16px 0 40px;
+    background: #5E3E18 url('../images/icon_star.png') 15px center / 18px no-repeat;
+    border: 3px solid #724d22;
 }
