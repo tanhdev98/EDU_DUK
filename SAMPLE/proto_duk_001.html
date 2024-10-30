@@ -169,7 +169,7 @@
         .page_2 .groupClearArea {
             display: flex;
             gap: 20px;
-            width: 997px;
+            width: 1020px;
             margin-left: -21px;
         }
 
@@ -197,7 +197,13 @@
         }
 
         .page_2 .dragClone {
-            display: none;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .page_2 .dragClone.active {
+            opacity: 1;
+            visibility: visible;
         }
     </style>
 </head>
@@ -364,10 +370,10 @@
             $(document).on('click', '.page_2 .dapCheckBtn', function () {
                 $('.page_2 .js-dropArea').empty();
                 if ($(this).hasClass('reset')) {
-                    $('.dragClone').show();
+                    $('.dragClone').addClass('active');
                 }
                 else {
-                    $('.dragClone').hide();
+                    $('.dragClone').removeClass('active');
                 }
             })
         });
