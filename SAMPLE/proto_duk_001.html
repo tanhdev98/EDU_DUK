@@ -12,69 +12,69 @@
 
 
     <style>
-        /* Page 1 */
-        .dragDropContainer {
-            margin-top: 35px;
+        /* Page 1, Page 2*/
+        .page_1 .dragDropContainer {
+            margin-top: 55px;
         }
 
-        .dragDropContainer.bogi .lineBox {
+        .page_1 .dragDropContainer.bogi .lineBox {
             width: 1000px;
         }
 
-        .js-dragObj {
+        .page_1 .js-dragObj {
             position: absolute;
             cursor: pointer;
         }
 
-        .js-dragObj span {
+        .page_1 .js-dragObj span {
             pointer-events: none;
         }
 
-        .js-dragObj.dragObjComplete {
+        .page_1 .js-dragObj.dragObjComplete {
             pointer-events: none;
             opacity: 0;
         }
 
-        .groupClearArea .js-dragObj.dragObjComplete {
+        .page_1 .groupClearArea .js-dragObj.dragObjComplete {
             pointer-events: none;
             opacity: 1;
         }
 
-        .js-dragObj.d1 {
+        .page_1 .js-dragObj.d1 {
             top: 40px;
             left: 90px;
         }
 
-        .js-dragObj.d2 {
+        .page_1 .js-dragObj.d2 {
             top: 40px;
             left: 300px;
         }
 
-        .js-dragObj.d3 {
+        .page_1 .js-dragObj.d3 {
             top: 40px;
             left: 520px;
         }
 
-        .js-dragObj.d4 {
+        .page_1 .js-dragObj.d4 {
             top: 10px;
             left: 800px;
         }
 
-        .js-dragObj.d4 img {
+        .page_1 .js-dragObj.d4 img {
             width: 120px;
             pointer-events: none;
         }
 
-        .dragDropContainer.bogi .bogi-icon {
+        .page_1 .dragDropContainer.bogi .bogi-icon {
             width: 93px;
         }
 
-        .dragDropContainer.bogi .bogi-icon:after {
+        .page_1 .dragDropContainer.bogi .bogi-icon:after {
             content: "붙임 딱지";
 
         }
 
-        .groupClearArea {
+        .page_1 .groupClearArea {
             display: flex;
             gap: 20px;
             width: 997px;
@@ -82,26 +82,122 @@
         }
 
 
-        .groupClearArea .js-dropArea {
+        .page_1 .groupClearArea .js-dropArea {
             width: 100%;
-            height: 300px;
+            height: 260px;
             border-radius: 30px;
             margin-top: 180px;
         }
 
-        .groupClearArea .js-dropArea.a1 {
+        .page_1 .groupClearArea .js-dropArea.a1 {
             background-color: #FDF3E7;
         }
 
-        .groupClearArea .js-dropArea.a2 {
+        .page_1 .groupClearArea .js-dropArea.a2 {
             background-color: #FFF9E5;
         }
 
-        .purple {
+        .page_1 .purple {
             border: 4px solid #CABEE0;
             background-color: #E9E0FF;
             padding: 10px 20px;
             border-radius: 15px;
+        }
+
+        /*Page 2*/
+        .page_2 .dragDropContainer {
+            margin-top: 35px;
+        }
+
+        .page_2 .dragDropContainer.bogi .lineBox {
+            width: 1000px;
+        }
+
+        .page_2 .js-dragObj {
+            position: absolute;
+            cursor: pointer;
+        }
+
+        .page_2 .js-dragObj span {
+            pointer-events: none;
+        }
+
+        .page_2 .js-dragObj.dragObjComplete {
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        .page_2 .groupClearArea .js-dragObj.dragObjComplete {
+            pointer-events: none;
+            opacity: 1;
+        }
+
+        .page_2 .js-dragObj.d5 {
+            top: 40px;
+            left: 90px;
+        }
+
+        .page_2 .js-dragObj.d6 {
+            top: 40px;
+            left: 300px;
+        }
+
+        .page_2 .js-dragObj.d7 {
+            top: 40px;
+            left: 520px;
+        }
+
+        .page_2 .js-dragObj.d8 {
+            top: 10px;
+            left: 800px;
+        }
+
+        .page_2 .js-dragObj.d8 img {
+            width: 120px;
+            pointer-events: none;
+        }
+
+        .page_2 .dragDropContainer.bogi .bogi-icon {
+            width: 93px;
+        }
+
+        .page_2 .dragDropContainer.bogi .bogi-icon:after {
+            content: "붙임 딱지";
+
+        }
+
+        .page_2 .groupClearArea {
+            display: flex;
+            gap: 20px;
+            width: 997px;
+            margin-left: -21px;
+        }
+
+
+        .page_2 .groupClearArea .js-dropArea {
+            width: 100%;
+            height: 260px;
+            border-radius: 30px;
+            margin-top: 180px;
+        }
+
+        .page_2 .groupClearArea .js-dropArea.a3 {
+            background-color: #FDF3E7;
+        }
+
+        .page_2 .groupClearArea .js-dropArea.a4 {
+            background-color: #FFF9E5;
+        }
+
+        .page_2 .purple {
+            border: 4px solid #CABEE0;
+            background-color: #E9E0FF;
+            padding: 10px 20px;
+            border-radius: 15px;
+        }
+
+        .page_2 .dragClone {
+            display: none;
         }
     </style>
 </head>
@@ -153,8 +249,54 @@
                             </div>
                         </div>
                     </li>
-                    <li class="page_2">
-
+                    <li class="page_2" data-quiz="dragDrop" data-option="answer" data-quiz-name="dragdrop"
+                        data-total-complete-count="">
+                        <div class="dragDropContainer bogi">
+                            <div class="lineBox">
+                                <div class="bogi-icon"></div>
+                                <div class="drag-zone">
+                                    <div class="js-dragObj d5" data-drag-obj-answer="2" data-ps="free">
+                                        <span>내용 1</span>
+                                    </div>
+                                    <div class="js-dragObj d6" data-drag-obj-answer="2" data-ps="free">
+                                        <span>내용 2</span>
+                                    </div>
+                                    <div class="js-dragObj d7" data-drag-obj-answer="2" data-ps="free">
+                                        <span class="purple">텍스트 박스</span>
+                                    </div>
+                                    <div class="js-dragObj d8" data-drag-obj-answer="2" data-ps="free">
+                                        <img src="./images/proto_duk_001.html/img_01.png">
+                                    </div>
+                                    <div class="groupClearArea">
+                                        <div class="js-dropArea a3 clearArea" data-drop-area-answer="2"></div>
+                                        <div class="js-dropArea a4 clearArea" data-drop-area-answer="2"></div>
+                                        <div class="dragClone">
+                                            <div class="js-dragObj d5 dragObjComplete" data-drag-obj-answer="1"
+                                                data-ps="free" style=" top: 281.795px; left: 69.014px;" data-end="true">
+                                                <span>내용 1</span>
+                                            </div>
+                                            <div class="js-dragObj d7 dragObjComplete" data-drag-obj-answer="1"
+                                                data-ps="free" style=" top: 277.233px; left: 216.16px;" data-end="true">
+                                                <span class="purple">텍스트 박스</span>
+                                            </div>
+                                            <div class="js-dragObj d6 dragObjComplete" data-drag-obj-answer="1"
+                                                data-ps="free" style=" top: 281.795px; left: 589.242px;"
+                                                data-end="true">
+                                                <span>내용 2</span>
+                                            </div>
+                                            <div class="js-dragObj d8 dragObjComplete" data-drag-obj-answer="1"
+                                                data-ps="free" style=" top: 243.583px; left: 749.816px;"
+                                                data-end="true">
+                                                <img src="./images/proto_duk_001.html/img_01.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="dapCheckBtn" type="button" data-answer-btn=""></button>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -196,15 +338,38 @@
                     $('header .title').removeClass('gap');
                 }
             });
-            var _id;
-            $(document).on('mouseup', '.js-dragObj', function (e) {
-                _id = parseInt($(this).attr("class").split(" ")[1].replace("d", ""));
-                console.log(_id);
+            $(document).on('mouseup', '.page_1 .js-dragObj', function (e) {
+                const _id = parseInt($(this).attr("class").split(" ")[1].replace("d", ""));
                 $('.js-dragObj.d' + _id).hide();
                 setTimeout(function () {
-                    $('.js-dragObj.d' + _id).show();
+                    $('.page_1 .js-dragObj.d' + _id).show();
                 });
             });
+
+            $(document).on('mouseup', '.page_2 .js-dragObj', function (e) {
+                const _id = parseInt($(this).attr("class").split(" ")[1].replace("d", ""));
+                if (($('.page_2 .js-dropArea.a3 .js-dragObj').length + $('.page_2 .js-dropArea.a4 .js-dragObj').length) == 4) {
+                    $('.dapCheckBtn').addClass('reset');
+                }
+
+                else {
+                    $('page_2 .dapCheckBtn').removeClass('reset');
+                }
+                $('page_2 .js-dragObj.d' + _id).hide();
+                setTimeout(function () {
+                    $('page_2 .js-dragObj.d' + _id).show();
+                });
+            });
+
+            $(document).on('click', '.page_2 .dapCheckBtn', function () {
+                $('.page_2 .js-dropArea').empty();
+                if ($(this).hasClass('reset')) {
+                    $('.dragClone').show();
+                }
+                else {
+                    $('.dragClone').hide();
+                }
+            })
         });
     </script>
 </body>
