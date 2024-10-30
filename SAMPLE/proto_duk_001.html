@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        /* Page 1 */
+        .dragDropContainer {
+            margin-top: 35px;
+        }
+
+        .dragDropContainer.bogi .lineBox {
+            width: 1000px;
+        }
+
+        .js-dragObj {
+            position: absolute;
+            cursor: pointer;
+        }
+
+        .js-dragObj span {
+            pointer-events: none;
+        }
+
+        .js-dragObj.dragObjComplete {
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        .groupClearArea .js-dragObj.dragObjComplete {
+            pointer-events: none;
+            opacity: 1;
+        }
+
+        .js-dragObj.d1 {
+            top: 40px;
+            left: 90px;
+        }
+
+        .js-dragObj.d2 {
+            top: 40px;
+            left: 300px;
+        }
+
+        .js-dragObj.d3 {
+            top: 40px;
+            left: 520px;
+        }
+
+        .js-dragObj.d4 {
+            top: 10px;
+            left: 800px;
+        }
+
+        .js-dragObj.d4 img {
+            width: 120px;
+            pointer-events: none;
+        }
+
+        .groupClearArea {
+            display: flex;
+            gap: 20px;
+            width: 997px;
+            margin-left: -21px;
+        }
+
+
+        .groupClearArea .js-dropArea {
+            width: 100%;
+            height: 300px;
+            border-radius: 30px;
+            margin-top: 180px;
+        }
+
+        .groupClearArea .js-dropArea.a1 {
+            background-color: #FDF3E7;
+        }
+
+        .groupClearArea .js-dropArea.a2 {
+            background-color: #FFF9E5;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <!-- 탭과 겹치는 경우 : gap 추가 -->
+            <div class="title blue">
+                드래그앤드롭_위치 고정&수량 한정
+            </div>
+        </header>
+        <main>
+
+
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="드래그앤드롭_위치 고정&수량 한정">고정</li>
+                    <li data-hover="" data-text="드래그앤드롭_위치 고정&수량 한정(정답 버튼)" data-gap="true">버튼</li>
+                    <li data-hover="" data-text="드래그앤드롭_위치 고정&수량 한정(이미지)" data-gap="true">고정(이미지)</li>
+                    <li data-hover="" data-text="드래그앤드롭_위치 비고정&수량 무제한형(이미지)" data-gap="true">비고정</li>
+                    <li data-hover="" data-text="드래그앤드롭_위치 비고정&수량 무제한형(이미지)" data-gap="true">비고정(이미지)</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="dragDrop" data-option="answer" data-quiz-name="dragdrop"
+                        data-total-complete-count="">
+                        <div class="dragDropContainer bogi">
+                            <div class="lineBox">
+                                <div class="bogi-icon"></div>
+                                <div class="drag-zone">
+                                    <div class="js-dragObj d1" data-drag-obj-answer="1" data-ps="free">
+                                        <span>내용 1</span>
+                                    </div>
+                                    <div class="js-dragObj d2" data-drag-obj-answer="1" data-ps="free">
+                                        <span>내용 2</span>
+                                    </div>
+                                    <div class="js-dragObj d3" data-drag-obj-answer="1" data-ps="free">
+                                        <span class="purple">텍스트 박스</span>
+                                    </div>
+                                    <div class="js-dragObj d4" data-drag-obj-answer="1" data-ps="free">
+                                        <img src="./images/proto_duk_001.html/img_01.png">
+                                    </div>
+                                    <div class="groupClearArea">
+                                        <div class="js-dropArea a1 clearArea" data-drop-area-answer="1"></div>
+                                        <div class="js-dropArea a2 clearArea" data-drop-area-answer="1"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="page_2">
+
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript" src="../math/contents/js/ui.Math.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title').addClass('gap');
+                } else {
+                    $('header .title').removeClass('gap');
+                }
+            });
+            var _id;
+            $(document).on('mouseup', '.js-dragObj', function (e) {
+                _id = parseInt($(this).attr("class").split(" ")[1].replace("d", ""));
+                console.log(_id);
+                $('.js-dragObj.d' + _id).hide();
+                setTimeout(function () {
+                    $('.js-dragObj.d' + _id).show();
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

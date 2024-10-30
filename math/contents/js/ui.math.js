@@ -6,15 +6,15 @@
 
     if (!window[global]) {
         window[global] = {};
-    } 
+    }
     const Global = window[global];
 
     Global.KmAudioPlayer = {
-        audioObj : null,
-        play : (_src, _callback) => {
+        audioObj: null,
+        play: (_src, _callback) => {
             Global.KmAudioPlayer.audioObj = new Audio(_src);
             Global.KmAudioPlayer.audioObj.play();
-            Global.KmAudioPlayer.audioObj.addEventListener("ended", function(){
+            Global.KmAudioPlayer.audioObj.addEventListener("ended", function () {
                 _callback && _callback();
                 // if(typeof(_callback) == "function"){
                 //     console.log(222222);
@@ -22,38 +22,38 @@
                 // }
             });
         },
-        setVolume : (_volume) => {
+        setVolume: (_volume) => {
             Global.KmAudioPlayer.audioObj.volume = _volume;
         },
         replay: () => {
             Global.KmAudioPlayer.audioObj.play();
         },
-        stop : () => {
-            try{
+        stop: () => {
+            try {
                 Global.KmAudioPlayer.audioObj.pause();
-            }catch (error){
+            } catch (error) {
 
             }
         },
-        stop2 : () => {
+        stop2: () => {
             Global.KmAudioPlayer.play();
             Global.KmAudioPlayer.stop();
         },
-        playGroup : (_arrSound, _callback, _betweenGap) => {
+        playGroup: (_arrSound, _callback, _betweenGap) => {
             var numSound = _arrSound.length;
             var currentTurn = 1;
             var betweenGap = (_betweenGap == undefined) ? 1000 : _betweenGap;
             const playSound = () => {
-                Global.KmAudioPlayer.audioObj = new Audio(_arrSound[currentTurn-1]);
+                Global.KmAudioPlayer.audioObj = new Audio(_arrSound[currentTurn - 1]);
                 Global.KmAudioPlayer.audioObj.play();
-                Global.KmAudioPlayer.audioObj.addEventListener("ended", function(){
-                    if(typeof(_callback) == "function"){
-                        if(_callback != null){
+                Global.KmAudioPlayer.audioObj.addEventListener("ended", function () {
+                    if (typeof (_callback) == "function") {
+                        if (_callback != null) {
                             _callback();
                         }
-                    }else{
+                    } else {
                         currentTurn++;
-                        setTimeout(function(){
+                        setTimeout(function () {
                             playSound();
                         }, betweenGap);
                     }
@@ -62,7 +62,7 @@
             playSound();
 
         },
-        buttonClick : function(){
+        buttonClick: function () {
             var snd;
             snd = new Audio("../math/contents/media/click.mp3");
             snd.play();
@@ -78,7 +78,7 @@
                 item.dataset.play = 'off';
                 item.dataset.pause = false;
                 __wrap.dataset.state = 'off';
-                
+
             }
             Global.KmAudioPlayer && Global.KmAudioPlayer.stop();
         },
@@ -88,7 +88,7 @@
                 const _this = e.currentTarget;
                 const _wrap = _this.parentNode;
                 const _audio = _this.dataset.audio;
-                
+
                 //stop
                 const allStop = () => {
                     for (let item of speechs) {
@@ -96,9 +96,9 @@
                         item.dataset.play = 'off';
                         item.dataset.pasue = false;
                         __wrap.dataset.state = 'off';
-                        
+
                     }
-                     Global.KmAudioPlayer && Global.KmAudioPlayer.stop();
+                    Global.KmAudioPlayer && Global.KmAudioPlayer.stop();
                 }
                 //stop callback
                 const callbackClose = () => {
@@ -152,12 +152,12 @@
         }
     }
     Global.speechballoon.init();
-   
+
     Global.dragPositionFree = {
         init() {
             let _top;
             let _left;
-            
+
             const daps = document.querySelectorAll('[data-quiz="dragDrop"] .dapCheckBtn');
             const objs = document.querySelectorAll('.js-dragObj[data-ps="free"]');
 
@@ -165,23 +165,26 @@
                 const _this = e.currentTarget;
                 const _id = _this.dataset.dragObjAnswer;
                 const _wrap = _this.closest('.drag-zone');
-                const _area = _wrap.querySelector('.js-dropArea[data-drop-area-answer="'+ _id +'"]');
+                const _area = _wrap.querySelectorAll('.js-dropArea[data-drop-area-answer="' + _id + '"]');
 
                 _top = window.getComputedStyle(_this).top;
                 _left = window.getComputedStyle(_this).left;
 
                 setTimeout(() => {
-                    const _clones = _area.querySelectorAll('.dragObjComplete');
+                    _area.forEach((area) => {
+                        const _clones = area.querySelectorAll('.dragObjComplete');
 
-                    for (let item of _clones) {
-                        if (!item.dataset.end) {
-                            item.dataset.end = true;
-                            item.style.top = _top;
-                            item.style.left = _left;
+                        for (let item of _clones) {
+                            if (!item.dataset.end) {
+                                item.dataset.end = true;
+                                item.style.top = _top;
+                                item.style.left = _left;
+                            }
+                            item.addEventListener('mousedown', this.actStart)
                         }
-                        item.addEventListener('mousedown', this.actStart)
-                    }
-                },0);
+                    });
+
+                }, 0);
             }
             const actDap = (e) => {
                 const _this = e.currentTarget;
@@ -196,33 +199,33 @@
                     // for(let item of _dropAreas) {
                     //     item.classList.remove('complete');
                     // }
-                    for(let item of _dragObjs) {
+                    for (let item of _dragObjs) {
                         item.classList.remove('dragObjComplete');
                     }
-                    for(let item of _dropAreas) {
+                    for (let item of _dropAreas) {
                         item.classList.remove('complete');
                         const delObj = item.querySelector('.js-dragObj');
                         delObj.remove();
                     }
                 } else {
-                    for(let item of _dropAreas) {
+                    for (let item of _dropAreas) {
                         item.classList.add('complete');
                         const _areaCompletes = item.querySelectorAll('.dragObjComplete');
-                        for(let item2 of _areaCompletes) {
+                        for (let item2 of _areaCompletes) {
                             item2.remove();
                         }
                     }
                 }
             }
             if (objs) {
-                for(let item of objs) {
+                for (let item of objs) {
                     item.addEventListener('mouseup', act);
-                } 
+                }
             }
             if (daps) {
-                for(let item of daps) {
+                for (let item of daps) {
                     item.addEventListener('click', actDap);
-                } 
+                }
             }
         },
         actStart: (e) => {
@@ -251,7 +254,7 @@
                 if ((_x < 0 + el_x) || (_y < 0 + el_y) || (_x + el_w > wrap_w + el_x) || (_y + el_h > wrap_h + el_y)) {
                     el.remove();
                 }
-               
+
             }
             const actMove = (e) => {
                 _y = e.clientY / curScale - wrap_t;
@@ -260,8 +263,8 @@
                 // _x = (_x < 0 + el_x) ? 0 + el_x : (_x + el_w > wrap_w + el_x) ? wrap_w + el_x - el_w : _x;
                 // _y = (_y < 0 + el_y) ? 0 + el_y : (_y + el_h > wrap_h + el_y) ? wrap_h + el_y - el_h : _y;
 
-                el.style.top = _y - el_y  + 'px';
-                el.style.left = _x - el_x  + 'px';
+                el.style.top = _y - el_y + 'px';
+                el.style.left = _x - el_x + 'px';
             }
 
             document.addEventListener('mousemove', actMove);
@@ -279,7 +282,7 @@
                 if (_selected) {
                     _selected.dataset.toggle = false;
                 }
-                
+
                 const _this = e.currentTarget;
                 const _wrap = _this.closest('.char-box');
                 _wrap.dataset.toggle = true;
@@ -305,16 +308,16 @@
         init() {
             const daps = document.querySelectorAll('.dapCheckBtn');
             const btns = document.querySelectorAll('.squareClick_btn > div');
-			const pointCheck = (e) => {
-				const _this = e.currentTarget;
-				const n = Number(_this.dataset.n);
-				const _tr = _this.closest('.squareClick_btn');
-				const m = Number(_tr.dataset.check);
+            const pointCheck = (e) => {
+                const _this = e.currentTarget;
+                const n = Number(_this.dataset.n);
+                const _tr = _this.closest('.squareClick_btn');
+                const m = Number(_tr.dataset.check);
                 const _type = _tr.dataset.type;
-				// _tr.dataset.check = (n === m && _type === 'fill') ? n - 1 :  n;
+                // _tr.dataset.check = (n === m && _type === 'fill') ? n - 1 :  n;
                 _tr.dataset.check = n;
 
-			}
+            }
             const dapAct = (e) => {
                 const _this = e.currentTarget;
                 const _wrap = _this.closest('[data-quiz]');
@@ -324,9 +327,9 @@
                     item.removeAttribute('data-check');
                 }
             }
-			for (let item of btns) {
-				item.addEventListener('click', pointCheck)
-			}
+            for (let item of btns) {
+                item.addEventListener('click', pointCheck)
+            }
             for (let item of daps) {
                 item.addEventListener('click', dapAct)
             }
@@ -336,7 +339,7 @@
     Global.imgSprite = {
         init(opt) {
             const id = opt.id;
-            const _this = document.querySelector('.ui-imgsprite[data-id="'+id+'"]');
+            const _this = document.querySelector('.ui-imgsprite[data-id="' + id + '"]');
             const count = Number(_this.dataset.spritecount);
             const img = _this.querySelector('img');
             const src = opt.src;
@@ -348,12 +351,12 @@
 
             const act = () => {
                 if (n === 0) {
-                    document.querySelector('.number-write[data-id="'+ id+'"]').classList.remove('on');
+                    document.querySelector('.number-write[data-id="' + id + '"]').classList.remove('on');
                     img.src = src + name + '1.png';
                 } else {
-                    img.src = src + name + n +'.png';
+                    img.src = src + name + n + '.png';
                 }
-                
+
                 n = n + 1;
                 setTimeout(() => {
                     if (n <= count) {
@@ -361,8 +364,8 @@
                     } else {
                         n = 0;
                         callback && callback();
-                    }  
-                },30);
+                    }
+                }, 30);
             }
             btn.addEventListener('click', act);
         },
@@ -370,25 +373,25 @@
             const id = opt.id;
             const src = opt.src;
             const name = opt.name;
-            const _this = document.querySelector('.ui-imgsprite[data-id="'+id+'"]');
+            const _this = document.querySelector('.ui-imgsprite[data-id="' + id + '"]');
             const img = _this.querySelector('img');
 
-             img.src = src + name + '1.png';
+            img.src = src + name + '1.png';
         },
         complete(opt) {
             const id = opt.id;
             const src = opt.src;
             const name = opt.name;
-            const _this = document.querySelector('.ui-imgsprite[data-id="'+id+'"]');
+            const _this = document.querySelector('.ui-imgsprite[data-id="' + id + '"]');
             const count = Number(_this.dataset.spritecount);
             const img = _this.querySelector('img');
 
-             img.src = src + name + count +'.png';
+            img.src = src + name + count + '.png';
         }
     }
 
     Global.dapcheckAll = {
-        n:0,
+        n: 0,
         complete() {
             Global.dapcheckAll.n = Global.dapcheckAll.n + 1;
         },
@@ -402,7 +405,7 @@
             }
             for (let item of btns) {
                 item.addEventListener('click', act);
-            } 
+            }
 
         }
     }
@@ -421,13 +424,13 @@
             }
             for (let item of btns) {
                 item.addEventListener('click', act);
-            }   
+            }
             for (let item of btns2) {
                 item.addEventListener('click', act);
-            }    
-         }
+            }
+        }
     }
-	Global.checkBox.init();
+    Global.checkBox.init();
 
     Global.tab = {
         act() {
@@ -437,11 +440,11 @@
             const act = () => {
                 Global.KmAudioPlayer.stop();
                 for (let item of audiobtns) {
-                    item.dataset.state="off";
+                    item.dataset.state = "off";
                     const _a = item.querySelector('.btnKmAudio');
                     if (_a) {
                         _a.classList.remove('on');
-                        _a.dataset.state="off";
+                        _a.dataset.state = "off";
                     }
                 }
             }
@@ -454,30 +457,30 @@
         }
     }
     Global.tab.act();
-    
-    Global.dragRest = {
-        init(){
-            const btnResets = document.querySelectorAll(".only-reset");
-			btnResets.forEach((item) => {
-				item.addEventListener("click", function () {
-					if(!this.classList.contains("reset")){
-						this.classList.add("reset");
-					}
-				});
-			});
 
-			const it_tab = document.querySelectorAll( ".basicSlider_tabs li" );
-			it_tab.forEach(function (objs, index){
-				objs.addEventListener('click', function () {
-					btnResets.forEach((item) => {
-						item.classList.add("reset");
-					})
-				});
-			});
+    Global.dragRest = {
+        init() {
+            const btnResets = document.querySelectorAll(".only-reset");
+            btnResets.forEach((item) => {
+                item.addEventListener("click", function () {
+                    if (!this.classList.contains("reset")) {
+                        this.classList.add("reset");
+                    }
+                });
+            });
+
+            const it_tab = document.querySelectorAll(".basicSlider_tabs li");
+            it_tab.forEach(function (objs, index) {
+                objs.addEventListener('click', function () {
+                    btnResets.forEach((item) => {
+                        item.classList.add("reset");
+                    })
+                });
+            });
 
             let isAnswered = false;
-			const btn_reset = document.querySelectorAll('.reset.only-reset');
-			const resetQuiz = (e) => {
+            const btn_reset = document.querySelectorAll('.reset.only-reset');
+            const resetQuiz = (e) => {
 
                 const _this = e.currentTarget;
 
@@ -490,95 +493,95 @@
                     item.innerHTML = '';
                 }
 
-				isAnswered = false;
-				$pm.array.inPage.quiz.forEach(function(quiz) {
-					
-					const wrap = quiz.QUIZ.container;
-					const isPage = wrap.classList.contains('on');
+                isAnswered = false;
+                $pm.array.inPage.quiz.forEach(function (quiz) {
+
+                    const wrap = quiz.QUIZ.container;
+                    const isPage = wrap.classList.contains('on');
                     const _dropAreas = wrap.querySelectorAll('.js-dropArea');
-          
-					if (quiz.QUIZ.type === 'dragDrop' && isPage) {
-						quiz.reset();
-                        _dropAreas.forEach(function(area) {
+
+                    if (quiz.QUIZ.type === 'dragDrop' && isPage) {
+                        quiz.reset();
+                        _dropAreas.forEach(function (area) {
                             area.classList.remove('textColor');
                             area.classList.remove('answer');
                         });
-					}
-				});
-			}
+                    }
+                });
+            }
 
-			for (let item of btn_reset) {
-				item.addEventListener('click', resetQuiz);
-			}
+            for (let item of btn_reset) {
+                item.addEventListener('click', resetQuiz);
+            }
         }
     }
     UI.dragRest.init();
 
     Global.bottomTab = {
-        init(){
+        init() {
             const switchs = document.querySelectorAll('[data-switch-obj]');
-			const tabs = document.querySelectorAll('.intro_circle_tabs li');
-			const tabs2 = document.querySelectorAll('.introSlider_btn');
-			const closes = document.querySelectorAll('.mouse-area-close');
+            const tabs = document.querySelectorAll('.intro_circle_tabs li');
+            const tabs2 = document.querySelectorAll('.introSlider_btn');
+            const closes = document.querySelectorAll('.mouse-area-close');
 
-			const actSwitch = (e) => {
-				const _this =  e.currentTarget;
-				const target = document.querySelector('[data-switch-target="'+ _this.dataset.switchObj +'"]');
-				_this.classList.add('active');
+            const actSwitch = (e) => {
+                const _this = e.currentTarget;
+                const target = document.querySelector('[data-switch-target="' + _this.dataset.switchObj + '"]');
+                _this.classList.add('active');
 
-				if (_this.dataset.switchObj === 'think') {
-					if (target.dataset.switchOn === 'true') {
-						target.dataset.switchOn = 'false';
-						target.style.transform = 'translate(0, ' + (target.offsetHeight - 1) + 'px)';
-					} else {
-						target.dataset.switchOn = 'true';
-						target.style.transform = 'translate(0, 0)';
-					} 
-				} else {
-					target.dataset.switchOn === 'true' ? target.dataset.switchOn = 'false' : target.dataset.switchOn = 'true';
-				}
-			}
-			const resetSwitch = (e) => {
-				const _this =  e.currentTarget;
-				let n = 1;
+                if (_this.dataset.switchObj === 'think') {
+                    if (target.dataset.switchOn === 'true') {
+                        target.dataset.switchOn = 'false';
+                        target.style.transform = 'translate(0, ' + (target.offsetHeight - 1) + 'px)';
+                    } else {
+                        target.dataset.switchOn = 'true';
+                        target.style.transform = 'translate(0, 0)';
+                    }
+                } else {
+                    target.dataset.switchOn === 'true' ? target.dataset.switchOn = 'false' : target.dataset.switchOn = 'true';
+                }
+            }
+            const resetSwitch = (e) => {
+                const _this = e.currentTarget;
+                let n = 1;
                 const target = document.querySelector('.mouse-area[data-switch-on="true"]');
-				if (target) target.dataset.switchOn = false;
+                if (target) target.dataset.switchOn = false;
 
-				for (let item of tabs) {
-					if (item.classList.contains('on')) {
-						document.querySelector('.imgContainer').dataset.n = n;
-					}
-					n = n + 1;
-				}
+                for (let item of tabs) {
+                    if (item.classList.contains('on')) {
+                        document.querySelector('.imgContainer').dataset.n = n;
+                    }
+                    n = n + 1;
+                }
 
-				for (let item of switchs) {
-					item.classList.remove('active');
-				}
-			}
-			const close = (e) => {
-				const _this =  e.currentTarget;
-				const _wrap = _this.closest('.mouse-area');
-				const _n = _wrap.dataset.switchTarget;
+                for (let item of switchs) {
+                    item.classList.remove('active');
+                }
+            }
+            const close = (e) => {
+                const _this = e.currentTarget;
+                const _wrap = _this.closest('.mouse-area');
+                const _n = _wrap.dataset.switchTarget;
 
-				document.querySelector('.mouse[data-switch-obj="'+ _n +'"]').classList.remove('active');
-				_wrap.dataset.switchOn = false;
-			}
+                document.querySelector('.mouse[data-switch-obj="' + _n + '"]').classList.remove('active');
+                _wrap.dataset.switchOn = false;
+            }
 
-			for (let item of switchs) {
-				item.addEventListener('click', actSwitch);
-			}
-			for (let item of tabs) {
-				item.addEventListener('click', resetSwitch);
-			}
-			for (let item of tabs2) {
-				item.addEventListener('click', resetSwitch);
-			}
-			for (let item of closes) {
-				item.addEventListener('click', close);
-			}
+            for (let item of switchs) {
+                item.addEventListener('click', actSwitch);
+            }
+            for (let item of tabs) {
+                item.addEventListener('click', resetSwitch);
+            }
+            for (let item of tabs2) {
+                item.addEventListener('click', resetSwitch);
+            }
+            for (let item of closes) {
+                item.addEventListener('click', close);
+            }
         }
     }
-    
+
     Global.iframe = {
         init() {
             const ifr_wrap = document.querySelector('[data-iframe="true"]');
@@ -587,15 +590,15 @@
 
             popClose.addEventListener('click', () => {
                 const src = ifrm.getAttribute('src');
-                
+
                 setTimeout(() => {
                     ifrm.setAttribute('src', '');
                     ifrm.setAttribute('src', src);
-                },600)
-                
+                }, 600)
+
             })
         }
     }
-    
+
 })();
 
