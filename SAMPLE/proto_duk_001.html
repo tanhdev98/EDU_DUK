@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
 
 
+
     <style>
         /* Page 1, Page 2*/
         .page_1 .dragDropContainer {
@@ -307,6 +308,111 @@
             opacity: 1;
             visibility: visible;
         }
+
+        /* Page 5 */
+        .page_5 .dragDropContainer {
+            margin-top: 35px;
+        }
+
+        .page_5 .dragDropContainer.bogi .lineBox {
+            width: 330px;
+            height: 480px;
+            left: 470px;
+        }
+
+        .page_5 .js-dragObj {
+            position: absolute;
+            cursor: pointer;
+        }
+
+        .page_5 .js-dragObj span {
+            pointer-events: none;
+        }
+
+        .page_5 .js-dragObj.dragObjComplete {
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        .page_5 .groupClearArea .js-dragObj.dragObjComplete {
+            pointer-events: none;
+            opacity: 1;
+        }
+
+        .page_5 .js-dragObj.d13 {
+            top: 45px;
+            left: 110px;
+        }
+
+        .page_5 .js-dragObj.d14 {
+            top: 125px;
+            left: 110px;
+        }
+
+        .page_5 .js-dragObj.d15 {
+            top: 225px;
+            left: 47px;
+        }
+
+        .page_5 .js-dragObj.d16 {
+            top: 330px;
+            left: 110px;
+        }
+
+        .page_5 .js-dragObj.d16 img {
+            width: 120px;
+            pointer-events: none;
+        }
+
+        .page_5 .dragDropContainer.bogi .bogi-icon {
+            width: 93px;
+        }
+
+        .page_5 .dragDropContainer.bogi .bogi-icon:after {
+            content: "붙임 딱지";
+
+        }
+
+        .page_5 .groupClearArea {
+            display: flex;
+            gap: 20px;
+            width: 1020px;
+            margin-left: -21px;
+        }
+
+
+        .page_5 .groupClearArea .js-dropArea {
+            width: 624px;
+            height: 370px;
+            border-radius: 30px;
+            margin-top: 0px;
+            margin-left: -678px;
+        }
+
+        .page_5 .purple {
+            border: 4px solid #CABEE0;
+            background-color: #E9E0FF;
+            padding: 10px 20px;
+            border-radius: 15px;
+        }
+
+        .page_5 .dragClone {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .page_5 .dragClone.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .page_5 .groupClearArea>img {
+            height: 450px;
+            border-radius: 10px;
+            position: absolute;
+            left: -941px;
+            z-index: -1;
+        }
     </style>
 </head>
 
@@ -434,8 +540,31 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="buttonContainer">
-                            <button class="dapCheckBtn" type="button" data-answer-btn=""></button>
+                    </li>
+                    <li class="page_5" data-quiz="dragDrop" data-option="answer,copy" data-quiz-name="dragdrop"
+                        data-total-complete-count="">
+                        <div class="dragDropContainer bogi">
+                            <div class="lineBox">
+                                <div class="bogi-icon"></div>
+                                <div class="drag-zone">
+                                    <div class="js-dragObj d13" data-drag-obj-answer="4" data-ps="free">
+                                        <span>내용 1</span>
+                                    </div>
+                                    <div class="js-dragObj d14" data-drag-obj-answer="4" data-ps="free">
+                                        <span>내용 2</span>
+                                    </div>
+                                    <div class="js-dragObj d15" data-drag-obj-answer="4" data-ps="free">
+                                        <span class="purple">텍스트 박스</span>
+                                    </div>
+                                    <div class="js-dragObj d16" data-drag-obj-answer="4" data-ps="free">
+                                        <img src="./images/proto_duk_001.html/img_01.png">
+                                    </div>
+                                    <div class="groupClearArea">
+                                        <div class="js-dropArea a7 clearArea" data-drop-area-answer="4"></div>
+                                        <img src="./images/proto_duk_001.html/chart.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -493,11 +622,12 @@
                 }
 
                 else {
-                    $('page_2 .dapCheckBtn').removeClass('reset');
+                    $('.page_2 .dapCheckBtn').removeClass('reset');
                 }
-                $('page_2 .js-dragObj.d' + _id).hide();
+                $('.page_2 .js-dragObj.d' + _id).hide();
+
                 setTimeout(function () {
-                    $('page_2 .js-dragObj.d' + _id).show();
+                    $('.page_2 .js-dragObj.d' + _id).show();
                 });
             });
 
