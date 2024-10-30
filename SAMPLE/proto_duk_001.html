@@ -418,11 +418,9 @@
 
 <body>
     <div id="wrap" class="math">
-        <header>
-            <!-- 탭과 겹치는 경우 : gap 추가 -->
-            <div class="title blue">
-                드래그앤드롭_위치 고정&수량 한정
-            </div>
+        <header class="gap">
+            <div class="title-icon yellow">생각 <em>똑똑</em></div>
+            <div class="title-text">드래그앤드롭_위치 고정&수량 한정</div>
         </header>
         <main>
 
@@ -430,7 +428,7 @@
             <!-- FRAME OF PAGE -->
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
-                    <li data-hover="" data-text="드래그앤드롭_위치 고정&수량 한정">고정</li>
+                    <li data-hover="" data-text="드래그앤드롭_위치 고정&수량 한정" data-gap="true">고정</li>
                     <li data-hover="" data-text="드래그앤드롭_위치 고정&수량 한정(정답 버튼)" data-gap="true">버튼</li>
                     <li data-hover="" data-text="드래그앤드롭_위치 고정&수량 한정(이미지)" data-gap="true">고정(이미지)</li>
                     <li data-hover="" data-text="드래그앤드롭_위치 비고정&수량 무제한형(이미지)" data-gap="true">비고정</li>
@@ -599,12 +597,12 @@
         document.addEventListener('DOMContentLoaded', function () {
             $(document).on('click', '.basicSlider_tabs li', function () {
                 if ($(this).data('text')) {
-                    $('header .title').text($(this).data('text'));
+                    $('header .title-text').html($(this).data('text'));
                 }
                 if ($(this).attr('data-gap') == 'true') {
-                    $('header .title').addClass('gap');
+                    $('header').addClass('gap');
                 } else {
-                    $('header .title').removeClass('gap');
+                    $('header').removeClass('gap');
                 }
             });
             $(document).on('mouseup', '.page_1 .js-dragObj', function (e) {
