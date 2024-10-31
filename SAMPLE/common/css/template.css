@@ -3901,9 +3901,9 @@ line {
 /* ********************************************************** */
 /* 이번 시간에는 무엇을 배울까요? */
 .todaycontent {
-  width: 1170px;
+  width: 1365px;
   height: 786px;
-  background: url("../../common/images/background_today.png") no-repeat;
+  background: url("../../common/images/background_today.png") no-repeat center / 100%;
 }
 
 .todaycontent .todayHeader {
@@ -3924,8 +3924,9 @@ line {
 
 .todaycontent .textBox {
   position: absolute;
-  left: 37px;
+  left: 50%;
   top: 134px;
+  transform: translateX(-50%);
   width: 1093px;
   height: 345px;
   padding-top: 50px;

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        .flex {
+            display: flex;
+            margin-top: 40px;
+        }
+
+        .flex .items:first-child {
+            width: 880px;
+        }
+
+        .flex .items {
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        #boy_4_c {
+            position: absolute;
+            bottom: 90px;
+            left: 170px;
+        }
+
+        #girl_1_c {
+            position: absolute;
+            bottom: 90px;
+            left: 170px;
+        }
+
+        #girl_2_c {
+            position: absolute;
+            bottom: 90px;
+            left: 170px;
+        }
+
+        [data-popup-page="1"] {
+            top: 142px;
+            left: 631px;
+            width: 627px;
+        }
+
+        .additional-question {
+            position: absolute;
+            right: 90px;
+            top: 10px;
+        }
+
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: fit-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+        }
+
+        [data-type="toggleButton"] {
+            height: fit-content;
+            margin-top: 43px;
+        }
+
+        [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+        }
+
+        .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue">실천 <em>쑥쑥</em></div>
+            <div class="title-text">다음 물음에 함께 이야기를 나눠 봅시다.</div>
+        </header>
+        <main>
+
+
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="icon-char" data-hover="" data-popup-btn="1"></div>
+                                    <div class="popBtn additional-question" data-popup-btn="2">추가 질문</div>
+                                    <div class="flex">
+                                        <div class="items">
+                                            <div id="boy_4_c" class="character-item"></div>
+                                        </div>
+                                        <div class="items">
+                                            <div class="noteText noteLine green">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        <p class="dot" style="letter-spacing: -1.8px;">
+                                                            줄넘기 이단 뛰기를 성공하기 위해 연습을 했습니다.
+                                                        </p>
+                                                        <p class="dot">
+                                                            하루에 책 30분 읽기를 실천했습니다.
+                                                        </p>
+                                                        <p class="dot">
+                                                            학원에 시간 맞춰 가기를 실천했습니다.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="buttonContainer">
+                                                <button class="writeBtn" data-answer-btn=""></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="flex">
+                                        <div class="items">
+                                            <div id="girl_1_c" class="character-item"></div>
+                                        </div>
+                                        <div class="items">
+                                            <div class="noteText noteLine pink">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        <p class="dot">
+                                                            정해진 과제를 모두 해냈을 때 뿌듯했습니다.
+                                                        </p>
+                                                        <p class="dot">
+                                                            줄넘기를 열심히 해서 급수에 통과했을 때
+                                                            뿌듯했습니다.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="buttonContainer">
+                                                <button class="writeBtn" data-answer-btn=""></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3" data-quiz="toggle">
+                                    <div class="flex">
+                                        <div class="items">
+                                            <div id="girl_2_c" class="character-item"></div>
+                                        </div>
+                                        <div class="items">
+                                            <div class="noteText noteLine purple">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        <p class="dot">
+                                                            학교에 지각하지 않겠다고 했는데 아침에 지각을 했을 때 후회가 됐습니다.
+                                                        </p>
+                                                        <p class="dot">
+                                                            매일 공부를 열심히 하기로 했는데 지키지 못해서 아쉬웠습니다.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="buttonContainer">
+                                                <button class="writeBtn" data-answer-btn=""></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag="">
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents">
+                        <p>
+                            목표를 세울 때에는 도달점 행동이나 구체적인 수준, 본인이 원하는 인간상 등을 정해두면 좋아요.
+                        </p>
+                    </div>
+                </li>
+                <li class="fullLine whole image" data-popup-page="2" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="popup-boxes">
+                            <div class="box-item ico_que">
+                                목표를 가지고 생활하는 사람의 모습은 어떤가요?
+                                <img src="./common/images/ico_que.png" class="ico" />
+                            </div>
+                            <div class="box-item ico_ans">
+                                <img src="./common/images/ico_ans.png" class="ico" />
+                                <div data-type="toggleButton">
+                                    <div class="toggle examBtn box" data-toggle-obj="1" data-hover>
+                                        <div class="answer" data-toggle-target="1">
+                                            <div class="ls-2h">
+                                                <p class="dot">열심히 생활합니다.</p><br>
+                                                <p class="dot">스스로를 자랑스럽게 생각합니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title').addClass('gap');
+                } else {
+                    $('header .title').removeClass('gap');
+                }
+            });
+
+            $prite.boy4({
+                id: '#boy_4_c',
+                circle: true,
+                speech: 'right',
+                sound: './media/sample.mp3',
+                text: '목표를 정해서<br>실천했던 <br>경험이 있나요?',
+                class: 'bottom',
+                balloon_top: -240,
+                balloon_left: -70,
+            });
+            $prite.girl1({
+                id: '#girl_1_c',
+                circle: true,
+                speech: 'right',
+                sound: './media/sample.mp3',
+                text: '목표를 세워서 <br>실천했던 행동 중에<br>뿌듯했던 경험이 있나요?',
+                class: 'bottom',
+                balloon_top: -240,
+                balloon_left: -150,
+            });
+
+            $prite.girl2({
+                id: '#girl_2_c',
+                circle: true,
+                speech: 'right',
+                sound: './media/sample.mp3',
+                text: '목표를 세워서<br>실천했던 행동 중에<br>후회했던 경험이 있나요?',
+                class: 'bottom',
+                balloon_top: -240,
+                balloon_left: -150,
+            });
+        });
+    </script>
+</body>
+
+</html>
