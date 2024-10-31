@@ -4069,6 +4069,7 @@ tr.ta-c td {
 .noteText p.dot {
     position: relative;
     padding-left: 20px;
+    width: 100%;
 }
 
 .noteText p.dot::after {
@@ -5883,6 +5884,7 @@ tr.ta-c td {
     box-sizing: border-box;
     background: #5E3E18 url('../images/icon_star.png') 15px center / 26px no-repeat;
     z-index: 1;
+    width: fit-content;
 }
 
 .additional-question.small {
