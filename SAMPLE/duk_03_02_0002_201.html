@@ -898,12 +898,13 @@
             //     }
             // });
             $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
-                let idx = $(this).index() + 1;
+                let idx = $(this).index();
                 $('.popup_pages .innerSlider_tabs li').removeClass('on');
                 $(this).addClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
-                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').eq(idx).addClass('on');
             });
+
 
         });
     </script>
