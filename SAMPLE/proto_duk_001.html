@@ -365,22 +365,19 @@
         }
 
         /* style đáp án đúng */
-        .page_3 .clearArea.a1 .js-dragObj.dragObjComplete,
-        .dragClone .d1 {
+        .page_3 .clearArea.a1 .js-dragObj {
             scale: 0.67;
             top: -41px;
             left: -34px;
         }
 
-        .page_3 .clearArea.a2 .js-dragObj.dragObjComplete,
-        .dragClone .d2 {
+        .page_3 .clearArea.a2 .js-dragObj {
             scale: 0.49;
             top: -67px;
             left: -52px;
         }
 
-        .page_3 .clearArea.a3 .js-dragObj.dragObjComplete,
-        .dragClone .d3 {
+        .page_3 .clearArea.a3 .js-dragObj {
             scale: 0.49;
             top: -68px;
             left: -52px;
@@ -397,6 +394,7 @@
             object-fit: contain;
             z-index: 2;
         }
+
 
         .page_3 .dragGroup .js-dragObj.dragObjComplete {
             opacity: 0;
@@ -875,8 +873,8 @@
 
 
             let dragObj = $('.page_3 .drag-zone > .js-dragObj');
-            let currentIndex = 0;
-            let totalSlides = 3;
+            var currentIndex = 0;
+            var totalSlides = 3;
             let slidesToShow = 1; // number dragObj show at a time
             $('.drag-zone').attr('data-count', '0');
             updateSlider();
@@ -921,9 +919,9 @@
                 $('.page_3 .dragGroup:nth-child(3)').css('opacity', '0');
             });
 
-            $(document).on('mouseup', '.page_3 .js-dragObj', function (e) {
+            $(document).on('mouseup', '.page_3 .drag-zone>.js-dragObj', function (e) {
                 const _id = parseInt($(this).attr("class").split(" ")[1].replace("d", ""));
-                if ($('.bgDrop .dragObjComplete').length == 3) {
+                if ($('.page_3 .drag-zone>.dragObjComplete').length == 3) {
                     $('.dapCheckBtn').addClass('reset');
                 }
                 else {
@@ -934,13 +932,15 @@
             $(document).on('click', '.page_3 .dapCheckBtn', function () {
                 if ($(this).hasClass('reset')) {
                     $('.page_3 .clearArea').addClass('complete');
-                    $('.page_3 .drag-zone > .js-dragObj').addClass('hidden');
-                    $('.page_3 .js-dropArea > .js-dragObj').removeClass('hidden');
-
+                    $('.page_3 .drag-zone > .js-dragObj').addClass('hidden').addClass('dragObjComplete');
+                    $('.page_3 .js-dropArea > .js-dragObj').removeClass('hidden').removeClass('dragObjComplete');
                 }
                 else {
                     $('.page_3 .clearArea').removeClass('complete');
-                    $('.page_3 .drag-zone > .js-dragObj').removeClass('hidden');
+                    $('.page_3 .drag-zone > .js-dragObj').removeClass('hidden').removeClass('dragObjComplete');
+                    $('.page_3 .drag-zone  .js-dropArea').empty();
+                    currentIndex = 0;
+                    updateSlider();
                 }
             });
         });
