@@ -1,3 +1,39 @@
+/* 입력 박스 */
+textarea,
+input {
+    background-color: #f7f7f7;
+    width: 100%;
+    font-family: NotoM;
+    font-size: 40px;
+    line-height: 52px;
+    color: #24914d;
+    overflow: hidden;
+    resize: none;
+    box-sizing: border-box;
+}
+
+textarea {
+    padding: 16px 30px;
+    border-radius: 16px;
+    margin-top: 10px;
+}
+
+textarea:focus,
+input:focus {
+    border: none;
+    outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #c7c7c7 !important;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #c7c7c7 !important;
+}
+
 /* ********************************************************** */
 
 /* ********************************************************** */
@@ -72,6 +108,8 @@
     font-family: NotoKRB;
     font-size: 45px;
     color: #ff6600;
+    height: 130px;
+    line-height: 60px;
 }
 
 .todaycontent .todayTxt p {
