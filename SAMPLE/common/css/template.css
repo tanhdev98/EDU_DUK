@@ -1,6 +1,6 @@
 /* 입력 박스 */
-textarea,
-input {
+.todaycontent textarea,
+.todaycontent input {
     background-color: #f7f7f7;
     width: 100%;
     font-family: NotoM;
@@ -12,25 +12,25 @@ input {
     box-sizing: border-box;
 }
 
-textarea {
+.todaycontent textarea {
     padding: 16px 30px;
     border-radius: 16px;
     margin-top: 10px;
 }
 
-textarea:focus,
-input:focus {
+.todaycontent textarea:focus,
+.todaycontent input:focus {
     border: none;
     outline: none;
 }
 
-input::placeholder,
-textarea::placeholder {
+.todaycontent input::placeholder,
+.todaycontent textarea::placeholder {
     color: #c7c7c7 !important;
 }
 
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
+.todaycontent input:-ms-input-placeholder,
+.todaycontent textarea:-ms-input-placeholder {
     color: #c7c7c7 !important;
 }
 
@@ -108,7 +108,7 @@ textarea:-ms-input-placeholder {
     font-family: NotoKRB;
     font-size: 45px;
     color: #ff6600;
-    height: 130px;
+    height: 140px;
     line-height: 60px;
 }
 
