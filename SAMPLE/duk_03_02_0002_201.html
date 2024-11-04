@@ -17,6 +17,10 @@
             margin-top: 15px;
         }
 
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
         /* Page2  */
         .innerSlider_tabs>li {
             background-color: #F3DEC0;
@@ -304,7 +308,7 @@
 
 <body>
     <div id="wrap" class="math">
-        <header>
+        <header class="twoLine">
             <div class="title-icon blue">실천 <em>쑥쑥</em></div>
             <div class="title-text">지금 목표를 세워서 하고 있는 일이 있나요? 어떤 목표를 가지고 있는지 적어 봅시다.</div>
         </header>
@@ -314,7 +318,8 @@
             <!-- FRAME OF PAGE -->
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
-                    <li data-hover="" data-text="지금 목표를 세워서 하고 있는 일이 있나요? 어떤 목표를 가지고 있는지 적어 봅시다.">활동 1</li>
+                    <li data-hover="" data-text="지금 목표를 세워서 하고 있는 일이 있나요? 어떤 목표를 가지고 있는지 적어 봅시다." class="twoLine">활동 1
+                    </li>
                     <li data-hover="" data-text="목표를 정해서 실천하는 방법을 알아봅시다.">활동 2</li>
                     <li data-hover="" data-text="목표를 정하고 실천하는 데 필요한 실천 계획을 세워 봅시다." data-gap="true">활동 3</li>
                     <li data-hover="" data-text="계획을 실천하기 위한 실천 원리를 알아봅시다." data-gap="true">활동 4</li>
@@ -880,6 +885,12 @@
                     $('header').addClass('gap');
                 } else {
                     $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
                 }
             });
 

@@ -180,32 +180,29 @@
                                 item.style.top = _top;
                                 item.style.left = _left;
                             }
-                            item.addEventListener('mousedown', this.actStart)
+                            item.addEventListener('mousedown', this.actStart);
+                            item.addEventListener('touchstart', this.actStart); // Add touch support
                         }
                     });
 
                 }, 0);
             }
+
             const actDap = (e) => {
                 const _this = e.currentTarget;
                 const _wrap = _this.closest('[data-quiz="dragDrop"]');
                 const _dropAreas = _wrap.querySelectorAll('.js-dropArea');
                 const _dragObjs = _wrap.querySelectorAll('.dragObjComplete');
-                const _dapObj = _wrap.querySelector('.js-dropDap');
                 const isState = _this.classList.contains('reset');
 
-                // false 이면 정답보임, true이면 리셋
                 if (isState) {
-                    // for(let item of _dropAreas) {
-                    //     item.classList.remove('complete');
-                    // }
                     for (let item of _dragObjs) {
                         item.classList.remove('dragObjComplete');
                     }
                     for (let item of _dropAreas) {
                         item.classList.remove('complete');
                         const delObj = item.querySelector('.js-dragObj');
-                        delObj.remove();
+                        delObj && delObj.remove();
                     }
                 } else {
                     for (let item of _dropAreas) {
@@ -217,18 +214,23 @@
                     }
                 }
             }
+
             if (objs) {
                 for (let item of objs) {
                     item.addEventListener('mouseup', act);
+                    item.addEventListener('touchend', act);
                 }
             }
+
             if (daps) {
                 for (let item of daps) {
                     item.addEventListener('click', actDap);
                 }
             }
         },
+
         actStart: (e) => {
+            e.preventDefault();
             const el = e.currentTarget;
             const wrap = el.closest('.js-dropArea');
             let curScale = wrap.getBoundingClientRect().width / wrap.offsetWidth;
@@ -241,36 +243,51 @@
             const wrap_h = wrap.offsetHeight;
             const el_w = el.offsetWidth;
             const el_h = el.offsetHeight;
-            const el_x = e.offsetX * curScale;
-            const el_y = e.offsetY * curScale;
+
+            const getOffset = (event) => {
+                return event.type.startsWith("touch") ? {
+                    x: event.touches[0].clientX / curScale,
+                    y: event.touches[0].clientY / curScale
+                } : {
+                    x: event.clientX / curScale,
+                    y: event.clientY / curScale
+                };
+            };
+
+            const offset = getOffset(e);
+            const el_x = offset.x - el.getBoundingClientRect().left / curScale;
+            const el_y = offset.y - el.getBoundingClientRect().top / curScale;
+
+            const actMove = (e) => {
+                const position = getOffset(e);
+                _x = position.x - wrap_l;
+                _y = position.y - wrap_t;
+
+                el.style.top = _y - el_y + 'px';
+                el.style.left = _x - el_x + 'px';
+            };
 
             const actEnd = (e) => {
-                _y = e.clientY / curScale - wrap_t;
-                _x = e.clientX / curScale - wrap_l;
+                _x = getOffset(e).x - wrap_l;
+                _y = getOffset(e).y - wrap_t;
 
                 document.removeEventListener('mousemove', actMove);
                 document.removeEventListener('mouseup', actEnd);
+                document.removeEventListener('touchmove', actMove);
+                document.removeEventListener('touchend', actEnd);
 
                 if ((_x < 0 + el_x) || (_y < 0 + el_y) || (_x + el_w > wrap_w + el_x) || (_y + el_h > wrap_h + el_y)) {
                     el.remove();
                 }
-
-            }
-            const actMove = (e) => {
-                _y = e.clientY / curScale - wrap_t;
-                _x = e.clientX / curScale - wrap_l;
-
-                // _x = (_x < 0 + el_x) ? 0 + el_x : (_x + el_w > wrap_w + el_x) ? wrap_w + el_x - el_w : _x;
-                // _y = (_y < 0 + el_y) ? 0 + el_y : (_y + el_h > wrap_h + el_y) ? wrap_h + el_y - el_h : _y;
-
-                el.style.top = _y - el_y + 'px';
-                el.style.left = _x - el_x + 'px';
-            }
+            };
 
             document.addEventListener('mousemove', actMove);
             document.addEventListener('mouseup', actEnd);
+            document.addEventListener('touchmove', actMove);
+            document.addEventListener('touchend', actEnd);
         }
     }
+
     Global.dragPositionFree.init();
 
     Global.chartToggle = {
