@@ -5927,7 +5927,7 @@ tr.ta-c td {
   position: absolute !important;
   top: 40px;
   right: 0;
-  width: 70px;
+  width: 80px;
   padding: 10px;
   background: #00a0e9;
   border: 5px solid #9ed8f5;
@@ -5943,7 +5943,7 @@ tr.ta-c td {
 }
 
 .btn-praise .item-title {
-  font-size: 18px;
+  font-size: 20px;
   text-align: center;
   color: #fff;
   font-family: "YGJAL";
@@ -5975,6 +5975,15 @@ tr.ta-c td {
   line-height: 32px;
   padding: 0 16px 0 40px;
   background: #5e3e18 url("../images/icon_star.png") 15px center / 18px
-    no-repeat;
+    no-repeat !important;
   border: 3px solid #724d22;
+}
+.additional-question:hover {
+  background: #9d00c4 url("../images/icon_star.png") 15px center / 26px
+    no-repeat;
+}
+.additional-question.small:hover {
+  background: #9d00c4 url("../images/icon_star.png") 15px center / 18px
+    no-repeat !important;
+  border: 3px solid #9d00c4;
 }

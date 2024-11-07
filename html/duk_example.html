@@ -56,6 +56,16 @@
         .icon-char.orange {
             right: 70px;
         }
+
+        [data-popup-page="1"] {
+            top: 215px;
+            left: 540px;
+        }
+
+        [data-popup-page="2"] {
+            top: 215px;
+            left: 610px;
+        }
     </style>
 </head>
 
@@ -92,17 +102,18 @@
                                     <div class="endUnit">단원 마무리</div>
                                     <div class="thinkingPlayground">생각 놀이터</div>
                                     <div class="pointContainer"></div>
-                                    <div class="btn-praise popBtn">
+                                    <div class="btn-praise popBtn" data-popup-btn="4">
                                         <div class="item-title">핵심<br>정리</div>
                                     </div>
                                     <div class="popBtn additional-question" data-popup-btn="3">추가 질문</div>
-                                    <div class="additional-question small">요점 쏙!</div>
+                                    <div class="additional-question small" data-popup-btn="3">요점 쏙!</div>
 
-                                    <div class="dodbogi">그림 보기</div>
+                                    <div class="dodbogi" data-popup-btn="4">그림 보기</div>
                                     <a class="linkBtn" href="" target="_blank"><span>링크 연결</span></a>
 
-                                    <a class="videoSubPlayBtn" data-video-link="">참고 영상</a>
-                                    <a class="videoSubPlayBtn youtube" data-youtube-id="" target="_blank">참고 영상</a>
+                                    <a class="videoSubPlayBtn" data-video-link="M202405573_800k.mp4">참고 영상</a>
+                                    <a class="videoSubPlayBtn youtube" data-youtube-id="86gToHFkbiU" target="_blank">참고
+                                        영상</a>
 
                                     <div class="icon-char" data-hover="" data-popup-btn="1"></div>
                                     <div class="icon-char orange" data-hover="" data-popup-btn="2"></div>
@@ -143,6 +154,9 @@
                     <div class="full_content">
 
                     </div>
+                </li>
+                <li class="whole image" data-popup-page="4">
+                    <img src="./images/proto_duk_001.html/img_01.png" />
                 </li>
             </ul>
         </section>
