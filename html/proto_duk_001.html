@@ -625,13 +625,19 @@
             left: -941px;
             z-index: -1;
         }
+
+        .hide {
+            display: none;
+        }
     </style>
 </head>
 
 <body>
     <div id="wrap" class="math">
         <header class="gap">
-            <div class="title-icon yellow">생각 <em>똑똑</em></div>
+            <div class="title-icon yellow" data-show="1, 4">생각 <em>똑똑</em></div>
+            <div class="title-icon blue hide" data-show="2, 5">실천 <em>쑥쑥</em></div>
+            <div class="title-icon pink hide" data-show="3">마음 <em>탄탄</em></div>
             <div class="title-text">드래그앤드롭_위치 고정&수량 한정</div>
         </header>
         <main>
@@ -656,18 +662,18 @@
                                     <div class="js-dragObj d1" data-drag-obj-answer="1" data-ps="free">
                                         <span>내용 1</span>
                                     </div>
-                                    <div class="js-dragObj d2" data-drag-obj-answer="1" data-ps="free">
+                                    <div class="js-dragObj d2" data-drag-obj-answer="2" data-ps="free">
                                         <span>내용 2</span>
                                     </div>
                                     <div class="js-dragObj d3" data-drag-obj-answer="1" data-ps="free">
                                         <span class="purple">텍스트 박스</span>
                                     </div>
-                                    <div class="js-dragObj d4" data-drag-obj-answer="1" data-ps="free">
+                                    <div class="js-dragObj d4" data-drag-obj-answer="2" data-ps="free">
                                         <img src="./images/proto_duk_001.html/img_01.png">
                                     </div>
                                     <div class="groupClearArea">
                                         <div class="js-dropArea a1 clearArea" data-drop-area-answer="1"></div>
-                                        <div class="js-dropArea a2 clearArea" data-drop-area-answer="1"></div>
+                                        <div class="js-dropArea a2 clearArea" data-drop-area-answer="2"></div>
                                     </div>
                                 </div>
                             </div>
@@ -820,7 +826,7 @@
     <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
     <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
     <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
-    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz-noSound-incorrect.js"></script>
     <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
     <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
     <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
@@ -838,6 +844,14 @@
                 } else {
                     $('header').removeClass('gap');
                 }
+
+                var index = $(this).index();
+                $('.title-icon').removeClass('hide').hide();
+                $('.title-icon').filter(function () {
+                    var dataShow = $(this).data('show').toString().split(',').map(Number);
+                    return dataShow.includes(index + 1);
+                }).show();
+
             });
             $(document).on('mouseup', '.page_1 .js-dragObj', function (e) {
                 const _id = parseInt($(this).attr("class").split(" ")[1].replace("d", ""));
