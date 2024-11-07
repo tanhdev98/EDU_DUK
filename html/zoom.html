@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        @font-face {
+            font-family: bmjua;
+            src: url("./common/font/BMJUA.ttf");
+            /*font-display: swap;*/
+        }
+
+        .study_guide {
+            z-index: 1;
+        }
+
+        .zoomContainer.horizon .zoomController {
+            top: 0;
+            left: 0;
+        }
+
+        .page_1 .flex {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .page_1 .zoomArea {
+            height: 545px;
+        }
+
+        .page_1 .clickBgYellow {
+            position: absolute;
+            border-radius: 10px;
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+            pointer-events: auto;
+            font-size: 15px;
+            text-align: center;
+            font-family: bmjua;
+            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            font-weight: 500;
+        }
+
+
+        .page_1 .clickBgYellow.ans:before {
+            content: '';
+            background-color: #FFFF7F;
+            opacity: 0.55;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 9px;
+        }
+
+        .page_1 .clickBgYellow1 {
+            left: 394px;
+            top: 97px;
+            width: 132px;
+            height: 138px;
+        }
+
+        .page_1 .clickBgYellow2 {
+            width: 132px;
+            height: 137px;
+            left: 612px;
+            top: 97px;
+        }
+
+        .page_1 .clickBgYellow3 {
+            width: 131px;
+            height: 103px;
+            left: 902px;
+            top: 65px;
+        }
+
+        .page_1 .clickBgYellow4 {
+            width: 132px;
+            height: 102px;
+            left: 901px;
+            top: 228px;
+        }
+
+        .page_1 .clickBgYellow5 {
+            width: 131px;
+            height: 103px;
+            left: 902px;
+            top: 390px;
+        }
+
+        .page_1 .clickBgYellow6 {
+            left: 394px;
+            top: 307px;
+            width: 131px;
+            height: 138px;
+        }
+
+        .page_1 .clickBgYellow7 {
+            width: 130px;
+            height: 137px;
+            left: 613px;
+            top: 307px;
+        }
+
+        .page_1 .clickBgYellow span {
+            z-index: 1;
+        }
+
+        .page_1 .clickBgYellow1 span {
+            margin-bottom: 10px;
+        }
+
+        .page_1 .clickBgYellow2 span {
+            margin-bottom: 10px;
+        }
+
+        .page_1 .clickBgYellow3 span {
+            margin-bottom: 10px;
+        }
+
+        .page_1 .clickBgYellow4 span {
+            margin-bottom: 10px;
+            margin-right: -40px;
+        }
+
+        .page_1 .clickBgYellow5 span {
+            margin-bottom: 10px;
+        }
+
+        .page_1 .clickBgYellow6 span:last-child {
+            margin-bottom: 10px;
+        }
+
+        .page_1 .clickBgYellow7 span:last-child {
+            margin-bottom: 10px;
+        }
+
+        .clickBgYellow img {
+            position: absolute;
+        }
+
+        .clickBgYellow1 img {
+            width: 114px;
+            bottom: 0;
+            left: 8px;
+        }
+
+        .clickBgYellow2 img {
+            width: 50px;
+            bottom: 0;
+            right: 9px;
+        }
+
+        .clickBgYellow3 img {
+            width: 44px;
+            bottom: 4px;
+            right: 11px;
+        }
+
+        .clickBgYellow4 img {
+            width: 37px;
+            bottom: 0;
+            left: 8px;
+        }
+
+        .clickBgYellow5 img {
+            width: 46px;
+            bottom: 0;
+            left: 37px;
+        }
+
+        .clickBgYellow6 img {
+            width: 98px;
+            bottom: 0;
+            left: 20px;
+        }
+
+        .clickBgYellow7 img {
+            width: 130px;
+            bottom: -1px;
+        }
+
+        /* page 2 */
+
+        .groupBox1 .balloon.thinkTail:after {
+            bottom: -30px !important;
+            left: -5px;
+        }
+
+        [data-popup-page="1"] .noteText {
+            box-shadow: none;
+            height: 173px;
+            padding: 0;
+            width: 380px;
+            margin-left: -20px;
+            margin: 0;
+        }
+
+        .coin {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: 76px;
+            left: 381px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon pink">마음 <em>탄탄</em></div>
+            <div class="title-text">드래그앤드롭_위치 고정&수량 한정</div>
+        </header>
+        <main>
+
+
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1 page_zoom zoom_img">
+                        <div class="study_guide"><em>네모 칸</em>을 <em>클릭</em>하세요.</div>
+                        <div class="zoomContainer horizon pointerOff">
+                            <div class="zoomArea">
+                                <div class="zoomImgContainer pointerOff">
+                                    <div class="zoomImg">
+                                        <div class="bgImg">
+                                            <div class="flex">
+                                                <!-- <img src="./images/zoom/img_01.png"> -->
+                                                <img src="./images/zoom/img_02.png"
+                                                    style="height: 490px; margin-top: 30px;">
+                                                <div class="clickBgYellow clickBgYellow1">
+                                                    <span>
+                                                        교실에서 있었던 <br>
+                                                        일을 찾아보자.
+                                                    </span>
+                                                    <img src="./images/zoom/img_07.png">
+                                                </div>
+                                                <div class="clickBgYellow clickBgYellow2">
+                                                    <span>
+                                                        교실 밖에서<br>
+                                                        친구들과 있었던<br>
+                                                        일을 찾아보자.
+                                                    </span>
+                                                    <img src="./images/zoom/img_08.png">
+                                                </div>
+                                                <div class="clickBgYellow clickBgYellow3">
+                                                    <span>
+                                                        가족들과 있었던<br>
+                                                        일을 찾아보자
+                                                    </span>
+                                                    <img src="./images/zoom/img_09.png">
+                                                </div>
+                                                <div class="clickBgYellow clickBgYellow4">
+                                                    <span>
+                                                        가족여행 때나<br>
+                                                        집에서 있었던<br>
+                                                        일을 찾아보자.
+                                                    </span>
+                                                    <img src="./images/zoom/img_10.png">
+                                                </div>
+                                                <div class="clickBgYellow clickBgYellow5">
+                                                    <span>
+                                                        또 무엇이 있을까?
+                                                    </span>
+                                                    <img src="./images/zoom/img_11.png">
+                                                </div>
+                                                <div class="clickBgYellow clickBgYellow6">
+                                                    <span>
+                                                        쉬는 시간에 있었던<br>
+                                                        일을 찾아보자.
+                                                    </span>
+                                                    <span>
+                                                        또 무엇이 있을까?
+                                                    </span>
+                                                    <img src="./images/zoom/img_13.png">
+                                                </div>
+                                                <div class="clickBgYellow clickBgYellow7">
+                                                    <span style="letter-spacing: -1.1px;">
+                                                        운동회나 현장체험학습 때<br>
+                                                        있었던 일을 찾아보자.
+                                                    </span>
+                                                    <span>
+                                                        또 무엇이 있을까?
+                                                    </span>
+                                                    <img src="./images/zoom/img_12.png">
+                                                </div>
+                                                <img src="./images/zoom/coin.png" class="coin" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="resetBtn only-reset" data-type="reset" data-hover=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+
+    <script type="text/javascript" src="./common/js/zoomImage.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title').addClass('gap');
+                } else {
+                    $('header .title').removeClass('gap');
+                }
+            });
+            $(document).on('click', '.clickBgYellow', function () {
+                KmAudioPlayer.buttonClick();
+                if ($(this).hasClass('ans')) {
+                    $(this).removeClass('ans');
+                }
+                else {
+                    $(this).addClass('ans');
+                }
+            });
+            $(document).on('click', '.resetBtn', function () {
+                KmAudioPlayer.buttonClick();
+                $('.clickBgYellow').removeClass('ans');
+            });
+
+
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.examViewBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    examViewBtn.addClass('reset');
+                } else {
+                    examViewBtn.removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.examViewBtn', function () {
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.examViewBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!examViewBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
+            });
+            $(document).on('click', '.innerSlider_tabs li, .page_2 .popBtn', function () {
+                $('[data-type="toggleButton"][data-active="on"] .toggle').addClass('complete');
+                $('[data-type="toggleButton"][data-active="on"] .toggle .answer').addClass('on');
+
+            });
+
+            $(document).on('click', '.popBtn.imgWrap', function () {
+                $('[data-popup-page="1"]').addClass('on');
+                const parentDocument = parent.document.querySelector('iframe');
+                if (parentDocument != null) {
+                    parentDocument.parentNode.parentNode.style.zIndex = 120;
+                }
+            });
+
+            $(document).on('click', '[data-popup-page="1"] .popup_closeBtn', function () {
+                const parentDocument = parent.document.querySelector('iframe');
+                if (parentDocument != null) {
+                    parentDocument.parentNode.parentNode.style.zIndex = 0;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

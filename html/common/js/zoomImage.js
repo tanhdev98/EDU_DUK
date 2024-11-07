@@ -141,8 +141,8 @@ ZoomImage.prototype.changeSpin = function (obj) {
     this.imageZoomRate =
       (obj.offsetLeft - this.zoomSpinLeft) / this.zoomSpinMaxLeft + 1;
 
-    if (this.imageZoomRate > 2) {
-      this.imageZoomRate = 2;
+    if (this.imageZoomRate > this.maxZoom) {
+      this.imageZoomRate = this.maxZoom;
     } else if (this.imageZoomRate < 1) {
       this.imageZoomRate = 1;
     }
@@ -160,12 +160,12 @@ ZoomImage.prototype.changeSpin = function (obj) {
   this.changeZoomImage();
   this.adjustPosition();
 };
+
 ZoomImage.prototype.resetPosition = function () {
   this.zoomImg.style.top = this.zoomImgPosition.top + 'px';
   this.zoomImg.style.left = this.zoomImgPosition.left + 'px';
 };
 
-// drag
 function Drag(args) {
   this.zoomImg = args.element
   this.option = args;
@@ -177,22 +177,10 @@ function Drag(args) {
 Drag.prototype.startDrag = function (e) {
   var target = e.target;
 
-  /*
   if (
-    !target.classList.contains('zoom_img') &&
-    !target.closest('.highLightBox') &&
-    !target.closest('.zoomSpin')
-  ) {
-    return;
-  }
-  */
-
-  if (
-    (
-      !target.classList.contains('zoom_img') &&
+    (!target.classList.contains('zoom_img') &&
       !target.closest('.bgImg') &&
-      !target.closest('.zoomSpin')
-    ) ||
+      !target.closest('.zoomSpin')) ||
     this.zoomImg.classList.contains('pointerOff')
   ) {
     return;
@@ -201,6 +189,7 @@ Drag.prototype.startDrag = function (e) {
   this.imageZoomRate = parseFloat(
     this.zoomImg.style.transform.replace(/[^0-9|^\.]/gi, '')
   );
+
   var dragObj = this.option.element,
     type = this.option.type ? this.option.type : 'all',
     limit = {
@@ -242,38 +231,37 @@ Drag.prototype.startDrag = function (e) {
         dragObj.getBoundingClientRect().top +
         dragObj.getBoundingClientRect().height,
     },
-    startX = e.clientX,
-    startY = e.clientY,
-    drag = function (e) {
-      // console.log('drag', e);
-      var moveX = (e.clientX - startX) / this.zoomRate,
-        moveY = (e.clientY - startY) / this.zoomRate,
-        top = dragObjPosition.top + moveY,
-        left = dragObjPosition.left + moveX;
+    startX = e.clientX || e.touches[0].clientX,
+    startY = e.clientY || e.touches[0].clientY;
 
-      // this.zoomRate = gameManager.zoomRate;
-      this.zoomRate = 1;
+  var drag = function (e) {
+    var moveX = ((e.clientX || e.touches[0].clientX) - startX) / this.zoomRate,
+      moveY = ((e.clientY || e.touches[0].clientY) - startY) / this.zoomRate,
+      top = dragObjPosition.top + moveY,
+      left = dragObjPosition.left + moveX;
 
-      if (type !== 'horizon') {
-        if (limit.top && top < limit.top) top = limit.top;
-        else if (limit.bottom && top > limit.bottom) top = limit.bottom;
-        dragObj.style.top = top + 'px';
-      }
-      if (type !== 'vertical') {
-        if (limit.left && left < limit.left) left = limit.left;
-        else if (limit.right && left > limit.right) left = limit.right;
-        dragObj.style.left = left + 'px';
-      }
+    this.zoomRate = 1;
 
-      if (callBack) callBack(dragObj);
-    },
-    endDrag = function (e) {
-      // console.log('endDrag', e);
-      window.removeEventListener('mousemove', drag);
-      window.removeEventListener('touchmove', drag);
-      window.removeEventListener('mouseup', endDrag);
-      window.removeEventListener('touchend', endDrag);
-    };
+    if (type !== 'horizon') {
+      if (limit.top && top < limit.top) top = limit.top;
+      else if (limit.bottom && top > limit.bottom) top = limit.bottom;
+      dragObj.style.top = top + 'px';
+    }
+    if (type !== 'vertical') {
+      if (limit.left && left < limit.left) left = limit.left;
+      else if (limit.right && left > limit.right) left = limit.right;
+      dragObj.style.left = left + 'px';
+    }
+
+    if (callBack) callBack(dragObj);
+  }.bind(this);
+
+  var endDrag = function () {
+    window.removeEventListener('mousemove', drag);
+    window.removeEventListener('touchmove', drag);
+    window.removeEventListener('mouseup', endDrag);
+    window.removeEventListener('touchend', endDrag);
+  };
 
   if (e.target.classList.contains('zoomArea')) return;
 
@@ -287,10 +275,10 @@ Drag.prototype.startDrag = function (e) {
   }
 
   var isOverPosition =
-    e.clientX < containerSize.left + block.left ||
-    e.clientX > containerSize.right - block.right ||
-    e.clientY < containerSize.top + block.top ||
-    e.clientY > containerSize.bottom - block.bottom;
+    (e.clientX || e.touches[0].clientX) < containerSize.left + block.left ||
+    (e.clientX || e.touches[0].clientX) > containerSize.right - block.right ||
+    (e.clientY || e.touches[0].clientY) < containerSize.top + block.top ||
+    (e.clientY || e.touches[0].clientY) > containerSize.bottom - block.bottom;
 
   if (!isOverPosition) {
     window.addEventListener('mousemove', drag);
