@@ -439,6 +439,21 @@
             opacity: 0;
         }
 
+        /* css cho sarari */
+        .page_3.safari .clearArea.a1 .js-dragObj {
+            left: -40px;
+        }
+
+        .page_3.safari .clearArea.a2 .js-dragObj {
+            left: -59px;
+        }
+
+        .page_3.safari .clearArea.a3 .js-dragObj {
+            left: -57px;
+        }
+
+
+
         /* Page 4 */
         .page_4 .dragDropContainer {
             margin-top: 35px;
@@ -874,8 +889,13 @@
                     var dataShow = $(this).data('show').toString().split(',').map(Number);
                     return dataShow.includes(index + 1);
                 }).show();
-
             });
+            // kiểm tra xem có phải trình duyện safari không
+            if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+                $('.page_3').addClass('safari');
+            }
+
+
             $(document).on('mouseup', '.page_1 .js-dragObj', function (e) {
                 const _id = parseInt($(this).attr("class").split(" ")[1].replace("d", ""));
                 $('.page_1 .js-dragObj.d' + _id).hide();
