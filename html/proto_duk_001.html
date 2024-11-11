@@ -329,14 +329,16 @@
             transform: translateX(0px);
         }
 
-        .hidden {
+        .hidden,
+        .draged {
             opacity: 0;
             visibility: hidden;
             transform: translateX(500px);
         }
 
 
-        .page_3 .bgDrop {
+        .page_3 .bgDrop,
+        .dragClone {
             height: 525px;
             width: max-content;
             left: -100%;
@@ -447,6 +449,24 @@
             left: -52px;
         }
 
+        .page_3 .dragClone .js-dragObj.d1 {
+            scale: 0.67;
+            top: -271px;
+            left: -55px;
+        }
+
+        .page_3 .dragClone .js-dragObj.d2 {
+            scale: 0.49;
+            top: -518px;
+            left: 55px;
+        }
+
+        .page_3 .dragClone .js-dragObj.d3 {
+            scale: 0.49;
+            top: -473px;
+            left: -187px;
+        }
+
         .page_3 .js-dragObj {
             cursor: pointer;
             position: absolute;
@@ -463,16 +483,6 @@
         .page_3 .dragGroup .js-dragObj.dragObjComplete {
             opacity: 0;
             cursor: auto;
-        }
-
-        .page_3 .dragClone {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .page_3 .dragClone.active {
-            opacity: 1;
-            visibility: visible;
         }
 
         .imgAns {
@@ -806,7 +816,7 @@
                             <button class="dapCheckBtn" type="button" data-answer-btn=""></button>
                         </div>
                     </li>
-                    <li class="page_3" data-quiz="dragDrop" data-option="answer" data-quiz-name="dragdrop"
+                    <li class="page_3" data-quiz="dragDrop" data-option="answer" data-quiz-name="dragDrop"
                         data-total-complete-count="3">
                         <div class="dragDropContainer bogi">
                             <div class="lineBox">
@@ -817,10 +827,14 @@
                                     <div class="js-dragObj d3" data-drag-obj-answer="3"></div>
                                     <div class="bgDrop">
                                         <img src="./images/proto_duk_001.html/page_3_img04.png" />
-                                        <div class="js-dropArea a1 clearArea" data-drop-area-answer="1"></div>
-                                        <div class="js-dropArea a2 clearArea" data-drop-area-answer="2"></div>
-                                        <div class="js-dropArea a3 clearArea" data-drop-area-answer="3"></div>
+                                        <div class="js-dropArea a1 clearArea" data-drop-area-answer="1">
+                                        </div>
+                                        <div class="js-dropArea a2 clearArea" data-drop-area-answer="2">
+                                        </div>
+                                        <div class="js-dropArea a3 clearArea" data-drop-area-answer="3">
+                                        </div>
                                     </div>
+                                    <div class="dragClone"></div>
                                 </div>
                                 <div class="slideBtn prev off"></div>
                                 <div class="slideBtn next"></div>
@@ -1017,27 +1031,46 @@
                 $('.page_3 .dragGroup:nth-child(2)').css('opacity', '0');
                 $('.page_3 .dragGroup:nth-child(3)').css('opacity', '0');
             });
-
-            $(document).on('mouseup', '.page_3 .drag-zone>.js-dragObj', function (e) {
+            var xitem, draged;
+            $(document).on('mouseup', '.drag-zone>.js-dragObj', function (e) {
                 const _id = parseInt($(this).attr("class").split(" ")[1].replace("d", ""));
+                var _item = $('.js-dropArea.a' + _id).find('.js-dragObj').clone();
+                $('.dragClone').append(_item);
+                $('.page_3 .drag-zone>.dragObjComplete').addClass('draged');
                 if ($('.page_3 .drag-zone>.dragObjComplete').length == 3) {
                     $('.dapCheckBtn').addClass('reset');
                 }
                 else {
                     $('.page_3 .dapCheckBtn').removeClass('reset');
                 }
+
+                xitem = $('.page_3 .drag-zone>.dragObjComplete').length;
+                draged = $('.page_3 .drag-zone>.draged').length;
+                if (draged == 3) {
+                    $('.dapCheckBtn').addClass('reset');
+                }
             });
 
             $(document).on('click', '.page_3 .dapCheckBtn', function () {
+
                 if ($(this).hasClass('reset')) {
                     $('.page_3 .clearArea').addClass('complete');
                     $('.page_3 .drag-zone > .js-dragObj').addClass('hidden').addClass('dragObjComplete');
                     $('.page_3 .js-dropArea > .js-dragObj').removeClass('hidden').removeClass('dragObjComplete');
                 }
                 else {
-                    $('.page_3 .clearArea').removeClass('complete');
-                    $('.page_3 .drag-zone > .js-dragObj').removeClass('hidden').removeClass('dragObjComplete');
-                    $('.page_3 .drag-zone  .js-dropArea').empty();
+                    if (xitem == 3) {
+                        $('.dragClone').empty();
+                        $('.page_3 .drag-zone > .js-dragObj').removeClass('hidden').removeClass('dragObjComplete');
+                        $('.page_3 .drag-zone  .js-dropArea').empty();
+                        $('.page_3 .clearArea').removeClass('complete');
+
+                    }
+
+                    if (draged == 3) {
+                        $('.page_3 .drag-zone > .js-dragObj').removeClass('draged');
+                        $('.dragClone').empty();
+                    }
                     currentIndex = 0;
                     updateSlider();
                 }
