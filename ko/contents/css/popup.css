@@ -718,6 +718,35 @@ header .title .popBtn.textInBtn.inline {
     margin: 0 auto;
 }
 
+.popup_pages>li.fullLine.pointContainer>.full_content {
+    position: absolute;
+    top: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1330px;
+    height: calc(100% - 65px);
+    background: #ffffff;
+    border-radius: 40px 40px 0 0;
+    margin: 0 auto;
+}
+
+.popup_pages>li.fullLine.pointContainer::after {
+    position: absolute;
+    top: 0px;
+    left: 38px;
+    content: "핵심 정리";
+    width: 200px;
+    height: 52px;
+    padding-left: 68px;
+    font-family: YGJAL;
+    font-size: 20px;
+    color: #fff;
+    line-height: 47px;
+    background: url('../../contents/images/icon_title_summary.png') 0px 0px no-repeat;
+    background-size: auto 51px;
+}
+
 
 .popup_pages>li.whole {
     position: absolute;

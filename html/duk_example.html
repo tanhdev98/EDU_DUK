@@ -128,6 +128,10 @@
                             </ul>
                         </div>
                     </li>
+                    <li class="page_2">
+                        <div class="thinkingPlayground">생각 놀이터</div>
+                        <div class="endUnit">단원 마무리</div>
+                    </li>
                 </ul>
             </div>
         </main>
@@ -155,8 +159,10 @@
 
                     </div>
                 </li>
-                <li class="whole image" data-popup-page="4">
-                    <img src="./images/proto_duk_001.html/img_01.png" />
+                <li class="fullLine whole image pointContainer" data-popup-page="4">
+                    <div class="full_content">
+                        <img src="./images/proto_duk_001.html/img_01.png" />
+                    </div>
                 </li>
             </ul>
         </section>
@@ -217,6 +223,10 @@
             // for demo only
             $(document).on('click', '.buttonContainer > button:not(.examViewBtn)', function () {
                 $(this).toggleClass('reset');
+            });
+
+            $(document).on('click', '.writeBtn, .dapCheckBtn, .resetBtn ', function () {
+                KmAudioPlayer.buttonClick();
             });
         });
     </script>
