@@ -72,9 +72,11 @@
 <body>
     <div id="wrap" class="math">
         <header>
-            <div class="title-icon yellow">생각 <em>똑똑</em></div>
-            <div class="title-icon blue">실천 <em>쑥쑥</em></div>
-            <div class="title-icon pink">마음 <em>탄탄</em></div>
+            <div class="title-icon yellow" data-show="1">생각 <em>똑똑</em></div>
+            <div class="title-icon blue" data-show="1">실천 <em>쑥쑥</em></div>
+            <div class="title-icon pink" data-show="1">마음 <em>탄탄</em></div>
+            <div class="title-icon green" data-show="2" style="display: none;">단원 마무리</em></div>
+            <div class="title-icon orange" data-show="3" style="display: none;">생각 놀이터</em></div>
             <div class="title-text">드래그앤드롭_위치 고정&수량 한정</div>
         </header>
         <main>
@@ -85,6 +87,7 @@
                 <ul class="basicSlider_tabs" data-tabs="">
                     <li data-hover="" data-text="">활동 1</li>
                     <li data-hover="" data-text="">활동 2</li>
+                    <li data-hover="" data-text="">활동 3</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1">
@@ -92,6 +95,7 @@
                             <div class="moveButtonContainer" data-slide-btn-container="">
                                 <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
                                 <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
                                     <li data-hover=""></li>
                                     <li data-hover=""></li>
                                 </ul>
@@ -129,8 +133,27 @@
                         </div>
                     </li>
                     <li class="page_2">
-                        <div class="thinkingPlayground">생각 놀이터</div>
-                        <div class="endUnit">단원 마무리</div>
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+
+                                </li>
+                                <li class="innerTab_1" data-quiz="toggle">
+
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="page_3">
+
                     </li>
                 </ul>
             </div>
@@ -195,6 +218,13 @@
                 } else {
                     $('header').removeClass('gap');
                 }
+
+                var index = $(this).index();
+                $('.title-icon').removeClass('hide').hide();
+                $('.title-icon').filter(function () {
+                    var dataShow = $(this).data('show').toString().split(',').map(Number);
+                    return dataShow.includes(index + 1);
+                }).show();
             });
 
             // $(document).on('click', '.toggle', function () {
@@ -225,7 +255,7 @@
                 $(this).toggleClass('reset');
             });
 
-            $(document).on('click', '.writeBtn, .dapCheckBtn, .resetBtn ', function () {
+            $(document).on('click', '.writeBtn, .dapCheckBtn, .resetBtn, .linkBtn ', function () {
                 KmAudioPlayer.buttonClick();
             });
         });

@@ -364,6 +364,19 @@ h2.dot span:before {
     background: #FF7575 url('../images/icon_title_white_heart.png') 10px center / 23px no-repeat;
 }
 
+#wrap header .title-icon.green {
+    padding: 0 16px;
+    background: #00d045;
+    ;
+}
+
+#wrap header .title-icon.orange {
+    padding: 0 16px;
+    background: #ff6600;
+    color: #fff;
+}
+
+
 #wrap header .title-icon.yellow>em {
     color: #006EE6;
 }
