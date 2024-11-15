@@ -91,6 +91,7 @@
             height: 260px;
             border-radius: 30px;
             margin-top: 180px;
+            position: relative;
         }
 
         .page_1 .groupClearArea .js-dropArea.a1 {
@@ -109,43 +110,34 @@
         }
 
         .page_1 .js-dropArea.count-1 .d1 {
-            top: 290px !important;
-            left: 200px !important;
+            top: 105px;
+            left: 200px;
         }
 
         .page_1 .js-dropArea.count-1 .d2 {
-            top: 290px !important;
-            left: 700px !important;
+            top: 105px;
+            left: 210px;
         }
 
         .page_1 .js-dropArea.count-1 .d3 {
-            top: 286px !important;
-            left: 140px !important;
+            top: 105px;
+            right: 110px;
+            left: auto;
         }
 
         .page_1 .js-dropArea.count-1 .d4 {
-            top: 265px !important;
-            left: 700px !important;
+            top: 80px;
+            left: 190px;
         }
 
-        .page_1 .js-dropArea.count-2 .d1 {
-            top: 290px !important;
-            left: 50px !important;
+        .page_1 .js-dropArea.count-2 .js-dragObj:first-child {
+            left: 50px;
+            right: auto;
         }
 
-        .page_1 .js-dropArea.count-2 .d2 {
-            top: 290px !important;
-            left: 570px !important;
-        }
-
-        .page_1 .js-dropArea.count-2 .d3 {
-            top: 286px !important;
-            left: 210px !important;
-        }
-
-        .page_1 .js-dropArea.count-2 .d4 {
-            top: 265px !important;
-            left: 795px !important;
+        .page_1 .js-dropArea.count-2 .js-dragObj:last-child {
+            right: 50px;
+            left: auto;
         }
 
         /*Page 2*/
@@ -785,16 +777,16 @@
                             <div class="lineBox">
                                 <div class="bogi-icon"></div>
                                 <div class="drag-zone">
-                                    <div class="js-dragObj d1" data-drag-obj-answer="1" data-ps="free">
+                                    <div class="js-dragObj d1" data-drag-obj-answer="1">
                                         <span>내용 1</span>
                                     </div>
-                                    <div class="js-dragObj d2" data-drag-obj-answer="2" data-ps="free">
+                                    <div class="js-dragObj d2" data-drag-obj-answer="2">
                                         <span>내용 2</span>
                                     </div>
-                                    <div class="js-dragObj d3" data-drag-obj-answer="1" data-ps="free">
+                                    <div class="js-dragObj d3" data-drag-obj-answer="1">
                                         <span class="purple">텍스트 박스</span>
                                     </div>
-                                    <div class="js-dragObj d4" data-drag-obj-answer="2" data-ps="free">
+                                    <div class="js-dragObj d4" data-drag-obj-answer="2">
                                         <img src="./images/proto_duk_001.html/img_01.png">
                                     </div>
                                     <div class="groupClearArea">
@@ -811,21 +803,21 @@
                             <div class="lineBox">
                                 <div class="bogi-icon"></div>
                                 <div class="drag-zone">
-                                    <div class="js-dragObj d5" data-drag-obj-answer="1" data-ps="free">
+                                    <div class="js-dragObj d5" data-drag-obj-answer="10" data-ps="free">
                                         <span>내용 1</span>
                                     </div>
-                                    <div class="js-dragObj d6" data-drag-obj-answer="2" data-ps="free">
+                                    <div class="js-dragObj d6" data-drag-obj-answer="20" data-ps="free">
                                         <span>내용 2</span>
                                     </div>
-                                    <div class="js-dragObj d7" data-drag-obj-answer="1" data-ps="free">
+                                    <div class="js-dragObj d7" data-drag-obj-answer="10" data-ps="free">
                                         <span class="purple">텍스트 박스</span>
                                     </div>
-                                    <div class="js-dragObj d8" data-drag-obj-answer="2" data-ps="free">
+                                    <div class="js-dragObj d8" data-drag-obj-answer="20" data-ps="free">
                                         <img src="./images/proto_duk_001.html/img_01.png">
                                     </div>
                                     <div class="groupClearArea">
-                                        <div class="js-dropArea a3 clearArea" data-drop-area-answer="1"></div>
-                                        <div class="js-dropArea a4 clearArea" data-drop-area-answer="2"></div>
+                                        <div class="js-dropArea a3 clearArea" data-drop-area-answer="10"></div>
+                                        <div class="js-dropArea a4 clearArea" data-drop-area-answer="20"></div>
                                         <div class="dragClone">
                                         </div>
                                     </div>
@@ -964,7 +956,6 @@
                     return dataShow.includes(index + 1);
                 }).show();
             });
-            // kiểm tra xem có phải trình duyện safari không
             if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
                 $('.page_3').addClass('safari');
             }
@@ -984,6 +975,23 @@
                 });
             });
 
+            function updatedrag() {
+                if ($('.page_2 .dragClone .d5').hasClass('count-1') && $('.page_2 .dragClone .d7').hasClass('count-1')) {
+                    $('.page_2 .js-dropArea.count-1').removeClass('count-1').addClass('count-2');
+                    $('.page_2 .dragClone .d5').removeClass('count-1').addClass('count-2');
+                    $('.page_2 .dragClone .d7').removeClass('count-1').addClass('count-2');
+                }
+
+                if ($('.page_2 .dragClone .d6').hasClass('count-1') && $('.page_2 .dragClone .d8').hasClass('count-1')) {
+                    $('.page_2 .js-dropArea.count-1').removeClass('count-1').addClass('count-2');
+                    $('.page_2 .dragClone .d6').removeClass('count-1').addClass('count-2');
+                    $('.page_2 .dragClone .d8').removeClass('count-1').addClass('count-2');
+                }
+
+                if ($('.page_2 .dragClone .js-dragObj').length == 4) {
+                    $('.page_2 .dapCheckBtn').addClass('reset');
+                }
+            }
             $(document).on('mouseup touchend', '.page_2 .js-dragObj', function (e) {
                 const _id = parseInt($(this).attr("class").split(" ")[1].replace("d", ""));
 
@@ -994,104 +1002,92 @@
                 var $clitem = $('.page_2 .js-dropArea .d' + _id).clone();
                 $('.page_2 .dragClone').append($clitem);
 
-                setTimeout(function () {
-                    if ($('.dragClone .d5').not('.count-1').length === 0 && $('.dragClone .d7').not('.count-1').length === 0) {
-                        $('.dragClone .d5.count-1').removeClass('count-1').addClass('count-2');
-                        $('.dragClone .d7.count-1').removeClass('count-1').addClass('count-2');
-                    }
-                    if ($('.dragClone .d6').not('.count-1').length === 0 && $('.dragClone .d8').not('.count-1').length === 0) {
-                        $('.dragClone .d6.count-1').removeClass('count-1').addClass('count-2');
-                        $('.dragClone .d8.count-1').removeClass('count-1').addClass('count-2');
-                    }
-                    if ($('.groupClearArea .js-dropArea.a3').hasClass('count-2')) {
-                        $('.dragClone .d5, .dragClone .d7').addClass('count-2').removeClass('count-1');
-                    } else {
-                        $('.dragClone .d5, .dragClone .d7').addClass('count-1').removeClass('count-2');
-                    }
-
-                    if ($('.groupClearArea .js-dropArea.a4').hasClass('count-2')) {
-                        $('.dragClone .d6, .dragClone .d8').addClass('count-2').removeClass('count-1');
-                    } else {
-                        $('.dragClone .d6, .dragClone .d8').addClass('count-1').removeClass('count-2');
-                    }
-                });
-
-
                 if ($('.page_2 .drag-zone>.js-dragObj.dragObjComplete').length == 4) {
                     $('.page_2 .dapCheckBtn').addClass('reset');
                 }
 
                 setTimeout(function () {
-
                     if ($('.dragClone .d5').hasClass('count-2') && !$('.dragClone').is(':empty')) {
-                        $('.page_2 .a3').removeClass('count-1').addClass('count-2')
+                        $('.page_2 .a3').removeClass('count-1').addClass('count-2');
                     }
 
                     if ($('.dragClone .d6').hasClass('count-2') && !$('.dragClone').is(':empty')) {
-                        $('.page_2 .a4').removeClass('count-1').addClass('count-2')
+                        $('.page_2 .a4').removeClass('count-1').addClass('count-2');
                     }
+
                     if ($('.a3').hasClass('count') && $('.a3').hasClass('count-2')) {
-                        $('.a3').removeClass('count count-2');
-                        $('.a3').addClass('count-1');
-                    }
-                    else {
+                        $('.a3').removeClass('count count-2').addClass('count-1');
+                    } else {
                         $('.a3').removeClass('count');
                     }
 
                     if ($('.a4').hasClass('count') && $('.a4').hasClass('count-2')) {
-                        $('.a4').removeClass('count count-2');
-                        $('.a4').addClass('count-1');
-                    }
-                    else {
+                        $('.a4').removeClass('count count-2').addClass('count-1');
+                    } else {
                         $('.a4').removeClass('count');
                     }
 
-                })
+                    if ($('.page_2 .groupClearArea .js-dropArea.a3').hasClass('count-2')) {
+                        $('.page_2 .dragClone .d5, .page_2 .dragClone .d7').addClass('count-2').removeClass('count-1');
+                    } else {
+                        $('.page_2 .dragClone .d5, .page_2 .dragClone .d7').addClass('count-1').removeClass('count-2');
+                    }
+
+                    if ($('.page_2 .groupClearArea .js-dropArea.a4').hasClass('count-2')) {
+                        $('.page_2 .dragClone .d6, .page_2 .dragClone .d8').addClass('count-2').removeClass('count-1');
+                    } else {
+                        $('.page_2 .dragClone .d6, .page_2 .dragClone .d8').addClass('count-1').removeClass('count-2');
+                    }
+
+                    updatedrag();
+                }, 10);
             });
+
             $(document).on('click', '.page_2 .dapCheckBtn', function () {
                 if (!$(this).hasClass('reset')) {
-                    $('.js-dropArea').empty();
-                    $('.dragClone').removeClass('active');
-                    if ($('.dragClone').find('.d5').length) {
-                        $('.drag-zone>.d5').addClass('complete');
+                    $('.page_2 .js-dropArea').empty();
+                    $('.page_2 .dragClone').removeClass('active');
+                    if ($('.page_2 .dragClone').find('.d5').length == 1) {
+                        $('.page_2 .drag-zone>.d5').addClass('complete');
+                        $('.page_2 .drag-zone>.d8').clone().append('.a3');
                     } else {
-                        $('.drag-zone>.d5').removeClass('complete');
+                        $('.page_2 .drag-zone>.d5').removeClass('complete');
                     }
 
-                    if ($('.dragClone').find('.d6').length) {
-                        $('.drag-zone>.d6').addClass('complete');
+                    if ($('.page_2 .dragClone').find('.d6').length == 1) {
+                        $('.page_2 .drag-zone>.d6').addClass('complete');
+                        $('.page_2 .drag-zone>.d8').clone().append('.a4');
                     } else {
-                        $('.drag-zone>.d6').removeClass('complete');
+                        $('.page_2 .drag-zone>.d6').removeClass('complete');
                     }
 
-                    if ($('.dragClone').find('.d7').length) {
-                        $('.drag-zone>.d7').addClass('complete');
+                    if ($('.page_2 .dragClone').find('.d7').length == 1) {
+                        $('.page_2 .drag-zone>.d7').addClass('complete');
                     } else {
-                        $('.drag-zone>.d7').removeClass('complete');
+                        $('.page_2 .drag-zone>.d7').removeClass('complete');
+                        $('.page_2 .drag-zone>.d8').clone().append('.a3');
                     }
 
-                    if ($('.dragClone').find('.d8').length) {
-                        $('.drag-zone>.d8').addClass('complete');
+                    if ($('.page_2 .dragClone').find('.d8').length == 1) {
+                        $('.page_2 .drag-zone>.d8').addClass('complete');
+                        $('.page_2 .drag-zone>.d8').clone().append('.a4');
                     } else {
-                        $('.drag-zone>.d8').removeClass('complete');
+                        $('.page_2 .drag-zone>.d8').removeClass('complete');
                     }
                 }
                 else {
-                    $('.dragClone').addClass('active');
+                    $('.page_2 .dragClone').addClass('active');
                 }
 
                 setTimeout(function () {
-                    lengtha = 0;
-                    lengthb = 0;
-
                     if ($('.page_2 .dragClone .js-dragObj').length == 4) {
                         $('.page_2 .dragClone').empty();
                         $('.page_2 .drag-zone .js-dragObj').removeClass('complete');
                         $('.js-dropArea').removeClass('count-1').removeClass('count-2').addClass('count');
                     }
-                    if ($('.dragClone').is(':empty')) {
-                        $('.drag-zone .js-dragObj').removeClass('complete');
-                        $('.js-dropArea').removeClass('count-1').removeClass('count-2').addClass('count');
+                    if ($('.page_2 .dragClone').is(':empty')) {
+                        $('.page_2 .drag-zone .js-dragObj').removeClass('complete');
+                        $('.page_2 .js-dropArea').removeClass('count-1').removeClass('count-2').addClass('count');
                     }
                 });
             });
