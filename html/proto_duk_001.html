@@ -299,6 +299,46 @@
             opacity: 0;
         }
 
+        .page_2 .js-dropArea.count-2 .d5.first {
+            top: 290px !important;
+            left: 50px !important;
+        }
+
+        .page_2 .js-dropArea.count-2 .d6.first {
+            top: 290px !important;
+            left: 570px !important;
+        }
+
+        .page_2 .js-dropArea.count-2 .d7.first {
+            top: 286px !important;
+            left: 40px !important;
+        }
+
+        .page_2 .js-dropArea.count-2 .d8.first {
+            top: 265px !important;
+            left: 565px !important;
+        }
+
+        .page_2 .js-dropArea.count-2 .d5.last {
+            top: 290px !important;
+            left: 330px !important;
+        }
+
+        .page_2 .js-dropArea.count-2 .d6.last {
+            top: 290px !important;
+            left: 830px !important;
+        }
+
+        .page_2 .js-dropArea.count-2 .d7.last {
+            top: 286px !important;
+            left: 210px !important;
+        }
+
+        .page_2 .js-dropArea.count-2 .d8.last {
+            top: 265px !important;
+            left: 795px !important;
+        }
+
         /* page 3 */
         /* drag/drop */
         .page_3 .slideBtn {
@@ -828,6 +868,8 @@
                             <button class="dapCheckBtn" type="button" data-answer-btn=""></button>
                         </div>
                     </li>
+
+
                     <li class="page_3" data-quiz="dragDrop" data-option="answer" data-quiz-name="dragDrop"
                         data-total-complete-count="3">
                         <div class="dragDropContainer bogi">
@@ -1038,10 +1080,42 @@
                     } else {
                         $('.page_2 .dragClone .d6, .page_2 .dragClone .d8').addClass('count-1').removeClass('count-2');
                     }
-
                     updatedrag();
+
                 }, 10);
+                stylePairs();
             });
+            function stylePairs() {
+                const $dragItems = $(".page_2 .dragClone .js-dragObj");
+
+                const d5Index = $dragItems.index($dragItems.filter(".d5"));
+                const d7Index = $dragItems.index($dragItems.filter(".d7"));
+
+                const d6Index = $dragItems.index($dragItems.filter(".d6"));
+                const d8Index = $dragItems.index($dragItems.filter(".d8"));
+
+                $(".d5, .d7, .d6, .d8").removeClass("first last");
+
+                if (d5Index !== -1 && d7Index !== -1) {
+                    if (d5Index < d7Index) {
+                        $(".d5").addClass("first");
+                        $(".d7").addClass("last");
+                    } else {
+                        $(".d7").addClass("first");
+                        $(".d5").addClass("last");
+                    }
+                }
+
+                if (d6Index !== -1 && d8Index !== -1) {
+                    if (d6Index < d8Index) {
+                        $(".d6").addClass("first");
+                        $(".d8").addClass("last");
+                    } else {
+                        $(".d8").addClass("first");
+                        $(".d6").addClass("last");
+                    }
+                }
+            }
 
             $(document).on('click', '.page_2 .dapCheckBtn', function () {
                 if (!$(this).hasClass('reset')) {
