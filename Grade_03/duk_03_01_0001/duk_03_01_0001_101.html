@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        /* Page 1 */
+        .page_1 .flex {
+            display: flex;
+            margin-top: 8px;
+            align-items: center;
+        }
+
+        .page_1 .flex .items:first-child {
+            width: 1080px;
+        }
+
+        .page_1 .noteText {
+            height: 520px;
+        }
+
+        .page_1 .flex .items:last-child {
+            width: 29%;
+        }
+
+        .page_1 .flex .items:last-child img {
+            width: 100%;
+        }
+
+        .page_1 .additional-question {
+            position: absolute;
+            right: 0;
+        }
+
+        .innerSlider_tabs>li {
+            background-color: #F3DEC0;
+        }
+
+        .innerSlider_tabs>li.on {
+            background-color: #F3B05B;
+        }
+
+        .innerButtonContainer {
+            position: absolute;
+            right: 40px;
+            top: 76px;
+        }
+
+        .innerButtonContainer::before {
+            display: none;
+        }
+
+        .popup_pages>li.image .basicSlider {
+            padding: 0;
+        }
+
+        .popup_pages .contentsBox .basicSlider_slides>li {
+            padding: 0;
+        }
+
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: fit-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+        }
+
+        [data-type="toggleButton"] {
+            height: fit-content;
+            margin-top: 70px;
+        }
+
+        [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            justify-content: center;
+        }
+
+        .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+
+        /* Page 2 */
+        .page_2 .noteText {
+            margin-top: 60px;
+        }
+
+        .page_2 .noteText p {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon yellow" data-show="1">생각 <em>똑똑</em></div>
+            <div class="title-text">‘나는 누구일까요?’ 이야기를 읽어 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="‘나는 누구일까요?’ 이야기를 읽어 봅시다.">활동</li>
+                    <li data-hover="" data-text="새로 만난 친구들에게 ‘나’를 어떻게 설명할 수 있을까요?">물음</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
+                                    <div class="flex">
+                                        <div class="items">
+                                            <div class="noteText noteLine green">
+                                                <div class="noteText-content">
+                                                    3학년이 된 첫 날, 연재는 새 교실로 들어와 빈 자리에 앉았습니다. 같은 반이 된 아이들을 둘러보니 1, 2 학년 때
+                                                    같은 반이었던 친구도 있었지만 대부분 모르는 아이들이라 서먹서먹했습니다. 1교시가 되자 선생님께서는 반가운 얼굴로 인사를
+                                                    하셨습니다. “여러분, 오늘은 3학년이 되어 함께하는 첫날이에요. 우리 반에는 어떤 친구들이 모여 있는지 무척 궁금하네요.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="items">
+                                            <img src="./images/duk_03_01_0001_101/img_01.png" />
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="flex">
+                                        <div class="items">
+                                            <div class="noteText noteLine green">
+                                                <div class="noteText-content">
+                                                    새로 만난 친구들에게 n 자신을 설명하는 시간을
+                                                    가지면 좋겠어요.” 친구들에게 나를 설명한다고 하니 연재는 몹시 떨렸습니다. 연재는 지금의 나를 머릿속에 떠올려
+                                                    보았습니다.<br>
+                                                    ‘나는 누구일까?’<br>
+                                                    ‘나는 어떤 사람일까?’<br>
+                                                    ‘나를 가장 잘 설명하는 말은…….’
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="items">
+                                            <img src="./images/duk_03_01_0001_101/img_01.png" />
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="page_2">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="noteText noteLine pink">
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p>이름을 먼저 말하고, 내가 좋아하는 것을 설명합니다. </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="noteText noteLine purple">
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p class="dot">잘 알고 있습니다.</p>
+                                                <p class="dot">설명하려고 하니까 기억이 잘 나지 않습니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image" data-popup-page="1" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="innerButtonContainer">
+                                <ul class="innerSlider_tabs">
+                                    <li data-hover="" class="on">1</li>
+                                    <li data-hover="" class="">2</li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            내가 누구인지 어떻게 알 수 있나요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="5" data-hover="">
+                                                    <div class="answer" data-toggle-target="5">
+                                                        <div class="ls-2h">
+                                                            내가 나에 대해 생각해 보거나 가족이나 친구에게 물어봅니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2 on">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            새로 만난 친구들에게 나를 설명하려면<br>
+                                            무엇을 말해야 할까요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="6" data-hover="">
+                                                    <div class="answer" data-toggle-target="6">
+                                                        <div class="ls-2h">
+                                                            이름, 가족, 생일, 혈액형, 좋아하는 것을 말해야 합니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title-text').addClass('gap');
+                } else {
+                    $('header .title-text').removeClass('gap');
+                }
+            });
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+        });
+
+    </script>
+</body>
+
+</html>
