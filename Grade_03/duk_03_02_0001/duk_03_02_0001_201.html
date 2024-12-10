@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        .voca {
+            top: -156px;
+            left: 1000px;
+        }
+
+        [data-popup-page="1"] {
+            top: 124px;
+            left: 560px;
+            width: 570px;
+        }
+
+        .character-flex {
+            gap: 110px;
+            bottom: 150px;
+        }
+
+        .characterWrap.speech.right:before {
+            display: none !important;
+        }
+
+        .page_1 .balloon {
+            display: block !important;
+            pointer-events: none !important;
+            cursor: pointer;
+        }
+
+        #boy_1_c .charSpriteAni {
+            background-image: url('../ko/contents/images/character/boy_1.png') !important;
+        }
+
+        #boy_4_c .charSpriteAni {
+            background-image: url('../ko/contents/images/character/boy_4.png') !important;
+        }
+
+        #girl_1_c .charSpriteAni {
+            background-image: url('../ko/contents/images/character/girl_1.png') !important;
+        }
+
+        #girl_3_c .charSpriteAni {
+            background-image: url('../ko/contents/images/character/girl_3.png') !important;
+        }
+
+        #boy_3_c .charSpriteAni {
+            background-image: url('../ko/contents/images/character/boy_3.png') !important;
+        }
+
+        #girl_4_c .charSpriteAni {
+            background-image: url('../ko/contents/images/character/girl_4.png') !important;
+        }
+
+        .close-speech-button {
+            display: none !important;
+        }
+
+        .text-bottom {
+            position: absolute;
+            background-color: #1BA59E;
+            padding: 5px 15px;
+            border-radius: 10px;
+            color: #fff;
+            width: 200px;
+            text-align: center;
+            bottom: -70px;
+        }
+
+        .text-bottom.text-1 {
+            left: 415px;
+        }
+
+        .text-bottom.text-2 {
+            right: 415px;
+        }
+
+        .eclipse {
+            width: 600px;
+            height: 450px;
+            border-radius: 50%;
+            background-color: #FFFF00;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -55%);
+        }
+
+        .character-flex .character-item:first-child .balloon::after {
+            left: 103%;
+            transform: translate(-78%, -35%) rotate(-42deg);
+        }
+
+        .character-flex .character-item:nth-child(2) .balloon::after {
+            left: 0;
+            transform: translate(-78%, -35%) rotate(41deg);
+        }
+
+        .innerTab_3 .character-flex .character-item:first-child .balloon::after {
+            left: 103%;
+            transform: translate(-77%, -43%) rotate(-45deg);
+        }
+
+        .page_1 .toggle {
+            width: fit-content;
+            position: absolute;
+            left: 50%;
+            top: 50px;
+            transform: translateX(-50%);
+        }
+
+        .page_1 .textInBox {
+            width: fit-content;
+            position: absolute;
+            left: 50%;
+            top: 130px;
+            transform: translateX(-50%);
+        }
+
+        /* Page 2 */
+        .page_2 .noteText {
+            box-shadow: none;
+            padding: 0;
+            width: 820px;
+            height: 260px;
+            background-color: #F7F7F7;
+            left: 52%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px 15px;
+        }
+
+        .page_2 .noteText .textareaWrap {
+            height: 100%;
+        }
+
+        .page_2 .noteText .text-exam.flex-wrap {
+            padding: 0;
+            padding: 10px 15px;
+        }
+
+        .page_2 .wrapImg img {
+            width: 100%;
+            height: 460px;
+        }
+
+        .page_2 .group-box {
+            position: absolute;
+            top: 43%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            border-radius: 30px;
+            height: 360px;
+            width: 90%;
+        }
+
+        .page_2 .group-box .text-1 {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+
+        .page_2 .group-box .text-2 {
+            position: absolute;
+            right: 15px;
+            bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="twoLine">
+            <div class="title-icon yellow" data-show="1">생각 <em>똑똑</em></div>
+            <div class="title-text">다음 친구들의 모습에서 어떤 마음가짐이 보이는지 이야기해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="다음 친구들의 모습에서 어떤 마음가짐이 보이는지 이야기해 봅시다.">활동 1</li>
+                    <li data-hover="" data-text="성실한 사람의 마음가짐을 떠올리며 내가 생각하는 성실의 뜻을 써 봅시다." class="twoLine">활동 2</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="eclipse"></div>
+                                    <div class="toggle" data-toggle-obj="1">
+                                        <div class="answer" data-toggle-target="1">
+                                            <div class="ls-1h">참된 마음</div>
+                                        </div>
+                                    </div>
+                                    <div class="character-flex">
+                                        <div id="boy_1_c" class="character-item"></div>
+                                        <div id="boy_4_c" class="character-item"></div>
+                                        <div class="text-bottom text-1">현석</div>
+                                        <div class="text-bottom text-2">태우</div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="dapCheckBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="eclipse"></div>
+                                    <div class="toggle" data-toggle-obj="2">
+                                        <div class="answer" data-toggle-target="2">
+                                            <div class="ls-1h">노력하는 마음</div>
+                                        </div>
+                                    </div>
+                                    <div class="textInBox">
+                                        (열심히 하는 자세)
+                                    </div>
+                                    <div class="character-flex">
+                                        <div id="girl_1_c" class="character-item"></div>
+                                        <div id="girl_3_c" class="character-item"></div>
+                                        <div class="text-bottom text-1">은수</div>
+                                        <div class="text-bottom text-2">지혜</div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="dapCheckBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3" data-quiz="toggle">
+                                    <div class="eclipse"></div>
+                                    <div class="toggle" data-toggle-obj="3">
+                                        <div class="answer" data-toggle-target="3">
+                                            <div class="ls-1h">참고 이겨 내는 마음</div>
+                                        </div>
+                                    </div>
+                                    <div class="textInBox">
+                                        (유혹에 넘어가지 않는 자세)
+                                    </div>
+                                    <div class="character-flex">
+                                        <div id="boy_3_c" class="character-item"></div>
+                                        <div id="girl_4_c" class="character-item"></div>
+                                        <div class="text-bottom text-1">강우</div>
+                                        <div class="text-bottom text-2">소희</div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="dapCheckBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="wrapImg">
+                            <img src="./images/duk_03_02_0001_201/img_01.png" />
+                        </div>
+                        <div class="group-box">
+                            <div class="text-item text-1">
+                                성실이란
+                            </div>
+                            <div class="text-item text-2">
+                                입니다.
+                            </div>
+                            <div class="noteText noLine">
+                                <div class="textareaWrap">
+                                    <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                        data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                        autocomplete="off" spellcheck="false"></textarea>
+                                </div>
+                                <div class="text-exam flex-wrap">
+                                    <div class="blueT">
+                                        <p class="dot">
+                                            끝까지 포기하지 않고 정성을 다해 열심히
+                                            하는 것
+                                        </p>
+                                        <p class="dot">
+                                            정직하게 어려움을 참고 이겨 내며 끝까지
+                                            정성스럽게 하는 것
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title-text').addClass('gap');
+                } else {
+                    $('header .title-text').removeClass('gap');
+                }
+
+            });
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(window).on('load', function () {
+                $('.page_1 .character-item .balloon').removeClass('fff');
+            });
+
+            $(document).on('click', '.page_1 .characterWrap, .page_1 .balloon > span', function () {
+                KmAudioPlayer.buttonClick();
+            });
+            $prite.boy1({
+                id: '#boy_1_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '숙제는 편하게 <br>베껴서 낼래.',
+                class: 'bottom',
+                balloon_bottom: 160,
+                balloon_left: -310,
+            });
+            $prite.boy4({
+                id: '#boy_4_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '숙제는 베끼지 않고 <br>내 힘으로 할래.',
+                class: 'bottom',
+                balloon_bottom: 160,
+                balloon_left: 190,
+            });
+            $prite.girl1({
+                id: '#girl_1_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '귀찮은데<br>대충 하고 끝낼래.',
+                class: 'bottom',
+                balloon_bottom: 160,
+                balloon_left: -360,
+            });
+            $prite.girl3({
+                id: '#girl_3_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '내가 하기로 한 일은<br>최선을 다할 거야.',
+                class: 'bottom',
+                balloon_bottom: 160,
+                balloon_left: 180,
+            });
+
+            $prite.boy3({
+                id: '#boy_3_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '축구하고 싶으니까<br>그냥 축구할래.<br> 해야 할 일은 내일<br> 하지 뭐.',
+                class: 'bottom',
+                balloon_bottom: 120,
+                balloon_left: -400,
+            });
+            $prite.girl4({
+                id: '#girl_4_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '난 게임을 하고 <br>싶지만 참을래.<br> 해야 할 일이 있거든.',
+                class: 'bottom',
+                balloon_bottom: 180,
+                balloon_left: 205,
+            });
+        });
+
+    </script>
+</body>
+
+</html>

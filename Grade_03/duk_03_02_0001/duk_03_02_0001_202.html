@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        header.threeLine .title-icon {
+            top: -60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="threeLine">
+            <div class="title-icon yellow" data-show="1">생각 <em>똑똑</em></div>
+            <div class="title-text">성실한 사람이 되려면 어떤 마음가짐을 가져야 할지, 참된 마음, 노력하는 마음, 참고 이겨 내는 마음이 들어가도록 이야기해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover=""
+                        data-text="성실한 사람이 되려면 어떤 마음가짐을 가져야 할지, 참된 마음, 노력하는 마음, 참고 이겨 내는 마음이 들어가도록 이야기해 봅시다."
+                        class="threeLine">활동 1</li>
+                    <li data-hover="" data-text="사람들이 맡은 일을 성실하게 하지 않으면 어떻게 될지 생각해 봅시다." class="twoLine">활동 2</li>
+                    <li data-hover="" data-text="여러분이 맡은 일은 무엇인가요? 그 일을 성실하게 하지 않으면 어떻게 될까요?" class="twoLine">물음</li>
+                    <li data-hover="" data-text="성실한 사람의 마음가짐을 떠올리며 성실하게 생활해야 하는 까닭을 써 봅시다." class="twoLine">활동 3</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+
+
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title-text').addClass('gap');
+                } else {
+                    $('header .title-text').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                    $('header').removeClass('threeLine');
+                }
+                else if ($(this).hasClass('threeLine')) {
+                    $('header').removeClass('twoLine');
+                    $('header').addClass('threeLine');
+                }
+                else {
+                    $('header').removeClass('threeLine');
+                    $('header').removeClass('twoLine');
+                }
+            });
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(window).on('load', function () {
+                $('.page_1 .character-item .balloon').removeClass('fff');
+            });
+
+            $(document).on('click', '.page_1 .characterWrap, .page_1 .balloon > span', function () {
+                KmAudioPlayer.buttonClick();
+            });
+            $prite.boy1({
+                id: '#boy_1_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '숙제는 편하게 <br>베껴서 낼래.',
+                class: 'bottom',
+                balloon_bottom: 160,
+                balloon_left: -310,
+            });
+            $prite.boy4({
+                id: '#boy_4_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '숙제는 베끼지 않고 <br>내 힘으로 할래.',
+                class: 'bottom',
+                balloon_bottom: 160,
+                balloon_left: 190,
+            });
+            $prite.girl1({
+                id: '#girl_1_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '귀찮은데<br>대충 하고 끝낼래.',
+                class: 'bottom',
+                balloon_bottom: 160,
+                balloon_left: -360,
+            });
+            $prite.girl3({
+                id: '#girl_3_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '내가 하기로 한 일은<br>최선을 다할 거야.',
+                class: 'bottom',
+                balloon_bottom: 160,
+                balloon_left: 180,
+            });
+
+            $prite.boy3({
+                id: '#boy_3_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '축구하고 싶으니까<br>그냥 축구할래.<br> 해야 할 일은 내일<br> 하지 뭐.',
+                class: 'bottom',
+                balloon_bottom: 120,
+                balloon_left: -400,
+            });
+            $prite.girl4({
+                id: '#girl_4_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '난 게임을 하고 <br>싶지만 참을래.<br> 해야 할 일이 있거든.',
+                class: 'bottom',
+                balloon_bottom: 180,
+                balloon_left: 205,
+            });
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        .voca {
+            top: -156px;
+            left: 1000px;
+        }
+
+        [data-popup-page="1"] {
+            top: 124px;
+            left: 560px;
+            width: 570px;
+        }
+
+        .character-flex {
+            gap: 500px;
+            bottom: 110px;
+        }
+
+        .characterWrap.speech.right:before {
+            background: url('../ko/contents/images/button/btn_speech_balloon_left1.png') no-repeat;
+        }
+
+        .characterWrap.speech.right:hover:before {
+            background: url('../ko/contents/images/button/btn_speech_balloon_left1_hover.png') no-repeat;
+        }
+
+        #boy_1_c .charSpriteAni {
+            background-image: url('../ko/contents/images/character/boy_1.png') !important;
+        }
+
+        #boy_4_c .charSpriteAni {
+            background-image: url('../ko/contents/images/character/boy_4.png') !important;
+        }
+
+        #girl_1_c .charSpriteAni {
+            background-image: url('../ko/contents/images/character/girl_1.png') !important;
+        }
+
+        #girl_3_c .charSpriteAni {
+            background-image: url('../ko/contents/images/character/girl_3.png') !important;
+        }
+
+        #boy_3_c .charSpriteAni {
+            background-image: url('../ko/contents/images/character/boy_3.png') !important;
+        }
+
+        #girl_4_c .charSpriteAni {
+            background-image: url('../ko/contents/images/character/girl_4.png') !important;
+        }
+
+        .text-bottom {
+            position: absolute;
+            background-color: #1BA59E;
+            padding: 5px 15px;
+            border-radius: 10px;
+            color: #fff;
+            width: 200px;
+            text-align: center;
+            bottom: -70px;
+        }
+
+        .text-bottom.text-1 {
+            left: 220px;
+        }
+
+        .text-bottom.text-2 {
+            right: 220px;
+        }
+
+        /* Page 2 */
+        .page_2 .noteText {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="twoLine">
+            <div class="title-icon yellow" data-show="1">생각 <em>똑똑</em></div>
+            <div class="title-text">다음 친구들의 모습을 비교해 보고 어떤 친구가 정성 을 다하는지 생각해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="다음 친구들의 모습을 비교해 보고 어떤 친구가 정성 을 다하는지 생각해 봅시다.">물음 1</li>
+                    <li data-hover="" data-text="위 친구들 중 어떤 친구가 정성을 다한다고 생각하나요? 그리고 그렇게 생각한 까닭을 친구들과 이야기 나누어 볼까요?">물음 2
+                    </li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <span class="voca voca1" data-hover="" data-popup-btn="1">정성</span>
+                                    <div class="character-flex">
+                                        <div id="boy_1_c" class="character-item"></div>
+                                        <div id="boy_4_c" class="character-item"></div>
+                                        <div class="text-bottom text-1">현석</div>
+                                        <div class="text-bottom text-2">태우</div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <span class="voca voca1" data-hover="" data-popup-btn="1">정성</span>
+                                    <div class="character-flex">
+                                        <div id="girl_1_c" class="character-item"></div>
+                                        <div id="girl_3_c" class="character-item"></div>
+                                        <div class="text-bottom text-1">은수</div>
+                                        <div class="text-bottom text-2">지혜</div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3" data-quiz="toggle">
+                                    <span class="voca voca1" data-hover="" data-popup-btn="1">정성</span>
+                                    <div class="character-flex">
+                                        <div id="boy_3_c" class="character-item"></div>
+                                        <div id="girl_4_c" class="character-item"></div>
+                                        <div class="text-bottom text-1">강우</div>
+                                        <div class="text-bottom text-2">소희</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="noteText noteLine orange">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p>태우, 지혜, 소희라고 생각합니다.</p>
+                                    <p class="dot">
+                                        태우는 거짓되지 않고 진실하게 행동했기 때문입니다.
+                                    </p>
+                                    <p class="dot">
+                                        지혜는 열심히 하려고 노력했기 때문입니다.
+                                    </p>
+                                    <p class="dot">
+                                        소희는 힘들지만 참고 이겨 냈기 때문입니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min word" data-popup-page="1" data-drag="">
+                    <h2>낱말 익히기</h2>
+                    <div class="popup_contents ls1">
+                        <p>
+                            <span style="color: #7142B8;">정성</span>
+                        </p>
+                        <p>온 힘을 다하는 마음, 좋은 결과를 내려고 노력하는 마음</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title-text').addClass('gap');
+                } else {
+                    $('header .title-text').removeClass('gap');
+                }
+
+            });
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+
+
+            $(document).on('click', '.page_1 .character-item', function () {
+                $(this).find('.balloon').removeClass('fff');
+            });
+
+            $(document).on('click', '.page_1 .characterWrap, .page_1 .balloon > span', function () {
+                KmAudioPlayer.buttonClick();
+            });
+            $prite.boy1({
+                id: '#boy_1_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '역시 숙제는 힘들어. <br>인터넷에서 베껴서 낼래.',
+                class: 'bottom',
+                balloon_bottom: 220,
+                balloon_left: -150,
+            });
+            $prite.boy4({
+                id: '#boy_4_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '숙제를 베껴서 내면 <br>내가 한 게 아니잖아. <br>나는  내 힘으로 해 볼래. ',
+                class: 'bottom',
+                balloon_bottom: 220,
+                balloon_left: -140,
+            });
+            $prite.girl1({
+                id: '#girl_1_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '오늘 하기로 한 일이 <br>있지만 하기 귀찮아.<br>대충 해야지.',
+                class: 'bottom',
+                balloon_bottom: 220,
+                balloon_left: -110,
+            });
+            $prite.girl3({
+                id: '#girl_3_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '내가 하기로 한 일이니까 <br>나는 최선을 다해 <br>열심히 할 거야.',
+                class: 'bottom',
+                balloon_bottom: 220,
+                balloon_left: -150,
+            });
+
+            $prite.boy3({
+                id: '#boy_3_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '책을 읽어야 하지만 <br>축구를 더 하고 싶어. <br>책은 내일 읽지 뭐.',
+                class: 'bottom',
+                balloon_bottom: 220,
+                balloon_left: -117,
+            });
+            $prite.girl4({
+                id: '#girl_4_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '나는 지금 게임을 하고 싶지만 <br>그 마음을 참고 해야 할 일을<br> 할 거야.',
+                class: 'bottom',
+                balloon_bottom: 220,
+                balloon_left: -196,
+            });
+        });
+
+    </script>
+</body>
+
+</html>
