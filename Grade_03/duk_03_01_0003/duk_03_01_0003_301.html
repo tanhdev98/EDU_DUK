@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        .page_1 img {
+            height: 440px;
+            width: 90%;
+            margin: 10px auto;
+        }
+
+        .page_1 .noteText {
+            position: absolute;
+            box-shadow: none;
+            top: 60px;
+            height: 370px;
+            width: 90%;
+            margin: 0 5%;
+        }
+
+        .page_1 .noteText .textareaWrap {
+            height: 100%;
+        }
+
+        .page_1 .innerTab_1 .noteText .textLine {
+            line-height: 67px;
+        }
+
+        .page_1 .innerTab_2 .img_1 {
+            height: 400px;
+            width: 80%;
+            margin-top: 30px;
+        }
+
+        .page_1 .innerTab_2 .img_2 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 70px;
+            right: 165px;
+        }
+
+        .page_1 .innerTab_2 .img_3 {
+            height: 22px;
+            width: 380px;
+            position: absolute;
+            left: 345px;
+            top: 88px;
+        }
+
+        .page_1 .innerTab_2 .title-ques {
+            position: absolute;
+            left: 340px;
+            top: 70px;
+        }
+
+        .page_1 .innerTab_2 .noteText {
+            top: 170px;
+            left: 80px;
+            height: 210px;
+            width: 680px;
+            border-radius: 20px;
+        }
+
+        .page_1 .innerTab_2 .noteText .textareaWrap {
+            background-color: #f5f5f5;
+        }
+
+        /* page 2 */
+        .page_2 .self-check {
+            margin-top: 60px;
+        }
+        /* popup */
+
+        .text_box {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-praise .item-title {
+            font-size: 28px;
+            text-align: center;
+            color: #fff;
+            font-family: 'YGJAL';
+        }
+
+        .btn-praise {
+            width: 120px;
+            right: -28px;
+            top: 340px;
+        }
+
+        /* popup */
+        .popup_pages>li.fullLine>.full_content {
+            top: 65px;
+            height: calc(100% - 65px);
+        }
+
+        .tabs-popup {
+            top: -33px;
+            right: 60px;
+            left: unset;
+            justify-content: end;
+            height: 33px;
+        }
+
+        .tabs-popup>li {
+            background-color: #B1A493 !important;
+
+        }
+
+        .tabs-popup>li.on {
+            background-color: #E79702 !important;
+        }
+
+        /* thinkNet */
+        .thinkNet_wrap {
+            position: relative;
+            height: 410px;
+            top: 50px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            padding: 0 80px;
+        }
+
+        .thinkNet_wrap .row {
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .thinkNet_wrap .toggle.box {
+            width: 310px;
+            height: 170px;
+            border-radius: 8px;
+            text-align: center;
+            box-sizing: border-box;
+            font-family: 'YGJAL';
+        }
+
+        .thinkNet_wrap .inner_box.tit {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #fff;
+            border: 8px solid #efcfa6;
+            width: 340px;
+            height: 170px;
+            border-radius: 20px;
+            font-family: 'YGJAL';
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 15px;
+        }
+
+        .thinkNet_wrap .think_arrow {
+            position: absolute;
+            display: inline-block;
+            width: 100px;
+            height: 70px;
+            background: url('./common/images/thinkNet_arrow.png') no-repeat;
+            background-size: 230px auto;
+        }
+
+        .thinkNet_wrap .thinkNet_arrow2 {
+            background: url('./common/images/thinkNet_arrow2.png') no-repeat;
+            background-size: 150px;
+            top: -160px;
+            transform: rotate(-90deg);
+            background-position: 25px 0;
+            left: 615px;
+
+        }
+
+        .thinkNet_wrap .think_arrow.left.top {
+            left: 750px;
+            bottom: 284px;
+            background-position: -132px 0;
+        }
+
+        .thinkNet_wrap .think_arrow.right.top {
+            right: 750px;
+            bottom: 284px;
+            background-position: 0 0;
+        }
+
+        .thinkNet_wrap .think_arrow.left.bottom {
+            right: 750px;
+            top: 284px;
+            background-position: 0 -95px;
+        }
+
+        .thinkNet_wrap .think_arrow.right.bottom {
+            left: 750px;
+            top: 284px;
+            background-position: -132px -95px;
+        }
+
+        .thinkNet_wrap [data-type="toggleButton"] {
+            cursor: pointer;
+            height: max-content;
+        }
+
+        .thinkNet_wrap.col [data-type="toggleButton"] {
+            display: flex;
+            justify-content: center;
+        }
+
+        .thinkNet_wrap .toggle .answer {
+            margin: auto;
+            text-align: center;
+        }
+
+        .thinkNet_wrap .box.pink {
+            background-color: #FED1D7;
+        }
+
+        .thinkNet_wrap .box.blue {
+            background-color: #E1F2F7;
+        }
+
+        .thinkNet_wrap .box.green {
+            background-color: #EFF7BD;
+        }
+
+        .thinkNet_wrap .box.purple {
+            background-color: #E3D7FF;
+        }
+
+        /* innerTab2 */
+        .thinkNet_wrap.col {
+            top: 300px;
+            padding: 0;
+        }
+
+        .thinkNet_wrap.col .inner_box.tit {
+            top: -220px;
+            width: 700px;
+            height: max-content;
+        }
+
+        .thinkNet_wrap.col .think_arrow.right.top {
+            right: 960px;
+            bottom: 530px;
+            transform: rotate(-90deg);
+        }
+
+        .thinkNet_wrap.col .think_arrow.left.top {
+            left: 960px;
+            bottom: 530px;
+            transform: rotate(90deg);
+        }
+
+        .thinkNet_wrap.col .groupbox {
+            flex-direction: column;
+            display: flex;
+            margin-top: -65px;
+        }
+
+        .thinkNet_wrap.col .toggle.box {
+            width: 230px;
+            height: 70px;
+            margin-bottom: -20px;
+        }
+
+        .thinkNet_wrap.col .question.box {
+            width: 405px;
+            height: 220px;
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .innerTab_2 [data-type="toggleButton"] {
+            width: max-content;
+            margin: auto;
+        }
+
+        /* dapCheckBtn */
+        .pointContainer .dapCheckBtn {
+            right: 28px;
+        }
+
+        /* title thinknet */
+        .pointContainer .pointTitle {
+            display: block;
+            text-align: center;
+        }
+
+        .pointContainer .pointTitle .titleText {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 45px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #ff6600;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+        }
+
+        .pointContainer .pointTitle .titleText:after,
+        .pointContainer .pointTitle .titleText:before {
+            position: absolute;
+            top: 0px;
+            height: 50px;
+            font-size: 40px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #e4caa9;
+        }
+
+        .pointContainer .pointTitle .titleText:after {
+            content: "[";
+            left: -20px;
+        }
+
+        .pointContainer .pointTitle .titleText:before {
+            content: "]";
+            right: -20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue">실천 <em>쑥쑥</em></div>
+            <div class="title-text">오늘부터 5일 동안 감정 일기를 쓰며 나의 감정을 소중히 여겨 봅시다.</div>
+        </header>
+        <main>
+
+
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="오늘부터 5일 동안 감정 일기를 쓰며 나의 감정을 소중히 여겨 봅시다.">활동 1</li>
+                    <li data-hover="" data-text="배운 내용을 되돌아보며 자기 점검을 해 봅시다.">자기 점검</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <img src="./images/duk_03_01_0003_301/img_01.jpg" alt="">
+                                    <div class="noteText noLine">
+                                        <div class="textareaWrap">
+                                            <textarea style="text-align: left;" class="textLine afterDisplay"
+                                                type="text" placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT" style="text-align: left; line-height: 67px;">
+                                                <p>소리를 질렀더니, 기분이 더 나빠졌습니다. 적절한 행동이 아니었던 것 같습니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="writeBtn" data-answer-btn=""></button>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <img class="img_1" src="./images/duk_03_01_0003_301/img_04.png" alt="">
+                                    <img class="img_2" src="./images/duk_03_01_0003_301/star-white.png" alt="">
+                                    <img class="img_3" src="./images/duk_03_01_0003_301/img_02.png" alt="">
+                                    <div class="title-ques">이 색깔로 표현한 까닭</div>
+                                    <div class="noteText noLine">
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p>새싹이 돋아나는 것처럼 새로운 학년을 시작했기 때문이야.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="writeBtn" data-answer-btn=""></button>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="page_2">
+                        <div class="study_guide"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
+                        <div class="self-check">
+                            <div class="checkWrap">
+                                <div class="text_box">
+                                    내가 어떤 감정을 갖고 있는지 알 수 있나요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">
+                                    나의 감정을 잘 표현할 수 있나요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">
+                                    나에게 생긴 감정을 잘 조절하는 방법을 찾아 실천할 수 있나요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="example-box">
+                                <div class="exampleIcoWrap">
+                                    <div class="example ico-05">
+                                        그렇다
+                                    </div>
+                                    <div class="example ico-04">
+                                        그렇다
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-praise right popBtn footer-item" style="right: -28px; top: 440px;"
+                            data-popup-btn="1">
+                            <div class="item-title">우리<br>배움</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image pointContainer" data-popup-page="1">
+                    <div class="full_content" data-quiz="toggle">
+                        <div class="pointTitle">
+                            <div class="titleText">나의 감정은 소중해요</div>
+                        </div>
+                        <div class="thinkNet_wrap col">
+                            <div class="inner_box tit">
+                                <p>감정을 조절할 수 있는 방법</p>
+                            </div>
+                            <div class="row">
+                                <div class="groupbox">
+                                    <div data-type="toggleButton">
+                                        <div class="toggle box" data-toggle-obj="5">
+                                            <div class="answer" data-toggle-target="5">
+                                                <span>생각</span>
+                                            </div>
+                                        </div>
+                                        <div class="think_arrow right top"></div>
+                                    </div>
+                                    <div class="question box pink">
+                                        <span>화가 났을 땐, 화가 가라앉을 만한 좋은 기억을 떠올릴 거야.
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="groupbox">
+                                    <div data-type="toggleButton">
+                                        <div class="toggle box" data-toggle-obj="6">
+                                            <div class="answer" data-toggle-target="6">
+                                                <span>말</span>
+                                            </div>
+                                        </div>
+                                        <div class="think_arrow thinkNet_arrow2"></div>
+                                    </div>
+                                    <div class="question box green">
+                                        <span>내가 화가 난 이<br>유를 차분하게 이<br>야기할 거야.</span>
+                                    </div>
+                                </div>
+
+                                <div class="groupbox">
+                                    <div data-type="toggleButton">
+                                        <div class="toggle box" data-toggle-obj="7">
+                                            <div class="answer" data-toggle-target="7">
+                                                <span>행동</span>
+                                            </div>
+                                        </div>
+                                        <div class="think_arrow left top"></div>
+                                    </div>
+                                    <div class="question box blue">
+                                        <span>심호흡을 크게 하고 화가 가라앉을 때까지 기다릴 거야.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="dapCheckBtn" data-answer-btn=""></button>
+
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title-text').addClass('gap');
+                } else {
+                    $('header .title-text').removeClass('gap');
+                }
+            });
+
+            $(document).on('click', '.page_1 .innerTab_2 .writeBtn', function () {
+                if ($(this).hasClass('reset')) {
+                    $(this).parent().find('.img_2').attr('src', './images/duk_03_01_0003_301/star-green.png');
+                } else {
+                    $(this).parent().find('.img_2').attr('src', './images/duk_03_01_0003_301/star-white.png');
+                }
+            });
+
+            // switch tab
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+
+            // toggle
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    dapCheckBtn.addClass('reset');
+                } else {
+                    dapCheckBtn.removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!dapCheckBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
