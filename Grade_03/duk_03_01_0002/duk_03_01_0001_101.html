@@ -16,18 +16,48 @@
             top: -30px;
         }
 
-        .page_1 .wrapImg>.popBtn {
+        .page_1 .icon-char {
+            top: 50px;
+        }
+
+        [data-popup-page="2"] {
+            top: 249px;
+            left: 476px;
+            width: 774px;
+        }
+
+        .page_1 .popBtn {
             text-align: center;
+            position: relative;
+            margin: 30px auto 0;
         }
 
-        .page_1 .wrapImg>.popBtn img {
-            max-width: 1150px;
+        .page_1 .popBtn img {
+            height: 470px;
         }
 
-        .page_1 .wrapImg .popBtn.mouse {
+        .page_1 .popBtn .popBtn.mouse {
             position: absolute;
-            right: 220px;
+            right: 0;
             bottom: 0;
+        }
+
+        .popup_pages .toggle.box {
+            justify-content: center;
+        }
+
+        .tab-content {
+            margin-top: 50px;
+            padding: 0 20px;
+        }
+
+        .popup_pages tbody tr td {
+            height: 115px;
+        }
+
+        .popup_pages li:not(.min) h2 {
+            width: fit-content;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -45,11 +75,11 @@
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1">
-                        <div class="wrapImg">
-                            <div class="popBtn" data-hover="" data-popup-btn="1" data-popup-parent="hidden">
-                                <img src="./images/duk_03_01_0002_101/img_01.png" alt="">
-                                <div class="popBtn mouse"></div>
-                            </div>
+                        <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="2"></div>
+                        <div class="study_guide"><em>수업 도</em>구의 <em>색연필</em>을 클릭하세요.</div>
+                        <div class="popBtn" data-hover="" data-popup-btn="1" data-popup-parent="hidden">
+                            <img src="./images/duk_03_01_0002_101/img_01.png" alt="">
+                            <div class="popBtn mouse"></div>
                         </div>
                     </li>
                 </ul>
@@ -58,7 +88,281 @@
 
         <section class="popup_container" data-popup-container="">
             <ul class="popup_pages">
-                <li class="fullLine whole image" data-popup-page="1" data-quiz="toggle">
+                <li class="whole image" data-popup-page="1" data-quiz="toggle">
+
+                    <div class="basicSlider" data-slide-container="popup">
+                        <ul class="basicSlider_slides" data-slides="">
+                            <li class="innerTab_1">
+                                <h2>나무 그림의 열매</h2>
+                                <div class="tab-content-box">
+                                    <div class="tab-content content-01">
+                                        <div class="table-box color-02 ">
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width:15%">
+                                                    <col style="width:85%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>열매</th>
+                                                        <th>뜻</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th>
+                                                            <div class="toggle box" data-toggle-obj="1">
+                                                                <div class="answer" data-toggle-target="1">
+                                                                    <div>성실</div>
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                        <td>
+                                                            정성스럽고 진실하게 열심히 함.
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <div class="toggle box" data-toggle-obj="2">
+                                                                <div class="answer" data-toggle-target="2">
+                                                                    <div>끈기</div>
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                        <td>
+                                                            쉽게 포기하지 않고 끈질기게 견딤.
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <div class="toggle box" data-toggle-obj="3">
+                                                                <div class="answer" data-toggle-target="3">
+                                                                    <div>정직</div>
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                        <td>
+                                                            거짓이 없음.
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <div class="toggle box" data-toggle-obj="4">
+                                                                <div class="answer" data-toggle-target="4">
+                                                                    <div>책임</div>
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                        <td>
+                                                            맡아서 해야 할 일을 소중히 여기고 다함.
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="innerTab_2">
+                                <h2>나무 그림의 열매</h2>
+                                <div class="tab-content-box">
+                                    <div class="tab-content content-01">
+                                        <div class="table-box color-02 ">
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width:15%">
+                                                    <col style="width:85%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>열매</th>
+                                                        <th>뜻</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th>
+                                                            <div class="toggle box" data-toggle-obj="1">
+                                                                <div class="answer" data-toggle-target="1">
+                                                                    <div>열정</div>
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                        <td>
+                                                            어떤 일에 대해 애정을 가지고 열중하고 몰입함.
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <div class="toggle box" data-toggle-obj="2">
+                                                                <div class="answer" data-toggle-target="2">
+                                                                    <div>도전</div>
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                        <td>
+                                                            정면으로 맞섬.
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <div class="toggle box" data-toggle-obj="3">
+                                                                <div class="answer" data-toggle-target="3">
+                                                                    <div>긍정</div>
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                        <td>
+                                                            좋게 평가하고 본받을 만한 것을 잘 찾음.
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="innerTab_3">
+                                <h2>나무 그림의 열매</h2>
+                                <div class="tab-content-box">
+                                    <div class="tab-content content-01">
+                                        <div class="table-box color-02 ">
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width:15%">
+                                                    <col style="width:85%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>열매</th>
+                                                        <th>뜻</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th>
+                                                            <div class="toggle box" data-toggle-obj="1">
+                                                                <div class="answer" data-toggle-target="1">
+                                                                    <div>존중</div>
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                        <td>
+                                                            높이고 귀중하게 대함.
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <div class="toggle box" data-toggle-obj="2">
+                                                                <div class="answer" data-toggle-target="2">
+                                                                    <div>배려</div>
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                        <td>
+                                                            도와주거나 보살펴 주려고 마음을 씀.
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <div class="toggle box" data-toggle-obj="3">
+                                                                <div class="answer" data-toggle-target="3">
+                                                                    <div>친절</div>
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                        <td>
+                                                            사람을 대하는 태도가 정겹고 말이나 행동이 공손하고 부드러움.
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="innerTab_4">
+                                <h2>나무 그림의 열매</h2>
+                                <div class="tab-content-box">
+                                    <div class="tab-content content-01">
+                                        <div class="table-box color-02 ">
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width:15%">
+                                                    <col style="width:85%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>열매</th>
+                                                        <th>뜻</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th>
+                                                            <div class="toggle box" data-toggle-obj="1">
+                                                                <div class="answer" data-toggle-target="1">
+                                                                    <div>예의</div>
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                        <td>
+                                                            사람이 지켜야 할 말투나 몸가짐을 올바르게 함.
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <div class="toggle box" data-toggle-obj="2">
+                                                                <div class="answer" data-toggle-target="2">
+                                                                    <div>사랑</div>
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                        <td>
+                                                            몹시 아끼고 귀중히 여김.
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <div class="toggle box" data-toggle-obj="3">
+                                                                <div class="answer" data-toggle-target="3">
+                                                                    <div>감사</div>
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                        <td>
+                                                            고맙게 여김.
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="moveButtonContainer" data-slide-btn-container="">
+                            <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                            <ul class="basicSlider_circle_tabs" data-tabs="">
+                                <li data-hover=""></li>
+                                <li data-hover=""></li>
+                                <li data-hover=""></li>
+                                <li data-hover=""></li>
+                            </ul>
+                            <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="min" data-popup-page="2" data-drag="">
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        <p><ins class="dot"></ins>
+                            다른 열매를 적고 싶으면 나무에 적어도 돼요.
+                        </p>
+                        <p><ins class="dot"></ins>빠르고 많이 찾는 것이 중요하지 않아요.</p>
+                        <p><ins class="dot"></ins>표시한 열매를 보며 왜 그렇게 생각했는지 이야기해 봐요.</p>
+                    </div>
                 </li>
             </ul>
         </section>
