@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        /* Page 1 */
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        .flex {
+            display: flex;
+            margin-top: 40px;
+        }
+
+        .flex .items:last-child {
+            width: 1080px;
+            text-align: center;
+        }
+
+        .flex .items {
+            width: 100%;
+        }
+
+        .flex .items img {
+            width: 400px;
+        }
+
+        .popup_pages .buttonContainer {
+            right: 28px;
+        }
+
+        .pointContainer .pointTitle {
+            text-align: center;
+        }
+
+        .pointContainer .pointTitle .titleText {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 45px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #ff6600;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+        }
+
+        .pointContainer .pointTitle .titleText:after,
+        .pointContainer .pointTitle .titleText:before {
+            position: absolute;
+            top: 0px;
+            height: 50px;
+            font-size: 40px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #e4caa9;
+        }
+
+        .pointContainer .pointTitle .titleText:after {
+            content: "[";
+            left: -20px;
+        }
+
+        .pointContainer .pointTitle .titleText:before {
+            content: "]";
+            right: -20px;
+        }
+
+        .popup_pages .cho {
+            background-color: transparent;
+        }
+
+        .popup_pages .choWrap {
+            text-align: left;
+        }
+
+        .btn-praise {
+            right: -28px;
+        }
+
+        .popup_pages .items .item {
+            position: relative;
+        }
+
+        .popup_pages .items .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 33px;
+            left: -8px;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="twoLine">
+            <div class="title-icon pink">마음 <em>탄탄</em></div>
+            <div class="title-text">성실하게 살아가려는 자세와 태도를 다지며 나와 약속을 해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="flex">
+                            <div class="items">
+                                <div class="noteText noteLine green">
+                                    <div class="textareaWrap">
+                                        <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                            autocomplete="off"></textarea>
+                                    </div>
+                                    <div class="text-exam flex-wrap">
+                                        <div class="blueT">
+                                            민철이가 등교할 때 이웃과 친구들에게 인사한 장면이 기억에 남아요.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="buttonContainer">
+                                    <button class="writeBtn" data-answer-btn=""></button>
+                                </div>
+                            </div>
+                            <div class="items">
+                                <img src="./images/ton_03_02_0004_301/img_01.png" />
+                            </div>
+                        </div>
+                        <div class="btn-praise right popBtn footer-item" data-popup-btn="1">
+                            <div class="item-title">핵심 <br>정리</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image pointContainer" data-popup-page="1" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="pointTitle">
+                            <div class="titleText">성실한 모습 생각하기</div>
+                            <div class="items">
+                                <div class="item">
+                                    <div class="cho">
+                                        <div class="choWrap">
+                                            성실하게 살아가는 자세는 중요합니다.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="cho">
+                                        <div class="choWrap">
+                                            좋은 결과가 나오지 않아도 성실해야 합니다.<br>
+                                            결과와 상관 없이, 성실하게 살아가는
+                                            <div class="choBox">
+                                                <span class="dir-rect" data-cho="ㄱ" data-letter="과"></span>
+                                                <span class="dir-rect" data-cho="ㅈ" data-letter="정"></span>
+                                            </div>
+                                            에서
+                                            <div class="choBox">
+                                                <span class="dir-rect" data-cho="ㅎ" data-letter="행"></span>
+                                                <span class="dir-rect" data-cho="ㅂ" data-letter="복"></span>
+                                            </div>
+                                            을 느낄 수<br>
+                                            있습니다.
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="dapCheckBtn" data-answer-btn=""></button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title-text').addClass('gap');
+                } else {
+                    $('header .title-text').removeClass('gap');
+                }
+            });
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            let numActive = 0;
+
+            $(document).on('click', '.choBox', function () {
+                if (!$(this).hasClass('active')) {
+                    $(this).addClass('active');
+                } else {
+                    $(this).removeClass('active');
+                }
+                numItem = $(this).parents('[data-quiz="toggle"]').find('.choBox').length;
+                numActive = $(this).parents('[data-quiz="toggle"]').find('.choBox.active').length;
+                console.log(numActive);
+                if (numActive === numItem) {
+                    $(this).parents('[data-quiz="toggle"]').find('.dapCheckBtn').addClass('reset');
+                } else {
+                    $(this).parents('[data-quiz="toggle"]').find('.dapCheckBtn').removeClass('reset');
+                }
+            });
+            $(document).on('click', '.dapCheckBtn', function () {
+                let dirRect = $(this).parent().parent().find('.dir-rect');
+                if (!$(this).hasClass('reset')) {
+                    $(this).removeClass('reset');
+                    dirRect.removeClass('on');
+                    dirRect.each(function () {
+                        let dataCho = $(this).data('cho');
+                        $(this).text(dataCho);
+                    })
+                    $('.noteText .textareaWrap .textLine').show();
+                    $('.noteText .text-exam').hide();
+                    $(this).parent().parent().find('.choBox').removeClass('active');
+                } else {
+                    $(this).addClass('reset');
+                    dirRect.addClass('on');
+                    dirRect.each(function () {
+                        let dataLetter = $(this).data('letter');
+                        $(this).text(dataLetter);
+                    })
+                    $('.noteText .textareaWrap .textLine').hide();
+                    $('.noteText .text-exam').show();
+                    $(this).parent().parent().find('.choBox').addClass('active');
+                }
+
+            });
+        });
+
+    </script>
+</body>
+
+</html>
