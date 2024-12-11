@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        /* Page 1 */
+        .page_1 .how-to-play {
+            margin: 20px 0 25px;
+        }
+
+        .page_1 .title-box {
+            margin-top: 30px;
+        }
+
+        [data-popup-page="1"] {
+            top: 145px;
+            left: 658px;
+            width: 600px;
+        }
+
+        .flex {
+            display: flex;
+            gap: 20px;
+        }
+
+        .flex .howtoBox {
+            width: 100%;
+            margin-top: 70px;
+        }
+
+        .flex .howtoBox .text-box {
+            text-align: center;
+        }
+
+        .popBtn.mouse {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        .popup_pages li:not(.min) h2 {
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .popup_pages .flex {
+            margin-top: 130px;
+            padding: 0px 20px;
+            align-items: end;
+        }
+
+        .popup_pages .flex .imageWrap {
+            width: 70%;
+            text-align: center;
+            position: relative;
+        }
+
+        .popup_pages .flex .imageWrap .speech {
+            content: "";
+            display: block;
+            width: 64px;
+            height: 64px;
+            position: absolute;
+            z-index: 4;
+            pointer-events: auto;
+            background: url(../ko/contents/images/button/btn_speech_balloon_left1.png) no-repeat;
+            cursor: pointer;
+        }
+
+        .popup_pages .flex .imageWrap .speech-left {
+            top: 40px;
+            left: 60px;
+            transform: scaleX(-1);
+        }
+
+        .popup_pages .flex .imageWrap .speech-right {
+            top: 40px;
+            right: 95px;
+        }
+
+        .popup_pages .flex .imageWrap img {
+            width: 350px;
+        }
+
+        .topText {
+            position: absolute;
+            top: -110px;
+            width: fit-content;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 15px;
+            border-radius: 15px;
+        }
+
+        .orange .topText {
+            background-color: #FFEBCD;
+            border: 4px solid #FFD89E;
+        }
+
+        .green .topText {
+            background-color: #F2F7C8;
+            border: 4px solid #D7DEA3;
+        }
+
+        .blue .topText {
+            background-color: #E7F4F9;
+            border: 4px solid #A8D6F6;
+        }
+
+        .popup_pages .flex .text-box {
+            position: absolute;
+            display: none;
+        }
+
+        .text-box {
+            padding: 5px 15px;
+            border-radius: 15px;
+            position: absolute;
+        }
+
+        .text-box.orange {
+            background-color: #FFEBCD;
+            border: 4px solid #FFD89E;
+        }
+
+        .text-box.orange:after {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-color: #FFD89E;
+            clip-path: polygon(95% 0, 5% 0, 50% 100%);
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%, 100%);
+            position: absolute;
+        }
+
+        .text-box.green {
+            background-color: #F2F7C8;
+            border: 4px solid #D7DEA3;
+        }
+
+        .text-box.green:after {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-color: #D7DEA3;
+            clip-path: polygon(95% 0, 5% 0, 50% 100%);
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%, 100%);
+            position: absolute;
+        }
+
+        .text-1 {
+            top: -170px;
+            left: 20px;
+        }
+
+        .text-2 {
+            top: -120px;
+            left: 130px;
+        }
+
+        .text-3 {
+            top: -190px;
+            left: 0px;
+        }
+
+        .text-4 {
+            top: -130px;
+            left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue">실천 <em>쑥쑥</em></div>
+            <div class="title-text">주어진 상황 중에서 하나를 골라 역할놀이를 해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="1"></div>
+                                    <div class="title-box">
+                                        <div class="title">활동 방법</div>
+                                    </div>
+                                    <ul class="how-to-play">
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                1
+                                            </div>
+                                            <div class="text">
+                                                상황 1~3을 살펴보고 상황 하나를 고릅니다.
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                2
+                                            </div>
+                                            <div class="text">
+                                                그 상황에서 성실하게 행동한다면 어떻게 말할지 생각해 보고,<br>
+                                                대사를 적습니다.
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                3
+                                            </div>
+                                            <div class="text">
+                                                친구와 역할놀이를 해 봅니다.
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="flex">
+                                        <div class="how-to-box howtoBox">
+                                            <div class="pic-box">
+                                                <div class="bullet number orange inline">1</div>
+                                                <div class="image-box">
+                                                    <div class="imageWrap">
+                                                        <img src="./images/duk_03_02_0003_201/img_01.png">
+                                                        <div class="popBtn mouse" data-hover="" data-popup-btn="2"
+                                                            data-targetSlideNum="1">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-box">
+                                                    상황 1
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="how-to-box howtoBox">
+                                            <div class="pic-box">
+                                                <div class="bullet number orange inline">2</div>
+                                                <div class="image-box">
+                                                    <div class="imageWrap">
+                                                        <img src="./images/duk_03_02_0003_201/img_02.jpg">
+                                                        <div class="popBtn mouse" data-hover="" data-popup-btn="2"
+                                                            data-targetSlideNum="2">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-box">
+                                                    상황 2
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="how-to-box howtoBox">
+                                            <div class="pic-box">
+                                                <div class="bullet number orange inline">2</div>
+                                                <div class="image-box">
+                                                    <div class="imageWrap">
+                                                        <img src="./images/duk_03_02_0003_201/img_03.jpg">
+                                                        <div class="popBtn mouse" data-hover="" data-popup-btn="2"
+                                                            data-targetSlideNum="3">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-box">
+                                                    상황 3
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag="">
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        <p>
+                            짝과 함께 또는 모둠별, 소그룹별로 연습하는 시간을 가져요.
+                        </p>
+                    </div>
+                </li>
+                <li class="whole image" data-popup-page="2">
+                    <div class="basicSlider" data-slide-container="popup">
+                        <ul class="basicSlider_slides" data-slides="">
+                            <li class="innerTab_1" data-quiz="toggle">
+                                <h2>상황 1</h2>
+                                <div class="flex">
+                                    <div class="imageWrap">
+                                        <img src="./images/duk_03_02_0003_201/img_01.png" />
+                                        <div class="speech speech-left" data-popup="1"></div>
+                                        <div class="speech speech-right" data-popup="2"></div>
+                                        <div class="text-box orange text-1" data-show="1">
+                                            오늘부터<br>
+                                            하루에 30분씩<br>
+                                            책을 읽을 거야.
+                                        </div>
+                                        <div class="text-box green text-2" data-show="2">
+                                            그러지 말고<br>
+                                            오늘은 나랑 놀자.
+                                        </div>
+                                    </div>
+                                    <div class="noteText noteLine orange">
+                                        <div class="topText">성실하다면?</div>
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p>미안해. 매일 실천하기로 한 약속이라
+                                                    꼭 지키고 싶어.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="buttonContainer">
+                                    <button class="writeBtn" data-answer-btn=""></button>
+                                </div>
+                            </li>
+                            <li class="innerTab_2" data-quiz="toggle">
+                                <h2>상황 2</h2>
+                                <div class="flex">
+                                    <div class="imageWrap">
+                                        <img src="./images/duk_03_02_0003_201/img_02.jpg" />
+                                        <div class="speech speech-left" data-popup="3"></div>
+                                        <div class="text-box orange text-3" data-show="3">
+                                            지민아, 선생님께서<br>
+                                            오늘 내 주신 숙제는<br>
+                                            어떻게 할 거야?
+                                        </div>
+                                    </div>
+                                    <div class="noteText noteLine blue">
+                                        <div class="topText">성실하다면?</div>
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p>오늘 하교하고 바로 과제를 하려고 해.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="buttonContainer">
+                                    <button class="writeBtn" data-answer-btn=""></button>
+                                </div>
+                            </li>
+                            <li class="innerTab_3" data-quiz="toggle">
+                                <h2>상황 3</h2>
+                                <div class="flex">
+                                    <div class="imageWrap">
+                                        <img src="./images/duk_03_02_0003_201/img_03.jpg" />
+                                        <div class="speech speech-left" data-popup="4"></div>
+                                        <div class="text-box orange text-4" data-show="4">
+                                            청소는 대충 하고<br>
+                                            놀자.
+                                        </div>
+                                    </div>
+                                    <div class="noteText noteLine green">
+                                        <div class="topText">성실하다면?</div>
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p>해야 할 일이니 끝까지 열심히 해 보자.
+                                                    우리가 깨끗이 청소하면 모두에게 좋을
+                                                    거야.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="buttonContainer">
+                                    <button class="writeBtn" data-answer-btn=""></button>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="moveButtonContainer" data-slide-btn-container="">
+                            <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                            <ul class="basicSlider_circle_tabs" data-tabs="">
+                                <li data-hover=""></li>
+                                <li data-hover=""></li>
+                                <li data-hover=""></li>
+                            </ul>
+                            <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title-text').addClass('gap');
+                } else {
+                    $('header .title-text').removeClass('gap');
+                }
+            });
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+
+            $(document).on('click', '.speech', function () {
+                KmAudioPlayer.buttonClick();
+                $('.speech').show();
+                $('.text-box').hide();
+                var $data_popup = $(this).attr('data-popup');
+                $('.text-box[data-show="' + $data_popup + '"]').show();
+                $(this).hide();
+            });
+        });
+
+    </script>
+</body>
+
+</html>

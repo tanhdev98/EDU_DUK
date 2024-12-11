@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        /* Page 1 */
+        .contentsBox {
+            padding: 0;
+        }
+
+        .basicSlider[data-slide-container='main']>.basicSlider_slides>li:not(.page_1) {
+            padding: 20px 28px 0 28px;
+        }
+
+        .char-box-11 .balloon {
+            top: -250px;
+            left: -180px;
+        }
+
+        .char-box-03 .balloon {
+            top: -240px;
+            left: -186px;
+        }
+
+        .char-box-10 .balloon {
+            top: -285px;
+            left: -165px;
+        }
+
+        /* Page 2 */
+        .page_2 .items {
+            padding: 0 28px;
+            margin-top: 40px;
+        }
+
+        .page_2 .items .item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .page_2 .items .item .toggle {
+            margin-top: 10px;
+            justify-content: center;
+        }
+
+        .page_2 .items .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 30px;
+            left: -30px;
+            transform: translateY(-50%);
+        }
+
+        .page_2 .buttonContainer {
+            right: 28px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue">실천 <em>쑥쑥</em></div>
+            <div class="title-text">생각한 대로 되지 않았던 경험을 이야기해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="생각한 대로 되지 않았던 경험을 이야기해 봅시다. ">물음 1</li>
+                    <li data-hover="" data-text="다음 물음에 답해 봅시다.">물음 2</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="tab-content-box">
+                            <div class="tab-content group-speech group-speech-01">
+                                <div class="char-box char-box-11" data-tail="tail-01" data-tail-direction="br">
+                                    <div class="char-image"></div>
+                                    <div class="balloon yellow bottom">
+                                        <span>
+                                            매일 운동하려고 했는데<br>
+                                            동생이 같이 놀자고 졸라서<br>
+                                            운동을 못 한 적이 있어.
+                                        </span>
+                                        <div class="close-speech-button"></div>
+                                    </div>
+                                </div>
+                                <div class="char-box char-box-03 char-box-03_1" data-tail="tail-01"
+                                    data-tail-direction="br">
+                                    <div class="char-image"></div>
+                                    <div class="balloon green bottom">
+                                        <span>
+                                            휴대 전화로 친구와 문자를<br>
+                                            주고받느라 숙제하는 데<br>
+                                            시간이 오래 걸린 적이 있어.
+                                        </span>
+                                        <div class="close-speech-button"></div>
+                                    </div>
+                                </div>
+                                <div class="char-box char-box-10" data-tail="tail-01" data-tail-direction="br">
+                                    <div class="char-image"></div>
+                                    <div class="balloon purple bottom">
+                                        <span>
+                                            일주일에 한 번씩<br>
+                                            동네를 산책하려고 했는데<br>
+                                            TV를 보느라 지키지<br>
+                                            못한 적이 있어.
+                                        </span>
+                                        <div class="close-speech-button"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="items">
+                            <div class="item">
+                                열심히 하려고 계획했지만 생각대로 되지 않았던 적이 있나요? 어떤 경우였나요?
+                                <div class="toggle examBtn  box" data-toggle-obj="1">
+                                    <div class="answer" data-toggle-target="1">
+                                        <div>과제를 해야 하는데 게임을 하다가 과제를 못 한 적이 있습니다.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                그 때로 돌아간다면 어떤 노력을 해 볼 수 있을까요?
+                                <div class="toggle examBtn  box" data-toggle-obj="2">
+                                    <div class="answer" data-toggle-target="2">
+                                        <div>과제를 먼저 한 후에 게임을 하겠습니다.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="examViewBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title-text').addClass('gap');
+                } else {
+                    $('header .title-text').removeClass('gap');
+                }
+            });
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+        });
+
+    </script>
+</body>
+
+</html>
