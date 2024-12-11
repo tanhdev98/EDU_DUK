@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        /* page 1 */
+        .page_1 .self-check {
+            margin-top: 60px;
+        }
+
+        /* popup */
+
+        .text_box {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .btn-praise .item-title {
+            font-size: 28px;
+            text-align: center;
+            color: #fff;
+            font-family: 'YGJAL';
+        }
+
+        .btn-praise {
+            width: 120px;
+            right: -28px;
+            top: 340px;
+        }
+
+        /* popup */
+        .popup_pages>li.fullLine>.full_content {
+            top: 65px;
+            height: calc(100% - 65px);
+        }
+
+        .tabs-popup {
+            top: -33px;
+            right: 60px;
+            left: unset;
+            justify-content: end;
+            height: 33px;
+        }
+
+        .tabs-popup>li {
+            background-color: #B1A493 !important;
+
+        }
+
+        .tabs-popup>li.on {
+            background-color: #E79702 !important;
+        }
+
+        .noteText {
+            padding: 0;
+            height: 70px;
+            box-shadow: none;
+            width: calc(100% - 20px);
+            background-color: #f5f5f5;
+        }
+
+        .noteText .textLine {
+            padding-left: 15px;
+        }
+
+        .noteText .textareaWrap {
+            height: 100%;
+            padding: 0;
+        }
+
+        .page_2 .noteText .text-exam.flex-wrap {
+            padding: 0;
+        }
+
+        /* thinkNet */
+        .thinkNet_wrap {
+            position: relative;
+            height: 410px;
+            top: 50px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            padding: 0 80px;
+        }
+
+        .thinkNet_wrap .row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .innerTab_2 .thinkNet_wrap .row {
+            gap: 460px;
+        }
+
+        .thinkNet_wrap .toggle.box {
+            width: 310px;
+            height: 170px;
+            border-radius: 8px;
+            text-align: center;
+            box-sizing: border-box;
+            font-family: 'YGJAL';
+        }
+
+        .thinkNet_wrap .inner_box.tit {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #fff;
+            border: 8px solid #efcfa6;
+            width: 340px;
+            height: 170px;
+            border-radius: 20px;
+            font-family: 'YGJAL';
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 15px;
+        }
+
+        .thinkNet_wrap .think_arrow {
+            position: absolute;
+            display: inline-block;
+            width: 100px;
+            height: 70px;
+            background: url('./common/images/thinkNet_arrow.png') no-repeat;
+            background-size: 230px auto;
+        }
+
+        .thinkNet_wrap .thinkNet_arrow2 {
+            background: url('./common/images/thinkNet_arrow2.png') no-repeat;
+            background-size: 150px;
+            top: -160px;
+            transform: rotate(-90deg);
+            background-position: 25px 0;
+            left: 615px;
+
+        }
+
+        .thinkNet_wrap .think_arrow.left.top {
+            left: 750px;
+            bottom: 284px;
+            background-position: -132px 0;
+        }
+
+        .thinkNet_wrap .think_arrow.right.top {
+            right: 750px;
+            bottom: 284px;
+            background-position: 0 0;
+        }
+
+        .thinkNet_wrap .think_arrow.left.bottom {
+            right: 750px;
+            top: 284px;
+            background-position: 0 -95px;
+        }
+
+        .thinkNet_wrap .think_arrow.right.bottom {
+            left: 750px;
+            top: 284px;
+            background-position: -132px -95px;
+        }
+
+        .thinkNet_wrap [data-type="toggleButton"] {
+            cursor: pointer;
+            height: max-content;
+        }
+
+        .thinkNet_wrap.col [data-type="toggleButton"] {
+            display: flex;
+            justify-content: center;
+        }
+
+        .thinkNet_wrap .toggle .answer {
+            margin: auto;
+            text-align: center;
+        }
+
+        .thinkNet_wrap .box.pink {
+            background-color: #FED1D7;
+        }
+
+        .thinkNet_wrap .box.blue {
+            background-color: #E1F2F7;
+        }
+
+        .thinkNet_wrap .box.green {
+            background-color: #EFF7BD;
+        }
+
+        .thinkNet_wrap .box.purple {
+            background-color: #E3D7FF;
+        }
+
+        /* innerTab2 */
+        .thinkNet_wrap.col {
+            top: 300px;
+            padding: 0;
+        }
+
+        .thinkNet_wrap.col .inner_box.tit {
+            top: -220px;
+            width: 700px;
+            height: max-content;
+        }
+
+        .thinkNet_wrap.col .think_arrow.right.top {
+            right: 960px;
+            bottom: 530px;
+            transform: rotate(-90deg);
+        }
+
+        .thinkNet_wrap.col .think_arrow.left.top {
+            left: 960px;
+            bottom: 530px;
+            transform: rotate(90deg);
+        }
+
+        .thinkNet_wrap.col .groupbox {
+            flex-direction: column;
+            display: flex;
+            margin-top: -65px;
+        }
+
+        .thinkNet_wrap.col .toggle.box {
+            width: 230px;
+            height: 70px;
+            margin-bottom: -20px;
+        }
+
+        .thinkNet_wrap.col .question.box {
+            width: 405px;
+            height: 220px;
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        [data-type="toggleButton"] {
+            width: max-content;
+            margin: auto;
+        }
+
+        /* dapCheckBtn */
+        .pointContainer .dapCheckBtn {
+            right: 28px;
+        }
+
+        /* title thinknet */
+        .pointContainer .pointTitle {
+            display: block;
+            text-align: center;
+        }
+
+        .pointContainer .pointTitle .titleText {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 45px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #ff6600;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+        }
+
+        .pointContainer .pointTitle .titleText:after,
+        .pointContainer .pointTitle .titleText:before {
+            position: absolute;
+            top: 0px;
+            height: 50px;
+            font-size: 40px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #e4caa9;
+        }
+
+        .pointContainer .pointTitle .titleText:after {
+            content: "[";
+            left: -20px;
+        }
+
+        .pointContainer .pointTitle .titleText:before {
+            content: "]";
+            right: -20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue">실천 <em>쑥쑥</em></div>
+            <div class="title-text">실천 계획을 일주일 동안 실천해 봅시다.</div>
+        </header>
+        <main>
+
+
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="study_guide"><em>얼굴</em>을 클릭<em>하세</em>요.</div>
+                        <div class="self-check">
+                            <div class="checkWrap">
+                                <div class="text_box">
+                                    <div class="noteText noLine">
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">
+                                    <div class="noteText noLine">
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">
+                                    <div class="noteText noLine">
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="example-box">
+                                <div class="exampleIcoWrap">
+                                    <div class="example ico-05">
+                                        그렇다
+                                    </div>
+                                    <div class="example ico-04">
+                                        그렇다
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-praise right popBtn footer-item" style="right: -28px; top: 410px;"
+                            data-popup-btn="1">
+                            <div class="item-title">우리<br>배움</div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="resetBtn only-reset" data-type="reset" data-hover=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image pointContainer" data-popup-page="1">
+                    <div class="full_content">
+                        <div class="basicSlider " data-slide-container="">
+                            <ul class="innerSlider_tabs tabs-popup">
+                                <li data-hover="" class="on">실천 계획 세우기</li>
+                                <li data-hover="">목표를 실천하는 방법</li>
+                            </ul>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1 on" data-quiz="toggle">
+                                    <div class="pointTitle">
+                                        <div class="titleText">정성을 다하는 하루</div>
+                                    </div>
+                                    <div class="thinkNet_wrap col">
+                                        <div class="inner_box tit">
+                                            <p>실천 계획 세우기</p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="groupbox">
+                                                <div data-type="toggleButton">
+                                                    <div class="toggle box" data-toggle-obj="5">
+                                                        <div class="answer" data-toggle-target="5">
+                                                            <span>목표</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="think_arrow right top"></div>
+                                                </div>
+                                                <div class="question box pink">
+                                                    <span>자신이 노력할<br>
+                                                        목표를 정합니다.
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="groupbox">
+                                                <div data-type="toggleButton">
+                                                    <div class="toggle box" data-toggle-obj="6">
+                                                        <div class="answer" data-toggle-target="6">
+                                                            <span>실천 내용</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="think_arrow thinkNet_arrow2"></div>
+                                                </div>
+                                                <div class="question box green">
+                                                    <span>구체적인 내용과<br>
+                                                        실천 내용을 헤아릴<br>
+                                                        숫자를 넣습니다.
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="groupbox">
+                                                <div data-type="toggleButton">
+                                                    <div class="toggle box" data-toggle-obj="7">
+                                                        <div class="answer" data-toggle-target="7">
+                                                            <span>실천 시간</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="think_arrow left top"></div>
+                                                </div>
+                                                <div class="question box blue">
+                                                    <span>
+                                                        실천 계획을 시행할<br>
+                                                        시간을 생각합니다.
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="dapCheckBtn" data-answer-btn=""></button>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="pointTitle">
+                                        <div class="titleText">성실하게 보내는 하루</div>
+                                    </div>
+
+                                    <div class="thinkNet_wrap">
+                                        <div class="inner_box tit">
+                                            <p>목표를<br>실천하는 방법</p>
+                                        </div>
+                                        <div class="row">
+                                            <div data-type="toggleButton">
+                                                <div class="toggle box pink" data-toggle-obj="1">
+                                                    <div class="answer" data-toggle-target="1">
+                                                        <span>목표를<br>
+                                                            실천하는 방법
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="think_arrow right top"></div>
+                                            </div>
+
+                                            <div data-type="toggleButton">
+                                                <div class="toggle box blue" data-toggle-obj="2">
+                                                    <div class="answer" data-toggle-target="2">
+                                                        <span>시간 관리하기
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="think_arrow left top"></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div data-type="toggleButton">
+                                                <div class="toggle box green" data-toggle-obj="3">
+                                                    <div class="answer" data-toggle-target="3">
+                                                        <span>미루지 않기
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="think_arrow left bottom"></div>
+                                            </div>
+                                            <div data-type="toggleButton">
+                                                <div class="toggle box purple" data-toggle-obj="4">
+                                                    <div class="answer" data-toggle-target="4">
+                                                        <span>정성 다하기
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="think_arrow right bottom"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="dapCheckBtn" data-answer-btn=""></button>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title-text').addClass('gap');
+                } else {
+                    $('header .title-text').removeClass('gap');
+                }
+            });
+
+            $(document).on('click', '.resetBtn', function () {
+                KmAudioPlayer.buttonClick();
+                $('.textLine').val('');
+            });
+
+            // switch tab
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+
+            // toggle
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    dapCheckBtn.addClass('reset');
+                } else {
+                    dapCheckBtn.removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!dapCheckBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

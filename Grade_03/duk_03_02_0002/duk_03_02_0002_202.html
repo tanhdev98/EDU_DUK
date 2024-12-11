@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        .page_2 .noteText {
+            padding: 0;
+            box-shadow: none;
+        }
+
+        .note1 {
+            height: 60px;
+        }
+
+        .note2 {
+            height: 240px;
+        }
+
+        .note3 {
+            height: 240px;
+        }
+
+        .noteText.note1 .textareaWrap,
+        .noteText.note2 .textareaWrap,
+        .noteText.note3 .textareaWrap {
+            height: 100%;
+            padding: 0;
+        }
+
+        .page_2 .noteText .text-exam.flex-wrap {
+            padding: 0;
+        }
+
+        /* page 3 */
+        .page_3 .additional-question {
+            position: absolute;
+            right: 0;
+        }
+
+        .page_3 .flex {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 100px;
+        }
+
+        .page_3 .flex .box-question {
+            border-radius: 30px;
+            padding: 20px;
+            text-align: center;
+            height: 100%;
+            width: 50%;
+            min-height: 350px;
+        }
+
+        .page_3 .flex .box-question .box-content {
+            background-color: #fff;
+            border-radius: 20px;
+            margin-top: 15px;
+            padding: 15px;
+            min-height: 245px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flex .box-question.blue {
+            background-color: #F1F9FC;
+        }
+
+        .flex .box-question.blue .box-title {
+            color: #0070C0;
+        }
+
+        .flex .box-question.orange {
+            background-color: #FFF9E5;
+        }
+
+        .flex .box-question.orange .box-title {
+            color: #FF9800;
+        }
+
+        .flex .box-question.pink {
+            background-color: #FDF2F5;
+        }
+
+        .flex .box-question.pink .box-title {
+            color: #FF6284;
+        }
+
+        .flex .box-question.purple {
+            background-color: #F6EFFB;
+        }
+
+        .flex .box-question.purple .box-title {
+            color: #9070B6;
+        }
+
+        /* Popup page */
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: fit-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .popup_pages [data-type="toggleButton"] {
+            height: fit-content;
+            align-items: center;
+            display: flex;
+            width: 100% !important;
+        }
+
+        [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            height: 100%;
+        }
+
+        .popup-pages .ls-2h {
+            width: 100%;
+        }
+
+        .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue">실천 <em>쑥쑥</em></div>
+            <div class="title-text">목표를 정해서 실천하는 방법을 알아봅시다.</div>
+        </header>
+        <main>
+
+
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="실천 계획을 점검 내용에 따라 점검해 봅시다.">활동 1</li>
+                    <li data-hover="" data-text="실천 계획을 점검 내용에 맞게 고쳐 써 봅시다.">활동 2</li>
+                    <li data-hover="" data-text="목표를 실천하는 방법을 알아봅시다.">활동 3</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="self-check" style="margin-top: 30px;">
+                            <div class="checkWrap">
+                                <div class="text_box">
+                                    <div class="bullet number orange inline">1</div>
+                                    실천 내용을 구체적으로 적었나요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon5"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon4"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">
+                                    <div class="bullet number orange inline">2</div>
+                                    실천 내용을 확인할 수 있도록 헤아릴 수 있는
+                                    숫자를 넣었나요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon5"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon4"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">
+                                    <div class="bullet number orange inline">3</div>
+                                    계획을 일주일 동안 몇 번 실천할지 적었나요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon5"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon4"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">
+                                    <div class="bullet number orange inline">4</div>
+                                    계획을 실천할 시간을 적었나요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon5"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon4"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="example-box">
+                                <div class="exampleIcoWrap">
+                                    <div class="example ico-05">
+                                        그렇다
+                                    </div>
+                                    <div class="example ico-04">
+                                        그렇다
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="tab-content content-01" style="margin-top: 20px;">
+                            <div class="table-box color-03 ">
+                                <rowgroup>
+                                    <row style="width: 280px;"></row>
+                                </rowgroup>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th colspan="5">실천 계획</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th colspan="1" style="border-right: 2px solid #d5c5e0;">
+                                                목표
+                                            </th>
+                                            <td colspan="4">
+                                                <div class="noteText noLine note1">
+                                                    <div class="textareaWrap">
+                                                        <textarea class="textLine afterDisplay" type="text"
+                                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                            onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                            spellcheck="false"></textarea>
+                                                    </div>
+                                                    <div class="text-exam flex-wrap">
+                                                        <div class="blueT">
+                                                            <p>이단 줄넘기 연속으로 10번 하기</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th colspan="1" rowspan="4">
+                                                구체적인
+                                                실천 계획
+                                            </th>
+                                            <th colspan="2">
+                                                실천 내용
+                                            </th>
+                                            <th colspan="2">
+                                                실천 시간
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" rowspan="3">
+                                                <div class="noteText noLine note2">
+                                                    <div class="textareaWrap">
+                                                        <textarea class="textLine afterDisplay" type="text"
+                                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                            onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                            spellcheck="false"></textarea>
+                                                    </div>
+                                                    <div class="text-exam flex-wrap">
+                                                        <div class="blueT">
+                                                            <p>30분씩 연습하기</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td colspan="2" rowspan="3">
+                                                <div class="noteText noLine note3">
+                                                    <div class="textareaWrap">
+                                                        <textarea style="letter-spacing: -1px;"
+                                                            class="textLine afterDisplay" type="text"
+                                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                            onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                            spellcheck="false"></textarea>
+                                                    </div>
+                                                    <div class="text-exam flex-wrap">
+                                                        <div class="blueT">
+                                                            <p style="letter-spacing: -1px;">
+                                                                월요일, 수요일, 목요일(3번)에 방과 후에 운동장에서
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="buttonContainer">
+                                <button class="writeBtn" data-answer-btn=""></button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="page_3" data-quiz="toggle">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="popBtn additional-question" data-popup-btn="2">추가 질문</div>
+                                    <div class="flex">
+                                        <div class="box-question blue">
+                                            <div class="box-title">
+                                                나와의 약속 지키기
+                                            </div>
+                                            <div class="box-content">
+                                                누가 보지 않는다고<br>
+                                                나와 한 약속을<br>
+                                                가볍게 생각하면<br>
+                                                안 됩니다.
+                                            </div>
+                                        </div>
+                                        <div class="box-question orange">
+                                            <div class="box-title">
+                                                미루지 않기
+                                            </div>
+                                            <div class="box-content">
+                                                핑계를 대며<br>
+                                                해야 할 일을 미루면<br>
+                                                목표를 이룰 수 없습니다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="flex">
+                                        <div class="box-question pink">
+                                            <div class="box-title">
+                                                시간 관리하기
+                                            </div>
+                                            <div class="box-content">
+                                                실천하려고 노력하는M<br>
+                                                시간을 낭비하지<br>
+                                                않으려면 시간 계획을<br>
+                                                세워야 합니다.
+                                            </div>
+                                        </div>
+                                        <div class="box-question purple">
+                                            <div class="box-title">
+                                                정성 다하기
+                                            </div>
+                                            <div class="box-content">
+                                                자신이 하고자<br>
+                                                하는 일을 정성을 다해<br>
+                                                하는 것입니다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag="">
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents">
+
+                    </div>
+                </li>
+                <li class="fullLine whole image" data-popup-page="2" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="innerButtonContainer">
+                                <ul class="innerSlider_tabs">
+                                    <li data-hover="" class="on">1</li>
+                                    <li data-hover="">2</li>
+                                    <li data-hover="">3</li>
+                                    <li data-hover="">4</li>
+                                    <li data-hover="">5</li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1 on">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            나와의 약속을 지키기 위해서는 어떻게 해야 할까요?
+                                            <img src="./common/images/ico_que.png" class="ico" />
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico" />
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="5" data-hover>
+                                                    <div class="answer" data-toggle-target="5">
+                                                        <div class="ls-2h">
+                                                            <p class="dot">
+                                                                나와의 약속을 보이는 곳에 크게 적어 둡니다.
+                                                            </p><br>
+                                                            <p class="dot">
+                                                                주위 사람들에게 알립니다.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            미루지 않으려면 어떻게 해야 할까요?
+                                            <img src="./common/images/ico_que.png" class="ico" />
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico" />
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="6" data-hover>
+                                                    <div class="answer" data-toggle-target="6">
+                                                        <div class="ls-2h">
+                                                            <p class="dot">
+                                                                반성하는 시간을 갖습니다.
+                                                            </p><br>
+                                                            <p class="dot">
+                                                                잘못된 점은 고치려고 노력합니다.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            시간을 관리하려면 어떻게 해야 할까요?
+                                            <img src="./common/images/ico_que.png" class="ico" />
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico" />
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="7" data-hover>
+                                                    <div class="answer" style="margin: auto;" data-toggle-target="7">
+                                                        <div class="ls-2h">
+                                                            계획표를 만듭니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_4">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            정성을 다하려면 어떻게 해야 할까요?
+                                            <img src="./common/images/ico_que.png" class="ico" />
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico" />
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="8" data-hover>
+                                                    <div class="answer" style="margin: auto;" data-toggle-target="8">
+                                                        <div class="ls-2h">
+                                                            목표한 바가 있으면 미루지 않고 최선을 다합니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_5">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            목표를 실천하는 또 다른 방법에는 무엇이 있을까요?
+                                            <img src="./common/images/ico_que.png" class="ico" />
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico" />
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="10" data-hover>
+                                                    <div class="answer" data-toggle-target="10">
+                                                        <div class="ls-2h">
+                                                            <p class="dot">
+                                                                목표를 작게 세웁니다.
+                                                            </p><br>
+                                                            <p class="dot">
+                                                                목표를 계속 확인합니다.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title-text').addClass('gap');
+                } else {
+                    $('header .title-text').removeClass('gap');
+                }
+            });
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+
+        });
+    </script>
+</body>
+
+</html>
