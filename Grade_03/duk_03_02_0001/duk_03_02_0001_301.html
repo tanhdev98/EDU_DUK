@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        /* Page 1 */
+        .page_1 .wrapItem {
+            background-color: #FFD966;
+            padding: 20px;
+            border-radius: 30px;
+            align-items: center;
+            display: flex;
+            height: 450px;
+        }
+
+        .page_1 .wrapItem img {
+            position: absolute;
+            width: 570px;
+            right: 0;
+            bottom: 0px;
+        }
+
+        .page_1 .text-box {
+            text-align: center;
+            width: 750px;
+        }
+
+        /* Page 2 */
+        .page_2 .self-check {
+            margin-top: 100px;
+            width: 94%;
+        }
+
+        .btn-praise {
+            top: 450px;
+            right: -28px;
+        }
+
+
+        /* title thinknet */
+        .pointContainer .pointTitle {
+            display: block;
+            text-align: center;
+        }
+
+        .pointContainer .pointTitle .titleText {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 45px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #ff6600;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+        }
+
+        .pointContainer .pointTitle .titleText:after,
+        .pointContainer .pointTitle .titleText:before {
+            position: absolute;
+            top: 0px;
+            height: 50px;
+            font-size: 40px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #e4caa9;
+        }
+
+        .pointContainer .pointTitle .titleText:after {
+            content: "[";
+            left: -20px;
+        }
+
+        .pointContainer .pointTitle .titleText:before {
+            content: "]";
+            right: -20px;
+        }
+
+        .popup_pages .group-box .titleBox {
+            width: fit-content;
+            margin: 10px auto 0;
+            padding: 5px 15px;
+            background-color: #fff;
+            border: 4px solid #EFCFA6;
+            border-radius: 5px;
+            position: relative;
+            width: 700px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup_pages .group-box .titleBox span {
+            position: absolute;
+            left: 50%;
+            bottom: -100px;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 100px;
+            background: url('./images/ton_03_02_0001_301/img_down.png') no-repeat center center / contain;
+        }
+
+        .popup_pages .group-box .titleBox::before {
+            content: "";
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            background: url('./images/ton_03_02_0001_301/img_arrow.png') no-repeat center center / contain;
+            left: -119px;
+            top: 50px;
+        }
+
+        .popup_pages .group-box .titleBox::after {
+            content: "";
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            background: url('./images/ton_03_02_0001_301/img_arrow.png') no-repeat center center / contain;
+            right: -119px;
+            top: 50px;
+            transform: scaleX(-1);
+        }
+
+        .box-text {
+            width: 390px;
+            height: 260px;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+        }
+
+        .box-text.pink {
+            background-color: #FFDBDF;
+            top: 340px;
+            left: 50px;
+        }
+
+        .box-text.green {
+            background-color: #F2F7C8;
+            top: 340px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .box-text.blue {
+            background-color: #E7F4F9;
+            top: 340px;
+            right: 50px;
+        }
+
+        .box-text .wrapToggle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            padding: 5px;
+        }
+
+        .box-text .wrapToggle .toggle {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pointContainer .dapCheckBtn {
+            right: 28px;
+            bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="twoLine">
+            <div class="title-icon yellow" data-show="1">생각 <em>똑똑</em></div>
+            <div class="title-text">
+                다음 이야기를 읽고 어떻게 하면 하루를 성실하게 보낼 수 있을지
+                이야기해 봅시다.
+            </div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="다음 이야기를 읽고 어떻게 하면 하루를 성실하게 보낼 수 있을지 이야기해 봅시다.">활동</li>
+                    <li data-hover="" data-text="배운 내용을 되돌아보며 자기 점검을 해 봅시다.">자기 점검
+                    </li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="wrapItem">
+                            <div class="text-box">
+                                하루하루가 모여 한 달이 되고 한 달이
+                                모여 일 년이 됩니다. 그리고 일 년이 모여 일생(평생)이 되지요.
+                                여러분은 어떻게 하루를 보내고 있나요?
+                            </div>
+                            <img src="./images/ton_03_02_0001_301/img_01.png" />
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="study_guide"><em>기호</em>를 <em>클릭</em>하세요.</div>
+                        <div class="self-check">
+                            <div class="checkWrap">
+                                <div class="text_box">성실이 어떤 뜻인지 알고 있나요?</div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">성실과 관련 있는 마음가짐이 무엇인지 이해하고 있나요?</div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">성실하게 생활해야 하는 까닭을 설명할 수 있나요?</div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="example-box">
+                                <div class="exampleIcoWrap">
+                                    <div class="example ico-01">
+                                        매우 그렇다
+                                    </div>
+                                    <div class="example ico-02">
+                                        그렇다
+                                    </div>
+                                    <div class="example ico-03">
+                                        좀 더 노력해야 한다
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-praise right popBtn footer-item" data-popup-btn="1">
+                            <div class="item-title">핵심 <br>정리</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image pointContainer" data-popup-page="1">
+                    <div class="full_content">
+                        <div class="basicSlider " data-slide-container="">
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1 on" data-quiz="toggle">
+                                    <div class="pointTitle">
+                                        <div class="titleText">성실은 무엇일까요?</div>
+                                        <div class="group-box">
+                                            <div class="titleBox">
+                                                성실
+                                                <span></span>
+                                            </div>
+                                            <div class="box-text pink">
+                                                <div class="wrapToggle">
+                                                    <div class="toggle" data-toggle-obj="1">
+                                                        <div class="answer on" data-toggle-target="1">
+                                                            <div class="ls-1h">참된 마음</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box-text green">
+                                                <div class="wrapToggle">
+                                                    <div class="toggle" data-toggle-obj="2">
+                                                        <div class="answer on" data-toggle-target="2">
+                                                            <div class="ls-1h">노력하는 마음</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box-text blue">
+                                                <div class="wrapToggle">
+                                                    <div class="toggle" data-toggle-obj="3">
+                                                        <div class="answer on" data-toggle-target="3">
+                                                            <div class="ls-1h">참고 이겨내는 마음</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="dapCheckBtn" data-answer-btn=""></button>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="popup_closeBtn"></div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title-text').addClass('gap');
+                } else {
+                    $('header .title-text').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                    $('header').removeClass('threeLine');
+                }
+                else if ($(this).hasClass('threeLine')) {
+                    $('header').removeClass('twoLine');
+                    $('header').addClass('threeLine');
+                }
+                else {
+                    $('header').removeClass('threeLine');
+                    $('header').removeClass('twoLine');
+                }
+            });
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+
+
+            $(document).on('click', '.page_1 .character-item', function () {
+                $(this).find('.balloon').removeClass('fff');
+            });
+
+            $(document).on('click', '.page_1 .characterWrap, .page_1 .balloon > span', function () {
+                KmAudioPlayer.buttonClick();
+            });
+            $prite.boy1({
+                id: '#boy_1_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '역시 숙제는 힘들어. <br>인터넷에서 베껴서 낼래.',
+                class: 'bottom',
+                balloon_bottom: 220,
+                balloon_left: -150,
+            });
+            $prite.boy4({
+                id: '#boy_4_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '숙제를 베껴서 내면 <br>내가 한 게 아니잖아. <br>나는  내 힘으로 해 볼래. ',
+                class: 'bottom',
+                balloon_bottom: 220,
+                balloon_left: -140,
+            });
+            $prite.girl1({
+                id: '#girl_1_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '오늘 하기로 한 일이 <br>있지만 하기 귀찮아.<br>대충 해야지.',
+                class: 'bottom',
+                balloon_bottom: 220,
+                balloon_left: -110,
+            });
+            $prite.girl3({
+                id: '#girl_3_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '내가 하기로 한 일이니까 <br>나는 최선을 다해 <br>열심히 할 거야.',
+                class: 'bottom',
+                balloon_bottom: 220,
+                balloon_left: -150,
+            });
+
+            $prite.boy3({
+                id: '#boy_3_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '책을 읽어야 하지만 <br>축구를 더 하고 싶어. <br>책은 내일 읽지 뭐.',
+                class: 'bottom',
+                balloon_bottom: 220,
+                balloon_left: -117,
+            });
+            $prite.girl4({
+                id: '#girl_4_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '나는 지금 게임을 하고 싶지만 <br>그 마음을 참고 해야 할 일을<br> 할 거야.',
+                class: 'bottom',
+                balloon_bottom: 220,
+                balloon_left: -196,
+            });
+        });
+
+    </script>
+</body>
+
+</html>

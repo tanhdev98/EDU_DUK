@@ -19,6 +19,297 @@
         header.threeLine .title-icon {
             top: -60px;
         }
+
+        /* Page 1 */
+        .page_1 .wrapItem {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            height: 420px;
+        }
+
+        .page_1 .noteText {
+            box-shadow: none;
+            background-color: #f7f7f7;
+            padding: 5px 0px;
+            height: 330px;
+        }
+
+        .page_1 .charText .text-1 {
+            min-width: 450px;
+        }
+
+        .page_1 .noteText .text-exam.flex-wrap {
+            padding: 5px 20px;
+        }
+
+        .page_1 .imgArrow {
+            width: 100px;
+        }
+
+        .page_1 .imgArrow img {
+            width: 100%;
+            min-width: 80px;
+        }
+
+        .page_1 .imageCharacter {
+            position: relative;
+        }
+
+        .page_1 .imageCharacter img {
+            width: 180px;
+        }
+
+        .page_1 .balloon {
+            position: relative;
+            display: block !important;
+        }
+
+        .page_1 .balloon.middle::after {
+            top: -50px;
+        }
+
+        .page_1 .charName {
+            position: absolute;
+            background-color: #1BA59E;
+            padding: 5px 15px;
+            border-radius: 10px;
+            color: #fff;
+            width: 200px;
+            text-align: center;
+            bottom: -70px;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -70px;
+        }
+
+        /* Page 2 */
+
+        .page_2 .flex {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            width: 92%;
+            margin: 0 auto;
+        }
+
+        .page_2 .flex>div {
+            width: 100%;
+        }
+
+        .page_2 .flex .leftItem {
+            padding: 20px;
+            border-radius: 30px;
+            text-align: center;
+        }
+
+        .page_2 .flex .leftItem.orange {
+            background-color: #FFF9E5;
+        }
+
+        .page_2 .flex .leftItem.pink {
+            background-color: #FDF2F5;
+        }
+
+        .page_2 .flex .leftItem.green {
+            background-color: #F5F7E5;
+        }
+
+        .page_2 .flex .leftItem.purple {
+            background-color: #F6EFFB;
+        }
+
+        .page_2 .flex .leftItem.blue {
+            background-color: #F1F9FC;
+        }
+
+        .page_2 .flex .leftItem img {
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 10px;
+        }
+
+        .page_2 .flex .rightItem {
+            padding: 20px;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .page_2 .flex .rightItem .toggle {
+            height: 100%;
+            height: 420px;
+            border-radius: 30px;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .page_2 .flex .rightItem .toggle .answer {
+            text-align: center;
+        }
+
+        [data-popup-page="1"] {
+            width: max-content;
+            top: 276px;
+            left: 183px;
+        }
+
+        /* Page 3 */
+        .page_3 .noteText {
+            margin-top: 25px;
+        }
+
+        /* Page 4 */
+        .popupItem {
+            display: none;
+            position: absolute;
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+
+        .popupItem::before {
+            content: "";
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .popupItem::after {
+            position: absolute;
+            content: "";
+            top: 257px;
+            height: 150px;
+            width: 4px;
+        }
+
+        .popupItem1 {
+            bottom: 70px;
+            right: 460px;
+            border: 4px solid #FFE899;
+            background-color: #FFF5D1;
+        }
+
+        .popupItem1::before {
+            background-color: #FFE899;
+            left: 150px;
+            top: -160px;
+        }
+
+        .popupItem1::after {
+            background-color: #FFE899;
+            left: 155px;
+            top: -150px;
+        }
+
+        .popupItem2 {
+            bottom: 135px;
+            right: 215px;
+            border: 4px solid #D7DEA3;
+            background-color: #F2F7C8;
+        }
+
+        .popupItem2::before {
+            background-color: #D7DEA3;
+            left: 50%;
+            top: -150px;
+            transform: translateX(-50%);
+        }
+
+        .popupItem2::after {
+            background-color: #D7DEA3;
+            left: 50%;
+            top: -150px;
+            transform: translateX(-50%);
+        }
+
+        .popupItem3 {
+            bottom: 80px;
+            right: 0;
+            border: 4px solid #A8D6F6;
+            background-color: #E7F4F9;
+        }
+
+        .popupItem3::before {
+            background-color: #A8D6F6;
+            right: 130px;
+            top: -150px;
+        }
+
+        .popupItem3::after {
+            background-color: #A8D6F6;
+            right: 135px;
+            top: -150px;
+        }
+
+        .page_4 .groupBoxClick {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 30px;
+            z-index: 1;
+        }
+
+        .page_4 .groupBoxClick .boxItem {
+            width: 100%;
+            height: 150px;
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .page_4 .groupBoxClick .boxItem.yellow {
+            border: 4px solid #FFE899;
+        }
+
+        .page_4 .groupBoxClick .boxItem.green {
+            border: 4px solid #D7DEA3;
+        }
+
+        .page_4 .groupBoxClick .boxItem.blue {
+            border: 4px solid #A8D6F6;
+        }
+
+        .page_4 .click-finger-Btn {
+            position: absolute;
+            right: 15px;
+            bottom: -25px;
+        }
+
+        .page_4 .imgArrow {
+            position: absolute;
+            left: 50%;
+            top: 46%;
+            transform: translate(-50%, -50%) rotate(90deg);
+            width: 100px;
+        }
+
+        .page_4 .imgArrow img {
+            width: 100%;
+        }
+
+        .boxBottom {
+            width: 400px;
+            background: url('./images/duk_03_02_0001_202/img_07.png') no-repeat center center;
+            background-size: 100% 100%;
+            text-align: center;
+            position: absolute;
+            height: 120px;
+            bottom: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .page_4 .noteText {
+            margin-top: 25px;
+        }
     </style>
 </head>
 
@@ -42,9 +333,366 @@
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1">
 
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="wrapItem">
+                                        <div class="imageCharacter boy_1">
+                                            <img src="./images/duk_03_02_0001_202/boy_1.png" />
+                                            <div class="charName">현석</div>
+                                        </div>
+                                        <div class="charText">
+                                            <div class="text-1 balloon textAlignC pink left middle">
+                                                난 매일 아침에<br>
+                                                100개씩 줄넘기 연습을 <br>
+                                                하기로 했지만 하기 싫은<br>
+                                                날에는 50개만 하고<br>
+                                                다 했다고 말하기도 했어.
+                                            </div>
+                                        </div>
+                                        <div class="imgArrow">
+                                            <img src="./images/duk_03_02_0001_202/imgArrow.png" />
+                                        </div>
+                                        <div class="noteText noLine">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    <p>현석이는 그 누가 아닌 자신을 위해 참된 마음을 가지고 자신과의 약속을 진실되게 지켜 가면 좋겠어.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="wrapItem">
+                                        <div class="imageCharacter girl_1">
+                                            <img src="./images/duk_03_02_0001_202/girl_1.png" />
+                                            <div class="charName">은수</div>
+                                        </div>
+                                        <div class="charText">
+                                            <div class="text-1 balloon textAlignC pink left middle">
+                                                난 작년 줄넘기 대회에서<br>
+                                                우승했어. 이번에도<br>
+                                                분명히 잘할 거라<br>
+                                                따로 연습하지 않아도 돼.
+                                            </div>
+                                        </div>
+                                        <div class="imgArrow">
+                                            <img src="./images/duk_03_02_0001_202/imgArrow.png" />
+                                        </div>
+                                        <div class="noteText noLine">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    <p>은수는 자신감이 넘치는 것은 좋지만 어떤 일이든 노력하는 마음을 가지고 최선을 다해서 노력해야 해.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3" data-quiz="toggle">
+                                    <div class="wrapItem">
+                                        <div class="imageCharacter boy_3">
+                                            <img src="./images/duk_03_02_0001_202/boy_3.png" />
+                                            <div class="charName">강우</div>
+                                        </div>
+                                        <div class="charText">
+                                            <div class="text-1 balloon textAlignC purple left middle">
+                                                난 매일 100개씩 줄넘기<br>
+                                                연습을 하기로 했지만<br>
+                                                매일 연습하는 게<br>
+                                                어려웠어. 친구들이 놀자고<br>
+                                                하거나 게임을 하고 싶을 때는<br>
+                                                연습을 안 하고 놀았어.
+                                            </div>
+                                        </div>
+                                        <div class="imgArrow">
+                                            <img src="./images/duk_03_02_0001_202/imgArrow.png" />
+                                        </div>
+                                        <div class="noteText noLine">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    <p>강우는 유혹에 넘어가지 않고 참고 이겨 내는 마음으로 해야 할 일에 집중하면 좋겠어.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                     <li class="page_2" data-quiz="toggle">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="1"></div>
+                                    <div class="flex">
+                                        <div class="leftItem orange">
+                                            <img src="./images/duk_03_02_0001_202/img_01.JPG" />
+                                            <div class="leftItemDesc">
+                                                불을 끄는 소방관
+                                            </div>
+                                        </div>
+                                        <div class="rightItem" data-type="toggleButton">
+                                            <div class="toggle examBtn box" data-toggle-obj="1">
+                                                <div class="answer" data-toggle-target="1">
+                                                    <div class="ls-2h">
+                                                        교통 지도를 하는 경찰이<br>
+                                                        성실하지 않으면<br>
+                                                        교통이 혼잡해질 것 같습니다.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="flex">
+                                        <div class="leftItem pink">
+                                            <img src="./images/duk_03_02_0001_202/img_02.JPG" />
+                                            <div class="leftItemDesc">
+                                                수술을 하는 의사
+                                            </div>
+                                        </div>
+                                        <div class="rightItem" data-type="toggleButton">
+                                            <div class="toggle examBtn box" data-toggle-obj="2">
+                                                <div class="answer" data-toggle-target="2">
+                                                    <div class="ls-2h">
+                                                        의사가 성실하지 않으면<br>
+                                                        아픈 사람의 병이 낫지 않을<br> 것 같습니다.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3" data-quiz="toggle">
+                                    <div class="flex">
+                                        <div class="leftItem green">
+                                            <img src="./images/duk_03_02_0001_202/img_03.JPG" />
+                                            <div class="leftItemDesc">
+                                                재판을 하는 의사
+                                            </div>
+                                        </div>
+                                        <div class="rightItem" data-type="toggleButton">
+                                            <div class="toggle examBtn box" data-toggle-obj="3">
+                                                <div class="answer" data-toggle-target="3">
+                                                    <div class="ls-2h">
+                                                        판사가 성실하지 않으면<br>
+                                                        판결이 공정하게 되지 않아<br>
+                                                        억울한 사람이 늘어날 것입니다.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_4" data-quiz="toggle">
+                                    <div class="flex">
+                                        <div class="leftItem purple">
+                                            <img src="./images/duk_03_02_0001_202/img_04.JPG" />
+                                            <div class="leftItemDesc">
+                                                청소를 하는 환경미화원
+                                            </div>
+                                        </div>
+                                        <div class="rightItem" data-type="toggleButton">
+                                            <div class="toggle examBtn box" data-toggle-obj="4">
+                                                <div class="answer" data-toggle-target="4">
+                                                    <div class="ls-2h">
+                                                        환경미화원이 성실하지<br> 않으면 거리가 더러워질<br> 것 같습니다.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_5" data-quiz="toggle">
+                                    <div class="flex">
+                                        <div class="leftItem green">
+                                            <img src="./images/duk_03_02_0001_202/img_05.JPG" />
+                                            <div class="leftItemDesc">
+                                                나라를 지키는 군인
+                                            </div>
+                                        </div>
+                                        <div class="rightItem" data-type="toggleButton">
+                                            <div class="toggle examBtn box" data-toggle-obj="5">
+                                                <div class="answer" data-toggle-target="5">
+                                                    <div class="ls-2h">
+                                                        군인이 성실하지 않으면<br>
+                                                        나라를 지키지 못할 것 같습니다.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_6" data-quiz="toggle">
+                                    <div class="flex">
+                                        <div class="leftItem blue">
+                                            <img src="./images/duk_03_02_0001_202/img_06.jpg" />
+                                            <div class="leftItemDesc">
+                                                교통 지도를 하는 경찰
+                                            </div>
+                                        </div>
+                                        <div class="rightItem" data-type="toggleButton">
+                                            <div class="toggle examBtn box" data-toggle-obj="6">
+                                                <div class="answer" data-toggle-target="6">
+                                                    <div class="ls-2h">
+                                                        교통 지도를 하는 경찰이<br>
+                                                        성실하지 않으면<br>
+                                                        교통이 혼잡해질 것 같습니다.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
 
+                    </li>
+                    <li class="page_3" data-quiz="toggle">
+                        <div class="noteText noteLine green">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p>학급에서 칠판 지우는 일인 일역을 맡았습니다. 학급에서 맡은 칠판 지우는 일인 일역을 성실하게 하지 않으면 수업을 받을 수 없습니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                    <li class="page_4">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="groupBoxClick">
+                                        <div class="boxItem yellow">
+                                            참된 마음
+                                            <span class="click-finger-Btn blinkOn blinkOpacity item1" data-hover=""
+                                                data-popup="1"></span>
+                                        </div>
+                                        <div class="boxItem green">
+                                            노력하는 마음
+                                            <span class="click-finger-Btn blinkOn blinkOpacity item2" data-hover=""
+                                                data-popup="2"></span>
+                                        </div>
+                                        <div class="boxItem blue">
+                                            참고 이겨내는 마음
+                                            <span class="click-finger-Btn blinkOn blinkOpacity item3" data-hover=""
+                                                data-popup="3"></span>
+                                        </div>
+                                        <div class="popupItem purple popupItem1" data-show="1">
+                                            <span>
+                                                참된 마음을 가지고 성실하게 해야<br>
+                                                어떤 일이든 떳떳하고 자랑스러운 마음을<br>
+                                                갖게 되고 후회하지 않을 수 있기 때문입니다.
+                                            </span>
+                                        </div>
+                                        <div class="popupItem purple popupItem2" data-show="2">
+                                            <span>
+                                                노력하고 애쓰며 성실하게 생활해야<br>
+                                                하고자 하는 일을 잘 해낼 수 있기 때문입니다.
+                                            </span>
+                                        </div>
+                                        <div class="popupItem purple popupItem3" data-show="3">
+                                            <span>
+                                                포기하지 않고 성실하게 생활하면<br>
+                                                해냈다는 보람과 자부심을 가질 수 있기<br>
+                                                때문입니다.
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="imgArrow">
+                                        <img src="./images/duk_03_02_0001_202/imgArrow.png" />
+                                    </div>
+                                    <div class="boxBottom">
+                                        성실
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="noteText noteLine blue">
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p>성실해야 내가 하는 일을 후회 없이 할 수 있고 어떤 일이든 잘할 수 있습니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
 
                     </li>
                 </ul>
@@ -53,7 +701,24 @@
 
         <section class="popup_container" data-popup-container="">
             <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag="">
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        친구들과 토의를 해 봐도 좋아요.
 
+                        <p><ins class="dot"></ins> 짝 토의: 둘이 짝을 지어 토의해요.
+                        </p>
+                        <p><ins class="dot"></ins>
+                            브레인스토밍: 모둠에서 생각나는 대로 무엇이든 이야기해 봐요.
+                        </p>
+                        <p><ins class="dot"></ins>
+                            물레방아 토의: 2명–4명–8명식으로 사람을 늘려 가며 이야기해 봐요.
+                        </p>
+                        <p><ins class="dot"></ins>
+                            피라미드 토의: 시간을 정해서 짝을 바꾸어 가며 이야기해 봐요.
+                        </p>
+                    </div>
+                </li>
             </ul>
         </section>
 
@@ -97,81 +762,24 @@
                     $('header').removeClass('threeLine');
                     $('header').removeClass('twoLine');
                 }
+                $('.click-finger-Btn').removeClass('blinkOn').removeClass('blinkOpacity');
+                setTimeout(function () {
+                    $('.click-finger-Btn').addClass('blinkOn').addClass('blinkOpacity');
+                }, 100);
             });
-            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
-                let idx = $(this).index() + 1;
-                $('.popup_pages .innerSlider_tabs li').removeClass('on');
-                $(this).addClass('on');
-                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
-                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
-            });
+
             $(window).on('load', function () {
                 $('.page_1 .character-item .balloon').removeClass('fff');
             });
-
-            $(document).on('click', '.page_1 .characterWrap, .page_1 .balloon > span', function () {
+            $(document).on('click', '.click-finger-Btn', function () {
                 KmAudioPlayer.buttonClick();
-            });
-            $prite.boy1({
-                id: '#boy_1_c',
-                circle: true,
-                speech: 'right',
-                sound: '',
-                text: '숙제는 편하게 <br>베껴서 낼래.',
-                class: 'bottom',
-                balloon_bottom: 160,
-                balloon_left: -310,
-            });
-            $prite.boy4({
-                id: '#boy_4_c',
-                circle: true,
-                speech: 'right',
-                sound: '',
-                text: '숙제는 베끼지 않고 <br>내 힘으로 할래.',
-                class: 'bottom',
-                balloon_bottom: 160,
-                balloon_left: 190,
-            });
-            $prite.girl1({
-                id: '#girl_1_c',
-                circle: true,
-                speech: 'right',
-                sound: '',
-                text: '귀찮은데<br>대충 하고 끝낼래.',
-                class: 'bottom',
-                balloon_bottom: 160,
-                balloon_left: -360,
-            });
-            $prite.girl3({
-                id: '#girl_3_c',
-                circle: true,
-                speech: 'right',
-                sound: '',
-                text: '내가 하기로 한 일은<br>최선을 다할 거야.',
-                class: 'bottom',
-                balloon_bottom: 160,
-                balloon_left: 180,
-            });
-
-            $prite.boy3({
-                id: '#boy_3_c',
-                circle: true,
-                speech: 'right',
-                sound: '',
-                text: '축구하고 싶으니까<br>그냥 축구할래.<br> 해야 할 일은 내일<br> 하지 뭐.',
-                class: 'bottom',
-                balloon_bottom: 120,
-                balloon_left: -400,
-            });
-            $prite.girl4({
-                id: '#girl_4_c',
-                circle: true,
-                speech: 'right',
-                sound: '',
-                text: '난 게임을 하고 <br>싶지만 참을래.<br> 해야 할 일이 있거든.',
-                class: 'bottom',
-                balloon_bottom: 180,
-                balloon_left: 205,
+                var $data_popup = $(this).attr('data-popup');
+                var $currentPopup = $('.popupItem[data-show="' + $data_popup + '"]');
+                var maxZIndex = Math.max.apply(null, $('.popupItem:visible').map(function () {
+                    return parseInt($(this).css('z-index')) || 0;
+                }).get());
+                $currentPopup.css('z-index', maxZIndex + 1).show();
+                $(this).hide();
             });
         });
 
