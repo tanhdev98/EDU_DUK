@@ -12,8 +12,166 @@
 
 
     <style>
+        /* Page 1 */
+        .page_1 .flex {
+            display: flex;
+            gap: 200px;
+            position: absolute;
+            left: 50%;
+            bottom: 70px;
+            transform: translateX(-50%);
+        }
+
+        .speech {
+            cursor: pointer;
+        }
+
+        .page_1 .noteText {
+            margin-top: 60px;
+        }
+
+        .text-box {
+            display: none;
+            gap: 20px;
+            text-align: center;
+            padding: 10px 20px;
+            border-radius: 15px;
+            width: fit-content;
+            position: absolute;
+
+        }
+
+        .text-box img {
+            height: 100px;
+        }
+
+        .text-box.box1 {
+            border: 4px solid #D7DEA3;
+            background-color: #F2F7C8;
+            top: 90px;
+            left: 70px;
+        }
+
+        .text-box.box2 {
+            background-color: #FDF3E7;
+            border: 4px solid #FFD89E;
+            top: 90px;
+            left: 910px;
+        }
+
+        .bob {
+            width: 25px;
+            height: 25px;
+
+            position: absolute;
+            transform: translateX(-50%);
+            border-radius: 50%;
+
+        }
+
+        .bob::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+
+            border-radius: 50%;
+
+        }
+
+        .bob::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+
+        }
+
+        .bob1 {
+            background-color: #D7DEA3;
+            top: 140px;
+            left: 270px;
+        }
+
+        .bob1::before {
+            top: 28px;
+            left: 15px;
+            background-color: #D7DEA3;
+        }
+
+        .bob1::after {
+            top: 50px;
+            left: 38px;
+            background-color: #D7DEA3;
+        }
+
+        .bob2 {
+            background-color: #FFD89E;
+            top: 140px;
+            left: 30px;
+        }
+
+        .bob2::before {
+            top: 30px;
+            left: -1px;
+            background-color: #FFD89E;
+        }
+
+        .bob2::after {
+            top: 57px;
+            left: -10px;
+            background-color: #FFD89E;
+        }
+
+        .popup_pages .wrapImg {
+            width: 100%;
+            height: 700px;
+        }
+
+        .popup_pages .wrapImg img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+        }
+
+        .topText.text1 {
+            position: absolute;
+            left: 50%;
+            top: 120px;
+            transform: translateX(-50%);
+            background-color: #fff;
+            border-radius: 50px;
+            padding: 10px 20px;
+        }
+
+        .topText.text2 {
+            position: absolute;
+            left: 50%;
+            top: 110px;
+            transform: translateX(-50%);
+            background-color: #F9EFE4;
+            border-radius: 50px;
+            padding: 10px 20px;
+        }
+
+        .detail {
+            position: absolute;
+            top: 180px;
+            width: 1240px;
+            padding: 50px;
+        }
+
+        [data-popup-page="2"] .detail {
+            letter-spacing: -2px;
+            position: absolute;
+            top: 130px;
+            width: 1240px;
+            padding: 50px;
+        }
+
         /* page 2 */
-        .noteText {
+        .page_2 .noteText {
             box-shadow: none;
             position: absolute;
             width: 1000px;
@@ -26,12 +184,12 @@
             text-align: center;
         }
 
-        .noteText .textareaWrap {
+        .page_2 .noteText .textareaWrap {
             height: 182px;
             padding: 0;
         }
 
-        .noteText::after {
+        .page_2 .noteText::after {
             display: none;
         }
 
@@ -40,14 +198,14 @@
             left: 40px;
         }
 
-        .noteText.green {
+        .page_2 .noteText.green {
             background: #F5F7E5;
             border: 5px solid #D7DEA3 !important;
             left: 260px;
             top: 60px;
         }
 
-        .noteText::before {
+        .page_2 .noteText::before {
             content: '';
             position: absolute;
             width: 0;
@@ -66,14 +224,14 @@
             bottom: 90px;
         }
 
-        .noteText.orange::before {
+        .page_2 .noteText.orange::before {
             border-left: 30px solid #FFD89E;
             border-right: none;
             left: unset;
             right: -30px;
         }
 
-        .noteText.orange {
+        .page_2 .noteText.orange {
             background: #FDF3E7;
             border: 5px solid #FFD89E !important;
             bottom: 80px;
@@ -118,6 +276,28 @@
                             <ul class="basicSlider_slides" data-slides="">
                                 <li class="innerTab_1">
                                     <div class="study_guide"><em>말풍선</em>을 <em>클릭</em>하세요.</div>
+                                    <div class="flex">
+                                        <img src="./images/duk_04_01_0001_201/boy_4.png" data-popup="1"
+                                            class="speech" />
+                                        <img src="./images/duk_04_01_0001_201/girl_3.png" data-popup="2"
+                                            class="speech" />
+                                    </div>
+                                    <div class="popBtn text-box box1" data-show="1" data-popup-btn="1">
+                                        <img src="./images/duk_04_01_0001_201/img_02.png" class="img_01">
+                                        <span>
+                                            윤한의<br>
+                                            일기
+                                        </span>
+                                        <div class="bob bob1"></div>
+                                    </div>
+                                    <div class="popBtn text-box box2" data-show="2" data-popup-btn="2">
+                                        <img src="./images/duk_04_01_0001_201/img_01.png" class="img_02">
+                                        <span>
+                                            아리의<br>
+                                            일기
+                                        </span>
+                                        <div class="bob bob2"></div>
+                                    </div>
                                 </li>
                                 <li class="innerTab_2" data-quiz="toggle">
                                     <div class="noteText noteLine purple">
@@ -164,6 +344,36 @@
 
         <section class="popup_container" data-popup-container="">
             <ul class="popup_pages">
+                <li class="fullLine whole image" data-popup-page="1">
+                    <div class="full_content">
+                        <div class="wrapImg">
+                            <img src="./images/duk_04_01_0001_201/img_03.png" />
+                            <div class="topText text1">믿음이 오가는 분실물 함</div>
+                            <div class="detail">
+                                우리 학교 복도엔 주인을 잃은 물건을 보관하는 분실물 함이 있다. 누군가 분실물 함을 지키거나 누구의 물건인지 묻지 않아도 물건의 주인이 아니면 누구도 분실물
+                                함에 함부로 손대지 않는다. “저건 내 거야.”라며 주인 행세를 하는 친구도 없다.<br>
+                                ‘나도 학교 어딘가에서 물건을 잃어버린다면, 물건을 찾은 친구가 분실물 함에 넣어 주겠지?’ 나는 우리의 정직한 마음과 행동으로 지켜지는 이 분실물 함이
+                                자랑스럽다.
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="fullLine whole image" data-popup-page="2">
+                    <div class="full_content">
+                        <div class="wrapImg">
+                            <img src="./images/duk_04_01_0001_201/img_04.png" />
+                            <div class="topText text2">후회 없는 나의 선택</div>
+                            <div class="detail">
+                                우리 반은 늘 자신의 시험지를 스스로 채점한다. 지난번 시험을 망쳐서 오늘은 꼭 잘 보고 싶었는데 또 실수를 하고 말았다.<br>
+                                ‘이건 계산 실수야. 다 아는 문제잖아. 답을 살짝 고치면 안 될까? 다음에 다시 안 틀리면 되잖아…….’<br>
+                                주위를 둘러봤을 때 아무도 나를 보고 있지 않았다. 내가 쓴 답을 고치려고 지우개를 드는 순간 가슴이 방망이질하듯 뛰었고 얼굴까지 화끈거렸다. 내 마음에 나쁜
+                                마음이
+                                들어올 것만 같았다. 결국 나는 지우개를 내려놓고 틀린 문제 위에 틀렸다는 표시를 했다. 점수가 조금 부끄럽고, 혼날까 봐 걱정도 됐지만 후련한 마음이
+                                들었다.
+                            </div>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </section>
 
@@ -196,7 +406,19 @@
                     $('header .title-text').removeClass('gap');
                 }
             });
+            $(document).on('click', '.speech', function () {
+                KmAudioPlayer.buttonClick();
+                $('.speech').show();
+                var $data_popup = $(this).attr('data-popup');
+                $('.text-box[data-show="' + $data_popup + '"]').css('display', 'flex');
+                $('.text-box[data-show="' + $data_popup + '"]').append('<div class="close-speech-button"></div>');
+            });
 
+            $(document).on('click', '.close-speech-button, .popupItem > span', function () {
+                var $data_show = $(this).parent().attr('data-show');
+                $(this).parent().hide();
+                $('.speech').show();
+            });
             $prite.girl4({
                 id: '#girl_4_c',
                 circle: true,
