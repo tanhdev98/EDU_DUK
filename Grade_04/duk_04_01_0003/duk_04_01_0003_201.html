@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        .flex {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            margin-top: 15px;
+        }
+
+        .flex .wrapLeft {
+            position: relative;
+            width: 48%;
+        }
+
+        .flex .wrapRight {
+            position: relative;
+            width: 48%;
+        }
+
+        .flex .wrapLeft img {
+            width: 100%;
+            height: 520px;
+        }
+
+        .flex .wrapRight img {
+            width: 100%;
+            height: 458px;
+        }
+
+        .flex .topText {
+            position: absolute;
+            top: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            text-align: center;
+        }
+
+        .flex .noteText {
+            box-shadow: none;
+            position: absolute;
+            top: 105px;
+        }
+
+        .buttonContainer {
+            z-index: 12;
+        }
+
+        /* Page 2 */
+        .page_2 .wrapImg {
+            text-align: center;
+        }
+
+        .page_2 .wrapImg img {
+            height: 520px;
+        }
+
+        .page_2 .topText {
+            position: absolute;
+            top: 73px;
+            left: 52%;
+            transform: translateX(-50%);
+            width: 100%;
+            text-align: center;
+        }
+
+        .page_2 .noteText {
+            position: absolute;
+            height: 60px;
+            padding: 0;
+            left: 290px;
+            box-shadow: none;
+            width: 830px;
+        }
+
+        .page_2 .noteText.noLine .textareaWrap {
+            height: 100%;
+            padding: 0 20px;
+        }
+
+        .page_2 .noteText.note1 {
+            top: 185px;
+        }
+
+        .page_2 .noteText.note2 {
+            top: 255px;
+        }
+
+        .page_2 .noteText.note3 {
+            top: 326px;
+        }
+
+        .page_2 .noteText.note4 {
+            top: 398px;
+        }
+
+        .page_2 .noteText .text-exam.flex-wrap {
+            padding: 0 25px;
+        }
+
+        .check_list {
+            position: absolute;
+            left: 240px;
+        }
+
+        .check_list.check1 {
+            top: 185px;
+        }
+
+        .check_list.check2 {
+            top: 258px;
+        }
+
+        .check_list.check3 {
+            top: 330px;
+        }
+
+        .check_list.check4 {
+            top: 400px;
+        }
+
+        .check_list .check_view .check_box {
+            border: 6px solid #c4c4c4;
+        }
+
+        .check_view {
+            pointer-events: auto !important;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0px !important;
+            margin-right: 0px !important;
+        }
+
+        .check_list .check_view .check_box .red_check {
+            background-image: url(./images/duk_04_01_0003_201/redCheck.png);
+            width: 64px;
+            height: 50px;
+            position: relative;
+            top: -13px;
+            left: -10px;
+            animation: iconZoomIn .3s;
+            transform-origin: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue" data-show="1">실천 <em>쑥쑥</em></div>
+            <div class="title-text gap">나는 우리 반 정직 약속을 무엇으로 정하고 싶은지 생각해 봅시다.</div>
+        </header>
+        <main>
+
+
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="나는 우리 반 정직 약속을 무엇으로 정하고 싶은지 생각해 봅시다." data-gap="true">물음</li>
+                    <li data-hover="" data-text="친구들과 함께 우리 반 정직 약속을 정하고 지켜 봅시다.">활동</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="flex">
+                            <div class="wrapLeft">
+                                <img src="./images/duk_04_01_0003_201/img_01.png" />
+                                <div class="topText">
+                                    내가 정하고 싶은 우리 반 정직<br> 약속과 그 까닭은 무엇일까?
+                                </div>
+                                <div class="noteText noLine">
+                                    <div class="textareaWrap">
+                                        <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                            autocomplete="off" spellcheck="false"></textarea>
+                                    </div>
+                                    <div class="text-exam flex-wrap">
+                                        <div class="blueT" style="letter-spacing: -2px;">
+                                            <p>피구할 때 공에 맞으면 심판이 못 봤더라도 스스로 나가겠다는 약속이 가장 필요합니다. 탈락한 게 아쉽고 경기에 더 참여하고 싶은
+                                                마음이 들면 거짓말을 할 수도 있기 때문입니다.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="wrapRight">
+                                <img src="./images/duk_04_01_0003_201/img_02.png" />
+                                <div class="topText">
+                                    약속을 잘 지키려면<br>
+                                    어떤 노력이 필요할까?
+                                </div>
+                                <div class="noteText noLine">
+                                    <div class="textareaWrap">
+                                        <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                            autocomplete="off" spellcheck="false"></textarea>
+                                    </div>
+                                    <div class="text-exam flex-wrap">
+                                        <div class="blueT">
+                                            <p>반 친구들 모두가 약속을 잘 지킬 수
+                                                있도록 서로 격려해야 합니다.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="wrapImg">
+                            <img src="./images/duk_04_01_0003_201/img_03.png" />
+                            <div class="topText">친구들과 함께 정한 우리 반 정직 약속</div>
+                            <div class="noteText noLine note1">
+                                <div class="textareaWrap">
+                                    <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                        data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                        autocomplete="off" spellcheck="false"></textarea>
+                                </div>
+                                <div class="text-exam flex-wrap">
+                                    <div class="blueT">
+                                        <p>주인 없는 물건은 분실물 함에 넣기</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="noteText noLine note2">
+                                <div class="textareaWrap">
+                                    <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                        data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                        autocomplete="off" spellcheck="false"></textarea>
+                                </div>
+                                <div class="text-exam flex-wrap">
+                                    <div class="blueT">
+                                        <p>아무도 없는 교실에서 장난치지 않기</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="noteText noLine note3">
+                                <div class="textareaWrap">
+                                    <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                        data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                        autocomplete="off" spellcheck="false"></textarea>
+                                </div>
+                                <div class="text-exam flex-wrap">
+                                    <div class="blueT">
+                                        <p>차별하지 않고 서로 동등하게 대하기</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="noteText noLine note4">
+                                <div class="textareaWrap">
+                                    <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                        data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                        autocomplete="off" spellcheck="false"></textarea>
+                                </div>
+                                <div class="text-exam flex-wrap">
+                                    <div class="blueT">
+                                        <p>누가 보지 않아도 학급 약속 잘 지키기</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="check_list check1">
+                                <div class="check_view">
+                                    <div class="check_box check_ans">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="check_list check2">
+                                <div class="check_view">
+                                    <div class="check_box check_ans">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="check_list check3">
+                                <div class="check_view">
+                                    <div class="check_box check_ans">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="check_list check4">
+                                <div class="check_view">
+                                    <div class="check_box check_ans">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title-text').addClass('gap');
+                } else {
+                    $('header .title-text').removeClass('gap');
+                }
+                if ($(this).index() == 0) {
+                    $('.title-icon').css('margin-top', '-15px');
+                }
+                else {
+                    $('.title-icon').css('margin-top', '5px');
+                }
+            });
+            $(document).on('click', '.check_view', function () {
+                if ($(this).children().hasClass('check_ans')) {
+                    KmAudioPlayer.correct();
+                    $(this).addClass('no_sound');
+                    $(this).parent().parent().parent().find('.check_view').addClass('no_sound');
+                    $(this).children().empty();
+                    $(this).children().append('<p class="red_check"></p>');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

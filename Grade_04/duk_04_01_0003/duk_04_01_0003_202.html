@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        /* Page 1 */
+        .page_1 .wrapImg {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .page_1 .wrapImg img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Popup page */
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: fit-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .popup_pages [data-type="toggleButton"] {
+            height: fit-content;
+            align-items: center;
+            display: flex;
+            width: 100% !important;
+        }
+
+        [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            height: 100%;
+        }
+
+        .popup-pages .ls-2h {
+            width: 100%;
+        }
+
+        .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+
+        .click-finger-Btn {
+            position: absolute;
+        }
+
+        .click1 {
+            top: 390px;
+            left: 110px;
+        }
+
+        .click2 {
+            top: 100px;
+            left: 440px;
+        }
+
+        .click3 {
+            top: 280px;
+            left: 700px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue" data-show="1">실천 <em>쑥쑥</em></div>
+            <div class="title-text ">정직 등대의 불빛을 따라 정직의 섬으로 항해해 봅시다.</div>
+        </header>
+        <main>
+
+
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="wrapImg">
+                            <img src="./images/duk_04_01_0003_202/img_01.png" />
+                            <span class="click-finger-Btn blinkOn blinkOpacity popBtn click1" data-popup-btn="1"
+                                data-targetSlideNum="1" data-hover=""></span>
+                            <span class="click-finger-Btn blinkOn blinkOpacity popBtn click2" data-popup-btn="1"
+                                data-targetSlideNum="2" data-hover=""></span>
+                            <span class="click-finger-Btn blinkOn blinkOpacity popBtn click3" data-popup-btn="1"
+                                data-targetSlideNum="3" data-hover=""></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image" data-popup-page="1">
+                    <div class="full_content">
+                        <div class="basicSlider" data-slide-container="popup">
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            정직을 선택하지 못하고 망설인 순간에<br>
+                                            내가 했던 고민을 적어 봅시다.
+                                            <img src="./common/images/ico_que.png" class="ico" />
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico" />
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="5" data-hover>
+                                                    <div class="answer" data-toggle-target="5">
+                                                        <div class="ls-2h">
+                                                            <p class="dot">
+                                                                선생님께 어제 아파서 숙제를 못 했다고 거짓말을 할까<br> 생각했습니다.
+                                                            </p><br>
+                                                            <p class="dot">
+                                                                친구 가방에서 돈이 떨어진 것을 보았습니다.<br>
+                                                                돈을 보니 아이스크림을 먹고 싶은 생각이 들었습니다.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            떳떳하지 못한 말이나 행동을 하고 싶었던 때는 언제인가요?
+                                            <img src="./common/images/ico_que.png" class="ico" />
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico" />
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="5" data-hover>
+                                                    <div class="answer" data-toggle-target="5">
+                                                        <div class="ls-2h">
+                                                            <p class="dot">
+                                                                숙제를 하지 않았지만 놀고 싶은 마음에, 선생님께는 숙제를 다 했다고 말씀드리고
+                                                                싶었습니다.
+                                                            </p><br>
+                                                            <p class="dot">
+                                                                사실 선생님과의 약속을 잊었지만, 다른 핑계를 대며 어쩔 수 없었다고 말하고
+                                                                싶었던 적이 있었습니다.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3" data-quiz="toggle">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            갈등 상황에서 말과 행동을 멈춘 뒤에는 어떤 생각을 해야 할까요?
+                                            <img src="./common/images/ico_que.png" class="ico" />
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico" />
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="5" data-hover>
+                                                    <div class="answer" data-toggle-target="5">
+                                                        <div class="ls-2h">
+                                                            <p class="dot">
+                                                                거짓된 말과 행동을 하고 난 뒤 내 마음은 어떨까?’처럼<br>
+                                                                스스로 부끄러울 수 있다는 생각을 해야 합니다.
+                                                            </p><br>
+                                                            <p class="dot">
+                                                                거짓이 드러났을 때 내 행동에 책임질 수 있는지,<br>
+                                                                나를 위한 행동인지 생각합니다.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title-text').addClass('gap');
+                } else {
+                    $('header .title-text').removeClass('gap');
+                }
+                if ($(this).index() == 0) {
+                    $('.title-icon').css('margin-top', '-15px');
+                }
+                else {
+                    $('.title-icon').css('margin-top', '5px');
+                }
+            });
+            $(document).on('click', '.click-finger-Btn', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+            });
+            $(document).on('click', '.popup_closeBtn', function () {
+                $('.click-finger-Btn.popupOn').trigger('click');
+            });
+        });
+    </script>
+</body>
+
+</html>

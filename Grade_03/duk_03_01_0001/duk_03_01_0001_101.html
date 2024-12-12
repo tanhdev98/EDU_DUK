@@ -372,6 +372,9 @@
                 $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
             });
+            $(document).on('click', '.additional-question', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+            });
         });
 
     </script>

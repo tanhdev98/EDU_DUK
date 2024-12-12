@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        .contentsBox {
+            padding: 0;
+        }
+
+        .bgImg>img,
+        .bgImg,
+        .zoomImg,
+        .zoomContainer .zoomImgContainer,
+        .zoomArea,
+        .zoomContainer {
+            width: 100%;
+            height: 100%;
+        }
+
+        .zoomContainer.horizon .zoomController {
+            top: 20px;
+            left: 28px;
+        }
+
+        .icon-char {
+            top: 20px;
+            right: 28px;
+        }
+
+        [data-popup-page="1"] {
+            top: 144px;
+            left: 676px;
+            width: 580px;
+        }
+
+        .noteText {
+            box-shadow: none;
+            position: absolute;
+            width: 1000px;
+            border-radius: 20px;
+            height: 200px;
+            padding: 35px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .noteText .textareaWrap {
+            height: 182px;
+            padding: 0;
+        }
+
+        .noteText::after {
+            display: none;
+        }
+
+        #girl_1_c {
+            top: 100px;
+            left: 80px;
+        }
+
+        .noteText.pink {
+            background: #FFEEF3;
+            border: 5px solid #FFC4C9 !important;
+            left: 290px;
+            top: 85px;
+        }
+
+        .noteText::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-right: 30px solid #FFC4C9;
+            left: -30px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        #boy_4_c {
+            right: 80px;
+            bottom: 100px;
+        }
+
+        .noteText.green::before {
+            border-left: 30px solid #D7DEA3;
+            border-right: none;
+            left: unset;
+            right: -30px;
+        }
+
+        .noteText.green {
+            background: #F5F7E5;
+            border: 5px solid #D7DEA3 !important;
+            bottom: 88px;
+            left: 75px;
+        }
+
+        .character-item {
+            pointer-events: none;
+            position: absolute;
+        }
+
+        .buttonContainer {
+            right: 28px;
+        }
+
+        .noteText .textLine {
+            padding: 0;
+        }
+
+        .noteText .text-exam.flex-wrap {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Innerr Tab 2 */
+        .innerSlider_tabs>li {
+            background-color: #F3DEC0;
+        }
+
+        .innerSlider_tabs>li.on {
+            background-color: #F3B05B;
+        }
+
+        .innerButtonContainer {
+            position: absolute;
+            right: 40px;
+            top: 76px;
+        }
+
+        .innerButtonContainer::before {
+            display: none;
+        }
+
+        .popup_pages>li.image .basicSlider {
+            padding: 0;
+        }
+
+        .popup_pages .contentsBox .basicSlider_slides>li {
+            padding: 0;
+        }
+
+        .additional-question {
+            position: absolute;
+            right: 28px;
+            top: 20px;
+        }
+
+        /* Popup page */
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: fit-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .popup_pages [data-type="toggleButton"] {
+            height: fit-content;
+            align-items: center;
+            display: flex;
+            width: 100% !important;
+        }
+
+        [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            height: 100%;
+        }
+
+        .popup-pages .ls-2h {
+            width: 100%;
+        }
+
+        .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+
+        [data-type="toggleButton"] .toggle.complete {
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue" data-show="1">실천 <em>쑥쑥</em></div>
+            <div class="title-text">드래그앤드롭_위치 고정&수량 한정</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1  page_zoom zoom_img" data-quiz="toggle">
+                                    <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="1"></div>
+                                    <div class="zoomContainer horizon pointerOff">
+                                        <div class="zoomArea">
+                                            <div class="zoomImgContainer pointerOff">
+                                                <div class="zoomImg">
+                                                    <div class="bgImg">
+                                                        <img src="./images/duk_04_01_0003_101/img_01.png">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="popBtn additional-question" data-popup-btn="2">추가 질문</div>
+                                    <div id="girl_1_c" class="character-item"></div>
+                                    <div class="noteText noLine pink">무인 계산대에서 양심을 지킨 어린이가 있어요.</div>
+                                    <div id="boy_4_c" class="character-item"></div>
+                                    <div class="noteText noLine green">
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus="placeholder=''"
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap" style="padding: 5px 20px;">
+                                            <div class="blueT">
+                                                <p>내가 갖고 싶은 물건이라도 내 것이 아니면<br>
+                                                    가져가지 않는 어린이가 있어요.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents">
+                        <p>
+
+                            세상을 아름답게 하는 정직을 생활 속에서 실천하는 방법을 이야기해 보며 정직한 생활을 하는 스스로를 자랑스럽게 여겨요.
+
+                        </p>
+                    </div>
+                </li>
+                <li class="fullLine whole image" data-popup-page="2" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="innerButtonContainer">
+                                <ul class="innerSlider_tabs">
+                                    <li data-hover="" class="on">1</li>
+                                    <li data-hover="">2</li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1 on">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            다른 사람을 위해 만들어 놓은 양심 우산이나<br>
+                                            양심 문구점을 보면 어떤 생각이 드나요?
+                                            <img src="./common/images/ico_que.png" class="ico" />
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico" />
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="5" data-hover>
+                                                    <div class="answer" data-toggle-target="5">
+                                                        <div class="ls-2h">
+                                                            <p class="dot">양심 우산을 빌린 사람들이 제자리에 되돌려 놓는 모습이 보기 좋았어요.</p>
+                                                            <br>
+                                                            <p class="dot"> 양심 문구점에서 사람들이 물건 값을 치르지 않고 가져 갈까봐 걱정이 되었어요.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            양심 우산처럼 다른 사람을 위해 이타심을 발휘하는<br>
+                                            사람들의 이야기를 알고 있나요?
+                                            <img src="./common/images/ico_que.png" class="ico" />
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico" />
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="6" data-hover>
+                                                    <div class="answer" data-toggle-target="6">
+                                                        <div class="ls-2h">
+                                                            <p style="text-align: center;">지하철 역에서 책을 빌릴 수 있도록 헌 책을 기증하는
+                                                                <br>
+                                                                사람들이 있어요.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+
+    <script type="text/javascript" src="./common/js/zoomImage.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title').addClass('gap');
+                } else {
+                    $('header .title').removeClass('gap');
+                }
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                KmAudioPlayer.buttonClick();
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $prite.girl1({
+                id: '#girl_1_c',
+                circle: true,
+            });
+
+            $prite.boy4({
+                id: '#boy_4_c',
+                circle: true,
+            });
+        });
+    </script>
+
+</body>
+
+</html>
