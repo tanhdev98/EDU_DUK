@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="./common/css/master.css" />
+</head>
+
+<body>
+    <!-- Frame -->
+    <div id="frameContainer">
+        <!-- Content Container -->
+        <div id="contents">
+            <div class="todaycontent type-1">
+                <div class="todayHeader"></div>
+                <div class="textBox">
+                    <div class="textBox_change">
+                        <span class="write active">직접쓰기</span>
+                        <span class="view">내용보기</span>
+                    </div>
+                    <div class="todayPage">
+                        <p>
+                            <em>도덕</em>
+                            <span>18~21쪽</span>
+                        </p>
+                    </div>
+                    <div class="todayTxt active">
+                        <p>
+                            <span>정직</span>의 <span>중요성</span>을 느끼고<br>
+                            <span>정직</span>을 통해 <span>행복</span>해지려는 삶의 자세를 가져 봅시다.
+                        </p>
+                    </div>
+
+                    <div class="todayWrite">
+                        <div>
+                            <textarea type="text" placeholder="직접 쓰기"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="todayBottom"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Common Script -->
+
+    <script src="./common/js/jquery.js"></script>
+    <script src="./common/js/base.js"></script>
+    <script src="./common/js/common.js"></script>
+    <script src="./common/js/contents.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(document).find(".textBox_change > span").on("click", function () {
+                if ($(this).hasClass("active")) {
+                    $(this).removeClass("active");
+                    $(this).siblings("span").addClass("active");
+                }
+
+                if ($(this).hasClass("write") || $(this).hasClass("active")) {
+                    $(this).parent().siblings(".todayTxt").removeClass("active");
+                    $(this).parent().siblings(".todayWrite").addClass("active");
+                }
+
+                if ($(this).hasClass("view") || $(this).hasClass("active")) {
+                    $(this).parent().siblings(".todayWrite").removeClass("active");
+                    $(this).parent().siblings(".todayTxt").addClass("active");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

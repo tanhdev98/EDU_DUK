@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        .check_list .check_view .check_box {
+            width: 50px;
+            height: 50px;
+        }
+
+        .check_list .check_view .check_box .red_check {
+            background: url(./common/images/redCheck.png) no-repeat;
+            background-size: contain;
+            width: 60px;
+            top: -15px;
+            left: -10px;
+        }
+
+        .page_1 .flex {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 38px;
+            flex: 1;
+        }
+
+        .page_1 .titleText {
+            color: #FB4E08;
+        }
+
+        .page_1 .contentText {
+            display: flex;
+            gap: 7px;
+            position: relative;
+        }
+
+        .check_list .check_view {
+            margin: 0;
+        }
+
+        .bullet.number {
+            margin-top: 2px;
+        }
+
+        .page_1 .text {
+            position: absolute;
+            left: 55px;
+            width: 330px;
+        }
+
+        .min[data-popup-page="2"] {
+            top: 145px;
+            left: 370px;
+            width: 887px;
+        }
+
+        .page_1 .noteText {
+            margin-top: 50px;
+            height: 420px;
+        }
+        .page_1 .noteText .text-exam.flex-wrap{
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon pink" data-show="1">마음 <em>탄탄</em></div>
+            <div class="title-text">선택 활동을 하며 정직한 삶의 중요성을 마음 깊이 느껴 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="2"></div>
+                        <div style="display: flex;justify-content: space-between;">
+                            <div class="flex">
+                                <div class="check_list">
+                                    <div class="check_view no_sound">
+                                        <div class="check_box"></div>
+                                    </div>
+                                </div>
+                                <div class="titleText">선택</div>
+                                <div class="contentText">
+                                    <div class="bullet number orange inline">1</div>
+                                    <div class="text">
+                                        정직한 선택으로<br> 이야기 바꾸기
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="check_list">
+                                    <div class="check_view no_sound">
+                                        <div class="check_box"></div>
+                                    </div>
+                                </div>
+                                <div class="titleText">선택</div>
+                                <div class="contentText">
+                                    <div class="bullet number orange inline">2</div>
+                                    <div class="text">
+                                        ‘나의 정직 이야기’<br>쓰기
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="noteText noteLine orange">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p>
+                                        산신령이 나무꾼에게 “이 금도끼가 네 금도끼냐?”라고 묻자, 나무꾼은 고민에 빠졌습니다. 금도끼를 갖고 싶은 욕심이 있었기 때문입니다. 그러나
+                                        나무꾼은 결심했다는 듯 고개를 저으며 산신령을 바라보고 말했습니다.
+                                        “아니요, 산신령님. 그 금도끼는 제 도끼가 아닙니다. 사실 금도끼가 갖고 싶은 마음에 순간 거짓말을 하려고 했어요. 죄송합니다.”
+                                        나무꾼의 대답을 들은 산신령은 웃으며 말했습니다.
+                                        “그래, 욕심을 버리고 솔직하게 말하다니 참 용기 있는 사람이구나.”
+                                        나무꾼과 산신령은 눈을 마주치며 환하게 웃었습니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="2" data-drag="">
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        <p><ins class="dot"></ins>
+                            선택 1: 세 거짓말쟁이 중 한 명의 이야기를 골라, 이야기 속에서 정직한 말과 행동을 했다면 달라졌을 뒷이야기를 상상하여 바꾸기
+                        </p>
+                        <p><ins class="dot"></ins>
+                            선택 2: 우리 반 정직 약속을 실천하면서 느낀 점이나 평소 생활 속에서 경험했던 정직과 관련된 이야기를 바탕으로 ‘나의 정직 이야기’ 쓰기
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+
+            $(document).on('click', '.check_box', function () {
+                KmAudioPlayer.buttonClick();
+                if ($(this).hasClass('check_ans')) {
+                    $(this).removeClass('check_ans');
+                    $(this).children().remove();
+                }
+                else {
+                    $(this).addClass('check_ans');
+                    $(this).append("<p class='red_check'></p>");
+                }
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>
