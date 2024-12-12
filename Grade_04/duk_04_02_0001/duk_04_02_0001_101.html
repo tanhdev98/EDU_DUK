@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        /* Page 1 */
+        .page_1 .wrapImg {
+            width: 100%;
+        }
+
+        .page_1 .wrapImg img {
+            width: 100%;
+            height: 510px;
+            margin-top: 20px;
+        }
+
+        .additional-question {
+            width: fit-content;
+            right: 0;
+            left: auto;
+            position: absolute;
+        }
+
+        .wrapImg ul {
+            position: absolute;
+            top: 80px;
+            left: 100px;
+        }
+
+        .wrapImg ul li {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+
+        .wrapImg ul li .note {
+            width: 110px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: #B6D9CF;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Popup page */
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: fit-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .popup_pages [data-type="toggleButton"] {
+            height: fit-content;
+            align-items: center;
+            display: flex;
+            width: 100% !important;
+        }
+
+        [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            height: 100%;
+        }
+
+        .popup-pages .ls-2h {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="twoLine">
+            <div class="title-icon yellow" data-show="1">생각 <em>똑똑</em></div>
+            <div class="title-text">나와 동생의 대화를 살펴보고, ‘도덕’을 동생에게 어떻게 설명할 수 있을지 생각해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
+                        <div class="wrapImg">
+                            <img src="./images/duk_04_02_0001_202/img_01.png" />
+                            <ul>
+                                <li>
+                                    <div class="note">나</div>
+                                    <div class="content">놀이터에는 여러 사람이 있으니 도덕적으로 행동하자.</div>
+                                </li>
+                                <li>
+                                    <div class="note">동생</div>
+                                    <div class="content">도덕? 도덕이 뭐야?</div>
+                                </li>
+                                <li>
+                                    <div class="note">나</div>
+                                    <div class="content">
+                                        도덕이란 우리가 지켜야 할 바른 행동을 말해.
+                                        예를 들면 ‘배려하기’ 같은 거지.
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="note">나</div>
+                                    <div class="content">배려는 또 무슨 말이지?</div>
+                                </li>
+                                <li>
+                                    <div class="note">나</div>
+                                    <div class="content">음……. 동생에게 도덕을 어떻게 설명해야 할까?</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image" data-popup-page="1" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="popup-boxes">
+                            <div class="box-item ico_que">
+                                누군가 나에게 도덕이 무엇이냐고 묻는다면<br>
+                                무엇이라고 대답할 건가요?
+                                <img src="./common/images/ico_que.png" class="ico" />
+                            </div>
+                            <div class="box-item ico_ans">
+                                <img src="./common/images/ico_ans.png" class="ico" />
+                                <div data-type="toggleButton">
+                                    <div class="toggle examBtn box" data-toggle-obj="5" data-hover>
+                                        <div class="answer" data-toggle-target="5">
+                                            <div class="ls-2h">
+                                                <p class="dot">옳고 그름을 알고 착한 행동을 하는 것입니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+
+    <script type="text/javascript" src="./common/js/zoomImage.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title').addClass('gap');
+                } else {
+                    $('header .title').removeClass('gap');
+                }
+            });
+            $(document).on('click', '.additional-question', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

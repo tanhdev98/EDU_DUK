@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        /* Page 1 */
+        .how-to-play li {
+            margin: 20px 0 25px;
+        }
+
+        .page_1 .wrapImg {
+            text-align: center;
+        }
+
+        .page_1 .wrapImg img {
+            height: 540px;
+        }
+
+        .page_1 .speech {
+            content: "";
+            display: block;
+            width: 64px;
+            height: 64px;
+            position: absolute;
+            z-index: 4;
+            pointer-events: auto;
+            cursor: pointer;
+        }
+
+        .page_1 .speech-1 {
+            top: 240px;
+            left: 470px;
+            background: url(../ko/contents/images/button/btn_speech_balloon_right1.png) no-repeat;
+        }
+
+        .page_1 .speech-2 {
+            top: 170px;
+            left: 690px;
+            background: url(../ko/contents/images/button/btn_speech_balloon_left1.png) no-repeat;
+        }
+
+        .page_1 .speech-3 {
+            top: 270px;
+            left: 780px;
+            background: url(../ko/contents/images/button/btn_speech_balloon_left1.png) no-repeat;
+        }
+
+        .popup_pages .flex .text-box {
+            position: absolute;
+            display: none;
+        }
+
+
+        .text-box {
+            padding: 5px 15px;
+            border-radius: 15px;
+            position: absolute;
+            background-color: #E7F4F9;
+            border: 4px solid #A8D6F6;
+            position: absolute;
+            display: none;
+        }
+
+        .text-box:after {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-color: #A8D6F6;
+            position: absolute;
+        }
+
+        .text-1 {
+            left: 0;
+            bottom: 350px;
+        }
+
+        .text-1:after {
+            left: 470px;
+            bottom: -30px;
+            clip-path: polygon(100% 100%, 0 0, 90% 0);
+        }
+
+        .text-2 {
+            left: 750px;
+            bottom: 360px;
+        }
+
+        .text-2:after {
+            left: -30px;
+            bottom: 0;
+            clip-path: polygon(0 50%, 100% 5%, 100% 95%);
+        }
+
+        .text-3 {
+            left: 830px;
+            bottom: 60px;
+        }
+
+        .text-3:after {
+            left: -30px;
+            bottom: 170px;
+            clip-path: polygon(0 50%, 100% 5%, 100% 95%);
+        }
+
+
+        .noteStar {
+            display: flex;
+        }
+
+        .noteStar::before {
+            content: "";
+            display: flex;
+            width: 80px;
+            height: 80px;
+            background: url('./images/duk_04_02_0001_202/img_02.png') no-repeat center / 100%;
+            position: relative;
+            top: -5px;
+        }
+
+        .text1 {
+            position: absolute;
+            top: 130px;
+            left: 30px;
+        }
+
+        .text2 {
+            position: absolute;
+            top: 130px;
+            left: 700px;
+        }
+
+        .text3 {
+            position: absolute;
+            top: 190px;
+            left: 31px;
+        }
+
+        .page_1 .noteText.note1 {
+            position: absolute;
+            height: 60px;
+            box-shadow: none;
+            left: 495px;
+            top: 120px;
+            padding: 0;
+            width: 220px;
+        }
+
+        .page_1 .noteText.note2 {
+            position: absolute;
+            height: 300px;
+            box-shadow: none;
+            left: 200px;
+            top: 183px;
+            padding: 0;
+            width: 1100px;
+        }
+
+        .page_1 .noteText.note1 .textareaWrap,
+        .page_1 .noteText.note2 .textareaWrap {
+            height: 100%;
+        }
+
+        .page_1 .noteText .text-exam.flex-wrap {
+            padding: 0 20px;
+        }
+
+        /* Page 2 */
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon yellow" data-show="1">생각 <em>똑똑</em></div>
+            <div class="title-text">놀이터에 도덕이 필요한 까닭을 설명해 봅시다.</div>
+        </header>
+        <main>
+
+
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="놀이터에 도덕이 필요한 까닭을 설명해 봅시다.">활동 1</li>
+                    <li data-hover="" data-text="우리 삶에 도덕이 필요한 까닭을 설명해 봅시다.">활동 2</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="title-box">
+                                        <div class="title">활동 방법</div>
+                                    </div>
+                                    <ul class="how-to-play">
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                1
+                                            </div>
+                                            <div class="text">
+                                                놀이터 외에 내가 선택한 도덕적 가치가 필요한 다른 상황은 무엇인지 생각해 봅니다.
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                2
+                                            </div>
+                                            <div class="text">
+                                                내가 선택한 도덕적 가치가 사라진다면 어떤 일이 일어날지 상상해
+                                                보고 이야기합니다.
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                3
+                                            </div>
+                                            <div class="text" style="letter-spacing: -2px;">
+                                                우리 삶에 도덕이 필요한 까닭을 설명합니다.
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="wrapImg">
+                                        <img src="./images/duk_04_02_0001_202/img_01.jpg" />
+                                        <div class="speech speech-1" data-popup="1"></div>
+                                        <div class="speech speech-2" data-popup="2"></div>
+                                        <div class="speech speech-3" data-popup="3"></div>
+                                        <div class="text-box text-1" data-show="1">
+                                            놀이터가 ‘우정’을<br>
+                                            느낄 수 있는 곳이면 좋겠어.<br>
+                                            외로워하는 친구 없이<br>
+                                            모두 즐겁고 행복했으면 해.
+                                        </div>
+                                        <div class="text-box text-2" data-show="2">
+                                            놀이터에는<br>
+                                            ‘배려’가 꼭 필요해.<br>
+                                            여러 친구들이 사이좋게<br>
+                                            어울려야 하기 때문이지.
+                                        </div>
+                                        <div class="text-box text-3" data-show="3">
+                                            놀이터에서 놀 때는<br>
+                                            ‘공정’하면 좋겠어.<br>
+                                            그러면 다툼이 줄고<br>
+                                            친구들 사이에<br>
+                                            믿음도 커질 거야.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3" data-quiz="toggle">
+                                    <div class="text1">내가 선택한 도덕적 가치는</div>
+                                    <div class="text2">입니다.</div>
+                                    <div class="text3">왜냐하면</div>
+                                    <div class="noteStar">
+                                        놀이터에 필요한 도덕적 가치는 무엇일까요?
+                                    </div>
+                                    <div class="noteText noteLine blue">
+                                        <div class="textareaWrap">
+                                        </div>
+                                    </div>
+                                    <div class="noteText noLine note1">
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p>우정</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="noteText noLine note2">
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p class="dot">놀이터에서는 친구와 함께 놀아야 더 즐겁고 행복하기 때문입니다.</p>
+                                                <p class="dot"> 친구와 함께 어울리며 갈등을 해결하는 지혜도 배울 수 있기 때문입니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="page_2">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="title-box">
+                                        <div class="title">활동 방법</div>
+                                    </div>
+                                    <ul class="how-to-play">
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                1
+                                            </div>
+                                            <div class="text">
+                                                놀이터 외에 내가 선택한 도덕적 가치가 필요한 다른 상황은 무엇인지 생각해 봅니다.
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                2
+                                            </div>
+                                            <div class="text">
+                                                내가 선택한 도덕적 가치가 사라진다면 어떤 일이 일어날지 상상해
+                                                보고 이야기합니다.
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                3
+                                            </div>
+                                            <div class="text" style="letter-spacing: -2px;">
+                                                우리 삶에 도덕이 필요한 까닭을 설명합니다.
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="noteStar">
+                                        놀이터에 필요한 도덕적 가치는 무엇일까요?
+                                    </div>
+                                    <div class="noteText noteLine blue">
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p>도덕은 사람들이 나쁜 일을 하지 않게 해서 모든 사람들이 행복하게 살 수 있기 때문에 필요합니다. 모두가 바르게 행동하면 더
+                                                    좋은 세상을 만들 수 있기 때문입니다.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title-text').addClass('gap');
+                } else {
+                    $('header .title-text').removeClass('gap');
+                }
+            });
+            $(document).on('click', '.speech', function () {
+                KmAudioPlayer.buttonClick();
+                $('.speech').show();
+                $('.text-box').hide();
+                var $data_popup = $(this).attr('data-popup');
+                $('.text-box[data-show="' + $data_popup + '"]').show();
+                $('.text-box[data-show="' + $data_popup + '"]').append('<div class="close-speech-button"></div>');
+                $(this).hide();
+            });
+
+            $(document).on('click', '.close-speech-button, .popupItem > span', function () {
+                var $data_show = $(this).parent().attr('data-show');
+                $(this).parent().hide();
+                $('.speech').show();
+            });
+        });
+    </script>
+</body>
+
+</html>

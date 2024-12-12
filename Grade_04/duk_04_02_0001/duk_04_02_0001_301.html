@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        /* Page 1 */
+        .page_1 .noteText {
+            margin-top: 80px;
+        }
+
+        [data-popup-page="1"] {
+            top: 140px;
+            left: 565px;
+            width: 690px;
+        }
+
+        /* Page2 */
+        .self-check {
+            margin-top: 50px;
+        }
+
+        .btn-praise {
+            right: -28px;
+            top: 430px;
+        }
+
+
+        /* title thinknet */
+        .pointContainer .pointTitle {
+            display: block;
+            text-align: center;
+        }
+
+        .pointContainer .pointTitle .titleText {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 45px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #ff6600;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+        }
+
+        .pointContainer .pointTitle .titleText:after,
+        .pointContainer .pointTitle .titleText:before {
+            position: absolute;
+            top: 0px;
+            height: 50px;
+            font-size: 40px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #e4caa9;
+        }
+
+        .pointContainer .pointTitle .titleText:after {
+            content: "[";
+            left: -20px;
+        }
+
+        .pointContainer .pointTitle .titleText:before {
+            content: "]";
+            right: -20px;
+        }
+
+        .popup_pages .group-box .titleBox {
+            width: fit-content;
+            margin: 10px auto 0;
+            padding: 5px 15px;
+            background-color: #fff;
+            border: 4px solid #EFCFA6;
+            border-radius: 5px;
+            position: relative;
+            width: 700px;
+            height: 125px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .group-box {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 1050px;
+            left: 175px;
+            position: relative;
+        }
+
+        .box-text {
+            width: 400px;
+            height: 260px;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box-text.pink {
+            background-color: #FFDBDF;
+        }
+
+        .box-text.green {
+            background-color: #F2F7C8;
+        }
+
+        .box-text.blue {
+            background-color: #E7F4F9;
+        }
+
+        .box-text.purple {
+            background-color: #E9E0FF;
+        }
+
+        .box-text .wrapToggle {
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 50%;
+            padding: 5px;
+        }
+
+        .box-text .wrapToggle .toggle {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box-text .wrapToggle .toggle .answer {
+            text-align: center;
+        }
+
+        .pointContainer .dapCheckBtn {
+            right: 28px;
+            bottom: 20px;
+        }
+
+        .popup_pages .arrow_right {
+            width: 50px;
+            top: 35px;
+            position: absolute;
+        }
+
+        .popup_pages .arrow_right.arrow1 {
+            left: 427px;
+        }
+
+        .popup_pages .arrow_right.arrow2 {
+            left: 856px;
+        }
+
+        .popup_pages .imgArrow {
+            width: 60px;
+            position: absolute;
+        }
+
+        .imgArrow.arrow1 {
+            top: -110px;
+            left: 640px;
+        }
+
+        .imgArrow.arrow2 {
+            top: 35px;
+            left: 646px;
+            transform: rotate(-210deg);
+        }
+
+        .imgArrow.arrow3 {
+            top: 160px;
+            left: 640px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon yellow" data-show="1">생각 <em>똑똑</em></div>
+            <div class="title-text ">동생에게 도덕이 무엇인지 설명해 봅시다.</div>
+        </header>
+        <main>
+
+
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="동생에게 도덕이 무엇인지 설명해 봅시다.">활동</li>
+                    <li data-hover="" data-text="배운 내용을 되돌아보며 자기 점검을 해 봅시다.">자기 점검</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="1"></div>
+                        <div class="noteText noteLine green">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p>도덕은 옳고 바른 행동을 하는 거야. 배려, 정직, 공정 같은 도덕적 가치는 나와 다른 사람들이 어울려 지낼 수 있게 해
+                                        줘.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                    <li class="page_2">
+                        <div class="study_guide"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
+                        <div class="self-check">
+                            <div class="checkWrap">
+                                <div class="text_box">도덕이 무엇인지 이해하고 있나요?</div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">우리 삶에 도덕이 필요한 까닭을 설명할 수 있나요?</div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="example-box">
+                                <div class="exampleIcoWrap">
+                                    <div class="example ico-01">
+                                        매우 그렇다
+                                    </div>
+                                    <div class="example ico-02">
+                                        그렇다
+                                    </div>
+                                    <div class="example ico-03">
+                                        좀 더 노력해야 한다
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-praise right popBtn footer-item" data-popup-btn="2">
+                            <div class="item-title">우리<br>배움</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag="">
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        <p>
+                            도덕의 의미와 도덕적 행동의 필요성을 동생에게 어떻게 설명할 것인지 생각하며 배운 내용을 정리해 보아요.
+                        </p>
+                    </div>
+                </li>
+                <li class="fullLine whole image pointContainer" data-popup-page="2" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="pointTitle">
+                            <div class="titleText">도덕이란 무엇일까?</div>
+                            <div class="group-box">
+                                <div class="box-text pink">
+                                    <div class="wrapToggle">
+                                        <div class="toggle" data-toggle-obj="1">
+                                            <div class="answer on" data-toggle-target="1">
+                                                <div class="ls-1h">
+                                                    ‘도덕’하면<br>
+                                                    떠오르는 것과<br>
+                                                    공통점 찾기
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-text green">
+                                    <div class="wrapToggle">
+                                        <div class="toggle" data-toggle-obj="2">
+                                            <div class="answer on" data-toggle-target="2">
+                                                <div class="ls-1h">
+                                                    도덕적 가치<br>
+                                                    알아보기
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-text blue">
+                                    <div class="wrapToggle">
+                                        <div class="toggle" data-toggle-obj="3">
+                                            <div class="answer on" data-toggle-target="3">
+                                                <div class="ls-1h">
+                                                    도덕이 무엇인지<br>
+                                                    설명해 보기
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-text purple">
+                                    <div class="wrapToggle">
+                                        <div class="toggle" data-toggle-obj="4">
+                                            <div class="answer on" data-toggle-target="4">
+                                                <div class="ls-1h">
+                                                    도덕이 무엇인지<br>
+                                                    설명해 보기
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="dapCheckBtn" data-answer-btn=""></button>
+                        <img src="./images/ton_04_02_0001_301/imgArrow.png" class="imgArrow arrow1">
+                        <img src="./images/ton_04_02_0001_301/imgArrow.png" class="imgArrow arrow2">
+                        <img src="./images/ton_04_02_0001_301/imgArrow.png" class="imgArrow arrow3">
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title-text').addClass('gap');
+                } else {
+                    $('header .title-text').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+            });
+
+        });
+    </script>
+</body>
+
+</html>

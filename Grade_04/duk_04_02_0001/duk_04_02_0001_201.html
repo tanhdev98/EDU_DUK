@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        p.arrow {
+            display: flex;
+            padding-left: 30px;
+            margin: 20px 0px;
+            line-height: 60px;
+            position: relative;
+        }
+
+        p.arrow::before {
+            width: 20px;
+            height: 20px;
+            content: "";
+            background-image: url(./common/images/bullet_arrow.png);
+            background-size: 100% 100%;
+            position: absolute;
+            left: 0;
+            top: 20px;
+        }
+
+        .popup_pages>li.whole h2 {
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .mouse1 {
+            position: absolute;
+            right: 1040px;
+            top: 177px;
+        }
+
+        .mouse2 {
+            position: absolute;
+            right: 300px;
+            top: 60px;
+        }
+
+        .innerTab_4 div {
+            text-align: center;
+        }
+
+        .innerTab_4 img {
+            height: 240px;
+
+        }
+
+        .popup_pages .noteText {
+            margin-top: 100px;
+        }
+
+        .popup_pages>li {
+            padding: 0 28px;
+        }
+
+        .popup_pages .buttonContainer {
+            right: 28px;
+            bottom: 20px;
+        }
+
+        .popup_pages .innerTab_2 .blueT {
+            top: 94px;
+            left: 40px;
+            width: 93%;
+            position: absolute;
+        }
+
+        .popup_pages .innerTab_2 .textIndent {
+            margin-left: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon yellow" data-show="1">생각 <em>똑똑</em></div>
+            <div class="title-text">도덕이 무엇인지 알아봅시다.</div>
+        </header>
+        <main>
+
+
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="sideTopSlider contentsBox doItContent" data-slide-container=""
+                            style="margin-top: 15px;">
+                            <div class="sideTopButtonContainer" data-slide-btn-container="">
+                                <ul class="sideTopSlider_tabs" data-tabs="">
+                                    <li data-hover="" style="letter-spacing: -2.3px;">
+                                        ①‘도덕’을 떠올리면<br>
+                                        생각나는 것
+                                    </li>
+                                    <li data-hover="">
+                                        ②도덕적인 것<br>
+                                        구별하기
+                                    </li>
+                                    <li data-hover="">
+                                        ③도덕적 가치<br>
+                                        알아보기
+                                    </li>
+                                    <li data-hover="">
+                                        ④도덕이 무엇인지<br>
+                                        설명해 보기
+                                    </li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab innerTab_1">
+                                    <div>
+                                        <p class="arrow">도덕과 관련이 있는 낱말, 문장, 인물, 사례 등을 자유롭게 떠올려 봅시다.</p>
+                                        <p class="arrow"> 친구와 이야기를 나누고 공통점을 찾아봅시다.</p>
+                                        <div class="popBtn mouse mouse1" data-hover="" data-popup-btn="1"
+                                            data-targetSlideNum="1">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab innerTab_2">
+                                    <div>
+                                        <p class="arrow">도덕적인 것과 도덕적이지 않은 것에는 무엇이 있는지 생각해 봅시다.
+
+                                        </p>
+                                        <p class="arrow">도덕적인 것의 특징을 찾아봅시다.</p>
+                                    </div>
+                                </li>
+                                <li class="innerTab innerTab_3">
+                                    <div>
+                                        <p class="arrow">‘도덕 가치 카드’를 살펴보고 도덕적 가치에는 무엇이
+                                            있는지 알아봅시다.<br>
+                                            (붙임 자료② 참고)
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="innerTab innerTab_4">
+                                    <div>
+                                        <p class="arrow">도덕이 무엇인지 나만의 방법으로 설명해 봅시다.</p>
+                                        <div class="popBtn mouse mouse2" data-hover="" data-popup-btn="1"
+                                            data-targetSlideNum="2">
+                                        </div>
+                                        <img src="./images/duk_04_02_0001_201/img_01.jpg" />
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="whole image" data-popup-page="1">
+
+                    <div class="basicSlider" data-slide-container="popup">
+                        <ul class="basicSlider_slides" data-slides="">
+                            <li class="innerTab_1" data-quiz="toggle">
+                                <h2>‘도덕’을 떠올리면 생각나는 것</h2>
+                                <div class="noteText noteLine orange">
+                                    <div class="textareaWrap">
+                                        <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                            autocomplete="off" spellcheck="false"></textarea>
+                                    </div>
+                                    <div class="text-exam flex-wrap">
+                                        <div class="blueT">
+                                            <p class="dot">세종대왕 – 백성에 대한 사랑과 근면함
+
+                                            </p>
+                                            <p class="dot">유관순 – 일제에 맞서는 용기</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="buttonContainer">
+                                    <button class="writeBtn" data-answer-btn=""></button>
+                                </div>
+                            </li>
+                            <li class="innerTab_2" data-quiz="toggle">
+                                <h2>도덕이 무엇인지 설명해 보기</h2>
+                                <div class="noteText noteLine orange">
+                                    <div class="textIndent">도덕이란</div>
+                                    <div class="textareaWrap">
+                                        <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                            autocomplete="off" spellcheck="false"></textarea>
+                                    </div>
+                                    <div class="text-exam flex-wrap">
+                                        <div class="blueT">
+                                            <p> 옳고 그름을 알고 착한 행동을 선택하는 것으로,
+                                                친구와 가족, 더 나아가 모든 사람들과 좋은 관계를 형성하는
+                                                중요한 가치입니다.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="buttonContainer">
+                                    <button class="writeBtn" data-answer-btn=""></button>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="moveButtonContainer" data-slide-btn-container="">
+                            <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                            <ul class="basicSlider_circle_tabs" data-tabs="">
+                                <li data-hover=""></li>
+                                <li data-hover=""></li>
+                            </ul>
+                            <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title').addClass('gap');
+                } else {
+                    $('header .title').removeClass('gap');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
