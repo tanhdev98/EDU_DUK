@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        .contentsBox {
+            padding: 0;
+        }
+
+        .page_1>img {
+            width: 1050px;
+            margin: auto;
+            border-radius: 20px;
+        }
+
+        .popBtn.mouse {
+            position: absolute;
+        }
+
+        .mouse {
+            top: 320px;
+            left: 370px;
+        }
+
+        .mouse2 {
+            left: 840px;
+            top: 260px;
+        }
+
+        .mouse3 {
+            top: 440px;
+            left: 1030px;
+        }
+
+        .btn-praise {
+            top: 500px;
+        }
+
+        /* popup 1 */
+        .popup_pages>li h2 {
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .popup_pages>li.fullLine[data-popup-page="1"]>.full_content,
+        [data-popup-page="1"] .contentsBox .basicSlider_slides>li {
+            padding: 0;
+        }
+
+        .popup_pages .noteText {
+            width: calc(100% - 58px);
+            margin: auto;
+            margin-top: 70px;
+        }
+
+        .popup_pages .buttonContainer {
+            margin-right: 28px;
+        }
+
+        /* popup 2 */
+        /* title thinknet */
+        .pointContainer .toggle .answer {
+            text-align: center;
+        }
+
+        .pointContainer .pointTitle {
+            display: block;
+            text-align: center;
+        }
+
+        .pointContainer .pointTitle .titleText {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 45px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #ff6600;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+        }
+
+        .pointContainer .pointTitle .titleText:after,
+        .pointContainer .pointTitle .titleText:before {
+            position: absolute;
+            top: 0px;
+            height: 50px;
+            font-size: 40px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #e4caa9;
+        }
+
+        .pointContainer .pointTitle .titleText:after {
+            content: "[";
+            left: -20px;
+        }
+
+        .pointContainer .pointTitle .titleText:before {
+            content: "]";
+            right: -20px;
+        }
+
+        .popup_pages .group-box .titleBox {
+            width: fit-content;
+            margin: 10px auto 0;
+            padding: 5px 15px;
+            background-color: #fff;
+            border: 4px solid #EFCFA6;
+            border-radius: 5px;
+            position: relative;
+            width: 700px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup_pages .group-box .titleBox span {
+            position: absolute;
+            left: 50%;
+            bottom: -100px;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 100px;
+            background: url('./images/duk_04_01_0001_301/img_down.png') no-repeat center center / contain;
+        }
+
+        .popup_pages .group-box .titleBox::before {
+            content: "";
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            background: url('./images/duk_04_01_0001_301/img_arrow.png') no-repeat center center / contain;
+            left: -119px;
+            top: 50px;
+        }
+
+        .popup_pages .group-box .titleBox::after {
+            content: "";
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            background: url('./images/duk_04_01_0001_301/img_arrow.png') no-repeat center center / contain;
+            right: -119px;
+            top: 50px;
+            transform: scaleX(-1);
+        }
+
+        .box-text {
+            width: 390px;
+            height: 260px;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+        }
+
+        .box-text.pink {
+            background-color: #FFDBDF;
+            top: 340px;
+            left: 50px;
+        }
+
+        .box-text.green {
+            background-color: #F2F7C8;
+            top: 340px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .box-text.blue {
+            background-color: #E7F4F9;
+            top: 340px;
+            right: 50px;
+        }
+
+        .box-text .wrapToggle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            padding: 5px;
+        }
+
+        .box-text .wrapToggle .toggle {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pointContainer .dapCheckBtn {
+            right: 28px;
+            bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon yellow" data-show="1">생각 <em>탄탄</em></div>
+            <div class="title-text">정직의 의미와 소중함을 정리하며 정직의 지도를 만들어 봅시다.</div>
+        </header>
+        <main>
+
+
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <img src="./images/duk_04_01_0001_301/img_bg.jpg">
+                        <div class="popBtn mouse" data-hover="" data-popup-btn="1" data-targetSlideNum="1">
+                        </div>
+                        <div class="popBtn mouse mouse2" data-hover="" data-popup-btn="1" data-targetSlideNum="2">
+                        </div>
+                        <div class="popBtn mouse mouse3" data-hover="" data-popup-btn="1" data-targetSlideNum="3">
+                        </div>
+                        <div class="btn-praise right popBtn footer-item" data-popup-btn="2">
+                            <div class="item-title">핵심 <br>정리</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image" data-popup-page="1">
+                    <div class="full_content">
+                        <div class="basicSlider" data-slide-container="popup">
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <h2>‘정직’하면 떠오르는 것</h2>
+                                    <div class="noteText noteLine green">
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p>좋은 물건을 비싸게 팔지 않고 제 가격으로 파는 우리 동네 과일 가게 사장님</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <h2>정직한 삶의 좋은 점</h2>
+                                    <div class="noteText noteLine green">
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p>정직하게 생활하면 무엇보다 스스로에게 부끄럽지 않습니다. 그리고 다른 사람도 나를 믿을 수 있습니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3" data-quiz="toggle">
+                                    <h2>‘정직’을 다른 것에 비유해 보기</h2>
+                                    <div class="noteText noteLine green">
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p>정직은 나무를 키우는 일이다. 나무를 키우려면 물과 양분을 꾸준히 줘야 하는 것처럼 정직의 마음을 키우려면 옳은 것을
+                                                    실천하며 반성하는 꾸준한 과정이 필요하기 때문이다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="fullLine whole image pointContainer" data-popup-page="2" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="pointTitle">
+                            <div class="titleText">정직의 지도를 펼쳐라</div>
+                            <div class="group-box">
+                                <div class="titleBox">
+                                    정직의 의미
+                                    <span></span>
+                                </div>
+                                <div class="box-text pink">
+                                    <div class="wrapToggle">
+                                        <div class="toggle" data-toggle-obj="1">
+                                            <div class="answer on" data-toggle-target="1">
+                                                <div class="ls-1h">자기 자신에 대한 정직</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-text green">
+                                    <div class="wrapToggle">
+                                        <div class="toggle" data-toggle-obj="2">
+                                            <div class="answer on" data-toggle-target="2">
+                                                <div class="ls-1h">다른 사람에 대한 정직</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-text blue">
+                                    <div class="wrapToggle">
+                                        <div class="toggle" data-toggle-obj="3">
+                                            <div class="answer on" data-toggle-target="3">
+                                                <div class="ls-1h">자기가 해야 하는 일에 대한 정직</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="dapCheckBtn" data-answer-btn=""></button>
+
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title').addClass('gap');
+                } else {
+                    $('header .title').removeClass('gap');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
