@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        .min[data-popup-page="2"] {
+            width: 780px;
+            top: 195px;
+            left: 480px;
+        }
+
+        .page_1 .balloon {
+            height: 200px;
+            width: max-content;
+        }
+
+        .balloon>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            gap: 20px;
+        }
+
+        .characterWrap.speech.right:before {
+            background: url('../ko/contents/images/button/btn_speech_balloon_left1.png') no-repeat;
+        }
+
+        .characterWrap.speech.right:hover:before {
+            background: url('../ko/contents/images/button/btn_speech_balloon_left1_hover.png') no-repeat;
+        }
+
+        #boy_1_c .charSpriteAni {
+            background-image: url('../ko/contents/images/character/boy_1.png') !important;
+        }
+
+        .flex {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            margin-top: 70px;
+        }
+
+        #boy_1_c {
+            left: 130px;
+        }
+
+        .page_1 .noteText {
+            width: 862px;
+            height: 390px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="twoLine">
+            <div class="title-icon blue" data-show="1">실천 <em>쑥쑥</em></div>
+            <div class="title-text">생각 쑥쑥에서 친구들마다 놀이터에 필요하다고 생각한 도덕적 가치가 달랐던 까닭을 생각해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="2"></div>
+                        <div class="flex">
+                            <div class="item">
+                                <div id="boy_1_c" class="character-item"></div>
+                            </div>
+                            <div class="item">
+                                <div class="noteText noteLine pink">
+                                    <div class="textareaWrap">
+                                        <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                            autocomplete="off" spellcheck="false"></textarea>
+                                    </div>
+                                    <div class="text-exam flex-wrap">
+                                        <div class="blueT">
+                                            <p>
+                                                은결이는 우정을 더 중요하게 생각했지만,
+                                                나는 배려를 더 중요하게 생각했어요.
+                                                은결이와 나의 관점이 달랐기 때문이에요.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="writeBtn" data-answer-btn=""></button>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="2" data-drag="">
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        지난 시간에 놀이터에 필요한 도덕적 가치를 선택하는 시간을 가졌어요. 친구들마다 선택한 카드가 달랐던
+                        까닭이 무엇인지 생각해 보아요.
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title-text').addClass('gap');
+                } else {
+                    $('header .title-text').removeClass('gap');
+                }
+
+            });
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+
+            $(document).on('click', '.page_1 .character-item', function () {
+                $(this).find('.balloon').removeClass('fff');
+            });
+
+            $prite.boy1({
+                id: '#boy_1_c',
+                speech: 'right',
+                circle: true,
+                text: '사람마다 관점이<br>각각 다를 수 있기<br>때문이에요.',
+                class: 'bottom',
+                balloon_top: -240,
+                balloon_left: -85,
+            });
+        });
+
+    </script>
+</body>
+
+</html>
