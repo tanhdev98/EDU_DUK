@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        .popBtn.mouse {
+            display: inline-block;
+            top: 15px;
+        }
+
+        .min[data-popup-page="1"] {
+            top: 205px;
+            left: 445px;
+            width: 814px;
+        }
+
+        /* Popup page */
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            height: 400px;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: -10px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: fit-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .popup_pages [data-type="toggleButton"] {
+            height: fit-content;
+            align-items: center;
+            display: flex;
+            width: 100% !important;
+        }
+
+        [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            height: 100%;
+        }
+
+        .popup-pages .ls-2h {
+            width: 100%;
+        }
+
+        .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+
+        .toggle.complete .answer,
+        .answer.on {
+            font-weight: normal;
+            text-align: center;
+        }
+
+        .page_1 .innerButtonContainer {
+            top: 10px;
+        }
+
+        .page_1 .how-to-box {
+            margin-top: 0;
+        }
+
+        .popup_pages>li.fullLine>.full_content {
+            padding-top: 0;
+        }
+
+        .popup_pages>li.whole h2 {
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+
+        [data-popup-page="2"] .flex {
+            display: flex;
+            gap: 20px;
+        }
+
+        [data-popup-page="2"] .flex .howtoBox {
+            width: 100%;
+            margin-top: 100px;
+        }
+
+        [data-popup-page="2"] .flex .howtoBox .text-box {
+            text-align: center;
+        }
+
+        .icon-char[data-popup-btn="3"] {
+            top: 60px;
+            left: unset;
+            right: 30px;
+        }
+
+        .min[data-popup-page="3"] {
+            top: 145px;
+            left: 343px;
+            width: 971px;
+            z-index: 3 !important;
+        }
+
+        /* page 2 */
+        .contentsBox {
+            padding: 0;
+        }
+
+        .basicSlider[data-slide-container='main']>.basicSlider_slides>li:not(.page_2) {
+            padding: 20px 28px 0 28px;
+        }
+
+        .char-box-10 .balloon {
+            top: -240px;
+            left: -105px;
+        }
+
+        .char-box-11 .balloon {
+            top: -240px;
+            left: -60px;
+        }
+
+        .char-box-12 .balloon {
+            top: -240px;
+            left: -100px;
+        }
+
+        .char-box-13 .balloon {
+            top: -240px;
+            left: -105px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="twoLine">
+            <div class="title-icon blue" data-show="1">실천 <em>쑥쑥</em></div>
+            <div class="title-text">‘카멜레온 말하기’ 토의를 하며 상대방의 관점에서 생각하는 연습을 해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="‘카멜레온 말하기’ 토의를 하며 상대방의 관점에서 생각하는 연습을 해 봅시다." class="twoLine">활동 1</li>
+                    <li data-hover="" data-text="다른 관점에서 생각하는 방법을 알고 생활 속에서 실천해 봅시다." data-gap="true">활동 2</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="how-to-box">
+                                        <div class="title-box">
+                                            <div class="title">활동 방법</div>
+                                        </div>
+                                    </div>
+                                    <ul class="how-to-play">
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                1
+                                            </div>
+                                            <div class="text">
+                                                우리 반 친구들 사이에 서로 의견이 다른 주제를 하나 정합니다.
+                                                <div class="popBtn mouse" data-hover="" data-popup-btn="2"
+                                                    data-targetSlideNum="1">
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                2
+                                            </div>
+                                            <div class="text">
+                                                친구와 가위바위보를 합니다.
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                3
+                                            </div>
+                                            <div class="text">
+                                                이긴 사람은 찬성, 진 사람은 반대의 관점에서 말합니다.
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                4
+                                            </div>
+                                            <div class="text">
+                                                돌아가면서 말한 후에는 서로 관점을 바꾸어 다시 각자의<br>
+                                                의견을 말합니다.
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <img style="width: 200px; object-fit: contain; position: absolute; bottom: 60px; right: 20px;"
+                                        src="./images/duk_04_02_0002_202/img_03.png" alt="">
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                                        <div class="innerButtonContainer">
+                                            <ul class="innerSlider_tabs">
+                                                <li data-hover="" class="on">1</li>
+                                                <li data-hover="">2</li>
+                                            </ul>
+                                        </div>
+                                        <ul class="basicSlider_slides innerTab" data-slides="">
+                                            <li class="innerTab_1 on">
+                                                <div class="popup-boxes">
+                                                    <div class="box-item ico_que">
+                                                        관점을 바꿔 말해 보니 어떤 생각이 들었나요?
+                                                        <img src="./common/images/ico_que.png" class="ico" />
+                                                    </div>
+                                                    <div class="box-item ico_ans">
+                                                        <img src="./common/images/ico_ans.png" class="ico" />
+                                                        <div data-type="toggleButton">
+                                                            <div class="toggle examBtn box" data-toggle-obj="5"
+                                                                data-hover>
+                                                                <div class="answer" data-toggle-target="5">
+                                                                    <div class="ls-2h">
+                                                                        하나의 문제에 여러 관점이 있을 수 있음을 알게 되었고,<br>
+                                                                        무엇 하나가 반드시 옳지 않을 수도 있음을 깨달았습니다.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="innerTab_2">
+                                                <div class="popup-boxes">
+                                                    <div class="box-item ico_que">
+                                                        나와 다른 관점의 의견을 받아들이면 어떤 점이 좋을까요?
+                                                        <img src="./common/images/ico_que.png" class="ico" />
+                                                    </div>
+                                                    <div class="box-item ico_ans">
+                                                        <img src="./common/images/ico_ans.png" class="ico" />
+                                                        <div data-type="toggleButton">
+                                                            <div class="toggle examBtn box" data-toggle-obj="6"
+                                                                data-hover>
+                                                                <div class="answer" data-toggle-target="6">
+                                                                    <div class="ls-2h">
+                                                                        더 나은 이해와 성장의 기회를 얻고<br>
+                                                                        도덕적인 행동을 할 수 있게 됩니다.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="tab-content-box">
+                            <div class="tab-content group-speech group-speech-04">
+                                <div class="char-box char-box-10 char-box-10_1" data-tail="tail-01"
+                                    data-tail-direction="br">
+                                    <div class="char-image left"></div>
+
+                                    <div class="balloon purple bottom">
+                                        <span>다양한 사람들과<br>
+                                            대화하고 경청하는<br>
+                                            태도를 가져요.
+                                        </span>
+                                        <div class="close-speech-button"></div>
+                                    </div>
+                                </div>
+                                <div class="char-box char-box-11 char-box-11_1" data-tail="tail-01"
+                                    data-tail-direction="br">
+                                    <div class="char-image left"></div>
+                                    <div class="balloon yellow bottom">
+                                        <span>다양한 정보를<br>
+                                            편견 없이<br>
+                                            살펴보아요.
+                                        </span>
+                                        <div class="close-speech-button"></div>
+                                    </div>
+                                </div>
+                                <div class="char-box char-box-12" data-tail="tail-01" data-tail-direction="br">
+                                    <div class="char-image"></div>
+                                    <div class="balloon green bottom">
+                                        <span>새로운 경험으로<br>
+                                            시야를 넓히고,<br>
+                                            다양성을 존중해요.
+                                        </span>
+                                        <div class="close-speech-button"></div>
+                                    </div>
+                                </div>
+                                <div class="char-box char-box-13" data-tail="tail-01" data-tail-direction="br">
+                                    <div class="char-image"></div>
+                                    <div class="balloon purple bottom">
+                                        <span>
+                                            새로운 경험으로<br>
+                                            시야를 넓히고,<br>
+                                            다양성을 존중해요.
+                                        </span>
+                                        <div class="close-speech-button"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag="">
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        이 이야기는 도덕적 문제 상황에서 도덕적 행동에 관한 서로 다른 관점이 존재함을 보여 줘요. 나와 다른 관점을 수용하는 태도가 도덕적 행동을 하는 데 어떤 역할을 하는지
+                        살펴볼 수 있어요.
+                    </div>
+                </li>
+                <li class="fullLine whole image" data-popup-page="2" data-quiz="toggle" style="transition: none;">
+                    <div class="full_content">
+                        <h2>이런 주제는 어때요?</h2>
+                        <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="3"></div>
+                        <div class="flex">
+                            <div class="how-to-box howtoBox">
+                                <div class="pic-box">
+                                    <div class="bullet number orange inline">1</div>
+                                    <div class="image-box">
+                                        <div class="imageWrap">
+                                            <img src="./images/duk_04_02_0002_202/img_02.png">
+                                        </div>
+                                    </div>
+                                    <div class="text-box">
+                                        비밀은 반드시<br>
+                                        지켜야 할까요?
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="how-to-box howtoBox">
+                                <div class="pic-box">
+                                    <div class="bullet number orange inline">2</div>
+                                    <div class="image-box">
+                                        <div class="imageWrap">
+                                            <img src="./images/duk_04_02_0002_202/img_01.png">
+                                        </div>
+                                    </div>
+                                    <div class="text-box">
+                                        항상 다른 사람을<br>
+                                        도와야 할까요?
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="min" data-popup-page="3" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        <p>
+                            아래와 같은 토론 주제들도 있어요.
+                        </p>
+                        <p><ins class="dot"></ins>문제가 생겼을 때 친구의 비밀을 지키는 것이 도덕적일까?<br>
+                            아니면 사실대로 말하는 것이 도덕적일까?</p>
+                        <p><ins class="dot"></ins>
+                            친구에게 가짜 칭찬을 하는 것과 진실된 조언을 하는 것 중에서
+                            어떤 것이 더 도덕적일까?</p>
+                        <p><ins class="dot"></ins>
+                            가난한 사람을 돕는 것은 항상 옳을까?
+                        </p>
+                        <p><ins class="dot"></ins>
+                            잘 풀리지 않는 문제가 있을 때 정답을 봐도 될까?
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+            });
+
+
+            $(document).on('click', '.page_1 .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.page_1 .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.page_1 .basicSlider_slides.innerTab li').removeClass('on');
+                $('.page_1 .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(document).on('click', '.icon-char', function () {
+                $(this).parents('.whole').addClass('on');
+            })
+            $(document).on('click', '.popup_closeBtn, .basicSlider_circle_tabs > *, .basicSlider_btn', function () {
+                $('.popup_pages > li.min').removeClass('on');
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>
