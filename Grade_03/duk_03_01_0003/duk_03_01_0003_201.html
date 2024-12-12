@@ -12,6 +12,10 @@
 
 
     <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
         .page_1 .character-item {
             position: absolute;
         }
@@ -235,7 +239,7 @@
 
 <body>
     <div id="wrap" class="math">
-        <header>
+        <header class="twoLine">
             <div class="title-icon blue">실천 <em>쑥쑥</em></div>
             <div class="title-text">오늘 나의 감정은 어떤지, 그 까닭은 무엇인지 친구들과 이야기해 봅시다.</div>
         </header>
@@ -245,10 +249,11 @@
             <!-- FRAME OF PAGE -->
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
-                    <li data-hover="" data-text="오늘 나의 감정은 어떤지, 그 까닭은 무엇인지 친구들과 이야기해 봅시다.">활동 1</li>
-                    <li data-hover="" data-text="기분이 좋았거나 나빴던 경험을 떠올려 보고, 그때 나는 어떻게 행동했는지 친구들과 이야기해 봅시다.">활동 2</li>
-                    <li data-hover="" data-text="기분에 따른 나의 행동이 적절했나요? 짝과 함께 이야기를 나눠 봅시다.">물음</li>
-                    <li data-hover="" data-text="기분에 따른 나의 행동이 적절했나요? 짝과 함께 이야기를 나눠 봅시다.">활동 3</li>
+                    <li data-hover="" data-text="오늘 나의 감정은 어떤지, 그 까닭은 무엇인지 친구들과 이야기해 봅시다." class="twoLine">활동 1</li>
+                    <li data-hover="" data-text="기분이 좋았거나 나빴던 경험을 떠올려 보고, 그때 나는 어떻게 행동했는지 친구들과 이야기해 봅시다."
+                        class="twoLine">활동 2</li>
+                    <li data-hover="" data-text="기분에 따른 나의 행동이 적절했나요? 짝과 함께 이야기를 나눠 봅시다." class="twoLine">물음</li>
+                    <li data-hover="" data-text="기분에 따른 나의 행동이 적절했나요? 짝과 함께 이야기를 나눠 봅시다." class="twoLine">활동 3</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1">
@@ -532,7 +537,8 @@
                                     <button class="writeBtn" data-answer-btn=""></button>
                                 </li>
                                 <li class="innerTab_3" data-quiz="toggle">
-                                    <a class="videoSubPlayBtn large youtube" data-youtube-id="qkDjMJkLxIo" target="_blank">마음 안정화를 위한 복식훈련기법</a>
+                                    <a class="videoSubPlayBtn large youtube" data-youtube-id="qkDjMJkLxIo"
+                                        target="_blank">마음 안정화를 위한 복식훈련기법</a>
                                     <div class="balloon thinkTail deeppink pink"></div>
                                     <img style="position: absolute; bottom: 0; width: 230px;"
                                         src="./images/duk_03_01_0003_201/img_04.png" alt="">
@@ -595,15 +601,20 @@
         document.addEventListener('DOMContentLoaded', function () {
             $(document).on('click', '.basicSlider_tabs li', function () {
                 if ($(this).data('text')) {
-                    $('header .title-text').text($(this).data('text'));
+                    $('header .title-text').html($(this).data('text'));
                 }
                 if ($(this).attr('data-gap') == 'true') {
-                    $('header .title-text').addClass('gap');
+                    $('header').addClass('gap');
                 } else {
-                    $('header .title-text').removeClass('gap');
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
                 }
             });
-
             $(document).on('click', '.page_1 .character-item', function () {
                 $(this).find('.balloon').removeClass('fff');
             });

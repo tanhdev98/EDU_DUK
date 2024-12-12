@@ -11,7 +11,9 @@
     <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
 
 
-    <style>
+    <style>header.twoLine .title-icon {
+        top: -30px;
+    }
         .page_1 img {
             height: 440px;
             width: 90%;
@@ -340,7 +342,7 @@
 
 <body>
     <div id="wrap" class="math">
-        <header>
+        <header class="twoLine">
             <div class="title-icon blue">실천 <em>쑥쑥</em></div>
             <div class="title-text">오늘부터 5일 동안 감정 일기를 쓰며 나의 감정을 소중히 여겨 봅시다.</div>
         </header>
@@ -350,7 +352,7 @@
             <!-- FRAME OF PAGE -->
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
-                    <li data-hover="" data-text="오늘부터 5일 동안 감정 일기를 쓰며 나의 감정을 소중히 여겨 봅시다.">활동 1</li>
+                    <li data-hover="" data-text="오늘부터 5일 동안 감정 일기를 쓰며 나의 감정을 소중히 여겨 봅시다." class="twoLine">활동 1</li>
                     <li data-hover="" data-text="배운 내용을 되돌아보며 자기 점검을 해 봅시다.">자기 점검</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
@@ -560,15 +562,20 @@
         document.addEventListener('DOMContentLoaded', function () {
             $(document).on('click', '.basicSlider_tabs li', function () {
                 if ($(this).data('text')) {
-                    $('header .title-text').text($(this).data('text'));
+                    $('header .title-text').html($(this).data('text'));
                 }
                 if ($(this).attr('data-gap') == 'true') {
-                    $('header .title-text').addClass('gap');
+                    $('header').addClass('gap');
                 } else {
-                    $('header .title-text').removeClass('gap');
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
                 }
             });
-
             $(document).on('click', '.page_1 .innerTab_2 .writeBtn', function () {
                 if ($(this).hasClass('reset')) {
                     $(this).parent().find('.img_2').attr('src', './images/duk_03_01_0003_301/star-green.png');

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        .page_1 .bgImg {
+            height: 470px;
+        }
+
+        .page_1 .title-noteText {
+            position: absolute;
+            font-weight: bold;
+            padding: 8px 30px;
+            background-color: #fff;
+            border-radius: 40px;
+            left: 500px;
+            top: 55px;
+        }
+
+        .content-noteText {
+            font-weight: normal;
+            font-family: 'Noto';
+            position: absolute;
+            width: 1160px;
+            left: 70px;
+            top: 140px;
+            font-size: 40px;
+        }
+
+        .content-noteText2 {
+            top: 70px;
+        }
+
+        .page_1 .noteText {
+            box-shadow: none;
+            position: absolute;
+            width: 1125px;
+            left: 85px;
+            top: 185px;
+            height: 215px;
+        }
+
+        .page_1 .textareaWrap {
+            height: 100%;
+            border-radius: 20px;
+            padding: 0 10px;
+        }
+
+        .page_1 .noteText .textLine {
+            font-size: 40px;
+        }
+
+
+        .page_1 .textareaWrap .underline:nth-child(n + 5) {
+            display: none !important;
+        }
+
+        .page_1 .noteText-bg {
+            width: 1115px;
+            height: 200px;
+            background-color: #fff;
+            position: absolute;
+            border-radius: 20px;
+            top: 217px;
+            left: 90px;
+        }
+
+        .page_1 .noteText .text-exam.flex-wrap {
+            padding: 35px 30px 0px;
+        }
+
+        /* page 2 */
+        .page_2 .noteText {
+            margin-top: 60px;
+        }
+
+        .page_2 .additional-question {
+            position: absolute !important;
+            right: 0;
+        }
+
+
+
+        .popup_pages .noteText {
+            box-shadow: none;
+            position: absolute;
+            width: 100%;
+            height: 280px;
+            left: 0;
+            top: -30px;
+        }
+
+        .popup_pages .textareaWrap {
+            height: 100%;
+        }
+
+        /* Popup page */
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: fit-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .popup_pages [data-type="toggleButton"] {
+            height: fit-content;
+            align-items: center;
+            display: flex;
+            width: 100% !important;
+        }
+
+        [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            height: 100%;
+        }
+
+        .popup-pages .ls-2h {
+            width: 100%;
+        }
+
+        .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .toggle.complete .answer,
+        .answer.on {
+            font-weight: normal;
+        }
+
+        .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="twoLine">
+            <div class="title-icon yellow" data-show="1">생각 <em>똑똑</em></div>
+            <div class="title-text">‘윤한이의 고민’을 읽고, 나라면 이준이에게 어떻게 말할 것인지 생각해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="‘윤한이의 고민’을 읽고, 나라면 이준이에게 어떻게 말할 것인지 생각해 봅시다." class="twoLine">물음 1</li>
+                    <li data-hover="" data-text="‘윤한이의 고민’을 읽고, 윤한이는 왜 머뭇거렸을지 생각해 봅시다." data-gap="true">물음 2</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <img class="bgImg" src="./images/duk_04_01_0002_101/img_01.png" alt="">
+                                    <div class="title-noteText">윤한이의 고민</div>
+                                    <div class="content-noteText">
+                                        우리 반 체육 시간에 달리기 시합을 진행했고 마지막까지 남은 아리와 이준이가 결승선을 향해 힘차게 달리기 시작했다.
+                                        ‘아리 몸이 아주 조금 먼저 앞으로 들어왔구나.’ 나는 아리가 결승선에 조금 더 빨리 들어온 것을 보았고, 내 단짝 이준이가 진 것이 너무
+                                        아쉬웠다.
+                                        “아리, 승!”
+                                        승부욕이 강한 이준이는 자신이 아리와 똑같이 들어온 것 같다며 재시합을 요청했지만, 선생님의 판정은 바뀌지 않았다.
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <img class="bgImg" src="./images/duk_04_01_0002_101/img_01.png" alt="">
+                                    <div class="content-noteText content-noteText2">
+                                        “윤한아, 너는 내 말 믿지? 아리는 나랑 동시에 들어왔어. 선생님이 보고 계셨던 위치가 나에게 불리했던 거야. 너도 그렇게 생각하지?”
+                                        이준이의 질문에 나는 잠시 머뭇거리다가 대답했다.<br>
+                                        “
+                                    </div>
+                                    <div class="noteText-bg"></div>
+                                    <div class="noteText noteLine">
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p style="font-size: 40px;">
+                                                    이준아. 너는 그렇게 생각했을 수 있겠다. 정말 간발의 차이였거든.
+                                                    이번에는 선생님 말씀대로 아리가 조금 빨리 들어오긴 했더라.
+                                                    너도 충분히 잘 뛰었어. 다음 시합에서 한 번 더 도전해 볼까?
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
+                        <div class="noteText noteLine pink">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p>억울하고 속상해하는 이준이에게 정직하게 말하면 이준이가 더 화날 수도 있고 이준이와의 사이가 안 좋아질 것이라는 생각과, 이준이의 말에 맞장구를
+                                        치면 다른 친구들과 선생님, 나 자신에게 거짓을 말하고 진실을 덮는 일이라는 생각이 동시에 들었기 때문입니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image" data-popup-page="1" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="popup-boxes">
+                            <div class="box-item ico_que" style="font-style: 40px; text-align: center;">
+                                윤한이와 이준이는 단짝 친구입니다.<br>
+                                단짝 친구는 서로를 위해 주고 이해해 줘야 합니다.<br>
+                                어떻게 위하고 이해하는 것이 올바른 방법일까요?
+                                <img src="./common/images/ico_que.png" class="ico" />
+                            </div>
+                            <div class="box-item ico_ans">
+                                <img src="./common/images/ico_ans.png" class="ico" />
+                                <div class="noteText noLine">
+                                    <div class="textareaWrap">
+                                        <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                            autocomplete="off" spellcheck="false"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer" style="bottom: 10px; right: 28px;">
+                            <button class="resetBtn only-reset" data-type="reset" data-hover=""></button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+
+            $(document).on('click', '.popup_pages .resetBtn', function () {
+                KmAudioPlayer.buttonClick();
+                $('.popup_pages .textLine').val('');
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>

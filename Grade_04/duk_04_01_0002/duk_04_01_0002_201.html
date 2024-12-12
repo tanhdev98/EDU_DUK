@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        .page_1 .noteText {
+            height: 500px;
+        }
+
+        .page_1 .titleText {
+            color: #FD8509;
+            margin-top: -15px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* .page 2 */
+        .page_2 .flex {
+            display: flex;
+            margin-top: 40px;
+        }
+
+        .page_2 .flex .items:first-child {
+            width: 1080px;
+        }
+
+        .page_2 .flex .items {
+            width: 100%;
+        }
+
+        #boy_3 {
+            position: absolute;
+            bottom: 0;
+            left: 210px;
+        }
+
+        [data-popup-page="2"] {
+            top: 145px;
+            left: 470px;
+            width: 789px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="twoLine">
+            <div class="title-icon yellow" data-show="1">생각 <em>똑똑</em></div>
+            <div class="title-text">선의의 거짓말과 정직의 갈림길 중에서 어떤 선택을 해야 할지 글을 읽고 아래 물음에 답해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="선의의 거짓말과 정직의 갈림길 중에서 어떤 선택을 해야 할지 글을 읽고 아래 물음에 답해 봅시다."
+                        class="twoLine">읽기 자료</li>
+                    <li data-hover="" data-text="다른 사람을 위해 거짓말을 해도 될까요?">물음</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="noteText noteLine orange">
+                            <div class="titleText">
+                                칸트의 선택
+                            </div>
+                            <div class="contentText">
+                                칸트의 친구가 자신을 쫓는 사람을 피해 숨겨 달라고 말하고는 칸트의 집으로 들어왔습니다.
+                                잠시 뒤, 친구를 쫓던 사람도 칸트를 찾아와 “네 친구 봤어? 어디 있어?”라고 물었습니다. 이 질문에 어떻게 대답을 해야 할지 고민하던 칸트는 사실대로
+                                정직하게 대답했습니다.
+                                친구가 위험에 빠질 수 있지만, 친구를 위한다는 이유로 거짓말을 한다면 정직하지 못한 행동이라고 생각했기 때문입니다.
+                                여러분이 칸트라면 어떻게 대답할 수 있을까요?
+                            </div>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="2"></div>
+                        <div class="flex">
+                            <div class="items">
+                                <div id="boy_3" class="character-item"></div>
+                            </div>
+                            <div class="items">
+                                <div class="noteText noteLine purple" style="margin-top: 30px;">
+                                    <div class="textareaWrap">
+                                        <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                            autocomplete="off"></textarea>
+                                    </div>
+                                    <div class="text-exam flex-wrap">
+                                        <div class="blueT">
+                                            안 된다고 생각합니다. 누군가를 위한다는 이유로 거짓말을 하면, 그 사람과 나 자신 모두를 속이는 일이기 때문입니다.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="buttonContainer">
+                                    <button class="writeBtn" data-answer-btn=""></button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="2" data-drag="">
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        내가 생각하는 선의를 위해 거짓말을 하는 것이 허용되는지, 그 기준은 객관적인지, 결과에 모두 만족할지, 나는 결과에 책임질 수 있는지도 따져보아요.
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+
+            $(document).on('click', '.popup_pages .resetBtn', function () {
+                KmAudioPlayer.buttonClick();
+                $('.popup_pages .textLine').val('');
+            });
+
+
+
+            $prite.boy3({
+                id: '#boy_3',
+                speech: 'right',
+                sound: './media/duk_04_01_0002_201/duk_04_01_0002_201_01.mp3',
+                text: '괜찮은 상황도 있다고 생각합니다.<br>진실을 말했을 때 다른 사람이 <br>위험에 처하거나 상처를 받는<br>경우도 있기 때문입니다.',
+                class: 'bottom',
+                balloon_top: -290,
+                balloon_left: -220,
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>
