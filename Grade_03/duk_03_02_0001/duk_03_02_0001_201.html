@@ -12,6 +12,11 @@
 
 
     <style>
+        .toggle.complete .answer,
+        .answer.on {
+            font-weight: normal;
+        }
+
         header.twoLine .title-icon {
             top: -30px;
         }
@@ -36,10 +41,16 @@
             display: none !important;
         }
 
+        .page_1 .balloon span,
+        .page_1 .character-item {
+            pointer-events: none !important;
+            cursor: default;
+        }
+
         .page_1 .balloon {
             display: block !important;
             pointer-events: none !important;
-            cursor: pointer;
+            cursor: default;
         }
 
         #boy_1_c .charSpriteAni {
@@ -186,7 +197,7 @@
 <body>
     <div id="wrap" class="math">
         <header class="twoLine">
-            <div class="title-icon yellow" data-show="1">생각 <em>똑똑</em></div>
+            <div class="title-icon yellow" data-show="1">생각 <em>쑥쑥</em></div>
             <div class="title-text">다음 친구들의 모습에서 어떤 마음가짐이 보이는지 이야기해 봅시다.</div>
         </header>
         <main>
@@ -218,7 +229,9 @@
                                             </div>
                                         </div>
                                     </div>
-
+                                    <div class="textInBox">
+                                        (거짓 없는 올바른 자세)
+                                    </div>
                                     <div class="character-flex">
                                         <div id="boy_1_c" class="character-item"></div>
                                         <div id="boy_4_c" class="character-item"></div>
