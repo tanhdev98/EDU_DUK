@@ -349,7 +349,7 @@
     <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
     <!-- <script type="text/javascript" src="./ko/contents.js"></script> -->
     <script type="text/javascript" src="./common/js/guide.js"></script>
-    
+
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
             $(document).on('click', '.basicSlider_tabs li', function () {
@@ -432,6 +432,7 @@
                         }
                     });
                 });
+
                 if ($(this).hasClass('reset')) {
                     $(this).closest('[data-quiz="dragDrop"]').find('.js-dropArea').addClass('active');
                 }
@@ -444,7 +445,12 @@
                     });
                     $(this).closest('[data-quiz="dragDrop"]').find('.js-dropArea').removeClass('active').empty().append('<div class="dragClone"></div>');
                     console.log(data_id_complete);
+                    if ($(this).parent().parent().hasClass('innerTab_2')) {
+                        $('.page_1 .innerTab_2 .js-dragObj').removeClass('dragObjComplete');
+                    }
                 }
+
+
             });
 
         });
