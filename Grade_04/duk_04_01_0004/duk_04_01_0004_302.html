@@ -220,7 +220,7 @@
                                                 data-drop-area-answer="4"></span>을 자주 선택한다면</p>
                                     </div>
                                     <div class="flex" style="margin-left: 50px; margin-top: 0;">
-                                        <p>서로의 마음에<span class="js-dropArea a1 clearArea boxDrag"
+                                        <p>서로의 마음에<span class="js-dropArea a2 clearArea boxDrag"
                                                 data-drop-area-answer="3"></span>이 자리할 수 없습니다.</p>
                                     </div>
                                     <div class="buttonContainer">
@@ -392,23 +392,31 @@
             });
             $(document).on('mouseup touchend', '.js-dragObj', function () {
                 var _id = parseInt($(this).attr("class").split(" ")[1].replace("d", ""));
-                console.log(_id);
+                // console.log(_id);
                 $(this).closest('.dragDropContainer').find('.js-dropArea').removeClass('dragged');
                 var x = $(this).closest('.dragDropContainer').find('.js-dropArea .js-dragObj.d' + _id).clone();
                 if ($(this).closest('.dragDropContainer').find('.js-dropArea>.js-dragObj.d' + _id).length > 0) {
                     $(this).closest('.dragDropContainer').find('.js-dropArea>.js-dragObj.d' + _id).parent().addClass('active dragged');
                     $(this).closest('.dragDropContainer').find('.js-dropArea.dragged .dragClone').append(x);
+                }
+                // if ($("[data-quiz='dragDrop'] .js-dropArea").length == 1) {
+                //     if ($(this).closest('.dragDropContainer').find('.js-dropArea.active').length == 1) {
+                //         $(this).closest('[data-quiz="dragDrop"]').find('.dapCheckBtn').addClass('reset');
+                //     }
+                // }
 
+                if ($(this).parents("[data-quiz='dragDrop']").find('.js-dropArea').length == 2) {
+                    if ($(this).closest('.dragDropContainer').find('.js-dropArea.active').length == 2) {
+                        $(this).closest('[data-quiz="dragDrop"]').find('.dapCheckBtn').addClass('reset');
+                    }
                 }
-                if ($(this).closest('.dragDropContainer').find('.js-dropArea.active').length == 1) {
-                    $(this).closest('[data-quiz="dragDrop"]').find('.dapCheckBtn').addClass('reset');
-                }
+               console.log($(this).parents("[data-quiz='dragDrop']").find('.js-dropArea').length);
+               
+
 
                 if ($(this).hasClass('dragObjComplete')) {
                     var dragAnswer = $(this).data('drag-obj-answer');
                     $(`.drag-zone .js-dragObj.d${dragAnswer}`).css('opacity', '0 !important');
-                    console.log(dragAnswer);
-
                 }
                 // $('.js-dropArea').each(function () {
                 //     $(this).find('.js-dragObj').each(function () {
