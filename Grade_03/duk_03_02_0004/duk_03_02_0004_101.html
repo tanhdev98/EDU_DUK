@@ -12,6 +12,11 @@
 
 
     <style>
+        .toggle.complete .answer,
+        .answer.on {
+            font-weight: normal;
+        }
+
         /* Page 1 */
         .page_1 .items {
             padding: 0 28px;
@@ -105,6 +110,7 @@
         .popup_pages [data-type="toggleButton"] .toggle {
             background-color: transparent;
             height: 100%;
+            justify-content: center;
         }
 
         .popup-pages .ls-2h {
@@ -184,7 +190,7 @@
 <body>
     <div id="wrap" class="math">
         <header>
-            <div class="title-icon pink">마음 <em>탄탄</em></div>
+            <div class="title-icon pink">마음 <em>똑똑</em></div>
             <div class="title-text">다음 글을 읽고 본받을 점을 이야기해 봅시다.</div>
         </header>
         <main>
@@ -247,7 +253,8 @@
                                             <img src="./common/images/ico_ans.png" class="ico">
                                             <div data-type="toggleButton">
                                                 <div class="toggle examBtn box" data-toggle-obj="5" data-hover="">
-                                                    <div class="answer" data-toggle-target="5">
+                                                    <div class="answer" data-toggle-target="5"
+                                                        style="text-align: center;">
                                                         <div class="ls-2h">
                                                             <p>
                                                                 어려운 상황 속에도 참고 이겨낸 이순신이<br>
@@ -271,7 +278,8 @@
                                             <img src="./common/images/ico_ans.png" class="ico">
                                             <div data-type="toggleButton">
                                                 <div class="toggle examBtn box" data-toggle-obj="6" data-hover="">
-                                                    <div class="answer" data-toggle-target="6">
+                                                    <div class="answer" data-toggle-target="6"
+                                                        style="text-align: center;">
                                                         <div class="ls-2h">
                                                             <p>
                                                                 나라를 위해 일하는 것이 높은 자리에 가기 위함이 아니고<br>
