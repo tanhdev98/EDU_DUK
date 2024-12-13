@@ -102,7 +102,7 @@
             width: 100% !important;
         }
 
-        [data-type="toggleButton"] .toggle {
+        .popup_pages [data-type="toggleButton"] .toggle {
             background-color: transparent;
             height: 100%;
         }
@@ -132,6 +132,24 @@
             top: 15px;
         }
 
+        .innerSlider_tabs>li {
+            background-color: #F3DEC0;
+        }
+
+        .innerSlider_tabs>li.on {
+            background-color: #F3B05B;
+        }
+
+        .innerButtonContainer {
+            position: absolute;
+            right: 80px;
+            top: 86px;
+        }
+
+        .innerButtonContainer::before {
+            display: none;
+        }
+
         .additional-question {
             right: 0;
             left: auto;
@@ -156,6 +174,10 @@
             margin-top: 60px;
             height: 515px;
         }
+
+        [data-type="toggleButton"] {
+            height: fit-content
+        }
     </style>
 </head>
 
@@ -173,7 +195,7 @@
                         <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
                         <div class="dodbogi" data-popup-btn="2">「성실한 삶」 보기</div>
                         <div class="items">
-                            <div class="item">
+                            <div class="item" data-type="toggleButton">
                                 이순신이 다시 도전한 과거 시험에 합격한 까닭은 무엇일까요?
                                 <div class="toggle box" data-toggle-obj="1">
                                     <div class="answer" data-toggle-target="1">
@@ -181,7 +203,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="item">
+                            <div class="item" data-type="toggleButton">
                                 이순신이 과거 시험에 합격할 때까지 노력한 모습과 자신의 자리에서<br>
                                 맡은 일을 하는 모습에서 우리가 배워야 할 자세는 무엇일까요?
                                 <div class="toggle box" data-toggle-obj="2">
@@ -376,6 +398,32 @@
                 $(this).addClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    dapCheckBtn.addClass('reset');
+                } else {
+                    dapCheckBtn.removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!dapCheckBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
+            });
+
+            $(document).on('click', '.additional-question', function () {
+                $('[data-type="toggleButton"][data-active="on"] .toggle').addClass('complete');
             });
         });
 

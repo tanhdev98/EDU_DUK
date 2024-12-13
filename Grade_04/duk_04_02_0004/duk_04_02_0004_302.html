@@ -155,9 +155,9 @@
             background-color: #F1C330;
         }
 
-        .dapCheckBtn {
-            right: 28px;
-            bottom: 10px;
+        .popup_pages .dapCheckBtn {
+            right: 48px;
+            bottom: 20px;
         }
 
         .popup_pages .toggle.box {
@@ -577,26 +577,10 @@
                 }
             });
 
-            $(document).on('click', '.toggle', function () {
-                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
-                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
-                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.examViewBtn');
-
-                if (toggleBtn.length == toggleCompleteBtn.length) {
-                    examViewBtn.addClass('reset');
-                } else {
-                    examViewBtn.removeClass('reset');
-                }
-            });
-
-            $(document).on('click', '.examViewBtn', function () {
-                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.examViewBtn');
-                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
-
-                if (!examViewBtn.hasClass('reset')) {
-                    toggleBtn.parent().removeAttr('data-active');
-                } else {
-                    toggleBtn.parent().attr('data-active', 'on');
+            $(document).on('click', '.dodbogi', function () {
+                $('.popup_pages [data-type="toggleButton"][data-active="on"] .toggle').addClass('complete');
+                if ($('.popup_pages [data-type="toggleButton"][data-active="on"]').length == 5) {
+                    $('.popup_pages .dapCheckBtn').addClass('reset');
                 }
             });
         });

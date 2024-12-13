@@ -604,6 +604,17 @@
                     toggleBtn.parent().attr('data-active', 'on');
                 }
             });
+
+            $(document).on('click', '.btn-praise', function () {
+                $('[data-type="toggleButton"][data-active="on"] .toggle').addClass('complete');
+                if ($('.innerTab_1 [data-type="toggleButton"][data-active="on"]').length == 4) {
+                    $('.innerTab_1 .dapCheckBtn').addClass('reset');
+                }
+
+                if ($('.innerTab_2 [data-type="toggleButton"][data-active="on"]').length == 3) {
+                    $('.innerTab_2 .dapCheckBtn').addClass('reset');
+                }
+            });
         });
     </script>
 </body>

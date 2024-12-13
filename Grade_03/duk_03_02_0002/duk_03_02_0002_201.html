@@ -211,6 +211,24 @@
             left: 455px;
             width: 790px;
         }
+
+        .innerSlider_tabs>li {
+            background-color: #F3DEC0;
+        }
+
+        .innerSlider_tabs>li.on {
+            background-color: #F3B05B;
+        }
+
+        .innerButtonContainer {
+            position: absolute;
+            right: 80px;
+            top: 86px;
+        }
+
+        .innerButtonContainer::before {
+            display: none;
+        }
     </style>
 </head>
 
@@ -456,7 +474,7 @@
                                         </div>
                                         <div class="box-item ico_ans">
                                             <img src="./common/images/ico_ans.png" class="ico" />
-                                            <div data-type="toggleButton">
+                                            <div data-type="toggleButton" class="boxItem">
                                                 <div class="toggle examBtn box" data-toggle-obj="1" data-hover>
                                                     <div class="answer" data-toggle-target="1">
                                                         <div class="ls-2h">
@@ -484,7 +502,7 @@
                                         </div>
                                         <div class="box-item ico_ans">
                                             <img src="./common/images/ico_ans.png" class="ico" />
-                                            <div data-type="toggleButton">
+                                            <div data-type="toggleButton" class="boxItem">
                                                 <div class="toggle examBtn box" data-toggle-obj="2" data-hover>
                                                     <div class="answer" data-toggle-target="2">
                                                         <div class="ls-2h">
@@ -539,7 +557,9 @@
                 $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
             });
-
+            $(document).on('click', '.additional-question', function () {
+                $('.boxItem[data-active="on"] .toggle').addClass('complete');
+            });
         });
     </script>
 </body>

@@ -486,7 +486,7 @@
                                         </div>
                                         <div class="box-item ico_ans">
                                             <img src="./common/images/ico_ans.png" class="ico" />
-                                            <div data-type="toggleButton">
+                                            <div data-type="toggleButton" class="boxItem">
                                                 <div class="toggle examBtn box" data-toggle-obj="5" data-hover>
                                                     <div class="answer" data-toggle-target="5">
                                                         <div class="ls-2h">
@@ -511,7 +511,7 @@
                                         </div>
                                         <div class="box-item ico_ans">
                                             <img src="./common/images/ico_ans.png" class="ico" />
-                                            <div data-type="toggleButton">
+                                            <div data-type="toggleButton" class="boxItem">
                                                 <div class="toggle examBtn box" data-toggle-obj="6" data-hover>
                                                     <div class="answer" data-toggle-target="6">
                                                         <div class="ls-2h">
@@ -536,7 +536,7 @@
                                         </div>
                                         <div class="box-item ico_ans">
                                             <img src="./common/images/ico_ans.png" class="ico" />
-                                            <div data-type="toggleButton">
+                                            <div data-type="toggleButton" class="boxItem">
                                                 <div class="toggle examBtn box" data-toggle-obj="7" data-hover>
                                                     <div class="answer" style="margin: auto;" data-toggle-target="7">
                                                         <div class="ls-2h">
@@ -556,7 +556,7 @@
                                         </div>
                                         <div class="box-item ico_ans">
                                             <img src="./common/images/ico_ans.png" class="ico" />
-                                            <div data-type="toggleButton">
+                                            <div data-type="toggleButton" class="boxItem">
                                                 <div class="toggle examBtn box" data-toggle-obj="8" data-hover>
                                                     <div class="answer" style="margin: auto;" data-toggle-target="8">
                                                         <div class="ls-2h">
@@ -576,7 +576,7 @@
                                         </div>
                                         <div class="box-item ico_ans">
                                             <img src="./common/images/ico_ans.png" class="ico" />
-                                            <div data-type="toggleButton">
+                                            <div data-type="toggleButton" class="boxItem">
                                                 <div class="toggle examBtn box" data-toggle-obj="10" data-hover>
                                                     <div class="answer" data-toggle-target="10">
                                                         <div class="ls-2h">
@@ -636,7 +636,9 @@
                 $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
             });
-
+            $(document).on('click', '.additional-question', function () {
+                $('.boxItem[data-active="on"] .toggle').addClass('complete');
+            });
         });
     </script>
 </body>

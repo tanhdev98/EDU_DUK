@@ -315,7 +315,7 @@
                             </div>
                             <div class="box-item ico_ans">
                                 <img src="./common/images/ico_ans.png" class="ico" />
-                                <div data-type="toggleButton">
+                                <div data-type="toggleButton" class="boxItem">
                                     <div class="toggle examBtn box" data-toggle-obj="1" data-hover>
                                         <div class="answer" data-toggle-target="1">
                                             <div class="ls-2h">
@@ -408,7 +408,9 @@
                 balloon_bottom: 210,
                 balloon_left: -102,
             });
-
+            $(document).on('click', '.additional-question', function () {
+                $('.boxItem[data-active="on"] .toggle').addClass('complete');
+            });
         });
 
     </script>

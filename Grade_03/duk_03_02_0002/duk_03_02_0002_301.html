@@ -621,6 +621,12 @@
                     toggleBtn.parent().attr('data-active', 'on');
                 }
             });
+            $(document).on('click', '.btn-praise', function () {
+                $('[data-type="toggleButton"][data-active="on"] .toggle').addClass('complete');
+                if ($('[data-type="toggleButton"][data-active="on"]').length == 3) {
+                    $('.dapCheckBtn').addClass('reset');
+                }
+            });
         });
     </script>
 </body>

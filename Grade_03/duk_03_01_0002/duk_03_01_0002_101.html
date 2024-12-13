@@ -120,7 +120,7 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <th>
+                                                        <th data-type="toggleButton">
                                                             <div class="toggle box" data-toggle-obj="1">
                                                                 <div class="answer" data-toggle-target="1">
                                                                     <div>성실</div>
@@ -132,7 +132,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <th>
+                                                        <th data-type="toggleButton">
                                                             <div class="toggle box" data-toggle-obj="2">
                                                                 <div class="answer" data-toggle-target="2">
                                                                     <div>끈기</div>
@@ -144,7 +144,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <th>
+                                                        <th data-type="toggleButton">
                                                             <div class="toggle box" data-toggle-obj="3">
                                                                 <div class="answer" data-toggle-target="3">
                                                                     <div>정직</div>
@@ -156,7 +156,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <th>
+                                                        <th data-type="toggleButton">
                                                             <div class="toggle box" data-toggle-obj="4">
                                                                 <div class="answer" data-toggle-target="4">
                                                                     <div>책임</div>
@@ -194,7 +194,7 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <th>
+                                                        <th data-type="toggleButton">
                                                             <div class="toggle box" data-toggle-obj="1">
                                                                 <div class="answer" data-toggle-target="1">
                                                                     <div>열정</div>
@@ -206,7 +206,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <th>
+                                                        <th data-type="toggleButton">
                                                             <div class="toggle box" data-toggle-obj="2">
                                                                 <div class="answer" data-toggle-target="2">
                                                                     <div>도전</div>
@@ -218,7 +218,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <th>
+                                                        <th data-type="toggleButton">
                                                             <div class="toggle box" data-toggle-obj="3">
                                                                 <div class="answer" data-toggle-target="3">
                                                                     <div>긍정</div>
@@ -256,7 +256,7 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <th>
+                                                        <th data-type="toggleButton">
                                                             <div class="toggle box" data-toggle-obj="1">
                                                                 <div class="answer" data-toggle-target="1">
                                                                     <div>존중</div>
@@ -268,7 +268,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <th>
+                                                        <th data-type="toggleButton">
                                                             <div class="toggle box" data-toggle-obj="2">
                                                                 <div class="answer" data-toggle-target="2">
                                                                     <div>배려</div>
@@ -280,7 +280,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <th>
+                                                        <th data-type="toggleButton">
                                                             <div class="toggle box" data-toggle-obj="3">
                                                                 <div class="answer" data-toggle-target="3">
                                                                     <div>친절</div>
@@ -318,7 +318,7 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <th>
+                                                        <th data-type="toggleButton">
                                                             <div class="toggle box" data-toggle-obj="1">
                                                                 <div class="answer" data-toggle-target="1">
                                                                     <div>예의</div>
@@ -330,7 +330,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <th>
+                                                        <th data-type="toggleButton">
                                                             <div class="toggle box" data-toggle-obj="2">
                                                                 <div class="answer" data-toggle-target="2">
                                                                     <div>사랑</div>
@@ -342,7 +342,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <th>
+                                                        <th data-type="toggleButton">
                                                             <div class="toggle box" data-toggle-obj="3">
                                                                 <div class="answer" data-toggle-target="3">
                                                                     <div>감사</div>
@@ -425,6 +425,28 @@
                 $(this).addClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    examViewBtn.addClass('reset');
+                } else {
+                    examViewBtn.removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!examViewBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
             });
         });
 

@@ -211,11 +211,14 @@
                             <ul class="basicSlider_slides" data-slides="">
                                 <li class="innerTab_1" data-quiz="toggle">
                                     <div class="eclipse"></div>
-                                    <div class="toggle" data-toggle-obj="1">
-                                        <div class="answer" data-toggle-target="1">
-                                            <div class="ls-1h">참된 마음</div>
+                                    <div data-type="toggleButton">
+                                        <div class="toggle" data-toggle-obj="1">
+                                            <div class="answer" data-toggle-target="1">
+                                                <div class="ls-1h">참된 마음</div>
+                                            </div>
                                         </div>
                                     </div>
+
                                     <div class="character-flex">
                                         <div id="boy_1_c" class="character-item"></div>
                                         <div id="boy_4_c" class="character-item"></div>
@@ -228,9 +231,11 @@
                                 </li>
                                 <li class="innerTab_2" data-quiz="toggle">
                                     <div class="eclipse"></div>
-                                    <div class="toggle" data-toggle-obj="2">
-                                        <div class="answer" data-toggle-target="2">
-                                            <div class="ls-1h">노력하는 마음</div>
+                                    <div data-type="toggleButton">
+                                        <div class="toggle" data-toggle-obj="2">
+                                            <div class="answer" data-toggle-target="2">
+                                                <div class="ls-1h">노력하는 마음</div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="textInBox">
@@ -248,11 +253,14 @@
                                 </li>
                                 <li class="innerTab_3" data-quiz="toggle">
                                     <div class="eclipse"></div>
-                                    <div class="toggle" data-toggle-obj="3">
-                                        <div class="answer" data-toggle-target="3">
-                                            <div class="ls-1h">참고 이겨 내는 마음</div>
+                                    <div data-type="toggleButton">
+                                        <div class="toggle" data-toggle-obj="3">
+                                            <div class="answer" data-toggle-target="3">
+                                                <div class="ls-1h">참고 이겨 내는 마음</div>
+                                            </div>
                                         </div>
                                     </div>
+
                                     <div class="textInBox">
                                         (유혹에 넘어가지 않는 자세)
                                     </div>
@@ -419,6 +427,28 @@
                 class: 'bottom',
                 balloon_bottom: 180,
                 balloon_left: 205,
+            });
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    examViewBtn.addClass('reset');
+                } else {
+                    examViewBtn.removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!examViewBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
             });
         });
 

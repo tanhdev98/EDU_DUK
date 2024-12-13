@@ -293,7 +293,7 @@
                             <div class="titleText">도덕이란 무엇일까?</div>
                             <div class="group-box">
                                 <div class="box-text pink">
-                                    <div class="wrapToggle">
+                                    <div class="wrapToggle" data-type="toggleButton">
                                         <div class="toggle" data-toggle-obj="1">
                                             <div class="answer on" data-toggle-target="1">
                                                 <div class="ls-1h">
@@ -306,7 +306,7 @@
                                     </div>
                                 </div>
                                 <div class="box-text green">
-                                    <div class="wrapToggle">
+                                    <div class="wrapToggle" data-type="toggleButton">
                                         <div class="toggle" data-toggle-obj="2">
                                             <div class="answer on" data-toggle-target="2">
                                                 <div class="ls-1h">
@@ -318,7 +318,7 @@
                                     </div>
                                 </div>
                                 <div class="box-text blue">
-                                    <div class="wrapToggle">
+                                    <div class="wrapToggle" data-type="toggleButton">
                                         <div class="toggle" data-toggle-obj="3">
                                             <div class="answer on" data-toggle-target="3">
                                                 <div class="ls-1h">
@@ -330,7 +330,7 @@
                                     </div>
                                 </div>
                                 <div class="box-text purple">
-                                    <div class="wrapToggle">
+                                    <div class="wrapToggle" data-type="toggleButton">
                                         <div class="toggle" data-toggle-obj="4">
                                             <div class="answer on" data-toggle-target="4">
                                                 <div class="ls-1h">
@@ -387,7 +387,34 @@
                     $('header').removeClass('twoLine');
                 }
             });
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
 
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    dapCheckBtn.addClass('reset');
+                } else {
+                    dapCheckBtn.removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!dapCheckBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
+            });
+            $(document).on('click', '.btn-praise', function () {
+                $('[data-type="toggleButton"][data-active="on"] .toggle').addClass('complete');
+                if ($('[data-type="toggleButton"][data-active="on"]').length == 4) {
+                    $('.dapCheckBtn').addClass('reset');
+                }
+            });
         });
     </script>
 </body>

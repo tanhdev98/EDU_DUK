@@ -446,6 +446,9 @@
                 id: '#boy_4_c',
                 circle: true,
             });
+            $(document).on('click', '.additional-question', function () {
+                $('[data-type="toggleButton"][data-active="on"] .toggle').addClass('complete');
+            });
         });
     </script>
 

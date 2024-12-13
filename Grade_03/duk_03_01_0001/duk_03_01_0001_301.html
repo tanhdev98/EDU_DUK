@@ -416,7 +416,7 @@
                             <div class="titleText">나를 알아봐요.</div>
                         </div>
                         <div class="items">
-                            <div class="item">
+                            <div class="item" data-type="toggleButton">
                                 내 안에는 여러 모
                                 <div class="toggle box" data-toggle-obj="1">
                                     <div class="answer" data-toggle-target="1">
@@ -425,7 +425,7 @@
                                 </div>
                                 이 있어요.
                             </div>
-                            <div class="item">
+                            <div class="item" data-type="toggleButton">
                                 나를 소중히 여기는 마
                                 <div class="toggle box" data-toggle-obj="2">
                                     <div class="answer" data-toggle-target="2">
@@ -489,6 +489,28 @@
                 $(this).addClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    examViewBtn.addClass('reset');
+                } else {
+                    examViewBtn.removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!examViewBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
             });
         });
 

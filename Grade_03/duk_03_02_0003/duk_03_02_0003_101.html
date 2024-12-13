@@ -68,6 +68,10 @@
         .page_2 .buttonContainer {
             right: 28px;
         }
+
+        [data-type="toggleButton"] {
+            height: fit-content;
+        }
     </style>
 </head>
 
@@ -128,7 +132,7 @@
                     </li>
                     <li class="page_2" data-quiz="toggle">
                         <div class="items">
-                            <div class="item">
+                            <div class="item" data-type="toggleButton">
                                 열심히 하려고 계획했지만 생각대로 되지 않았던 적이 있나요? 어떤 경우였나요?
                                 <div class="toggle examBtn  box" data-toggle-obj="1">
                                     <div class="answer" data-toggle-target="1">
@@ -136,7 +140,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="item">
+                            <div class="item" data-type="toggleButton">
                                 그 때로 돌아간다면 어떤 노력을 해 볼 수 있을까요?
                                 <div class="toggle examBtn  box" data-toggle-obj="2">
                                     <div class="answer" data-toggle-target="2">
@@ -194,6 +198,28 @@
                 $(this).addClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.examViewBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    examViewBtn.addClass('reset');
+                } else {
+                    examViewBtn.removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.examViewBtn', function () {
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.examViewBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!examViewBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
             });
         });
 

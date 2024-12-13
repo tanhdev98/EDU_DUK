@@ -321,6 +321,14 @@
                 $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
             });
+            $(document).on('click', '.popBtn', function () {
+                $('.box[data-active="on"]').parent().addClass('complete');
+                $('.box[data-active="on"]').find('.toggle').addClass('complete');
+            });
+
+            $(document).on('click', '.popup_closeBtn', function () {
+                $('.popBtn.popupOn').trigger('click');
+            });
         });
 
     </script>

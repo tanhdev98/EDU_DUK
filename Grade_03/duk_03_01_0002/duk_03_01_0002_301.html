@@ -296,7 +296,7 @@
                                         <div class="titleText">나에게 많은 것과 부족한 것을 찾기</div>
                                     </div>
                                     <div class="items">
-                                        <div class="item">
+                                        <div class="item" data-type="toggleButton">
                                             “대충하지 않고
                                             <div class="toggle box" data-toggle-obj="1">
                                                 <div class="answer" data-toggle-target="1">
@@ -305,7 +305,7 @@
                                             </div>
                                             하게 청소하는 모습이 멋지구나.”
                                         </div>
-                                        <div class="item">
+                                        <div class="item" data-type="toggleButton">
                                             될 때까지 시도하는 너는 정말
                                             <div class="toggle box" data-toggle-obj="2">
                                                 <div class="answer" data-toggle-target="2">
@@ -314,7 +314,7 @@
                                             </div>
                                             가 있구나.
                                         </div>
-                                        <div class="item">
+                                        <div class="item" data-type="toggleButton">
                                             “너의 마음을 꾸미지 않고
                                             <div class="toggle box" data-toggle-obj="3">
                                                 <div class="answer" data-toggle-target="3">
@@ -323,7 +323,7 @@
                                             </div>
                                             하게 말해서 믿음이 가.”
                                         </div>
-                                        <div class="item">
+                                        <div class="item" data-type="toggleButton">
                                             “너는
                                             <div class="toggle box" data-toggle-obj="4">
                                                 <div class="answer" data-toggle-target="4">
@@ -340,7 +340,7 @@
                                         <div class="titleText">나에게 많은 것과 부족한 것을 찾기</div>
                                     </div>
                                     <div class="items">
-                                        <div class="item">
+                                        <div class="item" data-type="toggleButton">
                                             “음악 시간에는 너는 정말 즐거워 보
                                             <div class="toggle box" data-toggle-obj="5">
                                                 <div class="answer" data-toggle-target="5">
@@ -349,7 +349,7 @@
                                             </div>
                                             적으로 노래하는 모습이 보기 좋아.”
                                         </div>
-                                        <div class="item">
+                                        <div class="item" data-type="toggleButton">
                                             “한 번도 해 보지 않은 활동인데
                                             <div class="toggle box" data-toggle-obj="6">
                                                 <div class="answer" data-toggle-target="6">
@@ -358,7 +358,7 @@
                                             </div>
                                             하다니 대단해.”
                                         </div>
-                                        <div class="item">
+                                        <div class="item" data-type="toggleButton">
                                             “할 수 있다고
                                             <div class="toggle box" data-toggle-obj="7">
                                                 <div class="answer" data-toggle-target="7">
@@ -375,8 +375,8 @@
                                         <div class="titleText">나에게 많은 것과 부족한 것을 찾기</div>
                                     </div>
                                     <div class="items">
-                                        <div class="item">
-                                            ““너와 의견이 다른 친구의 말도 끝까지
+                                        <div class="item" data-type="toggleButton">
+                                            “너와 의견이 다른 친구의 말도 끝까지
                                             <div class="toggle box" data-toggle-obj="8">
                                                 <div class="answer" data-toggle-target="1">
                                                     <div>존중</div>
@@ -384,7 +384,7 @@
                                             </div>
                                             하며 들어 주다니 매우 의젓하구나.”
                                         </div>
-                                        <div class="item">
+                                        <div class="item" data-type="toggleButton">
                                             “내가 아플 때 내 짝이 나를
                                             <div class="toggle box" data-toggle-obj="9">
                                                 <div class="answer" data-toggle-target="9">
@@ -393,7 +393,7 @@
                                             </div>
                                             해서 식판을 대신 받아줬었지.”
                                         </div>
-                                        <div class="item">
+                                        <div class="item" data-type="toggleButton">
                                             “나에게 물어 봐. 내가
                                             <div class="toggle box" data-toggle-obj="10">
                                                 <div class="answer" data-toggle-target="10">
@@ -410,7 +410,7 @@
                                         <div class="titleText">나에게 많은 것과 부족한 것을 찾기</div>
                                     </div>
                                     <div class="items">
-                                        <div class="item">
+                                        <div class="item" data-type="toggleButton">
                                             “밝은 낯빛으로 부드럽게 인사할 줄 아는 너는 정말
                                             <div class="toggle box" data-toggle-obj="11">
                                                 <div class="answer" data-toggle-target="11">
@@ -419,7 +419,7 @@
                                             </div>
                                             가 바르구나.”
                                         </div>
-                                        <div class="item">
+                                        <div class="item" data-type="toggleButton">
                                             “나는 우리 가족을 매우
                                             <div class="toggle box" data-toggle-obj="12">
                                                 <div class="answer" data-toggle-target="12">
@@ -428,7 +428,7 @@
                                             </div>
                                             해!”
                                         </div>
-                                        <div class="item">
+                                        <div class="item" data-type="toggleButton">
                                             “제가 모르는 걸 알려 주시는 선생님,
                                             <div class="toggle box" data-toggle-obj="13">
                                                 <div class="answer" data-toggle-target="13">
@@ -504,6 +504,28 @@
                 $(this).addClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    examViewBtn.addClass('reset');
+                } else {
+                    examViewBtn.removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!examViewBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
             });
         });
 

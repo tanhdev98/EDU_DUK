@@ -351,6 +351,9 @@
                 balloon_top: -240,
                 balloon_left: -150,
             });
+            $(document).on('click', '.additional-question', function () {
+                $('[data-type="toggleButton"][data-active="on"] .toggle').addClass('complete');
+            });
         });
     </script>
 </body>

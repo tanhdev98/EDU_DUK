@@ -296,7 +296,7 @@
                                     <span></span>
                                 </div>
                                 <div class="box-text pink">
-                                    <div class="wrapToggle">
+                                    <div class="wrapToggle" data-type="toggleButton">
                                         <div class="toggle" data-toggle-obj="1">
                                             <div class="answer on" data-toggle-target="1">
                                                 <div class="ls-1h">참된 마음</div>
@@ -305,7 +305,7 @@
                                     </div>
                                 </div>
                                 <div class="box-text green">
-                                    <div class="wrapToggle">
+                                    <div class="wrapToggle" data-type="toggleButton">
                                         <div class="toggle" data-toggle-obj="2">
                                             <div class="answer on" data-toggle-target="2">
                                                 <div class="ls-1h">노력하는 마음</div>
@@ -314,7 +314,7 @@
                                     </div>
                                 </div>
                                 <div class="box-text blue">
-                                    <div class="wrapToggle">
+                                    <div class="wrapToggle" data-type="toggleButton">
                                         <div class="toggle" data-toggle-obj="3">
                                             <div class="answer on" data-toggle-target="3">
                                                 <div class="ls-1h">참고 이겨내는 마음</div>
@@ -450,7 +450,28 @@
                 balloon_left: -196,
             });
         });
+        $(document).on('click', '.toggle', function () {
+            const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+            const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+            const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
 
+            if (toggleBtn.length == toggleCompleteBtn.length) {
+                examViewBtn.addClass('reset');
+            } else {
+                examViewBtn.removeClass('reset');
+            }
+        });
+
+        $(document).on('click', '.dapCheckBtn', function () {
+            const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+            const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+            if (!examViewBtn.hasClass('reset')) {
+                toggleBtn.parent().removeAttr('data-active');
+            } else {
+                toggleBtn.parent().attr('data-active', 'on');
+            }
+        });
     </script>
 </body>
 
