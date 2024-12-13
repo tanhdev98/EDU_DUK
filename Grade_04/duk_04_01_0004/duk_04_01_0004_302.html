@@ -99,8 +99,8 @@
 
         .a1.clearArea,
         .innerTab_1 .boxDrag {
-            width: 117px;
-            height: 75px;
+            width: 107px;
+            height: 65px;
         }
 
         .a2.clearArea,
@@ -150,7 +150,7 @@
             cursor: auto;
             /* scale: 0.6; */
             font-weight: bold;
-            font-size: 50px;
+            /* font-size: 50px; */
         }
 
         .clearArea .js-dragObj.dragObjComplete {
@@ -158,8 +158,8 @@
         }
 
         .dragObjComplete {
-            top: 16px;
-            left: 22px;
+            top: 11px;
+            left: 17px;
         }
 
         .drag-zone .dragObjComplete {
@@ -188,6 +188,7 @@
         .imgStar {
             width: 80px;
             height: 80px;
+            margin-right: 10px;
         }
     </style>
 </head>
@@ -452,7 +453,6 @@
                 if ($(this).closest('.dragDropContainer').find('.js-dropArea>.js-dragObj.d' + _id).length > 0) {
                     $(this).closest('.dragDropContainer').find('.js-dropArea>.js-dragObj.d' + _id).parent().addClass('active dragged');
                     $(this).closest('.dragDropContainer').find('.js-dropArea.dragged .dragClone').append(x);
-
                 }
                 if ($(this).closest('.dragDropContainer').find('.js-dropArea.active').length == 1) {
                     $(this).closest('[data-quiz="dragDrop"]').find('.dapCheckBtn').addClass('reset');
