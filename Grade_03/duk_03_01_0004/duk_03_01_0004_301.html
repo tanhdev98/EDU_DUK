@@ -12,6 +12,11 @@
 
 
     <style>
+        .toggle.complete .answer,
+        .answer.on {
+            font-weight: normal;
+        }
+
         header.twoLine .title-icon {
             top: -30px;
         }
@@ -404,7 +409,7 @@
                 $(this).toggleClass('reset');
             });
 
-            $(document).on('click', '.writeBtn, .dapCheckBtn, .resetBtn, .linkBtn ', function () {
+            $(document).on('click', '.writeBtn, .resetBtn, .linkBtn ', function () {
                 KmAudioPlayer.buttonClick();
             });
         });
