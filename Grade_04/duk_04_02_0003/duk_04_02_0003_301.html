@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        /* page 1 */
+        .contentsBox {
+            padding: 0;
+        }
+
+        .basicSlider[data-slide-container='main']>.basicSlider_slides>li:not(.page_1) {
+            padding: 20px 28px 0 28px;
+        }
+
+        .char-box-01 .balloon {
+            top: -300px;
+            left: -120px;
+        }
+
+        .char-box-02 .balloon {
+            top: -180px;
+            left: -170px;
+        }
+
+        .contentsBox .basicSlider_slides {
+            z-index: 100;
+        }
+
+        /* page 2 */
+        .page_2 .flex {
+            display: flex;
+        }
+
+        .page_2 .flex img {
+            height: 350px;
+            margin: 80px 70px;
+        }
+
+        .page_2 .buttonContainer {
+            right: 28px;
+        }
+
+        /* page 3 */
+        .page_3 .study_guide {
+            right: 28px;
+        }
+
+        .popup_pages {
+            z-index: 10;
+        }
+
+
+        .btn-praise .item-title {
+            font-size: 28px;
+            text-align: center;
+            color: #fff;
+            font-family: 'YGJAL';
+        }
+
+        .btn-praise {
+            width: 120px;
+            top: 340px;
+        }
+
+        /* popup */
+        .popup_pages>li.fullLine>.full_content {
+            top: 65px;
+            height: calc(100% - 65px);
+        }
+
+        .tabs-popup {
+            top: -33px;
+            right: 60px;
+            left: unset;
+            justify-content: end;
+            height: 33px;
+        }
+
+        .tabs-popup>li {
+            background-color: #B1A493 !important;
+
+        }
+
+        .tabs-popup>li.on {
+            background-color: #E79702 !important;
+        }
+
+        /* title */
+        .pointContainer .pointTitle {
+            display: block;
+            text-align: center;
+        }
+
+        .pointContainer .pointTitle .titleText {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 45px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #ff6600;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+        }
+
+        .pointContainer .pointTitle .titleText:after,
+        .pointContainer .pointTitle .titleText:before {
+            position: absolute;
+            top: 0px;
+            height: 50px;
+            font-size: 40px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #e4caa9;
+        }
+
+        .pointContainer .pointTitle .titleText:after {
+            content: "[";
+            left: -20px;
+        }
+
+        .pointContainer .pointTitle .titleText:before {
+            content: "]";
+            right: -20px;
+        }
+
+        [data-type="toggleButton"] {
+            max-height: max-content;
+            margin-top: 40px;
+        }
+
+        .toggle.complete .answer,
+        .answer.on {
+            font-weight: normal;
+            margin: auto;
+        }
+
+        .pointContainer .dapCheckBtn {
+            right: 28px;
+        }
+
+        .popup_container {
+            z-index: 100 !important;
+        }
+
+        /* // */
+        [data-popup-page="1"] .items .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            left: 40px;
+            transform: translateY(-50%);
+            margin-top: 30px;
+        }
+
+        .cho {
+            width: auto;
+            max-width: max-content;
+            display: inline-block;
+            padding: 0;
+            background-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="twoLine">
+            <div class="title-icon pink" data-show="1">마음 <em>탄탄</em></div>
+            <div class="title-text">우리 반 친구들이 한 마음으로 도덕적 행동을 실천하면 어떤 변화가 생길지 상상해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="우리 반 친구들이 한 마음으로 도덕적 행동을 실천하면 어떤 변화가 생길지 상상해 봅시다." class="twoLine">물음 1
+                    </li>
+                    <li data-hover="" data-text="친구들과 함께 도덕적 행동의 실천을 다짐하고, 우리 반의 변화를 기대해 봅시다." class="twoLine">물음 2</li>
+                    <li data-hover="" data-text="배운 내용을 되돌아보며 자기 점검을 해 볼까요?">자기 점검</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="tab-content-box">
+                            <div class="tab-content group-speech group-speech-01">
+                                <div class="char-box char-box-01" data-tail="tail-01" data-tail-direction="br">
+                                    <div class="char-image left"></div>
+                                    <div class="balloon pink bottom">
+                                        <span>
+                                            고운 말을 쓰면<br>
+                                            서로 마음을 오해하지<br>않아서 다툼을 예방할<br> 수 있어요.
+                                        </span>
+                                        <div class="close-speech-button"></div>
+                                    </div>
+                                </div>
+                                <div class="char-box char-box-02" data-tail="tail-01" data-tail-direction="br">
+                                    <div class="char-image"></div>
+                                    <div class="balloon yellow bottom">
+                                        <span>
+                                            서로를 존중하고 배려해서<br>
+                                            학교 생활이 즐거워져요.
+                                        </span>
+                                        <div class="close-speech-button"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="flex">
+                            <div class="noteText noteLine purple">
+                                <div class="textareaWrap">
+                                    <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                        data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                        autocomplete="off" spellcheck="false"></textarea>
+                                </div>
+                                <div class="text-exam flex-wrap">
+                                    <div class="blueT">
+                                        <p>항상 주위 사람들에게 고운 말을 쓰기로 다짐해요. 모두가 바르고 고운 말을 쓰면 학교 생활이 무척
+                                            즐거워질 것 같아서 정말 기대돼요!</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <img src="./images/duk_04_02_0003_301/img_07.png" alt="">
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                    <li class="page_3" data-quiz="toggle">
+                        <div class="study_guide"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
+                        <div class="self-check" style="margin-top: 120px;">
+                            <div class="checkWrap">
+                                <div class="text_box">
+                                    도덕적 행동을 소중히 여기고 있나요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">
+                                    도덕적 행동을 실천하겠다는 다짐을 했나요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="example-box">
+                                <div class="exampleIcoWrap">
+                                    <div class="example ico-05">
+                                        그렇다
+                                    </div>
+                                    <div class="example ico-04">
+                                        그렇다
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-praise right popBtn footer-item" style="top: 380px;" data-popup-btn="1">
+                            <div class="item-title">우리<br>배움</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image pointContainer" data-popup-page="1" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="pointTitle">
+                            <div class="titleText">모두에게 소중한 것</div>
+                        </div>
+                        <div class="items">
+                            <div class="item" style="margin-left: 40px;margin-top: 50px;">
+                                우리가 실천할 수 있는<div class="cho">
+                                    <div class="choWrap">
+                                        <div class="choBox">
+                                            <span class="dir-rect" data-cho="ㄷ" data-letter="도"></span>
+                                            <span class="dir-rect" data-cho="ㄷ" data-letter="덕"></span>
+                                            <span class="dir-rect" data-cho="ㅈ" data-letter="적"></span>
+                                            <span class="dir-rect" data-cho="ㅎ" data-letter="행"></span>
+                                            <span class="dir-rect" data-cho="ㄷ" data-letter="동"></span>
+                                        </div>
+                                    </div>
+                                </div>을 알아 봤어요.
+                            </div>
+                            <div class="item" style="margin-left: 40px;margin-top: 50px; text-align: left;">
+                                친구들이 소중하게 생각하는<div class="cho">
+                                    <div class="choWrap">
+                                        <div class="choBox">
+                                            <span class="dir-rect" data-cho="ㄷ" data-letter="도"></span>
+                                            <span class="dir-rect" data-cho="ㄷ" data-letter="덕"></span>
+                                            <span class="dir-rect" data-cho="ㅈ" data-letter="적"></span>
+                                            <span class="dir-rect" data-cho="ㅎ" data-letter="행"></span>
+                                            <span class="dir-rect" data-cho="ㄷ" data-letter="동"></span>
+                                        </div>
+                                    </div>
+                                </div>을 조사해 봤어요.
+                            </div>
+                        </div>
+                        <button class="dapCheckBtn" data-answer-btn=""></button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+            });
+
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    dapCheckBtn.addClass('reset');
+                } else {
+                    dapCheckBtn.removeClass('reset');
+                }
+            });
+
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                let dirRect = $(this).parent().parent().find('.dir-rect');
+                if (!$(this).hasClass('reset')) {
+                    $(this).removeClass('reset');
+                    dirRect.removeClass('on');
+                    dirRect.each(function () {
+                        let dataCho = $(this).data('cho');
+                        $(this).text(dataCho);
+                    })
+                    $('.noteText .textareaWrap .textLine').show();
+                    $('.noteText .text-exam').hide();
+                    $(this).parent().parent().find('.choBox').removeClass('active');
+                } else {
+                    $(this).addClass('reset');
+                    dirRect.addClass('on');
+                    dirRect.each(function () {
+                        let dataLetter = $(this).data('letter');
+                        $(this).text(dataLetter);
+                    })
+                    $('.noteText .textareaWrap .textLine').hide();
+                    $('.noteText .text-exam').show();
+                    $(this).parent().parent().find('.choBox').addClass('active');
+                }
+
+            });
+
+            let numActive = 0;
+
+            $(document).on('click', '.choBox', function () {
+                if (!$(this).hasClass('active')) {
+                    $(this).addClass('active');
+                } else {
+                    $(this).removeClass('active');
+                }
+                numItem = $(this).parents('[data-quiz="toggle"]').find('.choBox').length;
+                numActive = $(this).parents('[data-quiz="toggle"]').find('.choBox.active').length;
+                console.log(numActive);
+                if (numActive === numItem) {
+                    $(this).parents('[data-quiz="toggle"]').find('.dapCheckBtn').addClass('reset');
+                } else {
+                    $(this).parents('[data-quiz="toggle"]').find('.dapCheckBtn').removeClass('reset');
+                }
+            });
+        });
+
+
+
+    </script>
+</body>
+
+</html>

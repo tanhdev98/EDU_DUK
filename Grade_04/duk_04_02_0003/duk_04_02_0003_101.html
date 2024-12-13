@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        .min[data-popup-page="2"] {
+            width: 780px;
+            top: 195px;
+            left: 480px;
+        }
+
+        .page_1 .balloon {
+            height: 200px;
+            width: max-content;
+        }
+
+        .balloon>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            gap: 20px;
+        }
+
+        .characterWrap.speech.right:before {
+            background: url('../ko/contents/images/button/btn_speech_balloon_left1.png') no-repeat;
+        }
+
+        .characterWrap.speech.right:hover:before {
+            background: url('../ko/contents/images/button/btn_speech_balloon_left1_hover.png') no-repeat;
+        }
+
+        #girl_1_c .charSpriteAni {
+            background-image: url('../ko/contents/images/character/girl_1.png') !important;
+        }
+
+        .flex {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            margin-top: 60px;
+        }
+
+        #girl_1_c {
+            left: 130px;
+        }
+
+        .page_1 .noteText {
+            width: 862px;
+        }
+        #girl_1 {
+            bottom: -250px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="twoLine">
+            <div class="title-icon blue" data-show="1">실천 <em>쑥쑥</em></div>
+            <div class="title-text">우리 반에 필요한 도덕적 행동은 무엇인가요?</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="우리 반에 필요한 도덕적 행동은 무엇인가요?">물음 1</li>
+                    <li data-hover="" data-text="그렇게 생각한 까닭은 무엇인가요?">물음 2</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="flex">
+                            <div class="item">
+                                <div id="girl_1_c" class="character-item"></div>
+                            </div>
+                            <div class="item">
+                                <div class="noteText noteLine purple">
+                                    <div class="textareaWrap">
+                                        <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                            autocomplete="off" spellcheck="false"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="resetBtn only-reset" data-type="reset" data-hover=""></button>
+                        </div>
+                    </li>
+                    <li class="page_2">
+                        <div id="girl_1" class="character-item"></div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title-text').addClass('gap');
+                } else {
+                    $('header .title-text').removeClass('gap');
+                }
+
+            });
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(document).on('click', '.resetBtn', function () {
+                KmAudioPlayer.buttonClick();
+                $('.page_1 .textLine').val('');
+            });
+            $(document).on('click', '.page_1 .character-item', function () {
+                $(this).find('.balloon').removeClass('fff');
+            });
+
+            $prite.girl1({
+                id: '#girl_1_c',
+                speech: 'right',
+                circle: true,
+                text: '친절이라고<br>생각해요.',
+                class: 'bottom',
+                balloon_top: -240,
+                balloon_left: -35,
+            });
+            $prite.girl1({
+                id: '#girl_1',
+                speech: 'right',
+                sound: './media/duk_04_02_0003_101/duk_04_02_0003_101_01.mp3',
+                text: '친절은 많은 사람을<br>기분 좋게 만들기<br>때문입니다.',
+                class: 'bottom',
+                balloon_top: -230,
+                balloon_left: -70,
+            });
+        });
+
+    </script>
+</body>
+
+</html>
