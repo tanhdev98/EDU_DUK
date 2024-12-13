@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        /* Page 1 */
+        .contentsBox {
+            padding: 0;
+        }
+
+        .basicSlider[data-slide-container='main']>.basicSlider_slides>li:not(.page_1) {
+            padding: 20px 28px 0 28px;
+        }
+
+        .char-box-01 .balloon {
+            top: -180px;
+            left: -120px;
+        }
+
+        .char-box-02 .balloon {
+            top: -180px;
+            left: -110px;
+        }
+
+        /* Page 2 */
+        .flex {
+            display: flex;
+            margin-top: 40px;
+        }
+
+        .flex .items:first-child {
+            width: 1080px;
+        }
+
+        .flex .items {
+            width: 100%;
+        }
+
+        .page_2 .noteText {
+            position: relative;
+            top: -20px;
+        }
+
+        #girl_2 {
+            position: absolute;
+            bottom: 30px;
+            left: 180px;
+        }
+
+        .buttonContainer {
+            right: 28px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon pink">마음 <em>탄탄</em></div>
+            <div class="title-text">도덕적인 사람은 어떤 말과 행동을 할까요?</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="도덕적인 사람은 어떤 말과 행동을 할까요?">물음 1</li>
+                    <li data-hover="" data-text=" 나는 도덕적인 사람이라고 생각하나요? 그렇게 생각한 까닭은 무엇인가요?" class="twoLine">물음 2</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="tab-content-box">
+                            <div class="tab-content group-speech group-speech-01">
+                                <div class="char-box char-box-01" data-tail="tail-01" data-tail-direction="br">
+                                    <div class="char-image left"></div>
+                                    <div class="balloon pink bottom">
+                                        <span>
+                                            배려하고<br>
+                                            존중하는 말을 합니다.
+                                        </span>
+                                        <div class="close-speech-button"></div>
+                                    </div>
+                                </div>
+                                <div class="char-box char-box-02" data-tail="tail-01" data-tail-direction="br">
+                                    <div class="char-image"></div>
+                                    <div class="balloon yellow bottom">
+                                        <span>
+                                            남에게 도움을 주는<br>
+                                            행동을 합니다.
+                                        </span>
+                                        <div class="close-speech-button"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+
+
+                        <div class="flex">
+                            <div class="items">
+                                <div id="girl_2" class="character-item"></div>
+                            </div>
+                            <div class="items">
+                                <div class="noteText noteLine purple">
+                                    <div class="textareaWrap">
+                                        <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                            autocomplete="off"></textarea>
+                                    </div>
+                                    <div class="text-exam flex-wrap">
+                                        <div class="blueT">
+                                            민철이가 등교할 때 이웃과 친구들에게 인사한 장면이 기억에 남아요.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="buttonContainer">
+                                    <button class="resetBtn only-reset" data-type="reset" data-hover=""></button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+                if ($(this).data('text') == '세 거짓말쟁이가 정직의 삶에 도착했을 때의 장면을 상상해 봅시다.') {
+                    $('#wrap header .title-text').addClass('letter-sp-2');
+                } else {
+                    $('#wrap header .title-text').removeClass('letter-sp-2');
+                }
+            });
+
+            $prite.girl2({
+                id: '#girl_2',
+                speech: 'right',
+                sound: './media/sample.mp3',
+                text: '나는 도덕적인 사람이라고 <br>생각합니다. <br>남을 배려하기 때문입니다.',
+                class: 'bottom',
+                balloon_top: -210,
+                balloon_left: -155,
+            });
+
+            $(document).on('click', '.resetBtn', function () {
+                KmAudioPlayer.buttonClick();
+                $('.textLine').val('');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        /* Page 1 */
+        .flex {
+            display: flex;
+            gap: 20px;
+        }
+
+        .innerTab_1 .flex {
+            width: 94%;
+        }
+
+        .flex .howtoBox {
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .flex .howtoBox .text-box {
+            text-align: center;
+        }
+
+        [data-popup-page="1"] {
+            top: 202px;
+            left: 637px;
+            width: 620px;
+        }
+
+        .text-box {
+            flex-direction: column;
+        }
+
+        .flex-star {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .flex-star .star {
+            width: 60px;
+            height: 60px;
+            background: url('./images/tuk_04_02_0004_201/star.png') no-repeat center /100%;
+            cursor: pointer;
+        }
+
+        .flex-star .star.active {
+            width: 60px;
+            height: 60px;
+            background: url('./images/tuk_04_02_0004_201/star-active.png') no-repeat center /100%;
+        }
+
+        /* Page 2 */
+        .page_2 .how-to-play li {
+            margin: 20px 0 25px;
+        }
+
+        .page_2 .sideTopSlider .basicSlider_slides {
+            height: 440px;
+        }
+
+        .char1 {
+            top: 80px;
+            right: 290px;
+        }
+
+        [data-popup-page="2"] {
+            top: 140px;
+            left: 502px;
+            width: 750px;
+        }
+
+        [data-popup-page="3"] {
+            top: 224px;
+            left: 378px;
+            width: 580px;
+        }
+
+        .tab-2 {
+            display: none;
+        }
+
+        .noteText.noLine {
+            height: 60px;
+            padding: 0;
+            box-shadow: none;
+            background-color: #F7F7F7;
+        }
+
+        .item {
+            display: flex;
+            gap: 15px;
+            width: 90%;
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .innerTab_1 .item1 .left {
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .innerTab_1 .item1 .right {
+            background-color: #F7F7F7;
+            border-radius: 15px;
+            height: 130px;
+        }
+
+        .item .left {
+            width: 700px;
+            background-color: #F7F7F7;
+            border-radius: 15px;
+            width: 800px;
+        }
+
+        .item .arrow {
+            width: 50px;
+            height: 50px;
+            background: url('./images/tuk_04_02_0004_201/imgArrow.png') no-repeat center /100%;
+        }
+
+        .item .right {
+            width: 220px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item .right .noteText .text-exam.flex-wrap {
+            text-align: center;
+            justify-content: center;
+        }
+
+        .noteText.noLine .textareaWrap {
+            height: 100%;
+        }
+
+        .noteText .text-exam.flex-wrap {
+            padding: 0 20px;
+        }
+
+        .noteText .textLine {
+            height: 100%;
+            padding: 0;
+        }
+
+        .icon-prev {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            background: url('./images/tuk_04_02_0004_201/arrow_left.png') no-repeat center /100%;
+            position: absolute;
+            top: 170px;
+            left: 0;
+            cursor: pointer;
+        }
+
+        .icon-prev.active {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            background: url('./images/tuk_04_02_0004_201/arrow_left_gray.png') no-repeat center /100%;
+            position: absolute;
+            top: 170px;
+            left: 0;
+            cursor: pointer;
+        }
+
+        .icon-next {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            background: url('./images/tuk_04_02_0004_201/arrow_right.png') no-repeat center /100%;
+            position: absolute;
+            top: 170px;
+            right: 0;
+            cursor: pointer;
+        }
+
+        .icon-next.active {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            background: url('./images/tuk_04_02_0004_201/arrow_right_gray.png') no-repeat center /100%;
+            position: absolute;
+            top: 170px;
+            right: 0;
+            cursor: pointer;
+        }
+
+        .item-rating {
+            flex-direction: column;
+        }
+
+        .ico img {
+            width: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="twoLine">
+            <div class="title-icon pink">마음 <em>탄탄</em></div>
+            <div class="title-text">다음 상황에서 나는 어떤 모습인지 떠올려 보고, 나의 도덕적 행동을 평가해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="다음 상황에서 나는 어떤 모습인지 떠올려 보고, 나의 도덕적 행동을 평가해 봅시다." class="twoLine">활동 1
+                    </li>
+                    <li data-hover="" data-text="나의 말, 생각, 행동을 되돌아 봅시다.">활동 2</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="1"></div>
+                                    <div class="flex">
+                                        <div class="how-to-box howtoBox">
+                                            <div class="pic-box">
+                                                <div class="image-box">
+                                                    <div class="imageWrap">
+                                                        <img src="./images/tuk_04_02_0004_201/img_01.jpg">
+                                                    </div>
+                                                </div>
+                                                <div class="text-box">
+                                                    온라인 세상에서의 나<br>
+                                                    <div class="flex-star">
+                                                        <div class="star"></div>
+                                                        <div class="star"></div>
+                                                        <div class="star"></div>
+                                                        <div class="star"></div>
+                                                        <div class="star"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="how-to-box howtoBox">
+                                            <div class="pic-box">
+                                                <div class="image-box">
+                                                    <div class="imageWrap">
+                                                        <img src="./images/tuk_04_02_0004_201/img_02.jpg">
+                                                    </div>
+                                                </div>
+                                                <div class="text-box">
+                                                    혼자 있을 때의 나<br>
+                                                    <div class="flex-star">
+                                                        <div class="star"></div>
+                                                        <div class="star"></div>
+                                                        <div class="star"></div>
+                                                        <div class="star"></div>
+                                                        <div class="star"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="resetBtn only-reset" data-type="reset" data-hover=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="flex">
+                                        <div class="how-to-box howtoBox">
+                                            <div class="pic-box">
+                                                <div class="image-box">
+                                                    <div class="imageWrap">
+                                                        <img src="./images/tuk_04_02_0004_201/img_03.png">
+                                                    </div>
+                                                </div>
+                                                <div class="text-box">
+                                                    친구와 함께 있을 때의 나<br>
+                                                    <div class="flex-star">
+                                                        <div class="star"></div>
+                                                        <div class="star"></div>
+                                                        <div class="star"></div>
+                                                        <div class="star"></div>
+                                                        <div class="star"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="how-to-box howtoBox">
+                                            <div class="pic-box">
+                                                <div class="image-box">
+                                                    <div class="imageWrap">
+                                                        <img src="./images/tuk_04_02_0004_201/img_04.jpg">
+                                                    </div>
+                                                </div>
+                                                <div class="text-box">
+                                                    가족과 함께 있을 때의 나<br>
+                                                    <div class="flex-star">
+                                                        <div class="star"></div>
+                                                        <div class="star"></div>
+                                                        <div class="star"></div>
+                                                        <div class="star"></div>
+                                                        <div class="star"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="resetBtn only-reset" data-type="reset" data-hover=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="page_2">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="2"></div>
+                                    <div class="icon-char blinkOpacity char1" data-hover="" data-popup-btn="3"></div>
+                                    <div class="title-box">
+                                        <div class="title">활동 방법</div>
+                                    </div>
+                                    <ul class="how-to-play">
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                1
+                                            </div>
+                                            <div class="text">
+                                                내가 자주 하는 말, 행동, 생각을 빈칸에 적습니다.
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                2
+                                            </div>
+                                            <div class="text">
+                                                적은 내용과 관련된 도덕적 가치를 적습니다.
+
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                3
+                                            </div>
+                                            <div class="text">
+                                                활동 결과를 친구들과 이야기해 보고 도덕적인 생활을 칭찬해 봅시다.
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="sideTopSlider contentsBox doItContent" data-slide-container="">
+                                        <div class="sideTopButtonContainer" data-slide-btn-container="">
+                                            <ul class="sideTopSlider_tabs" data-tabs="">
+                                                <li data-hover="" style="letter-spacing: -2.3px;">
+                                                    내가 자주하는 생각
+                                                </li>
+                                                <li data-hover="">
+                                                    내가 자주하는 말
+                                                </li>
+                                                <li data-hover="">
+                                                    내가 자주하는 행동
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <ul class="basicSlider_slides" data-slides="">
+                                            <li class="innerTab innerTab_1">
+                                                <div class="tab-box">
+                                                    <div class="icon-prev active"></div>
+                                                    <div class="icon-next"></div>
+                                                </div>
+                                                <div class="tab-content">
+                                                    <div class="tab-1 active">
+                                                        <div class="item item1">
+                                                            <div class="left">
+                                                                <div class="exam bullet">예</div>
+                                                                친구에게 도움이 필요해 보여.<br>
+                                                                내가 도와줄 수 있을까?
+                                                            </div>
+                                                            <div class="arrow"></div>
+                                                            <div class="right">배려</div>
+                                                        </div>
+                                                        <div class="item item2">
+                                                            <div class="left">
+                                                                <div class="noteText noLine">
+                                                                    <div class="textareaWrap">
+                                                                        <textarea class="textLine afterDisplay"
+                                                                            type="text" placeholder="직접 쓰기"
+                                                                            data-input-obj="" data-answer=" " onfocus=""
+                                                                            onblur="placeholder='직접 쓰기'"
+                                                                            autocomplete="off"
+                                                                            spellcheck="false"></textarea>
+                                                                    </div>
+                                                                    <div class="text-exam flex-wrap">
+                                                                        <div class="blueT">
+                                                                            <p>새로운 것을 해 보고 싶음.</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="arrow"></div>
+                                                            <div class="right">
+                                                                <div class="noteText noLine">
+                                                                    <div class="textareaWrap">
+                                                                        <textarea class="textLine afterDisplay"
+                                                                            type="text" placeholder="직접 쓰기"
+                                                                            data-input-obj="" data-answer=" " onfocus=""
+                                                                            onblur="placeholder='직접 쓰기'"
+                                                                            autocomplete="off"
+                                                                            spellcheck="false"></textarea>
+                                                                    </div>
+                                                                    <div class="text-exam flex-wrap">
+                                                                        <div class="blueT">
+                                                                            <p>도전</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item item3">
+                                                            <div class="left">
+                                                                <div class="noteText noLine">
+                                                                    <div class="textareaWrap">
+                                                                        <textarea class="textLine afterDisplay"
+                                                                            type="text" placeholder="직접 쓰기"
+                                                                            data-input-obj="" data-answer=" " onfocus=""
+                                                                            onblur="placeholder='직접 쓰기'"
+                                                                            autocomplete="off"
+                                                                            spellcheck="false"></textarea>
+                                                                    </div>
+                                                                    <div class="text-exam flex-wrap">
+                                                                        <div class="blueT">
+                                                                            <p>친구에게 사과하기</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="arrow"></div>
+                                                            <div class="right">
+                                                                <div class="noteText noLine">
+                                                                    <div class="textareaWrap">
+                                                                        <textarea class="textLine afterDisplay"
+                                                                            type="text" placeholder="직접 쓰기"
+                                                                            data-input-obj="" data-answer=" " onfocus=""
+                                                                            onblur="placeholder='직접 쓰기'"
+                                                                            autocomplete="off"
+                                                                            spellcheck="false"></textarea>
+                                                                    </div>
+                                                                    <div class="text-exam flex-wrap">
+                                                                        <div class="blueT">
+                                                                            <p>용기</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-2">
+                                                        <div class="item item4">
+                                                            <div class="left">
+                                                                <div class="noteText noLine">
+                                                                    <div class="textareaWrap">
+                                                                        <textarea class="textLine afterDisplay"
+                                                                            type="text" placeholder="직접 쓰기"
+                                                                            data-input-obj="" data-answer=" " onfocus=""
+                                                                            onblur="placeholder='직접 쓰기'"
+                                                                            autocomplete="off"
+                                                                            spellcheck="false"></textarea>
+                                                                    </div>
+                                                                    <div class="text-exam flex-wrap">
+                                                                        <div class="blueT">
+                                                                            <p>숙제하기</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="arrow"></div>
+                                                            <div class="right">
+                                                                <div class="noteText noLine">
+                                                                    <div class="textareaWrap">
+                                                                        <textarea class="textLine afterDisplay"
+                                                                            type="text" placeholder="직접 쓰기"
+                                                                            data-input-obj="" data-answer=" " onfocus=""
+                                                                            onblur="placeholder='직접 쓰기'"
+                                                                            autocomplete="off"
+                                                                            spellcheck="false"></textarea>
+                                                                    </div>
+                                                                    <div class="text-exam flex-wrap">
+                                                                        <div class="blueT">
+                                                                            <p>성실</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item item-rating">
+                                                            <div class="ico">
+                                                                <img src="./common/images/ico_que.png" class="ico">
+                                                                나는 도덕적으로 생각하고 있나요?
+                                                            </div>
+                                                            <div class="flex-star">
+                                                                <div class="star"></div>
+                                                                <div class="star"></div>
+                                                                <div class="star"></div>
+                                                                <div class="star"></div>
+                                                                <div class="star"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="innerTab innerTab_2">
+                                                <div class="tab-box">
+                                                    <div class="icon-prev active"></div>
+                                                    <div class="icon-next"></div>
+                                                </div>
+                                                <div class="tab-content">
+                                                    <div class="tab-1 active">
+                                                        <div class="item item1">
+                                                            <div class="left">
+                                                                <div class="noteText noLine">
+                                                                    <div class="textareaWrap">
+                                                                        <textarea class="textLine afterDisplay"
+                                                                            type="text" placeholder="직접 쓰기"
+                                                                            data-input-obj="" data-answer=" " onfocus=""
+                                                                            onblur="placeholder='직접 쓰기'"
+                                                                            autocomplete="off"
+                                                                            spellcheck="false"></textarea>
+                                                                    </div>
+                                                                    <div class="text-exam flex-wrap">
+                                                                        <div class="blueT">
+                                                                            <p>정말 멋있어!</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="arrow"></div>
+                                                            <div class="right">
+                                                                <div class="noteText noLine">
+                                                                    <div class="textareaWrap">
+                                                                        <textarea class="textLine afterDisplay"
+                                                                            type="text" placeholder="직접 쓰기"
+                                                                            data-input-obj="" data-answer=" " onfocus=""
+                                                                            onblur="placeholder='직접 쓰기'"
+                                                                            autocomplete="off"
+                                                                            spellcheck="false"></textarea>
+                                                                    </div>
+                                                                    <div class="text-exam flex-wrap">
+                                                                        <div class="blueT">
+                                                                            <p></p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item item2">
+                                                            <div class="left">
+                                                                <div class="noteText noLine">
+                                                                    <div class="textareaWrap">
+                                                                        <textarea class="textLine afterDisplay"
+                                                                            type="text" placeholder="직접 쓰기"
+                                                                            data-input-obj="" data-answer=" " onfocus=""
+                                                                            onblur="placeholder='직접 쓰기'"
+                                                                            autocomplete="off"
+                                                                            spellcheck="false"></textarea>
+                                                                    </div>
+                                                                    <div class="text-exam flex-wrap">
+                                                                        <div class="blueT">
+                                                                            <p>다 했어요!</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="arrow"></div>
+                                                            <div class="right">
+                                                                <div class="noteText noLine">
+                                                                    <div class="textareaWrap">
+                                                                        <textarea class="textLine afterDisplay"
+                                                                            type="text" placeholder="직접 쓰기"
+                                                                            data-input-obj="" data-answer=" " onfocus=""
+                                                                            onblur="placeholder='직접 쓰기'"
+                                                                            autocomplete="off"
+                                                                            spellcheck="false"></textarea>
+                                                                    </div>
+                                                                    <div class="text-exam flex-wrap">
+                                                                        <div class="blueT">
+                                                                            <p>성실</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item item3">
+                                                            <div class="left">
+                                                                <div class="noteText noLine">
+                                                                    <div class="textareaWrap">
+                                                                        <textarea class="textLine afterDisplay"
+                                                                            type="text" placeholder="직접 쓰기"
+                                                                            data-input-obj="" data-answer=" " onfocus=""
+                                                                            onblur="placeholder='직접 쓰기'"
+                                                                            autocomplete="off"
+                                                                            spellcheck="false"></textarea>
+                                                                    </div>
+                                                                    <div class="text-exam flex-wrap">
+                                                                        <div class="blueT">
+                                                                            <p>정말 짜증나.</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="arrow"></div>
+                                                            <div class="right">
+                                                                <div class="noteText noLine">
+                                                                    <div class="textareaWrap">
+                                                                        <textarea class="textLine afterDisplay"
+                                                                            type="text" placeholder="직접 쓰기"
+                                                                            data-input-obj="" data-answer=" " onfocus=""
+                                                                            onblur="placeholder='직접 쓰기'"
+                                                                            autocomplete="off"
+                                                                            spellcheck="false"></textarea>
+                                                                    </div>
+                                                                    <div class="text-exam flex-wrap">
+                                                                        <div class="blueT">
+                                                                            <p>용기</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-2">
+                                                        <div class="item item-rating">
+                                                            <div class="ico">
+                                                                <img src="./common/images/ico_que.png" class="ico">
+                                                                나는 도덕적으로 말하고 있나요?
+                                                            </div>
+                                                            <div class="flex-star">
+                                                                <div class="star"></div>
+                                                                <div class="star"></div>
+                                                                <div class="star"></div>
+                                                                <div class="star"></div>
+                                                                <div class="star"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="innerTab innerTab_3">
+                                                <div class="tab-box">
+                                                    <div class="icon-prev active"></div>
+                                                    <div class="icon-next"></div>
+                                                </div>
+                                                <div class="tab-content">
+                                                    <div class="tab-1 active">
+                                                        <div class="item item1">
+                                                            <div class="left">
+                                                                <div class="noteText noLine">
+                                                                    <div class="textareaWrap">
+                                                                        <textarea class="textLine afterDisplay"
+                                                                            type="text" placeholder="직접 쓰기"
+                                                                            data-input-obj="" data-answer=" " onfocus=""
+                                                                            onblur="placeholder='직접 쓰기'"
+                                                                            autocomplete="off"
+                                                                            spellcheck="false"></textarea>
+                                                                    </div>
+                                                                    <div class="text-exam flex-wrap">
+                                                                        <div class="blueT">
+                                                                            <p>새로운 것을 해 보고 싶음.</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="arrow"></div>
+                                                            <div class="right">
+                                                                <div class="noteText noLine">
+                                                                    <div class="textareaWrap">
+                                                                        <textarea class="textLine afterDisplay"
+                                                                            type="text" placeholder="직접 쓰기"
+                                                                            data-input-obj="" data-answer=" " onfocus=""
+                                                                            onblur="placeholder='직접 쓰기'"
+                                                                            autocomplete="off"
+                                                                            spellcheck="false"></textarea>
+                                                                    </div>
+                                                                    <div class="text-exam flex-wrap">
+                                                                        <div class="blueT">
+                                                                            <p>책임감</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item item2">
+                                                            <div class="left">
+                                                                <div class="noteText noLine">
+                                                                    <div class="textareaWrap">
+                                                                        <textarea class="textLine afterDisplay"
+                                                                            type="text" placeholder="직접 쓰기"
+                                                                            data-input-obj="" data-answer=" " onfocus=""
+                                                                            onblur="placeholder='직접 쓰기'"
+                                                                            autocomplete="off"
+                                                                            spellcheck="false"></textarea>
+                                                                    </div>
+                                                                    <div class="text-exam flex-wrap">
+                                                                        <div class="blueT">
+                                                                            <p>친구와 공놀이를 한다</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="arrow"></div>
+                                                            <div class="right">
+                                                                <div class="noteText noLine">
+                                                                    <div class="textareaWrap">
+                                                                        <textarea class="textLine afterDisplay"
+                                                                            type="text" placeholder="직접 쓰기"
+                                                                            data-input-obj="" data-answer=" " onfocus=""
+                                                                            onblur="placeholder='직접 쓰기'"
+                                                                            autocomplete="off"
+                                                                            spellcheck="false"></textarea>
+                                                                    </div>
+                                                                    <div class="text-exam flex-wrap">
+                                                                        <div class="blueT">
+                                                                            <p>우정</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item item3">
+                                                            <div class="left">
+                                                                <div class="noteText noLine">
+                                                                    <div class="textareaWrap">
+                                                                        <textarea class="textLine afterDisplay"
+                                                                            type="text" placeholder="직접 쓰기"
+                                                                            data-input-obj="" data-answer=" " onfocus=""
+                                                                            onblur="placeholder='직접 쓰기'"
+                                                                            autocomplete="off"
+                                                                            spellcheck="false"></textarea>
+                                                                    </div>
+                                                                    <div class="text-exam flex-wrap">
+                                                                        <div class="blueT">
+                                                                            <p>사진을 찍는다.</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="arrow"></div>
+                                                            <div class="right">
+                                                                <div class="noteText noLine">
+                                                                    <div class="textareaWrap">
+                                                                        <textarea class="textLine afterDisplay"
+                                                                            type="text" placeholder="직접 쓰기"
+                                                                            data-input-obj="" data-answer=" " onfocus=""
+                                                                            onblur="placeholder='직접 쓰기'"
+                                                                            autocomplete="off"
+                                                                            spellcheck="false"></textarea>
+                                                                    </div>
+                                                                    <div class="text-exam flex-wrap">
+                                                                        <div class="blueT">
+                                                                            <p></p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-2">
+                                                        <div class="item item4">
+                                                            <div class="left">
+                                                                <div class="noteText noLine">
+                                                                    <div class="textareaWrap">
+                                                                        <textarea class="textLine afterDisplay"
+                                                                            type="text" placeholder="직접 쓰기"
+                                                                            data-input-obj="" data-answer=" " onfocus=""
+                                                                            onblur="placeholder='직접 쓰기'"
+                                                                            autocomplete="off"
+                                                                            spellcheck="false"></textarea>
+                                                                    </div>
+                                                                    <div class="text-exam flex-wrap">
+                                                                        <div class="blueT">
+                                                                            <p>숙제하기</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="arrow"></div>
+                                                            <div class="right">
+                                                                <div class="noteText noLine">
+                                                                    <div class="textareaWrap">
+                                                                        <textarea class="textLine afterDisplay"
+                                                                            type="text" placeholder="직접 쓰기"
+                                                                            data-input-obj="" data-answer=" " onfocus=""
+                                                                            onblur="placeholder='직접 쓰기'"
+                                                                            autocomplete="off"
+                                                                            spellcheck="false"></textarea>
+                                                                    </div>
+                                                                    <div class="text-exam flex-wrap">
+                                                                        <div class="blueT">
+                                                                            <p>성실</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item item-rating">
+                                                            <div class="ico">
+                                                                <img src="./common/images/ico_que.png" class="ico">
+                                                                나는 도덕적으로 말하고 있나요?
+                                                            </div>
+                                                            <div class="flex-star">
+                                                                <div class="star"></div>
+                                                                <div class="star"></div>
+                                                                <div class="star"></div>
+                                                                <div class="star"></div>
+                                                                <div class="star"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min " data-popup-page="1" data-drag="">
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        <p>별에 색을 많이 칠할수록 도덕적으로
+                            행동하고 있다는 뜻이에요.
+                        </p>
+                    </div>
+                </li>
+                <li class="min " data-popup-page="2" data-drag="">
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        <p>
+                            빈칸을 채울 때 의미 없는 것을 적기보다는, 도덕적 행동과 연관 지어 바람직한 것, 혹은 그렇지 않은 것을 솔직하게 적어 보고 성찰의 기회로 삼을 수 있도록 해요.
+                        </p>
+                    </div>
+                </li>
+                <li class="min " data-popup-page="3" data-drag="">
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        <p>
+                            32쪽의 네 가지 상황 중 한 가지를 선택해 되돌아 보아도 좋아요.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+                if ($(this).data('text') == '세 거짓말쟁이가 정직의 삶에 도착했을 때의 장면을 상상해 봅시다.') {
+                    $('#wrap header .title-text').addClass('letter-sp-2');
+                } else {
+                    $('#wrap header .title-text').removeClass('letter-sp-2');
+                }
+            });
+
+
+            $(document).on('click', '.star', function () {
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                    return;
+                }
+                KmAudioPlayer.buttonClick();
+                $(this).parent().find('.star').removeClass('active');
+                $(this).addClass('active');
+            });
+            $(document).on('click', '.resetBtn', function () {
+                KmAudioPlayer.buttonClick();
+                $(this).parent().parent().find('.star').removeClass('active');
+            });
+            $('.icon-prev').on('click', function () {
+                KmAudioPlayer.buttonClick();
+                $(this).addClass('active');
+                $(this).parent().find('.icon-next').removeClass('active');
+                $(this).parent().parent().find('.tab-1').show();
+                $(this).parent().parent().find('.tab-2').hide();
+            });
+            $('.icon-next').on('click', function () {
+                KmAudioPlayer.buttonClick();
+                $(this).addClass('active');
+                $(this).parent().find('.icon-prev').removeClass('active');
+                $(this).parent().parent().find('.tab-1').hide();
+                $(this).parent().parent().find('.tab-2').show();
+            });
+        });
+    </script>
+</body>
+
+</html>
