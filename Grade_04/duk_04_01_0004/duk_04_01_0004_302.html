@@ -58,29 +58,24 @@
             font-weight: 700;
         }
 
-        .d4 {
+        .d1 {
             top: 30px;
             left: 85px;
         }
 
-        .d1 {
+        .d2 {
             top: 30px;
             left: calc(85px + 150px*1);
         }
 
-        .d5 {
+        .d3 {
             top: 30px;
             left: calc(85px + 150px*2);
         }
 
-        .d2 {
+        .d4 {
             top: 30px;
             left: calc(85px + 150px*3);
-        }
-
-        .d3 {
-            top: 30px;
-            left: calc(85px + 150px*4);
         }
 
         .clearArea {
@@ -97,60 +92,19 @@
             background-color: #f5f5f5;
         }
 
-        .a1.clearArea,
-        .innerTab_1 .boxDrag {
+        .clearArea,
+        .boxDrag {
             width: 107px;
             height: 65px;
-        }
-
-        .a2.clearArea,
-        .innerTab_2 .boxDrag {
-            width: 103px;
-            height: 57px;
-        }
-
-        .a3.clearArea,
-        .innerTab_3 .boxDrag {
-            width: 105px;
-            height: 60px;
-        }
-
-        .a4.clearArea,
-        .innerTab_4 .boxDrag {
-            width: 102px;
-            height: 58px;
-        }
-
-        .a5.clearArea,
-        .innerTab_5 .boxDrag {
-            width: 105px;
-            height: 60px;
-        }
-
-        .d1.dragObjComplete,
-        .d2.dragObjComplete {
-            /* left: 13px; */
-        }
-
-        .d3.dragObjComplete {
-            left: -8px;
-        }
-
-        .d4.dragObjComplete {
-            left: 12px;
-            top: -1px;
-        }
-
-        .d5.dragObjComplete {
-            left: -8px;
+            display: inline-block;
+            margin: auto 10px;
+            margin-bottom: -15px;
         }
 
         .js-dragObj.dragObjComplete {
             opacity: 1;
             cursor: auto;
-            /* scale: 0.6; */
             font-weight: bold;
-            /* font-size: 50px; */
         }
 
         .clearArea .js-dragObj.dragObjComplete {
@@ -158,8 +112,8 @@
         }
 
         .dragObjComplete {
-            top: 11px;
-            left: 17px;
+            top: 10px;
+            left: 15px;
         }
 
         .drag-zone .dragObjComplete {
@@ -171,18 +125,14 @@
         }
 
         .js-dropArea.a1 {
-            transform: translate(0%, 0%);
+            transform: translate(0%, 0%) !important;
         }
 
-        .flex-wrap.bgDrop {
-            margin: auto;
-            margin-top: 120px;
-            width: auto;
-        }
-
-        .flex-wrap.bgDrop .flex {
+        [data-quiz="dragDrop"] .flex {
             display: flex;
             align-items: center;
+            margin-top: 120px;
+            justify-content: center;
         }
 
         .imgStar {
@@ -207,8 +157,7 @@
                     <li data-hover="" data-text="1단원을 마치며 스스로의 모습을 되돌아봅시다.">자기 점검</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
-                    <li class="page_1" data-quiz="dragDrop" data-option="answer" data-quiz-name="dragdrop"
-                        data-total-complete-count="">
+                    <li class="page_1">
                         <div class="basicSlider contentsBox doItContent" data-slide-container="">
                             <div class="moveButtonContainer" data-slide-btn-container="">
                                 <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
@@ -227,25 +176,21 @@
                                         <div class="it-start-wrap dragBox lineBox dragObjUL">
                                             <div class="bogi-icon"></div>
                                             <div class="drag-zone">
-                                                <div class="js-dragObj d4" data-drag-obj-answer="4" data-ps="free">
-                                                    정직</div>
                                                 <div class="js-dragObj d1" data-drag-obj-answer="1" data-ps="free">
-                                                    행복</div>
-                                                <div class="js-dragObj d5" data-drag-obj-answer="5" data-ps="free">
-                                                    믿음</div>
+                                                    정직</div>
                                                 <div class="js-dragObj d2" data-drag-obj-answer="2" data-ps="free">
+                                                    행복</div>
+                                                <div class="js-dragObj d3" data-drag-obj-answer="3" data-ps="free">
+                                                    믿음</div>
+                                                <div class="js-dragObj d4" data-drag-obj-answer="4" data-ps="free">
                                                     거짓</div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="flex-wrap bgDrop">
-                                        <div class="flex">
-                                            <img class="imgStar" src="./images/duk_04_01_0004_302/star.png" alt="">
-                                                <div class="js-dropArea a1 clearArea boxDrag" data-drop-area-answer="1">
-                                                </div>
-                                            <p>이란 꾸밈이 없이 바르고 곧은 마음을 말합니다.</p>
-                                        </div>
-
+                                    <div class="flex">
+                                        <img class="imgStar" src="./images/duk_04_01_0004_302/star.png" alt="">
+                                        <p> <span class="js-dropArea a1 clearArea boxDrag"
+                                                data-drop-area-answer="1"></span>이란 꾸밈이 없이 바르고 곧은 마음을 말합니다.</p>
                                     </div>
                                     <div class="buttonContainer">
                                         <button class="dapCheckBtn" data-answer-btn=""></button>
@@ -258,23 +203,25 @@
                                         <div class="it-start-wrap dragBox lineBox dragObjUL">
                                             <div class="bogi-icon"></div>
                                             <div class="drag-zone">
-                                                <div class="js-dragObj d4" data-drag-obj-answer="4" data-ps="free">
-                                                    정직</div>
                                                 <div class="js-dragObj d1" data-drag-obj-answer="1" data-ps="free">
-                                                    행복</div>
-                                                <div class="js-dragObj d5" data-drag-obj-answer="5" data-ps="free">
-                                                    믿음</div>
+                                                    정직</div>
                                                 <div class="js-dragObj d2" data-drag-obj-answer="2" data-ps="free">
+                                                    행복</div>
+                                                <div class="js-dragObj d3" data-drag-obj-answer="3" data-ps="free">
+                                                    믿음</div>
+                                                <div class="js-dragObj d4" data-drag-obj-answer="4" data-ps="free">
                                                     거짓</div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="flex-wrap bgDrop">
-                                        <div class="flex">
-                                            <div class="boxDrag"></div>
-                                        </div>
-                                        <div class="js-dropArea a2 clearArea" data-drop-area-answer="2">
-                                        </div>
+                                    <div class="flex">
+                                        <img class="imgStar" src="./images/duk_04_01_0004_302/star.png" alt="">
+                                        <p>우리가 정직이 아닌,<span class="js-dropArea a1 clearArea boxDrag"
+                                                data-drop-area-answer="4"></span>을 자주 선택한다면</p>
+                                    </div>
+                                    <div class="flex" style="margin-left: 50px; margin-top: 0;">
+                                        <p>서로의 마음에<span class="js-dropArea a1 clearArea boxDrag"
+                                                data-drop-area-answer="3"></span>이 자리할 수 없습니다.</p>
                                     </div>
                                     <div class="buttonContainer">
                                         <button class="dapCheckBtn" data-answer-btn=""></button>
@@ -287,23 +234,21 @@
                                         <div class="it-start-wrap dragBox lineBox dragObjUL">
                                             <div class="bogi-icon"></div>
                                             <div class="drag-zone">
-                                                <div class="js-dragObj d4" data-drag-obj-answer="4" data-ps="free">
-                                                    정직</div>
                                                 <div class="js-dragObj d1" data-drag-obj-answer="1" data-ps="free">
-                                                    행복</div>
-                                                <div class="js-dragObj d5" data-drag-obj-answer="5" data-ps="free">
-                                                    믿음</div>
+                                                    정직</div>
                                                 <div class="js-dragObj d2" data-drag-obj-answer="2" data-ps="free">
+                                                    행복</div>
+                                                <div class="js-dragObj d3" data-drag-obj-answer="3" data-ps="free">
+                                                    믿음</div>
+                                                <div class="js-dragObj d4" data-drag-obj-answer="4" data-ps="free">
                                                     거짓</div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="flex-wrap bgDrop">
-                                        <div class="flex">
-                                            <div class="boxDrag"></div>
-                                        </div>
-                                        <div class="js-dropArea a3 clearArea" data-drop-area-answer="3">
-                                        </div>
+                                    <div class="flex">
+                                        <img class="imgStar" src="./images/duk_04_01_0004_302/star.png" alt="">
+                                        <p>정직한 마음을 지키는 일은 나의<span class="js-dropArea a1 clearArea boxDrag"
+                                                data-drop-area-answer="2"></span>한 삶을 위해 꼭 지켜야 할 약속입니다.</p>
                                     </div>
                                     <div class="buttonContainer">
                                         <button class="dapCheckBtn" data-answer-btn=""></button>
@@ -402,7 +347,7 @@
     <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
     <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
     <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
-    <script type="text/javascript" src="./ko/contents.js"></script>
+    <!-- <script type="text/javascript" src="./ko/contents.js"></script> -->
     <script type="text/javascript" src="./common/js/guide.js"></script>
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
@@ -453,6 +398,7 @@
                 if ($(this).closest('.dragDropContainer').find('.js-dropArea>.js-dragObj.d' + _id).length > 0) {
                     $(this).closest('.dragDropContainer').find('.js-dropArea>.js-dragObj.d' + _id).parent().addClass('active dragged');
                     $(this).closest('.dragDropContainer').find('.js-dropArea.dragged .dragClone').append(x);
+
                 }
                 if ($(this).closest('.dragDropContainer').find('.js-dropArea.active').length == 1) {
                     $(this).closest('[data-quiz="dragDrop"]').find('.dapCheckBtn').addClass('reset');
@@ -464,15 +410,15 @@
                     console.log(dragAnswer);
 
                 }
-                $('.js-dropArea').each(function () {
-                    $(this).find('.js-dragObj').each(function () {
-                        var dragObjAnswer = $(this).data('drag-obj-answer');
-                        if (!data_id_complete.includes(dragObjAnswer)) {
-                            $(`.drag-zone [data-drag-obj-answer="${dragObjAnswer}"]`).addClass('dragObjComplete');
-                            data_id_complete.push(dragObjAnswer);
-                        }
-                    });
-                });
+                // $('.js-dropArea').each(function () {
+                //     $(this).find('.js-dragObj').each(function () {
+                //         var dragObjAnswer = $(this).data('drag-obj-answer');
+                //         if (!data_id_complete.includes(dragObjAnswer)) {
+                //             $(`.drag-zone [data-drag-obj-answer="${dragObjAnswer}"]`).addClass('dragObjComplete');
+                //             data_id_complete.push(dragObjAnswer);
+                //         }
+                //     });
+                // });
             });
 
             $(document).on('click', '.dapCheckBtn', function () {
