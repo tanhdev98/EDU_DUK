@@ -294,11 +294,14 @@
                             </div>
                             <div class="example-box">
                                 <div class="exampleIcoWrap">
-                                    <div class="example ico-05">
+                                    <div class="example ico-01">
+                                        매우 그렇다
+                                    </div>
+                                    <div class="example ico-02">
                                         그렇다
                                     </div>
-                                    <div class="example ico-04">
-                                        그렇다
+                                    <div class="example ico-03">
+                                        좀 더 노력해야 한다
                                     </div>
                                 </div>
                             </div>
@@ -399,8 +402,8 @@
                         </div>
                     </div>
                 </li>
-                <li class="fullLine whole image pointContainer" data-popup-page="2">
-                    <div class="full_content" data-quiz="toggle">
+                <li class="fullLine whole image pointContainer" data-popup-page="2"  data-quiz="toggle">
+                    <div class="full_content">
                         <div class="pointTitle">
                             <div class="titleText">‘정직 나침반’ 사용 설명서</div>
                         </div>
@@ -408,14 +411,18 @@
                             <tr>
                                 <td class="col1">이럴 때 사용해요</td>
                                 <td style="display: flex; align-items: center;">
-                                    <div class="toggle box" data-toggle-obj="1" data-hover="">
-                                        <div class="answer" data-toggle-target="1">
-                                            <div class="ls-2h">정직 </div>
+                                    <div data-type="toggleButton">
+                                        <div class="toggle box" data-toggle-obj="1" data-hover="">
+                                            <div class="answer" data-toggle-target="1">
+                                                <div class="ls-2h">정직 </div>˜
+                                            </div>
                                         </div>
                                     </div> 과
-                                    <div class="toggle box" data-toggle-obj="2" data-hover="">
-                                        <div class="answer" data-toggle-target="2">
-                                            <div class="ls-2h">거짓</div>
+                                    <div data-type="toggleButton">
+                                        <div class="toggle box" data-toggle-obj="2" data-hover="">
+                                            <div class="answer" data-toggle-target="2">
+                                                <div class="ls-2h">거짓</div>
+                                            </div>
                                         </div>
                                     </div>사이에서 갈등할 때 사용해요.
                                 </td>
@@ -496,32 +503,32 @@
 
 
 
-            // $(document).on('click', '.toggle', function () {
-            //     const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
-            //     const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
-            //     const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
 
-            //     if (toggleBtn.length == toggleCompleteBtn.length) {
-            //         dapCheckBtn.addClass('reset');
-            //     } else {
-            //         dapCheckBtn.removeClass('reset');
-            //     }
-            // });
-
-            // $(document).on('click', '.dapCheckBtn', function () {
-            //     const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
-            //     const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
-
-            //     if (!dapCheckBtn.hasClass('reset')) {
-            //         toggleBtn.parent().removeAttr('data-active');
-            //     } else {
-            //         toggleBtn.parent().attr('data-active', 'on');
-            //     }
-            // });
-            // for demo only
-            $(document).on('click', '.buttonContainer > button:not(.examViewBtn)', function () {
-                $(this).toggleClass('reset');
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    dapCheckBtn.addClass('reset');
+                } else {
+                    dapCheckBtn.removeClass('reset');
+                }
             });
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!dapCheckBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
+            });
+            // for demo only
+            // $(document).on('click', '.buttonContainer > button:not(.examViewBtn)', function () {
+            //     $(this).toggleClass('reset');
+            // });
         });
 
 
