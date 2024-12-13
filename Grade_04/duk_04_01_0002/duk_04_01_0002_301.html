@@ -205,6 +205,7 @@
             width: auto;
             max-width: max-content;
             max-height: max-content;
+            display: inline-block;
         }
     </style>
 </head>
@@ -415,7 +416,7 @@
                         <table>
                             <tr>
                                 <td class="col1">이럴 때 사용해요</td>
-                                <td style="display: flex; align-items: center;">
+                                <td>
                                     <div data-type="toggleButton">
                                         <div class="toggle box" data-toggle-obj="1" data-hover="">
                                             <div class="answer" data-toggle-target="1">
@@ -507,11 +508,16 @@
             });
 
 
-
-            $(document).on('click', '.toggle', function () {
+            
+        });
+        $(document).on('click', '.toggle', function () {
                 const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
                 const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
                 const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                console.log(toggleBtn.length);
+                console.log(toggleCompleteBtn.length);
+                console.log($(this).parent());
+
 
                 if (toggleBtn.length == toggleCompleteBtn.length) {
                     dapCheckBtn.addClass('reset');
@@ -530,12 +536,6 @@
                     toggleBtn.parent().attr('data-active', 'on');
                 }
             });
-            // for demo only
-            // $(document).on('click', '.buttonContainer > button:not(.examViewBtn)', function () {
-            //     $(this).toggleClass('reset');
-            // });
-        });
-
 
     </script>
 </body>
