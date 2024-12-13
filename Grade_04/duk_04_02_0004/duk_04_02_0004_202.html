@@ -32,6 +32,153 @@
             top: 173px;
             left: 1019px;
         }
+
+        .popup_pages .flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .popup_pages .boxText {
+            width: 350px;
+            height: 220px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .popup_pages .boxText .click-finger-Btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .boxText.pink {
+            background-color: #FFDBDF;
+        }
+
+        .boxText.green {
+            background-color: #F2F7C8;
+        }
+
+        .boxText.blue {
+            background-color: #E7F4F9;
+        }
+
+        .popupItem {
+            width: 1111px;
+            padding: 15px 20px;
+            border-radius: 15px;
+            position: absolute;
+            top: 380px;
+            left: 127px;
+            display: none;
+        }
+
+        .popupItem:after {
+            content: '';
+            position: absolute;
+            top: -30px;
+            width: 30px;
+            height: 30px;
+            clip-path: polygon(50% 0%, 5% 100%, 95% 100%);
+            bottom: 0;
+        }
+
+        .popupItem.pink {
+            border: 4px solid #FFDBDF;
+        }
+
+        .popupItem.pink:after {
+            background-color: #FFDBDF;
+            left: 165px;
+        }
+
+        .popupItem.green {
+            border: 4px solid #F2F7C8;
+        }
+
+        .popupItem.green:after {
+            background-color: #F2F7C8;
+            left: 50%;
+            transform: translateX();
+        }
+
+        .popupItem.blue {
+            border: 4px solid #E7F4F9;
+        }
+
+        .popupItem.blue:after {
+            background-color: #E7F4F9;
+            right: 165px;
+        }
+
+        .wrapImg img {
+            width: 100%;
+            height: 500px;
+        }
+
+        .topText {
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .innerTab_2 .noteText {
+            position: absolute;
+            top: 80px;
+            left: 0px;
+            box-shadow: none;
+        }
+
+        /* Page 2 */
+        .page_2 .self-check {
+            margin-top: 100px;
+        }
+
+        /* Page 3 */
+        .page_3 .imgWrap {
+            text-align: center;
+        }
+
+        .page_3 .imgWrap img {
+            height: 550px;
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        [data-popup-page="3"] {
+            top: 165px;
+            left: 439px;
+            width: 810px;
+        }
+
+        /* Page 4 */
+
+
+        .page_4 .flex {
+            display: flex;
+            margin-top: 60px;
+        }
+
+        .page_4 .flex .items:first-child {
+            width: 1080px;
+        }
+
+        .page_4 .flex .items {
+            width: 100%;
+            text-align: center;
+        }
+
+        .page_4 .flex .items img {
+            width: 500px;
+        }
     </style>
 </head>
 
@@ -97,13 +244,109 @@
                                     </ul>
                                 </li>
                                 <li class="innerTab_2" data-quiz="toggle">
-
+                                    <div class="wrapImg">
+                                        <img src="./images/tuk_04_02_0004_202/img_01.png" />
+                                        <div class="topText">나의 표어</div>
+                                        <div class="noteText noteLine">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="resetBtn only-reset" data-type="reset" data-hover=""></button>
+                                    </div>
                                 </li>
+
                             </ul>
                         </div>
                     </li>
                     <li class="page_2" data-quiz="toggle">
-
+                        <div class="study_guide"><em>기호</em>를 <em>클릭</em>하세요.</div>
+                        <div class="self-check">
+                            <div class="checkWrap">
+                                <div class="text_box">
+                                    생활 속에서 실천할 수 있나요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon5"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon4"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">
+                                    다른 관점에서도 바람직한가요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon5"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon4"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">
+                                    실천하는 나의 모습이 자랑스러운가요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon5"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon4"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="example-box">
+                                <div class="exampleIcoWrap">
+                                    <div class="example ico-05">
+                                        그렇다
+                                    </div>
+                                    <div class="example ico-04">
+                                        그렇다
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="page_3">
+                        <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="3"></div>
+                        <div class="imgWrap">
+                            <img src="./images/tuk_04_02_0004_202/img_02.png" />
+                        </div>
+                    </li>
+                    <li class="page_4" data-quiz="toggle">
+                        <div class="flex">
+                            <div class="items">
+                                <img src="./images/tuk_04_02_0004_202/img_02.PNG" />
+                            </div>
+                            <div class="items">
+                                <div class="noteText noteLine green">
+                                    <div class="textareaWrap">
+                                        <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                            autocomplete="off"></textarea>
+                                    </div>
+                                    <div class="text-exam flex-wrap">
+                                        <div class="blueT">
+                                            항상 다른 사람들을 배려하겠다는 다짐을 표어로 재미있게 표현한 별이를 칭찬해요.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="buttonContainer">
+                                    <button class="writeBtn" data-answer-btn=""></button>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -131,15 +374,54 @@
                 <li class="whole" data-popup-page="2" data-quiz="toggle">
                     <h2>이렇게 만들어 보아요! </h2>
                     <div class="flex">
-                        <div class="boxText box-1">
+                        <div class="boxText box-1 pink" data-popup="1">
                             목적을 명확히
+                            <span class="click-finger-Btn blinkOn blinkOpacity item1" data-hover=""></span>
                         </div>
-                        <div class="boxText box-2">
+                        <div class="boxText box-2 green" data-popup="2">
                             짧고 간단하게
+                            <span class="click-finger-Btn blinkOn blinkOpacity item2" data-hover=""></span>
                         </div>
-                        <div class="boxText box-3">
+                        <div class="boxText box-3 blue" data-popup="3">
                             반복과 리듬
+                            <span class="click-finger-Btn blinkOn blinkOpacity item3" data-hover=""></span>
                         </div>
+                    </div>
+                    <div class="popupItem purple popupItem1 pink" data-show="1">
+                        <span>
+                            표어가 무엇을 말하는지 명확해야 해요.
+                        </span><br>
+                        <span>
+                            <div class="exam bullet">예</div>
+                            ‘성실한 태도가 성공을 부른다’
+                        </span>
+                    </div>
+                    <div class="popupItem purple popupItem2 green" data-show="2">
+                        <span>
+                            필요 없는 말을 빼고 꼭 하고 싶은 말을 간단하게 떠올려요.
+                        </span><br>
+                        <span>
+                            <div class="exam bullet">예</div>
+                            ‘작은 선행, 큰 변화’
+                        </span>
+                    </div>
+                    <div class="popupItem purple popupItem3 blue" data-show="3">
+                        <span>
+                            비슷한 낱말을 써서 재미있는 느낌을 주어요.
+                        </span><br>
+                        <span>
+                            <div class="exam bullet">예</div>
+                            ‘깨끗한 책상, 나의 책임’
+                        </span>
+                    </div>
+                </li>
+                <li class="min " data-popup-page="3" data-drag="">
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        <p><ins class="dot"></ins>
+                            직접 디지털 기기를 활용하여 사진을 찍거나 하나의 사진기(휴대 전화)를 활용하여 친구들과 함께 사진을 찍어요.
+                        </p>
+                        <p><ins class="dot"></ins> 찍은 사진을 함께 감상하고, 서로 격려와 칭찬을 나누며 도덕적 행동의 실천을 독려해요.</p>
                     </div>
                 </li>
             </ul>
@@ -185,20 +467,19 @@
                     $('#wrap header .title-text').removeClass('letter-sp-2');
                 }
             });
-
-            $prite.girl2({
-                id: '#girl_2',
-                speech: 'right',
-                sound: './media/sample.mp3',
-                text: '나는 도덕적인 사람이라고 <br>생각합니다. <br>남을 배려하기 때문입니다.',
-                class: 'bottom',
-                balloon_top: -210,
-                balloon_left: -155,
-            });
-
             $(document).on('click', '.resetBtn', function () {
                 KmAudioPlayer.buttonClick();
                 $('.textLine').val('');
+            });
+
+            $(document).on('click', '.boxText', function () {
+                KmAudioPlayer.buttonClick();
+                $('.popupItem').hide();
+                $('.click-finger-Btn').show()
+                $(this).find('.click-finger-Btn').hide();
+                var $data_popup = $(this).attr('data-popup');
+                var $currentPopup = $('.popupItem[data-show="' + $data_popup + '"]');
+                $currentPopup.show();
             });
         });
     </script>
