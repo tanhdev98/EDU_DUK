@@ -220,7 +220,7 @@
                                                 data-drop-area-answer="4"></span>을 자주 선택한다면</p>
                                     </div>
                                     <div class="flex" style="margin-left: 50px; margin-top: 0;">
-                                        <p>서로의 마음에<span class="js-dropArea a2 clearArea boxDrag"
+                                        <p>서로의 마음에<span class="js-dropArea a1 clearArea boxDrag"
                                                 data-drop-area-answer="3"></span>이 자리할 수 없습니다.</p>
                                     </div>
                                     <div class="buttonContainer">
@@ -405,12 +405,6 @@
                         $(this).closest('[data-quiz="dragDrop"]').find('.dapCheckBtn').addClass('reset');
                     }
                 }
-
-                // if ($(this).parents("[data-quiz='dragDrop']").find('.js-dropArea').length == 2) {
-                //     if ($(this).closest('.dragDropContainer').find('.js-dropArea.active').length == 2) {
-                //         $(this).closest('[data-quiz="dragDrop"]').find('.dapCheckBtn').addClass('reset');
-                //     }
-                // }
 
                 if ($(this).hasClass('dragObjComplete')) {
                     var dragAnswer = $(this).data('drag-obj-answer');
