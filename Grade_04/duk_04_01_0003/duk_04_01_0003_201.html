@@ -222,6 +222,7 @@
                         </div>
                     </li>
                     <li class="page_2" data-quiz="toggle">
+                        <div class="study_guide"><em>체크 박스</em>를 <em>클릭</em>하세요.</div>
                         <div class="wrapImg">
                             <img src="./images/duk_04_01_0003_201/img_03.png" />
                             <div class="topText">친구들과 함께 정한 우리 반 정직 약속</div>
@@ -275,25 +276,25 @@
                             </div>
                             <div class="check_list check1">
                                 <div class="check_view">
-                                    <div class="check_box check_ans">
+                                    <div class="check_box">
                                     </div>
                                 </div>
                             </div>
                             <div class="check_list check2">
                                 <div class="check_view">
-                                    <div class="check_box check_ans">
+                                    <div class="check_box">
                                     </div>
                                 </div>
                             </div>
                             <div class="check_list check3">
                                 <div class="check_view">
-                                    <div class="check_box check_ans">
+                                    <div class="check_box">
                                     </div>
                                 </div>
                             </div>
                             <div class="check_list check4">
                                 <div class="check_view">
-                                    <div class="check_box check_ans">
+                                    <div class="check_box">
                                     </div>
                                 </div>
                             </div>
@@ -323,7 +324,7 @@
     <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
     <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
     <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
-    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz-clickSound.js"></script>
     <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
     <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
     <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
@@ -348,12 +349,22 @@
                 }
             });
             $(document).on('click', '.check_view', function () {
-                if ($(this).children().hasClass('check_ans')) {
-                    KmAudioPlayer.correct();
-                    $(this).addClass('no_sound');
+                KmAudioPlayer.buttonClick();
+
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                    $(this).children().empty();
+                } else {
+                    $(this).addClass('active');
                     $(this).parent().parent().parent().find('.check_view').addClass('no_sound');
                     $(this).children().empty();
                     $(this).children().append('<p class="red_check"></p>');
+                }
+
+            });
+            $(document).on('click', '.writeBtn', function () {
+                if (!$(this).hasClass('reset')) {
+                    $('.check_box').empty();
                 }
             });
         });
