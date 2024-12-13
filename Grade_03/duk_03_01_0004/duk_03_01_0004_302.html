@@ -109,6 +109,10 @@
 
         }
 
+        .drag-zone>.js-dragObj.dragObjComplete {
+            display: none;
+        }
+
         .a1 {
             top: 40px;
             left: 240px;
@@ -132,7 +136,7 @@
 
         .text-2 {
             top: 110px;
-            left: 310px;
+            left: 270px;
         }
 
         .text-3 {
@@ -213,40 +217,40 @@
                     <li data-hover="" data-text="1단원을 마치며 스스로의 모습을 되돌아봅시다.">자기 점검</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
-                    <li class="page_1" data-quiz="dragDrop" data-option="answer" data-quiz-name="dragdrop"
-                        data-total-complete-count="">
+                    <li class="page_1" data-quiz="dragDrop" data-option="answer" data-quiz-name="dragDrop"
+                        data-total-complete-count="5">
                         <div class="dragDropContainer bogi">
                             <div class="lineBox">
                                 <div class="bogi-icon"></div>
                                 <div class="drag-zone">
-                                    <div class="js-dragObj d1" data-drag-obj-answer="5">
+                                    <div class="js-dragObj d1" data-drag-obj-answer="5" data-ps="free">
                                         <span>격려</span>
                                     </div>
-                                    <div class="js-dragObj d2" data-drag-obj-answer="3">
+                                    <div class="js-dragObj d2" data-drag-obj-answer="3" data-ps="free">
                                         <span>감정</span>
                                     </div>
-                                    <div class="js-dragObj d3" data-drag-obj-answer="2">
+                                    <div class="js-dragObj d3" data-drag-obj-answer="2" data-ps="free">
                                         <span>소중</span>
                                     </div>
-                                    <div class="js-dragObj d4" data-drag-obj-answer="4">
+                                    <div class="js-dragObj d4" data-drag-obj-answer="4" data-ps="free">
                                         <span>조절</span>
                                     </div>
-                                    <div class="js-dragObj d5" data-drag-obj-answer="1">
+                                    <div class="js-dragObj d5" data-drag-obj-answer="1" data-ps="free">
                                         <span>나</span>
                                     </div>
-                                    <div class="js-dragObj d6" data-drag-obj-answer="">
+                                    <div class="js-dragObj d6" data-drag-obj-answer="6" data-ps="free">
                                         <span>너</span>
                                     </div>
-                                    <div class="js-dragObj d7" data-drag-obj-answer="">
+                                    <div class="js-dragObj d7" data-drag-obj-answer="6" data-ps="free">
                                         <span>우리</span>
                                     </div>
-                                    <div class="js-dragObj d8" data-drag-obj-answer="">
+                                    <div class="js-dragObj d8" data-drag-obj-answer="6" data-ps="free">
                                         <span>생</span>
                                     </div>
-                                    <div class="js-dragObj d9" data-drag-obj-answer="">
+                                    <div class="js-dragObj d9" data-drag-obj-answer="6" data-ps="free">
                                         <span>각</span>
                                     </div>
-                                    <div class="js-dragObj d10" data-drag-obj-answer="">
+                                    <div class="js-dragObj d10" data-drag-obj-answer="6" data-ps="free">
                                         <span>믿음</span>
                                     </div>
                                 </div>
@@ -254,10 +258,10 @@
                         </div>
                         <div class="basicSlider contentsBox doItContent" data-slide-container="">
                             <div class="moveButtonContainer" data-slide-btn-container="">
-                                <div class="basicSlider_btn prev off" data-btn-prev="" data-hover=""></div>
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
                                 <ul class="basicSlider_circle_tabs" data-tabs="">
-                                    <li data-hover="" class="on"></li>
-                                    <li data-hover="" class=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
                                 </ul>
                                 <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
                             </div>
@@ -296,9 +300,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="buttonContainer">
-                                        <button class="dapCheckBtn" data-answer-btn=""></button>
-                                    </div>
                                 </li>
                                 <li class="innerTab_2">
                                     <div class="flex-wrap bgDrop">
@@ -327,11 +328,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="buttonContainer">
-                                        <button class="dapCheckBtn" data-answer-btn=""></button>
-                                    </div>
                                 </li>
                             </ul>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="dapCheckBtn" data-answer-btn=""></button>
                         </div>
                     </li>
                     <li class="page_2">
@@ -345,7 +346,7 @@
                                 <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
                             </div>
                             <ul class="basicSlider_slides" data-slides="">
-                                <li class="innerTab_1" data-quiz="toggle">
+                                <li class="innerTab_1">
                                     <div class="study_guide"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
                                     <div class="self-check">
                                         <div class="checkWrap">
@@ -391,7 +392,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="innerTab_2" data-quiz="toggle">
+                                <li class="innerTab_2">
                                     <div class="study_guide"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
                                     <div class="self-check">
                                         <div class="checkWrap">
@@ -453,6 +454,7 @@
         </section>
     </div>
 
+
     <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
     <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
     <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
@@ -466,8 +468,7 @@
     <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
     <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
     <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
-    <script type="text/javascript" src="./ko/contents.js"></script>
-    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <!-- <script type="text/javascript" src="./ko/contents.js"></script> -->
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
             $(document).on('click', '.basicSlider_tabs li', function () {
@@ -497,40 +498,13 @@
                 }).show();
             });
 
-            // $(document).on('click', '.toggle', function () {
-            //     const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
-            //     const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
-            //     const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.examViewBtn');
-
-            //     if (toggleBtn.length == toggleCompleteBtn.length) {
-            //         examViewBtn.addClass('reset');
-            //     } else {
-            //         examViewBtn.removeClass('reset');
-            //     }
-            // });
-
-            // $(document).on('click', '.examViewBtn', function () {
-            //     const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.examViewBtn');
-            //     const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
-
-            //     if (!examViewBtn.hasClass('reset')) {
-            //         toggleBtn.parent().removeAttr('data-active');
-            //     } else {
-            //         toggleBtn.parent().attr('data-active', 'on');
-            //     }
-            // });
-
-            // for demo only
-            $(document).on('click', '.buttonContainer > button:not(.examViewBtn)', function () {
-                $(this).toggleClass('reset');
+            $(document).on('click', '.page_1 .basicSlider_circle_tabs li', function () {
+                var _index = $(this).index() + 1;
+                $('.page_1 .basicSlider_slides li').hide();
+                $('.page_1 .basicSlider_slides li.innerTab_' + _index).show();
             });
 
-            $(document).on('click', '.writeBtn, .dapCheckBtn, .resetBtn, .linkBtn ', function () {
-                KmAudioPlayer.buttonClick();
-            });
-            $(document).on('click', '.dapCheckBtn', function () {
-                $(this).parent().find('.js-dropArea').html($(this).parent().find('.js-dropArea').attr('data-ans'));
-            });
+
         });
     </script>
 </body>
