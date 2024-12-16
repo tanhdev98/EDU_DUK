@@ -61,6 +61,10 @@
             letter-spacing: -0.2px;
         }
 
+        .page_2 .noteText .textareaWrap {
+            height: 365px;
+        }
+
         .buttonContainer {
             right: 28px;
         }
@@ -308,9 +312,11 @@
                                             </div>
                                             <div class="box-text pink">
                                                 <div class="wrapToggle">
-                                                    <div class="toggle" data-toggle-obj="1">
-                                                        <div class="answer on" data-toggle-target="1">
-                                                            <div class="ls-1h">명상</div>
+                                                    <div data-type="toggleButton">
+                                                        <div class="toggle" data-toggle-obj="1">
+                                                            <div class="answer on" data-toggle-target="1">
+                                                                <div class="ls-1h">명상</div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -319,9 +325,11 @@
                                             </div>
                                             <div class="box-text green">
                                                 <div class="wrapToggle">
-                                                    <div class="toggle" data-toggle-obj="2">
-                                                        <div class="answer on" data-toggle-target="2">
-                                                            <div class="ls-1h">좌우명</div>
+                                                    <div data-type="toggleButton">
+                                                        <div class="toggle" data-toggle-obj="2">
+                                                            <div class="answer on" data-toggle-target="2">
+                                                                <div class="ls-1h">좌우명</div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -381,37 +389,33 @@
                 }).show();
             });
 
-            // $(document).on('click', '.toggle', function () {
-            //     const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
-            //     const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
-            //     const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.examViewBtn');
+            // toggle
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
 
-            //     if (toggleBtn.length == toggleCompleteBtn.length) {
-            //         examViewBtn.addClass('reset');
-            //     } else {
-            //         examViewBtn.removeClass('reset');
-            //     }
-            // });
-
-            // $(document).on('click', '.examViewBtn', function () {
-            //     const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.examViewBtn');
-            //     const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
-
-            //     if (!examViewBtn.hasClass('reset')) {
-            //         toggleBtn.parent().removeAttr('data-active');
-            //     } else {
-            //         toggleBtn.parent().attr('data-active', 'on');
-            //     }
-            // });
-
-            // for demo only
-            $(document).on('click', '.buttonContainer > button:not(.examViewBtn)', function () {
-                $(this).toggleClass('reset');
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    dapCheckBtn.addClass('reset');
+                } else {
+                    dapCheckBtn.removeClass('reset');
+                }
             });
 
-            $(document).on('click', '.writeBtn, .resetBtn, .linkBtn ', function () {
-                KmAudioPlayer.buttonClick();
+            $(document).on('click', '.dapCheckBtn', function () {
+                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!dapCheckBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
             });
+            $(document).on('click', '.btn-praise', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+            });
+
         });
     </script>
 </body>

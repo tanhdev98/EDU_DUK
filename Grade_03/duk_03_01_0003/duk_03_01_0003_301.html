@@ -91,15 +91,7 @@
             gap: 15px;
         }
 
-        .btn-praise .item-title {
-            font-size: 28px;
-            text-align: center;
-            color: #fff;
-            font-family: 'YGJAL';
-        }
-
         .btn-praise {
-            width: 120px;
             right: -28px;
             top: 340px;
         }
@@ -622,6 +614,9 @@
                 } else {
                     toggleBtn.parent().attr('data-active', 'on');
                 }
+            });
+            $(document).on('click', '.btn-praise', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
             });
         });
     </script>

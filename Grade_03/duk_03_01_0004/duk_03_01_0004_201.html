@@ -30,6 +30,11 @@
             left: 681px;
         }
 
+        .voca::after {
+            right: -16px;
+            bottom: -18px;
+        }
+
         [data-popup-page="1"] {
             top: 123px;
             left: 358px;
@@ -82,6 +87,20 @@
 
         .page_1 .wrapImg .content-left {
             width: 300px;
+        }
+
+        .page_1 .wrapImg .content-left p {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page_1 .wrapImg .content-left img {
+            width: 121px;
+            position: absolute;
+            z-index: 1;
+            height: 20px;
+            top: 148px;
+            left: 88px;
         }
 
         .page_1 .noteText {
@@ -187,9 +206,13 @@
                                         <img src="./images/duk_03_01_0004_201/img_02.png" class="img-leaf-2" />
                                         <div class="content">
                                             <div class="content-left">
-                                                나만의<br>
-                                                긍정<br>
-                                                좌우명
+                                                <img src="./images/duk_03_01_0004_201/line_yellow.png" alt="">
+                                                <img style="top: 201px;"
+                                                    src="./images/duk_03_01_0004_201/line_yellow.png" alt="">
+                                                <img style="top: 255px;" src="./images/duk_03_01_0004_201/line_yellow.png" alt="">
+                                                <p>나만의</p>
+                                                <p>긍정</p>
+                                                <p>좌우명</p>
                                             </div>
                                             <div class="content-right">
                                                 <div class="noteText noLine note-1">

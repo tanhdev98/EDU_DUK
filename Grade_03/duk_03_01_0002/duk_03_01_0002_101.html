@@ -448,6 +448,10 @@
                     toggleBtn.parent().attr('data-active', 'on');
                 }
             });
+
+            $(document).on('click', '[data-popup-btn="1"]', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+            });
         });
 
     </script>

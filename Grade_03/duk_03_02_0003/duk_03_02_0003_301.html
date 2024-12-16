@@ -306,29 +306,6 @@
                 }).show();
             });
 
-            // $(document).on('click', '.toggle', function () {
-            //     const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
-            //     const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
-            //     const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.examViewBtn');
-
-            //     if (toggleBtn.length == toggleCompleteBtn.length) {
-            //         examViewBtn.addClass('reset');
-            //     } else {
-            //         examViewBtn.removeClass('reset');
-            //     }
-            // });
-
-            // $(document).on('click', '.examViewBtn', function () {
-            //     const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.examViewBtn');
-            //     const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
-
-            //     if (!examViewBtn.hasClass('reset')) {
-            //         toggleBtn.parent().removeAttr('data-active');
-            //     } else {
-            //         toggleBtn.parent().attr('data-active', 'on');
-            //     }
-            // });
-
             // for demo only
             $(document).on('click', '.buttonContainer > button:not(.examViewBtn)', function () {
                 $(this).toggleClass('reset');
@@ -338,27 +315,31 @@
                 KmAudioPlayer.buttonClick();
             });
 
+            // toggle
             $(document).on('click', '.toggle', function () {
                 const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
                 const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
-                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
 
                 if (toggleBtn.length == toggleCompleteBtn.length) {
-                    examViewBtn.addClass('reset');
+                    dapCheckBtn.addClass('reset');
                 } else {
-                    examViewBtn.removeClass('reset');
+                    dapCheckBtn.removeClass('reset');
                 }
             });
 
             $(document).on('click', '.dapCheckBtn', function () {
-                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
                 const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
 
-                if (!examViewBtn.hasClass('reset')) {
+                if (!dapCheckBtn.hasClass('reset')) {
                     toggleBtn.parent().removeAttr('data-active');
                 } else {
                     toggleBtn.parent().attr('data-active', 'on');
                 }
+            });
+            $(document).on('click', '.btn-praise', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
             });
         });
     </script>

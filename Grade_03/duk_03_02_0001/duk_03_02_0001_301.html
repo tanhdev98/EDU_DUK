@@ -453,28 +453,32 @@
                 balloon_left: -196,
             });
         });
+        // toggle
         $(document).on('click', '.toggle', function () {
-            const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
-            const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
-            const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
 
-            if (toggleBtn.length == toggleCompleteBtn.length) {
-                examViewBtn.addClass('reset');
-            } else {
-                examViewBtn.removeClass('reset');
-            }
-        });
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    dapCheckBtn.addClass('reset');
+                } else {
+                    dapCheckBtn.removeClass('reset');
+                }
+            });
 
-        $(document).on('click', '.dapCheckBtn', function () {
-            const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
-            const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+            $(document).on('click', '.dapCheckBtn', function () {
+                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
 
-            if (!examViewBtn.hasClass('reset')) {
-                toggleBtn.parent().removeAttr('data-active');
-            } else {
-                toggleBtn.parent().attr('data-active', 'on');
-            }
-        });
+                if (!dapCheckBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
+            });
+            $(document).on('click', '.btn-praise', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+            });
     </script>
 </body>
 

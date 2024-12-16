@@ -59,7 +59,7 @@
             text-align: center;
             height: 100%;
             width: 50%;
-            min-height: 350px;
+            height: 354px !important;
         }
 
         .page_3 .flex .box-question .box-content {
@@ -208,6 +208,20 @@
 
         .innerButtonContainer::before {
             display: none;
+        }
+
+
+        .textSafari {
+            letter-spacing: -1px;
+        }
+
+        .textSafari.safari {
+            letter-spacing: -3.2px;
+        }
+
+        .toggle.complete .answer,
+        .answer.on {
+            font-weight: normal;
         }
     </style>
 </head>
@@ -372,7 +386,7 @@
                                                     </div>
                                                     <div class="text-exam flex-wrap">
                                                         <div class="blueT">
-                                                            <p style="letter-spacing: -1px;">
+                                                            <p class="textSafari">
                                                                 월요일, 수요일, 목요일(3번)에 방과 후에 운동장에서
                                                             </p>
                                                         </div>
@@ -640,6 +654,11 @@
                 $('.boxItem[data-active="on"] .toggle').addClass('complete');
             });
         });
+    </script>
+    <script type="text/javascript">
+        if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+            $('.textSafari').addClass('safari');
+        }
     </script>
 </body>
 

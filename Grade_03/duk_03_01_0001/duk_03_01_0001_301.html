@@ -54,12 +54,12 @@
         }
 
         .page_1 .innerTab_2 .wrapImg .wrapStar .starText {
-            max-width: 200px;
             position: absolute;
             left: 50%;
-            top: 55%;
+            top: 195px;
             transform: translate(-50%, -50%);
             text-align: center;
+            width: 260px;
         }
 
         .page_1 .innerTab_2 .wrapImg .boxText {
@@ -253,7 +253,7 @@
                                         <div class="wrapStar">
                                             <img src="./images/duk_03_01_0001_301/img_02.png" />
                                             <div class="starText">
-                                                나에게
+                                                나에게<br>
                                                 힘을 주는 말
                                             </div>
                                         </div>
@@ -490,6 +490,7 @@
                 $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
             });
+
             $(document).on('click', '.toggle', function () {
                 const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
                 const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
@@ -511,6 +512,14 @@
                 } else {
                     toggleBtn.parent().attr('data-active', 'on');
                 }
+            });
+
+            $(document).on('click', '.popup_closeBtn', function () {
+                $('.popBtn.popupOn').trigger('click');
+            });
+
+            $(document).on('click', '.btn-praise', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
             });
         });
 
