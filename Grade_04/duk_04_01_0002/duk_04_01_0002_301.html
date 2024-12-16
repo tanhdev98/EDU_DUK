@@ -104,15 +104,7 @@
             right: 28px;
         }
 
-        .btn-praise .item-title {
-            font-size: 28px;
-            text-align: center;
-            color: #fff;
-            font-family: 'YGJAL';
-        }
-
         .btn-praise {
-            width: 120px;
             right: -28px;
             top: 340px;
         }
@@ -420,7 +412,7 @@
                                     <div data-type="toggleButton">
                                         <div class="toggle box" data-toggle-obj="1" data-hover="">
                                             <div class="answer" data-toggle-target="1">
-                                                <div class="ls-2h">정직 </div>˜
+                                                <div class="ls-2h">정직 </div>
                                             </div>
                                         </div>
                                     </div> 과
@@ -508,34 +500,34 @@
             });
 
 
-            
+
         });
+        // toggle
         $(document).on('click', '.toggle', function () {
-                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
-                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
-                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
-                console.log(toggleBtn.length);
-                console.log(toggleCompleteBtn.length);
-                console.log($(this).parent());
+            const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+            const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+            const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
 
+            if (toggleBtn.length == toggleCompleteBtn.length) {
+                dapCheckBtn.addClass('reset');
+            } else {
+                dapCheckBtn.removeClass('reset');
+            }
+        });
 
-                if (toggleBtn.length == toggleCompleteBtn.length) {
-                    dapCheckBtn.addClass('reset');
-                } else {
-                    dapCheckBtn.removeClass('reset');
-                }
-            });
+        $(document).on('click', '.dapCheckBtn', function () {
+            const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+            const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
 
-            $(document).on('click', '.dapCheckBtn', function () {
-                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
-                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
-
-                if (!dapCheckBtn.hasClass('reset')) {
-                    toggleBtn.parent().removeAttr('data-active');
-                } else {
-                    toggleBtn.parent().attr('data-active', 'on');
-                }
-            });
+            if (!dapCheckBtn.hasClass('reset')) {
+                toggleBtn.parent().removeAttr('data-active');
+            } else {
+                toggleBtn.parent().attr('data-active', 'on');
+            }
+        });
+        $(document).on('click', '.btn-praise', function () {
+            $('[data-active="on"] .toggle').addClass('complete');
+        });
 
     </script>
 </body>

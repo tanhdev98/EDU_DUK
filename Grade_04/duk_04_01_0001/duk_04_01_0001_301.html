@@ -207,7 +207,9 @@
             right: 28px;
             bottom: 20px;
         }
-        .toggle.complete .answer, .answer.on{
+
+        .toggle.complete .answer,
+        .answer.on {
             font-weight: normal;
         }
     </style>
@@ -396,6 +398,7 @@
             $(document).on('click', '.additional-question', function () {
                 $('[data-type="toggleButton"][data-active="on"] .toggle').addClass('complete');
             });
+            // toggle
             $(document).on('click', '.toggle', function () {
                 const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
                 const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
@@ -417,6 +420,9 @@
                 } else {
                     toggleBtn.parent().attr('data-active', 'on');
                 }
+            });
+            $(document).on('click', '.btn-praise', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
             });
         });
     </script>

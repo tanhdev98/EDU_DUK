@@ -50,10 +50,15 @@
         /* page 2 */
         .page_2 .noteText {
             margin-top: 40px;
+            max-width: 100%;
+            min-width: 100%;
+            -webkit-overflow-scrolling: touch;
         }
 
         .page_2 .noteText .text-exam.flex-wrap {
             overflow-y: scroll;
+            min-height: 100%;
+            max-height: 100%;
         }
     </style>
 </head>
@@ -213,6 +218,20 @@
         });
 
 
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            if (/iPhone|iPod|iPad/.test(navigator.userAgent))
+                $('.noteText').wrap(function () {
+                    var $this = $(this);
+                    return $('<div />').css({
+                        width: $this.attr('width'),
+                        height: $this.attr('height'),
+                        overflow: 'auto',
+                        '-webkit-overflow-scrolling': 'touch'
+                    });
+                });
+        })
     </script>
 </body>
 
