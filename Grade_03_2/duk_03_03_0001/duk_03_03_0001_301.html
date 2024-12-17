@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        .page_1 .img_icon {
+            height: 100px;
+            width: auto;
+            object-fit: contain;
+            position: relative;
+            left: -610px;
+            top: 0px;
+        }
+
+        .page_1 .img_bg {
+            height: auto;
+            width: 1180px;
+            margin: -13px auto;
+            object-fit: contain;
+        }
+
+        .page_1 .noteText .text-exam.flex-wrap {
+            padding: 2px 20px 0;
+        }
+
+        .page_1 .title_text,
+        .page_1 .title-top {
+            position: absolute;
+        }
+
+        .page_1 .title-top {
+            color: #DE8694;
+            left: 105px;
+            top: 15px;
+        }
+
+        .page_1 .title_text {
+            top: 132px;
+            left: 127px;
+            width: 455px;
+            left: 100px;
+            text-align: center;
+        }
+
+        .page_1 .noteText {
+            box-shadow: none;
+            position: absolute;
+            padding: 0;
+            z-index: 2;
+            background: #f5f5f5;
+            width: 622px;
+            height: 309px;
+            left: 585px;
+            top: 117px;
+        }
+
+        .page_1 .noteText .textareaWrap {
+            width: 100%;
+            height: 100%;
+        }
+
+        .page_1 .noteText .blueT p {
+            text-align: left;
+        }
+
+        /* page 2  */
+        .page_2 .self-check {
+            margin-top: 70px;
+        }
+
+        /* popup */
+
+        .text_box {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .btn-praise {
+            right: -28px;
+            top: 340px;
+        }
+
+        .toggle .answer {
+            font-weight: normal !important;
+        }
+
+        .page_2 .flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .page_2 .self-check .checkWrap {
+            max-width: calc(50% - 10px);
+            margin-bottom: 0;
+        }
+
+        .noteText {
+            padding: 0;
+            height: 70px;
+            box-shadow: none;
+            width: calc(100% - 20px);
+            background-color: #f5f5f5;
+        }
+
+        .noteText .textLine {
+            padding-left: 15px;
+        }
+
+        .noteText .textareaWrap {
+            height: 100%;
+            padding: 0;
+        }
+
+        .page_2 .noteText .text-exam.flex-wrap {
+            padding: 0 20px;
+        }
+
+        .example-box {
+            margin-top: 10px;
+        }
+
+        .min[data-popup-page="1"] {
+            top: 200px;
+            left: 625px;
+            width: 633px;
+        }
+
+        /* title thinknet */
+        .pointContainer .pointTitle {
+            display: block;
+            text-align: center;
+        }
+
+        .pointContainer .pointTitle .titleText {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 45px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #ff6600;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+        }
+
+        .pointContainer .pointTitle .titleText:after,
+        .pointContainer .pointTitle .titleText:before {
+            position: absolute;
+            top: 0px;
+            height: 50px;
+            font-size: 40px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #e4caa9;
+        }
+
+        .pointContainer .pointTitle .titleText:after {
+            content: "[";
+            left: -20px;
+        }
+
+        .pointContainer .pointTitle .titleText:before {
+            content: "]";
+            right: -20px;
+        }
+
+        .popup_pages .group-box .titleBox {
+            width: fit-content;
+            margin: 10px auto 0;
+            padding: 5px 15px;
+            background-color: #fff;
+            border: 4px solid #EFCFA6;
+            border-radius: 5px;
+            position: relative;
+            width: 700px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup_pages .group-box .titleBox span {
+            position: absolute;
+            left: 50%;
+            bottom: -100px;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 100px;
+            background: url('./images/duk_03_03_0001_301/img_down.png') no-repeat center center / contain;
+        }
+
+        .popup_pages .group-box .titleBox::before {
+            content: "";
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            background: url('./images/duk_03_03_0001_301/img_arrow.png') no-repeat center center / contain;
+            left: -119px;
+            top: 50px;
+        }
+
+        .popup_pages .group-box .titleBox::after {
+            content: "";
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            background: url('./images/duk_03_03_0001_301/img_arrow.png') no-repeat center center / contain;
+            right: -119px;
+            top: 50px;
+            transform: scaleX(-1);
+        }
+
+        .box-text {
+            width: 390px;
+            height: 260px;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+        }
+
+        .box-text.pink {
+            background-color: #FFDBDF;
+            top: 340px;
+            left: 50px;
+        }
+
+        .box-text.green {
+            background-color: #F2F7C8;
+            top: 340px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .box-text.blue {
+            background-color: #E7F4F9;
+            top: 340px;
+            right: 50px;
+        }
+
+        .box-text .wrapToggle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            padding: 5px;
+        }
+
+        .box-text .wrapToggle .toggle {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pointContainer .dapCheckBtn {
+            right: 28px;
+            bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="twoLine">
+            <div class="title-icon yellow">실천 <em>탄탄</em></div>
+            <div class="title-text">가족과 행복하게 지내려면 내가 어떤 노력을 해야 하는지 ‘가족 행복 비법서’ 1장에 적어 봅시다.</div>
+        </header>
+        <main>
+
+
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="가족과 행복하게 지내려면 내가 어떤 노력을 해야 하는지 ‘가족 행복 비법서’ 1장에 적어 봅시다."
+                        class="twoLine">활동</li>
+                    <li data-hover="" data-text="가족과 행복하게 지내기 위해서 ‘가족 행복 비법서’ 1장에 적은 내용을 5일 동안 실천해 봅시다."
+                        class="twoLine">자기 점검</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="title-top">가족 행복 비법서 1장</div>
+                                    <img src="./images/duk_03_03_0001_301/img_icon.png" alt="" class="img_icon">
+                                    <img src="./images/duk_03_03_0001_301/img_bg.png" alt="" class="img_bg">
+                                    <div class="title_text">내가 가질 수 있는 마음</div>
+                                    <div class="noteText noLine">
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p>가족을 슬프거나 힘들게 하지 않겠다는 마음을 가져야 합니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="title-top">가족 행복 비법서 1장</div>
+                                    <img src="./images/duk_03_03_0001_301/img_icon.png" alt="" class="img_icon">
+                                    <img src="./images/duk_03_03_0001_301/img_bg.png" alt="" class="img_bg">
+                                    <div class="title_text">내가 할 수 있는 행동</div>
+                                    <div class="noteText noLine">
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p>약속 잘 지켜야 하고 밥을 골고루 잘 먹어야 합니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3" data-quiz="toggle">
+                                    <div class="title-top">가족 행복 비법서 1장</div>
+                                    <img src="./images/duk_03_03_0001_301/img_icon.png" alt="" class="img_icon">
+                                    <img src="./images/duk_03_03_0001_301/img_bg.png" alt="" class="img_bg">
+                                    <div class="title_text">내가 할 수 있는 말</div>
+                                    <div class="noteText noLine">
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p>감사합니다. 사랑합니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="study_guide" style="right: 100px; top: 10px;"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
+                        <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="1"></div>
+                        <div class="self-check">
+                            <div class="flex">
+                                <div class="checkWrap">
+                                    <div class="text_box">
+                                        <div class="noteText noLine">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    5월 12일
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="icon-box">
+                                        <div class="wrap">
+                                            <div class="button-smile icon1"></div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="button-smile icon2"></div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="button-smile icon3"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="checkWrap">
+                                    <div class="text_box">
+                                        <div class="noteText noLine">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    5월 13일
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="icon-box">
+                                        <div class="wrap">
+                                            <div class="button-smile icon1"></div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="button-smile icon2"></div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="button-smile icon3"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="checkWrap">
+                                    <div class="text_box">
+                                        <div class="noteText noLine">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    5월 14일
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="icon-box">
+                                        <div class="wrap">
+                                            <div class="button-smile icon1"></div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="button-smile icon2"></div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="button-smile icon3"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="checkWrap">
+                                    <div class="text_box">
+                                        <div class="noteText noLine">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    5월 15일
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="icon-box">
+                                        <div class="wrap">
+                                            <div class="button-smile icon1"></div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="button-smile icon2"></div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="button-smile icon3"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="checkWrap">
+                                    <div class="text_box">
+                                        <div class="noteText noLine">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    5월 16일
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="icon-box">
+                                        <div class="wrap">
+                                            <div class="button-smile icon1"></div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="button-smile icon2"></div>
+                                        </div>
+                                        <div class="wrap">
+                                            <div class="button-smile icon3"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="example-box">
+                                <div class="exampleIcoWrap">
+                                    <div class="example ico-01">
+                                        매우 그렇다
+                                    </div>
+                                    <div class="example ico-02">
+                                        그렇다
+                                    </div>
+                                    <div class="example ico-03">
+                                        좀 더 노력해야 한다
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="btn-praise right popBtn footer-item" style="right: -28px; top: 317px;"
+                            data-popup-btn="2">
+                            <div class="item-title">우리<br>배움</div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        <p>
+                            ‘가족 행복 비법서’ 1장에 적은 내용을 실천한 날짜를 적어봐요.
+                        </p>
+                    </div>
+                </li>
+                <li class="fullLine whole image pointContainer" data-popup-page="2" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="pointTitle">
+                            <div class="titleText">가족의 행복은 소중해요</div>
+                            <div class="group-box">
+                                <div class="titleBox">
+                                    행복한 가족의 비법
+                                    <span></span>
+                                </div>
+                                <div class="box-text pink">
+                                    <div class="wrapToggle" data-type="toggleButton">
+                                        <div class="toggle" data-toggle-obj="1">
+                                            <div class="answer on" data-toggle-target="1">
+                                                <div class="ls-1h">마음</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-text green">
+                                    <div class="wrapToggle" data-type="toggleButton">
+                                        <div class="toggle" data-toggle-obj="2">
+                                            <div class="answer on" data-toggle-target="2">
+                                                <div class="ls-1h">행동</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-text blue">
+                                    <div class="wrapToggle" data-type="toggleButton">
+                                        <div class="toggle" data-toggle-obj="3">
+                                            <div class="answer on" data-toggle-target="3">
+                                                <div class="ls-1h">말</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="dapCheckBtn" data-answer-btn=""></button>
+
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+            });
+            $(document).on('click', '.page_1 .innerTab_2 .writeBtn', function () {
+                if ($(this).hasClass('reset')) {
+                    $(this).parent().find('.img_2').attr('src', './images/duk_03_01_0003_301/star-green.png');
+                } else {
+                    $(this).parent().find('.img_2').attr('src', './images/duk_03_01_0003_301/star-white.png');
+                }
+            });
+
+            // switch tab
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+
+
+            // toggle
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    dapCheckBtn.addClass('reset');
+                } else {
+                    dapCheckBtn.removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!dapCheckBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
+            });
+            $(document).on('click', '.btn-praise', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+            });
+        });
+    </script>
+</body>
+
+</html>
