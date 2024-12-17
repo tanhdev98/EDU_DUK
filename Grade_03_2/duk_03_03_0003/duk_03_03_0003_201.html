@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        .page_1 .innerTab_2 .flex {
+            display: flex;
+            justify-content: space-around;
+            height: 585px;
+            align-items: end;
+        }
+
+        .page_1 .innerTab_2 img {
+            width: 420px;
+            height: 420px;
+        }
+
+        .page_1 .innerTab_2 .title {
+            position: absolute;
+            color: #fff;
+            z-index: 2;
+        }
+
+        .page_1 .innerTab_2 .content {
+            position: absolute;
+            text-align: center;
+        }
+
+        .page_1 .innerTab_2 .title1 {
+            left: 205px;
+            top: 180px;
+        }
+
+        .page_1 .innerTab_2 .title2 {
+            left: 640px;
+            top: 15px;
+        }
+
+        .page_1 .innerTab_2 .title3 {
+            left: 1078px;
+            top: 180px;
+        }
+
+        .page_1 .innerTab_2 .content1 {
+            left: 45px;
+            top: 335px;
+        }
+
+        .page_1 .innerTab_2 .content2 {
+            left: 490px;
+            top: 135px;
+        }
+
+        .page_1 .innerTab_2 .content3 {
+            left: 898px;
+            top: 310px;
+        }
+
+        /* popup */
+        .page_1 .additional-question {
+            position: absolute;
+            right: 0;
+        }
+
+        .innerSlider_tabs>li {
+            background-color: #F3DEC0;
+        }
+
+        .innerSlider_tabs>li.on {
+            background-color: #F3B05B;
+        }
+
+        .innerButtonContainer {
+            position: absolute;
+            right: 40px;
+            top: 52px;
+        }
+
+        .innerButtonContainer::before {
+            display: none;
+        }
+
+        .popup_pages>li.image .basicSlider {
+            padding: 0;
+        }
+
+        .popup_pages .contentsBox .basicSlider_slides>li {
+            padding: 0;
+        }
+
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: auto;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 300px;
+            padding: 20px;
+        }
+
+        [data-type="toggleButton"] {
+            height: 100%;
+        }
+
+        [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .toggle.complete .answer,
+        .answer.on {
+            font-weight: normal;
+        }
+
+        .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+
+        .toggle {
+            display: flex;
+        }
+
+        /* Page 2 */
+
+        .page_2 .noteText p.dot {
+            display: block;
+        }
+
+        .page_2 .noteText .textareaWrap {
+            height: 365px;
+        }
+
+        .buttonContainer {
+            right: 28px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue" data-show="1">생각 <em>쑥쑥</em></div>
+            <div class="title-text">형제자매와 있었던 일을 함께 나누며 질문에 답해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="형제자매와 있었던 일을 함께 나누며 질문에 답해 봅시다.">활동 1</li>
+                    <li data-hover="" data-text="형제자매끼리 사이좋게 지내기 위해 가져야 하는 마음과 태도를 이야기해 봅시다." class="twoLine">활동 2</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="how-to-box">
+                                        <div class="title-box">
+                                            <div class="title">활동 방법</div>
+                                        </div>
+                                    </div>
+                                    <ul class="how-to-play">
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                1
+                                            </div>
+                                            <div class="text">
+                                                친구들과 둥그렇게 앉습니다.
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                2
+                                            </div>
+                                            <div class="text" style="letter-spacing: -1.4px;">
+                                                나의 형제자매를 소개하고, 형제자매와 즐거웠던 경험이나 갈등
+                                                했던 상황 중 가장 기억에 남는 일을 한 가지씩 이야기합니다.
+                                                형제자매가 없는 친구들은 친척과의 경험이나 주위에서 들었던
+                                                이야기를 해도 좋습니다.
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                3
+                                            </div>
+                                            <div class="text" style="letter-spacing: -2px;">
+                                                이야기가 끝나면 아래 질문을 읽고 서로의 생각을 나눠 봅시다.
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
+                                    <div class="flex">
+                                        <div class="item">
+                                            <div class="title title1">1</div>
+                                            <img src="./images/duk_03_03_0003_201/img_01.png" alt="">
+                                            <div class="content content1">형제자매와 다툰 후<br>내 마음은 어떨까?</div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="title title2">2</div>
+                                            <img style="position: relative; top: -165px;"
+                                                src="./images/duk_03_03_0003_201/img_01.png" alt="">
+                                            <div class="content content2">
+                                                형제자매끼리<br>
+                                                사이좋게 지내면<br>
+                                                어떤 점이 좋을까?
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="title title3">3</div>
+                                            <img src="./images/duk_03_03_0003_201/img_01.png" alt="">
+                                            <div class="content content3">형제자매와의 갈등을<br>지켜보는 다른 가족의<br>마음은 어떨까?</div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="noteText noteLine green">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p class="dot">
+                                        미워하지 않고 용서하는 마음
+                                    </p>
+                                    <p class="dot">
+                                        돕고 격려해 주려는 마음
+                                    </p>
+                                    <p class="dot">
+                                        상대의 이야기에 귀 기울이는 태도
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image" data-popup-page="1" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="innerButtonContainer">
+                                <ul class="innerSlider_tabs">
+                                    <li data-hover="" class="on">1</li>
+                                    <li data-hover="" class="">2</li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            형제자매끼리 사이좋게 지내려면<br>
+                                            어떤 마음과 태도를 가져야 할까요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="5" data-hover="">
+                                                    <div class="answer" data-toggle-target="5">
+                                                        <div class="ls-2h">
+                                                            <p class="dot">
+                                                                내 생각만 고집하지 말고 상대방의 생각도 존중해야 합니다.
+                                                            </p>
+                                                            <p class="dot">
+                                                                부모님의 마음도 헤아려서 서로 양보하는 마음을 <br>가져야 합니다.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            형제자매끼리 사이좋게 지내는 것은<br>
+                                            가족의 행복과 어떤 관련이 있을까요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="6" data-hover="">
+                                                    <div class="answer" data-toggle-target="6">
+                                                        <div class="ls-2h">
+                                                            <p class="dot">가족은 영원히 바꿀 수 없는 소중한 존재입니다.</p>
+                                                            <p class="dot">우애 있는 형제자매는 부모님 마음을 기쁘게 해 드릴 수<br>있습니다.</p>
+                                                            <p class="dot">형제자매끼리 사이가 좋으면 가족이 평화롭고 행복할 수<br>있습니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title-text').addClass('gap');
+                } else {
+                    $('header .title-text').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+
+            });
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    dapCheckBtn.addClass('reset');
+                } else {
+                    dapCheckBtn.removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!dapCheckBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
+            });
+
+            $(document).on('click', '.additional-question', function () {
+                $('[data-type="toggleButton"][data-active="on"] .toggle').addClass('complete');
+            });
+        });
+
+    </script>
+</body>
+
+</html>
