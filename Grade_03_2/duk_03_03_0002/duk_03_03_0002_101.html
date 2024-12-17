@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        .additional-question {
+            position: absolute;
+            right: 0px;
+            top: 0px;
+        }
+
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: fit-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+        }
+
+        [data-type="toggleButton"] {
+            height: fit-content;
+            margin-top: 43px;
+        }
+
+        [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+        }
+
+        .flex {
+            display: flex;
+            margin-top: 40px;
+        }
+
+        .flex .items:first-child {
+            width: 3000px;
+        }
+
+        .flex .items:last-child {
+            display: flex;
+            justify-content: center;
+            align-items: end;
+        }
+
+        .flex .items:last-child img {
+            width: 300px;
+        }
+
+        .flex .items {
+            width: 100%;
+        }
+
+        .noteText {
+            height: 470px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="twoLine">
+            <div class="title-icon blue" data-show="1">실천 <em>똑똑</em></div>
+            <div class="title-text">다음 이야기를 읽고 어떤 생각이 드는지 이야기해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
+                                    <div class="flex">
+                                        <div class="items">
+                                            <div class="noteText noLine pink">
+                                                조선 시대 학자 이현보는 효자로 유명했습니다.
+                                                그는 벼슬살이를 할 때에도 가까이서 부모님을 모시고 싶다는 생각에 지방의 벼슬자리를 원했고, 교통이 발달하지 않았던 시절이라
+                                                자신이 일하던 곳에서 부모님이 계신 곳까지 가는 데 꼬박 3일이 걸렸지만 부모님을 찾아뵙는 일을 게을리하지
+                                                않았습니다.
+
+                                            </div>
+                                        </div>
+                                        <div class="items">
+                                            <img src="./images/duk_03_03_0002_101/img_01.jpg" />
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="flex">
+                                        <div class="items">
+                                            <div class="noteText noLine pink">
+                                                또한 그는 부모님을 잘 모시려고 고향에 정자를 만들어 그 정자의 이름을 ‘애일당’으로 지었습니다. ‘애일’은 ‘하루하루의 날을
+                                                아낀다. ’는 뜻으로, 나이 드신 부모님을 모실 날이 얼마 남지 않았다는 안타까운 마음을 담고 있습니다.<br>
+                                                그는 70세를 바라보는 나이에도 아버지와 마을 노인들을 즐겁게 해 드리려고 어린아이처럼
+                                            </div>
+                                        </div>
+                                        <div class="items">
+                                            <img src="./images/duk_03_03_0002_101/img_01.jpg" />
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3" data-quiz="toggle">
+                                    <div class="flex">
+                                        <div class="items">
+                                            <div class="noteText noLine pink">
+                                                색동옷을 입고 나이가 들어 하얗게 변한 머리카락을 휘날리며 애일당에서 춤을 추기도 했습니다.
+                                            </div>
+                                        </div>
+                                        <div class="items">
+                                            <img src="./images/duk_03_03_0002_101/img_01.jpg" />
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image" data-popup-page="1" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="popup-boxes">
+                            <div class="box-item ico_que">
+                                이야기 속 인물은 어떤 마음으로 위와 같은 행동을 했을까요?
+                                <img src="./common/images/ico_que.png" class="ico" />
+                            </div>
+                            <div class="box-item ico_ans">
+                                <img src="./common/images/ico_ans.png" class="ico" />
+                                <div data-type="toggleButton">
+                                    <div class="toggle examBtn box" data-toggle-obj="1" data-hover>
+                                        <div class="answer" data-toggle-target="1">
+                                            <div class="ls-2h">
+                                                <p>부모님을 잘 모시고 싶은 마음이었을 것입니다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title-text').addClass('gap');
+                } else {
+                    $('header .title-text').removeClass('gap');
+                }
+
+            });
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    examViewBtn.addClass('reset');
+                } else {
+                    examViewBtn.removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!examViewBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
+            });
+
+            $(document).on('click', '[data-popup-btn="1"]', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+            });
+        });
+
+    </script>
+</body>
+
+</html>

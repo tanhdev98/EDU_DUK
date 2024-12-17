@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        /* Page 1 */
+
+
+        .page_1 .flex {
+            display: flex;
+            gap: 20px;
+            width: 88%;
+            margin: 20px auto 0;
+        }
+
+        .page_1 .flex .items {
+            flex: 1;
+        }
+
+        .page_1 .flex .items .imgWrap {
+            border: 2px solid #F3E7D6;
+            width: 100%;
+            height: 300px;
+            border-radius: 20px;
+        }
+
+        .page_1 .flex .items img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .page_1 .flex .items .toggle.box {
+            margin-top: 20px;
+            display: block;
+            height: 120px;
+        }
+
+        .page_1 .flex .items .toggle .answer {
+            height: 100%;
+            text-align: center;
+        }
+
+        .page_1 [data-type="toggleButton"] {
+            height: auto;
+        }
+
+        .page_1 .buttonContainer {
+            right: 28px;
+        }
+
+        [data-popup-page="1"] {
+            top: 203px;
+            left: 498px;
+            width: 760px;
+        }
+
+        /* Page 2 */
+
+        .page_2 .noteText {
+            margin-top: 60px;
+        }
+
+        .additional-question {
+            position: absolute;
+            right: 0px;
+            top: 0px;
+        }
+
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: fit-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+        }
+
+        .popup-boxes [data-type="toggleButton"] {
+            height: fit-content;
+            margin-top: -10px;
+        }
+
+        .popup-boxes [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="twoLine">
+            <div class="title-icon blue" data-show="1">실천 <em>쑥쑥</em></div>
+            <div class="title-text">효의 의미를 알아보며 내가 할 수 있는 효의 실천 방법을 찾아 봅시다. </div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="효의 의미를 알아보며 내가 할 수 있는 효의 실천 방법을 찾아 봅시다." class="twoLine">물음</li>
+                    <li data-hover="" data-text="내가 생각하는 효의 의미를 써 봅시다.">활동</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="1"></div>
+                                    <div class="flex">
+                                        <div class="items">
+                                            <div class="imgWrap">
+                                                <img src="./images/duk_03_03_0002_201/img_01.png">
+                                            </div>
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="1">
+                                                    <div class="answer" data-toggle-target="1">
+                                                        <div class="ls-2h">감사함 표현하기</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="items">
+                                            <div class="imgWrap">
+                                                <img src="./images/duk_03_03_0002_201/img_02.png">
+                                            </div>
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="2">
+                                                    <div class="answer" data-toggle-target="2">
+                                                        <div class="ls-2h">
+                                                            청소, 정리 정돈 등<br>
+                                                            내가 할 일은 스스로 하기
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="flex">
+                                        <div class="items">
+                                            <div class="imgWrap">
+                                                <img src="./images/duk_03_03_0002_201/img_03.png">
+                                            </div>
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="3">
+                                                    <div class="answer" data-toggle-target="3">
+                                                        <div class="ls-2h">
+                                                            부모님의 어깨<br>
+                                                            주물러 드리기
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="items">
+                                            <div class="imgWrap">
+                                                <img src="./images/duk_03_03_0002_201/img_04.png">
+                                            </div>
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="4">
+                                                    <div class="answer" data-toggle-target="4">
+                                                        <div class="ls-2h">
+                                                            할머니, 할아버지 찾아뵙기,<br>
+                                                            안부 전화 자주 드리기
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <a class="videoSubPlayBtn youtube" data-youtube-id="R34j7zObB-0" target="_blank">아빠와 함께한 계절</a>
+                        <div class="popBtn additional-question" data-popup-btn="2">추가 질문</div>
+                        <div class="noteText noteLine orange">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p>효란 할아버지, 할머니, 그리고 부모님의 마음을 편안하고 즐겁게 해 드리는 것입니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag="">
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        <p>
+                            옛이야기와 오늘날 효의 실천 모습에는 공통된 마음이 있습니다. 감사하는 마음, 공경하는 마음, 사랑하는 마음이 담겨있다는 것과 시대가 바뀌었어도 효의 마음만은 변치
+                            않고 이어지고 있는 소중한 정신입니다.
+                        </p>
+                    </div>
+                </li>
+                <li class="fullLine whole image" data-popup-page="2" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="popup-boxes">
+                            <div class="box-item ico_que">
+                                부모님에 대한 예절에는 어떤 것이 있을까요?
+                                <img src="./common/images/ico_que.png" class="ico" />
+                            </div>
+                            <div class="box-item ico_ans">
+                                <img src="./common/images/ico_ans.png" class="ico" />
+                                <div data-type="toggleButton">
+                                    <div class="toggle examBtn box" data-toggle-obj="1" data-hover>
+                                        <div class="answer" data-toggle-target="1">
+                                            <div class="ls-2h">
+                                                <p class="dot">밝은 표정으로 인사합니다.</p><br>
+                                                <p class="dot">부모님 심부름을 잘 합니다.</p><br>
+                                                <p class="dot">새로운 음식은 먼저 드시게 합니다.</p><br>
+                                                <p class="dot">바른 말씨를 쓰고 행동을 침착하게 합니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title-text').addClass('gap');
+                } else {
+                    $('header .title-text').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+            });
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+        });
+
+    </script>
+</body>
+
+</html>
