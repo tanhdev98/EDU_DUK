@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        .page_1 .how-to-play li {
+            margin: 20px 0 25px;
+        }
+
+
+        .voca1 {
+            position: absolute;
+            top: -97px;
+            left: 702px;
+        }
+
+        .voca::after {
+            right: -16px;
+            bottom: -18px;
+        }
+
+        [data-popup-page="1"] {
+            top: 123px;
+            left: 358px;
+            width: max-content;
+        }
+
+        .wrapImg {
+            text-align: center;
+        }
+
+        .wrapImg img {
+            width: fit-content;
+            height: 500px;
+            object-fit: contain;
+            border-radius: 30px;
+            width: fit-content;
+        }
+
+        .additional-question {
+            position: absolute;
+            right: 0px;
+            top: 0px;
+        }
+
+        .innerSlider_tabs>li {
+            background-color: #F3DEC0;
+        }
+
+        .innerSlider_tabs>li.on {
+            background-color: #F3B05B;
+        }
+
+        .innerButtonContainer {
+            position: absolute;
+            right: 80px;
+            top: 86px;
+        }
+
+        .innerButtonContainer::before {
+            display: none;
+        }
+
+        /* Popup page */
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+            text-align: center;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: fit-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .popup_pages [data-type="toggleButton"] {
+            height: fit-content;
+            align-items: center;
+            display: flex;
+            width: 100% !important;
+        }
+
+        [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            height: 100%;
+        }
+
+        .popup-pages .ls-2h {
+            width: 100%;
+        }
+
+        .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+
+        .title-item {
+            position: absolute;
+            padding: 5px 20px;
+            background-color: #BF9000;
+            color: #fff;
+            border-radius: 10px;
+        }
+
+        .title-1 {
+            top: 50px;
+            left: 240px;
+        }
+
+        .title-2 {
+            top: 260px;
+            left: 240px;
+        }
+
+        .noteText {
+            position: absolute;
+            box-shadow: none;
+            height: 120px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 0;
+            width: 830px;
+        }
+
+        .noteText.noLine .textareaWrap {
+            height: 100%;
+        }
+
+        .noteText .text-exam.flex-wrap {
+            padding: 0 20px;
+        }
+
+        .note1 {
+            top: 120px;
+            left: 240px;
+        }
+
+        .note2 {
+            top: 330px;
+            left: 240px;
+        }
+
+        .icon-char {
+            top: 50px;
+        }
+
+        [data-popup-page="3"] {
+            top: 195px;
+            left: 859px;
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon pink" data-show="1">마음 <em>쑥쑥</em></div>
+            <div class="title-text ">가족과 함께 지키고 싶은 약속을 가훈으로 만들어 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <span class="voca voca1" data-hover="" data-popup-btn="1">가훈</span>
+                        <div class="popBtn additional-question" data-popup-btn="2">추가 질문</div>
+                        <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="3"></div>
+                        <div class="wrapImg">
+                            <img src="./images/duk_03_03_0004_201/img_01.png" />
+                            <div class="title-item title-1">우리 집 가훈</div>
+                            <div class="title-item title-2">이 가훈을 만든 까닭</div>
+                            <div class="noteText noLine note1">
+                                <div class="textareaWrap">
+                                    <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                        data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                        autocomplete="off" spellcheck="false"></textarea>
+                                </div>
+                                <div class="text-exam flex-wrap">
+                                    <div class="blueT">
+                                        <p>웃으면서 살자.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="noteText noLine note2">
+                                <div class="textareaWrap">
+                                    <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                        data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                        autocomplete="off" spellcheck="false"></textarea>
+                                </div>
+                                <div class="text-exam flex-wrap">
+                                    <div class="blueT">
+                                        <p>나는 우리 가족이 많이 웃기를 바라기 때문이다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min word" data-popup-page="1" data-drag="">
+                    <h2>낱말 익히기</h2>
+                    <div class="popup_contents ls1">
+                        <p>
+                            <span style="color: #7142B8;">가훈</span>
+                        </p>
+                        <p>집안의 어른이 자손들에게 알려주는 가르침.</p>
+                        <p> 가족 구성원들이 생활 속에서 지키는 약속. </p>
+                    </div>
+                </li>
+                <li class="fullLine whole image" data-popup-page="2" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="innerButtonContainer">
+                                <ul class="innerSlider_tabs">
+                                    <li data-hover="" class="on">1</li>
+                                    <li data-hover="">2</li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1 on">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            여러분의 가족은 가훈이 있나요?<br>
+                                            그 가훈의 의미는 무엇인가요?
+                                            <img src="./common/images/ico_que.png" class="ico" />
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico" />
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="5" data-hover>
+                                                    <div class="answer" data-toggle-target="5">
+                                                        <div class="ls-2h">
+                                                            <p class="dot">가훈이 있으면 가족끼리 대화할 때 도움이 됩니다. </p><br>
+                                                            <p class="dot"> 가족 모두가 같은 목표를 가지고 노력할 수 있습니다.</p><br>
+                                                            <p class="dot">가훈을 잘 지키면서 올바른 행동을 배울 수 있습니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            우리 가족에게 가훈이 있다면 어떤 점이 좋을까요?
+                                            <img src="./common/images/ico_que.png" class="ico" />
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico" />
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="6" data-hover>
+                                                    <div class="answer" data-toggle-target="6">
+                                                        <div class="ls-2h">
+                                                            <p class="dot">반성하는 시간을 갖습니다.</p><br>
+                                                            <p class="dot">잘못된 점은 고치려고 노력합니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="min" data-popup-page="3" data-drag="">
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        <p>
+                            우리 집 가훈이 있다면 친구에게 소개해 봐요.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+
+                var index = $(this).index();
+                $('.title-icon').removeClass('hide').hide();
+                $('.title-icon').filter(function () {
+                    var dataShow = $(this).data('show').toString().split(',').map(Number);
+                    return dataShow.includes(index + 1);
+                }).show();
+            });
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                KmAudioPlayer.buttonClick();
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(document).on('click', '.additional-question', function () {
+                $('[data-type="toggleButton"][data-active="on"] .toggle').addClass('complete');
+            });
+        });
+    </script>
+</body>
+
+</html>

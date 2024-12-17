@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        .toggle.complete .answer,
+        .answer.on {
+            font-weight: normal;
+        }
+
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        .topNote {
+            display: flex;
+            align-items: center;
+        }
+
+        .topNote span {
+            color: #E69AA5;
+        }
+
+        .topNote img {
+            width: 80px;
+        }
+
+        .flex {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 20px;
+            height: 350px;
+            width: 95%;
+        }
+
+        .flex .item {
+            position: relative;
+        }
+
+        .flex img {
+            object-fit: fill;
+            height: 100%;
+            width: 100%;
+        }
+
+        .flex .toggle {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            background-color: transparent;
+            justify-content: center;
+        }
+
+        .flex .toggle .answer {
+            text-align: center;
+        }
+
+        .bird {
+            position: absolute;
+            top: 30px;
+            right: 0;
+            width: 150px;
+            z-index: 1;
+            transform: rotate(-6deg);
+        }
+
+        .noteText {
+            position: absolute;
+            top: -20px;
+            box-shadow: none;
+        }
+
+        .btn-praise {
+            top: 290px;
+            right: -28px;
+        }
+
+        /* title thinknet */
+        .pointContainer .pointTitle {
+            display: block;
+            text-align: center;
+        }
+
+        .pointContainer .pointTitle .titleText {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 45px;
+            line-height: 50px;
+            font-family: 'YGJAL';
+            color: #ff6600;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+        }
+
+        .pointContainer .pointTitle .titleText:after,
+        .pointContainer .pointTitle .titleText:before {
+            position: absolute;
+            top: 0px;
+            height: 50px;
+            font-size: 40px;
+            line-height: 50px;
+            font-family: 'YGJAL';
+            color: #e4caa9;
+        }
+
+        .pointContainer .pointTitle .titleText:after {
+            content: "[";
+            left: -20px;
+        }
+
+        .pointContainer .pointTitle .titleText:before {
+            content: "]";
+            right: -20px;
+        }
+
+        .popup_pages .items .item {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .popup_pages .items .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        .popup_pages .items .item .toggle {
+            width: fit-content;
+        }
+
+        .pointContainer .dapCheckBtn {
+            right: 48px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="twoLine">
+            <div class="title-icon pink" data-show="1,2">마음 <em>탄탄</em></div>
+            <div class="title-text ">내가 만든 가훈과 엽서를 가족에게 선물하고 가족의 답글을 적어
+                엽서 뒷면에 붙여 봅시다.
+            </div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <img src="./images/duk_03_03_0004_301/img_04.png" class="bird">
+                                    <div class="topNote">
+                                        <img src="./images/duk_03_03_0004_301/img_01.png">
+                                        <span>가족 행복 비법서 4장</span>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="item">
+                                            <img src="./images/duk_03_03_0004_301/img_03.png" />
+                                            <div data-type="toggleButton" class="box">
+                                                <div class="toggle examBtn box" data-toggle-obj="1">
+                                                    <div class="answer" data-toggle-target="1">
+                                                        <div class="ls-2h">
+                                                            형, 편지 잘 받았어.<br>
+                                                            앞으로도 사이좋게 지내자.<br>
+                                                            고마워.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="./images/duk_03_03_0004_301/img_02.png" />
+                                            <div data-type="toggleButton" class="box">
+                                                <div class="toggle examBtn box" data-toggle-obj="2">
+                                                    <div class="answer" data-toggle-target="2">
+                                                        <div class="ls-2h">
+                                                            우리 딸!<br>
+                                                            멋진 가훈 선물 고마워.<br>
+                                                            사랑해.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <img src="./images/duk_03_03_0004_301/img_04.png" class="bird">
+                                    <div class="topNote">
+                                        <img src="./images/duk_03_03_0004_301/img_01.png">
+                                        <span>가족 행복 비법서 4장</span>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="item">
+                                            <img src="./images/duk_03_03_0004_301/img_02.png" />
+                                            <div data-type="toggleButton" class="box">
+                                                <div class="toggle examBtn box" data-toggle-obj="3">
+                                                    <div class="answer" data-toggle-target="3">
+                                                        <div class="ls-2h">
+                                                            동생아, 고마워!<br>
+                                                            네가 있어서 행복해.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="./images/duk_03_03_0004_301/img_03.png" />
+                                            <div class="noteText noteLine note2">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="resetBtn only-reset" data-type="reset" data-hover=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn-praise right popBtn footer-item" data-popup-btn="1">
+                            <div class="item-title">핵심 <br>정리</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image pointContainer" data-popup-page="1" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="pointTitle">
+                            <div class="titleText">나를 알아봐요.</div>
+                        </div>
+                        <div class="items">
+                            <div class="item" data-type="toggleButton">
+                                가족과 함께 지키고 싶은 약속을
+                                <div class="toggle box" data-toggle-obj="4">
+                                    <div class="answer" data-toggle-target="4">
+                                        <div>가훈</div>
+                                    </div>
+                                </div>
+                                으로 만들어 봅시다.
+                            </div>
+                            <div class="item" data-type="toggleButton">
+                                가족의 행복한 순간이 담긴 장면을
+                                <div class="toggle box" data-toggle-obj="5">
+                                    <div class="answer" data-toggle-target="5">
+                                        <div>엽서</div>
+                                    </div>
+                                </div>
+                                로 그려 봅시다.
+                            </div>
+
+                        </div>
+                    </div>
+                    <button class="dapCheckBtn" data-answer-btn=""></button>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+                var index = $(this).index();
+                $('.title-icon').removeClass('hide').hide();
+                $('.title-icon').filter(function () {
+                    var dataShow = $(this).data('show').toString().split(',').map(Number);
+                    return dataShow.includes(index + 1);
+                }).show();
+            });
+
+            // toggle
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    dapCheckBtn.addClass('reset');
+                } else {
+                    dapCheckBtn.removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!dapCheckBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
+            });
+            $(document).on('click', '.btn-praise', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+            });
+            $(document).on('click', '.resetBtn', function () {
+                KmAudioPlayer.buttonClick();
+                $('.textLine').val('');
+            });
+        });
+    </script>
+</body>
+
+</html>

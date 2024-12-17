@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        .endUnit {
+            position: relative;
+            top: -5px;
+        }
+
+        /* Page 2 */
+        .page_2 .self-check {
+            margin-top: 50px;
+        }
+
+        /* Page 1 */
+        .dragDropContainer.bogi .lineBox {
+            width: 1250px;
+            height: 100px;
+        }
+
+        .page_1 .js-dragObj {
+            position: absolute;
+        }
+
+        .page_1 .js-dragObj.d1 {
+            top: 20px;
+            left: 159px;
+        }
+
+        .page_1 .js-dragObj.d2 {
+            top: 20px;
+            left: 320px;
+        }
+
+        .page_1 .js-dragObj.d3 {
+            top: 20px;
+            left: 495px;
+        }
+
+        .page_1 .js-dragObj.d4 {
+            top: 20px;
+            left: 680px;
+        }
+
+        .page_1 .js-dragObj.d5 {
+            top: 20px;
+            left: 820px;
+        }
+
+        .page_1 .js-dragObj.d6 {
+            top: 20px;
+            left: 990px;
+        }
+
+        .page_1 .bgDrop {
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .page_1 .flex {
+            display: flex;
+            gap: 30px;
+            flex-direction: column;
+        }
+
+        .page_1 .flex img {
+            height: 380px;
+        }
+
+        .flex .items {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .flex .items::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        .item-1:before {
+            top: 57px;
+        }
+
+        .item-2:before {
+            top: 53px;
+        }
+
+        .item-3:before {
+            top: 57px;
+        }
+
+        .item-4:before {
+            top: 56px;
+        }
+
+        .items .js-dropArea {
+            position: relative;
+            width: 200px;
+            height: 70px;
+            background: #F7F7F7;
+            border-radius: 15px;
+            display: inline-block;
+            bottom: -18px;
+        }
+
+        .drag-zone>.js-dragObj.dragObjComplete {
+            display: none;
+        }
+
+        .text-item {
+            position: absolute;
+        }
+
+        .items .js-dropArea .js-dragObj {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #006EE6;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="gap">
+            <div class="endUnit" data-show="1,2">단원 마무리</div>
+            <div class="title-text ">보기에서 알맞은 낱말을 찾아 다음 문장을 완성해 봅시다.</div>
+        </header>
+        <main>
+
+
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="성실에 대한 설명을 읽고 알맞은 것을 찾아 O표를 해 봅시다." data-gap="true">활동</li>
+                    <li data-hover="" data-text="3단원을 마치며 스스로의 모습을 되돌아봅시다.">자기 점검</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="dragDrop" data-option="answer" data-quiz-name="dragdrop"
+                        data-total-complete-count="6">
+                        <div class="dragDropContainer bogi">
+                            <div class="lineBox">
+                                <div class="bogi-icon"></div>
+                                <div class="drag-zone">
+                                    <div class="js-dragObj d1" data-drag-obj-answer="4" data-ps="free">
+                                        <span>감사</span>
+                                    </div>
+                                    <div class="js-dragObj d2" data-drag-obj-answer="2" data-ps="free">
+                                        <span>우애</span>
+                                    </div>
+                                    <div class="js-dragObj d3" data-drag-obj-answer="5" data-ps="free">
+                                        <span>행복</span>
+                                    </div>
+                                    <div class="js-dragObj d4" data-drag-obj-answer="1" data-ps="free">
+                                        <span>효</span>
+                                    </div>
+                                    <div class="js-dragObj d5" data-drag-obj-answer="6" data-ps="free">
+                                        <span>화목</span>
+                                    </div>
+                                    <div class="js-dragObj d6" data-drag-obj-answer="3" data-ps="free">
+                                        <span>사랑</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1">
+                                    <div class="flex-wrap bgDrop">
+                                        <div class="flex">
+                                            <div class="items item-1">
+                                                부모를 공경하는 마음으로 정성껏 잘 모시는 일을
+                                                <div class="js-dropArea a1 clearArea" data-drop-area-answer="1"></div>
+                                                (이)라고 합니다.
+                                            </div>
+                                            <div class="items item-2">
+                                                <div class="js-dropArea a2 clearArea" data-drop-area-answer="2"></div>
+                                                은/는 형제자매가 서로 위하며 사랑하는 마음을 말합니다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="flex-wrap bgDrop">
+                                        <div class="flex">
+                                            <div class="items item-3">
+                                                가족에게
+                                                <div class="js-dropArea a3 clearArea" data-drop-area-answer="3"></div>
+                                                하는 마음,
+                                                <div class="js-dropArea a4 clearArea" data-drop-area-answer="4"></div>
+                                                하는 마음을 표현해 봅시다.
+                                            </div>
+                                            <div class="items item-4">
+                                                서로 이해하고 배려하는 마음을 실천하며 함께
+                                                <div class="js-dropArea a5 clearArea" data-drop-area-answer="5"></div>
+                                                하고
+                                                <div class="js-dropArea a5 clearArea" data-drop-area-answer="6"></div>
+                                                한 가족을 만들어 갑시다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="dapCheckBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                    <li class="page_2">
+                        <div class="study_guide"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
+                        <div class="self-check">
+                            <div class="checkWrap">
+                                <div class="text_box">가족과 나의 행복이 어떤 관련이 있는지 이해했나요?</div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">
+                                    효와 우애의 의미를 알고 이를 생활 속에서 실천하려고<br>
+                                    노력했나요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">
+                                    가족을 아끼고 사랑하는 마음을 표현하려고<br>
+                                    노력했나요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="example-box">
+                                <div class="exampleIcoWrap">
+                                    <div class="example ico-01">
+                                        매우 그렇다
+                                    </div>
+                                    <div class="example ico-02">
+                                        그렇다
+                                    </div>
+                                    <div class="example ico-03">
+                                        좀 더 노력해야 한다
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+            </ul>
+        </section>
+    </div>
+
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <!-- <script type="text/javascript" src="./ko/contents.js"></script> -->
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+                var index = $(this).index();
+                $('.title-icon, .endUnit').removeClass('hide').hide();
+                $('.title-icon').filter(function () {
+                    var dataShow = $(this).data('show').toString().split(',').map(Number);
+                    return dataShow.includes(index + 1);
+                }).show();
+                $('.endUnit').filter(function () {
+                    var dataShow = $(this).data('show').toString().split(',').map(Number);
+                    return dataShow.includes(index + 1);
+                }).show();
+            });
+
+            $(document).on('click', '.page_1 .basicSlider_circle_tabs li', function () {
+                var _index = $(this).index() + 1;
+                $('.page_1 .basicSlider_slides li').hide();
+                $('.page_1 .basicSlider_slides li.innerTab_' + _index).show();
+            });
+
+
+        });
+    </script>
+</body>
+
+</html>

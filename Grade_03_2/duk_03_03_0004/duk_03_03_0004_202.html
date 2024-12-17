@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        .wrapImg {
+            text-align: center;
+        }
+
+        .wrapImg {
+            text-align: center;
+        }
+
+        .img_01 {
+            height: 500px;
+            width: 100%;
+            object-fit: contain;
+            margin-top: 40px;
+        }
+
+        .img_02 {
+            position: absolute;
+            width: 600px;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 95px;
+        }
+
+        .noteText {
+            position: absolute;
+            box-shadow: none;
+            background-color: #F7F7F7;
+            border-radius: 10px;
+            padding: 0;
+        }
+
+        .noteText.noLine .textareaWrap {
+            height: 100%;
+        }
+
+        .noteText .text-exam.flex-wrap {
+            padding: 0 20px;
+        }
+
+        .note1 {
+            height: 70px;
+            top: 90px;
+            left: 410px;
+            width: 710px;
+        }
+
+        .note2 {
+            height: 240px;
+            top: 260px;
+            left: 180px;
+            width: 950px;
+        }
+
+        .box-text {
+            position: absolute;
+            padding: 5px 15px;
+            border-radius: 15px;
+            border: 4px solid #f7c1c9;
+            background-color: #FFEEF3;
+        }
+
+        .box-1 {
+            top: 90px;
+            left: 180px;
+        }
+
+        .box-2 {
+            top: 180px;
+            left: 180px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon pink" data-show="1">마음 <em>쑥쑥</em></div>
+            <div class="title-text">가족의 행복한 순간이 담긴 장면을 엽서로 그려 선물해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1">
+                                    <div class="study_guide"><em>수업 도구</em>의 <em>색연필</em>을 클릭하세요.</div>
+                                    <div class="wrapImg">
+                                        <img src="./images/duk_03_03_0004_202/img_01.png" class="img_01" />
+                                        <img src="./images/duk_03_03_0004_202/img_02.jpg" class="img_02" />
+                                    </div>
+
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="wrapImg">
+                                        <img src="./images/duk_03_03_0004_202/img_01.png" class="img_01" />
+                                        <div class="box-text box-1">받는 사람</div>
+                                        <div class="box-text box-2">전하고 싶은 말</div>
+                                        <div class="noteText noLine note1">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    <p>우리 언니</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="noteText noLine note2">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    <p>언니, 지난주에 수목원에서 즐겁게 놀았던 거 기억해?
+                                                        언니와 함께 꽃도 보고 사진도 찍어서 나는 너무 행복하고
+                                                        즐거웠어. 앞으로도 언니와 더 많은 추억을 남기고 싶어.
+                                                        사랑해.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="buttonContainer">
+                                <button class="writeBtn" data-answer-btn=""></button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+
+            </ul>
+        </section>
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+
+                var index = $(this).index();
+                $('.title-icon').removeClass('hide').hide();
+                $('.title-icon').filter(function () {
+                    var dataShow = $(this).data('show').toString().split(',').map(Number);
+                    return dataShow.includes(index + 1);
+                }).show();
+            });
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                KmAudioPlayer.buttonClick();
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(document).on('click', '.additional-question', function () {
+                $('[data-type="toggleButton"][data-active="on"] .toggle').addClass('complete');
+            });
+        });
+    </script>
+</body>
+
+</html>
