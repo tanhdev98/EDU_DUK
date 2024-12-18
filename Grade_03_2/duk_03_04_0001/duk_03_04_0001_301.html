@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        .noteText {
+            width: 95%;
+            margin-top: 30px;
+        }
+
+        .btn-praise {
+            right: -28px;
+            top: 300px;
+        }
+
+        .blueT {
+            height: 367px;
+            overflow-y: scroll;
+        }
+
+        .noteText p.dot::after {
+            left: 4px;
+        }
+
+
+        /* title thinknet */
+        .pointContainer .pointTitle {
+            display: block;
+            text-align: center;
+        }
+
+        .pointContainer .pointTitle .titleText {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 45px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #ff6600;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+        }
+
+        .pointContainer .pointTitle .titleText:after,
+        .pointContainer .pointTitle .titleText:before {
+            position: absolute;
+            top: 0px;
+            height: 50px;
+            font-size: 40px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #e4caa9;
+        }
+
+        .pointContainer .pointTitle .titleText:after {
+            content: "[";
+            left: -20px;
+        }
+
+        .pointContainer .pointTitle .titleText:before {
+            content: "]";
+            right: -20px;
+        }
+
+        .popup_pages .group-box .titleBox {
+            width: fit-content;
+            margin: 10px auto 0;
+            padding: 5px 15px;
+            background-color: #fff;
+            border: 4px solid #EFCFA6;
+            border-radius: 5px;
+            position: relative;
+            width: 700px;
+            height: 125px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup_pages .group-box .titleBox::before {
+            content: "";
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            background: url('./images/duk_03_04_0003_301/img_arrow.png') no-repeat center center / contain;
+            left: -119px;
+            top: 50px;
+        }
+
+        .popup_pages .group-box .titleBox::after {
+            content: "";
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            background: url('./images/duk_03_04_0003_301/img_arrow.png') no-repeat center center / contain;
+            right: -119px;
+            top: 50px;
+            transform: scaleX(-1);
+        }
+
+        .box-text {
+            width: 450px;
+            height: 260px;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+        }
+
+        .box-text.pink {
+            background-color: #FFDBDF;
+            top: 340px;
+            left: 50px;
+        }
+
+        .box-text.green {
+            background-color: #F2F7C8;
+            top: 340px;
+            right: 50px;
+        }
+
+        .box-text .wrapToggle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            padding: 5px;
+        }
+
+        .box-text .wrapToggle .toggle {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box-text .wrapToggle .toggle .answer {
+            font-weight: normal;
+            text-align: center;
+        }
+
+        .pointContainer .dapCheckBtn {
+            right: 28px;
+            bottom: 20px;
+        }
+
+
+        /* popup */
+        .popup_pages>li.fullLine>.full_content {
+            top: 65px;
+            height: calc(100% - 65px);
+        }
+
+        .tabs-popup {
+            top: -33px;
+            right: 60px;
+            left: unset;
+            justify-content: end;
+            height: 33px;
+        }
+
+        .tabs-popup>li {
+            background-color: #B1A493 !important;
+
+        }
+
+        .tabs-popup>li.on {
+            background-color: #E79702 !important;
+        }
+
+        .popup_pages .items .item {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .popup_pages .items .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        .popup_pages .items .item .toggle {
+            width: fit-content;
+        }
+
+        .pointContainer .dapCheckBtn {
+            right: 28px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="twoLine">
+            <div class="title-icon yellow" data-show="1">생각 <em>똑똑</em></div>
+            <div class="title-text">
+                ‘나와 같은 인공지능 로봇’이 있다면, 이 로봇과 인간으로서의 ‘진짜 나’는 어떤 점이 다른지 써 봅시다.
+            </div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="btn-praise right popBtn footer-item" data-popup-btn="1">
+                            <div class="item-title">핵심 <br>정리</div>
+                        </div>
+                        <div class="noteText noteLine pink">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p>1. 의식과 자아</p>
+                                    <p class="dot">
+                                        인간: 고유한 의식과 자아를 가지고 있고, 감정을 느낀다.
+                                    </p>
+                                    <p class="dot">
+                                        인공지능: 주어진 데이터로 작동하며, 세상을 느끼지 않고 처리한다.
+                                    </p>
+                                    <p>2. 육체와 현실 세계</p>
+                                    <p class="dot">
+                                        인간: 육체를 가지고, 감각 기관으로 다양한 정보를 얻고 신체적인
+                                        경험을 한다.
+
+                                    </p>
+                                    <p>
+                                        인공지능: 센서를 통해 정보를 얻지만, 인간처럼 깊이 있는 경험은
+                                        할 수 없다.
+                                    </p>
+                                    <p>3. 가치관과 윤리</p>
+                                    <p>
+                                        인간: 사회적, 문화적 배경에 따라 다양한 윤리 의식을 가지고, 이를
+                                        바탕으로 판단하고 행동한다.
+                                    </p>
+                                    <p class="dot">
+                                        인공지능: 주어진 데이터와 프로그래밍된 알고리즘에 따라 작동하며,
+                                        자체적인 가치관이나 윤리의식이 없다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image pointContainer" data-popup-page="1">
+                    <div class="full_content">
+                        <div class="basicSlider " data-slide-container="">
+                            <ul class="innerSlider_tabs tabs-popup">
+                                <li data-hover="" class="on">나와 같은 인공지능 로봇 만들기</li>
+                                <li data-hover="">나와 같은 인공지능 로봇 상상하기</li>
+                            </ul>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1 on" data-quiz="toggle">
+                                    <div class="pointTitle">
+                                        <div class="titleText">나와 같은 인공지능 로봇 연구실</div>
+                                        <div class="group-box">
+                                            <div class="titleBox">
+                                                나와 같은<br>
+                                                인공지능 로봇 만들기
+                                            </div>
+                                            <div class="box-text pink">
+                                                <div class="wrapToggle" data-type="toggleButton">
+                                                    <div class="toggle" data-toggle-obj="1">
+                                                        <div class="answer" data-toggle-target="1">
+                                                            <div class="ls-1h">
+                                                                나를 소개하는<br>
+                                                                자료 만들기
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box-text green">
+                                                <div class="wrapToggle" data-type="toggleButton">
+                                                    <div class="toggle" data-toggle-obj="2">
+                                                        <div class="answer" data-toggle-target="2">
+                                                            <div class="ls-1h">
+                                                                나를 소개하는<br>
+                                                                정보 쓰기
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="dapCheckBtn" data-answer-btn=""></button>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="pointTitle">
+                                        <div class="titleText">나와 같은 인공지능 로봇 연구실</div>
+                                    </div>
+                                    <div class="items">
+                                        <div class="item" data-type="toggleButton">
+                                            나와 같은 인공지능 로봇은 진짜 내가 될 수
+                                            <div class="toggle box" data-toggle-obj="3">
+                                                <div class="answer" data-toggle-target="3">
+                                                    <div>없습니다.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item" data-type="toggleButton">
+                                            <div class="toggle box" data-toggle-obj="4">
+                                                <div class="answer" data-toggle-target="4">
+                                                    <div>‘진짜 나’</div>
+                                                </div>
+                                            </div>
+                                            는 소중한 생명으로, 유일한 존재입니다.
+                                        </div>
+                                    </div>
+                                    <button class="dapCheckBtn" data-answer-btn=""></button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title-text').addClass('gap');
+                } else {
+                    $('header .title-text').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                    $('header').removeClass('threeLine');
+                }
+                else if ($(this).hasClass('threeLine')) {
+                    $('header').removeClass('twoLine');
+                    $('header').addClass('threeLine');
+                }
+                else {
+                    $('header').removeClass('threeLine');
+                    $('header').removeClass('twoLine');
+                }
+            });
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+
+
+            $(document).on('click', '.page_1 .character-item', function () {
+                $(this).find('.balloon').removeClass('fff');
+            });
+
+            $(document).on('click', '.page_1 .characterWrap, .page_1 .balloon > span', function () {
+                KmAudioPlayer.buttonClick();
+            });
+            $prite.boy1({
+                id: '#boy_1_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '역시 숙제는 힘들어. <br>인터넷에서 베껴서 낼래.',
+                class: 'bottom',
+                balloon_bottom: 220,
+                balloon_left: -150,
+            });
+            $prite.boy4({
+                id: '#boy_4_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '숙제를 베껴서 내면 <br>내가 한 게 아니잖아. <br>나는  내 힘으로 해 볼래. ',
+                class: 'bottom',
+                balloon_bottom: 220,
+                balloon_left: -140,
+            });
+            $prite.girl1({
+                id: '#girl_1_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '오늘 하기로 한 일이 <br>있지만 하기 귀찮아.<br>대충 해야지.',
+                class: 'bottom',
+                balloon_bottom: 220,
+                balloon_left: -110,
+            });
+            $prite.girl3({
+                id: '#girl_3_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '내가 하기로 한 일이니까 <br>나는 최선을 다해 <br>열심히 할 거야.',
+                class: 'bottom',
+                balloon_bottom: 220,
+                balloon_left: -150,
+            });
+
+            $prite.boy3({
+                id: '#boy_3_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '책을 읽어야 하지만 <br>축구를 더 하고 싶어. <br>책은 내일 읽지 뭐.',
+                class: 'bottom',
+                balloon_bottom: 220,
+                balloon_left: -117,
+            });
+            $prite.girl4({
+                id: '#girl_4_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '나는 지금 게임을 하고 싶지만 <br>그 마음을 참고 해야 할 일을<br> 할 거야.',
+                class: 'bottom',
+                balloon_bottom: 220,
+                balloon_left: -196,
+            });
+        });
+        // toggle
+        $(document).on('click', '.toggle', function () {
+            const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+            const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+            const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+
+            if (toggleBtn.length == toggleCompleteBtn.length) {
+                dapCheckBtn.addClass('reset');
+            } else {
+                dapCheckBtn.removeClass('reset');
+            }
+        });
+
+        $(document).on('click', '.dapCheckBtn', function () {
+            const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+            const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+            if (!dapCheckBtn.hasClass('reset')) {
+                toggleBtn.parent().removeAttr('data-active');
+            } else {
+                toggleBtn.parent().attr('data-active', 'on');
+            }
+        });
+        $(document).on('click', '.btn-praise', function () {
+            $('[data-active="on"] .toggle').addClass('complete');
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            const $scrollable = $('.blueT');
+            const step = 60;
+
+            $scrollable.on('wheel', function (event) {
+                event.preventDefault();
+
+                if (event.originalEvent.deltaY > 0) {
+                    $scrollable.animate({ scrollTop: $scrollable.scrollTop() + step }, 10);
+                } else {
+                    $scrollable.animate({ scrollTop: $scrollable.scrollTop() - step }, 10);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

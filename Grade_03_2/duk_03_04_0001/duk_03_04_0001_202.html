@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        /* Page 1 */
+        .page_1 .title-box {
+            margin-top: 20px;
+        }
+
+        [data-popup-page="1"] {
+            top: 200px;
+            left: 536px;
+            width: 720px;
+        }
+
+        .icon-char {
+            top: 20px;
+            right: 28px;
+        }
+
+        .popBtn.mouse {
+            position: absolute;
+            top: 170px;
+            left: 530px;
+        }
+
+        .popup_pages>li.fullLine>.full_content {
+            padding: 0 30px;
+        }
+
+        .popup_pages>li.whole h2 {
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .popup_pages .bgImg img {
+            height: 610px;
+            margin-top: 35px;
+        }
+
+        .popup_pages .noteText {
+            position: absolute;
+            box-shadow: none;
+            padding: 0 20px;
+            height: 120px;
+            width: 260px;
+            font-size: 30px;
+        }
+
+        .popup_pages .noteText .textLine {
+            line-height: 40px;
+        }
+
+        .popup_pages .note-1 {
+            top: 80px;
+            left: 261px;
+        }
+
+        .popup_pages .note-2 {
+            top: 80px;
+            left: 658px;
+        }
+
+        .popup_pages .note-3 {
+            top: 295px;
+            left: 789px;
+        }
+
+        .popup_pages .note-4 {
+            top: 465px;
+            left: 568px;
+            width: 230px;
+            height: 40px;
+        }
+
+        .popup_pages .note-4 .textLine {
+            height: 40px;
+        }
+
+        .popup_pages .note-5 {
+            top: 510px;
+            left: 554px;
+        }
+
+        .popup_pages .note-6 {
+            top: 410px;
+            left: 223px;
+        }
+
+        .popup_pages .noteText.noLine .textareaWrap {
+            height: 100%;
+        }
+
+        .popup_pages .noteText .text-exam.flex-wrap {
+            padding: 0 20px 0 40px;
+            width: 100%;
+        }
+
+        .popup_pages .noteText .text-exam.flex-wrap .blueT {
+            width: 100%;
+        }
+
+        .popup_pages .noteText .text-exam.flex-wrap p {
+            line-height: 40px;
+        }
+
+        .pointerOff {
+            pointer-events: auto !important;
+        }
+
+        .popup_pages .buttonContainer {
+            right: 28px;
+            bottom: 20px;
+        }
+
+        /* Page 2 */
+        [data-popup-page="3"] {
+            top: 198px;
+            left: 560px;
+            width: 700px;
+        }
+
+        /* Popup page */
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+            text-align: center;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: fit-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .popup_pages [data-type="toggleButton"] {
+            height: fit-content;
+            align-items: center;
+            display: flex;
+            width: 100% !important;
+        }
+
+        [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            height: 100%;
+        }
+
+        .popup-pages .ls-2h {
+            width: 100%;
+        }
+
+        .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+
+        .innerSlider_tabs>li {
+            background-color: #F3DEC0;
+        }
+
+        .innerSlider_tabs>li.on {
+            background-color: #F3B05B;
+        }
+
+        .innerButtonContainer {
+            position: absolute;
+            right: 60px;
+            top: 106px;
+        }
+
+        .innerButtonContainer::before {
+            display: none;
+        }
+
+        .additional-question {
+            position: absolute;
+            right: 110px;
+            top: 20px;
+        }
+
+        .innerButtonContainer .innerSlider_tabs {
+            margin: 0px 12px 0;
+        }
+
+        /* Page 3 */
+        .contentsBox {
+            padding: 0;
+        }
+
+        .basicSlider[data-slide-container='main']>.basicSlider_slides>li:not(.page_3) {
+            padding: 20px 28px 0 28px;
+        }
+
+        .char-box-10 .balloon {
+            top: -230px;
+            left: -124px;
+        }
+
+        .char-box-11 .balloon {
+            top: -230px;
+            left: -120px;
+        }
+
+        .char-box-12 .balloon {
+            top: -180px;
+            left: -120px;
+        }
+
+        .char-box-13 .balloon {
+            top: -230px;
+            left: -83px;
+        }
+
+
+
+        .page_3 .innerTab_2 .flex {
+            display: flex;
+            margin-top: 40px;
+        }
+
+        .page_3 .innerTab_2 .flex .items:first-child {
+            width: 730px;
+        }
+
+        .page_3 .innerTab_2 .flex .items:last-child {
+            padding-right: 28px;
+        }
+
+        .page_3 .innerTab_2 .flex .items {
+            width: 100%;
+        }
+
+        .page_3 .innerTab_2 #girl_4_c {
+            position: absolute;
+            bottom: 30px;
+            left: 150px;
+        }
+
+        .page_3 .characterWrap.speech.right:before {
+            background-image: url('../ko/contents/images/button/btn_speech_balloon_left1.png');
+        }
+
+        .page_3 .characterWrap.speech.right:hover:before {
+            background-image: url('../ko/contents/images/button/btn_speech_balloon_left1_hover.png');
+        }
+
+        .page_3 #girl_4_c .charSpriteAni {
+            background: url('../ko/contents/images/character/girl_4.png') !important;
+        }
+
+        .page_3 .buttonContainer {
+            right: 28px;
+        }
+
+        .page_3 .blueT {
+            margin-top: 62px;
+            letter-spacing: -1px;
+        }
+
+        .page_3 .topText {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="twoLine">
+            <div class="title-icon yellow" data-show="1">생각 <em>쑥쑥</em></div>
+            <div class="title-text">‘나와 같은 인공지능 로봇’을 만들기 위해 나를 소개하는 정보를 써 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="‘나와 같은 인공지능 로봇’을 만들기 위해 나를 소개하는 정보를 써 봅시다." class="twoLine">활동 1</li>
+                    <li data-hover="" data-text="‘나와 같이 생긴 인공지능 로봇’에게 위에서 쓴 정보를 모두 입력한다면 이 로봇은 ‘나’와 같다고 할 수 있을까요?"
+                        class="twoLine">물음</li>
+                    <li data-hover="" data-text="‘나와 같은 인공지능 로봇’이 있다면 어떤 일이 일어날지 상상해 보고 이야기를 나누어 봅시다." class="twoLine">
+                        활동 2</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="icon-char blinkOpacity popupOn" data-hover="" data-popup-btn="1"></div>
+                        <div class="popBtn mouse" data-hover="" data-popup-btn="2"></div>
+                        <div class="title-box">
+                            <div class="title">활동 방법</div>
+                        </div>
+                        <ul class="how-to-play">
+                            <li>
+                                <div class="bullet number orange inline">
+                                    1
+                                </div>
+                                <div class="text">
+                                    나를 나타낼 수 있는 정보에는 무엇이 있을지 생각하며 나를 소개하는
+                                    정보를 자세히 써 봅니다.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="bullet number orange inline">
+                                    2
+                                </div>
+                                <div class="text">
+                                    친구가 생각하는 나의 모습을 물어보거나 스스로 생각하는 나의 모습을
+                                    떠올리며 써 봅니다.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="bullet number orange inline">
+                                    3
+                                </div>
+                                <div class="text" style="letter-spacing: -2px;">
+                                    내 특징을 종합하여 ‘나와 같은 인공지능 로봇’의 이름을 지어서 생각
+                                    그물 중앙에 써 봅니다.
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="icon-char blinkOpacity popupOn" data-hover="" data-popup-btn="3"></div>
+                        <div class="popBtn additional-question" data-popup-btn="4">추가 질문</div>
+                        <div class="character-flex">
+                            <div id="boy_2" class="character-item"></div>
+                        </div>
+                    </li>
+                    <li class="page_3">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="tab-content-box">
+                                        <div class="tab-content group-speech group-speech-04">
+                                            <div class="char-box char-box-10 char-box-10_1" data-tail="tail-01"
+                                                data-tail-direction="br">
+                                                <div class="char-image left"></div>
+
+                                                <div class="balloon purple bottom">
+                                                    <span>
+                                                        정말 신기하고<br>
+                                                        재미있는 일이<br>
+                                                        많이 일어날 것 같아!
+                                                    </span>
+                                                    <div class="close-speech-button"></div>
+                                                </div>
+                                            </div>
+                                            <div class="char-box char-box-11 char-box-11_1" data-tail="tail-01"
+                                                data-tail-direction="br">
+                                                <div class="char-image left"></div>
+                                                <div class="balloon yellow bottom">
+                                                    <span>
+                                                        맞아. 내가 심심할 때<br>
+                                                        같이 놀 수 있어<br>
+                                                        좋을 것 같아.
+                                                    </span>
+                                                    <div class="close-speech-button"></div>
+                                                </div>
+                                            </div>
+                                            <div class="char-box char-box-12" data-tail="tail-01"
+                                                data-tail-direction="br">
+                                                <div class="char-image"></div>
+                                                <div class="balloon green bottom">
+                                                    <span>
+                                                        걱정되는 일들도<br>
+                                                        생길 수 있을 것 같아!
+                                                    </span>
+                                                    <div class="close-speech-button"></div>
+                                                </div>
+                                            </div>
+                                            <div class="char-box char-box-13" data-tail="tail-01"
+                                                data-tail-direction="br">
+                                                <div class="char-image"></div>
+                                                <div class="balloon purple bottom">
+                                                    <span>
+                                                        사람들이<br>
+                                                        누가 진짜 나인지<br>
+                                                        헷갈릴 것 같아.
+                                                    </span>
+                                                    <div class="close-speech-button"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="flex">
+                                        <div class="items">
+                                            <div id="girl_4_c" class="character-item"></div>
+                                        </div>
+                                        <div class="items">
+                                            <div class="noteText noteLine green">
+                                                <div class="topText">
+                                                    나의 상상
+                                                </div>
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        <p class="dot">
+                                                            내가 바쁠 때 숙제를 대신 해 줄 수 있어서<br>
+                                                            좋을 것 같습니다.
+                                                        </p>
+                                                        <p class="dot">
+                                                            진짜 나 대신 인공지능 로봇이 내 역할을<br>
+                                                            하다가 내가 잊혀질 것 같습니다.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="buttonContainer">
+                                                <button class="writeBtn" data-answer-btn=""></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag="">
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        <p>
+                            1단원에서 배웠던 내용을 떠올려 보며 나를 소개하는 정보를 써 보도록 합니다.
+                        </p>
+                    </div>
+                </li>
+                <li class="fullLine whole image" data-popup-page="2" data-quiz="toggle">
+                    <div class="full_content">
+                        <h2>생활 속 효의 실천 방법</h2>
+                        <div class="page_zoom zoom_img">
+                            <div class="zoomContainer horizon pointerOff">
+                                <div class="zoomArea">
+                                    <div class="zoomImgContainer pointerOff">
+                                        <div class="zoomImg">
+                                            <div class="bgImg">
+                                                <img src="./images/duk_03_04_0001_202/img_01.png" />
+                                                <div class="noteText noLine note-1">
+                                                    <div class="textareaWrap">
+                                                        <textarea class="textLine afterDisplay" type="text"
+                                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                            onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                            spellcheck="false"></textarea>
+                                                    </div>
+                                                    <div class="text-exam flex-wrap">
+                                                        <div class="blueT">
+                                                            <p>친절하다,<br>
+                                                                운동을 잘 한다.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="noteText noLine note-2">
+                                                    <div class="textareaWrap">
+                                                        <textarea class="textLine afterDisplay" type="text"
+                                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                            onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                            spellcheck="false"></textarea>
+                                                    </div>
+                                                    <div class="text-exam flex-wrap">
+                                                        <div class="blueT">
+                                                            <p>숙제를 성실히<br>
+                                                                해야 한다.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="noteText noLine note-3">
+                                                    <div class="textareaWrap">
+                                                        <textarea class="textLine afterDisplay" type="text"
+                                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                            onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                            spellcheck="false"></textarea>
+                                                    </div>
+                                                    <div class="text-exam flex-wrap">
+                                                        <div class="blueT">
+                                                            <p>얼굴이 동그랗고<br>
+                                                                손이 크다.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="noteText noLine note-4">
+                                                    <div class="textareaWrap">
+                                                        <textarea class="textLine afterDisplay" type="text"
+                                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                            onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                            spellcheck="false"></textarea>
+                                                    </div>
+                                                    <div class="text-exam flex-wrap">
+                                                        <div class="blueT">
+                                                            <p>생활 습관</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="noteText noLine note-5">
+                                                    <div class="textareaWrap">
+                                                        <textarea class="textLine afterDisplay" type="text"
+                                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                            onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                            spellcheck="false"></textarea>
+                                                    </div>
+                                                    <div class="text-exam flex-wrap">
+                                                        <div class="blueT">
+                                                            <p>매일 아침에<br>
+                                                                줄넘기를 한다.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="noteText noLine note-6">
+                                                    <div class="textareaWrap">
+                                                        <textarea class="textLine afterDisplay" type="text"
+                                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                            onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                            spellcheck="false"></textarea>
+                                                    </div>
+                                                    <div class="text-exam flex-wrap">
+                                                        <div class="blueT">
+                                                            <p>하늘색, 고양이,<br>
+                                                                친구와 노는 것
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </div>
+                </li>
+                <li class="min" data-popup-page="3" data-drag="">
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        <p>
+                            한 가지라도 소개 정보를 잘못 입력하여 내가 아닌 다른 인공지능 로봇이 생긴다면 어떨지 상상해서 이야기해 봐도 좋아요.
+                        </p>
+                    </div>
+                </li>
+                <li class="fullLine whole image" data-popup-page="4" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="innerButtonContainer">
+                                <ul class="innerSlider_tabs">
+                                    <li data-hover="" class="on">1</li>
+                                    <li data-hover="">2</li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1 on">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            나에 대한 모든 정보를 인공지능 로봇에게 입력한다면<br>
+                                            어떤 일이 생길까요?
+                                            <img src="./common/images/ico_que.png" class="ico" />
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico" />
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="5" data-hover>
+                                                    <div class="answer" data-toggle-target="5">
+                                                        <div class="ls-2h">
+                                                            <p class="dot">불안할 것 같습니다.</p><br>
+                                                            <p class="dot">
+                                                                나의 정보를 모두 넣는 것 자체가 불가능할 것 같습니다.
+                                                            </p><br>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            나에 대해 알리고 싶지 않은 정보에는<br>
+                                            어떤 것들이 있을까요?
+                                            <img src="./common/images/ico_que.png" class="ico" />
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico" />
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="6" data-hover>
+                                                    <div class="answer" data-toggle-target="6">
+                                                        <div class="ls-2h">
+                                                            <p class="dot">다른 사람에게 잘하지 못한 일입니다.</p><br>
+                                                            <p class="dot">내가 다른 사람들에게 상처받은 일 등입니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/zoomImage.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title-text').addClass('gap');
+                } else {
+                    $('header .title-text').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                    $('header').removeClass('threeLine');
+                }
+                else if ($(this).hasClass('threeLine')) {
+                    $('header').removeClass('twoLine');
+                    $('header').addClass('threeLine');
+                }
+                else {
+                    $('header').removeClass('threeLine');
+                    $('header').removeClass('twoLine');
+                }
+                if ($(this).index() == 0) {
+                    $('.mouse').css('animation', 'clickInduceMotion 1s 2 ease-in');
+                }
+                else {
+                    $('.mouse').css('animation', 'none');
+                }
+
+                setTimeout(function () {
+                    $('.page_1 .popBtn').addClass('mouse');
+                }, 100);
+                if ($(this).index() == 2) {
+                    $('.contentsBox>.basicSlider_slides').css('zIndex', '100');
+                    $('.contentsBox>.moveButtonContainer').css('zIndex', '101');
+                }
+                else {
+                    $('.contentsBox>.basicSlider_slides').css('zIndex', '0');
+                }
+            });
+
+            $prite.boy2({
+                id: '#boy_2',
+                speech: 'right',
+                sound: './media/sample.mp3',
+                text: '나에 대한 부분적인<br>정보이기 때문에 나와 같다고<br> 할 수 없을 것 같습니다.',
+                class: 'bottom',
+                balloon_bottom: 320,
+                balloon_left: -175,
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                KmAudioPlayer.buttonClick();
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(document).on('click', '.additional-question', function () {
+                $('[data-type="toggleButton"][data-active="on"] .toggle').addClass('complete');
+            });
+
+            $prite.girl4({
+                id: '#girl_4_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '나보다 <br>인공지능 로봇이<br>사랑받을 것 같습니다.',
+                class: 'bottom',
+                balloon_top: -240,
+                balloon_left: -130,
+            });
+        });
+
+    </script>
+</body>
+
+</html>
