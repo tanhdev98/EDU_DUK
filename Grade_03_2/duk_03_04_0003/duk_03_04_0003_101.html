@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        /* Page 1 */
+        .page_1 .noteText {
+            margin-top: 30px;
+            height: 460px;
+        }
+
+        .page_1 .noteText .topText {
+            text-align: center;
+            font-family: notoB;
+            position: relative;
+            top: -10px;
+        }
+
+        /* Page 2 */
+        .flex {
+            display: flex;
+            margin-top: 40px;
+        }
+
+        .flex .items:first-child {
+            width: 400px;
+        }
+
+        .flex .items {
+            width: 100%;
+        }
+
+        #girl_3_c {
+            position: absolute;
+            bottom: 30px;
+            left: 50px;
+        }
+
+        .page_2 .characterWrap.speech.right:before {
+            background: url('../ko/contents/images/button/btn_speech_balloon_left1.png') no-repeat;
+        }
+
+        .page_2 .characterWrap.speech.right:hover:before {
+            background: url('../ko/contents/images/button/btn_speech_balloon_left1_hover.png') no-repeat;
+        }
+
+        #girl_3_c .charSpriteAni {
+            background-image: url('../ko/contents/images/character/girl_3.png') !important;
+        }
+
+        /* Page 3 */
+        .additional-question {
+            position: absolute;
+            width: fit-content;
+            right: 0;
+        }
+
+        .popup_container .title-box .title {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: YGJAL;
+            font-size: 25px;
+            color: #fff;
+            background: #9a5838;
+            border-radius: 50px;
+            padding: 10px 27px 10px 80px;
+            z-index: 99;
+            width: fit-content;
+            min-height: auto;
+        }
+
+        .popup_pages>li.image.whole {
+            padding: 0 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="gap">
+            <div class="title-icon blue">실천 <em>똑똑</em></div>
+            <div class="title-text" style="letter-spacing: -2.4px;">인공지능 로봇이 우리 가족의 행복에 어떤 도움을 줄지 생각해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="인공지능 로봇이 우리 가족의 행복에 어떤 도움을 줄지 생각해 봅시다." data-gap="true">활동</li>
+                    <li data-hover="" data-text="가정용 인공지능 로봇은 어떤 기능을 가지고 있나요?">물음 1</li>
+                    <li data-hover="" data-text="가정용 인공지능 로봇은 우리 가족의 행복에 어떤 도움을 줄까요?" data-gap="true">물음 2</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1">
+                                    <div class="noteText noLine blue">
+                                        <div class="topText">
+                                            가정용 인공지능 로봇
+                                        </div>
+                                        <div class="details">
+                                            가정용 인공지능 로봇은 가족에게 행복을 주도록 스스로 움직이고
+                                            대화를 할 수 있게 만들어졌어요. 아이와 친구처럼 놀아 주기도 하고,
+                                            집안일을 도우며, 아픈 사람을 돌보는 역할도 해요. 우리는 로봇에게
+                                            간단한 음성 명령을 할 수 있고, 로봇의 화면을 보고 누가 방문했는지
+                                            확인할 수 있어요. 우리가 요리를 할 때에 로봇은 옆에서 큰 소리로
+                                            조리법을 읽어 주기도 하고, 안에 들어 있는 카메라로 언제든지 가족의
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="noteText noLine blue">
+                                        특별한 순간을 사진으로 찍어 주기도 해요. 게다가 집에 사람이 없을
+                                        때 불이 나면 그 사실을 우리에게 알려주고 불을 꺼 줄 수도 있어요.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="flex">
+                            <div class="items">
+                                <div id="girl_3_c" class="character-item"></div>
+                            </div>
+                            <div class="items">
+                                <div class="noteText noteLine orange">
+                                    <div class="textareaWrap">
+                                        <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                            autocomplete="off"></textarea>
+                                    </div>
+                                    <div class="text-exam flex-wrap">
+                                        <div class="blueT">
+                                            <p class="dot">요리를 할 때 옆에서 큰 소리로 조리법을
+                                                읽어 주어요.
+                                            </p>
+                                            <p class="dot">가족의 특별한 순간을 카메라로 언제든지
+                                                찍어 주어요.</p>
+                                            <p class="dot">
+                                                집에 사람이 없을 때 불이 나면 그 사실을
+                                                알리고 불을 꺼 줄 수도 있어요.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="buttonContainer">
+                                    <button class="writeBtn" data-answer-btn=""></button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="page_3" data-quiz="toggle">
+                        <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
+                        <div class="character-flex">
+                            <div id="girl_4" class="character-item"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="whole image" data-popup-page="1">
+                    <h2>가족 행복 도구-생각 그물 그리기</h2>
+                    <div class="title-box">
+                        <div class="title">활동 방법</div>
+                    </div>
+                    <ul class="how-to-play">
+                        <li>
+                            <div class="bullet number orange inline">
+                                1
+                            </div>
+                            <div class="text">
+                                종이 한가운데 ‘가족’을 적습니다.
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet number orange inline">
+                                2
+                            </div>
+                            <div class="text">
+                                ‘가족’과 ‘엄마’, ‘형’ 등의 가족 구성원을 연결합니다.
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet number orange inline">
+                                3
+                            </div>
+                            <div class="text" style="letter-spacing: -2px;">
+                                각 가족 구성원을 행복하게 해 주는 ‘텔레비전’, ‘청소기’ 등의 도구를
+                                각각 생각 그물로 이어서 연결합니다.
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet number orange inline">
+                                4
+                            </div>
+                            <div class="text" style="letter-spacing: -2px;">
+                                자신의 생각 그물을 발표합니다.
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+
+            $prite.girl3({
+                id: '#girl_3_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '가족의 일을<br>도와주어요.',
+                class: 'bottom',
+                balloon_top: -180,
+                balloon_left: -40,
+            });
+            $prite.girl4({
+                id: '#girl_4',
+                speech: 'right',
+                sound: './media/sample.mp3',
+                text: '부모님께서 저와 함께<br>시간을 보낼 수 있게<br>해 주어요.',
+                class: 'bottom',
+                balloon_bottom: 335,
+                balloon_left: -105,
+            });
+        });
+
+    </script>
+</body>
+
+</html>
