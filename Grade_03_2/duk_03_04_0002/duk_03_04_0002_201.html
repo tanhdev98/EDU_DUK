@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        header.threeLine .title-icon {
+            top: -30px;
+        }
+
+        .letter-sp-2 {
+            letter-spacing: -1.9px;
+        }
+
+        .page_1 .noteText {
+            height: 335px;
+            width: 641px;
+            background-color: transparent;
+            position: absolute;
+            z-index: 2;
+            box-shadow: none;
+            top: 70px;
+        }
+
+        .page_1 .noteText .textLine {
+            font-size: 32px;
+        }
+
+        .page_1 .noteText .blueT p {
+            font-size: 32px;
+        }
+
+        .page_1 .noteText.note1 {
+            left: -7px;
+        }
+
+        .page_1 .noteText.note2 {
+            left: 660px;
+        }
+
+
+        .img_note {
+            height: 460px;
+            width: 100%;
+        }
+
+        .titleText {
+            position: absolute;
+            z-index: 2;
+            display: flex;
+            gap: 20px;
+            top: 45px;
+            left: 45px;
+        }
+
+        .titleText.title2 {
+            left: 710px;
+        }
+
+        .titleText img {
+            width: 50px;
+            object-fit: contain;
+        }
+
+        /* Popup page */
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: auto;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .popup_pages [data-type="toggleButton"] {
+            height: fit-content;
+            align-items: center;
+            display: flex;
+            width: 100% !important;
+        }
+
+        [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            height: 100%;
+        }
+
+        .popup-pages .ls-2h {
+            width: 100%;
+        }
+
+        .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+
+        .innerSlider_tabs>li {
+            background-color: #F3DEC0;
+        }
+
+        .innerSlider_tabs>li.on {
+            background-color: #F3B05B;
+        }
+
+        .innerButtonContainer {
+            position: absolute;
+            right: 80px;
+            top: 86px;
+        }
+
+        .innerButtonContainer::before {
+            display: none;
+        }
+
+
+        .additional-question {
+            width: max-content;
+            right: 0;
+            left: unset;
+            position: absolute;
+        }
+
+        .toggle.complete .answer,
+        .answer.on {
+            font-weight: normal;
+        }
+
+        .page_2 .noteText {
+            height: 358px;
+            margin-top: 65px;
+        }
+
+        .page_2 .noteText.note3 {
+            pointer-events: none;
+        }
+
+        .page_2 .noteText.note4,
+        .page_2 .noteText.note5 {
+            box-shadow: none;
+            position: absolute;
+            z-index: 3;
+        }
+
+        .page_2 .noteText.note4 .textareaWrap,
+        .page_2 .noteText.note5 .textareaWrap {
+            height: 100%;
+        }
+
+        .page_2 .noteText.note4 {
+            width: 850px;
+            height: 155px;
+            left: 450px;
+            top: 12px;
+        }
+
+        .page_2 .noteText.note5 {
+            left: 270px;
+            width: 1030px;
+            height: 155px;
+            top: 132px;
+        }
+
+        .titleText.title3 {
+            top: 117px;
+        }
+
+        .titleText.title4 {
+            top: 237px;
+        }
+
+        .page_2 .icon-char {
+            top: -10px;
+        }
+
+        .min[data-popup-page="2"] {
+            top: 215px;
+            left: 435px;
+            width: 824px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="twoLine">
+            <div class="title-icon yellow" data-show="1">생각 <em>쑥쑥</em></div>
+            <div class="title-text">인공지능 로봇에게 시키고 싶은 일과 시켜서는 안 되는 일을 써 봅시다.</div>
+        </header>
+        <main>
+
+
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="인공지능 로봇에게 시키고 싶은 일과 시켜서는 안 되는 일을 써 봅시다." class="twoLine">활동 1</li>
+                    <li data-hover=""
+                        data-text="성실한 생활을 위해 인공지능 로봇을 어떻게 활용하면 좋을지 생각해 보고, 친구들과 함께 인공지능 로봇 사용 원칙을 만들어 봅시다."
+                        class="twoLine" data-gap="true">활동 2</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="titleText title1">
+                            <img src="./images/duk_03_04_0002_201/img_star.png" alt="">
+                            <p>시키고 싶은 일과 그 까닭</p>
+                        </div>
+                        <div class="noteText noteLine note1">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p>로봇에게 내 방 청소를 해 주거나
+                                        나 대신 심부름을 하게 하면 좋겠어.
+                                        그러면 나는 그 시간에 다른 일을
+                                        하거나 내가 하고 싶은 것을 할 수
+                                        있을 것 같아.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="titleText title2">
+                            <img src="./images/duk_03_04_0002_201/img_star.png" alt="">
+                            <p>시키고 싶은 일과 그 까닭</p>
+                        </div>
+                        <div class="noteText noteLine note2">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p>로봇에게 내 숙제를 모두 시키면 안
+                                        될 것 같아. 내 실력이 늘지 않고
+                                        나는 점점 게을러질 것 같아. 그리고
+                                        내 할 일을 자꾸 시키면 로봇에게
+                                        너무 많은 것을 의지하게 되어 내가
+                                        스스로 하는 힘이 없어질 것 같아.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-evenly; gap: 28px;">
+                            <img class="img_note img_note1" src="./images/duk_03_04_0002_201/img_note.png" alt="">
+                            <img class="img_note img_note2" src="./images/duk_03_04_0002_201/img_note.png" alt="">
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="2"></div>
+                        <div class="popBtn additional-question" style="right: 100px;" data-popup-btn="1">추가 질문</div>
+                        <div class="noteText noteLine green note3">
+                            <div class="textareaWrap">
+                            </div>
+                        </div>
+                        <div class="noteText noLine note4">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p>로봇에게 나의 일을 모두 시키지 않는다.<br>나 스스로 할 수 있는 일은 직접 한다.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="noteText noLine note5">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p>로봇에게 의지하지 않는다. 등</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="titleText title3">
+                            <img src="./images/duk_03_04_0002_201/img_star.png" alt="">
+                            <p>숙제나 공부를 할 때:</p>
+                        </div>
+                        <div class="titleText title4">
+                            <img src="./images/duk_03_04_0002_201/img_star.png" alt="">
+                            <p>운동할 때:</p>
+                        </div>
+                        <button class="writeBtn" data-answer-btn=""></button>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image" data-popup-page="1" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="popup-boxes">
+                            <div class="box-item ico_que" style="text-align: center;">
+                                성실한 생활을 위해 인공지능 로봇을<br>
+                                어떻게 활용하면 좋을까요?
+                                <img src="./common/images/ico_que.png" class="ico" />
+                            </div>
+                            <div class="box-item ico_ans">
+                                <img src="./common/images/ico_ans.png" class="ico" />
+                                <div data-type="toggleButton" class="boxItem">
+                                    <div class="toggle examBtn box" data-toggle-obj="1" data-hover>
+                                        <div class="answer" data-toggle-target="1">
+                                            <div class="ls-2h">
+                                                <p class="dot">
+                                                    나의 꿈을 이루는데 도움이 되도록 현명하게 이용해야 할<br> 것입니다.
+                                                </p>
+                                                <p class="dot">
+                                                    인공지능 로봇에게 너무 의존하지 않도록 시간을 정해 사용해야 할 것입니다.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="min" data-popup-page="2" data-drag="">
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        인공지능 로봇에게 내 일을 모두 시키는 상황 혹은 인공지능 로봇에게 꼭 필요한 일만 시키는 상황을 만들어 모둠별 역할극을 해 보아도 좋습니다.
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+
+    <script type="text/javascript" src="./common/js/zoomImage.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).data('text') == '성실한 생활을 위해 인공지능 로봇을 어떻게 활용하면 좋을지 생각해 보고, 친구들과 함께 인공지능 로봇 사용 원칙을 만들어 봅시다.') {
+                    $('header .title-text').addClass('letter-sp-2');
+                } else {
+                    $('header .title-text').removeClass('letter-sp-2');
+                }
+
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(document).on('click', '.additional-question', function () {
+                $('.boxItem[data-active="on"] .toggle').addClass('complete');
+            });
+        });
+    </script>
+</body>
+
+</html>

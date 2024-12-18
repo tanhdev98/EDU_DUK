@@ -12,6 +12,9 @@
 
 
     <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
     </style>
 </head>
 
@@ -85,12 +88,18 @@
         document.addEventListener('DOMContentLoaded', function () {
             $(document).on('click', '.basicSlider_tabs li', function () {
                 if ($(this).data('text')) {
-                    $('header .title').text($(this).data('text'));
+                    $('header .title-text').text($(this).data('text'));
                 }
                 if ($(this).attr('data-gap') == 'true') {
-                    $('header .title').addClass('gap');
+                    $('header .title-text').addClass('gap');
                 } else {
-                    $('header .title').removeClass('gap');
+                    $('header .title-text').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
                 }
             });
         });
