@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        .voca1 {
+            top: -95px;
+            left: 130px;
+        }
+
+        [data-popup-page="1"] {
+            top: 124px;
+            left: 156px;
+            width: max-content;
+        }
+
+        /* Page 1 */
+        [data-type="toggleButton"] .toggle.complete {
+            justify-content: center;
+        }
+
+        .toggle.complete .answer,
+        .answer.on {
+            text-align: center;
+        }
+
+        .items {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .items .box {
+            margin-top: 15px;
+        }
+
+        .items:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #f60;
+            border-radius: 50%;
+            background-color: #fff;
+            margin: 22px 13px 0 -2px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon yellow" data-show="1">생각 <em>똑똑</em></div>
+            <div class="title-text">배려에 관한 경험을 떠올려 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="1"></div>
+                        <span class="voca voca1" data-hover="" data-popup-btn="1">배려</span>
+                        <div class="items">
+                            <div class="item-text text1">언제 누구와 있었던 일인가요?</div>
+                            <div data-type="toggleButton" class="box">
+                                <div class="toggle examBtn box" data-toggle-obj="1">
+                                    <div class="answer" data-toggle-target="1">
+                                        <div class="ls-2h">
+                                            내가 점심시간에 음식을 쏟았을 때 유안이가 같이 치워 주면서<br>
+                                            걱정하지 말라고 했습니다.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="items">
+                            <div class="item-text text1">그때의 생각과 느낌은 어땠나요?</div>
+                            <div data-type="toggleButton" class="box">
+                                <div class="toggle examBtn box" data-toggle-obj="2">
+                                    <div class="answer" data-toggle-target="2">
+                                        <div class="ls-2h">
+                                            유안이에게 정말 고마웠습니다.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="examViewBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min word" data-popup-page="1" data-drag="">
+                    <h2>낱말 익히기</h2>
+                    <div class="popup_contents ls1">
+                        <p>
+                            <span style="color: #7142B8;">배려</span>
+                        </p>
+                        <p>보살펴 주려고 마음을 씀.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title-text').addClass('gap');
+                } else {
+                    $('header .title-text').removeClass('gap');
+                }
+            });
+
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.examViewBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    examViewBtn.addClass('reset');
+                } else {
+                    examViewBtn.removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.examViewBtn', function () {
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.examViewBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!examViewBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
