@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        .page_1 .noteText {
+            width: 1230px;
+            height: 400px;
+            margin-top: 60px;
+        }
+
+        .pointContainer .pointTitle {
+            display: block;
+            text-align: center;
+        }
+
+        .pointContainer .pointTitle .titleText {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 45px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #ff6600;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+        }
+
+        .pointContainer .pointTitle .titleText:after,
+        .pointContainer .pointTitle .titleText:before {
+            position: absolute;
+            top: 0px;
+            height: 50px;
+            font-size: 40px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #e4caa9;
+        }
+
+        .pointContainer .pointTitle .titleText:after {
+            content: "[";
+            left: -20px;
+        }
+
+        .pointContainer .pointTitle .titleText:before {
+            content: "]";
+            right: -20px;
+        }
+
+        .btn-praise {
+            top: 335px;
+            right: -28px;
+        }
+
+        .additional-question {
+            width: max-content;
+            right: 0;
+            position: absolute;
+        }
+
+
+
+        .popup_pages .title-box::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: #f7f7f7;
+            border-radius: 10px;
+        }
+
+        .popup_pages .title-box .title {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: YGJAL;
+            font-size: 25px;
+            color: #fff;
+            background: #9a5838;
+            border-radius: 50px;
+            padding: 10px 27px 10px 80px;
+            z-index: 99;
+            max-width: max-content;
+        }
+
+        /* title thinknet */
+        .pointContainer .pointTitle {
+            display: block;
+            text-align: center;
+        }
+
+        .pointContainer .pointTitle .titleText {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 45px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #ff6600;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+        }
+
+        .pointContainer .pointTitle .titleText:after,
+        .pointContainer .pointTitle .titleText:before {
+            position: absolute;
+            top: 0px;
+            height: 50px;
+            font-size: 40px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #e4caa9;
+        }
+
+        .pointContainer .pointTitle .titleText:after {
+            content: "[";
+            left: -20px;
+        }
+
+        .pointContainer .pointTitle .titleText:before {
+            content: "]";
+            right: -20px;
+        }
+
+        .popup_pages .group-box .titleBox {
+            width: fit-content;
+            margin: 10px auto 0;
+            padding: 5px 15px;
+            background-color: #fff;
+            border: 4px solid #EFCFA6;
+            border-radius: 5px;
+            position: relative;
+            width: 150px;
+            height: 225px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            left: -500px;
+            top: 120px;
+        }
+
+        .popup_pages .group-box .titleBox span {
+            position: absolute;
+            left: 50%;
+            bottom: -70px;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 100px;
+            background: url('./images/duk_03_04_0004_301/img_down.png') no-repeat center center / contain;
+            z-index: -1;
+        }
+
+        .popup_pages .group-box .titleBox::before {
+            content: "";
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: url('./images/duk_03_04_0004_301/img_arrow.png') no-repeat center center / contain;
+            left: -100px;
+            top: 100px;
+        }
+
+        .popup_pages .group-box .titleBox::after {
+            content: "";
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: url('./images/duk_03_04_0004_301/img_arrow.png') no-repeat center center / contain;
+            right: -100px;
+            top: 105px;
+            transform: scaleX(-1);
+        }
+
+        .box-text {
+            width: 950px;
+            height: 190px;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            text-align: center;
+        }
+
+        .box-text.pink {
+            background-color: #FFDBDF;
+            top: 145px;
+            left: 320px;
+        }
+
+        .box-text.green {
+            background-color: #F2F7C8;
+            top: 380px;
+            left: 790px;
+            transform: translateX(-50%);
+        }
+
+        .box-text.blue {
+            background-color: #E7F4F9;
+            top: 340px;
+            right: 50px;
+        }
+
+        .box-text .wrapToggle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            padding: 5px;
+        }
+
+        .box-text .wrapToggle .toggle {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box-text .wrapToggle .toggle .answer {
+            font-weight: normal;
+            text-align: center;
+        }
+
+        .pointContainer .dapCheckBtn {
+            right: 28px;
+            bottom: 20px;
+        }
+
+        .popup_pages .cho {
+            background-color: transparent;
+            margin: auto;
+            padding: 0;
+        }
+
+        .popup_pages .choWrap {
+            text-align: center;
+            width: 100%;
+            letter-spacing: -3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="twoLine">
+            <div class="title-icon pink" data-show="1">마음 <em>탄탄</em></div>
+            <div class="title-text">인공지능 로봇을 올바르게 사용하기 위하여 친구들과 나눈 이야기 중 인상 깊게 느낀 것을 써 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="popBtn additional-question" data-popup-btn="1">추가 활동</div>
+                        <div class="noteText noteLine pink">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p>가족의 행복을 위해 친구가 가족 행복 인공지능 로봇에게만 맡기지
+                                        않고, 자신이 직접 가족을 위해 할 수 있는 일을 찾아야겠다고 했다.
+                                        그 말을 들어보니 요즘 안마기가 있어서 부모님께 안마를 해드리지
+                                        않은 게 생각이 났다. 오랜만에 꼭 부모님께 직접 안마를 해드려야겠다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-praise right popBtn footer-item" data-popup-btn="2">
+                            <div class="item-title">우리<br>배움</div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="whole image pointContainer" data-popup-page="1" data-quiz="toggle" style="padding: 0 28px;">
+                    <h2>올바른 인공지능 사용 다짐문 쓰기</h2>
+                    <div class="how-to-box" style="margin-top: 120px;">
+                        <div class="title-box">
+                            <div class="title">활동 방법</div>
+                        </div>
+                    </div>
+                    <ul class="how-to-play">
+                        <li>
+                            <div class="bullet number orange inline">
+                                1
+                            </div>
+                            <div class="text">
+                                올바른 인공지능 로봇 사용 다짐문을 씁니다.
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet number orange inline">
+                                2
+                            </div>
+                            <div class="text">
+                                학급 친구들 앞에서 자신이 작성한 다짐문을 읽으며<br>다짐을 공언합니다.
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="fullLine whole image pointContainer" data-popup-page="2">
+                    <div class="full_content" data-quiz="toggle">
+                        <div class="pointTitle">
+                            <div class="titleText">인공지능 로봇의 올바른 사용</div>
+                            <div class="group-box">
+                                <div class="titleBox" style="transform: rotate(-90deg);">
+                                    <div class="text" style="transform: rotate(90deg);">인공지능<br>
+                                        로봇</div>
+                                </div>
+                                <div class="box-text pink">
+                                    <div class="cho">
+                                        <div class="choWrap">
+                                            인공지능 로봇의<br>
+                                            <div class="choBox">
+                                                <span class="dir-rect" data-cho="ㅈ" data-letter="장"></span>
+                                                <span class="dir-rect" data-cho="ㅈ" data-letter="점"></span>
+                                            </div>
+                                            과 <div class="choBox">
+                                                <span class="dir-rect" data-cho="ㄷ" data-letter="단"></span>
+                                                <span class="dir-rect" data-cho="ㅈ" data-letter="점"></span>
+                                            </div>을 고려해야 합니다. 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-text green">
+                                    <div class="cho">
+                                        <div class="choWrap">
+                                            인공지능 로봇에게 모든 것을 맡기지 않고,<br>
+                                            <div class="choBox">
+                                                <span class="dir-rect" data-cho="ㅅ" data-letter="스"></span>
+                                                <span class="dir-rect" data-cho="ㅅ" data-letter="스"></span>
+                                                <span class="dir-rect" data-cho="ㄹ" data-letter="로"></span>
+                                            </div> 해야 할 일을 찾아서 <div class="choBox">
+                                                <span class="dir-rect" data-cho="ㅅ" data-letter="성"></span>
+                                                <span class="dir-rect" data-cho="ㅅ" data-letter="실"></span>
+                                            </div>하게 해야 합니다.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="dapCheckBtn" data-answer-btn=""></button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+
+            $(document).on('click', '.popup_pages .resetBtn', function () {
+                KmAudioPlayer.buttonClick();
+                $('.popup_pages .textLine').val('');
+            });
+
+            let numActive = 0;
+
+            $(document).on('click', '.choBox', function () {
+                if (!$(this).hasClass('active')) {
+                    $(this).addClass('active');
+                } else {
+                    $(this).removeClass('active');
+                }
+                numItem = $(this).parents('[data-quiz="toggle"]').find('.choBox').length;
+                numActive = $(this).parents('[data-quiz="toggle"]').find('.choBox.active').length;
+                console.log(numActive);
+                if (numActive === numItem) {
+                    $(this).parents('[data-quiz="toggle"]').find('.dapCheckBtn').addClass('reset');
+                } else {
+                    $(this).parents('[data-quiz="toggle"]').find('.dapCheckBtn').removeClass('reset');
+                }
+            });
+            $(document).on('click', '.dapCheckBtn', function () {
+                let dirRect = $(this).parent().parent().find('.dir-rect');
+                if (!$(this).hasClass('reset')) {
+                    $(this).removeClass('reset');
+                    dirRect.removeClass('on');
+                    dirRect.each(function () {
+                        let dataCho = $(this).data('cho');
+                        $(this).text(dataCho);
+                    })
+                    $('.noteText .textareaWrap .textLine').show();
+                    $('.noteText .text-exam').hide();
+                    $(this).parent().parent().find('.choBox').removeClass('active');
+                } else {
+                    $(this).addClass('reset');
+                    dirRect.addClass('on');
+                    dirRect.each(function () {
+                        let dataLetter = $(this).data('letter');
+                        $(this).text(dataLetter);
+                    })
+                    $('.noteText .textareaWrap .textLine').hide();
+                    $('.noteText .text-exam').show();
+                    $(this).parent().parent().find('.choBox').addClass('active');
+                }
+
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>

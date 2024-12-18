@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        #wrap header .title-icon.green {
+            padding: 0 16px;
+            background: #00d045;
+        }
+
+        /* page 1 */
+
+        /* drag drop */
+        .dragDropContainer.bogi .bogi-icon {
+            width: max-content;
+            text-align: center;
+            left: -2px;
+            top: -1px;
+            left: 0;
+            right: unset;
+            margin: auto;
+            border-radius: 0 0 18px 0px;
+            font-size: 22px;
+            height: max-content;
+            padding: 2px 10px;
+        }
+
+        .dragDropContainer.bogi .bogi-icon:after {
+            content: "보기";
+        }
+
+        .dragDropContainer.bogi .lineBox {
+            width: 1200px;
+            height: 110px;
+            top: -40px
+        }
+
+        .js-dragObj {
+            cursor: pointer;
+            position: absolute;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            border-radius: 15px;
+            font-family: 'NotoB';
+        }
+
+        .d1 {
+            top: 25px;
+            left: 85px;
+        }
+
+        .d2 {
+            top: 25px;
+            left: calc(85px + 150px*1);
+        }
+
+        .d3 {
+            top: 25px;
+            left: calc(205px + 150px*2);
+        }
+
+        .d4 {
+            top: 25px;
+            left: calc(215px + 150px*3);
+        }
+
+        .d5 {
+            top: 25px;
+            left: calc(265px + 150px*4);
+        }
+
+        .d6 {
+            top: 25px;
+            left: calc(280px + 150px*5);
+        }
+
+        .clearArea {
+            z-index: 2;
+            width: 140px;
+            height: 140px;
+            border-radius: 20px;
+            top: 287px;
+            left: 732px;
+        }
+
+        .boxDrag {
+            border-radius: 12px;
+            background-color: #f5f5f5;
+        }
+
+        .clearArea,
+        .boxDrag {
+            width: 160px;
+            height: 55px;
+            display: inline-block;
+            margin: auto 10px;
+        }
+
+        .js-dragObj.dragObjComplete {
+            opacity: 1;
+            cursor: auto;
+            width: 100%;
+            text-align: center;
+        }
+
+        .clearArea .js-dragObj.dragObjComplete {
+            color: #006ee6;
+        }
+
+        .dragObjComplete {
+            top: -3px;
+            left: 0;
+        }
+
+        .drag-zone .dragObjComplete {
+            opacity: 0;
+        }
+
+        .js-dropArea {
+            transform: translate(1000%, 1000%);
+        }
+
+        .js-dropArea.a1 {
+            transform: translate(0%, 0%) !important;
+        }
+
+        [data-quiz="dragDrop"] .flex {
+            display: flex;
+            align-items: center;
+            margin-top: 40px;
+            justify-content: center;
+        }
+
+        .imgRobot {
+            width: auto;
+            height: 310px;
+            object-fit: contain;
+            margin-right: 20px;
+        }
+
+        .box-item {
+            width: 600px;
+            height: 290px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            line-height: 60px;
+        }
+
+        .box-item.yellow {
+            background-color: #FFF4C7;
+            border: 4px solid #FEE588;
+        }
+
+        .box-item.blue {
+            background-color: #E1F1F8;
+            border: 4px solid #99CCF4;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="twoLine">
+            <div class="title-icon green" data-show="2">단원 마무리</div>
+            <div class="title-text">인공지능 로봇을 올바르게 사용하는 방법을 생각하며 보기에서 알맞은 말을 찾아 빈칸에 써 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="인공지능 로봇을 올바르게 사용하는 방법을 생각하며 보기에서 알맞은 말을 찾아 빈칸에 써 봅시다." class="twoLine">
+                        활동</li>
+                    <li data-hover="" data-text="4단원을 마치며 스스로의 모습을 되돌아봅시다.">자기 점검</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="dragDrop" data-option="answer"
+                                    data-quiz-name="dragDrop" data-total-complete-count="1">
+                                    <div class="dragDropContainer bogi" style="top: 60px;">
+                                        <div class="it-start-wrap dragBox lineBox dragObjUL">
+                                            <div class="bogi-icon"></div>
+                                            <div class="drag-zone">
+                                                <div class="js-dragObj d1" data-drag-obj-answer="1" data-ps="free">
+                                                    단점</div>
+                                                <div class="js-dragObj d2" data-drag-obj-answer="2" data-ps="free">
+                                                    가족의 행복</div>
+                                                <div class="js-dragObj d3" data-drag-obj-answer="3" data-ps="free">
+                                                    장점</div>
+                                                <div class="js-dragObj d4" data-drag-obj-answer="4" data-ps="free">
+                                                    다른 점</div>
+                                                <div class="js-dragObj d5" data-drag-obj-answer="5" data-ps="free">
+                                                    성실</div>
+                                                <div class="js-dragObj d6" data-drag-obj-answer="6" data-ps="free">
+                                                    도움</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex">
+                                        <img class="imgRobot" src="./images/duk_03_04_0004_302/img_01.png" alt="">
+                                        <div class="box-item yellow">
+                                            <p>내가 인공지능 로봇과</p>
+                                            <div class="flex" style="margin-top: 0;"><span
+                                                    class="js-dropArea a1 clearArea boxDrag"
+                                                    data-drop-area-answer="4"></span><span>을</span></div>
+                                            <p>생각해 봐야 합니다.</p>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="dapCheckBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="dragDrop" data-option="answer"
+                                    data-quiz-name="dragDrop" data-total-complete-count="1">
+                                    <div class="dragDropContainer bogi" style="top: 60px;">
+                                        <div class="it-start-wrap dragBox lineBox dragObjUL">
+                                            <div class="bogi-icon"></div>
+                                            <div class="drag-zone">
+                                                <div class="js-dragObj d1" data-drag-obj-answer="1" data-ps="free">
+                                                    단점</div>
+                                                <div class="js-dragObj d2" data-drag-obj-answer="2" data-ps="free">
+                                                    가족의 행복</div>
+                                                <div class="js-dragObj d3" data-drag-obj-answer="3" data-ps="free">
+                                                    장점</div>
+                                                <div class="js-dragObj d4" data-drag-obj-answer="4" data-ps="free">
+                                                    다른 점</div>
+                                                <div class="js-dragObj d5" data-drag-obj-answer="5" data-ps="free">
+                                                    성실</div>
+                                                <div class="js-dragObj d6" data-drag-obj-answer="6" data-ps="free">
+                                                    도움</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex">
+                                        <img class="imgRobot" src="./images/duk_03_04_0004_302/img_01.png" alt="">
+                                        <div class="box-item blue">
+                                            <div class="flex" style="margin-top: 0;"><span
+                                                    class="js-dropArea a1 clearArea boxDrag"
+                                                    data-drop-area-answer="5"></span><span>한 생활에</span></div>
+                                            <p>도움이 되도록 인공지능 로봇을</p>
+                                            <p>사용해야 합니다.</p>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="dapCheckBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3" data-quiz="dragDrop" data-option="answer"
+                                    data-quiz-name="dragDrop" data-total-complete-count="2">
+                                    <div class="dragDropContainer bogi" style="top: 60px;">
+                                        <div class="it-start-wrap dragBox lineBox dragObjUL">
+                                            <div class="bogi-icon"></div>
+                                            <div class="drag-zone">
+                                                <div class="js-dragObj d1" data-drag-obj-answer="1" data-ps="free">
+                                                    단점</div>
+                                                <div class="js-dragObj d2" data-drag-obj-answer="2" data-ps="free">
+                                                    가족의 행복</div>
+                                                <div class="js-dragObj d3" data-drag-obj-answer="3" data-ps="free">
+                                                    장점</div>
+                                                <div class="js-dragObj d4" data-drag-obj-answer="4" data-ps="free">
+                                                    다른 점</div>
+                                                <div class="js-dragObj d5" data-drag-obj-answer="5" data-ps="free">
+                                                    성실</div>
+                                                <div class="js-dragObj d6" data-drag-obj-answer="6" data-ps="free">
+                                                    도움</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex">
+                                        <img class="imgRobot" src="./images/duk_03_04_0004_302/img_01.png" alt="">
+                                        <div class="box-item blue">
+                                            <div class="flex" style="margin-top: 0;">
+                                                <span>우리</span><span class="js-dropArea a1 clearArea boxDrag"
+                                                    data-drop-area-answer="2" style="width: 280px;"></span>
+                                                <span>에</span>
+                                            </div>
+                                            <div class="flex" style="margin-top: 0;">
+                                                <span class="js-dropArea a1 clearArea boxDrag"
+                                                    data-drop-area-answer="6"></span>
+                                                <span>을 주는 기능을 생각해</span>
+                                            </div>
+                                            <p>봐야 합니다.</p>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="dapCheckBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_4" data-quiz="dragDrop" data-option="answer"
+                                data-quiz-name="dragDrop" data-total-complete-count="2">
+                                <div class="dragDropContainer bogi" style="top: 60px;">
+                                    <div class="it-start-wrap dragBox lineBox dragObjUL">
+                                        <div class="bogi-icon"></div>
+                                        <div class="drag-zone">
+                                            <div class="js-dragObj d1" data-drag-obj-answer="1" data-ps="free">
+                                                단점</div>
+                                            <div class="js-dragObj d2" data-drag-obj-answer="2" data-ps="free">
+                                                가족의 행복</div>
+                                            <div class="js-dragObj d3" data-drag-obj-answer="3" data-ps="free">
+                                                장점</div>
+                                            <div class="js-dragObj d4" data-drag-obj-answer="4" data-ps="free">
+                                                다른 점</div>
+                                            <div class="js-dragObj d5" data-drag-obj-answer="5" data-ps="free">
+                                                성실</div>
+                                            <div class="js-dragObj d6" data-drag-obj-answer="6" data-ps="free">
+                                                도움</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex">
+                                    <img class="imgRobot" src="./images/duk_03_04_0004_302/img_01.png" alt="">
+                                    <div class="box-item yellow">
+                                        <p>인공지능 로봇을 사용할</p>
+                                        <div class="flex" style="margin-top: 0;">
+                                            <span>때의</span><span class="js-dropArea a1 clearArea boxDrag"
+                                                data-drop-area-answer="3"></span>
+                                            <span>과</span>
+                                        </div>
+                                        <div class="flex" style="margin-top: 0;">
+                                            <span class="js-dropArea a1 clearArea boxDrag"
+                                                data-drop-area-answer="1"></span>
+                                            <span>을 생각해</span>
+                                        </div>
+                                        <p>봐야 합니다.</p>
+                                    </div>
+                                </div>
+                                <div class="buttonContainer">
+                                    <button class="dapCheckBtn" data-answer-btn=""></button>
+                                </div>
+                            </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="study_guide"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
+                                    <div class="self-check" style="margin-top: 100px;">
+                                        <div class="checkWrap">
+                                            <div class="text_box">
+                                                인공지능 로봇과 나의 다른 점이 무엇인지 알고 있나요?
+                                            </div>
+                                            <div class="icon-box">
+                                                <div class="wrap">
+                                                    <div class="button-smile icon1"></div>
+                                                </div>
+                                                <div class="wrap">
+                                                    <div class="button-smile icon2"></div>
+                                                </div>
+                                                <div class="wrap">
+                                                    <div class="button-smile icon3"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="checkWrap">
+                                            <div class="text_box">
+                                                인공지능 로봇이 나의 생활에 미치는 영향을 이해하고 있나요?
+                                            </div>
+                                            <div class="icon-box">
+                                                <div class="wrap">
+                                                    <div class="button-smile icon1"></div>
+                                                </div>
+                                                <div class="wrap">
+                                                    <div class="button-smile icon2"></div>
+                                                </div>
+                                                <div class="wrap">
+                                                    <div class="button-smile icon3"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="example-box">
+                                            <div class="exampleIcoWrap">
+                                                <div class="example ico-01">
+                                                    매우 그렇다
+                                                </div>
+                                                <div class="example ico-02">
+                                                    그렇다
+                                                </div>
+                                                <div class="example ico-03">
+                                                    좀 더 노력해야 한다
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="study_guide"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
+                                    <div class="self-check" style="margin-top: 100px;">
+                                        <div class="checkWrap">
+                                            <div class="text_box">
+                                                우리 가족의 행복에 도움이 되는 인공지능 로봇의
+                                                기능을 설명할 수 있나요?
+                                            </div>
+                                            <div class="icon-box">
+                                                <div class="wrap">
+                                                    <div class="button-smile icon1"></div>
+                                                </div>
+                                                <div class="wrap">
+                                                    <div class="button-smile icon2"></div>
+                                                </div>
+                                                <div class="wrap">
+                                                    <div class="button-smile icon3"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="checkWrap">
+                                            <div class="text_box">
+                                                인공지능 로봇을 올바르게 사용하려는 마음을
+                                                가지고 있나요?
+                                            </div>
+                                            <div class="icon-box">
+                                                <div class="wrap">
+                                                    <div class="button-smile icon1"></div>
+                                                </div>
+                                                <div class="wrap">
+                                                    <div class="button-smile icon2"></div>
+                                                </div>
+                                                <div class="wrap">
+                                                    <div class="button-smile icon3"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="example-box">
+                                            <div class="exampleIcoWrap">
+                                                <div class="example ico-01">
+                                                    매우 그렇다
+                                                </div>
+                                                <div class="example ico-02">
+                                                    그렇다
+                                                </div>
+                                                <div class="example ico-03">
+                                                    좀 더 노력해야 한다
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <!-- <script type="text/javascript" src="./ko/contents.js"></script> -->
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+
+
+            //drag drop
+            // var data_id_complete = [];
+            // $(document).on('click', '.basicSlider_circle_tabs li', function () {
+            //     var _id = $(this).index();
+            //     $('.js-dropArea').css('transform', 'translate(1000%, 1000%)');
+            //     $('.js-dropArea.a' + (_id + 1)).css('transform', 'translate(0,0)');
+            // });
+
+            // $(document).on('click', '.basicSlider_btn', function () {
+            //     var _id = $('.basicSlider_circle_tabs li.on').index();
+            //     $('.js-dropArea').css('transform', 'translate(1000%, 1000%)');
+            //     $('.js-dropArea.a' + (_id + 1)).css('transform', 'translate(0,0)');
+            // });
+            // $(document).on('mouseup touchend', '.js-dragObj', function () {
+            //     var _id = parseInt($(this).attr("class").split(" ")[1].replace("d", ""));
+            //     console.log(_id);
+            //     $(this).closest('.dragDropContainer').find('.js-dropArea').removeClass('dragged');
+            //     var x = $(this).closest('.dragDropContainer').find('.js-dropArea .js-dragObj.d' + _id).clone();
+            //     if ($(this).closest('.dragDropContainer').find('.js-dropArea>.js-dragObj.d' + _id).length > 0) {
+            //         $(this).closest('.dragDropContainer').find('.js-dropArea>.js-dragObj.d' + _id).parent().addClass('active dragged');
+            //         $(this).closest('.dragDropContainer').find('.js-dropArea.dragged .dragClone').append(x);
+            //     }
+            //     if ($("[data-quiz='dragDrop'] .js-dropArea").length == 1) {
+            //         if ($(this).closest('.dragDropContainer').find('.js-dropArea.active').length == 1) {
+            //             $(this).closest('[data-quiz="dragDrop"]').find('.dapCheckBtn').addClass('reset');
+            //         }
+            //     }
+
+            //     if ($(this).hasClass('dragObjComplete')) {
+            //         var dragAnswer = $(this).data('drag-obj-answer');
+            //         $(`.drag-zone .js-dragObj.d${dragAnswer}`).css('opacity', '0 !important');
+            //     }
+            //     $('.js-dropArea').each(function () {
+            //         $(this).find('.js-dragObj').each(function () {
+            //             var dragObjAnswer = $(this).data('drag-obj-answer');
+            //             if (!data_id_complete.includes(dragObjAnswer)) {
+            //                 $(`.drag-zone [data-drag-obj-answer="${dragObjAnswer}"]`).addClass('dragObjComplete');
+            //                 data_id_complete.push(dragObjAnswer);
+            //             }
+            //         });
+            //     });
+            // });
+
+            // $(document).on('click', '.dapCheckBtn', function () {
+            //     var $id = $(this).closest('[data-quiz="dragDrop"]').find('.js-dropArea').data('drop-area-answer');
+            //     $('.js-dropArea').each(function () {
+            //         $(this).find('.js-dragObj').each(function () {
+            //             var dragObjAnswer = $(this).data('drag-obj-answer');
+            //             if (!data_id_complete.includes(dragObjAnswer)) {
+            //                 $(`.drag-zone [data-drag-obj-answer="${dragObjAnswer}"]`).addClass('dragObjComplete');
+            //                 data_id_complete.push(dragObjAnswer);
+            //             }
+            //         });
+            //     });
+
+            //     if ($(this).hasClass('reset')) {
+            //         $(this).closest('[data-quiz="dragDrop"]').find('.js-dropArea').addClass('active');
+            //     }
+            //     else {
+            //         data_id_complete = data_id_complete.filter(function (value) {
+            //             return value !== $id;
+            //         });
+            //         data_id_complete.forEach(function (value, index) {
+            //             $(`.drag-zone [data-drag-obj-answer="${value}"]`).addClass('dragObjComplete');
+            //         });
+            //         $(this).closest('[data-quiz="dragDrop"]').find('.js-dropArea').removeClass('active').empty().append('<div class="dragClone"></div>');
+            //         // if ($(this).parent().parent().hasClass('innerTab_2')) {
+            //         //     $('.page_1 .innerTab_2 .js-dragObj').removeClass('dragObjComplete');
+            //         // }
+            //     }
+
+
+            // });
+
+        });
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        .check_list .check_view .check_box {
+            width: 50px;
+            height: 50px;
+        }
+
+        .check_list .check_view .check_box .red_check {
+            background: url(./common/images/redCheck.png) no-repeat;
+            background-size: contain;
+            width: 60px;
+            top: -15px;
+            left: -10px;
+        }
+
+        .box_item {
+            padding: 12px 25px;
+            border-radius: 20px;
+            background-color: #E1F1F8;
+            border: 4px solid #98CCF4;
+            text-align: center;
+        }
+
+        .flex_group {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: calc(100% - 30px);
+        }
+
+        .flex_item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        [data-popup-page="2"] {
+            top: 200px;
+            left: 510px;
+            width: 750px;
+        }
+
+        /* page 3 */
+
+        .page_3 .noteText {
+            box-shadow: none;
+            position: absolute;
+            width: 1000px;
+            border-radius: 20px;
+            height: 200px;
+            padding: 35px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .page_3 .noteText .textareaWrap {
+            height: 182px;
+            padding: 0;
+        }
+
+        .page_3 .noteText::after {
+            display: none;
+        }
+
+        #girl_3_c {
+            top: 70px;
+            left: 50px;
+        }
+
+        .page_3 .noteText.orange {
+            border: 5px solid #fcce8b !important;
+            background-color: #fff1d0 !important;
+            left: 260px;
+            top: 50px;
+        }
+
+        .page_3 .noteText.orange::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-right: 30px solid #fcce8b;
+            left: -30px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        #boy_3_c {
+            right: 50px;
+            bottom: 80px;
+        }
+
+        .page_3 .noteText.purple::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            left: -30px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            border-left: 30px solid #cabfe0;
+            border-right: none;
+            left: unset;
+            right: -30px;
+        }
+
+        .page_3 .noteText.purple {
+            border: 5px solid #cabfe0 !important;
+            background-color: #ece5ff !important;
+            bottom: 70px;
+            right: 260px;
+        }
+
+        .character-item {
+            pointer-events: none;
+            position: absolute;
+        }
+
+        .buttonContainer {
+            right: 28px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="gap">
+            <div class="title-icon pink" data-show="1">마음 <em>쑥쑥</em></div>
+            <div class="title-text">인공지능 로봇의 장점과 단점을 생각하며 다음 활동을 해 봅시다.</div>
+        </header>
+        <main>
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="인공지능 로봇의 장점과 단점을 생각하며 다음 활동을 해 봅시다." data-gap="true">활동 1</li>
+                    <li data-hover="" data-text="내가 가지고 싶은 인공지능 로봇을 고르고 그 까닭을 생각해 봅시다." class="twoLine">활동 2</li>
+                    <li data-hover="" data-text="‘내가 가지고 싶은 인공지능 로봇’을 올바르게 사용하려면 어떻게 해야 할지 친구와 이야기를 나누어 봅시다."
+                        class="twoLine">활동 3</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="how-to-box">
+                                        <div class="title-box">
+                                            <div class="title">활동 방법</div>
+                                        </div>
+                                    </div>
+                                    <ul class="how-to-play">
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                1
+                                            </div>
+                                            <div class="text">
+                                                빈칸에 나와 친구의 이름을 쓰고, ‘출발’ 칸에 말을 같이 놓습니다.
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                2
+                                            </div>
+                                            <div class="text" style="letter-spacing: -1.2px;">
+                                                ‘출발’ 칸에 적힌 인공지능 로봇의 장점을 각자 한 가지씩 이야기합니다.
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                3
+                                            </div>
+                                            <div class="text">
+                                                가위바위보를 하여 이긴 사람은 자신의 이름이 적힌 쪽으로 말을 한 칸
+                                                옮깁니다.
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                4
+                                            </div>
+                                            <div class="text">
+                                                ‘출발’칸에 적힌 인공지능 로봇의 단점을 한 가지씩 이야기합니다.
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="how-to-box">
+                                        <div class="title-box">
+                                            <div class="title">활동 방법</div>
+                                        </div>
+                                    </div>
+                                    <ul class="how-to-play">
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                5
+                                            </div>
+                                            <div class="text">
+                                                가위바위보를 하여 이긴 사람은 자신의 이름이 적힌 쪽으로 말을 한 칸 옮깁니다.
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                6
+                                            </div>
+                                            <div class="text">
+                                                2~5번을 반복하여 먼저 ‘도착’ 칸에 도착한 사람이 이깁니다.
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                7
+                                            </div>
+                                            <div class="text" style="letter-spacing: -1.3px;">
+                                                나머지 인공지능 로봇에 대해서도 1~6번의 순서대로 짝끼리 활동을 합니다.
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="2"></div>
+                        <div class="flex_group">
+                            <div class="flex_item">
+                                <div class="check_list">
+                                    <div class="check_view no_sound">
+                                        <div class="check_box"></div>
+                                    </div>
+                                </div>
+                                <div class="box_item">
+                                    나와 같은<br>
+                                    인공지능 로봇
+                                </div>
+                            </div>
+                            <div class="flex_item">
+                                <div class="check_list">
+                                    <div class="check_view no_sound">
+                                        <div class="check_box"></div>
+                                    </div>
+                                </div>
+                                <div class="box_item">
+                                    꿈 성장<br>
+                                    인공지능 로봇
+                                </div>
+                            </div>
+                            <div class="flex_item">
+                                <div class="check_list">
+                                    <div class="check_view no_sound">
+                                        <div class="check_box"></div>
+                                    </div>
+                                </div>
+                                <div class="box_item">
+                                    가족 행복<br>
+                                    인공지능 로봇
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="resetBtn only-reset" data-type="reset" data-hover=""></button>
+                        </div>
+                    </li>
+                    <li class="page_3" data-quiz="toggle">
+                        <div id="girl_3_c" class="character-item"></div>
+                        <div class="noteText noLine orange">꿈 성장 인공지능 로봇을 올바르게 사용하려면
+                            로봇에게 시켜서는 안 되는 일을 잘 판단해야 해.
+                        </div>
+                        <div id="boy_3_c" class="character-item"></div>
+                        <div class="noteText noLine purple">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="placeholder=''"
+                                    onblur="placeholder='직접 쓰기'" autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="resetBtn only-reset" data-type="reset" data-hover=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="2" data-drag="">
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        <p>
+                            자아 존중, 성실, 효·우애의 가치와 연결 지어 가지고 싶은 인공지능 로봇을 생각해 봅니다.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+
+            $(document).on('click', '.check_box', function () {
+                KmAudioPlayer.buttonClick();
+                if ($(this).hasClass('check_ans')) {
+                    $(this).removeClass('check_ans');
+                    $(this).children().remove();
+                }
+                else {
+                    $(this).addClass('check_ans');
+                    $(this).append("<p class='red_check'></p>");
+                }
+            });
+
+            $(document).on('click', '.page_2 .resetBtn', function () {
+                $('.check_box').removeClass('check_ans');
+                $('.check_box').children().remove();
+                KmAudioPlayer.buttonClick();
+            });
+
+            $prite.girl3({
+                id: '#girl_3_c',
+                circle: true,
+            });
+
+            $prite.boy3({
+                id: '#boy_3_c',
+                circle: true,
+            });
+
+            $(document).on('click', '.page_3 .resetBtn', function () {
+                KmAudioPlayer.buttonClick();
+                $('.textLine').val('');
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
