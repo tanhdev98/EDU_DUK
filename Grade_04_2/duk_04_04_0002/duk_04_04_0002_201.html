@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        .page_1 .img {
+            position: absolute;
+        }
+
+        .page_1 .img1 {
+            width: 240px;
+            top: 105px;
+            left: 100px;
+            transform: scaleX(-1);
+        }
+
+        .page_1 .innerTab_2 .img1 {
+            transform: scaleX(1);
+        }
+
+        .page_1 .img2 {
+            width: 850px;
+            height: 450px;
+            left: 400px;
+            top: 55px;
+            position: relative;
+        }
+
+        .text {
+            position: absolute;
+            font-size: 40px;
+        }
+
+        .text1 {
+            text-align: center;
+            left: 482px;
+            top: 80px;
+        }
+
+        .noteText {
+            box-shadow: none;
+            background-color: #fff;
+            display: inline-block;
+        }
+
+        .noteText .textareaWrap {
+            height: 100%;
+        }
+
+        .noteText.note1 {
+            height: 65px;
+            width: 300px;
+            padding: 0;
+        }
+
+        .noteText.note1 .text-exam.flex-wrap {
+            padding: 0 20px;
+        }
+
+        .page_1 .flex_text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 40px;
+            position: absolute;
+            left: 470px;
+            top: 190px;
+            z-index: 3;
+        }
+
+        .page_1 .innerTab_2 .flex_text {
+            left: 620px;
+        }
+
+        .noteText.note2 {
+            height: 200px;
+            width: 600px;
+            top: -220px;
+            left: 600px;
+            background-color: transparent;
+            z-index: 2;
+            font-size: 40px;
+        }
+
+        .noteText.note2 .textareaWrap {
+            height: 190px;
+        }
+
+        .note2 .underline:nth-child(5),
+        .note2 .underline:nth-child(6) {
+            display: none;
+        }
+
+        .text2 {
+            top: 274px;
+            left: 473px;
+        }
+
+        .blueT p {
+            text-align: left;
+        }
+
+        .additional-question {
+            position: absolute;
+            right: 0;
+        }
+
+        /* Popup page */
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: auto;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .popup_pages [data-type="toggleButton"] {
+            height: fit-content;
+            align-items: center;
+            display: flex;
+            width: 100% !important;
+        }
+
+        [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            height: 100%;
+        }
+
+        .popup-pages .ls-2h {
+            width: 100%;
+        }
+
+        .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .toggle.complete .answer,
+        .answer.on {
+            font-weight: normal;
+            margin: auto;
+            text-align: center;
+        }
+
+        .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+
+        .innerSlider_tabs>li {
+            background-color: #F3DEC0;
+        }
+
+        .innerSlider_tabs>li.on {
+            background-color: #F3B05B;
+        }
+
+        .innerButtonContainer {
+            position: absolute;
+            right: 80px;
+            top: 86px;
+        }
+
+        .innerButtonContainer::before {
+            display: none;
+        }
+
+        .box-item.ico_que {
+            text-align: center;
+        }
+
+        /* page 2 */
+        .character-item {
+            position: absolute;
+        }
+
+        #boy_2_c {
+            left: 50px;
+            top: 0;
+        }
+
+        .balloon {
+            height: 150px;
+            width: 970px;
+        }
+
+        #boy_2_c .balloon {
+            top: 10px !important;
+            left: 220px !important;
+        }
+
+
+        .balloon>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            gap: 20px;
+        }
+
+        .balloon>span>img {
+            width: 170px;
+        }
+
+        .characterWrap.speech.right:before {
+            background: url('../ko/contents/images/button/btn_speech_balloon_left1.png') no-repeat;
+        }
+
+        .characterWrap.speech.right:hover:before {
+            background: url('../ko/contents/images/button/btn_speech_balloon_left1_hover.png') no-repeat;
+        }
+
+        #boy_2_c .charSpriteAni {
+            background-image: url('../ko/contents/images/character/boy_2.png') !important;
+        }
+
+        .page_2 .noteText {
+            margin-top: 180px;
+            height: 280px;
+        }
+
+        .page_2 .noteText .underline:nth-child(5),
+        .page_2 .noteText .underline:nth-child(6) {
+            display: none;
+        }
+
+        /* page 3 */
+
+        [data-popup-page="4"] {
+            top: 200px;
+            left: 470px;
+            width: 788px;
+        }
+
+        .page_3 .additional-question {
+            right: 100px;
+            top: 10px;
+        }
+
+        [data-popup-page="3"] h2 {
+            width: max-content;
+            margin: auto;
+            margin-top: -30px;
+        }
+
+        .page_3 .noteText {
+            height: 290px;
+            padding: 0;
+            box-shadow: none;
+        }
+
+        .page_3 .noteText.noLine .textareaWrap {
+            height: 100%;
+        }
+
+        .page_3 .tab-content-box {
+            margin-top: 70px;
+        }
+
+        .page_3 .noteText .text-exam.flex-wrap {
+            padding: 0 20px;
+        }
+
+        .page_3 .blueT p {
+            text-align: center;
+        }
+
+        .page_3 .mouse.item1 {
+            position: absolute;
+            left: 190px;
+            top: 320px;
+        }
+
+        [data-popup-page="5"] table td {
+            text-align: center;
+        }
+
+        [data-popup-page="5"] .contentsBox,
+        [data-popup-page="5"] .contentsBox .basicSlider_slides>li {
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue" data-show="1">실천 <em>쑥쑥</em></div>
+            <div class="title-text">소희와 은채 각각의 입장에서 생각해 볼까요?</div>
+        </header>
+        <main>
+
+
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="소희와 은채 각각의 입장에서 생각해 볼까요?">활동 1</li>
+                    <li data-hover="" data-text="소희와 은채의 고민 해결을 위해 내가 생각한 해결 방법을 써 봅시다." class="twoLine">활동 2</li>
+                    <li data-hover="" data-text="각자 찾은 해결 방법의 장단점 및 보완 방법을 모둠 친구들과 이야기하고 가장 적절한 해결 방법을 찾아봅시다."
+                        class="twoLine">활동 3</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <img class="img img1" src="./images/duk_04_04_0002_201/img_01.png" alt="">
+                                    <img class="img img2" src="./images/duk_04_04_0002_201/img_02.png" alt="">
+                                    <p class="text text1">소희의 입장에서 생각해 보면<br>
+                                        은채가 다른 친구들과 놀이터에 놀러 갔다고
+                                    </p>
+                                    <div class="flex_text">
+                                        <p>말하지 않은 것은</p>
+                                        <div class="noteText noLine note1">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    <p>친구</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p>일이야.</p>
+                                    </div>
+                                    <p class="text text2">왜냐하면</p>
+                                    <div class="noteText noteLine note2">
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p>자기에게 거짓말을 하고 놀이터에 놀러 갔다고 생각할 수 있기 때문이야.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="popBtn additional-question" data-popup-btn="2">추가 질문</div>
+                                    <img class="img img1" src="./images/duk_04_04_0002_201/img_03.png" alt="">
+                                    <img class="img img2" src="./images/duk_04_04_0002_201/img_02.png" alt="">
+                                    <p class="text text1">은채의 입장에서 생각해 보면<br>
+                                        다른 친구들이 놀이터에 가자고 자꾸 조르면
+                                    </p>
+                                    <div class="flex_text">
+                                        <div class="noteText noLine note1">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    <p>함께 놀고 싶은</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p>일이야.</p>
+                                    </div>
+                                    <p class="text text2">왜냐하면</p>
+                                    <div class="noteText noteLine note2">
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p>다른 친구들과도 좋은 관계를 유지해야 하기 때문이야.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div id="boy_2_c" class="character-item"></div>
+                        <div class="noteText noteLine green">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p class="dot">직접 만나 상황을 이야기하고 사과합니다.</p>
+                                    <p class="dot">은채의 마음을 잘 알고 있는 친구가 소희에게 말해 줍니다.</p>
+                                    <p class="dot">싸움이 커지기 전에 선생님께 도움을 요청합니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                    <li class="page_3" data-quiz="toggle">
+                        <div class="popBtn additional-question" data-popup-btn="3">추가 질문</div>
+                        <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="4"></div>
+                        <div class="tab-content-box">
+                            <div class="tab-content content-01">
+                                <div class="table-box color-01">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:20%">
+                                            <col style="width:20%">
+                                            <col style="width:20%">
+                                            <col style="width:40%">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>해결 방법</th>
+                                                <th>장점</th>
+                                                <th>단점</th>
+                                                <th>보완 방법</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="noteText noLine">
+                                                        <div class="textareaWrap">
+                                                            <textarea class="textLine afterDisplay" type="text"
+                                                                placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                                onfocus="" onblur="placeholder='직접 쓰기'"
+                                                                autocomplete="off" spellcheck="false"></textarea>
+                                                        </div>
+                                                        <div class="text-exam flex-wrap">
+                                                            <div class="blueT">
+                                                                <p>선생님께<br>
+                                                                    도움을 요청
+                                                                    한다.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="popBtn mouse item1" data-hover="" data-popup-btn="5"
+                                                        data-targetSlideNum="1">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="noteText noLine">
+                                                        <div class="textareaWrap">
+                                                            <textarea class="textLine afterDisplay" type="text"
+                                                                placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                                onfocus="" onblur="placeholder='직접 쓰기'"
+                                                                autocomplete="off" spellcheck="false"></textarea>
+                                                        </div>
+                                                        <div class="text-exam flex-wrap">
+                                                            <div class="blueT">
+                                                                <p>선생님 앞이라 차분하게 대화할 수 있다.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="noteText noLine">
+                                                        <div class="textareaWrap">
+                                                            <textarea class="textLine afterDisplay" type="text"
+                                                                placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                                onfocus="" onblur="placeholder='직접 쓰기'"
+                                                                autocomplete="off" spellcheck="false"></textarea>
+                                                        </div>
+                                                        <div class="text-exam flex-wrap">
+                                                            <div class="blueT">
+                                                                <p>솔직하게 말하기<br>
+                                                                    어려울 수도 있다.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="noteText noLine">
+                                                        <div class="textareaWrap">
+                                                            <textarea class="textLine afterDisplay" type="text"
+                                                                placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                                onfocus="" onblur="placeholder='직접 쓰기'"
+                                                                autocomplete="off" spellcheck="false"></textarea>
+                                                        </div>
+                                                        <div class="text-exam flex-wrap">
+                                                            <div class="blueT">
+                                                                <p>선생님께 말씀드리기 전에 둘이 먼저
+                                                                    이야기를 나누고
+                                                                    어려울 경우
+                                                                    도움을 요청한다.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-hover="" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image" data-popup-page="2" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="innerButtonContainer">
+                                <ul class="innerSlider_tabs">
+                                    <li data-hover="" class="on">1</li>
+                                    <li data-hover="">2</li>
+                                    <li data-hover="">3</li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1 on">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            은채가 소희의 입장이었다면,<br>
+                                            또 소희가 은채의 입장이었다면 어떤 생각을 했을까요?
+                                            <img src="./common/images/ico_que.png" class="ico" />
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico" />
+                                            <div data-type="toggleButton" class="boxItem">
+                                                <div class="toggle examBtn box" data-toggle-obj="1" data-hover>
+                                                    <div class="answer" data-toggle-target="1">
+                                                        <div class="ls-2h">
+                                                            <p class="dot">은채가 소희의 입장이었다면 자신에게 거짓말을 한 행동에
+                                                                배신감을 느꼈을 것 같습니다.
+                                                            </p>
+                                                            <p class="dot">소희가 은채의 입장이었다면 자신의 배려를 이해해주지 않아 서운했을 것 같습니다.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            은채가 솔직하게 말하고 놀이터에 갔다면<br>
+                                            소희는 어떤 마음이었을까요?
+                                            <img src="./common/images/ico_que.png" class="ico" />
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico" />
+                                            <div data-type="toggleButton" class="boxItem">
+                                                <div class="toggle examBtn box" data-toggle-obj="2" data-hover>
+                                                    <div class="answer" data-toggle-target="2">
+                                                        <div class="ls-2h">
+                                                            <p class="dot">단짝 친구인 소희가 아픈 자신을 두고 혼자 놀이터에 가서
+                                                                속상할 수도 있을 것 같습니다.</p>
+                                                            <p class="dot">오히려 솔직한 소희의 모습에 소희에 대한 믿음이 생길 수도 있습니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            소희와 은채의 고민을 어떻게 해결할 수 있을까요?
+                                            <img src="./common/images/ico_que.png" class="ico" />
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico" />
+                                            <div data-type="toggleButton" class="boxItem">
+                                                <div class="toggle examBtn box" data-toggle-obj="3" data-hover>
+                                                    <div class="answer" data-toggle-target="3">
+                                                        <div class="ls-2h">
+                                                            <p class="dot">서로 마음을 전하고 이해할 수 있는 시간이 필요합니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="fullLine whole image" data-popup-page="3" data-quiz="toggle">
+                    <div class="full_content">
+                        <h2>최선안으로 이끄는 질문</h2>
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="innerButtonContainer">
+                                <ul class="innerSlider_tabs">
+                                    <li data-hover="" class="on">1</li>
+                                    <li data-hover="">2</li>
+                                    <li data-hover="">3</li>
+                                    <li data-hover="">4</li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1 on">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            그 해결 방법이 좋다고 생각한 까닭은 무엇인가요?
+                                            <img src="./common/images/ico_que.png" class="ico" />
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico" />
+                                            <div data-type="toggleButton" class="boxItem">
+                                                <div class="toggle examBtn box" data-toggle-obj="1" data-hover>
+                                                    <div class="answer" data-toggle-target="1">
+                                                        <div class="ls-2h">
+                                                            마음을 편지로 전하면,<br>
+                                                            서로의 마음을 더 잘 이해할 수 있기 때문입니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            해결 방법의 장점과 단점은 무엇일까요?
+                                            <img src="./common/images/ico_que.png" class="ico" />
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico" />
+                                            <div data-type="toggleButton" class="boxItem">
+                                                <div class="toggle examBtn box" data-toggle-obj="2" data-hover>
+                                                    <div class="answer" data-toggle-target="2">
+                                                        <div class="ls-2h">
+                                                            각자 입장을 잘 정리해서 표현할 수 있다는 장점이 있지만,<br>
+                                                            글로 잘 표현하지 못하면 오해가 생길 수도 있습니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            어떻게 하면 해결 방법의<br>
+                                            장점은 살리고 단점은 보완할 수 있을까요?
+                                            <img src="./common/images/ico_que.png" class="ico" />
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico" />
+                                            <div data-type="toggleButton" class="boxItem">
+                                                <div class="toggle examBtn box" data-toggle-obj="3" data-hover>
+                                                    <div class="answer" data-toggle-target="3">
+                                                        <div class="ls-2h">
+                                                            우선 편지를 먼저 주고 받고,<br>
+                                                            그 후에는 꼭 직접 만나서 대화를 나누어 보아야 합니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_4">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            해결 방법이 두 친구 모두에게 도움이 될 것이라고 생각하나요?
+                                            <img src="./common/images/ico_que.png" class="ico" />
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico" />
+                                            <div data-type="toggleButton" class="boxItem">
+                                                <div class="toggle examBtn box" data-toggle-obj="4" data-hover>
+                                                    <div class="answer" data-toggle-target="4">
+                                                        <div class="ls-2h">
+                                                            소희의 속상한 마음과 은채의 배려하는 마음이 전해져서<br>
+                                                            둘 사이의 오해가 풀리고 우정이 돈독해질 것입니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="min" data-popup-page="4" data-drag="">
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        가장 적절한 해결 방법을 선택한 후 보완 방법을 생각해 볼 수도 있어요.
+                    </div>
+                </li>
+                <li class="fullLine whole image" data-popup-page="5">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1">
+                                    <div class="exam bullet" style="margin-top: -15px;">예</div>
+                                    <div class="tab-content-box" style="margin-top: 10px;">
+                                        <div class="tab-content content-01">
+                                            <div class="table-box color-01">
+                                                <table>
+                                                    <colgroup>
+                                                        <col style="width:25%">
+                                                        <col style="width:25%">
+                                                        <col style="width:25%">
+                                                        <col style="width:25%">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>해결 방법</th>
+                                                            <th>장점</th>
+                                                            <th>단점</th>
+                                                            <th>보완 방법</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                각자 솔직한 마음을
+                                                                편지로 써서 전달해요.
+                                                            </td>
+                                                            <td>
+                                                                편안하게
+                                                                글을 쓸 수 있고
+                                                                마음을 전할 수 있어요.
+                                                            </td>
+                                                            <td>
+                                                                글로 잘 표현하지
+                                                                못해서 오해가
+                                                                생길 수 있어요.
+                                                            </td>
+                                                            <td>
+                                                                우선 편지를 주고받고 꼭 만나서 푸는 과정을 추가해요.
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                직접 만나<br>
+                                                                이야기를<br>
+                                                                나눠요
+                                                            </td>
+                                                            <td>
+                                                                누군가의 도움을 받지 않고 둘이 직접 해결할 수 있어요.
+                                                            </td>
+                                                            <td>
+                                                                직접 만나서
+                                                                말하는 것이
+                                                                부담스러울 수 있어요.
+                                                            </td>
+                                                            <td>
+                                                                다른 친구가
+                                                                중간에 도와줄 수
+                                                                있어요.
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="exam bullet" style="margin-top: -15px;">예</div>
+                                    <div class="tab-content-box" style="margin-top: 10px;">
+                                        <div class="tab-content content-01">
+                                            <div class="table-box color-01">
+                                                <table>
+                                                    <colgroup>
+                                                        <col style="width:25%">
+                                                        <col style="width:25%">
+                                                        <col style="width:25%">
+                                                        <col style="width:25%">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>해결 방법</th>
+                                                            <th>장점</th>
+                                                            <th>단점</th>
+                                                            <th>보완 방법</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                친구들의<br>
+                                                                도움을 얻어<br>
+                                                                화해해요.
+                                                            </td>
+                                                            <td>
+                                                                직접 말하기<br>
+                                                                어려운 것을<br>
+                                                                전달해 줄 수<br>
+                                                                있어요.
+                                                            </td>
+                                                            <td>
+                                                                친구들이 말을<br>
+                                                                잘못 전달해서<br>
+                                                                오해가 생길 수<br>
+                                                                있어요.
+                                                            </td>
+                                                            <td>
+                                                                중요한 것은<br>
+                                                                쪽지에 써서<br>
+                                                                전달해요.
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title-text').addClass('gap');
+                } else {
+                    $('header .title-text').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+
+            $(document).on('click', '.additional-question', function () {
+                $('.boxItem[data-active="on"] .toggle').addClass('complete');
+            });
+            $(document).on('click', '.page_2 .character-item', function () {
+                $(this).find('.balloon').removeClass('fff');
+            });
+
+            $(document).on('click', '.page_2 .characterWrap, .page_2 .balloon > span', function () {
+                KmAudioPlayer.buttonClick();
+            });
+
+            $prite.boy2({
+                id: '#boy_2_c',
+                circle: true,
+                speech: 'right',
+                sound: '',
+                text: '각자 솔직한 마음을 편지로 써서 전달할 수 있어요.',
+                class: 'middle left',
+            });
+
+            $(document).on('click', '.popup_pages .basicSlider_circle_tabs li, .popup_pages .basicSlider_btn', function () {
+               $(this).closest('.whole').addClass('on');
+            });
+
+        });
+    </script>
+</body>
+
+</html>

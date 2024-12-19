@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        .toggle.complete .answer,
+        .answer.on {
+            font-weight: normal;
+        }
+
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+/* page 1 */
+        .page_1 .items {
+            padding: 0 28px;
+        }
+
+        .page_1 .items .item {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .page_1 .items .item .toggle {
+            margin-top: 10px;
+            justify-content: center;
+        }
+
+      .items .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 30px;
+            left: -30px;
+            transform: translateY(-50%);
+        }
+
+        .page_1 .buttonContainer {
+            right: 28px;
+        }
+
+        .page_1 .noteText {
+            box-shadow: none;
+            height: 130px;
+            background-color: #f5f5f5;
+            margin-top: 10px;
+            padding: 0;
+        }
+
+        .page_1 .noteText.note2 {
+            height: 190px;
+        }
+
+        .page_1 .noteText .textareaWrap {
+            height: 100%;
+        }
+
+        .page_1 .noteText .text-exam.flex-wrap {
+            padding: 0 20px;
+        }
+        /* page 2 */
+        .page_2 .items {
+            padding: 0 28px;
+        }
+
+        .page_2 .items .item {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .page_2 .items .item .toggle {
+            margin-top: 10px;
+            justify-content: center;
+        }
+
+        .page_2 .buttonContainer {
+            right: 28px;
+        }
+
+        .page_2 .noteText {
+            box-shadow: none;
+            height: 130px;
+            background-color: #f5f5f5;
+            margin-top: 10px;
+            padding: 0;
+        }
+
+        .page_2 .noteText.note2 {
+            height: 190px;
+        }
+
+        .page_2 .noteText .textareaWrap {
+            height: 100%;
+        }
+
+        .page_2 .noteText .text-exam.flex-wrap {
+            padding: 0 20px;
+        }
+
+        /* Page 2 */
+        .page_2 .self-check {
+            margin-top: 50px;
+        }
+
+        .page_2 .btn-praise {
+            top: 380px;
+        }
+
+        /* title thinknet */
+        .pointContainer .pointTitle {
+            display: block;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .pointContainer .pointTitle .titleText {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 45px;
+            line-height: 50px;
+            font-family: 'YGJAL';
+            color: #ff6600;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+        }
+
+        .pointContainer .pointTitle .titleText:after,
+        .pointContainer .pointTitle .titleText:before {
+            position: absolute;
+            top: 0px;
+            height: 50px;
+            font-size: 40px;
+            line-height: 50px;
+            font-family: 'YGJAL';
+            color: #e4caa9;
+        }
+
+        .pointContainer .pointTitle .titleText:after {
+            content: "[";
+            left: -20px;
+        }
+
+        .pointContainer .pointTitle .titleText:before {
+            content: "]";
+            right: -20px;
+        }
+
+        .popup_pages .items .item {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 30px;
+            cursor: unset;
+        }
+
+        .popup_pages .items .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        .popup_pages .items .item .toggle {
+            width: fit-content;
+        }
+
+        .pointContainer .dapCheckBtn {
+            right: 48px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue" data-show="1">실천 <em>탄탄</em></div>
+            <div class="title-text">우리 모둠이 선택한 해결 방법을 살펴봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="우리 모둠이 선택한 해결 방법을 살펴봅시다.">물음</li>
+                    <li data-hover="" data-text="배운 내용을 되돌아보며 자기 점검을 해 봅시다.">자기 점검</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="items">
+                            <div class="item">
+                                선택한 해결 방법은 무엇인가요?
+                                <div class="noteText noLine note1">
+                                    <div class="textareaWrap">
+                                        <textarea class="textLine afterDisplay" type="text"
+                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                            onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                            spellcheck="false"></textarea>
+                                    </div>
+                                    <div class="text-exam flex-wrap">
+                                        <div class="blueT">
+                                            <p>각자 솔직한 마음을 편지로 써서 전달하기</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                선택한 해결 방법이 소희와 은채 모두에게 도움이 될 것이라고 생각하나요?
+                                <div class="noteText noLine note2">
+                                    <div class="textareaWrap">
+                                        <textarea class="textLine afterDisplay" type="text"
+                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                            onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                            spellcheck="false"></textarea>
+                                    </div>
+                                    <div class="text-exam flex-wrap">
+                                        <div class="blueT">
+                                            <p>소희와 은채가 서로의 입장과 마음을 이해할 수 있어 둘 사이 우정이 
+                                                돈독해질 거예요.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                    <li class="page_2">
+                        <div class="study_guide"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
+                        <div class="self-check">
+                            <div class="checkWrap">
+                                <div class="text_box">찾아낸 해결 방법의 장단점을 파악했나요?</div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">적절한 해결 방법을 찾는 데 적극적으로 참여했나요?</div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="example-box">
+                                <div class="exampleIcoWrap">
+                                    <div class="example ico-01">
+                                        매우 그렇다
+                                    </div>
+                                    <div class="example ico-02">
+                                        그렇다
+                                    </div>
+                                    <div class="example ico-03">
+                                        좀 더 노력해야 한다
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-praise right popBtn footer-item" data-popup-btn="1">
+                            <div class="item-title">핵심 <br>정리</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image pointContainer" data-popup-page="1" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="pointTitle">
+                            <div class="titleText">최선안으로 이끄는 질문</div>
+                        </div>
+                        <div class="items">
+                            <div class="item" data-type="toggleButton">
+                                그 해결 방법이 좋다고 생각한
+                                <div class="toggle box" data-toggle-obj="1">
+                                    <div class="answer" data-toggle-target="1">
+                                        <div>까닭</div>
+                                    </div>
+                                </div>
+                                은 무엇인가요?
+                            </div>
+                            <div class="item" data-type="toggleButton">
+                                해결 방법의
+                                <div class="toggle box" data-toggle-obj="2">
+                                    <div class="answer" data-toggle-target="2">
+                                        <div>장점</div>
+                                    </div>
+                                </div>
+                                과
+                                <div class="toggle box" data-toggle-obj="3">
+                                    <div class="answer" data-toggle-target="3">
+                                        <div>딘점</div>
+                                    </div>
+                                </div>
+                                은 무엇일까요?
+                            </div>
+                            <div class="item" data-type="toggleButton">
+                                어떻게 하면 해결 방법의 장점은 살리고 단점은
+                                <div class="toggle box" data-toggle-obj="4">
+                                    <div class="answer" data-toggle-target="4">
+                                        <div>보완</div>
+                                    </div>
+                                </div>
+                                할 수 있을까요?
+                            </div>
+                            <div class="item" data-type="toggleButton">
+                                해결 방법이 두 친구 모두에게
+                                <div class="toggle box" data-toggle-obj="5">
+                                    <div class="answer" data-toggle-target="5">
+                                        <div>도움</div>
+                                    </div>
+                                </div>
+                                이 될 것이라고 생각하나요?
+                            </div>
+                        </div>
+                    </div>
+                    <button class="dapCheckBtn" data-answer-btn=""></button>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title-text').addClass('gap');
+                } else {
+                    $('header .title-text').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+                if ($(this).index() == 1) {
+                    $('.title-icon').css('margin-top', '-20px');
+                }
+                else {
+                    $('.title-icon').css('margin-top', '0px');
+                }
+            });
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    examViewBtn.addClass('reset');
+                } else {
+                    examViewBtn.removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!examViewBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
+            });
+
+            $(document).on('click', '.popup_closeBtn', function () {
+                $('.popBtn.popupOn').trigger('click');
+            });
+
+            $(document).on('click', '.btn-praise', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+            });
+        });
+
+    </script>
+</body>
+
+</html>
