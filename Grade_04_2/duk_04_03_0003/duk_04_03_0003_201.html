@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        .wrapImg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .wrapImg img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .click-finger-Btn {
+            position: absolute;
+        }
+
+        .item1 {
+            top: 30px;
+            left: 180px;
+        }
+
+        .item2 {
+            top: 240px;
+            right: 570px;
+        }
+
+        .item3 {
+            top: 30px;
+            right: 140px;
+        }
+
+        .popupItem {
+            border: 4px solid #A8D6F6;
+            background: #E7F4F9;
+            position: absolute;
+            display: none;
+            padding: 10px 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .popupItem:before {
+            content: "";
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #A8D6F6;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .popupItem::after {
+            content: "";
+            height: 4px;
+            background-color: #A8D6F6;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .popupItem1 {
+            top: 0px;
+            left: 390px;
+        }
+
+        .popupItem1:before {
+            left: -190px;
+            transform: translateY(-50%);
+        }
+
+        .popupItem1::after {
+            left: -190px;
+            width: 190px;
+        }
+
+        .popupItem2 {
+            top: 0;
+            left: 500px;
+        }
+
+        .popupItem2:before {
+            left: 50%;
+            top: 250px;
+            transform: translateX(-50%);
+        }
+
+        .popupItem2::after {
+            left: 50%;
+            width: 4px;
+            height: 130px;
+            transform: translateX(-50%);
+            top: 130px;
+        }
+
+        .popupItem3 {
+            top: 0px;
+            left: 500px;
+        }
+
+        .popupItem3:before {
+            right: -260px;
+        }
+
+        .popupItem3::after {
+            right: -250px;
+            width: 250px;
+        }
+
+        /* Page 2 */
+        p.arrow {
+            display: flex;
+            padding-left: 30px;
+            margin: 20px 0px;
+            line-height: 60px;
+            position: relative;
+        }
+
+        p.arrow::before {
+            width: 20px;
+            height: 20px;
+            content: "";
+            background-image: url(./common/images/bullet_arrow.png);
+            background-size: 100% 100%;
+            position: absolute;
+            left: 0;
+            top: 20px;
+        }
+
+        .page_2 .innerTab_1,
+        .page_2 .innerTab_2 {
+            padding: 0 10px !important;
+        }
+
+        .page_2 .moveButtonContainer {
+            z-index: 12;
+        }
+
+        .page_2 .transparent {
+            background-color: transparent;
+
+        }
+
+        .page_2 .innerTab .basicSlider_slides li {
+            height: 380px;
+        }
+
+        .page_2 .innerTab .basicSlider_slides li img {
+            height: 200px;
+            width: fit-content;
+            margin-left: 860px;
+        }
+
+
+        .page_2 .additional-question {
+            position: absolute;
+            right: -12px;
+            top: -145px;
+        }
+
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: fit-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        [data-type="toggleButton"] {
+            height: fit-content;
+        }
+
+        [data-type="toggleButton"] .answer {
+            text-align: center;
+        }
+
+        [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+        }
+
+        .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+
+        /* Page 3 */
+        .page_3 .additional-question {
+            position: absolute;
+            right: 0px;
+            top: 0px;
+        }
+
+        .sideLeftSlider {
+            margin-top: 60px;
+        }
+
+        /* Page 4 */
+        .page_4 .wrapImg img {
+            height: 345px;
+            margin-top: 30px;
+        }
+
+        .page_4 .bullet.exam {
+            margin-left: 280px;
+        }
+
+        .page_4 .top-text {
+            font-size: 35px;
+            margin-top: 40px;
+        }
+
+        .page_4 .text1 {
+            position: absolute;
+            color: #FF6284;
+            top: 259px;
+            left: 71px;
+        }
+
+        .page_4 .text2 {
+            position: absolute;
+            color: #FF6284;
+            top: 259px;
+            left: 50px;
+        }
+
+        .page_4 .noteText {
+            box-shadow: none;
+            padding: 0 20px;
+            position: absolute;
+            top: 120px;
+            left: 251px;
+            width: 1040px;
+        }
+
+        .page_4 .noteText .textLine {
+            width: 970px;
+        }
+
+        .page_4 .noteText .text-exam.flex-wrap {
+            padding: 0 40px;
+            height: 300px;
+        }
+
+        .page_4 .noteText.note1 {
+            position: absolute;
+            width: 240px;
+            height: 120px;
+            left: 4px;
+            top: 222px;
+        }
+
+        .page_4 .noteText.noLine .textareaWrap {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="gap">
+            <div class="title-icon blue" data-show="1">실천 <em>쑥쑥</em></div>
+            <div class="title-text">우리 주위에서 배려해야 할 대상을 찾아봅시다.</div>
+        </header>
+        <main>
+
+
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="우리 주위에서 배려해야 할 대상을 찾아봅시다." data-gap="true">활동 1</li>
+                    <li data-hover="" data-text="배려할 때 고민해야 할 것을 생각해 봅시다.">활동 2</li>
+                    <li data-hover="" data-text="배려를 받았을 때 놓치지 말아야 할 것을 알아봅시다." data-gap="true">활동 3</li>
+                    <li data-hover="" data-text="내가 실천할 수 있는 배려에는 무엇이 있는지 생각해 봅시다." data-gap="true">활동 4</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="wrapImg">
+                            <img src="./images/duk_04_03_0003_201/img_01.png" />
+                            <span class="click-finger-Btn blinkOn blinkOpacity item1" data-hover=""
+                                data-popup="1"></span>
+                            <span class="click-finger-Btn blinkOn blinkOpacity item2" data-hover=""
+                                data-popup="2"></span>
+                            <span class="click-finger-Btn blinkOn blinkOpacity item3" data-hover=""
+                                data-popup="3"></span>
+                            <div class="popupItem purple popupItem1" data-show="1">
+                                <span>부모님, 조부모님,<br>
+                                    반려동물, 반려 식물 등
+                                </span>
+                            </div>
+                            <div class="popupItem purple popupItem2" data-show="2">
+                                <span>선생님, 친구,<br>
+                                    학생 보호 인력 등
+                                </span>
+                            </div>
+                            <div class="popupItem purple popupItem3" data-show="3">
+                                <span>동네에서 만나는<br>
+                                    모든 이웃
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="sideTopSlider contentsBox doItContent" data-slide-container=""
+                            style="margin-top: 45px;">
+                            <div class="sideTopButtonContainer" data-slide-btn-container="">
+                                <ul class="sideTopSlider_tabs" data-tabs="">
+                                    <li data-hover="">
+                                        ① 상황을 살펴보세요
+                                    </li>
+                                    <li data-hover="">
+                                        ② 공감해 보세요
+                                    </li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab innerTab_1">
+                                    <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
+                                    <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                                        <div class="moveButtonContainer" data-slide-btn-container="">
+                                            <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                            <ul class="basicSlider_circle_tabs" data-tabs="">
+                                                <li data-hover=""></li>
+                                                <li data-hover=""></li>
+                                            </ul>
+                                            <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                                        </div>
+                                        <ul class="basicSlider_slides transparent" data-slides="">
+                                            <li class="innerTab_1" data-quiz="toggle">
+                                                <p class="arrow">
+                                                    주위의 많은 경우에는 어느 정도의 배려를 필요로 합니다.<br>
+                                                    하지만, 상황에 따라 배려의 정도와 방식이 달라질 수 있으므로, 배려가 꼭 필요한지 살펴봐야 합니다.
+                                                </p>
+                                            </li>
+                                            <li class="innerTab_2" data-quiz="toggle">
+                                                <p class="arrow">
+                                                    배려가 필요한 상황이라면, 상대방의 마음에 공감해 봅시다. 상대방이 어떤 생각과 느낌을 가지고 있을지 상상해 봅시다.
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="innerTab innerTab_2">
+                                    <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                                        <div class="moveButtonContainer" data-slide-btn-container="">
+                                            <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                            <ul class="basicSlider_circle_tabs" data-tabs="">
+                                                <li data-hover=""></li>
+                                                <li data-hover=""></li>
+                                            </ul>
+                                            <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                                        </div>
+                                        <ul class="basicSlider_slides transparent" data-slides="">
+                                            <li class="innerTab_1" data-quiz="toggle">
+                                                <p class="arrow">
+                                                    상대방이 원하는 것은 무엇일까요? 무엇이 도움이 될까요?<br>
+                                                    잘못된 배려는 오히려 부담을 줄 수 있습니다.<br>
+                                                    관찰, 질문, 경청을 통해서 적절한 배려가 무엇인지 찾아봅시다.
+                                                </p>
+                                            </li>
+                                            <li class="innerTab_2" data-quiz="toggle">
+                                                <p class="arrow">
+                                                    준비가 되었다면, 용기 있게 배려를 실천해 봅시다.
+                                                </p>
+                                                <img src="./images/duk_04_03_0003_201/img_02.jpg" />
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="page_3" data-quiz="toggle">
+                        <div class="popBtn additional-question" data-popup-btn="2">추가 질문</div>
+                        <div class="sideLeftSlider contentsBox doItContent" data-slide-container="">
+                            <div class="sideLeftButtonContainer" data-slide-btn-container="">
+                                <ul class="sideLeftSlider_tabs" data-tabs="">
+                                    <li data-hover="">① 표현해요</li>
+                                    <li data-hover="">
+                                        ② 배려를<br>
+                                        되돌려줘요
+                                    </li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab innerTab_1">
+                                    <p class="arrow">
+                                        상대방의 행동이 나에게 큰 도움이 되었다고 말해 주며 감사한 마음을 표현해 봅시다. 앞으로 우리는 더 많이 배려하는 사이가 될 것입니다.
+                                    </p>
+                                </li>
+                                <li class="innerTab innerTab_2">
+                                    <p class="arrow">배려를 받았다면, 나도 상대방을 위해 할 수 있는 배려가 있는지 생각해 봅시다.</p>
+                                    <p class="arrow">내가 배려를 되돌려준다면, 앞으로도 배려는 계속될 것입니다.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="page_4">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="wrapImg">
+                                        <div class="top-text">
+                                            <div class="exam bullet">예</div>
+                                            아랫집 이웃을 배려하여 늦은 시간에 큰 소리를 내거나 뛰지 않아요.
+                                        </div>
+                                        <img src="./images/duk_04_03_0003_201/img_03.png" />
+                                        <div class="text text1">집에서</div>
+                                        <div class="noteText noLine">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    <p class="dot">집안일을 함께 해요.
+
+                                                    </p>
+                                                    <p class="dot">가족을 위해 화장실이 미끄럽지 않게 물기를 닦아요.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="wrapImg">
+                                        <div class="top-text">
+                                            <div class="exam bullet">예</div>
+                                            친구에게 응원이나 위로의 말을 건네요.
+                                        </div>
+                                        <img src="./images/duk_04_03_0003_201/img_03.png" />
+                                        <div class="text text2">학교에서</div>
+                                        <div class="noteText noLine">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    <p class="dot">책가방을 잘 정리하여 위험하지 않도록 해요.</p>
+                                                    <p class="dot">학교 시설물을 소중하게 다뤄 모두가 편하게 사용해요.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3" data-quiz="toggle">
+                                    <div class="wrapImg">
+                                        <div class="top-text">
+                                            <div class="exam bullet">예</div>
+                                            이웃을 위해 버려진 쓰레기를 주워서 쓰레기통에 넣어요.
+                                        </div>
+                                        <img src="./images/duk_04_03_0003_201/img_03.png" />
+                                        <div class="text text2">동네에서</div>
+                                        <div class="noteText noLine">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    <p class="dot">반려동물의 배설물을 잘 치우고, 안전하게 산책시켜요.</p>
+                                                    <p class="dot"> 버스를 타고 내릴 때 버스 기사님께 밝게 인사해요.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_4" data-quiz="toggle">
+                                    <div class="wrapImg">
+                                        <div class="top-text">
+                                            <div class="exam bullet">예</div>
+                                            아랫집 이웃을 배려하여 늦은 시간에 큰 소리를 내거나 뛰지 않아요.
+                                        </div>
+                                        <img src="./images/duk_04_03_0003_201/img_03.png" />
+                                        <div class="noteText noLine note1">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    <p>
+                                                        건물<br>
+                                                        입구에서
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="noteText noLine">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    <p class="dot">문을 열고 지나갈 때 뒷사람을 위해 살짝 잡아 줘요.</p>
+                                                    <p class="dot">문을 열고 잠깐 잡아 뒷사람이 문에 부딪히지 않게 배려해요.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image" data-popup-page="1" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="popup-boxes">
+                            <div class="box-item ico_que">
+                                배려가 필요하지 않는 상황이 있을 수 있을까요?
+                                <img src="./common/images/ico_que.png" class="ico" />
+                            </div>
+                            <div class="box-item ico_ans">
+                                <img src="./common/images/ico_ans.png" class="ico" />
+                                <div data-type="toggleButton">
+                                    <div class="toggle examBtn box" data-toggle-obj="1" data-hover>
+                                        <div class="answer" data-toggle-target="1">
+                                            <div class="ls-2h">
+                                                <p>상대방이 배려를 원하지 않을 경우, 학생인 내가 할 수 없는 일,<br>
+                                                    명확한 법과 규칙을 따라야 하거나 자신의 안전이 위협받는<br>
+                                                    상황에는 배려를 선택하지 않을 수 있습니다.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="fullLine whole image" data-popup-page="2" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="popup-boxes">
+                            <div class="box-item ico_que">
+                                다른 사람을 배려하는 나만의 방법이 있나요?
+                                <img src="./common/images/ico_que.png" class="ico" />
+                            </div>
+                            <div class="box-item ico_ans">
+                                <img src="./common/images/ico_ans.png" class="ico" />
+                                <div data-type="toggleButton">
+                                    <div class="toggle examBtn box" data-toggle-obj="1" data-hover>
+                                        <div class="answer" data-toggle-target="1">
+                                            <div class="ls-2h">
+                                                <p>다른 사람의 입장에서 필요한 것을 생각해 봅니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz-clickSound.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+
+            $(document).on('click', '.click-finger-Btn', function () {
+                KmAudioPlayer.buttonClick();
+                var $data_popup = $(this).attr('data-popup');
+                $('.popupItem').hide();
+                $('.popupItem').find('.close-speech-button').remove();
+                $('.popupItem[data-show="' + $data_popup + '"]').show();
+                $('.popupItem[data-show="' + $data_popup + '"]').append('<div class="close-speech-button"></div>')
+                $(this).hide();
+            });
+
+            $(document).on('click', '.close-speech-button, .popupItem > span', function () {
+                var $data_show = $(this).parent().attr('data-show');
+                $(this).parent().hide();
+                $('.click-finger-Btn[data-popup="' + $data_show + '"]').show().removeClass('blinkOn').removeClass('blinkOpacity');
+                $(this).parent().find($('.close-speech-button')).remove();
+                if ($(this).hasClass('close-speech-button')) {
+                    $(this).remove();
+                } else {
+                    KmAudioPlayer.buttonClick();
+                    $('.close-speech-button').remove();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
