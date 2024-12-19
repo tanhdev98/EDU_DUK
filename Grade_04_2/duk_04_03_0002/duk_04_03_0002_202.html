@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        .page_1 .noteText {
+            margin-top: 70px;
+        }
+
+        .page_1 .noteText.note1 {
+            box-shadow: none;
+            position: absolute;
+            top: 45px;
+            height: 340px;
+        }
+
+        .page_1 .flex {
+            display: flex;
+            margin-top: -15px;
+        }
+
+        [data-popup-page="1"] {
+            width: 1089px;
+            top: 145px;
+            left: 170px;
+        }
+
+        /* page 2 */
+        .page_2 .noteText {
+            margin-top: 70px;
+        }
+
+        .page_2 .noteText.note2 {
+            box-shadow: none;
+            position: absolute;
+            top: 45px;
+            height: 340px;
+        }
+
+        .page_2 .flex {
+            display: flex;
+            margin-top: -15px;
+        }
+
+        [data-popup-page="2"] {
+            width: max-content;
+            top: 145px;
+            left: 650px;
+        }
+
+        /* page 3 */
+        .imgbg {
+            height: 480px;
+        }
+
+        .popupItem {
+            display: none;
+            position: absolute;
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+
+        .popupItem::before {
+            content: "";
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .popupItem::after {
+            position: absolute;
+            content: "";
+            top: 257px;
+            height: 150px;
+            width: 4px;
+        }
+
+        .popupItem span {
+            text-align: center;
+            display: flex;
+        }
+
+        .popupItem1 {
+            bottom: 360px;
+            right: 660px;
+            border: 4px solid #A8D6F6;
+            background-color: #E7F4F9;
+        }
+
+        .popupItem1::before {
+            background-color: #A8D6F6;
+            right: 320px;
+            top: 273px;
+        }
+
+        .popupItem1::after {
+            background-color: #A8D6F6;
+            right: 325px;
+            top: 130px;
+        }
+
+        .popupItem2 {
+            bottom: 50px;
+            right: 110px;
+            border: 4px solid #A8D6F6;
+            background-color: #E7F4F9;
+        }
+
+        .popupItem2::before {
+            background-color: #A8D6F6;
+            right: 259px;
+            top: -110px;
+        }
+
+        .popupItem2::after {
+            background-color: #A8D6F6;
+            right: 265px;
+            top: -100px;
+            height: 100px;
+        }
+
+        .page_3 .click-finger-Btn.item1 {
+            position: absolute;
+            right: 960px;
+            bottom: 150px;
+        }
+
+        .page_3 .click-finger-Btn.item2 {
+            position: absolute;
+            right: 350px;
+            bottom: 370px;
+        }
+
+        .box-title {
+            text-align: center;
+        }
+
+        .flex .box-question {
+            padding: 25px;
+            border-radius: 20px;
+        }
+
+        .flex .box-question.blue {
+            background-color: #F1F9FC;
+        }
+
+        .flex .box-question.blue .box-title {
+            color: #0070C0;
+        }
+
+        .flex .box-question.orange {
+            background-color: #FFF9E5;
+        }
+
+        .flex .box-question.orange .box-title {
+            color: #FF9800;
+        }
+
+        .flex .box-question.pink {
+            background-color: #FDF2F5;
+        }
+
+        .flex .box-question.pink .box-title {
+            color: #FF6284;
+        }
+
+        .flex .box-question.purple {
+            background-color: #F6EFFB;
+        }
+
+        .flex .box-question.purple .box-title {
+            color: #9070B6;
+        }
+
+        .flex .box-question.green {
+            background-color: #F2F6DE;
+        }
+
+        .flex .box-question.green .box-title {
+            color: #16A43F;
+        }
+
+        .page_3 .flex .box-answer {
+            height: 100%;
+            width: 50%;
+        }
+
+        .page_3 .flex .box-answer .toggle {
+            height: 100%;
+            border-radius: 30px;
+            justify-content: center;
+        }
+
+        .page_3 .flex .toggle.complete .answer {
+            text-align: center;
+            font-weight: normal;
+            margin: auto;
+        }
+
+        .page_3 .box-question {
+            width: calc(50% - 20px);
+        }
+
+        .page_3 .innerTab_2 .flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .page_3 .item {
+            margin-left: 28px;
+        }
+
+        .page_3 .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 30px;
+            left: -30px;
+            transform: translateY(-50%);
+            margin-left: 28px;
+        }
+
+        [data-popup-page="3"] {
+            width: 927px;
+            top: 200px;
+            left: 300px;
+        }
+
+        /* page 4 */
+        .page_4 .noteText {
+            padding: 0;
+            box-shadow: none;
+            height: 135px;
+        }
+
+        .note1 {
+            height: 60px;
+        }
+
+        .note2 {
+            height: 240px;
+        }
+
+        .note3 {
+            height: 240px;
+        }
+
+        .noteText.note1 .textareaWrap,
+        .noteText.note2 .textareaWrap,
+        .noteText.note3 .textareaWrap {
+            height: 100%;
+            padding: 0;
+        }
+
+        .page_4 .noteText .textLine {
+            font-size: 32px;
+            line-height: 43px;
+        }
+
+        .page_4 .noteText .text-exam.flex-wrap {
+            padding: 0;
+        }
+
+        .table-box table tr:first-child th:last-child,
+        .table-box.color-02 thead+tbody th {
+            font-size: 32px;
+        }
+
+        .blueT {
+            font-size: 32px;
+            line-height: 43px;
+        }
+
+        .page_4 .flex-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        [data-popup-btn="4"] {
+            margin-top: -10px;
+        }
+
+        [data-popup-page="4"] {
+            width: 744px;
+            top: 135px;
+            left: 510px;
+        }
+
+        .flex-star {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .flex-star .star {
+            width: 60px;
+            height: 60px;
+            background: url('./images/duk_04_03_0002_202/star.png') no-repeat center /100%;
+            cursor: pointer;
+        }
+
+        .flex-star .star.active {
+            width: 60px;
+            height: 60px;
+            background: url('./images/duk_04_03_0002_202/star-active.png') no-repeat center /100%;
+        }
+
+        .page_5 .title_text {
+            width: 610px;
+            position: absolute;
+            left: 230px;
+            top: 40px;
+            text-align: justify;
+        }
+
+        .additional-question {
+            width: max-content;
+            right: 0;
+            position: absolute;
+        }
+
+        [data-popup-page="5"] .popup_pages>li.whole h2 {
+            line-height: 55px;
+            height: max-content;
+        }
+
+        [data-popup-page="5"] table {
+            width: calc(100% - 56px);
+            border-collapse: collapse;
+            margin: auto;
+        }
+
+        [data-popup-page="5"] td {
+            border: 2px solid #F5E5D3;
+            padding: 10px;
+            text-align: center;
+        }
+        [data-popup-page="5"] table   tr:first-child td{
+            background-color: #FD8E09;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue">실천 <em>쑥쑥</em></div>
+            <div class="title-text">‘필수 배려 임무’를 정해 봅시다.</div>
+        </header>
+        <main>
+
+
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="‘필수 배려 임무’를 정해 봅시다.">활동 1</li>
+                    <li data-hover="" data-text="비밀 친구 활동을 할 때 주의해야 할 점을 생각해 봅시다." data-gap="true">활동 2</li>
+                    <li data-hover="" data-text="내가 배려해야 할 친구를 뽑고, 어떤 배려가 필요할지 생각해 봅시다." class="twoLine">활동 3</li>
+                    <li data-hover="" data-text="비밀 친구 활동을 시작해 봅시다.">활동 4</li>
+                    <li data-hover="" data-text="내가 누구의 비밀 친구였는지 밝히고 친구에게 활동 일지와 편지를 전해 줍니다." class="twoLine">활동 5</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="1"></div>
+                        <div class="noteText noLine pink" style="pointer-events: none;">
+                            <div class="flex">
+                                <div class="exam bullet" style="margin-top: 7px;">예</div>
+                                <p>하루에 한 번 칭찬하기</p>
+                            </div>
+                        </div>
+                        <div class="noteText noteLine note1">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="placeholder=''"
+                                    onblur="placeholder='직접 쓰기'" autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p class="dot">하루 한 번 악수하기</p><br>
+                                    <p class="dot">‘좋아.’라는 말 세 번 하기</p><br>
+                                    <p class="dot">눈을 맞추고 밝게 인사하기</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                    <li class="page_2">
+                        <div class="icon-char blinkOpacity orange" data-hover="" data-popup-btn="2"></div>
+                        <div class="noteText noLine orange" style="pointer-events: none;">
+                            <div class="flex">
+                                <div class="exam bullet" style="margin-top: 7px;">예</div>
+                                <p>내가 누구의 비밀 친구인지 다른 사람에게 알리지 않기</p>
+                            </div>
+                        </div>
+                        <div class="noteText noteLine note2">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="placeholder=''"
+                                    onblur="placeholder='직접 쓰기'" autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p class="dot">친구 뽑기를 할 때 내 이름이 나오면 다시 뽑기</p><br>
+                                    <p class="dot">나의 비밀 친구가 누구인지 알게 되더라도 다른 친구에게 말하지 않기</p><br>
+                                    <p class="dot">친구를 위한 배려 활동을 남몰래 하루에 한 가지 이상 실천하고, 그때의 느낌을 간단하게 기록하기</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                    <li class="page_3">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <img class="imgbg" src="./images/duk_04_03_0002_202/Picture1.png" alt="">
+                                    <span class="click-finger-Btn blinkOn blinkOpacity item1" data-hover=""
+                                        data-popup="1"></span>
+                                    <span class="click-finger-Btn blinkOn blinkOpacity item2" data-hover=""
+                                        data-popup="2"></span>
+                                    <div class="popupItem purple popupItem1" data-show="1">
+                                        <span>
+                                            바구니에 친구 이름을 쓴<br>
+                                            쪽지를 넣고 한 명씩 뽑아 봅니다.
+                                        </span>
+                                    </div>
+                                    <div class="popupItem purple popupItem2" data-show="2">
+                                        <span>
+                                            뽑은 종이는 비밀 친구 활동<br>
+                                            마지막 날까지 각자 소중하게<br>
+                                            보관하거나 뽑은 종이 뒷면에<br>
+                                            자기 이름을 쓰고 접어서<br>
+                                            선생님께 전달합니다.
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="flex">
+                                        <div class="box-question purple">
+                                            <div class="box-title">
+                                                친구가 좋아하는 것은?
+                                            </div>
+                                            <div class="box-content">
+                                                <div data-type="toggleButton">
+                                                    <div class="toggle examBtn box" data-toggle-obj="1">
+                                                        <div class="answer" data-toggle-target="1">
+                                                            <div>
+                                                                놀이터에서 친구들과 함께<br>
+                                                                노는 것을 정말 좋아합니다.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="box-question pink">
+                                            <div class="box-title">
+                                                친구가 싫어하는 것은?
+                                            </div>
+                                            <div class="box-content">
+                                                <div data-type="toggleButton">
+                                                    <div class="toggle examBtn box" data-toggle-obj="2">
+                                                        <div class="answer" data-toggle-target="2">
+                                                            <div>
+                                                                별명을 부르는 것을<br>싫어합니다.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="box-question orange">
+                                            <div class="box-title">
+                                                친구가 고민하는 것은?
+                                            </div>
+                                            <div class="box-content">
+                                                <div class="box-content">
+                                                    <div data-type="toggleButton">
+                                                        <div class="toggle examBtn box" data-toggle-obj="3">
+                                                            <div class="answer" data-toggle-target="3">
+                                                                <div style="letter-spacing: -2.2px;">
+                                                                    모둠 학습 내용을 발표하는 것<br>때문에 긴장을 하는 것 같습니다.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="box-question green">
+                                            <div class="box-title">
+                                                친구가 좋아하는 것은?
+                                            </div>
+                                            <div class="box-content">
+                                                <div data-type="toggleButton">
+                                                    <div class="toggle examBtn box" data-toggle-obj="4">
+                                                        <div class="answer" data-toggle-target="4">
+                                                            <div>
+                                                                긴장을 풀고 힘낼 수 있도록<br>
+                                                                응원하는 것이 필요합니다.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3" data-quiz="toggle">
+                                    <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="3"></div>
+                                    <div class="item"> 내가 뽑은 친구에게 필요한 배려 행동은?</div>
+                                    <div class="noteText noteLine blue" style="height: 385px; margin-top: 20px;">
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                친구의 발표 준비를 도와주거나, 발표 연습 상대가 되어 줄 수 있습니다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="page_4" data-quiz="toggle">
+                        <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="4"></div>
+                        <div class="tab-content content-01" style="margin-top: 60px;">
+                            <div class="table-box color-02">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th colspan="13">비밀 친구 활동 일지</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th colspan="2">
+                                                날짜
+                                            </th>
+                                            <th colspan="2">
+                                                필수 배려 임무
+                                            </th>
+                                            <th colspan="6">
+                                                활동 내용
+                                            </th>
+                                            <th colspan="3">
+                                                평가
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <div class="noteText noLine note2">
+                                                    <div class="textareaWrap">
+                                                        <textarea class="textLine afterDisplay" type="text"
+                                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                            onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                            spellcheck="false"></textarea>
+                                                    </div>
+                                                    <div class="text-exam flex-wrap">
+                                                        <div class="blueT flex-center">
+                                                            ○월<br>○일
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td colspan="2">
+                                                <div class="noteText noLine note2">
+                                                    <div class="textareaWrap">
+                                                        <textarea class="textLine afterDisplay" type="text"
+                                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                            onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                            spellcheck="false"></textarea>
+                                                    </div>
+                                                    <div class="text-exam flex-wrap">
+                                                        <div class="blueT flex-center">
+                                                            <p>○</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td colspan="6">
+                                                <div class="noteText noLine note3">
+                                                    <div class="textareaWrap">
+                                                        <textarea style="letter-spacing: -1px;"
+                                                            class="textLine afterDisplay" type="text"
+                                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                            onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                            spellcheck="false"></textarea>
+                                                    </div>
+                                                    <div class="text-exam flex-wrap">
+                                                        <div class="blueT">
+                                                            <p>
+                                                                점심시간에 친구 자리 주위를 깨끗하게 쓸어 주었다. 교실에 돌아와 깜짝 놀란 친구의 표정을 보니
+                                                                기분이 좋았다.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td colspan="3" class="starActive">
+                                                <div class="flex-star">
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                </div>
+                                                <div class="flex-star">
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <div class="noteText noLine note2">
+                                                    <div class="textareaWrap">
+                                                        <textarea class="textLine afterDisplay" type="text"
+                                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                            onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                            spellcheck="false"></textarea>
+                                                    </div>
+                                                    <div class="text-exam flex-wrap">
+                                                        <div class="blueT flex-center">
+                                                            <p>○월<br>○일</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td colspan="2">
+                                                <div class="noteText noLine note2">
+                                                    <div class="textareaWrap">
+                                                        <textarea class="textLine afterDisplay" type="text"
+                                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                            onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                            spellcheck="false"></textarea>
+                                                    </div>
+                                                    <div class="text-exam flex-wrap">
+                                                        <div class="blueT flex-center">
+                                                            <p>○</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td colspan="6">
+                                                <div class="noteText noLine note3">
+                                                    <div class="textareaWrap">
+                                                        <textarea style="letter-spacing: -1px;"
+                                                            class="textLine afterDisplay" type="text"
+                                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                            onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                            spellcheck="false"></textarea>
+                                                    </div>
+                                                    <div class="text-exam flex-wrap">
+                                                        <div class="blueT">
+                                                            <p>
+                                                                아침에 찬희가 학교에 왔을 때 반갑게 인사했는데 찬희의 표정이 좋으면서도 살짝 ‘비밀 친구인가?’
+                                                                의심하는 눈치였다.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td colspan="3">
+                                                <div class="flex-star">
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                </div>
+                                                <div class="flex-star">
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="buttonContainer">
+                                <button class="writeBtn" data-answer-btn=""></button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="page_5">
+                        <div class="popBtn additional-question" data-popup-btn="5">추가 질문</div>
+                        <img src="./images/duk_04_03_0002_202/icon.png"
+                            style="width: 250px;position: absolute; left: 810px; top: 260px; z-index: 2;" alt="">
+                        <img src="./images/duk_04_03_0002_202/letter.png"
+                            style="width: 750px; margin-top: 10px; margin-left: 190px;" alt="">
+                        <div class="title_text">비밀 친구 활동 기간이 끝나면 나의 활동 일지를 친구에게 전해 줍니다. 서로가 모르게 배려를 주고받았던 장면을 떠올리며 감사의
+                            인사를 나눕니다. 일지 뒷면에는 친구에게 편지를 써 봅니다.</div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag="">
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        <p>
+                            비밀 친구 활동에는 모든 친구가 꼭 실천해야 할 ‘필수 배려 임무’가 있습니다. 어떻게 해야 내가 뽑은 친구에게 들키지 않으면서도 임무를 완수할 수 있을까요? 우리
+                            반 친구들 사이에 꼭 필요한 배려 행동을 생각하며, ‘필수 배려 임무’를 정해 봅시다.
+                        </p>
+                    </div>
+                </li>
+                <li class="min" data-popup-page="2" data-drag>
+                    <h2 class="orange">주의!</h2>
+                    <div class="popup_contents">
+                        <p><ins class="dot"></ins>돈이나 선물을 주고받지 않기</p>
+                        <p><ins class="dot"></ins>내가 뽑은 친구를 알리지 않기</p>
+                        <p><ins class="dot"></ins>장난하지 않으며 서로 존중하기</p>
+                        <p><ins class="dot"></ins>소외감을 느끼지 않도록 주의하기</p>
+                        <p><ins class="dot"></ins>다른 수업 시간에 영향을 주지 않기</p>
+                    </div>
+                </li>
+                <li class="min" data-popup-page="3" data-drag="">
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        <p><ins class="dot"></ins>
+                            내가 배려해야 할 친구를 떠올려 보고, 친구가 좋아하는 거소가 싫어하는 것, 성격, 취미나 특기, 생활 속 습관, 건강 상태, 요즘 기분이나 관심사 등을 알아봅니다.
+                        </p>
+                        <p><ins class="dot"></ins>
+                            내가 친구를 위해 배려할 수 있는 일 또는 친구에게 배려받고 싶은 것을 짝이나 모둠, 학급 전체의 다양한 생각을 주고받아 봅니다.
+                        </p>
+                    </div>
+                </li>
+                <li class="min " data-popup-page="4" data-drag="">
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        <p>
+                            비밀 친구 활동 기간을 정하고, 최선을 다해 활동해 봅시다. 활동 일지를 기록하여 특별한 추억을 만들어 봅시다.
+                        </p>
+                    </div>
+                </li>
+                <li class="whole image pointContainer" data-popup-page="5" data-quiz="toggle">
+                    <h2>비밀 친구 활동을 마무리하는 다양한 방법
+                    </h2>
+                    <table>
+                        <tr>
+                            <td>기념 사진 찍기</td>
+                            <td>작은 시상식</td>
+                            <td>비밀 친구 퀴즈</td>
+                            <td>비밀 친구 빙고 놀이</td>
+                        </tr>
+                        <tr>
+                            <td>자신의 비밀 친구와 추억을 남길 수 있는 기념사진을 찍어 본다. 활동을 기억하고 긍정적인 경험으로 회상한다.</td>
+                            <td>활동에 적극적으로 참여한 학생에게 칭찬을 나눈다.</td>
+                            <td>활동 기간 동안의 에피소드를 퀴즈로 만들어 풀어 본다.</td>
+                          <td>비밀 친구를 공개하며 빙고 놀이를 해 본다.</td>
+                        </tr>
+                    </table>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+            });
+            $(document).on('click', '.click-finger-Btn', function () {
+                KmAudioPlayer.buttonClick();
+                $('.popupItem').hide();
+                $('.click-finger-Btn').show();
+                var $data_popup = $(this).attr('data-popup');
+                var $currentPopup = $('.popupItem[data-show="' + $data_popup + '"]');
+                var maxZIndex = Math.max.apply(null, $('.popupItem:visible').map(function () {
+                    return parseInt($(this).css('z-index')) || 0;
+                }).get());
+                $currentPopup.css('z-index', maxZIndex + 1).show();
+                $(this).hide();
+                $('.popupItem .close-speech-button').remove();
+                $('.popupItem[data-show="' + $data_popup + '"]').append('<div class="close-speech-button"></div>');
+            });
+            $(document).on('click', '.close-speech-button', function () {
+                var $data_show = $(this).parent().attr('data-show');
+                $(this).parent().hide();
+                $(this).remove();
+                $('.click-finger-Btn').show();
+            });
+
+            $(document).on('click', '.star', function () {
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                    return;
+                }
+                KmAudioPlayer.buttonClick();
+                $(this).parent().find('.star').removeClass('active');
+                $(this).addClass('active');
+            });
+
+
+            $(document).on('click', '.writeBtn', function () {
+                if ($(this).hasClass('reset')) {
+                    $('.starActive .star').addClass('active');
+                } else {
+                    $('.starActive .star').removeClass('active');
+                }
+
+            });
+
+        });
+    </script>
+</body>
+
+</html>

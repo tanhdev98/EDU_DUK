@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        .flex_col {
+            display: flex;
+            flex-direction: column;
+            gap: 55px;
+        }
+
+        .page_1 .itemText {
+            position: relative;
+            margin-bottom: 10px;
+            left: 30px;
+        }
+
+        .page_1 .itemText::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 30px;
+            left: -30px;
+            transform: translateY(-50%);
+        }
+
+        .toggle.complete .answer,
+        .answer.on {
+            font-weight: normal;
+            margin: auto;
+        }
+
+        .btn-praise {
+            top: 340px;
+            right: -28px;
+        }
+
+        .pointContainer .pointTitle {
+            display: block;
+            text-align: center;
+        }
+
+        .pointContainer .pointTitle .titleText {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 45px;
+            line-height: 50px;
+            font-family: 'YGJAL';
+            color: #ff6600;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+        }
+
+        .pointContainer .pointTitle .titleText:after,
+        .pointContainer .pointTitle .titleText:before {
+            position: absolute;
+            top: 0px;
+            height: 50px;
+            font-size: 40px;
+            line-height: 50px;
+            font-family: 'YGJAL';
+            color: #e4caa9;
+        }
+
+        .pointContainer .pointTitle .titleText:after {
+            content: "[";
+            left: -20px;
+        }
+
+        .pointContainer .pointTitle .titleText:before {
+            content: "]";
+            right: -20px;
+        }
+
+        .popup_pages .items .item {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .popup_pages .items .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        /* table  */
+        table {
+            width: calc(100% - 56px);
+            margin: auto;
+            border-collapse: collapse;
+            font-size: 40px;
+        }
+
+        td {
+            border: 2px solid #F5E5D3;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .first-column {
+            width: 35%;
+            background-color: #FD8E09;
+        }
+
+        td:not(.first-column) {
+            width: 65%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue" data-show="1">마음 <em>탄탄</em></div>
+            <div class="title-text">비밀 친구 활동을 한 소감을 나눠 봅시다.</div>
+        </header>
+        <main>
+
+
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="flex_col">
+                            <div class="item">
+                                <div class="itemText">비밀 친구 활동을 하며 기억에 남는 순간은 언제인가요?</div>
+                                <div data-type="toggleButton">
+                                    <div class="toggle examBtn box" data-toggle-obj="1" data-hover="">
+                                        <div class="answer" data-toggle-target="1">
+                                            <div class="ls-2h">
+                                                친구가 나의 배려에 고맙다고 반응해 줬을 때입니다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="itemText">배려를 실천하면서 어떤 생각이나 느낌이 들었나요?</div>
+                                <div data-type="toggleButton">
+                                    <div class="toggle examBtn box" data-toggle-obj="2" data-hover="">
+                                        <div class="answer" data-toggle-target="2">
+                                            <div class="ls-2h">
+                                                뿌듯한 마음이 들었고 앞으로 더 잘해주고 싶다는 생각을 했습니다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="itemText">배려를 실천한 우리 반에는 어떤 변화가 생겼나요?</div>
+                                <div data-type="toggleButton">
+                                    <div class="toggle examBtn box" data-toggle-obj="3" data-hover="">
+                                        <div class="answer" data-toggle-target="3">
+                                            <div class="ls-2h">
+                                                친구들 사이가 더 좋아지고, 서로 배려하는 분위기가 생겼습니다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-praise right popBtn footer-item" data-popup-btn="1">
+                            <div class="item-title">핵심 <br>정리</div>
+                        </div>
+                        <button class="examViewBtn reset" data-answer-btn=""></button>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image pointContainer" data-popup-page="1" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="pointTitle">
+                            <div class="titleText">비밀 친구 활동</div>
+                        </div>
+                        <table>
+                            <tr>
+                                <td class="first-column">필수 배려 임무 정하기
+                                </td>
+                               <td>모든 비밀 친구가 동일하게 수행해야 하는 임무를 정한다.
+                            </td>
+                            </tr>
+                            <tr>
+                                <td class="first-column">친구 뽑기
+                                </td>
+                                <td>제비뽑기 등의 방식으로 자신이 배려할 친구를 선정한다.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="first-column">친구 관찰하기
+                                </td>
+                                <td>자신이 뽑은 친구를 관찰하고 그 친구의 필요에 따라
+                                    배려 행동을 계획한다.
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td class="first-column">활동하기
+                                </td>
+                                <td>기간을 정해 활동한다.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="first-column">마무리하기</td>
+                                <td>자신이 누구의 비밀 친구인지 밝히고,
+                                    감사와 칭찬을 나누며 활동을 통해 배운 점을 공유한다.
+                                    </td>
+                            </tr>
+                        </table>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title-text').addClass('gap');
+                } else {
+                    $('header .title-text').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+            });
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.examViewBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    examViewBtn.addClass('reset');
+                } else {
+                    examViewBtn.removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.examViewBtn', function () {
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.examViewBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!examViewBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
