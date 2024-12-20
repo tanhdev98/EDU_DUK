@@ -33,6 +33,7 @@
             left: 50%;
             transform: translateX(-50%);
             top: 95px;
+            display: none;
         }
 
         .noteText {
@@ -82,6 +83,24 @@
             top: 180px;
             left: 180px;
         }
+
+        .ghim {
+            position: absolute;
+            top: 0;
+            left: 140px;
+            width: 100px;
+            transform: rotate(-25deg);
+        }
+
+        .ghim2 {
+            position: absolute;
+            top: 0;
+            left: unset;
+            right: 140px;
+            width: 100px;
+            transform: rotate(25deg);
+            z-index: 1;
+        }
     </style>
 </head>
 
@@ -95,7 +114,7 @@
             <!-- FRAME OF PAGE -->
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_slides" data-slides="">
-                    <li class="page_1" data-quiz="toggle">
+                    <li class="page_1">
                         <div class="basicSlider contentsBox doItContent" data-slide-container="">
                             <div class="moveButtonContainer" data-slide-btn-container="">
                                 <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
@@ -106,15 +125,19 @@
                                 <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
                             </div>
                             <ul class="basicSlider_slides" data-slides="">
-                                <li class="innerTab_1">
+                                <li class="innerTab_1" data-quiz="toggle">
                                     <div class="study_guide"><em>수업 도구</em>의 <em>색연필</em>을 클릭하세요.</div>
                                     <div class="wrapImg">
                                         <img src="./images/duk_03_03_0004_202/img_01.png" class="img_01" />
                                         <img src="./images/duk_03_03_0004_202/img_02.jpg" class="img_02" />
                                     </div>
-
+                                    <img src="./images/duk_03_03_0004_202/img_03.png" class="ghim" />
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
                                 </li>
-                                <li class="innerTab_2">
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <img src="./images/duk_03_03_0004_202/img_03.png" class="ghim ghim2" />
                                     <div class="wrapImg">
                                         <img src="./images/duk_03_03_0004_202/img_01.png" class="img_01" />
                                         <div class="box-text box-1">받는 사람</div>
@@ -150,11 +173,12 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
                                 </li>
                             </ul>
-                            <div class="buttonContainer">
-                                <button class="writeBtn" data-answer-btn=""></button>
-                            </div>
+
                         </div>
                     </li>
                 </ul>
@@ -212,6 +236,14 @@
             });
             $(document).on('click', '.additional-question', function () {
                 $('[data-type="toggleButton"][data-active="on"] .toggle').addClass('complete');
+            });
+
+            $(document).on('click', '.innerTab_1 .writeBtn', function () {
+                if ($(this).hasClass('reset')) {
+                    $('.img_02').show();
+                } else {
+                    $('.img_02').hide();
+                }
             });
         });
     </script>

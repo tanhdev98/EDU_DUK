@@ -266,7 +266,7 @@
                 <li class="fullLine whole image pointContainer" data-popup-page="1" data-quiz="toggle">
                     <div class="full_content">
                         <div class="pointTitle">
-                            <div class="titleText">나를 알아봐요.</div>
+                            <div class="titleText">가족을 아끼고 사랑해요.</div>
                         </div>
                         <div class="items">
                             <div class="item" data-type="toggleButton">
@@ -361,6 +361,9 @@
             });
             $(document).on('click', '.btn-praise', function () {
                 $('[data-active="on"] .toggle').addClass('complete');
+                if ($('[data-active="on"]').length == 2) {
+                    $('.dapCheckBtn').addClass('reset');
+                }
             });
             $(document).on('click', '.resetBtn', function () {
                 KmAudioPlayer.buttonClick();
