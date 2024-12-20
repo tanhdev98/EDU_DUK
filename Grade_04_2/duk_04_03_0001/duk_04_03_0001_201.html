@@ -28,6 +28,14 @@
             height: 100%;
             width: 100%;
             width: 520px;
+            position: relative;
+        }
+
+        .grid .items .bullet {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 4;
         }
 
         .grid .items img {
@@ -38,6 +46,12 @@
         [data-popup-page="2"] {
             top: 141px;
             left: 720px;
+            width: max-content;
+        }
+
+        [data-popup-page="3"] {
+            top: 81px;
+            left: 603px;
             width: max-content;
         }
 
@@ -74,6 +88,11 @@
         .noteText {
             height: 390px;
         }
+
+        .popup_pages .icon-char {
+            top: 80px;
+            right: 28px;
+        }
     </style>
 </head>
 
@@ -87,32 +106,36 @@
             <!-- FRAME OF PAGE -->
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
-                    <li data-hover="" data-text="친구 사이에 배려가 필요한 까닭은 무엇인지 알아봅시다.">물음 1</li>
-                    <li data-hover="" data-text="활동을 정리해 봅시다.">물음 2</li>
+                    <li data-hover="" data-text="친구 사이에 배려가 필요한 까닭은 무엇인지 알아봅시다.">활동</li>
+                    <li data-hover="" data-text="활동을 정리해 봅시다.">물음</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1">
                         <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="2"></div>
                         <div class="grid">
                             <div class="items">
+                                <div class="bullet number orange inline">1</div>
                                 <span class="imgWrap line popBtn" data-popup-btn="1" data-targetSlideNum="1">
                                     <img src="./images/duk_04_03_0001_201/img_01.png">
                                     <button class="popBtn zoomBtn" data-hover=""></button>
                                 </span>
                             </div>
                             <div class="items">
+                                <div class="bullet number orange inline">2</div>
                                 <span class="imgWrap line popBtn" data-popup-btn="1" data-targetSlideNum="2">
                                     <img src="./images/duk_04_03_0001_201/img_02.png">
                                     <button class="popBtn zoomBtn" data-hover=""></button>
                                 </span>
                             </div>
                             <div class="items">
+                                <div class="bullet number orange inline">3</div>
                                 <span class="imgWrap line popBtn" data-popup-btn="1" data-targetSlideNum="3">
                                     <img src="./images/duk_04_03_0001_201/img_03.png">
                                     <button class="popBtn zoomBtn" data-hover=""></button>
                                 </span>
                             </div>
                             <div class="items">
+                                <div class="bullet number orange inline">4</div>
                                 <span class="imgWrap line popBtn" data-popup-btn="1" data-targetSlideNum="4">
                                     <img src="./images/duk_04_03_0001_201/img_04.png">
                                     <button class="popBtn zoomBtn" data-hover=""></button>
@@ -192,10 +215,11 @@
 
         <section class="popup_container" data-popup-container="">
             <ul class="popup_pages">
-                <li class="whole image" data-popup-page="1">
+                <li class="whole image" data-popup-page="1" style="transition: none;">
                     <div class="basicSlider" data-slide-container="popup">
                         <ul class="basicSlider_slides" data-slides="">
                             <li class="innerTab_1 ">
+                                <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="3"></div>
                                 <h2>배려 행동 떠올리기</h2>
                                 <div class="wrap-item">
                                     <img src="./images/duk_04_03_0001_201/img_01.png" />
@@ -256,6 +280,14 @@
                         <p>접착식 붙임쪽지를 준비합니다.</p>
                     </div>
                 </li>
+                <li class="min" data-popup-page="3" data-drag style="z-index: 3;">
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        <p>
+                            한 사람이 여러 장을 붙일 수 있습니다.
+                        </p>
+                    </div>
+                </li>
             </ul>
         </section>
 
@@ -287,6 +319,19 @@
                 } else {
                     $('header .title-text').removeClass('gap');
                 }
+            });
+
+            $(document).on('click', '.resetBtn', function () {
+                KmAudioPlayer.buttonClick();
+                $('.textLine').val('');
+            });
+
+            $(document).on('click', '.icon-char', function () {
+                $(this).parents('.whole').addClass('on');
+                console.log('click');
+            })
+            $(document).on('click', '.popup_closeBtn, .basicSlider_circle_tabs > *, .basicSlider_btn', function () {
+                $('.popup_pages > li.min').removeClass('on');
             });
             $(document).on('click', '.speech', function () {
                 KmAudioPlayer.buttonClick();
@@ -323,10 +368,7 @@
                 id: '#boy_2_c',
                 circle: true,
             });
-            $(document).on('click', '.resetBtn', function () {
-                KmAudioPlayer.buttonClick();
-                $('.textLine').val('');
-            });
+
         });
     </script>
 </body>
