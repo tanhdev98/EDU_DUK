@@ -192,7 +192,7 @@
                 <ul class="basicSlider_tabs" data-tabs="">
                     <li data-hover="" data-text="우리 가족의 행복을 위해 인공지능 로봇이 아닌 내가 직접 하고 싶은 일을 말해 봅시다." class="twoLine">물음
                     </li>
-                    <li data-hover="" data-text="가족 행복 인공지능 로봇을 상상하여 그리고, 그 로봇이 가진 기능을 써 봅시다." class="twoLine">자기 점검
+                    <li data-hover="" data-text="배운 내용을 되돌아보며 자기 점검을 해 봅시다.">자기 점검
                     </li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
@@ -394,6 +394,9 @@
             });
             $(document).on('click', '.btn-praise', function () {
                 $('[data-active="on"] .toggle').addClass('complete');
+                if ($('.toggle.complete').length == $('.toggle').length) {
+                    $('.dapCheckBtn').addClass('reset');
+                }
             });
         });
     </script>
