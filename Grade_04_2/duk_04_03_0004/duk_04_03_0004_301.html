@@ -72,6 +72,7 @@
         .tabs-popup>li.on {
             background-color: #E79702 !important;
         }
+
         .pointContainer .pointTitle {
             display: block;
             text-align: center;
@@ -135,6 +136,7 @@
 
         .noteText {
             height: 359px;
+            width: 97%;
         }
 
         /* table  */
@@ -159,6 +161,10 @@
 
         td:not(.first-column) {
             width: 60%;
+        }
+
+        td:last-child {
+            text-align: left;
         }
 
         .cho {
@@ -217,7 +223,7 @@
                                     </div>
                                 </li>
                                 <li class="innerTab_2" data-quiz="toggle">
-                                    <div class="itemText">생활 속에서 배려하는 사람이 되기 위해 어떻게 노력할 것인가요?</div>
+                                    <div class="itemText">배려하는 행동을 할 것을 다짐하는 짧은 글을 쓰고, 친구들 앞에서 읽어 봅시다.</div>
                                     <div class="noteText noteLine pink">
                                         <div class="textareaWrap">
                                             <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
@@ -435,8 +441,8 @@
                     $('.noteText .text-exam').show();
                     $(this).parent().parent().find('.choBox').addClass('active');
                 }
-
             });
+
         });
     </script>
 </body>
