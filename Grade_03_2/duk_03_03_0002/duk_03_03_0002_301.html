@@ -303,7 +303,7 @@
                                                 <img src="./images/ton_03_03_0002_301/img_04.png">
                                             </div>
                                             <div data-type="toggleButton">
-                                                <div class="toggle examBtn box" data-toggle-obj="2">
+                                                <div class="toggle box" data-toggle-obj="2">
                                                     <div class="answer" data-toggle-target="2">
                                                         <div class="ls-2h">감사함 표현하기</div>
                                                     </div>
@@ -315,7 +315,7 @@
                                                 <img src="./images/ton_03_03_0002_301/img_05.png">
                                             </div>
                                             <div data-type="toggleButton">
-                                                <div class="toggle examBtn box" data-toggle-obj="3">
+                                                <div class="toggle box" data-toggle-obj="3">
                                                     <div class="answer" data-toggle-target="3">
                                                         <div class="ls-2h">‌‌‌내가 할 일은 스스로 하기</div>
                                                     </div>
@@ -337,7 +337,7 @@
                                                 <img src="./images/ton_03_03_0002_301/img_06.png">
                                             </div>
                                             <div data-type="toggleButton">
-                                                <div class="toggle examBtn box" data-toggle-obj="2">
+                                                <div class="toggle box" data-toggle-obj="2">
                                                     <div class="answer" data-toggle-target="2">
                                                         <div class="ls-2h">부모님 어깨 주물러 드리기</div>
                                                     </div>
@@ -349,7 +349,7 @@
                                                 <img src="./images/ton_03_03_0002_301/img_07.png">
                                             </div>
                                             <div data-type="toggleButton">
-                                                <div class="toggle examBtn box" data-toggle-obj="3">
+                                                <div class="toggle box" data-toggle-obj="3">
                                                     <div class="answer" data-toggle-target="3">
                                                         <div class="ls-2h">‌‌할머니, 할아버지 찾아뵙기</div>
                                                     </div>
@@ -419,6 +419,11 @@
             });
             $(document).on('click', '.btn-praise', function () {
                 $('[data-active="on"] .toggle').addClass('complete');
+                $('.popup_pages .basicSlider_slides li').each(function () {
+                    if ($(this).find('.toggle.complete').length == 2) {
+                        $(this).find('.dapCheckBtn').addClass('reset');
+                    }
+                });
             });
 
 
