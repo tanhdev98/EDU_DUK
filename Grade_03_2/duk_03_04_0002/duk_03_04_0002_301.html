@@ -42,11 +42,13 @@
             top: -40px;
             right: -400px;
         }
+
         .min[data-popup-page="2"] {
             top: 200px;
             left: 477px;
             width: 778px;
         }
+
         /* Page2 */
         .self-check {
             margin-top: 50px;
@@ -375,7 +377,7 @@
             });
             $(document).on('click', '.btn-praise', function () {
                 $('[data-type="toggleButton"][data-active="on"] .toggle').addClass('complete');
-                if ($('[data-type="toggleButton"][data-active="on"]').length == 3) {
+                if ($('[data-type="toggleButton"][data-active="on"]').length == 2) {
                     $('.dapCheckBtn').addClass('reset');
                 }
             });
