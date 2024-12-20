@@ -159,7 +159,7 @@
 
         .page_2 .innerTab .basicSlider_slides li img {
             height: 200px;
-            width: fit-content;
+            width: auto;
             margin-left: 860px;
         }
 
@@ -298,6 +298,7 @@
             top: 120px;
             left: 251px;
             width: 1040px;
+            height: 310px;
         }
 
         .page_4 .noteText .textLine {
@@ -319,6 +320,11 @@
 
         .page_4 .noteText.noLine .textareaWrap {
             height: 100%;
+        }
+
+        .toggle.complete .answer,
+        .answer.on {
+            font-weight: normal;
         }
     </style>
 </head>
@@ -710,6 +716,17 @@
                     KmAudioPlayer.buttonClick();
                     $('.close-speech-button').remove();
                 }
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(document).on('click', '.additional-question', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
             });
         });
     </script>

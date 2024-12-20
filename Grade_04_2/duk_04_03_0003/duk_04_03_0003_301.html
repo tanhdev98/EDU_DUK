@@ -55,6 +55,15 @@
             height: 100%;
         }
 
+        .noteText .text-exam.flex-wrap {
+            padding: 0;
+            padding-left: 40px;
+        }
+
+        .noteText .text-exam.flex-wrap .blueT {
+            line-height: 85px;
+        }
+
         .self-check {
             margin-top: 50px;
         }
@@ -117,6 +126,14 @@
 
         .items img {
             width: 50px;
+        }
+
+        .toggle.complete .answer,
+        .answer.on {
+            font-weight: normal;
+        }
+        .popup_pages.safari img{
+            transform: rotate(-90deg);
         }
     </style>
 </head>
@@ -331,11 +348,16 @@
             });
             $(document).on('click', '.btn-praise', function () {
                 $('[data-type="toggleButton"][data-active="on"] .toggle').addClass('complete');
-                if ($('[data-type="toggleButton"][data-active="on"]').length == 3) {
+                if ($('[data-type="toggleButton"][data-active="on"]').length == 4) {
                     $('.dapCheckBtn').addClass('reset');
                 }
             });
         });
+    </script>
+    <script type="text/javascript">
+        if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+            $('.popup_pages').addClass('safari');
+        }
     </script>
 </body>
 
