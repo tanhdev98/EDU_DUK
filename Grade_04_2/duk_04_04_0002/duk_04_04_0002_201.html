@@ -345,6 +345,10 @@
         [data-popup-page="5"] .contentsBox .basicSlider_slides>li {
             padding: 0;
         }
+
+        [data-popup-page="2"] .ls-2h {
+            text-align: left;
+        }
     </style>
 </head>
 
@@ -985,7 +989,7 @@
             });
 
             $(document).on('click', '.popup_pages .basicSlider_circle_tabs li, .popup_pages .basicSlider_btn', function () {
-               $(this).closest('.whole').addClass('on');
+                $(this).closest('.whole').addClass('on');
             });
 
         });
