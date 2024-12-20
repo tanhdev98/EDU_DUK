@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        #wrap header .title-icon.green {
+            padding: 0 16px;
+            background: #00d045;
+        }
+
+        .page_1 .voca {
+            top: -155px;
+            left: 618px;
+            transition: none;
+        }
+
+        [data-popup-page="1"] {
+            top: 180px;
+            left: 110px;
+        }
+
+        .page_1 .title {
+            position: relative;
+            top: -395px;
+            /* left: 550px; */
+            margin: auto;
+        }
+
+        .page_1 .noteText {
+            box-shadow: none;
+            width: 1240px;
+            position: absolute;
+            left: 35px;
+            top: 140px;
+            height: 280px;
+        }
+
+        .page_1 .noteText .textareaWrap {
+            height: 100%;
+        }
+
+        .page_1 .flex {
+            display: flex;
+            gap: 10px;
+            position: relative;
+            margin: auto;
+            top: -390px;
+        }
+
+        .img_bg {
+            margin: auto;
+            height: 440px;
+            margin-top: -40px;
+            width: 1290px;
+        }
+
+        .page_1 .noteText .underline:last-child {
+            display: none;
+        }
+
+        .page_3 .self-check {
+            margin-top: 70px;
+        }
+
+        .page_2 .flex {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 20px;
+        }
+
+        .page_2 .img1 {
+            height: 550px;
+            object-fit: contain;
+        }
+
+        .page_2 .img2 {
+            height: 490px;
+            object-fit: contain;
+            border-radius: 20px;
+            margin-bottom: 5px;
+        }
+
+        .page_2 .textContenImg {
+            position: absolute;
+            top: 370px;
+            left: 170px;
+            text-align: center;
+        }
+
+        .boxClick {
+            position: absolute;
+            width: 64px;
+            height: 64px;
+            position: absolute;
+            top: 10px;
+            right: 0;
+            top: -15px;
+            left: auto;
+            z-index: 4;
+            pointer-events: auto;
+            cursor: pointer;
+        }
+
+        .boxClick.left {
+            background: url(../ko/contents/images/button/btn_speech_balloon_left1.png) no-repeat center / contain;
+        }
+
+        .boxClick.left:hover {
+            background: url(../ko/contents/images/button/btn_speech_balloon_left1_hover.png) no-repeat center / contain;
+        }
+
+        .boxClick.right {
+            background: url(../ko/contents/images/button/btn_speech_balloon_right1.png) no-repeat center / contain;
+        }
+
+        .boxClick.right:hover {
+            background: url(../ko/contents/images/button/btn_speech_balloon_right1_hover.png) no-repeat center / contain;
+        }
+
+        .box2 {
+            left: 610px;
+            top: 220px;
+        }
+
+        .box1 {
+            left: 1020px;
+            top: 130px;
+        }
+
+        .content {
+            position: absolute;
+            border: 4px solid #BEB0D9;
+            background-color: #F4EBFA;
+            padding: 10px 12px;
+            border-radius: 15px;
+            opacity: 0;
+            text-align: center;
+        }
+
+        .content:after {
+            content: "";
+            left: 50%;
+            bottom: 0;
+            width: 28px;
+            height: 28px;
+            clip-path: polygon(50% 100%, 10% 0, 90% 0);
+            background-color: #BEB0D9;
+            position: absolute;
+            transform: translate(-50%, 100%);
+        }
+
+        .content2 {
+            border: 4px solid #98CCF4;
+            background-color: #E1F1F8;
+        }
+
+        .content2:after {
+            background-color: #98CCF4;
+            right: -29px;
+            left: unset;
+            transform: rotate(-90deg);
+            top: 45%;
+        }
+
+        .text2 {
+            left: 90px;
+            top: 170px;
+        }
+
+        .text1 {
+            left: 650px;
+            top: -10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="twoLine">
+            <div class="title-icon green" data-show="2">단원 마무리</em></div>
+            <div class="title-text">이 단원에서 탐구한 내용과 관련한 낱말들로 나만의 명언을 만들어 봅시다.</div>
+        </header>
+        <main>
+
+
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="이 단원에서 탐구한 내용과 관련한 낱말들로 나만의 명언을 만들어 봅시다." class="twoLine">활동 1</li>
+                    <li data-hover="" data-text="내가 만든 명언을 쪽지에 적어 친구에게 선물해 봅시다." data-gap="true">활동 2</li>
+                    <li data-hover="" data-text="4단원을 마치며 스스로의 모습을 되돌아봅시다.">자기 점검</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <span class="voca" data-hover="" data-popup-btn="1">관련한 낱말</span>
+                        <img class="img_bg" src="./images/duk_04_04_0004_101/img_03.png" alt="">
+                        <div class="title">나만의 명언</div>
+                        <div class="flex">
+                            <div class="exam bullet">예</div>
+                            <div class="text">정직과 배려는 나 자신을 위한 친구이다.</div>
+                        </div>
+                        <div class="noteText noteLine">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p>정직은 친구 사이를 단단하게 하고 배려는 친구 사이를 부드럽게 만든다.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                    <li class="page_2">
+                        <div class="flex">
+                            <img class="img1" src="./images/duk_04_04_0004_101/img_04.png" alt="">
+                            <img class="img2" src="./images/duk_04_04_0004_101/img_05.png" alt="">
+                            <div class="textContenImg">
+                                정직으로<br>
+                                더 단단해질<br>
+                                우리의 우정!
+                            </div>
+                            <div class="boxClick box1 left"></div>
+                            <div class="boxClick box2 right"></div>
+                            <div class="content content2 text2">
+                                우리의 단단한 우정을 위해<br>
+                                만든 우정 명언 쪽지야.<br>
+                                항상 진실된 친구가 될게.
+                            </div>
+                            <div class="content text1">
+                                정말 고마워. 나는 ‘서로 아끼고<br>
+                                배려하는 우리 사이’ 라고 써 봤어.
+                            </div>
+                        </div>
+                    </li>
+                    <li class="page_3">
+                        <div class="study_guide"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
+                        <div class="self-check">
+                            <div class="checkWrap">
+                                <div class="text_box">생활 속 정직, 친구 사이에서의 배려 문제를
+                                    탐구하며 해결 방법을 찾으려고 노력했나요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">다른 사람의 입장을 생각하며
+                                    생활 속 도덕 문제를 해결했나요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">도덕적인 생활을 하려고 노력하며 실천했나요?</div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="example-box">
+                                <div class="exampleIcoWrap">
+                                    <div class="example ico-01">
+                                        매우 그렇다
+                                    </div>
+                                    <div class="example ico-02">
+                                        그렇다
+                                    </div>
+                                    <div class="example ico-03">
+                                        좀 더 노력해야 한다
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min word" data-popup-page="1" data-drag="">
+                    <h2>예시 낱말</h2>
+                    <div class="popup_contents ls1">
+                        <p>정직, 우정, 배려, 도덕, 행동, 친구, 마음,
+                            거짓말, 바름</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+            });
+
+
+            $(document).on('click', '.boxClick', function () {
+                var _id = parseInt($(this).attr('class').split(" ")[1].replace('box', ''));
+                $(this).hide();
+                $('.text' + _id).css('opacity', '1').append('<div class="close-speech-button beforeNon"></div>');
+                KmAudioPlayer.buttonClick();
+                $(this).addClass('ans')
+            });
+
+            $(document).on('click', '.close-speech-button', function () {
+                var parentClasses = $(this).parent().attr('class').split(' ');
+                var _id = parentClasses.find(cls => cls.startsWith('text'))
+                    ? parseInt(parentClasses.find(cls => cls.startsWith('text')).replace('text', ''))
+                    : null;
+                if (_id !== null) {
+                    $(this).parent().css('opacity', '0');
+                    $('.box' + _id).show().removeClass('ans');
+                    $(this).remove();
+                } else {
+                    console.error('Không tìm thấy ID hợp lệ');
+                }
+            });
+            $(document).on('click', '.basicSlider_tabs li:not(.basicSlider_tabs li:nth-child(2))', function () {
+                $('.close-speech-button').remove();
+                $('.content').css('opacity', '0');
+                $('.boxClick').css('display', 'block').removeClass('ans');
+            });
+        });
+    </script>
+</body>
+
+</html>
