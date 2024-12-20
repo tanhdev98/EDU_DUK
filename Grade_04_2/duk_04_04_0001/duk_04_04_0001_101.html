@@ -331,6 +331,15 @@
         .answer.on {
             font-weight: normal;
         }
+
+        .title-board {
+            position: absolute;
+            color: #F7EFAE;
+            top: 150px;
+            left: 50%;
+            z-index: 1;
+            transform: translateX(-50%);
+        }
     </style>
 </head>
 
@@ -386,6 +395,7 @@
                                 </li>
                                 <li class="innerTab_2" data-quiz="toggle">
                                     <div class="wrapImg">
+                                        <div class="title-board">고민 상담소</div>
                                         <img src="./images/duk_04_04_0001_101/img_03.png" />
                                         <div class="text-item text-3">
                                             고민<br>
@@ -441,8 +451,10 @@
                                         <div class="box-item ico_ans">
                                             <img src="./common/images/ico_ans.png" class="ico" />
                                             <div data-type="toggleButton">
-                                                <div class="toggle examBtn box" data-toggle-obj="5" data-hover>
-                                                    <div class="answer" data-toggle-target="5">
+                                                <div class="toggle examBtn box" data-toggle-obj="5" data-hover
+                                                    style="justify-content: flex-start;">
+                                                    <div class="answer" data-toggle-target="5"
+                                                        style="text-align: left;">
                                                         <div class="ls-2h">
                                                             <p class="dot">우정이 우리 삶에 즐거움을 가져다 준다는 뜻이에요.</p><br>
                                                             <p class="dot">행복한 삶을 위해서는 좋은 친구 관계가 필요하다는<br>말이에요.</p>
