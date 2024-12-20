@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        .wrapImg img {
+            width: 100%;
+            border-radius: 30px;
+        }
+
+        .topText {
+            position: absolute;
+            top: 70px;
+            left: 20px;
+        }
+
+        .noteText {
+            height: 180px;
+            box-shadow: none;
+            top: 120px;
+            left: -15px;
+            position: absolute;
+            padding: 0 20px;
+            width: 440px;
+        }
+
+        .noteText.noLine .textareaWrap {
+            height: 180px;
+        }
+
+        .line {
+            position: absolute;
+            left: 20px;
+            right: 20px;
+            height: 1px;
+            background-color: #cccccc;
+        }
+
+        .page_1 .line1 {
+            top: 63px;
+        }
+
+        .page_1 .line2 {
+            top: 123px;
+        }
+
+        .page_1 .line3 {
+            top: 183px;
+        }
+
+        .noteText .text-exam.flex-wrap {
+            padding: 0 40px;
+        }
+
+        .box-click {
+            position: absolute;
+            background: url(../ko/contents/images/button/btn_speech_balloon_right1.png) no-repeat;
+            width: 64px;
+            height: 64px;
+            cursor: pointer;
+        }
+
+        .box-click1 {
+            top: 180px;
+            left: 650px;
+            background: url(../ko/contents/images/button/btn_speech_balloon_right1.png) no-repeat;
+        }
+
+        .box-click2 {
+            top: 180px;
+            left: 1100px;
+            background: url(../ko/contents/images/button/btn_speech_balloon_left1.png) no-repeat;
+        }
+
+
+        .popupItem {
+            position: absolute;
+            text-align: center;
+            padding: 10px 15px;
+            border-radius: 15px;
+            display: none;
+        }
+
+        .popupItem:before {
+            position: absolute;
+            content: "";
+            clip-path: polygon(50% 100%, 5% 0, 95% 0);
+            width: 30px;
+            height: 30px;
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%, 100%);
+        }
+
+        .popupItem1 {
+            top: 10px;
+            left: 590px;
+            background: #FFEEF3;
+            border: 4px solid #ffc4c9;
+        }
+
+        .popupItem1:before {
+            background-color: #ffc4c9;
+        }
+
+        .popupItem2 {
+            top: 0px;
+            left: 800px;
+            border: 4px solid #A8D6F6;
+            background: #E7F4F9;
+
+        }
+
+        .popupItem2:before {
+            background-color: #A8D6F6;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="twoLine">
+            <div class="title-icon blue" data-show="1">실천 <em>똑똑</em></div>
+            <div class="title-text">우리 모둠이 찾아낸 해결 방법이 고민 해결에 효과가 있을지 예상해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="wrapImg">
+                            <img src="./images/duk_04_04_0003_101/img_01.png" />
+                            <div class="topText">
+                                우리가 찾아낸 해결 방법
+                            </div>
+                            <div class="noteText noLine">
+                                <div class="textareaWrap">
+                                    <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                        data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                        autocomplete="off" spellcheck="false"></textarea>
+                                </div>
+                                <div class="text-exam flex-wrap">
+                                    <div class="blueT">
+                                        <p>직접 만나서
+                                            대화하기
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="line line1"></div>
+                                <div class="line line2"></div>
+                                <div class="line line3"></div>
+                            </div>
+                            <div class="box-click box-click1" data-popup="1"></div>
+                            <div class="box-click box-click2" data-popup="2"></div>
+                            <div class="popupItem purple popupItem1" data-show="1">
+                                <span>
+                                    이 해결 방법은<br>
+                                    효과가 있을까?
+                                </span>
+                            </div>
+                            <div class="popupItem purple popupItem2" data-show="2">
+                                <span>
+                                    소희와 은채에게<br>
+                                    좋은 결과를 가져다 줄까?
+                                </span>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header .title-text').addClass('gap');
+                } else {
+                    $('header .title-text').removeClass('gap');
+                }
+
+            });
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+
+            $(document).on('click', '.box-click', function () {
+                KmAudioPlayer.buttonClick();
+                $('.popupItem').hide();
+                $('.box-click').show();
+                var $data_popup = $(this).attr('data-popup');
+                var $currentPopup = $('.popupItem[data-show="' + $data_popup + '"]');
+                var maxZIndex = Math.max.apply(null, $('.popupItem:visible').map(function () {
+                    return parseInt($(this).css('z-index')) || 0;
+                }).get());
+                $currentPopup.css('z-index', maxZIndex + 1).show();
+                $(this).hide();
+                $('.popupItem .close-speech-button').remove();
+                $('.popupItem[data-show="' + $data_popup + '"]').append('<div class="close-speech-button"></div>');
+            });
+            $(document).on('click', '.close-speech-button', function () {
+                var $data_show = $(this).parent().attr('data-show');
+                $(this).parent().hide();
+                $(this).remove();
+                $('.box-click').show();
+            });
+        });
+
+    </script>
+</body>
+
+</html>
