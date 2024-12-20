@@ -411,7 +411,7 @@
                             <button class="writeBtn" data-answer-btn=""></button>
                         </div>
                     </li>
-                    <li class="page_2">
+                    <li class="page_2" data-quiz="toggle">
                         <div class="icon-char blinkOpacity orange" data-hover="" data-popup-btn="2"></div>
                         <div class="noteText noLine orange" style="pointer-events: none;">
                             <div class="flex">
@@ -854,22 +854,26 @@
                 $('.click-finger-Btn').show();
             });
 
-            $(document).on('click', '.star', function () {
+            $(document).on('click', '.starActive .star', function () {
+                KmAudioPlayer.buttonClick();
                 if ($(this).hasClass('active')) {
                     $(this).removeClass('active');
-                    return;
                 }
-                KmAudioPlayer.buttonClick();
-                $(this).parent().find('.star').removeClass('active');
-                $(this).addClass('active');
+                else {
+                    $(this).parents('.starActive').find('.star').removeClass('active');
+                    $(this).addClass('active');
+                }
             });
 
 
-            $(document).on('click', '.writeBtn', function () {
+            $(document).on('click', '.page_4 .writeBtn', function () {
                 if ($(this).hasClass('reset')) {
                     $('.starActive .star').addClass('active');
+                    $('.star').css('pointer-events', 'none');
+
                 } else {
                     $('.starActive .star').removeClass('active');
+                    $('.star').css('pointer-events', 'auto');
                 }
 
             });
