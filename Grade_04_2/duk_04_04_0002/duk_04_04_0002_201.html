@@ -959,13 +959,14 @@
                     $('header').removeClass('twoLine');
                 }
             });
-
-            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+            $(document).on('click', '.whole .innerSlider_tabs li', function () {
                 let idx = $(this).index() + 1;
-                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                let $whole = $(this).closest('.whole');
+                $whole.find('.innerSlider_tabs li').removeClass('on');
                 $(this).addClass('on');
-                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
-                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+                $whole.find('.basicSlider_slides.innerTab li').removeClass('on');
+                $whole.find('.basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+                $whole.addClass('on');
             });
 
             $(document).on('click', '.additional-question', function () {

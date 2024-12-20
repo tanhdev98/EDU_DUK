@@ -20,7 +20,8 @@
         header.twoLine .title-icon {
             top: -30px;
         }
-/* page 1 */
+
+        /* page 1 */
         .page_1 .items {
             padding: 0 28px;
         }
@@ -35,7 +36,7 @@
             justify-content: center;
         }
 
-      .items .item::before {
+        .items .item::before {
             content: "";
             position: absolute;
             width: 15px;
@@ -71,6 +72,7 @@
         .page_1 .noteText .text-exam.flex-wrap {
             padding: 0 20px;
         }
+
         /* page 2 */
         .page_2 .items {
             padding: 0 28px;
@@ -117,6 +119,7 @@
 
         .page_2 .btn-praise {
             top: 380px;
+            right: -28px;
         }
 
         /* title thinknet */
@@ -209,10 +212,9 @@
                                 선택한 해결 방법은 무엇인가요?
                                 <div class="noteText noLine note1">
                                     <div class="textareaWrap">
-                                        <textarea class="textLine afterDisplay" type="text"
-                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
-                                            onblur="placeholder='직접 쓰기'" autocomplete="off"
-                                            spellcheck="false"></textarea>
+                                        <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                            autocomplete="off" spellcheck="false"></textarea>
                                     </div>
                                     <div class="text-exam flex-wrap">
                                         <div class="blueT">
@@ -225,14 +227,13 @@
                                 선택한 해결 방법이 소희와 은채 모두에게 도움이 될 것이라고 생각하나요?
                                 <div class="noteText noLine note2">
                                     <div class="textareaWrap">
-                                        <textarea class="textLine afterDisplay" type="text"
-                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
-                                            onblur="placeholder='직접 쓰기'" autocomplete="off"
-                                            spellcheck="false"></textarea>
+                                        <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                            autocomplete="off" spellcheck="false"></textarea>
                                     </div>
                                     <div class="text-exam flex-wrap">
                                         <div class="blueT">
-                                            <p>소희와 은채가 서로의 입장과 마음을 이해할 수 있어 둘 사이 우정이 
+                                            <p>소희와 은채가 서로의 입장과 마음을 이해할 수 있어 둘 사이 우정이
                                                 돈독해질 거예요.</p>
                                         </div>
                                     </div>
@@ -387,12 +388,6 @@
                 else {
                     $('header').removeClass('twoLine');
                 }
-                if ($(this).index() == 1) {
-                    $('.title-icon').css('margin-top', '-20px');
-                }
-                else {
-                    $('.title-icon').css('margin-top', '0px');
-                }
             });
             $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
                 let idx = $(this).index() + 1;
@@ -431,6 +426,9 @@
 
             $(document).on('click', '.btn-praise', function () {
                 $('[data-active="on"] .toggle').addClass('complete');
+                if ($('.toggle.complete').length == 5) {
+                    $('.dapCheckBtn').addClass('reset');
+                }
             });
         });
 
