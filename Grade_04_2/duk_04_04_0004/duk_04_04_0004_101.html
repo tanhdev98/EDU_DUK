@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        .page_1 .noteText {
+            margin-top: 25px;
+        }
+
+        .page_1 img {
+            height: 300px;
+            object-fit: contain;
+            margin-top: 190px;
+        }
+
+        .boxClick {
+            position: absolute;
+            width: 64px;
+            height: 64px;
+            position: absolute;
+            top: 10px;
+            right: 0;
+            top: -15px;
+            left: auto;
+            z-index: 4;
+            pointer-events: auto;
+            cursor: pointer;
+        }
+
+        .boxClick.left {
+            background: url(../ko/contents/images/button/btn_speech_balloon_left1.png) no-repeat center / contain;
+        }
+
+        .boxClick.left:hover {
+            background: url(../ko/contents/images/button/btn_speech_balloon_left1_hover.png) no-repeat center / contain;
+        }
+
+        .boxClick.right {
+            background: url(../ko/contents/images/button/btn_speech_balloon_right1.png) no-repeat center / contain;
+        }
+
+        .boxClick.right:hover {
+            background: url(../ko/contents/images/button/btn_speech_balloon_right1_hover.png) no-repeat center / contain;
+        }
+
+        .box2 {
+            left: 360px;
+            top: 180px;
+        }
+
+        .box1 {
+            left: 930px;
+            top: 180px;
+        }
+
+        .content {
+            position: absolute;
+            border: 4px solid #BEB0D9;
+            background-color: #F4EBFA;
+            padding: 10px 12px;
+            border-radius: 15px;
+            opacity: 0;
+            text-align: center;
+        }
+
+        .content:after {
+            content: "";
+            left: 50%;
+            bottom: 0;
+            width: 28px;
+            height: 28px;
+            clip-path: polygon(50% 100%, 10% 0, 90% 0);
+            background-color: #BEB0D9;
+            position: absolute;
+            transform: translate(-50%, 100%);
+        }
+
+        .content2 {
+            border: 4px solid #CED993;
+            background-color: #F2F6DE;
+        }
+
+        .content2:after {
+            background-color: #CED993;
+        }
+
+
+
+        .text2 {
+            left: 220px;
+            top: -10px;
+        }
+
+        .text1 {
+            left: 690px;
+            top: -10px;
+        }
+
+        /* page 2 */
+        .page_2 img {
+            height: 400px;
+            object-fit: contain;
+            margin-top: 80px;
+            margin-left: -125px;
+        }
+
+        .box3 {
+            left: 565px;
+            top: 80px;
+        }
+
+        .text3 {
+            top: 30px;
+            left: -10px;
+        }
+
+        .content3 {
+            border: 4px solid #98CCF4;
+            background-color: #E1F1F8;
+        }
+
+        .content3:after {
+            background-color: #98CCF4;
+            right: -29px;
+            left: unset;
+            transform: rotate(-90deg);
+            top: 44%;
+        }
+
+        .content4 {
+            border: 4px solid #FED08C;
+            background-color: #FDF0E1;
+            display: block !important;
+            opacity: 1 !important;
+            left: 815px;
+            top: 55px;
+            width: 500px;
+            height: 380px;
+            text-align: left;
+        }
+
+        .content4:after {
+            background-color: #FED08C;
+            right: 0;
+            left: -29px;
+            transform: rotate(90deg);
+            top: 60%;
+        }
+
+        .page_2 .noteText {
+            height: 400px;
+            width: 432px;
+            box-shadow: none;
+            top: -94px;
+            left: 60px;
+            padding-left: 30px;
+        }
+
+        .noteText .text-exam.flex-wrap {
+            padding-left: 30px;
+        }
+
+        .page_2 .noteText .textareaWrap {
+            padding: 0;
+            height: 100%;
+        }
+
+        .page_2 .noteText .blueT {
+            text-align: left;
+        }
+        .page_2 .additional-question{
+            position: absolute;
+            right: 0;
+        }
+        /* Popup page */
+
+        .innerSlider_tabs>li {
+            background-color: #F3DEC0;
+        }
+
+        .innerSlider_tabs>li.on {
+            background-color: #F3B05B;
+        }
+
+        .innerButtonContainer {
+            position: absolute;
+            right: 80px;
+            top: 86px;
+        }
+
+        .innerButtonContainer::before {
+            display: none;
+        }
+
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+            text-align: center;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: max-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .popup_pages [data-type="toggleButton"] {
+            height: max-content;
+            align-items: center;
+            display: flex;
+            width: 100% !important;
+        }
+
+        [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            height: 100%;
+        }
+
+        .popup-pages .ls-2h {
+            width: 100%;
+        }
+
+        .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+
+        .toggle.complete .answer,
+        .answer.on {
+            font-weight: normal;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="twoLine">
+            <div class="title-icon pink" data-show="1">마음 <em>똑똑</em></div>
+            <div class="title-text">이야기를 읽고 도덕적인 생활을 위해 필요한 자세에는 무엇이 있는지 고민해 봅시다.</div>
+        </header>
+        <main>
+
+
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="이야기를 읽고 도덕적인 생활을 위해 필요한 자세에는 무엇이 있는지 고민해 봅시다." class="twoLine">이야기</li>
+                    <li data-hover="" data-text="학교생활을 하면서 정직했거나 정직하지 않았던 경험, 또는 친구들을 배려했거나 배려하지 않았던 경험을 이야기해 봅시다."
+                        class="twoLine" data-gap="true">활동</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="noteText noteLine green">
+                                        <div class="noteText-content">
+                                            태오네 반 친구들은 찾아낸 해결 방법을 소희와 은채에게 전해
+                                            주었습니다. 소희와 은채는 반 친구들이 제시해 준 해결 방법을
+                                            따랐고 둘은 계속 좋은 관계를 유지할 수 있었습니다.<br>
+                                            태오네 반 친구들은 소희와 은채의 고민 상담을 하면서 도덕적인 고민을 깊게 하였습니다. 그리고 이제 각자의 생활을 돌아보기로 했습니다.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <img src="./images/duk_04_04_0004_101/img_01.jpg" alt="">
+                                    <div class="boxClick box1 left"></div>
+                                    <div class="boxClick box2 right"></div>
+                                    <div class="content text1">
+                                        무조건 화만 내지 말고<br>
+                                        솔직한 대화로 풀어 <br>
+                                        가는 것도 참 중요해.
+                                    </div>
+                                    <div class="content content2 text2">
+                                        고민이 있을 때<br>
+                                        어떤 가치가 소중한지<br>
+                                        생각해 볼 필요가 있어.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="popBtn additional-question" data-popup-btn="2">추가 질문</div>
+                        <img src="./images/duk_04_04_0004_101/img_02.jpg" alt="">
+                        <div class="boxClick box3 left"></div>
+                        <div class="content content3 text3">
+                            도움이 필요해 보이는<br>
+                            친구가 있었는데 바빠서<br>
+                            그냥 지나친 적이 있었어.
+                        </div>
+                        <div class="content content4">
+                            나는 <div class="noteText noteLine">
+                                <div class="textareaWrap">
+                                    <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                        data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                        autocomplete="off" spellcheck="false"></textarea>
+                                </div>
+                                <div class="text-exam flex-wrap">
+                                    <div class="blueT">
+                                        장난으로 친구 물건을
+                                        숨긴 적이 있었는데 친구가 물어봤을 때 내가 안 했다고 거짓말을 한 적이 있어.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image" data-popup-page="2" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="innerButtonContainer">
+                                <ul class="innerSlider_tabs">
+                                    <li data-hover="" class="on">1</li>
+                                    <li data-hover="">2</li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1 on">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que" style="letter-spacing: -1.1px;">
+                                            정직했던(정직하지 않았던) 경험, 친구들을 배려했던(배려하지 않았던) 경험을 하고 나서 어떤 생각을 했었나요?
+                                            <img src="./common/images/ico_que.png" class="ico" />
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico" />
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="5" data-hover>
+                                                    <div class="answer" data-toggle-target="5">
+                                                        <div class="ls-2h">
+                                                            <p class="dot">게임이 하고 싶어서 숙제를 다 했다고 거짓말했을 때
+                                                                죄책감이 들었습니다.
+                                                            </p>
+                                                            <p class="dot">친구들을 위해 점심 시간에 자리를 정리해주었던 날 기분이 뿌듯했습니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            만약 그때로 다시 돌아간다면 어떻게 행동하고 싶은가요?
+                                            <img src="./common/images/ico_que.png" class="ico" />
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico" />
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="6" data-hover>
+                                                    <div class="answer" data-toggle-target="6">
+                                                        <div class="ls-2h">
+                                                           <p class="dot">거짓말을 하지 않고 솔직하게 사실을 말하고 싶습니다.</p>
+                                                           <p class="dot">다시 돌아가더라도 친구를 위해 배려할 것입니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+            });
+
+            $(document).on('click', '.boxClick', function () {
+                var _id = parseInt($(this).attr('class').split(" ")[1].replace('box', ''));
+                $(this).hide();
+                $('.text' + _id).css('opacity', '1').append('<div class="close-speech-button beforeNon"></div>');
+                KmAudioPlayer.buttonClick();
+                $(this).addClass('ans')
+            });
+
+            $(document).on('click', '.close-speech-button', function () {
+                var parentClasses = $(this).parent().attr('class').split(' ');
+                var _id = parentClasses.find(cls => cls.startsWith('text'))
+                    ? parseInt(parentClasses.find(cls => cls.startsWith('text')).replace('text', ''))
+                    : null;
+                if (_id !== null) {
+                    $(this).parent().css('opacity', '0');
+                    $('.box' + _id).show().removeClass('ans');
+                    $(this).remove();
+                } else {
+                    console.error('Không tìm thấy ID hợp lệ');
+                }
+            });
+            $(document).on('click', '.basicSlider_tabs li:not(.basicSlider_tabs li:nth-child(1))', function () {
+                $('.close-speech-button').remove();
+                $('.content').css('opacity', '0');
+                $('.boxClick').css('display', 'block').removeClass('ans');
+            });
+
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(document).on('click', '.additional-question', function () {
+                $('[data-type="toggleButton"][data-active="on"] .toggle').addClass('complete');
+            });
+        });
+    </script>
+</body>
+
+</html>

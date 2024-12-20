@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        .page_1 .how-to-box {
+            margin-top: 10px;
+        }
+
+        .how-to-play li {
+            margin-bottom: 5px;
+        }
+
+        .icon-char[data-popup-btn="1"] {
+            top: -10px;
+        }
+
+        .min[data-popup-page="1"] {
+            top: 210px;
+            left: 530px;
+            width: 729px;
+        }
+
+        .page_1 .additional-question {
+            right: 100px;
+            position: absolute;
+        }
+
+        /* Popup page */
+
+        .innerSlider_tabs>li {
+            background-color: #F3DEC0;
+        }
+
+        .innerSlider_tabs>li.on {
+            background-color: #F3B05B;
+        }
+
+        .innerButtonContainer {
+            position: absolute;
+            right: 80px;
+            top: 86px;
+        }
+
+        .innerButtonContainer::before {
+            display: none;
+        }
+
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+            text-align: center;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: max-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .popup_pages [data-type="toggleButton"] {
+            height: max-content;
+            align-items: center;
+            display: flex;
+            width: 100% !important;
+        }
+
+        [data-popup-page="2"] [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            height: 100%;
+        }
+
+        .popup-pages .ls-2h {
+            width: 100%;
+        }
+
+        .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+
+        .toggle.complete .answer,
+        .answer.on {
+            font-weight: normal;
+            margin: auto;
+        }
+
+        .page_1 .mouse {
+            top: 425px;
+            position: absolute;
+            left: 990px;
+        }
+
+        [data-popup-page="3"] .flex {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .bullet.exam {
+            margin-top: 10px;
+        }
+
+        [data-popup-page="3"] [data-type="toggleButton"] {
+            justify-content: center;
+        }
+
+        [data-popup-page="3"] [data-type="toggleButton"] .toggle {
+            width: max-content;
+            margin-left: 10px;
+        }
+
+        [data-popup-page="3"] .dapCheckBtn {
+            right: 28px;
+            bottom: 10px;
+        }
+
+
+        /* page 2 */
+        .page_2 .tab-content-box{
+            margin-top: 10px;
+        }
+        .page_2 table {
+            font-size: 40px;
+        }
+
+        .page_2 .noteText {
+            box-shadow: none;
+            padding: 0;
+        }
+
+        .page_2 th,
+        .page_2 td {
+            padding: 4px 0;
+        }
+
+        .page_2 th .noteText {
+            height: 60px;
+        }
+
+        .page_2 td .noteText {
+            height: 110px;
+        }
+
+        .page_2 .noteText.noLine .textareaWrap {
+            height: 100%;
+        }
+
+        .page_2 .noteText .text-exam.flex-wrap {
+            padding: 0 20px;
+        }
+
+        .page_2 th .noteText .text-exam.flex-wrap {
+            justify-content: center;
+        }
+
+        .page_2 .noteText .textLine,
+        .page_2 .blueT p {
+            text-align: left;
+            line-height: 50px;
+        }
+
+        .page_2 .blueT {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="twoLine gap">
+            <div class="title-icon pink" data-show="1">마음 <em>똑똑</em></div>
+            <div class="title-text">도덕적인 생활을 하려면 어떤 마음이나 행동을 더하고 빼야 하는지 생각하며 ‘더하기 빼기 글쓰기’ 활동 방법을 확인해 봅시다.</div>
+        </header>
+        <main>
+
+
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="도덕적인 생활을 하려면 어떤 마음이나 행동을 더하고 빼야 하는지 생각하며 ‘더하기 빼기 글쓰기’ 활동 방법을 확인해 봅시다."
+                        data-gap="true" class="twoLine">
+                        활동 방법</li>
+                    <li data-hover="" data-text="도덕적으로 생활하기 위한 더하기 빼기 글쓰기를 해 봅시다." data-gap="true">활동</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="1"></div>
+                        <div class="popBtn additional-question" data-popup-btn="2">추가 질문</div>
+                        <div class="how-to-box">
+                            <div class="title-box">
+                                <div class="title">활동 방법</div>
+                            </div>
+                        </div>
+                        <ul class="how-to-play">
+                            <li>
+                                <div class="bullet number orange inline">
+                                    1
+                                </div>
+                                <div class="text">
+                                    생활하면서 도덕적으로 행동했던 경우와 그렇지 않았던 경우를 떠올려 봅니다.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="bullet number orange inline">
+                                    2
+                                </div>
+                                <div class="text">
+                                    도덕적인 생활을 하기 위해 자신에게 더해야 할 마음이나 행동을
+                                    생각합니다. </div>
+                            </li>
+                            <li>
+                                <div class="bullet number orange inline">
+                                    3
+                                </div>
+                                <div class="text">
+                                    도덕적인 생활을 하기 위해 자신에게서 빼야 할 마음이나 행동을 생각합니다.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="bullet number orange inline">
+                                    4
+                                </div>
+                                <div class="text">
+                                    다음 예시를 참고하여 더하기 빼기 글쓰기를 합니다.
+                                    <div class="popBtn mouse" data-hover="" data-popup-btn="3" data-targetSlideNum="1">
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="tab-content-box">
+                            <div class="tab-content content-01">
+                                <div class="table-box color-04">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:40%">
+                                            <col style="width:60%">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>
+                                                    생활하면서 도덕적으로<br>
+                                                    행동했던 경우
+                                                </th>
+                                                <td>
+                                                    <div class="noteText noLine">
+                                                        <div class="textareaWrap">
+                                                            <textarea class="textLine afterDisplay" type="text"
+                                                                placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                                onfocus="" onblur="placeholder='직접 쓰기'"
+                                                                autocomplete="off" spellcheck="false"></textarea>
+                                                        </div>
+                                                        <div class="text-exam flex-wrap">
+                                                            <div class="blueT">
+                                                                <p>친구가 넘어졌을 때 일으켜 주고 보건실에
+                                                                    데려다 주었다.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>
+                                                    생활하면서 도덕적으로<br>
+                                                    행동하지 않았던 경우
+                                                </th>
+                                                <td>
+                                                    <div class="noteText noLine">
+                                                        <div class="textareaWrap">
+                                                            <textarea class="textLine afterDisplay" type="text"
+                                                                placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                                onfocus="" onblur="placeholder='직접 쓰기'"
+                                                                autocomplete="off" spellcheck="false"></textarea>
+                                                        </div>
+                                                        <div class="text-exam flex-wrap">
+                                                            <div class="blueT">
+                                                                <p>체육 시간에 아웃이었는데 이기려고
+                                                                    아웃이 아니라고 거짓말을 한 적이 있다.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>
+                                                    도덕적인 사람이 되기 위해<br>
+                                                    더해야 할 마음이나 행동
+                                                </th>
+                                                <td>
+                                                    <div class="noteText noLine">
+                                                        <div class="textareaWrap">
+                                                            <textarea class="textLine afterDisplay" type="text"
+                                                                placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                                onfocus="" onblur="placeholder='직접 쓰기'"
+                                                                autocomplete="off" spellcheck="false"></textarea>
+                                                        </div>
+                                                        <div class="text-exam flex-wrap">
+                                                            <div class="blueT">
+                                                                <p>친구를 돕는 마음</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>
+                                                    도덕적인 사람이 되기 위해<br>
+                                                    빼야 할 마음이나 행동
+                                                </th>
+                                                <td>
+                                                    <div class="noteText noLine">
+                                                        <div class="textareaWrap">
+                                                            <textarea class="textLine afterDisplay" type="text"
+                                                                placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                                onfocus="" onblur="placeholder='직접 쓰기'"
+                                                                autocomplete="off" spellcheck="false"></textarea>
+                                                        </div>
+                                                        <div class="text-exam flex-wrap">
+                                                            <div class="blueT">
+                                                                <p>이기려고 하는 거짓말</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        <p>
+                            글쓰기는 시, 줄글, 수식의 형태 등 다양하고 창의적인 형식으로 표현할 수 있어요.
+                        </p>
+                    </div>
+                </li>
+                <li class="fullLine whole image" data-popup-page="2" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="innerButtonContainer">
+                                <ul class="innerSlider_tabs">
+                                    <li data-hover="" class="on">1</li>
+                                    <li data-hover="">2</li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1 on">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que" style="letter-spacing: -1.1px;">
+                                            도덕적인 삶을 위하여 더해야 할 것은 무엇인가요? (+)
+                                            <img src="./common/images/ico_que.png" class="ico" />
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico" />
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="5" data-hover>
+                                                    <div class="answer" data-toggle-target="5">
+                                                        <div class="ls-2h">
+                                                            솔직하게 말하기, 용기 있게 행동하기, 책임감 가지기 등
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            도덕적인 삶을 위하여 빼야 할 것은 무엇인가요? (-)
+                                            <img src="./common/images/ico_que.png" class="ico" />
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico" />
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="6" data-hover>
+                                                    <div class="answer" data-toggle-target="6">
+                                                        <div class="ls-2h">
+                                                            욕심, 나쁜 말 하기, 할 일 미루기, 남 탓하기 등
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="whole image" data-popup-page="3" data-quiz="toggle">
+                    <h2>더하기 빼기 글쓰기</h2>
+                    <div class="flex-group">
+                        <div class="flex">
+                            <div class="exam bullet">예</div>
+                            <p>나는 소희.</p>
+                        </div>
+                        <div class="flex">다른 친구들 이야기만 듣고 성급하게 은채를</div>
+                        <div class="flex">
+                            <div data-type="toggleButton">
+                                미워했던 마음을
+                                <div class="toggle box" data-toggle-obj="1">
+                                    <div class="answer" data-toggle-target="1">
+                                        <div>빼고</div>
+                                    </div>
+                                </div>
+                                , 직접 만나서 대화하며
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div data-type="toggleButton">
+                                신중하게 생각하는 것을
+                                <div class="toggle box" data-toggle-obj="2">
+                                    <div class="answer" data-toggle-target="2">
+                                        <div>더할래</div>
+                                    </div>
+                                </div>.
+                            </div>
+                        </div>
+                        <div class="flex">나는 은채.</div>
+                        <div class="flex">소희를 배려한다면서 혼자 판단하고 행동</div>
+                        <div class="flex">
+                            <div data-type="toggleButton">
+                                하는 것을
+                                <div class="toggle box" data-toggle-obj="3">
+                                    <div class="answer" data-toggle-target="3">
+                                        <div>빼고</div>
+                                    </div>
+                                </div>
+                                솔직하게 대화하는 용기를
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div data-type="toggleButton">
+                                <div class="toggle box" data-toggle-obj="4">
+                                    <div class="answer" data-toggle-target="4">
+                                        <div>더하고</div>
+                                    </div>
+                                </div>
+                                싶어.
+                            </div>
+                        </div>
+                    </div>
+                    <button class="dapCheckBtn" data-hover data-answer-btn=""></button>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(document).on('click', '.additional-question', function () {
+                $('[data-type="toggleButton"][data-active="on"] .toggle').addClass('complete');
+            });
+
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    examViewBtn.addClass('reset');
+                } else {
+                    examViewBtn.removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!examViewBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
+            });
+
+            $(document).on('click', '[data-popup-btn="3"]', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+            });
+        });
+    </script>
+</body>
+
+</html>

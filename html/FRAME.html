@@ -91,9 +91,9 @@
                     $('header .title-text').text($(this).data('text'));
                 }
                 if ($(this).attr('data-gap') == 'true') {
-                    $('header .title-text').addClass('gap');
+                    $('header').addClass('gap');
                 } else {
-                    $('header .title-text').removeClass('gap');
+                    $('header').removeClass('gap');
                 }
                 if ($(this).hasClass('twoLine')) {
                     $('header').addClass('twoLine');
