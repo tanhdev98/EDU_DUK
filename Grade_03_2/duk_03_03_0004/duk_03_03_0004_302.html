@@ -356,6 +356,14 @@
                 $('.page_1 .basicSlider_slides li').hide();
                 $('.page_1 .basicSlider_slides li.innerTab_' + _index).show();
             });
+            $(document).on('click', '.page_1 .basicSlider_btn.prev', function () {
+                $('.page_1 .basicSlider_slides innerTab_2').hide();
+                $('.page_1 .basicSlider_slides li.innerTab_1').show();
+            });
+            $(document).on('click', '.page_1 .basicSlider_btn.next', function () {
+                $('.page_1 .basicSlider_slides innerTab_1').hide();
+                $('.page_1 .basicSlider_slides li.innerTab_2').show();
+            });
 
 
         });
