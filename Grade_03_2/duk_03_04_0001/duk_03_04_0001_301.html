@@ -496,6 +496,11 @@
         });
         $(document).on('click', '.btn-praise', function () {
             $('[data-active="on"] .toggle').addClass('complete');
+            $('.popup_pages .basicSlider_slides li').each(function () {
+                if ($(this).find('.toggle.complete').length == 2) {
+                    $(this).find('.dapCheckBtn').addClass('reset');
+                }
+            });
         });
     </script>
     <script>
