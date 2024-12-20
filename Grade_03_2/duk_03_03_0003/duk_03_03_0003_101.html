@@ -47,6 +47,7 @@
             height: 400px;
             margin-top: 30px;
         }
+
         .page_1 .additional-question {
             position: absolute;
             right: 0;
@@ -134,10 +135,12 @@
             justify-content: center;
             height: 100%;
         }
+
         .toggle.complete .answer,
         .answer.on {
             font-weight: normal;
         }
+
         .toggle.box p.dot {
             position: relative;
             padding-left: 30px;
@@ -158,7 +161,6 @@
             position: absolute;
             top: 15px;
         }
-
     </style>
 </head>
 
@@ -214,7 +216,7 @@
                                                 <div class="textareaWrap">
                                                     위로는 형, 아래로는 동생, 나는 중간에서
                                                     항상 힘들어. 어른들이 형 말은 잘 들으라고 하시고, 동생에게는 늘 양보하라고 하시니까. 형은 나한테 심부름도 자주
-                                                    시키고, 동생은 늘 내게 뭔가 해 달라고 요구해.
+                                                    시키고, 동생은 늘 내게 뭔가 해 달라고 요구해.<br>
                                                     내가 제일 많이 피해를 보는 것 같아.
                                                 </div>
                                             </div>
@@ -263,7 +265,7 @@
                                 <li class="innerTab_1">
                                     <div class="popup-boxes">
                                         <div class="box-item ico_que">
-                                            여러분도 아기 돼지 삼 형제와 비슷한 생각을 한 적 있나요?<br> 
+                                            여러분도 아기 돼지 삼 형제와 비슷한 생각을 한 적 있나요?<br>
                                             누구의 마음에 가장 공감했나요?
                                             <img src="./common/images/ico_que.png" class="ico">
                                         </div>
@@ -273,18 +275,18 @@
                                                 <div class="toggle examBtn box" data-toggle-obj="5" data-hover="">
                                                     <div class="answer" data-toggle-target="5">
                                                         <div class="ls-2h" style="text-align: center;">
-                                                            저도 첫째 돼지와 같은 상황입니다.<br> 
+                                                            저도 첫째 돼지와 같은 상황입니다.<br>
                                                             동생들 때문에 화도 많이 나고 자주 웁니다.
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
                                 </li>
                                 <li class="innerTab_2">
                                     <div class="popup-boxes">
                                         <div class="box-item ico_que">
-                                            부모님께 효도하고, 화목한 가정을 만들기 위해서<br> 
+                                            부모님께 효도하고, 화목한 가정을 만들기 위해서<br>
                                             형제자매끼리 사이좋게 지내는 것이 왜 필요할까요?
                                             <img src="./common/images/ico_que.png" class="ico">
                                         </div>
@@ -294,8 +296,9 @@
                                                 <div class="toggle examBtn box" data-toggle-obj="6" data-hover="">
                                                     <div class="answer" data-toggle-target="6">
                                                         <div class="ls-2h">
-                                                         <p class="dot">형제자매가 사이좋게 지내면 부모님도 기뻐하십니다.</p>
-                                                         <p class="dot">부모님은 자녀들이 서로 잘 지내는 모습을 보면 더 행복하고, 가족이 화목하다고 느끼십니다.</p>
+                                                            <p class="dot">형제자매가 사이좋게 지내면 부모님도 기뻐하십니다.</p>
+                                                            <p class="dot">부모님은 자녀들이 서로 잘 지내는 모습을 보면 더 행복하고, 가족이 화목하다고
+                                                                느끼십니다.</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -346,7 +349,7 @@
                 $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
             });
-             $(document).on('click', '.toggle', function () {
+            $(document).on('click', '.toggle', function () {
                 const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
                 const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
                 const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
