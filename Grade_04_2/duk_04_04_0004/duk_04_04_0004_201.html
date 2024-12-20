@@ -689,6 +689,12 @@
             $(document).on('click', '[data-popup-btn="3"]', function () {
                 $('[data-active="on"] .toggle').addClass('complete');
             });
+
+            $(document).on('click', '.mouse', function () {
+                if ($('[data-popup-page="3"] .toggle.complete').length == 4) {
+                    $('.dapCheckBtn').addClass('reset');
+                }
+            });
         });
     </script>
 </body>
