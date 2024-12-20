@@ -684,6 +684,9 @@
             });
             $(document).on('click', '.btn-praise', function () {
                 $('[data-active="on"] .toggle').addClass('complete');
+                if ($('.toggle.complete').length == 3) {
+                    $('.dapCheckBtn').addClass('reset');
+                }
             });
         });
     </script>
