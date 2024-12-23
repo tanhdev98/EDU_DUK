@@ -59,7 +59,7 @@
         }
 
         .popup_pages .flex .imageWrap {
-            width: 70%;
+            width: 63%;
             text-align: center;
             position: relative;
         }
@@ -190,6 +190,10 @@
         [data-popup-page="2"] .blueT p {
             text-align: left;
         }
+
+        .popup_pages .buttonContainer {
+            bottom: 20px;
+        }
     </style>
 </head>
 
@@ -309,7 +313,7 @@
                     <h2 class="blue">Tip</h2>
                     <div class="popup_contents ls1">
                         <p>
-                            짝과 함께 또는 모둠별, 소그룹별로 연습하는 시간을 가져요.
+                            짝과 함께 또는 모둠별, 소그룹별로 연습하는 시간을 가집니다.
                         </p>
                     </div>
                 </li>
@@ -471,13 +475,28 @@
                 $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
             });
 
+            $(document).on('click', '.popup_closeBtn', function () {
+                $('.click-finger-Btn').removeClass("popupOn");
+            });
+            $(document).on('click', '.popBtn.mouse', function () {
+                $('.whole.image').addClass("on");
+            });
+
             $(document).on('click', '.speech', function () {
                 KmAudioPlayer.buttonClick();
-                $('.speech').show();
-                $('.text-box').hide();
+                $('[data-popup-page="2"] .speech').show();
+                $('[data-popup-page="2"] .text-box').hide();
                 var $data_popup = $(this).attr('data-popup');
-                $('.text-box[data-show="' + $data_popup + '"]').show();
+                $('[data-popup-page="2"] .text-box[data-show="' + $data_popup + '"]').show().append('<div class="close-speech-button beforeNon"></div>');
                 $(this).hide();
+            });
+
+            $(document).on('click', '.close-speech-button', function () {
+                var _id = $(this).parent().attr('data-show');
+                console.log(_id);
+                $(this).parent().hide();
+                $(`[data-popup=${_id}]`).show().removeClass('ans');
+                $(this).remove();
             });
         });
 

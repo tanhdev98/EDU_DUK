@@ -181,14 +181,14 @@
 <body>
     <div id="wrap" class="math">
         <header class="twoLine">
-            <div class="title-icon blue">실천 <em>쑥쑥</em></div>
+            <div class="title-icon blue">실천 <em>탄탄</em></div>
             <div class="title-text">성실하지 않았던 나의 모습을 떠올려 보고, 어떤 마음가짐으로 성실한 생활을 실천하면 좋을지 써 봅시다.</div>
         </header>
         <main>
             <!-- FRAME OF PAGE -->
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_slides" data-slides="">
-                    <li class="page_1">
+                    <li class="page_1" data-quiz="toggle">
                         <div class="noteText noteLine pink">
                             <div class="textareaWrap">
                                 <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
@@ -304,15 +304,6 @@
                     var dataShow = $(this).data('show').toString().split(',').map(Number);
                     return dataShow.includes(index + 1);
                 }).show();
-            });
-
-            // for demo only
-            $(document).on('click', '.buttonContainer > button:not(.examViewBtn)', function () {
-                $(this).toggleClass('reset');
-            });
-
-            $(document).on('click', '.writeBtn, .dapCheckBtn, .resetBtn, .linkBtn ', function () {
-                KmAudioPlayer.buttonClick();
             });
 
             // toggle
