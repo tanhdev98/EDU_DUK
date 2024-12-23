@@ -170,22 +170,34 @@
             width: 200px;
             top: 0px;
             left: 50%;
-            background-color: #fff;
+            /* background-color: #fff; */
             transform: translate(-50%, -50%);
             padding: 5px;
         }
 
+        /* 
         .box-text.green .wrapToggle {
             border: 4px solid #F2F7C8;
         }
 
         .box-text.pink .wrapToggle {
             border: 4px solid #FFDBDF;
+        } */
+        .box-text .wrapToggle .toggle {
+            width: 100%;
+        }
+        .box-text .wrapToggle .toggle .answer{
+            margin: auto;
         }
 
         .pointContainer .dapCheckBtn {
             right: 28px;
             bottom: 20px;
+        }
+
+        .page_2 .noteText .blueT,
+        .page_2 .noteText .textLine {
+            text-align: left;
         }
     </style>
 </head>
@@ -245,7 +257,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="page_2">
+                    <li class="page_2" data-quiz="toggle">
                         <div class="noteText noteLine blue">
                             <div class="textareaWrap">
                                 <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"

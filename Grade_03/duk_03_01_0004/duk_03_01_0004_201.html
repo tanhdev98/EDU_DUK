@@ -145,7 +145,13 @@
         }
 
         .page_1 .noteText.note-5 {
-            height: 120px;
+            height: 125px;
+        }
+        .mgr-5{
+            margin-right: 5px;
+        }
+        .blueT{
+            margin-top: 0;
         }
     </style>
 </head>
@@ -154,7 +160,7 @@
     <div id="wrap" class="math">
         <header>
             <div class="title-icon pink" data-show="1">마음 <em>쑥쑥</em></div>
-            <div class="title-text ">나만의 긍정 좌우명 을 정하고 ‘격려 인형’ 책갈피를 만들어 봅시다.</div>
+            <div class="title-text ">나만의 긍정 좌우명 을 정하고 ‘<span class="text-child mgr-5">격려</span> 인형’ 책갈피를 만들어 봅시다.</div>
         </header>
         <main>
 
@@ -185,7 +191,7 @@
                                                 1
                                             </div>
                                             <div class="text">
-                                                나만의 긍정 좌우명을 생각해 봅시다.
+                                                나만의 긍정 좌우명을 생각해 봅니다.
                                             </div>
                                         </li>
                                         <li>
@@ -199,7 +205,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="innerTab_2">
+                                <li class="innerTab_2" data-quiz="toggle">
                                     <div class="wrapImg">
                                         <img src="./images/duk_03_01_0004_201/img_04.png" class="img-bg" />
                                         <img src="./images/duk_03_01_0004_201/img_01.png" class="img-leaf-1" />
@@ -344,45 +350,13 @@
                 } else {
                     $('header').removeClass('gap');
                 }
-
-                var index = $(this).index();
-                $('.title-icon').removeClass('hide').hide();
-                $('.title-icon').filter(function () {
-                    var dataShow = $(this).data('show').toString().split(',').map(Number);
-                    return dataShow.includes(index + 1);
-                }).show();
             });
-
-            // $(document).on('click', '.toggle', function () {
-            //     const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
-            //     const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
-            //     const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.examViewBtn');
-
-            //     if (toggleBtn.length == toggleCompleteBtn.length) {
-            //         examViewBtn.addClass('reset');
-            //     } else {
-            //         examViewBtn.removeClass('reset');
-            //     }
-            // });
-
-            // $(document).on('click', '.examViewBtn', function () {
-            //     const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.examViewBtn');
-            //     const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
-
-            //     if (!examViewBtn.hasClass('reset')) {
-            //         toggleBtn.parent().removeAttr('data-active');
-            //     } else {
-            //         toggleBtn.parent().attr('data-active', 'on');
-            //     }
-            // });
-
-            // for demo only
-            $(document).on('click', '.buttonContainer > button:not(.examViewBtn)', function () {
-                $(this).toggleClass('reset');
-            });
-
-            $(document).on('click', '.writeBtn, .dapCheckBtn, .resetBtn, .linkBtn ', function () {
-                KmAudioPlayer.buttonClick();
+            $(document).on('click', '.moveButtonContainer', function () {
+                if ($('.page_1 .innerTab_2').hasClass('on')) {
+                    $('header .title-text .text-child').removeClass('mgr-5');
+                }else{
+                    $('header .title-text .text-child').addClass('mgr-5');
+                }
             });
         });
     </script>
