@@ -223,6 +223,13 @@
         .answer.on {
             font-weight: normal;
         }
+        .page_1 .text_box {
+            display: flex;
+            gap: 10px;
+        }
+        .page_1 .bullet.orange.number{
+            margin-top: 5px;
+        }
     </style>
 </head>
 
@@ -244,7 +251,8 @@
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1" data-quiz="toggle">
-                        <div class="self-check" style="margin-top: 30px;">
+                        <div class="study_guide"><em>기호</em>를 <em>클릭</em>하세요.</div>
+                        <div class="self-check" style="margin-top: 50px;">
                             <div class="checkWrap">
                                 <div class="text_box">
                                     <div class="bullet number orange inline">1</div>
@@ -340,7 +348,7 @@
                                                             spellcheck="false"></textarea>
                                                     </div>
                                                     <div class="text-exam flex-wrap">
-                                                        <div class="blueT">
+                                                        <div class="blueT" style="margin-top: 4px;">
                                                             <p>이단 줄넘기 연속으로 10번 하기</p>
                                                         </div>
                                                     </div>
@@ -369,7 +377,7 @@
                                                             spellcheck="false"></textarea>
                                                     </div>
                                                     <div class="text-exam flex-wrap">
-                                                        <div class="blueT">
+                                                        <div class="blueT" style="margin-top: 5px;">
                                                             <p>30분씩 연습하기</p>
                                                         </div>
                                                     </div>
@@ -385,7 +393,7 @@
                                                             spellcheck="false"></textarea>
                                                     </div>
                                                     <div class="text-exam flex-wrap">
-                                                        <div class="blueT">
+                                                        <div class="blueT" style="margin-top: 5px;">
                                                             <p class="textSafari">
                                                                 월요일, 수요일, 목요일(3번)에 방과 후에 운동장에서
                                                             </p>
@@ -446,7 +454,7 @@
                                                 시간 관리하기
                                             </div>
                                             <div class="box-content">
-                                                실천하려고 노력하는M<br>
+                                                실천하려고 노력하는<br>
                                                 시간을 낭비하지<br>
                                                 않으려면 시간 계획을<br>
                                                 세워야 합니다.
@@ -649,6 +657,7 @@
                 $(this).addClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+                KmAudioPlayer.buttonClick();
             });
             $(document).on('click', '.additional-question', function () {
                 $('.boxItem[data-active="on"] .toggle').addClass('complete');
