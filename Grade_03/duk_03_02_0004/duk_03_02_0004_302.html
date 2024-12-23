@@ -14,11 +14,11 @@
     <style>
         .endUnit {
             position: relative;
-            top: -16px;
+            top: -7px;
         }
 
         .self-check {
-            margin-top: 70px;
+            margin-top: 120px;
         }
 
         .text_box {
@@ -66,9 +66,9 @@
 
 <body>
     <div id="wrap" class="math">
-        <header>
+        <header class="gap">
             <div class="endUnit">단원 마무리</div>
-            <div class="title-text gap">성실에 대한 설명을 읽고 알맞은 것을 찾아 O표를 해 봅시다.</div>
+            <div class="title-text ">성실에 대한 설명을 읽고 알맞은 것을 찾아 O표를 해 봅시다.</div>
         </header>
         <main>
 
@@ -76,8 +76,8 @@
             <!-- FRAME OF PAGE -->
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
-                    <li data-hover="" data-text="성실에 대한 설명을 읽고 알맞은 것을 찾아 O표를 해 봅시다." data-gap="true">활동 1</li>
-                    <li data-hover="" data-text="성실에 대한 설명을 읽고 알맞은 것을 찾아 O표를 해 봅시다." data-gap="true">자기 점검</li>
+                    <li data-hover="" data-text="성실에 대한 설명을 읽고 알맞은 것을 찾아 ○표를 해 봅시다." data-gap="true">활동 1</li>
+                    <li data-hover="" data-text="2단원을 마치며 스스로의 모습을 되돌아봅시다.">자기 점검</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1">
@@ -100,7 +100,7 @@
                                                 다해 하는 거야.
                                             </div>
                                             <div class="icon-box">
-                                                <div class="wrap">
+                                                <div class="wrap ans">
                                                     <div class="button-smile icon5"></div>
                                                 </div>
                                                 <div class="wrap">
@@ -114,7 +114,7 @@
                                                 마음과 관련이 있어.
                                             </div>
                                             <div class="icon-box">
-                                                <div class="wrap">
+                                                <div class="wrap ans">
                                                     <div class="button-smile icon5"></div>
                                                 </div>
                                                 <div class="wrap">
@@ -145,7 +145,7 @@
                                                 <div class="wrap">
                                                     <div class="button-smile icon5"></div>
                                                 </div>
-                                                <div class="wrap">
+                                                <div class="wrap ans">
                                                     <div class="button-smile icon4"></div>
                                                 </div>
                                             </div>
@@ -156,7 +156,7 @@
                                                 열심히 한 노력이 모여서 멋진 너를 만들 수 있거든.
                                             </div>
                                             <div class="icon-box">
-                                                <div class="wrap">
+                                                <div class="wrap ans">
                                                     <div class="button-smile icon5"></div>
                                                 </div>
                                                 <div class="wrap">
@@ -323,12 +323,32 @@
         document.addEventListener('DOMContentLoaded', function () {
             $(document).on('click', '.basicSlider_tabs li', function () {
                 if ($(this).data('text')) {
-                    $('header .title').text($(this).data('text'));
+                    $('header .title-text').text($(this).data('text'));
                 }
                 if ($(this).attr('data-gap') == 'true') {
-                    $('header .title').addClass('gap');
+                    $('header').addClass('gap');
                 } else {
-                    $('header .title').removeClass('gap');
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+                if ($(this).index() == 0) {
+                    $('.contentsBox>.basicSlider_slides').css('zIndex', '100');
+                }
+                else {
+                    $('.contentsBox>.basicSlider_slides').css('zIndex', '0');
+                }
+            });
+            $(document).on('click', '.wrap', function () {
+                if ($(this).hasClass('ans')) {
+                    KmAudioPlayer.correct();
+                }else {
+                    KmAudioPlayer.incorrect();
+                     $(this).removeClass('on');
                 }
             });
         });

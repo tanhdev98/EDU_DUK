@@ -12,6 +12,9 @@
         .todaycontent .todayPage p em {
             font-weight: normal !important;
         }
+        .todaycontent .todayTxt p {
+            font-size: 50px;
+        }
     </style>
 </head>
 
@@ -24,8 +27,8 @@
                 <div class="todayHeader"></div>
                 <div class="textBox">
                     <div class="textBox_change">
-                        <span class="write active">직접쓰기</span>
-                        <span class="view">내용보기</span>
+                        <span class="write active">직접 쓰기</span>
+                        <span class="view">내용 보기</span>
                     </div>
                     <div class="todayPage">
                         <p>
@@ -58,7 +61,7 @@
     <script src="./common/js/common.js"></script>
     <script src="./common/js/contents.js"></script>
     <script type="text/javascript">
-        $(function () {
+       $(function () {
             $(document).find(".textBox_change > span").on("click", function () {
                 if ($(this).hasClass("active")) {
                     $(this).removeClass("active");
@@ -74,6 +77,9 @@
                     $(this).parent().siblings(".todayWrite").removeClass("active");
                     $(this).parent().siblings(".todayTxt").addClass("active");
                 }
+            });
+            $(document).on('click', '.textBox_change', function () {
+                new Audio('./media/click.mp3').play();
             });
         });
     </script>
