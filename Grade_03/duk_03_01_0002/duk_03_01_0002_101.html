@@ -27,8 +27,12 @@
 
         [data-popup-page="2"] {
             top: 249px;
-            left: 476px;
-            width: 774px;
+            left: 450px;
+            width: 810px;
+        }
+
+        .popup_container .min .popup_contents p {
+            text-align: left;
         }
 
         .page_1 .popBtn {
@@ -39,16 +43,18 @@
 
         .page_1 .popBtn img {
             height: 470px;
+            border-radius: 20px;
         }
 
         .page_1 .popBtn .popBtn.mouse {
             position: absolute;
             right: 0;
-            bottom: 0;
+            bottom: 5px;
         }
 
         .popup_pages .toggle.box {
             justify-content: center;
+            width: calc(100% );
         }
 
         .tab-content {
@@ -69,6 +75,11 @@
             bottom: 20px;
             right: 28px;
         }
+
+        .page_1 .mouse {
+            animation: clickInduceMotion 1s 3 ease-in;
+            -webkit-animation: clickInduceMotion 1s 3 ease-in;
+        }
     </style>
 </head>
 
@@ -86,10 +97,10 @@
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1">
                         <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="2"></div>
-                        <div class="study_guide"><em>수업 도</em>구의 <em>색연필</em>을 클릭하세요.</div>
+                        <div class="study_guide"><em>수업 도구</em>의 <em>색연필</em>을 클릭하세요.</div>
                         <div class="popBtn" data-hover="" data-popup-btn="1" data-popup-parent="hidden">
                             <img src="./images/duk_03_01_0002_101/img_01.png" alt="">
-                            <div class="popBtn mouse"></div>
+                            <div class="popBtn mouse mouse1"></div>
                         </div>
                     </li>
                 </ul>
@@ -380,10 +391,10 @@
                     <h2 class="blue">Tip</h2>
                     <div class="popup_contents ls1">
                         <p><ins class="dot"></ins>
-                            다른 열매를 적고 싶으면 나무에 적어도 돼요.
+                            다른 열매를 적고 싶으면 나무에 적어도 됩니다.
                         </p>
-                        <p><ins class="dot"></ins>빠르고 많이 찾는 것이 중요하지 않아요.</p>
-                        <p><ins class="dot"></ins>표시한 열매를 보며 왜 그렇게 생각했는지 이야기해 봐요.</p>
+                        <p><ins class="dot"></ins>빠르고 많이 찾는 것이 중요하지 않습니다.</p>
+                        <p><ins class="dot"></ins>표시한 열매를 보며 왜 그렇게 생각했는지 이야기해 봅니다.</p>
                     </div>
                 </li>
             </ul>
@@ -408,6 +419,14 @@
     <script type="text/javascript" src="./common/js/guide.js"></script>
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
+
+            $(document).ready(function () {
+                $('.popBtn.mouse1').removeClass('mouse');
+                setTimeout(function () {
+                    $('.popBtn.mouse1').addClass('mouse');
+                }, 100);
+            });
+
             $(document).on('click', '.basicSlider_tabs li', function () {
                 if ($(this).data('text')) {
                     $('header .title-text').text($(this).data('text'));
