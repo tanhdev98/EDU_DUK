@@ -67,12 +67,14 @@
             display: flex;
             justify-content: space-evenly;
             align-items: center;
-            margin-top: 40px;
+            margin-top: 120px;
         }
 
         .popup_pages img {
             width: 400px;
-            height: 500px;
+            height: 400px;
+            object-fit: fill;
+            border-radius: 20px;
         }
 
         .toggle.box {
@@ -87,6 +89,11 @@
             font-weight: normal;
             text-align: center;
         }
+
+        .page_1 .mouse {
+            animation: clickInduceMotion 1s 3 ease-in;
+            -webkit-animation: clickInduceMotion 1s 3 ease-in;
+        }
     </style>
 </head>
 
@@ -94,7 +101,7 @@
     <div id="wrap" class="math">
         <header>
             <div class="title-icon blue">실천 <em>똑똑</em></div>
-            <div class="title-text">그림을 보고 친구들이 어떤<span class="voca" data-hover="" data-popup-btn="2">감정</span> 을 느낄지
+            <div class="title-text">그림을 보고 친구들이 어떤 <span class="voca" data-hover="" data-popup-btn="2">감정</span> 을 느낄지
                 생각해 봅시다.</div>
         </header>
         <main>
@@ -304,6 +311,14 @@
     <script type="text/javascript" src="./common/js/guide.js"></script>
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
+
+            $(document).ready(function () {
+                $('.popBtn.mouse1').removeClass('mouse');
+                setTimeout(function () {
+                    $('.popBtn.mouse1').addClass('mouse');
+                }, 100);
+            });
+
             $(document).on('click', '.basicSlider_tabs li', function () {
                 if ($(this).data('text')) {
                     $('header .title-text').text($(this).data('text'));
@@ -328,6 +343,21 @@
 
             $(document).on('click', '.popup_closeBtn', function () {
                 $('.popBtn.popupOn').trigger('click');
+            });
+
+            $(document).on('click', '.popBtn.mouse', function () {
+                $('[data-popup-page="1"]').addClass('on');
+                const parentDocument = parent.document.querySelector('iframe');
+                if (parentDocument != null) {
+                    parentDocument.parentNode.parentNode.style.zIndex = 120;
+                }
+            });
+
+            $(document).on('click', '[data-popup-page="1"] .popup_closeBtn', function () {
+                const parentDocument = parent.document.querySelector('iframe');
+                if (parentDocument != null) {
+                    parentDocument.parentNode.parentNode.style.zIndex = 0;
+                }
             });
         });
 
