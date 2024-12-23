@@ -63,6 +63,8 @@
 
         .page_1 .imageCharacter img {
             width: 180px;
+            height: 240px;
+            object-fit: contain;
         }
 
         .page_1 .balloon {
@@ -86,6 +88,15 @@
             left: 50%;
             transform: translateX(-50%);
             bottom: -70px;
+        }
+
+        .page_1 .noteText .textLine,
+        .page_1 .blueT {
+            text-align: left;
+        }
+
+        .page_1 .blueT {
+            margin-top: 5px;
         }
 
         /* Page 2 */
@@ -155,7 +166,7 @@
         [data-popup-page="1"] {
             width: max-content;
             top: 276px;
-            left: 183px;
+            left: 160px;
         }
 
         /* Page 3 */
@@ -315,14 +326,24 @@
         .page_4 .noteText {
             margin-top: 25px;
         }
+
+        .letter-spacing14 {
+            letter-spacing: -1.4px;
+        }
+
+        .page_4 .click-finger-Btn.blinkOn.blinkOpacity {
+            animation: clickInduceMotion 1s 3 ease-in;
+            -webkit-animation: clickInduceMotion 1s 3 ease-in;
+        }
     </style>
 </head>
 
 <body>
     <div id="wrap" class="math">
-        <header class="threeLine">
+        <header class="twoLine gap">
             <div class="title-icon yellow" data-show="1">생각 <em>쑥쑥</em></div>
-            <div class="title-text">성실한 사람이 되려면 어떤 마음가짐을 가져야 할지, 참된 마음, 노력하는 마음, 참고 이겨 내는 마음이 들어가도록 이야기해 봅시다.</div>
+            <div class="title-text"><span style="letter-spacing: -1.4px;">성실한 사람이 되려면 어떤 마음가짐을 가져야 할지, 참된 마음, 노력하는 마음,
+                    참고 이겨 내는 마음이 들어가도록 이야기해 봅시다.</span></div>
         </header>
         <main>
             <!-- FRAME OF PAGE -->
@@ -330,14 +351,13 @@
                 <ul class="basicSlider_tabs" data-tabs="">
                     <li data-hover=""
                         data-text="성실한 사람이 되려면 어떤 마음가짐을 가져야 할지, 참된 마음, 노력하는 마음, 참고 이겨 내는 마음이 들어가도록 이야기해 봅시다."
-                        class="threeLine">활동 1</li>
+                        class="twoLine" data-gap="true">활동 1</li>
                     <li data-hover="" data-text="사람들이 맡은 일을 성실하게 하지 않으면 어떻게 될지 생각해 봅시다." class="twoLine">활동 2</li>
                     <li data-hover="" data-text="여러분이 맡은 일은 무엇인가요? 그 일을 성실하게 하지 않으면 어떻게 될까요?" class="twoLine">물음</li>
                     <li data-hover="" data-text="성실한 사람의 마음가짐을 떠올리며 성실하게 생활해야 하는 까닭을 써 봅시다." class="twoLine">활동 3</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1">
-
                         <div class="basicSlider contentsBox doItContent" data-slide-container="">
                             <div class="moveButtonContainer" data-slide-btn-container="">
                                 <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
@@ -490,9 +510,9 @@
                                             <div class="toggle examBtn box" data-toggle-obj="1">
                                                 <div class="answer" data-toggle-target="1">
                                                     <div class="ls-2h">
-                                                        교통 지도를 하는 경찰이<br>
-                                                        성실하지 않으면<br>
-                                                        교통이 혼잡해질 것 같습니다.
+                                                        소방관이 성실하지 않으면<br>
+                                                        불을 잘 끄지 못해서<br>
+                                                        피해가 커질 것 같습니다.
                                                     </div>
                                                 </div>
                                             </div>
@@ -512,7 +532,8 @@
                                                 <div class="answer" data-toggle-target="2">
                                                     <div class="ls-2h">
                                                         의사가 성실하지 않으면<br>
-                                                        아픈 사람의 병이 낫지 않을<br> 것 같습니다.
+                                                        아픈 사람의 병이<br>
+                                                        낫지 않을 것 같습니다.
                                                     </div>
                                                 </div>
                                             </div>
@@ -524,7 +545,7 @@
                                         <div class="leftItem green">
                                             <img src="./images/duk_03_02_0001_202/img_03.JPG" />
                                             <div class="leftItemDesc">
-                                                재판을 하는 의사
+                                                재판을 하는 판사
                                             </div>
                                         </div>
                                         <div class="rightItem" data-type="toggleButton">
@@ -533,7 +554,8 @@
                                                     <div class="ls-2h">
                                                         판사가 성실하지 않으면<br>
                                                         판결이 공정하게 되지 않아<br>
-                                                        억울한 사람이 늘어날 것입니다.
+                                                        억울한 사람이<br>
+                                                        늘어날 것입니다.
                                                     </div>
                                                 </div>
                                             </div>
@@ -572,7 +594,8 @@
                                                 <div class="answer" data-toggle-target="5">
                                                     <div class="ls-2h">
                                                         군인이 성실하지 않으면<br>
-                                                        나라를 지키지 못할 것 같습니다.
+                                                        나라를 지키지<br>
+                                                        못할 것 같습니다.
                                                     </div>
                                                 </div>
                                             </div>
@@ -709,18 +732,18 @@
                 <li class="min" data-popup-page="1" data-drag="">
                     <h2 class="blue">Tip</h2>
                     <div class="popup_contents ls1">
-                        친구들과 토의를 해 봐도 좋아요.
+                        친구들과 토의를 해 봐도 좋습니다.
 
-                        <p><ins class="dot"></ins> 짝 토의: 둘이 짝을 지어 토의해요.
+                        <p><ins class="dot"></ins> 짝 토의: 둘이 짝을 지어 토의합니다.
                         </p>
                         <p><ins class="dot"></ins>
-                            브레인스토밍: 모둠에서 생각나는 대로 무엇이든 이야기해 봐요.
+                            브레인스토밍: 모둠에서 생각나는 대로 무엇이든 이야기해 봅니다.
                         </p>
                         <p><ins class="dot"></ins>
-                            물레방아 토의: 2명–4명–8명식으로 사람을 늘려 가며 이야기해 봐요.
+                            물레방아 토의: 2명–4명–8명식으로 사람을 늘려 가며 이야기해 봅니다.
                         </p>
                         <p><ins class="dot"></ins>
-                            피라미드 토의: 시간을 정해서 짝을 바꾸어 가며 이야기해 봐요.
+                            피라미드 토의: 시간을 정해서 짝을 바꾸어 가며 이야기해 봅니다.
                         </p>
                     </div>
                 </li>
@@ -750,22 +773,22 @@
                 if ($(this).data('text')) {
                     $('header .title-text').text($(this).data('text'));
                 }
+
                 if ($(this).attr('data-gap') == 'true') {
-                    $('header .title-text').addClass('gap');
+                    $('header').addClass('gap');
                 } else {
-                    $('header .title-text').removeClass('gap');
+                    $('header').removeClass('gap');
                 }
                 if ($(this).hasClass('twoLine')) {
                     $('header').addClass('twoLine');
-                    $('header').removeClass('threeLine');
-                }
-                else if ($(this).hasClass('threeLine')) {
-                    $('header').removeClass('twoLine');
-                    $('header').addClass('threeLine');
                 }
                 else {
-                    $('header').removeClass('threeLine');
                     $('header').removeClass('twoLine');
+                }
+                if ($(this).data('text') == '성실한 사람이 되려면 어떤 마음가짐을 가져야 할지, 참된 마음, 노력하는 마음, 참고 이겨 내는 마음이 들어가도록 이야기해 봅시다.') {
+                    $('header .title-text').addClass('letter-spacing14');
+                } else {
+                    $('header .title-text').removeClass('letter-spacing14');
                 }
                 $('.click-finger-Btn').removeClass('blinkOn').removeClass('blinkOpacity');
                 setTimeout(function () {
@@ -773,6 +796,7 @@
                 }, 100);
             });
 
+         
             $(window).on('load', function () {
                 $('.page_1 .character-item .balloon').removeClass('fff');
             });
