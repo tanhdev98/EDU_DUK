@@ -110,17 +110,26 @@
             padding: 0 20px;
         }
 
+        .page_1 .noteText .textLine {
+            text-align: left;
+        }
+
+        .page_1 .blueT {
+            text-align: left;
+            margin-top: 5px;
+        }
+
         .page_1 .buttonContainer {
             right: 28px;
         }
 
         /* Page 2 */
         .page_2 .self-check {
-            margin-top: 50px;
+            margin-top: 140px;
         }
 
         .page_2 .btn-praise {
-            top: 450px;
+            top: 390px;
         }
 
         /* title thinknet */
@@ -166,6 +175,7 @@
             padding-left: 30px;
             position: relative;
             margin-bottom: 30px;
+            pointer-events: none;
         }
 
         .popup_pages .items .item::before {
@@ -182,11 +192,13 @@
         }
 
         .popup_pages .items .item .toggle {
-            width: fit-content;
+            width: max-content;
+            pointer-events: auto;
         }
 
         .pointContainer .dapCheckBtn {
             right: 48px;
+            bottom: 20px;
         }
     </style>
 </head>
@@ -201,8 +213,8 @@
             <!-- FRAME OF PAGE -->
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
-                    <li data-hover="" data-text="나에게 힘을 주는 말을 적고, 나를 소중히 여기는 마음을 다져 봅시다." class="twoLine">활동 1</li>
-                    <li data-hover="" data-text="새로 만난 친구들에게 ‘나’를 어떻게 설명할 수 있을까요?" data-gap="true">자기 점검</li>
+                    <li data-hover="" data-text="나에게 힘을 주는 말을 적고, 나를 소중히 여기는 마음을 다져 봅시다." class="twoLine">활동</li>
+                    <li data-hover="" data-text="배운 내용을 되돌아보며 자기 점검을 해 봅시다." data-gap="true">자기 점검</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1">
@@ -415,7 +427,7 @@
                         <div class="pointTitle">
                             <div class="titleText">나를 알아봐요.</div>
                         </div>
-                        <div class="items">
+                        <div class="items" style="margin-top: 120px;">
                             <div class="item" data-type="toggleButton">
                                 내 안에는 여러 모
                                 <div class="toggle box" data-toggle-obj="1">

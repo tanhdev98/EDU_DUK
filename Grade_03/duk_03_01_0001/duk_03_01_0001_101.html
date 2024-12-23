@@ -171,7 +171,7 @@
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
                     <li data-hover="" data-text="‘나는 누구일까요?’ 이야기를 읽어 봅시다.">활동</li>
-                    <li data-hover="" data-text="새로 만난 친구들에게 ‘나’를 어떻게 설명할 수 있을까요?">물음</li>
+                    <li data-hover="" data-text="‘나’는 ‘나’에 대해서 얼마나 알고 있나요?">물음</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1">
@@ -208,7 +208,7 @@
                                         <div class="items">
                                             <div class="noteText noteLine green">
                                                 <div class="noteText-content">
-                                                    새로 만난 친구들에게 n 자신을 설명하는 시간을
+                                                    새로 만난 친구들에게 자신을 설명하는 시간을
                                                     가지면 좋겠어요.” 친구들에게 나를 설명한다고 하니 연재는 몹시 떨렸습니다. 연재는 지금의 나를 머릿속에 떠올려
                                                     보았습니다.<br>
                                                     ‘나는 누구일까?’<br>
@@ -380,6 +380,10 @@
             });
             $(document).on('click', '.additional-question', function () {
                 $('[data-active="on"] .toggle').addClass('complete');
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs>li', function () {
+                KmAudioPlayer.buttonClick();
             });
         });
 
