@@ -12,6 +12,11 @@
         .todaycontent .todayPage p em {
             font-weight: normal !important;
         }
+
+        .todaycontent .todayTxt p {
+            font-size: 50px;
+            padding: 0 14px;
+        }
     </style>
 </head>
 
@@ -24,8 +29,8 @@
                 <div class="todayHeader"></div>
                 <div class="textBox">
                     <div class="textBox_change">
-                        <span class="write active">직접쓰기</span>
-                        <span class="view">내용보기</span>
+                        <span class="write active">직접 쓰기</span>
+                        <span class="view">내용 보기</span>
                     </div>
                     <div class="todayPage">
                         <p>
@@ -37,7 +42,7 @@
                         <p>
                             <span>정직</span>을 판단의 잣대로 삼아 <span>도덕적 문제</span>를 <span>해결</span>하는 데<br>
                             어떤 선택을 할지 숙고해 봅시다.
-                            </p>
+                        </p>
                     </div>
 
                     <div class="todayWrite">
@@ -74,6 +79,9 @@
                     $(this).parent().siblings(".todayWrite").removeClass("active");
                     $(this).parent().siblings(".todayTxt").addClass("active");
                 }
+            });
+            $(document).on('click', '.textBox_change', function () {
+                new Audio('./media/click.mp3').play();
             });
         });
     </script>

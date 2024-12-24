@@ -102,6 +102,7 @@
 
         .popup_pages .buttonContainer {
             right: 28px;
+            bottom: 20px;
         }
 
         .btn-praise {
@@ -199,6 +200,11 @@
             max-height: max-content;
             display: inline-block;
         }
+        .mouse {
+            animation: clickInduceMotion 1s 3 ease-in;
+            -webkit-animation: clickInduceMotion 1s 3 ease-in;
+        }
+
     </style>
 </head>
 
@@ -238,7 +244,7 @@
                                 <div class="text">이렇게 사용해요. : 정직을 선택의 기준으로 두고 무엇을 위해, 어떻게 말하고 행동할지 생각해 봅니다.
                                 </div>
                                 <div class="popBtn mouse mouse2" data-hover="" data-popup-btn="1"
-                                    data-targetSlideNum="2">
+                                    data-targetSlideNum="3">
                                 </div>
                             </li>
                             <li>
@@ -248,13 +254,13 @@
                                 <div class="text">사용 시 주의해요. : 상대방에게 상처나 해가 되지 않도록 말할 수 있는 방법을 찾아 말하고 행동합니다.
                                 </div>
                                 <div class="popBtn mouse mouse3" data-hover="" data-popup-btn="1"
-                                    data-targetSlideNum="3">
+                                    data-targetSlideNum="2">
                                 </div>
                             </li>
                         </ul>
                     </li>
                     <li class="page_2" data-quiz="toggle">
-                        <div class="study_guide"><em>얼굴</em>을 클릭<em>하세</em>요.</div>
+                        <div class="study_guide"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
                         <div class="self-check" style="margin-top: 100px;">
                             <div class="checkWrap">
                                 <div class="text_box">
@@ -304,7 +310,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="btn-praise right popBtn footer-item" style="right: -28px; top: 410px;"
+                        <div class="btn-praise right popBtn footer-item" style="right: -28px; top: 410px; width: 100px;"
                             data-popup-btn="2">
                             <div class="item-title">우리<br>배움</div>
                         </div>
@@ -528,6 +534,11 @@
         $(document).on('click', '.btn-praise', function () {
             $('[data-active="on"] .toggle').addClass('complete');
         });
+
+        $(document).on('click', '.popBtn.mouse', function () {
+                $('.whole.image[data-popup-page="1"]').addClass("on");
+            });
+
 
     </script>
 </body>
