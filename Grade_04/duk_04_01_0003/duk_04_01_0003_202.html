@@ -137,6 +137,11 @@
             top: 280px;
             left: 700px;
         }
+
+        .blinkOn.blinkOpacity {
+            animation: clickInduceMotion 1s 3 ease-in;
+            -webkit-animation: clickInduceMotion 1s 3 ease-in;
+        }
     </style>
 </head>
 
@@ -213,11 +218,11 @@
                                                     <div class="answer" data-toggle-target="5">
                                                         <div class="ls-2h">
                                                             <p class="dot">
-                                                                숙제를 하지 않았지만 놀고 싶은 마음에, 선생님께는 숙제를 다 했다고 말씀드리고
+                                                                숙제를 하지 않았지만 놀고 싶은 마음에, 선생님께는 숙제를 <br>다 했다고 말씀드리고
                                                                 싶었습니다.
                                                             </p><br>
                                                             <p class="dot">
-                                                                사실 선생님과의 약속을 잊었지만, 다른 핑계를 대며 어쩔 수 없었다고 말하고
+                                                                사실 선생님과의 약속을 잊었지만, 다른 핑계를 대며 어쩔 수<br> 없었다고 말하고
                                                                 싶었던 적이 있었습니다.
                                                             </p>
                                                         </div>
@@ -230,7 +235,7 @@
                                 <li class="innerTab_3" data-quiz="toggle">
                                     <div class="popup-boxes">
                                         <div class="box-item ico_que">
-                                            갈등 상황에서 말과 행동을 멈춘 뒤에는 어떤 생각을 해야 할까요?
+                                            갈등 상황에서 말과 행동을 멈춘 뒤에는<br> 어떤 생각을 해야 할까요?
                                             <img src="./common/images/ico_que.png" class="ico" />
                                         </div>
                                         <div class="box-item ico_ans">
@@ -307,11 +312,29 @@
                 }
             });
             $(document).on('click', '.click-finger-Btn', function () {
+                $('.whole.image[data-popup-page="1"]').addClass("on");
                 $('[data-active="on"] .toggle').addClass('complete');
             });
             $(document).on('click', '.popup_closeBtn', function () {
                 $('.click-finger-Btn.popupOn').trigger('click');
             });
+
+            //Hide header - footer bar in view link
+            $(document).on('click', '.click-finger-Btn', function () {
+                var parentDocument = parent.document.querySelector('iframe');
+                if (parentDocument != null) {
+                    parentDocument.parentNode.style.position = 'relative';
+                    parentDocument.parentNode.style.zIndex = 1000;
+                }
+            })
+
+            $(document).on('click', '.whole.image .popup_closeBtn', function () {
+                var parentDocument = parent.document.querySelector('iframe');
+                if (parentDocument != null) {
+                    parentDocument.parentNode.style.position = 'static';
+                    parentDocument.parentNode.style.zIndex = 1;
+                }
+            })
         });
     </script>
 </body>
