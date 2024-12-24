@@ -64,6 +64,7 @@
 
         .popup_pages .buttonContainer {
             margin-right: 28px;
+            bottom: 20px;
         }
 
         /* popup 2 */
@@ -212,6 +213,16 @@
         .answer.on {
             font-weight: normal;
         }
+
+        .mouse {
+            animation: clickInduceMotion 1s 3 ease-in;
+            -webkit-animation: clickInduceMotion 1s 3 ease-in;
+        }
+
+        [data-popup-page="1"] .textLine,
+        [data-popup-page="1"] .blueT {
+            text-align: left;
+        }
     </style>
 </head>
 
@@ -245,79 +256,74 @@
 
         <section class="popup_container" data-popup-container="">
             <ul class="popup_pages">
-                <li class="fullLine whole image" data-popup-page="1">
-                    <div class="full_content">
-                        <div class="basicSlider" data-slide-container="popup">
-                            <ul class="basicSlider_slides" data-slides="">
-                                <li class="innerTab_1" data-quiz="toggle">
-                                    <h2>‘정직’하면 떠오르는 것</h2>
-                                    <div class="noteText noteLine green">
-                                        <div class="textareaWrap">
-                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
-                                                data-input-obj="" data-answer=" " onfocus=""
-                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
-                                                spellcheck="false"></textarea>
-                                        </div>
-                                        <div class="text-exam flex-wrap">
-                                            <div class="blueT">
-                                                <p>좋은 물건을 비싸게 팔지 않고 제 가격으로 파는 우리 동네 과일 가게 사장님</p>
-                                            </div>
+                <li class="whole image" data-popup-page="1">
+                    <div class="basicSlider" data-slide-container="popup">
+                        <ul class="basicSlider_slides" data-slides="">
+                            <li class="innerTab_1" data-quiz="toggle">
+                                <h2>‘정직’하면 떠오르는 것</h2>
+                                <div class="noteText noteLine green">
+                                    <div class="textareaWrap">
+                                        <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                            autocomplete="off" spellcheck="false"></textarea>
+                                    </div>
+                                    <div class="text-exam flex-wrap">
+                                        <div class="blueT">
+                                            <p>좋은 물건을 비싸게 팔지 않고 제 가격으로 파는 우리 동네 과일 가게 사장님</p>
                                         </div>
                                     </div>
-                                    <div class="buttonContainer">
-                                        <button class="writeBtn" data-answer-btn=""></button>
+                                </div>
+                                <div class="buttonContainer">
+                                    <button class="writeBtn" data-answer-btn=""></button>
+                                </div>
+                            </li>
+                            <li class="innerTab_2" data-quiz="toggle">
+                                <h2>정직한 삶의 좋은 점</h2>
+                                <div class="noteText noteLine green">
+                                    <div class="textareaWrap">
+                                        <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                            autocomplete="off" spellcheck="false"></textarea>
                                     </div>
-                                </li>
-                                <li class="innerTab_2" data-quiz="toggle">
-                                    <h2>정직한 삶의 좋은 점</h2>
-                                    <div class="noteText noteLine green">
-                                        <div class="textareaWrap">
-                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
-                                                data-input-obj="" data-answer=" " onfocus=""
-                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
-                                                spellcheck="false"></textarea>
-                                        </div>
-                                        <div class="text-exam flex-wrap">
-                                            <div class="blueT">
-                                                <p>정직하게 생활하면 무엇보다 스스로에게 부끄럽지 않습니다. 그리고 다른 사람도 나를 믿을 수 있습니다.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="buttonContainer">
-                                        <button class="writeBtn" data-answer-btn=""></button>
-                                    </div>
-                                </li>
-                                <li class="innerTab_3" data-quiz="toggle">
-                                    <h2>‘정직’을 다른 것에 비유해 보기</h2>
-                                    <div class="noteText noteLine green">
-                                        <div class="textareaWrap">
-                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
-                                                data-input-obj="" data-answer=" " onfocus=""
-                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
-                                                spellcheck="false"></textarea>
-                                        </div>
-                                        <div class="text-exam flex-wrap">
-                                            <div class="blueT">
-                                                <p>정직은 나무를 키우는 일이다. 나무를 키우려면 물과 양분을 꾸준히 줘야 하는 것처럼 정직의 마음을 키우려면 옳은 것을
-                                                    실천하며 반성하는 꾸준한 과정이 필요하기 때문이다.</p>
-                                            </div>
+                                    <div class="text-exam flex-wrap">
+                                        <div class="blueT">
+                                            <p>정직하게 생활하면 무엇보다 스스로에게 부끄럽지 않습니다. 그리고 다른 사람도 나를 믿을 수 있습니다.</p>
                                         </div>
                                     </div>
-                                    <div class="buttonContainer">
-                                        <button class="writeBtn" data-answer-btn=""></button>
+                                </div>
+                                <div class="buttonContainer">
+                                    <button class="writeBtn" data-answer-btn=""></button>
+                                </div>
+                            </li>
+                            <li class="innerTab_3" data-quiz="toggle">
+                                <h2>‘정직’을 다른 것에 비유해 보기</h2>
+                                <div class="noteText noteLine green">
+                                    <div class="textareaWrap">
+                                        <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                            autocomplete="off" spellcheck="false"></textarea>
                                     </div>
-                                </li>
-                            </ul>
+                                    <div class="text-exam flex-wrap">
+                                        <div class="blueT">
+                                            <p>정직은 나무를 키우는 일이다. 나무를 키우려면 물과 양분을 꾸준히 줘야 하는 것처럼 정직의 마음을 키우려면 옳은 것을
+                                                실천하며 반성하는 꾸준한 과정이 필요하기 때문이다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="buttonContainer">
+                                    <button class="writeBtn" data-answer-btn=""></button>
+                                </div>
+                            </li>
+                        </ul>
 
-                            <div class="moveButtonContainer" data-slide-btn-container="">
-                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
-                                <ul class="basicSlider_circle_tabs" data-tabs="">
-                                    <li data-hover=""></li>
-                                    <li data-hover=""></li>
-                                    <li data-hover=""></li>
-                                </ul>
-                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
-                            </div>
+                        <div class="moveButtonContainer" data-slide-btn-container="">
+                            <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                            <ul class="basicSlider_circle_tabs" data-tabs="">
+                                <li data-hover=""></li>
+                                <li data-hover=""></li>
+                                <li data-hover=""></li>
+                            </ul>
+                            <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
                         </div>
                     </div>
                 </li>
@@ -423,6 +429,9 @@
             });
             $(document).on('click', '.btn-praise', function () {
                 $('[data-active="on"] .toggle').addClass('complete');
+            });
+            $(document).on('click', '.popBtn.mouse', function () {
+                $('.whole.image[data-popup-page="1"]').addClass("on");
             });
         });
     </script>

@@ -171,13 +171,13 @@
         }
 
         .close-speech-button1 {
-            right: 920px;
-            top: 91px;
+            right: 918px;
+            top: 90px;
         }
 
         .close-speech-button2 {
-            right: 120px;
-            top: 91px;
+            right: 118px;
+            top: 90px;
         }
 
         /* page 2 */
@@ -252,6 +252,22 @@
             pointer-events: none;
             position: absolute;
         }
+
+        .popBtn.text-box.box1:hover {
+            background-color: #5FA138;
+            border-color: #CED993;
+            color: #fff;
+        }
+
+        .popBtn.text-box.box2:hover {
+            background-color: #FB8408;
+            border-color: #FED08C;
+            color: #fff;
+        }
+
+        .topText {
+            font-family: 'NotoB';
+        }
     </style>
 </head>
 
@@ -288,21 +304,25 @@
                                         <img src="./images/duk_04_01_0001_201/girl_3.png" data-popup="2"
                                             class="speech" />
                                     </div>
-                                    <div class="popBtn text-box box1" data-show="1" data-popup-btn="1">
-                                        <img src="./images/duk_04_01_0001_201/img_02.png" class="img_01">
-                                        <span>
-                                            윤한의<br>
-                                            일기
-                                        </span>
-                                        <div class="bob bob1"></div>
+                                    <div>
+                                        <div class="popBtn text-box box1" data-show="1" data-popup-btn="1">
+                                            <img src="./images/duk_04_01_0001_201/img_02.png" class="img_01">
+                                            <span>
+                                                윤한의<br>
+                                                일기
+                                            </span>
+                                            <div class="bob bob1"></div>
+                                        </div>
                                     </div>
-                                    <div class="popBtn text-box box2" data-show="2" data-popup-btn="2">
-                                        <img src="./images/duk_04_01_0001_201/img_01.png" class="img_02">
-                                        <span>
-                                            아리의<br>
-                                            일기
-                                        </span>
-                                        <div class="bob bob2"></div>
+                                    <div>
+                                        <div class="popBtn text-box box2" data-show="2" data-popup-btn="2">
+                                            <img src="./images/duk_04_01_0001_201/img_01.png" class="img_02">
+                                            <span>
+                                                아리의<br>
+                                                일기
+                                            </span>
+                                            <div class="bob bob2"></div>
+                                        </div>
                                     </div>
                                 </li>
                                 <li class="innerTab_2" data-quiz="toggle">
@@ -432,13 +452,19 @@
                     $('.text-box.box1').hide();
                     $(this).remove();
                     $('.speech[data-popup="1"]').removeClass('active');
+                    console.log('close1');
+
                 }
                 if ($(this).hasClass('close-speech-button2')) {
                     $('.text-box.box2').hide();
                     $(this).remove();
                     $('.speech[data-popup="2"]').removeClass('active');
+                    console.log('close2');
+
                 }
             });
+            $('.speech').trigger('click');
+
             $prite.girl4({
                 id: '#girl_4_c',
                 circle: true,
