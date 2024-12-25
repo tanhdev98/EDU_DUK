@@ -31,8 +31,9 @@
 
         .min[data-popup-page="1"] {
             top: 205px;
-            left: 445px;
-            width: 814px;
+            left: 400px;
+            width: 859px;
+            text-align: left;
         }
 
         /* Popup page */
@@ -180,10 +181,10 @@
                                     <div class="noteText noteLine blue">
                                         <div class="contentText">
                                             “누나, 내일 같이 축구하자!”
-                                            “좋아! 약속 꼭 지킬게.”
-                                            다음 날, 놀이터에 도착한 나와 동생에게 한 친구가 다가와 말을 걸었어요.
-                                            “우리 다 같이 그네 타지 않을래? 혼자 타려니 심심해서…….”
-                                            나는 친구의 말을 듣고 잠시 고민했어요. 동생과 먼저 약속을 했지만 친구를 외롭게 하는 건 옳지 않다고 생각했기 때문이에요.
+                                            “좋아! 약속 꼭 지킬게.”<br>
+                                            다음 날, 놀이터에 도착한 나와 동생에게 한 친구가 다가와 말을 걸었어요.<br>
+                                            “우리 다 같이 그네 타지 않을래? 혼자 타려니 심심해서…….”<br>
+                                            나는 친구의 말을 듣고 잠시 고민했어요. 동생과 먼저 약속을 했지만<br> 친구를 외롭게 하는 건 옳지 않다고 생각했기 때문이에요.
                                         </div>
                                     </div>
                                 </li>
@@ -271,7 +272,7 @@
                     <h2 class="blue">Tip</h2>
                     <div class="popup_contents ls1">
                         이 이야기는 도덕적 문제 상황에서 도덕적 행동에 관한 서로 다른 관점이 존재함을 보여 줘요. 나와 다른 관점을 수용하는 태도가 도덕적 행동을 하는 데 어떤 역할을 하는지
-                        살펴볼 수 있어요.
+                        살펴볼 수 있습니다.
                     </div>
                 </li>
             </ul>
@@ -320,6 +321,7 @@
                 $(this).addClass('on');
                 $('.page_2 .basicSlider_slides.innerTab li').removeClass('on');
                 $('.page_2 .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+                KmAudioPlayer.buttonClick();
             });
 
         });

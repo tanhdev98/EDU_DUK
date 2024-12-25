@@ -69,7 +69,8 @@
     <div id="wrap" class="math">
         <header class="twoLine">
             <div class="title-icon blue" data-show="1">실천 <em>똑똑</em></div>
-            <div class="title-text">생각 쑥쑥에서 친구들마다 놀이터에 필요하다고 생각한 도덕적 가치가 달랐던 까닭을 생각해 봅시다.</div>
+            <div class="title-text" style="letter-spacing: -2.7px;">생각 쑥쑥에서 친구들마다 놀이터에 필요하다고 생각한 도덕적 가치가 달랐던 까닭을 생각해
+                봅시다.</div>
         </header>
         <main>
             <!-- FRAME OF PAGE -->
@@ -114,7 +115,7 @@
                     <h2 class="blue">Tip</h2>
                     <div class="popup_contents ls1">
                         지난 시간에 놀이터에 필요한 도덕적 가치를 선택하는 시간을 가졌어요. 친구들마다 선택한 카드가 달랐던
-                        까닭이 무엇인지 생각해 보아요.
+                        까닭이 무엇인지 생각해 봅니다.
                     </div>
                 </li>
             </ul>
@@ -162,6 +163,9 @@
                 $(this).find('.balloon').removeClass('fff');
             });
 
+            $(document).on('click', '.page_1 .characterWrap, .page_1 .balloon > span', function () {
+                KmAudioPlayer.buttonClick();
+            });
             $prite.boy1({
                 id: '#boy_1_c',
                 speech: 'right',

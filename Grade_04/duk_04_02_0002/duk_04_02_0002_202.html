@@ -18,7 +18,8 @@
 
         .popBtn.mouse {
             display: inline-block;
-            top: 15px;
+            top: 77px;
+            position: absolute;
         }
 
         .min[data-popup-page="1"] {
@@ -168,12 +169,22 @@
             z-index: 3 !important;
         }
 
+        .page_1 .innerSlider_tabs>li {
+            background-color: #F3DEC0;
+        }
+
         .page_1 .innerSlider_tabs>li.on {
             background-color: #F3B05B;
         }
 
-        .page_1 .innerSlider_tabs>li {
-            background-color: #F3DEC0;
+        .page_1 .innerButtonContainer {
+            position: absolute;
+            right: 60px;
+            top: 25px;
+        }
+
+        .page_1 .innerButtonContainer::before {
+            display: none;
         }
 
         /* page 2 */
@@ -202,7 +213,7 @@
 
         .char-box-13 .balloon {
             top: -240px;
-            left: -105px;
+            left: -82px;
         }
     </style>
 </head>
@@ -378,9 +389,9 @@
                                     <div class="char-image"></div>
                                     <div class="balloon purple bottom">
                                         <span>
-                                            새로운 경험으로<br>
-                                            시야를 넓히고,<br>
-                                            다양성을 존중해요.
+                                            문제를 해결할 때<br>
+                                            여러 가지 방법을<br>
+                                            찾아보아요.
                                         </span>
                                         <div class="close-speech-button"></div>
                                     </div>
@@ -502,6 +513,7 @@
                 $(this).addClass('on');
                 $('.page_1 .basicSlider_slides.innerTab li').removeClass('on');
                 $('.page_1 .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+                KmAudioPlayer.buttonClick();
             });
             $(document).on('click', '.icon-char', function () {
                 $(this).parents('.whole').addClass('on');
