@@ -60,6 +60,12 @@
         .page_2 .noteText .text-exam.flex-wrap {
             overflow: hidden;
         }
+
+        .noteText:after {
+            z-index: 2;
+        }
+
+       
     </style>
 </head>
 
@@ -209,11 +215,18 @@
                 KmAudioPlayer.buttonClick();
                 $('.popup_pages .textLine').val('');
             });
+
         });
-
-
+        
+        $(document).on('click', '.page_2 .writeBtn', function () {
+            if ($(this).hasClass('reset')) {
+                $('.page_2 .underline').css('display', 'none');
+                $('.page_2 .noteText').removeClass('noteLine').addClass('noLine');
+            } else {
+                $('.page_2 .underline').css('display', 'block');
+                $('.page_2 .noteText').addClass('noteLine').removeClass('noLine');
+            }
+        });
     </script>
 
 </body>
-
-</html>
