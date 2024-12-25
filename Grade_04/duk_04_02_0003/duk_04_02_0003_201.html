@@ -45,9 +45,9 @@
         .page_1 .noteText {
             padding: 0;
             box-shadow: none;
-            height: 105px;
+            height: 110px;
             background-color: #f5f5f5;
-            margin-top: 5px;
+            margin-top: 10px;
         }
 
         .page_1 .noteText .textareaWrap {
@@ -58,7 +58,6 @@
             width: 100%;
             height: 100%;
             line-height: 51px;
-            font-size: 36px;
         }
 
         .page_1 .text-exam.flex-wrap {
@@ -66,10 +65,14 @@
             padding-left: 20px;
         }
 
+        .page_1 .text-exam.flex-wrap .blueT {
+            margin: auto;
+        }
+
         .page_1 .text-exam.flex-wrap p {
             line-height: 51px;
-            font-size: 36px;
             margin-top: -1px;
+            text-align: center;
         }
 
         .min[data-popup-page="1"] {
@@ -79,9 +82,9 @@
         }
 
         .min[data-popup-page="2"] {
-            width: 822px;
-            top: 190px;
-            left: 440px;
+            width: 952px;
+            top: 150px;
+            left: 310px;
         }
 
 
@@ -137,7 +140,8 @@
         }
 
         .page_2 .buttonContainer {
-            right: 28px;
+            right: 0;
+            bottom: 10px;
         }
 
         .page_2 .noteText {
@@ -159,20 +163,34 @@
         .page_2 .noteText .text-exam.flex-wrap {
             padding: 0 20px;
         }
+
+        .page_2 .noteText .textLine {
+            text-align: left;
+        }
+
+        .page_2 .blueT {
+            text-align: center;
+            margin-top: 5px;
+margin: auto;
+        }
+
+        .ltsp {
+            letter-spacing: -1.1px;
+        }
     </style>
 </head>
 
 <body>
     <div id="wrap" class="math">
-        <header class="twoLine">
+        <header class="gap">
             <div class="title-icon pink" data-show="1">마음 <em>쑥쑥</em></div>
-            <div class="title-text">우리가 실천할 수 있는 도덕적 행동에는 무엇이 있는지 알아봅시다.</div>
+            <div class="title-text ltsp">우리가 실천할 수 있는 도덕적 행동에는 무엇이 있는지 알아봅시다.</div>
         </header>
         <main>
             <!-- FRAME OF PAGE -->
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
-                    <li data-hover="" data-text="우리가 실천할 수 있는 도덕적 행동에는 무엇이 있는지 알아봅시다." class="twoLine">물음</li>
+                    <li data-hover="" data-text="우리가 실천할 수 있는 도덕적 행동에는 무엇이 있는지 알아봅시다." data-gap="true">물음</li>
                     <li data-hover="" data-text="이야기를 읽고 질문에 답해 봅시다.">활동</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
@@ -261,7 +279,7 @@
                                             <div class="pic-box">
                                                 <div class="bullet number orange inline">5</div>
                                                 <div class="image-box">
-                                                    <div class="imageWrap">
+                                                    <div class="imageWrap" style="padding: 10px 0;">
                                                         <img style="width: auto; object-fit: contain;"
                                                             src="./images/duk_04_02_0003_201/img_05.png">
                                                     </div>
@@ -343,7 +361,7 @@
                                             <div class="bullet number orange inline">
                                                 2
                                             </div>
-                                            <div class="text">
+                                            <div class="text" style="letter-spacing: -2.2px;">
                                                 적은 것 중에서 우리 반(학년) 친구들이 가장 소중히 여기는 도덕적 행동은 무엇인지 조사해 봅니다.
                                             </div>
                                         </li>
@@ -360,7 +378,7 @@
                                 <li class="innerTab_2" data-quiz="toggle">
                                     <div class="items">
                                         <div class="item">
-                                            친구들이 소중히 여기는 도덕적 행동은 무엇이었나요? 친구들이 이 도덕적 행동을 선택한 까닭은 무엇일까요?
+                                            친구들이 소중히 여기는 도덕적 행동은 무엇이었나요?<br> 친구들이 이 도덕적 행동을 선택한 까닭은 무엇일까요?
                                             <div class="noteText noLine note1">
                                                 <div class="textareaWrap">
                                                     <textarea class="textLine afterDisplay" type="text"
@@ -370,7 +388,7 @@
                                                 </div>
                                                 <div class="text-exam flex-wrap">
                                                     <div class="blueT">
-                                                        <p>고운 말 쓰기입니다. 고운 말을 쓰면 서로 존중하게 되고,
+                                                        <p>고운 말 쓰기입니다. 고운 말을 쓰면 서로 존중하게 되고,<br>
                                                             더욱 친해질 수 있기 때문입니다.
                                                         </p>
                                                     </div>
@@ -388,8 +406,8 @@
                                                 </div>
                                                 <div class="text-exam flex-wrap">
                                                     <div class="blueT">
-                                                        <p>고운 말 쓰기는 소중한 도덕적 행동이라는 걸 배웠어요.
-                                                            화가 날 때 거친 말을 했던 나를 반성할 수 있었어요.
+                                                        <p>고운 말 쓰기는 소중한 도덕적 행동이라는 걸 배웠어요.<br>
+                                                            화가 날 때 거친 말을 했던 나를 반성할 수 있었어요.<br>
                                                             이제는 상대를 존중하는 고운 말 쓰기를 실천할 거예요.
                                                         </p>
                                                     </div>
@@ -414,7 +432,7 @@
                     <h2 class="blue">Tip</h2>
                     <div class="popup_contents ls1">
                         <p>
-                            발상 모으기(브레인스토밍)을 활용하여 우리가 실천할 수 있는 도덕적 행동을 떠올려 봐요.
+                            발상 모으기(브레인스토밍)을 활용하여 우리가 실천할 수 있는 도덕적 행동을 떠올려 봅시다.
                         </p>
                     </div>
                 </li>
@@ -422,7 +440,7 @@
                     <h2 class="blue">Tip</h2>
                     <div class="popup_contents ls1">
                         <p>
-                            발상 모으기(브레인스토밍)를 통해 얻은 도덕적 행동을 도덕적 가치와 연결 지어 볼 수도 있어요.
+                            발상 모으기(브레인스토밍)를 통해 얻은<br>도덕적 행동을 도덕적 가치와 연결 지어 볼 수도 있습니다.
                         </p>
                         <p><ins class="dot"></ins>
                             어른을 공경하는 마음을 실천하는 거야 - 효
@@ -458,6 +476,12 @@
                 if ($(this).data('text')) {
                     $('header .title-text').html($(this).data('text'));
                 }
+                if ($(this).data('text') == '우리가 실천할 수 있는 도덕적 행동에는 무엇이 있는지 알아봅시다.') {
+                    $('header .title-text').addClass('ltsp');
+                }
+                else {
+                    $('header .title-text').removeClass('ltsp');
+                }
                 if ($(this).attr('data-gap') == 'true') {
                     $('header').addClass('gap');
                 } else {
@@ -469,7 +493,9 @@
                 else {
                     $('header').removeClass('twoLine');
                 }
+
             });
+
 
 
             $(document).on('click', '.page_2 .innerSlider_tabs li', function () {
@@ -478,6 +504,7 @@
                 $(this).addClass('on');
                 $('.page_2 .basicSlider_slides.innerTab li').removeClass('on');
                 $('.page_2 .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+                KmAudioPlayer.buttonClick();
             });
 
         });

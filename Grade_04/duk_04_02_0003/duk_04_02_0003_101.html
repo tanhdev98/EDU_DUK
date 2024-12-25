@@ -23,7 +23,7 @@
             width: max-content;
         }
 
-        .balloon>span {
+        .page_1 .balloon>span {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -31,15 +31,15 @@
             gap: 20px;
         }
 
-        .characterWrap.speech.right:before {
+        .page_1 .characterWrap.speech.right:before {
             background: url('../ko/contents/images/button/btn_speech_balloon_left1.png') no-repeat;
         }
 
-        .characterWrap.speech.right:hover:before {
+        .page_1 .characterWrap.speech.right:hover:before {
             background: url('../ko/contents/images/button/btn_speech_balloon_left1_hover.png') no-repeat;
         }
 
-        #girl_1_c .charSpriteAni {
+        .page_1 #girl_1_c .charSpriteAni {
             background-image: url('../ko/contents/images/character/girl_1.png') !important;
         }
 
@@ -151,8 +151,13 @@
                 KmAudioPlayer.buttonClick();
                 $('.page_1 .textLine').val('');
             });
+
             $(document).on('click', '.page_1 .character-item', function () {
                 $(this).find('.balloon').removeClass('fff');
+            });
+
+            $(document).on('click', '.page_1 .characterWrap, .page_1 .balloon > span', function () {
+                KmAudioPlayer.buttonClick();
             });
 
             $prite.girl1({
