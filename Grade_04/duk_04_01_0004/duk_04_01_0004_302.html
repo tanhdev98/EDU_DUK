@@ -128,7 +128,7 @@
 
         [data-quiz="dragDrop"] .flex {
             display: flex;
-            align-items: center;
+            align-items: start;
             margin-top: 120px;
             justify-content: center;
         }
@@ -219,7 +219,7 @@
                                                 data-drop-area-answer="4"></span>을 자주 선택한다면</p>
                                     </div>
                                     <div class="flex" style="margin-left: 50px; margin-top: 0;">
-                                        <p>서로의 마음에<span class="js-dropArea a1 clearArea boxDrag"
+                                        <p >서로의 마음에<span class="js-dropArea a1 clearArea boxDrag"
                                                 data-drop-area-answer="3"></span>이 자리할 수 없습니다.</p>
                                     </div>
                                     <div class="buttonContainer">
@@ -246,8 +246,8 @@
                                     </div>
                                     <div class="flex">
                                         <img class="imgStar" src="./images/duk_04_01_0004_302/star.png" alt="">
-                                        <p>정직한 마음을 지키는 일은 나의<span class="js-dropArea a1 clearArea boxDrag"
-                                                data-drop-area-answer="2"></span>한 삶을 위해 꼭 지켜야 할 약속입니다.</p>
+                                        <p style="text-align: center !important; line-height: 65px;">정직한 마음을 지키는 일은 나의<span class="js-dropArea a1 clearArea boxDrag"
+                                                data-drop-area-answer="2"></span>한 삶을 위해<br>꼭 지켜야 할 약속입니다.</p>
                                     </div>
                                     <div class="buttonContainer">
                                         <button class="dapCheckBtn" data-answer-btn=""></button>
@@ -378,79 +378,79 @@
 
 
             //drag drop
-            var data_id_complete = [];
-            $(document).on('click', '.basicSlider_circle_tabs li', function () {
-                var _id = $(this).index();
-                $('.js-dropArea').css('transform', 'translate(1000%, 1000%)');
-                $('.js-dropArea.a' + (_id + 1)).css('transform', 'translate(0,0)');
-            });
+            // var data_id_complete = [];
+            // $(document).on('click', '.basicSlider_circle_tabs li', function () {
+            //     var _id = $(this).index();
+            //     $('.js-dropArea').css('transform', 'translate(1000%, 1000%)');
+            //     $('.js-dropArea.a' + (_id + 1)).css('transform', 'translate(0,0)');
+            // });
 
-            $(document).on('click', '.basicSlider_btn', function () {
-                var _id = $('.basicSlider_circle_tabs li.on').index();
-                $('.js-dropArea').css('transform', 'translate(1000%, 1000%)');
-                $('.js-dropArea.a' + (_id + 1)).css('transform', 'translate(0,0)');
-            });
-            $(document).on('mouseup touchend', '.js-dragObj', function () {
-                var _id = parseInt($(this).attr("class").split(" ")[1].replace("d", ""));
-                console.log(_id);
-                $(this).closest('.dragDropContainer').find('.js-dropArea').removeClass('dragged');
-                var x = $(this).closest('.dragDropContainer').find('.js-dropArea .js-dragObj.d' + _id).clone();
-                if ($(this).closest('.dragDropContainer').find('.js-dropArea>.js-dragObj.d' + _id).length > 0) {
-                    $(this).closest('.dragDropContainer').find('.js-dropArea>.js-dragObj.d' + _id).parent().addClass('active dragged');
-                    $(this).closest('.dragDropContainer').find('.js-dropArea.dragged .dragClone').append(x);
-                }
-                if ($("[data-quiz='dragDrop'] .js-dropArea").length == 1) {
-                    if ($(this).closest('.dragDropContainer').find('.js-dropArea.active').length == 1) {
-                        $(this).closest('[data-quiz="dragDrop"]').find('.dapCheckBtn').addClass('reset');
-                    }
-                }
+            // $(document).on('click', '.basicSlider_btn', function () {
+            //     var _id = $('.basicSlider_circle_tabs li.on').index();
+            //     $('.js-dropArea').css('transform', 'translate(1000%, 1000%)');
+            //     $('.js-dropArea.a' + (_id + 1)).css('transform', 'translate(0,0)');
+            // });
+            // $(document).on('mouseup touchend', '.js-dragObj', function () {
+            //     var _id = parseInt($(this).attr("class").split(" ")[1].replace("d", ""));
+            //     console.log(_id);
+            //     $(this).closest('.dragDropContainer').find('.js-dropArea').removeClass('dragged');
+            //     var x = $(this).closest('.dragDropContainer').find('.js-dropArea .js-dragObj.d' + _id).clone();
+            //     if ($(this).closest('.dragDropContainer').find('.js-dropArea>.js-dragObj.d' + _id).length > 0) {
+            //         $(this).closest('.dragDropContainer').find('.js-dropArea>.js-dragObj.d' + _id).parent().addClass('active dragged');
+            //         $(this).closest('.dragDropContainer').find('.js-dropArea.dragged .dragClone').append(x);
+            //     }
+            //     if ($("[data-quiz='dragDrop'] .js-dropArea").length == 1) {
+            //         if ($(this).closest('.dragDropContainer').find('.js-dropArea.active').length == 1) {
+            //             $(this).closest('[data-quiz="dragDrop"]').find('.dapCheckBtn').addClass('reset');
+            //         }
+            //     }
 
-                if ($(this).hasClass('dragObjComplete')) {
-                    var dragAnswer = $(this).data('drag-obj-answer');
-                    $(`.drag-zone .js-dragObj.d${dragAnswer}`).css('opacity', '0 !important');
-                }
-                $('.js-dropArea').each(function () {
-                    $(this).find('.js-dragObj').each(function () {
-                        var dragObjAnswer = $(this).data('drag-obj-answer');
-                        if (!data_id_complete.includes(dragObjAnswer)) {
-                            $(`.drag-zone [data-drag-obj-answer="${dragObjAnswer}"]`).addClass('dragObjComplete');
-                            data_id_complete.push(dragObjAnswer);
-                        }
-                    });
-                });
-            });
+            //     if ($(this).hasClass('dragObjComplete')) {
+            //         var dragAnswer = $(this).data('drag-obj-answer');
+            //         $(`.drag-zone .js-dragObj.d${dragAnswer}`).css('opacity', '0 !important');
+            //     }
+            //     $('.js-dropArea').each(function () {
+            //         $(this).find('.js-dragObj').each(function () {
+            //             var dragObjAnswer = $(this).data('drag-obj-answer');
+            //             if (!data_id_complete.includes(dragObjAnswer)) {
+            //                 $(`.drag-zone [data-drag-obj-answer="${dragObjAnswer}"]`).addClass('dragObjComplete');
+            //                 data_id_complete.push(dragObjAnswer);
+            //             }
+            //         });
+            //     });
+            // });
 
-            $(document).on('click', '.dapCheckBtn', function () {
-                var $id = $(this).closest('[data-quiz="dragDrop"]').find('.js-dropArea').data('drop-area-answer');
-                $('.js-dropArea').each(function () {
-                    $(this).find('.js-dragObj').each(function () {
-                        var dragObjAnswer = $(this).data('drag-obj-answer');
-                        if (!data_id_complete.includes(dragObjAnswer)) {
-                            $(`.drag-zone [data-drag-obj-answer="${dragObjAnswer}"]`).addClass('dragObjComplete');
-                            data_id_complete.push(dragObjAnswer);
-                        }
-                    });
-                });
+            // $(document).on('click', '.dapCheckBtn', function () {
+            //     var $id = $(this).closest('[data-quiz="dragDrop"]').find('.js-dropArea').data('drop-area-answer');
+            //     $('.js-dropArea').each(function () {
+            //         $(this).find('.js-dragObj').each(function () {
+            //             var dragObjAnswer = $(this).data('drag-obj-answer');
+            //             if (!data_id_complete.includes(dragObjAnswer)) {
+            //                 $(`.drag-zone [data-drag-obj-answer="${dragObjAnswer}"]`).addClass('dragObjComplete');
+            //                 data_id_complete.push(dragObjAnswer);
+            //             }
+            //         });
+            //     });
 
-                if ($(this).hasClass('reset')) {
-                    $(this).closest('[data-quiz="dragDrop"]').find('.js-dropArea').addClass('active');
-                }
-                else {
-                    data_id_complete = data_id_complete.filter(function (value) {
-                        return value !== $id;
-                    });
-                    data_id_complete.forEach(function (value, index) {
-                        $(`.drag-zone [data-drag-obj-answer="${value}"]`).addClass('dragObjComplete');
-                    });
-                    $(this).closest('[data-quiz="dragDrop"]').find('.js-dropArea').removeClass('active').empty().append('<div class="dragClone"></div>');
-                    console.log(data_id_complete);
-                    if ($(this).parent().parent().hasClass('innerTab_2')) {
-                        $('.page_1 .innerTab_2 .js-dragObj').removeClass('dragObjComplete');
-                    }
-                }
+            //     if ($(this).hasClass('reset')) {
+            //         $(this).closest('[data-quiz="dragDrop"]').find('.js-dropArea').addClass('active');
+            //     }
+            //     else {
+            //         data_id_complete = data_id_complete.filter(function (value) {
+            //             return value !== $id;
+            //         });
+            //         data_id_complete.forEach(function (value, index) {
+            //             $(`.drag-zone [data-drag-obj-answer="${value}"]`).addClass('dragObjComplete');
+            //         });
+            //         $(this).closest('[data-quiz="dragDrop"]').find('.js-dropArea').removeClass('active').empty().append('<div class="dragClone"></div>');
+            //         console.log(data_id_complete);
+            //         if ($(this).parent().parent().hasClass('innerTab_2')) {
+            //             $('.page_1 .innerTab_2 .js-dragObj').removeClass('dragObjComplete');
+            //         }
+            //     }
 
 
-            });
+            // });
 
         });
 
