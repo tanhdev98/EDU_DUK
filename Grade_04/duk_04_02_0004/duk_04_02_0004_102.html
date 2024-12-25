@@ -12,6 +12,10 @@
         .todaycontent .todayPage p em {
             font-weight: normal !important;
         }
+
+        .todaycontent .todayTxt p {
+            font-size: 50px;
+        }
     </style>
 </head>
 
@@ -24,19 +28,19 @@
                 <div class="todayHeader"></div>
                 <div class="textBox">
                     <div class="textBox_change">
-                        <span class="write active">직접쓰기</span>
-                        <span class="view">내용보기</span>
+                        <span class="write active">직접 쓰기</span>
+                        <span class="view">내용 보기</span>
                     </div>
                     <div class="todayPage">
                         <p>
                             <em>도덕</em>
-                            <span>32~33쪽</span>
+                            <span>32~37쪽</span>
                         </p>
                     </div>
                     <div class="todayTxt active">
                         <p>
                             자신의 <span>도덕적 행동을 성찰</span>해 보고, 생활 속에서<br>
-                            <span>도덕적 행동을 실천</span>하려는 마음을 다져요.
+                            <span>도덕적 행동을 실천</span>하려는 마음을 다져 봅시다.
                         </p>
                     </div>
 
@@ -74,6 +78,9 @@
                     $(this).parent().siblings(".todayWrite").removeClass("active");
                     $(this).parent().siblings(".todayTxt").addClass("active");
                 }
+            });
+            $(document).on('click', '.textBox_change', function () {
+                new Audio('./media/click.mp3').play();
             });
         });
     </script>
