@@ -52,7 +52,9 @@
         .tabs-popup>li.on {
             background-color: #E79702 !important;
         }
-
+        .tabs-popup>li:hover {
+            background-color: #E79702 !important;
+        }
         .noteText {
             padding: 0;
             height: 70px;
@@ -208,13 +210,13 @@
         }
 
         .thinkNet_wrap.col .think_arrow.right.top {
-            right: 960px;
+            right: 963px;
             bottom: 530px;
             transform: rotate(-90deg);
         }
 
         .thinkNet_wrap.col .think_arrow.left.top {
-            left: 960px;
+            left: 963px;
             bottom: 530px;
             transform: rotate(90deg);
         }
@@ -247,10 +249,19 @@
             margin: auto;
         }
 
+        .tabs-popup>li {
+            background-color: #B1A493 !important;
+
+        }
+
+        .tabs-popup>li.on {
+            background-color: #E79702 !important;
+        }
+
         /* dapCheckBtn */
         .pointContainer .dapCheckBtn {
             right: 28px;
-            bottom: 20px ;
+            bottom: 20px;
         }
 
         /* title thinknet */
@@ -311,7 +322,7 @@
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1">
-                        <div class="study_guide"><em>얼굴</em>을 클릭하세요.</div>
+                        <div class="study_guide"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
                         <div class="self-check">
                             <div class="checkWrap">
                                 <div class="text_box">
@@ -629,7 +640,11 @@
             });
 
             $(document).on('click', '.resetBtn', function () {
-                    $('.wrap').removeClass('on');
+                $('.wrap').removeClass('on');
+            });
+
+            $(document).on('click', '.tabs-popup>li', function () {
+                KmAudioPlayer.buttonClick();
             });
         });
     </script>

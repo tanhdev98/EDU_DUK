@@ -54,10 +54,10 @@
         }
 
         .page_2 .boxNote img {
-            width: 400px;
+            width: 300px;
             position: absolute;
-            bottom: -70px;
-            right: -377px;
+            bottom: -90px;
+            right: 35px;
             transform: translateY(-50%);
         }
 
@@ -69,11 +69,13 @@
             width: 1000px;
             left: 320px;
             top: 50px;
+            height: 403px;
         }
 
         .page_2 .boxNote .noteText {
             box-shadow: none;
-            width: 60%;
+            width: 100%;
+            height: 100%;
         }
 
         .page_2 .boxNote::before {
@@ -88,8 +90,20 @@
 
         }
 
-        .page_2 .noteText .textLine, .page_2 .noteText .blueT{
+        .page_2 .noteText.noLine .textareaWrap {
+            height: 100%;
+        }
+
+        .page_2 .noteText .textLine,
+        .page_2 .noteText .blueT {
             text-align: left;
+        }
+
+        #wrap header .title-icon.orange {
+            padding: 0 16px;
+            background: #ff6600;
+            color: #fff;
+            display: block !important;
         }
     </style>
 </head>
@@ -97,7 +111,7 @@
 <body>
     <div id="wrap" class="math">
         <header>
-            <div class="title-icon pink" data-show="1,2">마음 <em>탄탄</em></div>
+            <div class="title-icon orange" data-show="3">생각 놀이터</em></div>
             <div class="title-text">‘오늘의 꽃’을 읽어 봅시다.</div>
         </header>
         <main>
@@ -106,7 +120,7 @@
             <!-- FRAME OF PAGE -->
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
-                    <li data-hover="" data-text="‘오늘의 꽃’을 읽어 봅시다." data-gap="true">활동 1</li>
+                    <li data-hover="" data-text="‘오늘의 꽃’을 읽어 봅시다.">활동 1</li>
                     <li data-hover="" data-text="‘오늘의 꽃’을 읽고 느낀 점을 글이나 그림으로 나타내 봅시다." data-gap="true">활동 2</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
