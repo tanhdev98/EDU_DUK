@@ -127,6 +127,23 @@
             position: absolute;
             top: 15px;
         }
+        .characterWrap.speech.right:before {
+            background: url('../ko/contents/images/button/btn_speech_balloon_left1.png') no-repeat;
+        }
+
+        .characterWrap.speech.right:hover:before {
+            background: url('../ko/contents/images/button/btn_speech_balloon_left1_hover.png') no-repeat;
+        }
+        #boy_4_c .charSpriteAni {
+            background-image: url('../ko/contents/images/character/boy_4.png') !important;
+        }
+
+        #girl_1_c .charSpriteAni {
+            background-image: url('../ko/contents/images/character/girl_1.png') !important;
+        }
+        #girl_2_c .charSpriteAni {
+            background-image: url('../ko/contents/images/character/girl_2.png') !important;
+        }
     </style>
 </head>
 
@@ -319,12 +336,17 @@
                     $('header .title').removeClass('gap');
                 }
             });
+            $(document).on('click', '.page_1 .character-item', function () {
+                $(this).find('.balloon').removeClass('fff');
+            });
 
+            $(document).on('click', '.page_1 .characterWrap, .page_1 .balloon > span', function () {
+                KmAudioPlayer.buttonClick();
+            });
             $prite.boy4({
                 id: '#boy_4_c',
                 circle: true,
                 speech: 'right',
-                sound: './media/sample.mp3',
                 text: '목표를 정해서<br>실천했던 <br>경험이 있나요?',
                 class: 'bottom',
                 balloon_top: -240,
@@ -334,7 +356,6 @@
                 id: '#girl_1_c',
                 circle: true,
                 speech: 'right',
-                sound: './media/sample.mp3',
                 text: '목표를 세워서 <br>실천했던 행동 중에<br>뿌듯했던 경험이 있나요?',
                 class: 'bottom',
                 balloon_top: -240,
@@ -345,7 +366,6 @@
                 id: '#girl_2_c',
                 circle: true,
                 speech: 'right',
-                sound: './media/sample.mp3',
                 text: '목표를 세워서<br>실천했던 행동 중에<br>후회했던 경험이 있나요?',
                 class: 'bottom',
                 balloon_top: -240,
