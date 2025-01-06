@@ -89,6 +89,11 @@
         .sideTopSlider_tabs>li {
             min-height: 110px;
         }
+
+        .popBtn.mouse {
+            animation: clickInduceMotion 1s 3 ease-in;
+            -webkit-animation: clickInduceMotion 1s 3 ease-in;
+        }
     </style>
 </head>
 
@@ -207,7 +212,8 @@
                                     </div>
                                     <div class="text-exam flex-wrap">
                                         <div class="blueT">
-                                            <p>옳고 그름을 알고 착한 행동을 선택하는 것으로, 친구와 가족, 더 나아가 모든 사람들과 좋은 관계를 형성하는 중요한 가치입니다.</p>
+                                            <p>옳고 그름을 알고 착한 행동을 선택하는 것으로, 친구와 가족, 더 나아가 모든 사람들과 좋은 관계를 형성하는 중요한 가치입니다.
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -257,6 +263,29 @@
                     $('header .title').addClass('gap');
                 } else {
                     $('header .title').removeClass('gap');
+                }
+            });
+
+            $(document).on('click', '.sideTopSlider_tabs li', function () {
+                $('.popBtn').removeClass('mouse');
+                setTimeout(function () {
+                    $('.popBtn').addClass('mouse');
+                }, 100);
+
+            });
+
+            $(document).on('click', '.popBtn.mouse', function () {
+                $('[data-popup-page="1"]').addClass('on');
+                const parentDocument = parent.document.querySelector('iframe');
+                if (parentDocument != null) {
+                    parentDocument.parentNode.parentNode.style.zIndex = 120;
+                }
+            });
+
+            $(document).on('click', '[data-popup-page="1"] .popup_closeBtn', function () {
+                const parentDocument = parent.document.querySelector('iframe');
+                if (parentDocument != null) {
+                    parentDocument.parentNode.parentNode.style.zIndex = 0;
                 }
             });
         });
