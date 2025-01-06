@@ -321,29 +321,12 @@
 
             //Hide header - footer bar in view link
             $(document).on('click', '.click-finger-Btn', function () {
-                var parentDocument = parent.document.querySelector('iframe');
-                if (parentDocument != null) {
-                    parentDocument.parentNode.style.position = 'relative';
-                    parentDocument.parentNode.style.zIndex = 1000;
-                }
-            })
-
-            $(document).on('click', '.whole.image .popup_closeBtn', function () {
-                var parentDocument = parent.document.querySelector('iframe');
-                if (parentDocument != null) {
-                    parentDocument.parentNode.style.position = 'static';
-                    parentDocument.parentNode.style.zIndex = 1;
-                }
-            });
-
-
-            $(document).on('click', '.popBtn', function () {
                 const parentDocument = parent.document.querySelector('iframe');
                 if (parentDocument != null) {
                     parentDocument.parentNode.parentNode.style.zIndex = 120;
                 }
             });
-            $(document).on('click', '.popCloseBtn', function () {
+            $(document).on('click', '.popup_closeBtn', function () {
                 const parentDocument = parent.document.querySelector('iframe');
                 if (parentDocument != null) {
                     parentDocument.parentNode.parentNode.style.zIndex = 0;
