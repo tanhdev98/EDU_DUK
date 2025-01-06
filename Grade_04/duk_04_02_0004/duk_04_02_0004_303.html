@@ -40,7 +40,7 @@
     <div id="wrap" class="math">
         <header>
             <div class="thinkingPlayground">생각 놀이터</div>
-            <div class="title-text">‘올바른 선택의 까닭’을 읽어 봅시다.</div>
+            <div class="title-text">‘올바른 선택의 까닭’을 읽어봅시다.</div>
         </header>
         <main>
             <div class="basicSlider contentsBox" data-slide-container="main">
@@ -133,22 +133,6 @@
                     $('header .title').addClass('gap');
                 } else {
                     $('header .title').removeClass('gap');
-                }
-            });
-
-            $('.basicSlider_circle_tabs li').on('click', function () {
-                if ($(this).index() == 1 || $(this).index() == 2) {
-                    $('header .title-text').text('올바른 선택의 이유');
-                } else {
-                    $('header .title-text').text('‘올바른 선택의 까닭’을 읽어 봅시다.');
-                }
-            });
-
-            $('.basicSlider_btn').on('click', function () {
-                if ($('.basicSlider_circle_tabs li.on').index() == 1 || $('.basicSlider_circle_tabs li.on').index() == 2) {
-                    $('header .title-text').text('올바른 선택의 이유');
-                } else {
-                    $('header .title-text').text('‘올바른 선택의 까닭’을 읽어 봅시다.');
                 }
             });
         });

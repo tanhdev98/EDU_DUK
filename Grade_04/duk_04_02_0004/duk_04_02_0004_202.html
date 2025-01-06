@@ -185,7 +185,8 @@
             margin-top: 30px;
         }
 
-        .click-finger-Btn.blinkOn.blinkOpacity {
+        .click-finger-Btn.blinkOn.blinkOpacity,
+        .popBtn.mouse {
             animation: clickInduceMotion 1s 3 ease-in;
             -webkit-animation: clickInduceMotion 1s 3 ease-in;
         }
@@ -221,7 +222,7 @@
                             <ul class="basicSlider_slides" data-slides="">
                                 <li class="innerTab_1" data-quiz="toggle">
                                     <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="1"></div>
-                                    <div class="popBtn mouse" data-hover="" data-popup-btn="2">
+                                    <div class="popBtn mouse mouse1" data-hover="" data-popup-btn="2">
                                     </div>
                                     <div class="title-box">
                                         <div class="title">활동 방법</div>
@@ -456,6 +457,7 @@
     <script type="text/javascript" src="./common/js/guide.js"></script>
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
+
             $(document).on('click', '.basicSlider_tabs li', function () {
                 if ($(this).data('text')) {
                     $('header .title-text').html($(this).data('text'));
@@ -476,10 +478,21 @@
                 } else {
                     $('#wrap header .title-text').removeClass('letter-sp-2');
                 }
+                $('.popBtn.mouse1').removeClass('mouse');
+                setTimeout(function () {
+                    $('.popBtn.mouse1').addClass('mouse');
+                }, 100);
             });
             $(document).on('click', '.resetBtn', function () {
                 KmAudioPlayer.buttonClick();
                 $('.textLine').val('');
+            });
+
+            $(document).on('click', '.popBtn.mouse', function () {
+                $('.click-finger-Btn').removeClass('blinkOpacity');
+                setTimeout(function () {
+                    $('.click-finger-Btn').addClass('blinkOpacity');
+                }, 10);
             });
 
             $(document).on('click', '.boxText', function () {
