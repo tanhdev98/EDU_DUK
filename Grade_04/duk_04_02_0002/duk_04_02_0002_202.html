@@ -215,6 +215,11 @@
             top: -240px;
             left: -82px;
         }
+
+        .popBtn.mouse {
+            animation: clickInduceMotion 1s 3 ease-in;
+            -webkit-animation: clickInduceMotion 1s 3 ease-in;
+        }
     </style>
 </head>
 
@@ -256,7 +261,7 @@
                                             </div>
                                             <div class="text">
                                                 우리 반 친구들 사이에 서로 의견이 다른 주제를 하나 정합니다.
-                                                <div class="popBtn mouse" data-hover="" data-popup-btn="2"
+                                                <div class="popBtn mouse mouse1" data-hover="" data-popup-btn="2"
                                                     data-targetSlideNum="1">
                                                 </div>
                                             </div>
@@ -452,7 +457,7 @@
                     <h2 class="blue">Tip</h2>
                     <div class="popup_contents ls1">
                         <p>
-                            아래와 같은 토론 주제들도 있어요.
+                            아래와 같은 토론 주제들도 있습니다.
                         </p>
                         <p><ins class="dot"></ins>문제가 생겼을 때 친구의 비밀을 지키는 것이 도덕적일까?<br>
                             아니면 사실대로 말하는 것이 도덕적일까?</p>
@@ -504,6 +509,10 @@
                 else {
                     $('header').removeClass('twoLine');
                 }
+                $('.popBtn.mouse1').removeClass('mouse');
+                setTimeout(function () {
+                    $('.popBtn.mouse1').addClass('mouse');
+                }, 100);
             });
 
 
