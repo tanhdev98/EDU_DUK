@@ -83,6 +83,14 @@
         .popup_pages>li.image.whole {
             padding: 0 30px;
         }
+
+        .page_2 .noteText {
+            height: 470px;
+        }
+
+        .page_2 .noteText .textareaWrap {
+            height: 370px;
+        }
     </style>
 </head>
 
@@ -272,6 +280,17 @@
                 balloon_bottom: 335,
                 balloon_left: -105,
             });
+
+
+            if ($(".page_2 .noteLine").not(".noLine").length > 0) {
+                console.log('dasdasda');
+                
+                $(".page_2 .noteLine").not(".noLine").find(".textareaWrap").each(function () {
+                    for (var i = 1; i <= 6; i++) {
+                        $(this).append("<span class='underline' style='position:absolute; left:20px; top:" + (i * 60 + 34) + "px; width:calc(100% - 40px); height:1px; background-color:#cccccc;'></span>");
+                    }
+                })
+            }
         });
 
     </script>

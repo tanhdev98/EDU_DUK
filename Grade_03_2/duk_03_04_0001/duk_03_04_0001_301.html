@@ -216,6 +216,19 @@
         .answer.on {
             font-weight: normal;
         }
+
+        .page_1 .noteText .text-exam.flex-wrap {
+            overflow: hidden;
+            padding: 35px 20px 0px;
+        }
+
+        .noteText:after {
+            z-index: 2;
+        }
+
+        .writeBtn {
+            z-index: 3;
+        }
     </style>
 </head>
 
@@ -243,32 +256,8 @@
                             </div>
                             <div class="text-exam flex-wrap">
                                 <div class="blueT">
-                                    <p>1. 의식과 자아</p>
-                                    <p class="dot">
-                                        인간: 고유한 의식과 자아를 가지고 있고, 감정을 느낀다.
-                                    </p>
-                                    <p class="dot">
-                                        인공지능: 주어진 데이터로 작동하며, 세상을 느끼지 않고 처리한다.
-                                    </p>
-                                    <p>2. 육체와 현실 세계</p>
-                                    <p class="dot">
-                                        인간: 육체를 가지고, 감각 기관으로 다양한 정보를 얻고 신체적인
-                                        경험을 한다.
-
-                                    </p>
-                                    <p>
-                                        인공지능: 센서를 통해 정보를 얻지만, 인간처럼 깊이 있는 경험은
-                                        할 수 없다.
-                                    </p>
-                                    <p>3. 가치관과 윤리</p>
-                                    <p>
-                                        인간: 사회적, 문화적 배경에 따라 다양한 윤리 의식을 가지고, 이를
-                                        바탕으로 판단하고 행동한다.
-                                    </p>
-                                    <p class="dot">
-                                        인공지능: 주어진 데이터와 프로그래밍된 알고리즘에 따라 작동하며,
-                                        자체적인 가치관이나 윤리의식이 없다.
-                                    </p>
+                                    <iframe id="iframe_note1" src="./noteText1_w.html" frameborder="0" width="1220px"
+                                        height="355px"></iframe>
                                 </div>
                             </div>
                         </div>
@@ -475,7 +464,80 @@
                 balloon_bottom: 220,
                 balloon_left: -196,
             });
+
+
+
+            // kiểm tra thiết bị window ios
+            function detectOS() {
+                const userAgent = window.navigator.userAgent.toLowerCase();
+                const platform = window.navigator.platform.toLowerCase();
+
+                // Kiểm tra Windows
+                const isWindows =
+                    platform.includes('win') ||
+                    userAgent.includes('win');
+
+                // Kiểm tra macOS/iOS 
+                const isApple =
+                    platform.includes('mac') ||
+                    userAgent.includes('mac') ||
+                    userAgent.includes('iphone') ||
+                    userAgent.includes('ipad');
+
+                // Kiểm tra iOS cụ thể
+                const isIOS =
+                    /iPad|iPhone|iPod/.test(navigator.userAgent) &&
+                    !window.MSStream;
+
+                // Kiểm tra Android
+                const isAndroid =
+                    userAgent.includes('android');
+
+                // Kiểm tra Linux
+                const isLinux =
+                    platform.includes('linux') &&
+                    !isAndroid;
+
+                return {
+                    windows: isWindows,
+                    macOS: isApple && !isIOS,
+                    iOS: isIOS,
+                    android: isAndroid,
+                    linux: isLinux
+                };
+            }
+
+            // Sử dụng
+            const os = detectOS();
+            console.log(os);
+
+            // Kiểm tra Windows hoặc Android
+            if (os.windows || os.android) {
+                $('#iframe_note1').attr('src', './noteText1_w.html');
+            }
+            // Kiểm tra macOS hoặc iOS
+            else if (os.macOS || os.iOS) {
+                $('#iframe_note1').attr('src', './noteText1.html');
+            }
+            // Trường hợp còn lại (Linux)
+            else {
+                console.log('Hệ điều hành khác');
+            }
+
         });
+
+
+        $(document).on('click', '.page_1 .writeBtn', function () {
+            if ($(this).hasClass('reset')) {
+                $('.page_1 .underline').css('display', 'none');
+                $('.page_1 .noteText').removeClass('noteLine').addClass('noLine');
+            } else {
+                $('.page_1 .underline').css('display', 'block');
+                $('.page_1 .noteText').addClass('noteLine').removeClass('noLine');
+            }
+        });
+
+
         // toggle
         $(document).on('click', '.toggle', function () {
             const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
@@ -504,22 +566,6 @@
             $('.popup_pages .basicSlider_slides li').each(function () {
                 if ($(this).find('.toggle.complete').length == 2) {
                     $(this).find('.dapCheckBtn').addClass('reset');
-                }
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function () {
-            const $scrollable = $('.blueT');
-            const step = 60;
-
-            $scrollable.on('wheel', function (event) {
-                event.preventDefault();
-
-                if (event.originalEvent.deltaY > 0) {
-                    $scrollable.animate({ scrollTop: $scrollable.scrollTop() + step }, 10);
-                } else {
-                    $scrollable.animate({ scrollTop: $scrollable.scrollTop() - step }, 10);
                 }
             });
         });

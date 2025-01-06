@@ -606,50 +606,9 @@
                     var dataShow = $(this).data('show').toString().split(',').map(Number);
                     return dataShow.includes(index + 1);
                 }).show();
-            });
 
-            // var classDrop = [];
-            // $(document).on('mouseup', '.js-dragObj', function () {
-            //     var _id = parseInt($(this).attr("class").split(" ")[1].replace("d", ""));
-            //     classDrop.push(_id);
-            //     $('.drag-zone .js-dragObj').each(function () {
-            //         var $dragObj = $(this);
-            //         var currentId = parseInt($dragObj.attr("class").split(" ")[1].replace("d", ""));
-            //         if (classDrop.includes(currentId)) {
-            //             var isInDropArea = $dragObj.closest('.page_1').find('.js-dropArea').length > 0;
-            //             if (isInDropArea) {
-            //                 $dragObj.addClass('dragObjComplete');
-            //             }
-            //         }
-            // });
-            // $(document).on('click', '.moveButtonContainer', function () {
-            //     $('.js-dragObj').each(function () {
-            //         var $dragObj = $(this);
-            //         var currentId = parseInt($dragObj.attr("class").split(" ")[1].replace("d", ""));
-            //         if (classDrop.includes(currentId)) {
-            //             var isInDropArea = $dragObj.closest('.page_1').find('.js-dropArea').length > 0;
-            //             if (isInDropArea) {
-            //                 $dragObj.addClass('dragObjComplete');
-            //             }
-            //         }
-            //     });
-            // });
-            // $(document).on('click', '.dapCheckBtn', function () {
-            //     if(!$(this).hasClass('reset')){
-            //         $(this).parent().parent().find('.drag-zone .js-dragObj').removeClass('dragObjComplete');
-            //     }else{
-            //         $('.js-dragObj').each(function () {
-            //         var $dragObj = $(this);
-            //         var currentId = parseInt($dragObj.attr("class").split(" ")[1].replace("d", ""));
-            //         if (classDrop.includes(currentId)) {
-            //             var isInDropArea = $dragObj.closest('.page_1').find('.js-dropArea').length > 0;
-            //             if (isInDropArea) {
-            //                 $dragObj.addClass('dragObjComplete');
-            //             }
-            //         }
-            //     });    
-            //     }
-            // });
+                
+            });
         });
     </script>
 </body>
