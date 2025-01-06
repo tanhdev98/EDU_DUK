@@ -94,7 +94,7 @@
         .clearArea,
         .boxDrag {
             width: 107px;
-            height: 75px;
+            height: 65px;
             display: inline-block;
             margin: auto 10px;
             margin-bottom: -20px;
@@ -110,7 +110,7 @@
         }
 
         .dragObjComplete {
-            top: 10px;
+            top: 4px;
             left: 15px;
         }
 
@@ -128,7 +128,7 @@
 
         [data-quiz="dragDrop"] .flex {
             display: flex;
-            align-items: start;
+            align-items: center;
             margin-top: 120px;
             justify-content: center;
         }
@@ -138,6 +138,9 @@
             height: 80px;
             margin-right: 10px;
             margin-bottom: -16px;
+        }
+        [ data-drop-area-answer="2"] .js-dragObj{
+            top: 0;
         }
     </style>
 </head>
@@ -189,7 +192,7 @@
                                     <div class="flex">
                                         <img class="imgStar" src="./images/duk_04_01_0004_302/star.png" alt="">
                                         <p> <span class="js-dropArea a1 clearArea boxDrag"
-                                                data-drop-area-answer="1"></span>이란 꾸밈이 없이 바르고 곧은 마음을 말합니다.</p>
+                                                data-drop-area-answer="1"></span><span style="position: relative; top: 5px">이란 꾸밈이 없이 바르고 곧은 마음을 말합니다.</span></p>
                                     </div>
                                     <div class="buttonContainer">
                                         <button class="dapCheckBtn" data-answer-btn=""></button>
@@ -214,13 +217,13 @@
                                         </div>
                                     </div>
                                     <div class="flex">
-                                        <img class="imgStar" src="./images/duk_04_01_0004_302/star.png" alt="">
-                                        <p>우리가 정직이 아닌,<span class="js-dropArea a1 clearArea boxDrag"
-                                                data-drop-area-answer="4"></span>을 자주 선택한다면</p>
+                                        <img class="imgStar" style="margin-bottom: -4px;" src="./images/duk_04_01_0004_302/star.png" alt="">
+                                        <p style="margin-bottom: 10px;"><span style="position: relative; top: 5px">우리가 정직이 아닌,</span><span class="js-dropArea a1 clearArea boxDrag"
+                                                data-drop-area-answer="4"></span><span style="position: relative; top: 5px">을 자주 선택한다면</span></p>
                                     </div>
                                     <div class="flex" style="margin-left: 50px; margin-top: 0;">
-                                        <p >서로의 마음에<span class="js-dropArea a1 clearArea boxDrag"
-                                                data-drop-area-answer="3"></span>이 자리할 수 없습니다.</p>
+                                        <p><span style="position: relative; top: 5px">서로의 마음에</span><span class="js-dropArea a1 clearArea boxDrag"
+                                                data-drop-area-answer="3"></span><span style="position: relative; top: 5px">이 자리할 수 없습니다.</span></p>
                                     </div>
                                     <div class="buttonContainer">
                                         <button class="dapCheckBtn" data-answer-btn=""></button>
@@ -244,10 +247,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="flex">
+                                    <div class="flex" style="align-items: start;">
                                         <img class="imgStar" src="./images/duk_04_01_0004_302/star.png" alt="">
-                                        <p style="text-align: center !important; line-height: 65px;">정직한 마음을 지키는 일은 나의<span class="js-dropArea a1 clearArea boxDrag"
-                                                data-drop-area-answer="2"></span>한 삶을 위해<br>꼭 지켜야 할 약속입니다.</p>
+                                        <p style="text-align: center !important; line-height: 65px;"><span style="position: relative; top: 5px">정직한 마음을 지키는 일은 나의</span><span class="js-dropArea a1 clearArea boxDrag"
+                                                data-drop-area-answer="2"></span><span style="position: relative; top: 5px">한 삶을 위해</span><br>꼭 지켜야 할 약속입니다.</p>
                                     </div>
                                     <div class="buttonContainer">
                                         <button class="dapCheckBtn" data-answer-btn=""></button>

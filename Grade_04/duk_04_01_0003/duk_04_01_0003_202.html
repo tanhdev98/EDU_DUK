@@ -334,7 +334,21 @@
                     parentDocument.parentNode.style.position = 'static';
                     parentDocument.parentNode.style.zIndex = 1;
                 }
-            })
+            });
+
+
+            $(document).on('click', '.popBtn', function () {
+                const parentDocument = parent.document.querySelector('iframe');
+                if (parentDocument != null) {
+                    parentDocument.parentNode.parentNode.style.zIndex = 120;
+                }
+            });
+            $(document).on('click', '.popCloseBtn', function () {
+                const parentDocument = parent.document.querySelector('iframe');
+                if (parentDocument != null) {
+                    parentDocument.parentNode.parentNode.style.zIndex = 0;
+                }
+            });
         });
     </script>
 </body>
