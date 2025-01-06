@@ -698,6 +698,8 @@
             });
 
             $(document).on('click', '.click-finger-Btn', function () {
+
+                $('.click-finger-Btn').show();
                 KmAudioPlayer.buttonClick();
                 var $data_popup = $(this).attr('data-popup');
                 $('.popupItem').hide();

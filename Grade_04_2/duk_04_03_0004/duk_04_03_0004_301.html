@@ -419,7 +419,7 @@
                 }
             });
             $(document).on('click', '.dapCheckBtn', function () {
-                let dirRect = $(this).parent().parent().find('.dir-rect');
+                let dirRect = $(this).parent().find('.dir-rect');
                 if (!$(this).hasClass('reset')) {
                     $(this).removeClass('reset');
                     dirRect.removeClass('on');
@@ -429,7 +429,7 @@
                     })
                     $('.noteText .textareaWrap .textLine').show();
                     $('.noteText .text-exam').hide();
-                    $(this).parent().parent().find('.choBox').removeClass('active');
+                    $(this).parent().find('.choBox').removeClass('active');
                 } else {
                     $(this).addClass('reset');
                     dirRect.addClass('on');
@@ -439,7 +439,7 @@
                     })
                     $('.noteText .textareaWrap .textLine').hide();
                     $('.noteText .text-exam').show();
-                    $(this).parent().parent().find('.choBox').addClass('active');
+                    $(this).parent().find('.choBox').addClass('active');
                 }
             });
 

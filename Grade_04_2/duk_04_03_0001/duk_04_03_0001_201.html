@@ -360,6 +360,10 @@
                     $('.speech[data-popup="2"]').removeClass('active');
                 }
             });
+
+            $(document).on('click', '.popup_closeBtn', function () {
+                $('.popBtn.popupOn').trigger('click');
+            });
             $prite.girl4({
                 id: '#girl_4_c',
                 circle: true,
