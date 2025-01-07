@@ -12,6 +12,10 @@
         .todaycontent .todayPage p em {
             font-weight: normal !important;
         }
+
+        .todaycontent .todayTxt p {
+            font-size: 50px;
+        }
     </style>
 </head>
 
@@ -76,8 +80,10 @@
                     $(this).parent().siblings(".todayTxt").addClass("active");
                 }
             });
-        });
-    </script>
+            $(document).on('click', '.textBox_change', function () {
+                new Audio('./media/click.mp3').play();
+            });
+        });</script>
 </body>
 
 </html>

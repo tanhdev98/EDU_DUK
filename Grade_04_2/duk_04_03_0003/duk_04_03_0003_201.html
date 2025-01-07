@@ -46,9 +46,9 @@
             background: #E7F4F9;
             position: absolute;
             display: none;
-            padding: 10px 25px;
             border-radius: 15px;
             text-align: center;
+            cursor: pointer;
         }
 
         .popupItem:before {
@@ -117,6 +117,13 @@
         .popupItem3::after {
             right: -250px;
             width: 250px;
+        }
+
+        .popupItem>span {
+            cursor: pointer;
+            display: inline-block;
+            padding: 10px 20px;
+            width: 100%;
         }
 
         /* Page 2 */
@@ -325,6 +332,10 @@
         .toggle.complete .answer,
         .answer.on {
             font-weight: normal;
+        }
+
+        .page_1 .close-speech-button {
+            cursor: default;
         }
     </style>
 </head>

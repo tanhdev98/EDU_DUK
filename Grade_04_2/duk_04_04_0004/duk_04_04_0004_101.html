@@ -180,6 +180,7 @@
 
         .page_2 .noteText .blueT {
             text-align: left;
+            margin-top: 1px;
         }
         .page_2 .additional-question{
             position: absolute;
@@ -297,6 +298,9 @@
             font-weight: normal;
             margin: auto;
         }
+        .noteText .textLine{
+            text-align: left;
+        }
     </style>
 </head>
 
@@ -366,7 +370,7 @@
                             그냥 지나친 적이 있었어.
                         </div>
                         <div class="content content4">
-                            나는 <div class="noteText noteLine">
+                            <span style="position: relative; top: -2px">나는</span> <div class="noteText noteLine">
                                 <div class="textareaWrap">
                                     <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
                                         data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
