@@ -159,15 +159,14 @@
         .page_1 .noteText .blueT {
             text-align: left;
         }
-        
     </style>
 </head>
 
 <body>
     <div id="wrap" class="math">
-        <header>
+        <header class="gap">
             <div class="title-icon blue" data-show="1">실천 <em>쑥쑥</em></div>
-            <div class="title-text gap">나는 우리 반 정직 약속을 무엇으로 정하고 싶은지 생각해 봅시다.</div>
+            <div class="title-text" style="letter-spacing: -1px;">나는 우리 반 정직 약속을 무엇으로 정하고 싶은지 생각해 봅시다.</div>
         </header>
         <main>
 
@@ -344,15 +343,9 @@
                     $('header .title-text').text($(this).data('text'));
                 }
                 if ($(this).attr('data-gap') == 'true') {
-                    $('header .title-text').addClass('gap');
+                    $('header').addClass('gap');
                 } else {
-                    $('header .title-text').removeClass('gap');
-                }
-                if ($(this).index() == 0) {
-                    $('.title-icon').css('margin-top', '-15px');
-                }
-                else {
-                    $('.title-icon').css('margin-top', '5px');
+                    $('header').removeClass('gap');
                 }
             });
             $(document).on('click', '.check_view', function () {
