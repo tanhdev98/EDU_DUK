@@ -288,6 +288,15 @@
         .answer.on {
             font-weight: normal;
         }
+        [data-slide-container="main"] {
+            padding: 0;
+        }
+
+        .basicSlider_slides>li.page {
+            padding: 20px 28px 0 40px;
+        } #wrap {
+            box-shadow: none;
+        }
     </style>
 </head>
 
@@ -306,7 +315,7 @@
                     <li data-hover="" data-text="우리는 왜 정직해야 할까요?">물음 2</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
-                    <li class="page_1">
+                    <li class="page page_1">
                         <div class="basicSlider contentsBox doItContent" data-slide-container="">
                             <div class="moveButtonContainer" data-slide-btn-container="">
                                 <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
@@ -367,14 +376,14 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="buttonContainer">
+                                    <div class="buttonContainer" style="right: 0;">
                                         <button class="writeBtn" data-answer-btn=""></button>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                     </li>
-                    <li class="page_2">
+                    <li class="page page_2">
                         <div id="girl_2_c" class="character-item"></div>
                         <div class="noteText noLine purple">
                             정직한 말과 행동을 해야<br>

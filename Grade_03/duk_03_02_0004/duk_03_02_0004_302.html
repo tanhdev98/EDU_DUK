@@ -343,11 +343,13 @@
                     $('.contentsBox>.basicSlider_slides').css('zIndex', '0');
                 }
             });
-            $(document).on('click', '.wrap', function () {
+            $(document).on('click', '.page_1 .wrap', function () {
                 if ($(this).hasClass('ans')) {
                     KmAudioPlayer.correct();
+                    $(this).addClass('on');
                 }else {
                     KmAudioPlayer.incorrect();
+                    $(this).removeClass('on');
                 }
             });
         });

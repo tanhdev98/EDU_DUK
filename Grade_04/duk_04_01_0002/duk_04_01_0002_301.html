@@ -80,18 +80,18 @@
 
         .mouse {
             position: absolute;
-            top: 106px;
-            left: 1195px;
+            top: 126px;
+            left: 1270px;
         }
 
         .mouse2 {
-            top: 351px;
-            left: 630px;
+            top: 373px;
+            left: 735px;
         }
 
         .mouse3 {
-            top: 230px;
-            left: 630px;
+            top: 250px;
+            left: 735px;
         }
 
         .popup_pages .noteText {
@@ -205,6 +205,27 @@
             animation: clickInduceMotion 1s 3 ease-in;
             -webkit-animation: clickInduceMotion 1s 3 ease-in;
         }
+
+        [data-slide-container="main"] {
+            padding: 0;
+        }
+
+        .basicSlider_slides>li.page {
+            padding: 20px 28px 0 40px;
+        }
+
+        #wrap {
+            box-shadow: none;
+        }
+
+        #tsViewer .contentsStudy {
+            height: 40px;
+        }
+
+        #tsViewer .pageTitle,
+        #tsViewer .contentsStudy {
+            height: 39px;
+        }
     </style>
 </head>
 
@@ -212,7 +233,7 @@
     <div id="wrap" class="math">
         <header class="twoLine">
             <div class="title-icon yellow" data-show="1">생각 <em>탄탄</em></div>
-            <div class="title-text">여러분의 정직한 생활을 도울 수 있는 ‘정직 나침반’ 사용 설명서를 완성해 봅시다.</div>
+            <div class="title-text" style="letter-spacing: -0.6px;">여러분의 정직한 생활을 도울 수 있는 ‘정직 나침반’ 사용 설명서를 완성해 봅시다.</div>
         </header>
         <main>
             <!-- FRAME OF PAGE -->
@@ -222,7 +243,7 @@
                     <li data-hover="" data-text="배운 내용을 되돌아보며 자기 점검을 해 봅시다.">자기 점검</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
-                    <li class="page_1" data-quiz="toggle">
+                    <li class="page page_1" data-quiz="toggle">
                         <div class="how-to-box">
                             <div class="title-box">
                                 <div class="title">활동 방법</div>
@@ -244,7 +265,7 @@
                                 <div class="text">이렇게 사용해요. : 정직을 선택의 기준으로 두고 무엇을 위해, 어떻게 말하고 행동할지 생각해 봅니다.
                                 </div>
                                 <div class="popBtn mouse mouse2" data-hover="" data-popup-btn="1"
-                                    data-targetSlideNum="2">
+                                    data-targetSlideNum="3">
                                 </div>
                             </li>
                             <li>
@@ -254,13 +275,13 @@
                                 <div class="text">사용 시 주의해요. : 상대방에게 상처나 해가 되지 않도록 말할 수 있는 방법을 찾아 말하고 행동합니다.
                                 </div>
                                 <div class="popBtn mouse mouse3" data-hover="" data-popup-btn="1"
-                                    data-targetSlideNum="3">
+                                    data-targetSlideNum="2">
                                 </div>
                             </li>
                         </ul>
                     </li>
-                    <li class="page_2" data-quiz="toggle">
-                        <div class="study_guide"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
+                    <li class="page page_2" data-quiz="toggle">
+                        <div class="study_guide" style="right: 28px;"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
                         <div class="self-check" style="margin-top: 100px;">
                             <div class="checkWrap">
                                 <div class="text_box">
@@ -310,7 +331,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="btn-praise right popBtn footer-item" style="right: -28px; top: 410px;"
+                        <div class="btn-praise right popBtn footer-item" style="right: 0px; top: 410px;"
                             data-popup-btn="2">
                             <div class="item-title">핵심<br>정리</div>
                         </div>

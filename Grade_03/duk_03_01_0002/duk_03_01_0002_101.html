@@ -41,15 +41,19 @@
             margin: 30px auto 0;
         }
 
-        .page_1 .popBtn img {
+        .page_1 img {
             height: 470px;
+            width: auto;
+            object-fit: contain;
             border-radius: 20px;
+            margin: auto;
+            max-width: max-content;
         }
 
         .page_1 .popBtn .popBtn.mouse {
             position: absolute;
-            right: 0;
-            bottom: 5px;
+            right: -340px;
+            bottom: 40px;
         }
 
         .popup_pages .toggle.box {
@@ -80,8 +84,12 @@
             animation: clickInduceMotion 1s 3 ease-in;
             -webkit-animation: clickInduceMotion 1s 3 ease-in;
         }
-        [data-type="toggleButton"]{
+
+        [data-type="toggleButton"] {
             height: auto;
+        }
+        [data-popup-page="1"] table td {
+            text-align: left;
         }
     </style>
 </head>
@@ -101,8 +109,8 @@
                     <li class="page_1">
                         <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="2"></div>
                         <div class="study_guide"><em>수업 도구</em>의 <em>색연필</em>을 클릭하세요.</div>
+                        <img src="./images/duk_03_01_0002_101/img_01.png" alt="">
                         <div class="popBtn" data-hover="" data-popup-btn="1" data-popup-parent="hidden">
-                            <img src="./images/duk_03_01_0002_101/img_01.png" alt="">
                             <div class="popBtn mouse mouse1"></div>
                         </div>
                     </li>

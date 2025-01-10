@@ -142,6 +142,10 @@
             transform: translateX(-50%);
         }
 
+        .page_1 [data-type="toggleButton"] {
+            cursor: default;
+        }
+
         /* Page 2 */
         .page_2 .noteText {
             box-shadow: none;
@@ -196,22 +200,21 @@
             position: relative;
             padding-left: 20px;
         }
-
     </style>
 </head>
 
 <body>
     <div id="wrap" class="math">
-        <header class="twoLine">
+        <header class="gap">
             <div class="title-icon yellow" data-show="1">생각 <em>쑥쑥</em></div>
-            <div class="title-text">다음 친구들의 모습에서 어떤 마음가짐이 보이는지 이야기해 봅시다.</div>
+            <div class="title-text" style="letter-spacing: -2px;">다음 친구들의 모습에서 어떤 마음가짐이 보이는지 이야기해 봅시다.</div>
         </header>
         <main>
             <!-- FRAME OF PAGE -->
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
                     <li data-hover="" data-text="다음 친구들의 모습에서 어떤 마음가짐이 보이는지 이야기해 봅시다.">활동 1</li>
-                    <li data-hover="" data-text="성실한 사람의 마음가짐을 떠올리며 내가 생각하는 성실의 뜻을 써 봅시다." class="twoLine">활동 2</li>
+                    <li data-hover="" data-text="성실한 사람의 마음가짐을 떠올리며 내가 생각하는 성실의 뜻을 써 봅시다." data-gap="true">활동 2</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1">

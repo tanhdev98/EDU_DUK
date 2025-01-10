@@ -170,14 +170,8 @@
             padding: 50px 30px;
         }
 
-        .close-speech-button1 {
-            right: 918px;
-            top: 90px;
-        }
-
-        .close-speech-button2 {
-            right: 118px;
-            top: 90px;
+        .page_1 .close-speech-button {
+            display: none;
         }
 
         /* page 2 */
@@ -268,6 +262,16 @@
         .topText {
             font-family: 'NotoB';
         }
+
+        [data-slide-container="main"] {
+            padding: 0;
+        }
+
+        .basicSlider_slides>li.page {
+            padding: 20px 28px 0 40px;
+        } #wrap {
+            box-shadow: none;
+        }
     </style>
 </head>
 
@@ -285,7 +289,7 @@
                     <li data-hover="" data-text="정직한 사람은 어떤 마음과 자세로 살아가는 사람일까요?" data-gap="true">물음 2</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
-                    <li class="page_1">
+                    <li class="page page_1">
                         <div class="basicSlider contentsBox doItContent" data-slide-container="">
                             <div class="moveButtonContainer" data-slide-btn-container="">
                                 <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
@@ -346,7 +350,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="page_2">
+                    <li class="page page_2">
                         <div id="girl_4_c" class="character-item"></div>
                         <div class="noteText noLine green">
                             정직한 사람이란 스스로에게 떳떳하고<br>
@@ -360,7 +364,7 @@
                                     onblur="placeholder='직접 쓰기'" autocomplete="off" spellcheck="false"></textarea>
                             </div>
                         </div>
-                        <div class="buttonContainer">
+                        <div class="buttonContainer" style="right: 28px;">
                             <button class="resetBtn only-reset" data-type="reset" data-hover=""></button>
                         </div>
                     </li>

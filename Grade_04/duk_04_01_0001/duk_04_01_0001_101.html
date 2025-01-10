@@ -12,9 +12,10 @@
 
 
     <style>
-         header.twoLine .title-icon {
+        header.twoLine .title-icon {
             top: -30px;
         }
+
         .flex {
             display: flex;
             align-items: center;
@@ -41,11 +42,26 @@
             left: 630px;
             width: 630px;
         }
-        .noteText-content{
+
+        .noteText-content {
             text-align: left;
         }
-        .noteText .textLine, .noteText .blueT{
+
+        .noteText .textLine,
+        .noteText .blueT {
             text-align: left;
+        }
+
+        [data-slide-container="main"] {
+            padding: 0;
+        }
+
+        .basicSlider_slides>li.page {
+            padding: 20px 28px 0 40px;
+        }
+
+        #wrap {
+            box-shadow: none;
         }
     </style>
 </head>
@@ -54,13 +70,13 @@
     <div id="wrap" class="math">
         <header class="twoLine">
             <div class="title-icon yellow" data-show="1">생각 <em>똑똑</em></div>
-            <div class="title-text" >세 거짓말쟁이의 이야기를 읽고 여러분도 정직하지 못한 행동을 <br>한 적이 있는지, 왜 그랬는지 생각해 봅시다.</div>
+            <div class="title-text">세 거짓말쟁이의 이야기를 읽고 여러분도 정직하지 못한 행동을 <br>한 적이 있는지, 왜 그랬는지 생각해 봅시다.</div>
         </header>
         <main>
             <!-- FRAME OF PAGE -->
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_slides" data-slides="">
-                    <li class="page_1">
+                    <li class="page page_1">
                         <div class="basicSlider contentsBox doItContent" data-slide-container="">
                             <div class="moveButtonContainer" data-slide-btn-container="">
                                 <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
@@ -81,7 +97,8 @@
                                         <div class="items">
                                             <div class="noteText noteLine blue">
                                                 <div class="noteText-content">
-                                                    혼날 게 두려워서 거짓말을 딱 한 번 했어요. 그런데 한 번 시작한 거짓말을 숨기려고 <br>자꾸 더 많은 거짓말을 하게 됐어요.
+                                                    혼날 게 두려워서 거짓말을 딱 한 번 했어요. 그런데 한 번 시작한 거짓말을 숨기려고 <br>자꾸 더 많은 거짓말을 하게
+                                                    됐어요.
                                                     굴러가는 눈덩이가 점점 커지는 것처럼 나의 코는 점점 더 길어졌죠.
                                                 </div>
                                             </div>
@@ -111,7 +128,8 @@
                                         <div class="items">
                                             <div class="noteText noteLine orange">
                                                 <div class="noteText-content">
-                                                    신령님께서 금도끼를 보여주시며 그 금도끼가 제 것인지 물어보셨어요. 정말 제 도끼라고 생각하시는 것 같더라고요. 금도끼를
+                                                    신령님께서 금도끼를 보여주시며 그 금도끼가<br> 제 것인지 물어보셨어요. 정말 제 도끼라고<br> 생각하시는 것
+                                                    같더라고요. 금도끼를
                                                     보니 욕심이 생겨서 그만 금도끼가 제 것이라고 대답해 버렸어요.
                                                 </div>
                                             </div>

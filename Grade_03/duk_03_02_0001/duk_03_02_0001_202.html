@@ -335,6 +335,11 @@
             animation: clickInduceMotion 1s 3 ease-in;
             -webkit-animation: clickInduceMotion 1s 3 ease-in;
         }
+
+        .animation-off {
+            animation: none !important;
+            -webkit-animation: none !important;
+        }
     </style>
 </head>
 
@@ -790,13 +795,16 @@
                 } else {
                     $('header .title-text').removeClass('letter-spacing14');
                 }
+                $('.page_4 .click-finger-Btn.blinkOn.blinkOpacity').removeClass('animation-off');
+
                 $('.click-finger-Btn').removeClass('blinkOn').removeClass('blinkOpacity');
                 setTimeout(function () {
                     $('.click-finger-Btn').addClass('blinkOn').addClass('blinkOpacity');
                 }, 100);
+
             });
 
-         
+
             $(window).on('load', function () {
                 $('.page_1 .character-item .balloon').removeClass('fff');
             });
@@ -819,6 +827,7 @@
                 $(this).parent().hide();
                 $(this).remove();
                 $('.click-finger-Btn').show();
+                $(`.page_4 .click-finger-Btn[data-popup="${$data_show}"]`).addClass('animation-off');
             });
         });
 

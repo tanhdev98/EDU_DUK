@@ -90,7 +90,7 @@
 
         .page_2 .additional-question {
             position: absolute !important;
-            right: 0;
+            right: 28px;
         }
 
 
@@ -199,13 +199,32 @@
             position: absolute;
             top: 15px;
         }
+
+        [data-slide-container="main"] {
+            padding: 0;
+        }
+
+        .basicSlider_slides>li.page {
+            padding: 20px 28px 0 40px;
+        }
+
+        #wrap {
+            box-shadow: none;
+        }
+
+        #tsViewer .contentsStudy {
+            height: 40px;
+        }
+        .lt-sp{
+            letter-spacing: -0.9px;
+        }
     </style>
 </head>
 
 <body>
     <div id="wrap" class="math">
         <header class="twoLine">
-            <div class="title-icon yellow" data-show="1">생각 <em  style="position: absolute; left: 80px;">똑똑</em></div>
+            <div class="title-icon yellow" data-show="1">생각 <em>똑똑</em></div>
             <div class="title-text">‘윤한이의 고민’을 읽고, 나라면 이준이에게 어떻게 말할 것인지 생각해 봅시다.</div>
         </header>
         <main>
@@ -216,7 +235,7 @@
                     <li data-hover="" data-text="‘윤한이의 고민’을 읽고, 윤한이는 왜 머뭇거렸을지 생각해 봅시다." data-gap="true">물음 2</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
-                    <li class="page_1">
+                    <li class="page page_1">
                         <div class="basicSlider contentsBox doItContent" data-slide-container="">
                             <div class="moveButtonContainer" data-slide-btn-container="">
                                 <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
@@ -230,12 +249,16 @@
                                 <li class="innerTab_1" data-quiz="toggle">
                                     <img class="bgImg" src="./images/duk_04_01_0002_101/img_01.png" alt="">
                                     <div class="title-noteText">윤한이의 고민</div>
+
                                     <div class="content-noteText">
-                                      <p style="text-indent: 40px;">우리 반 체육 시간에 달리기 시합을 진행했고 마지막까지 남은 아리와 이준이가 결승선을 향해 힘차게 달리기 시작했다.</p>
-                                        <p style="text-indent: 40px;">‘아리 몸이 아주 조금 먼저 앞으로 들어왔구나.’ 나는 아리가 결승선에 조금 더 빨리 들어온 것을 보았고, 내 단짝 이준이가 진 것이 너무
-                                            아쉬웠다.
-                                            “아리, 승!”</p>
-                                        <p style="text-indent: 40px;">승부욕이 강한 이준이는 자신이 아리와 똑같이 들어온 것 같다며 재시합을 요청했지만, 선생님의 판정은 바뀌지 않았다.</p>
+                                        <p style="text-indent: 40px;">우리 반 체육 시간에 달리기 시합을 진행했고 마지막까지 남은 아리와 이준이가 결승선을 향해
+                                            힘차게 달리기 시작했다.</p>
+                                        <p style="text-indent: 40px; letter-spacing: -1.1px;">‘아리 몸이 아주 조금 먼저 앞으로
+                                            들어왔구나.’ 나는 아리가 결승선에 조금 더 빨리 들어온 것을 보았고, 내 단짝 이준이가 진 것이 너무
+                                            아쉬웠다.</p>
+                                        <p style="text-indent: 40px;">“아리, 승!”</p>
+                                        <p style="text-indent: 40px;">승부욕이 강한 이준이는 자신이 아리와 똑같이 들어온 것 같다며 재시합을 요청했지만,
+                                            선생님의 판정은 바뀌지 않았다.</p>
                                     </div>
                                 </li>
                                 <li class="innerTab_2" data-quiz="toggle">
@@ -262,7 +285,8 @@
                                                 </p>
                                             </div>
                                         </div>
-                                    </div><p style="right: 85px; position: absolute; top: 390px;">”</p>
+                                    </div>
+                                    <p style="right: 70px; position: absolute; top: 390px;">”</p>
                                     <div class="buttonContainer">
                                         <button class="writeBtn" data-answer-btn=""></button>
                                     </div>
@@ -270,7 +294,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="page_2" data-quiz="toggle">
+                    <li class="page page_2" data-quiz="toggle">
                         <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
                         <div class="noteText noteLine pink">
                             <div class="textareaWrap">
@@ -286,7 +310,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="buttonContainer">
+                        <div class="buttonContainer" style="right: 28px;">
                             <button class="writeBtn" data-answer-btn=""></button>
                         </div>
                     </li>
@@ -347,6 +371,11 @@
                 if ($(this).data('text')) {
                     $('header .title-text').html($(this).data('text'));
                 }
+                if($(this).data('text') === '‘윤한이의 고민’을 읽고, 윤한이는 왜 머뭇거렸을지 생각해 봅시다.'){
+                    $('header .title-text').addClass('lt-sp');
+                }else{
+                    $('header .title-text').removeClass('lt-sp');
+                }
                 if ($(this).attr('data-gap') == 'true') {
                     $('header').addClass('gap');
                 } else {
@@ -358,6 +387,7 @@
                 else {
                     $('header').removeClass('twoLine');
                 }
+              
             });
 
             $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {

@@ -48,13 +48,25 @@
         #boy_3 {
             position: absolute;
             bottom: 0;
-            left: 210px;
+            left: 250px;
         }
 
         [data-popup-page="2"] {
             top: 145px;
             left: 470px;
             width: 789px;
+        }        [data-slide-container="main"] {
+            padding: 0;
+        }
+
+        .basicSlider_slides>li.page {
+            padding: 20px 28px 0 40px;
+        }
+
+        #wrap {
+            box-shadow: none;
+        }   #tsViewer .contentsStudy {
+            height: 40px;
         }
     </style>
 </head>
@@ -74,12 +86,12 @@
                     <li data-hover="" data-text="다른 사람을 위해 거짓말을 해도 될까요?">물음</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
-                    <li class="page_1">
+                    <li class="page page_1">
                         <div class="noteText noteLine orange">
                             <div class="titleText">
                                 칸트의 선택
                             </div>
-                            <div class="contentText">
+                            <div class="contentText" style="margin-left: 30px;">
                                 칸트의 친구가 자신을 쫓는 사람을 피해 숨겨 달라고 말하고는 칸트의 집으로 들어왔습니다.
                                 잠시 뒤, 친구를 쫓던 사람도 칸트를 찾아와 “네 친구 봤어? 어디 있어?”라고 물었습니다. 이 질문에 어떻게 대답을 해야 할지 고민하던 칸트는 사실대로
                                 정직하게 대답했습니다.
@@ -88,8 +100,8 @@
                             </div>
                         </div>
                     </li>
-                    <li class="page_2" data-quiz="toggle">
-                        <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="2"></div>
+                    <li class="page page_2" data-quiz="toggle">
+                        <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="2" style="top: 20px; right: 28px;"></div>
                         <div class="flex">
                             <div class="items">
                                 <div id="boy_3" class="character-item"></div>
@@ -107,7 +119,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="buttonContainer">
+                                <div class="buttonContainer" style="right: 28px;">
                                     <button class="writeBtn" data-answer-btn=""></button>
                                 </div>
                             </div>
