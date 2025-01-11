@@ -337,7 +337,7 @@
             });
 
             // toggle
-            $(document).on('click', '.toggle', function () {
+            $(document).on('click', '.popup_pages .toggle', function () {
                 const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
                 const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
                 const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
@@ -349,7 +349,7 @@
                 }
             });
 
-            $(document).on('click', '.dapCheckBtn', function () {
+            $(document).on('click', '.popup_pages .dapCheckBtn', function () {
                 const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
                 const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
 

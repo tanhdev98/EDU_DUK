@@ -222,6 +222,9 @@
             align-items: center;
             text-align: center;
             font-weight: normal;
+        }#tsViewer .pageTitle,
+        #tsViewer .contentsStudy {
+            height: 39px;
         }
     </style>
 </head>
@@ -256,7 +259,7 @@
                                     <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="1"></div>
                                     <div class="noteText noteLine green">
                                         <div class="topText">소희의 고민</div>
-                                        <div class="details">
+                                        <div class="details" style="letter-spacing: -1.8px;">
                                             저에게는 은채라는 단짝 친구가 있어요. 그런데 며칠 전에 지석이로부터 <br>은채가 저 몰래 다른 친구들과 놀이터에 갔다는 말을
                                             들었어요.<br>분명히 그날 제가 아파서 못 논다고 했고, 은채도 집으로 간다고 <br>했는데 말이죠.
                                         </div>
@@ -265,7 +268,7 @@
                                 <li class="innerTab_2" data-quiz="toggle">
                                     <div class="noteText noteLine green">
                                         <div class="topText">소희의 고민</div>
-                                        <div class="details">
+                                        <div class="details" style="letter-spacing: -1px;">
                                             은채가 제게 거짓말을 한 것이 서운하고 속상해요. 지석이는 아픈 저를 <br>배려해서 그런 거 아니냐고 하는데, 그게 정말
                                             배려일까요?<br>친구끼리는 거짓말하면 안 되는 거 아닌가요?
                                         </div>
@@ -299,7 +302,7 @@
                                 <li class="innerTab_2" data-quiz="toggle">
                                     <div class="noteText noteLine blue">
                                         <div class="topText">은채의 고민</div>
-                                        <div class="details">
+                                        <div class="details" style="letter-spacing: -1px;">
                                             친구들이 계속 부탁하는데 안 들어줄 수도 없었어요. 그런데 제가 다른 <br>
                                             친구들이랑 논 것을 알면 소희가 속상해 할 것 같아 소희를 <br>
                                             배려해서 집에 갔다고 했어요. 소희가 제 마음을 몰라줘서 속상해요. 소희와 계속 <br>
@@ -529,6 +532,7 @@
                 $(this).addClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+                KmAudioPlayer.buttonClick();
             });
             $(document).on('click', '.additional-question', function () {
                 $('[data-type="toggleButton"][data-active="on"] .toggle').addClass('complete');

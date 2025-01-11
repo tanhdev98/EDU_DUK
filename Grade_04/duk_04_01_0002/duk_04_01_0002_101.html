@@ -205,7 +205,7 @@
         }
 
         .basicSlider_slides>li.page {
-            padding: 20px 28px 0 40px;
+            padding-top: 20px;
         }
 
         #wrap {
@@ -215,7 +215,8 @@
         #tsViewer .contentsStudy {
             height: 40px;
         }
-        .lt-sp{
+
+        .lt-sp {
             letter-spacing: -0.9px;
         }
     </style>
@@ -371,9 +372,9 @@
                 if ($(this).data('text')) {
                     $('header .title-text').html($(this).data('text'));
                 }
-                if($(this).data('text') === '‘윤한이의 고민’을 읽고, 윤한이는 왜 머뭇거렸을지 생각해 봅시다.'){
+                if ($(this).data('text') === '‘윤한이의 고민’을 읽고, 윤한이는 왜 머뭇거렸을지 생각해 봅시다.') {
                     $('header .title-text').addClass('lt-sp');
-                }else{
+                } else {
                     $('header .title-text').removeClass('lt-sp');
                 }
                 if ($(this).attr('data-gap') == 'true') {
@@ -387,7 +388,7 @@
                 else {
                     $('header').removeClass('twoLine');
                 }
-              
+
             });
 
             $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {

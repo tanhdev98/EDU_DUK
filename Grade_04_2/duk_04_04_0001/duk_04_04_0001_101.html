@@ -10,14 +10,16 @@
     <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
     <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
 
-    <style>
+    <style>#tsViewer .pageTitle,
+        #tsViewer .contentsStudy {
+            height: 39px;
+        }
         /* Page 1 */
         .additional-question {
             position: absolute;
             right: 0;
             top: 0;
         }
-
 
         /* Page2  */
         .innerSlider_tabs>li {
@@ -566,6 +568,7 @@
                 $(this).addClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+                KmAudioPlayer.buttonClick();
             });
             $(document).on('click', '.additional-question', function () {
                 $('[data-type="toggleButton"][data-active="on"] .toggle').addClass('complete');

@@ -11,7 +11,10 @@
     <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
 
 
-    <style>
+    <style>#tsViewer .pageTitle,
+        #tsViewer .contentsStudy {
+            height: 39px;
+        }
         header.twoLine .title-icon {
             top: -30px;
         }
@@ -30,7 +33,7 @@
         .innerTab_1 .popBtn.mouse {
             position: absolute;
             top: 203px;
-            left: 1019px;
+            left: 1050px;
         }
 
         .popup_pages .flex {
@@ -349,7 +352,9 @@
                                     </div>
                                     <div class="text-exam flex-wrap">
                                         <div class="blueT">
-                                            항상 다른 사람들을 배려하겠다는 다짐을 표어로 재미있게 표현한 별이를 칭찬해요.
+                                            항상 친구를 배려하겠다는<br>
+                                            다짐을 표어로 재미있게<br>
+                                            표현한 별이를 칭찬해요.
                                         </div>
                                     </div>
                                 </div>
@@ -408,7 +413,7 @@
                         </span>
                     </div>
                     <div class="popupItem purple popupItem2 green" data-show="2">
-                        <span>
+                        <span style="letter-spacing: -0.3px;">
                             필요 없는 말을 빼고 꼭 하고 싶은 말을 간단하게 떠올려요.
                         </span><br>
                         <span style="margin-left: 60px;">
@@ -513,6 +518,7 @@
                 var $data_show = $(this).parent().attr('data-show');
                 $(this).parent().hide();
                 $(this).remove();
+                $('.click-finger-Btn').removeClass('blinkOn').removeClass('blinkOpacity');
                 $('.click-finger-Btn').show();
             });
         });

@@ -24,13 +24,15 @@
         }
 
         .flex .items:first-child img {
-            width: 100%;
+            width: calc(100% - 28px);
+            margin-left: 28px;
         }
 
         .noteText {
             height: 460px;
             width: 869px;
             text-align: justify;
+            margin-right: 28px;
         }
 
         .innerTab_4 .noteText {
@@ -137,8 +139,8 @@
                                     </div>
                                 </li>
                                 <li class="innerTab_4" data-quiz="toggle">
-                                    <div class="icon-char" data-hover="" data-popup-btn="1"></div>
-                                    <div class="noteText noteLine purple">
+                                    <div class="icon-char" style="right: 28px;" data-hover="" data-popup-btn="1"></div>
+                                    <div class="noteText noteLine purple" style="margin-left: 28px; width: 90%;">
                                         <div class="textareaWrap">
                                             <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
                                                 data-input-obj="" data-answer=" " onfocus=""
@@ -152,7 +154,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="buttonContainer">
+                                    <div class="buttonContainer" style="right: 28px;">
                                         <button class="writeBtn" data-answer-btn=""></button>
                                     </div>
                                 </li>

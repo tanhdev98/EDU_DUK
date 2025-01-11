@@ -11,7 +11,10 @@
     <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
 
 
-    <style>
+    <style>#tsViewer .pageTitle,
+        #tsViewer .contentsStudy {
+            height: 39px;
+        }
         header.twoLine .title-icon {
             top: -30px;
         }
@@ -243,6 +246,7 @@
             left: 0;
             border: 4px solid #A8D6F6;
             background: #E7F4F9;
+            letter-spacing: -1px;
         }
 
         .popupItem1:before {
@@ -258,6 +262,7 @@
             left: 870px;
             background: #FFEEF3;
             border: 4px solid #ffc4c9;
+            letter-spacing: -1px;
         }
 
         .popupItem2:before {
@@ -364,6 +369,9 @@
         .page_3 .innerTab_2 .innerTab_2 .blueT {
             margin-top: -32px;
         }
+        .lt-sp{
+            letter-spacing: -1px;
+        }
     </style>
 </head>
 
@@ -371,7 +379,7 @@
     <div id="wrap" class="math">
         <header class="gap">
             <div class="title-icon yellow" data-show="1">생각 <em>쑥쑥</em></div>
-            <div class="title-text">아래의 질문을 참고하여 고민 해결을 위한 질문을 만들어 봅시다.</div>
+            <div class="title-text lt-sp">아래의 질문을 참고하여 고민 해결을 위한 질문을 만들어 봅시다.</div>
         </header>
         <main>
 
@@ -738,6 +746,10 @@
             $(document).on('click', '.basicSlider_tabs li', function () {
                 if ($(this).data('text')) {
                     $('header .title-text').text($(this).data('text'));
+                }if( $(this).data('text') === '아래의 질문을 참고하여 고민 해결을 위한 질문을 만들어 봅시다.'){
+                    $('header .title-text').addClass('lt-sp');
+                }else{
+                    $('header .title-text').removeClass('lt-sp');
                 }
                 if ($(this).attr('data-gap') == 'true') {
                     $('header').addClass('gap');

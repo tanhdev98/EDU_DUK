@@ -11,7 +11,10 @@
     <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
 
 
-    <style>
+    <style>#tsViewer .pageTitle,
+        #tsViewer .contentsStudy {
+            height: 39px;
+        }
         header.twoLine .title-icon {
             top: -30px;
         }
@@ -155,7 +158,7 @@
         .page_1 .mouse {
             top: 425px;
             position: absolute;
-            left: 990px;
+            left: 1005px;
         }
 
         [data-popup-page="3"] .flex {
@@ -267,7 +270,7 @@
     <div id="wrap" class="math">
         <header class="twoLine gap">
             <div class="title-icon pink" data-show="1">마음 <em>쑥쑥</em></div>
-            <div class="title-text">도덕적인 생활을 하려면 어떤 마음이나 행동을 더하고 빼야 하는지 생각하며 ‘더하기 빼기 글쓰기’ 활동 방법을 확인해 봅시다.</div>
+            <div class="title-text" style="letter-spacing: -1px;">도덕적인 생활을 하려면 어떤 마음이나 행동을 더하고 빼야 하는지 생각하며 ‘더하기 빼기 글쓰기’ 활동 방법을 확인해 봅시다.</div>
         </header>
         <main>
 
@@ -658,6 +661,7 @@
                 $(this).addClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+                KmAudioPlayer.buttonClick();
             });
             $(document).on('click', '.additional-question', function () {
                 $('[data-type="toggleButton"][data-active="on"] .toggle').addClass('complete');

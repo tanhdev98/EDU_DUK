@@ -62,6 +62,7 @@
 
         [data-type="toggleButton"] {
             height: auto;
+            width: 100%;
         }
 
         .flex .items,
@@ -273,9 +274,11 @@
                                                 </span>
                                             </div>
                                         </div>
-                                        <div class="toggle box" data-toggle-obj="1">
-                                            <div class="answer" data-toggle-target="1">
-                                                <div>상황에 맞는 적절한 인사를 한다.</div>
+                                        <div data-type="toggleButton">
+                                            <div class="toggle box" data-toggle-obj="1">
+                                                <div class="answer" data-toggle-target="1">
+                                                    <div>상황에 맞는 적절한 인사를 한다.</div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -482,6 +485,26 @@
             $(document).on('click', '.popup_closeBtn', function () {
                 $('.popBtn.popupOn').trigger('click');
             });
+            $(document).on('click', '.popBtn', function () {
+                const parentDocument = parent.document.querySelector('iframe');
+                if (parentDocument != null) {
+                    parentDocument.parentNode.parentNode.style.zIndex = 120;
+                }
+            });
+            $(document).on('click', '.imgWrap.popBtn', function () {
+                $('[data-popup-page="1"]').addClass('on');
+                var parentDocument = parent.document.querySelector('iframe');
+                if (parentDocument != null) {
+                    parentDocument.parentNode.parentNode.style.zIndex = 120;
+                }
+            });
+            $(document).on('click', '.popCloseBtn', function () {
+                const parentDocument = parent.document.querySelector('iframe');
+                if (parentDocument != null) {
+                    parentDocument.parentNode.parentNode.style.zIndex = 0;
+                }
+            });
+           
         });
 
     </script>

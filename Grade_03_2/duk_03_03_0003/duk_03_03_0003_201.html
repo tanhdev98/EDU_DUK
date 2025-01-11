@@ -46,7 +46,7 @@
 
         .page_1 .innerTab_2 .title2 {
             left: 640px;
-            top: 0px;
+            top: 15px;
         }
 
         .page_1 .innerTab_2 .title3 {
@@ -274,7 +274,7 @@
                                         </div>
                                         <div class="item">
                                             <div class="title title2">2</div>
-                                            <img style="position: relative; top: -165px;"
+                                            <img style="position: relative; top: -150px;"
                                                 src="./images/duk_03_03_0003_201/img_01.png" alt="">
                                             <div class="content content2">
                                                 형제자매끼리<br>
@@ -430,6 +430,7 @@
                 $(this).addClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+                KmAudioPlayer.buttonClick();
             });
             $(document).on('click', '.toggle', function () {
                 const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');

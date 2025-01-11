@@ -11,7 +11,10 @@
     <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
 
 
-    <style>
+    <style>#tsViewer .pageTitle,
+        #tsViewer .contentsStudy {
+            height: 39px;
+        }
         header.twoLine .title-icon {
             top: -30px;
         }
@@ -343,6 +346,7 @@
 
         [data-popup-page="5"] table td {
             text-align: center;
+            letter-spacing: -1px;
         }
 
         [data-popup-page="5"] .contentsBox,
@@ -401,7 +405,7 @@
                                                     spellcheck="false"></textarea>
                                             </div>
                                             <div class="text-exam flex-wrap">
-                                                <div class="blueT">
+                                                <div class="blueT" style="margin-top: 5px;">
                                                     <p>친구</p>
                                                 </div>
                                             </div>
@@ -442,7 +446,7 @@
                                                     spellcheck="false"></textarea>
                                             </div>
                                             <div class="text-exam flex-wrap">
-                                                <div class="blueT">
+                                                <div class="blueT" style="margin-top: 5px;">
                                                     <p>함께 놀고 싶은</p>
                                                 </div>
                                             </div>
@@ -971,6 +975,7 @@
                 $whole.find('.basicSlider_slides.innerTab li').removeClass('on');
                 $whole.find('.basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
                 $whole.addClass('on');
+                KmAudioPlayer.buttonClick();
             });
 
             $(document).on('click', '.additional-question', function () {
