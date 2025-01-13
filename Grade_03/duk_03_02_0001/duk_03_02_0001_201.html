@@ -203,7 +203,7 @@
     </style>
 </head>
 
-<body>
+<body>˜˜
     <div id="wrap" class="math">
         <header class="gap">
             <div class="title-icon yellow" data-show="1">생각 <em>쑥쑥</em></div>
@@ -213,8 +213,8 @@
             <!-- FRAME OF PAGE -->
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
-                    <li data-hover="" data-text="다음 친구들의 모습에서 어떤 마음가짐이 보이는지 이야기해 봅시다.">활동 1</li>
-                    <li data-hover="" data-text="성실한 사람의 마음가짐을 떠올리며 내가 생각하는 성실의 뜻을 써 봅시다." data-gap="true">활동 2</li>
+                    <li data-hover="" data-text="다음 친구들의 모습에서 어떤 마음가짐이 보이는지 이야기해 봅시다." data-gap="true">활동 1</li>
+                    <li data-hover="" data-text="성실한 사람의 마음가짐을 떠올리며 내가 생각하는 성실의 뜻을 써 봅시다." class="twoLine">활동 2</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1">
@@ -369,11 +369,16 @@
                     $('header .title-text').text($(this).data('text'));
                 }
                 if ($(this).attr('data-gap') == 'true') {
-                    $('header .title-text').addClass('gap');
+                    $('header').addClass('gap');
                 } else {
-                    $('header .title-text').removeClass('gap');
+                    $('header').removeClass('gap');
                 }
-
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
             });
             $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
                 let idx = $(this).index() + 1;
