@@ -12,6 +12,10 @@
 
 
     <style>
+        #wrap header .title-text.gap {
+            padding-bottom: 20px !important;
+        }
+
         /* Page 1 */
         .page_1 .flex {
             display: flex;
@@ -22,16 +26,12 @@
             transform: translateX(-50%);
         }
 
-        .speech {
-            cursor: pointer;
-        }
-
         .page_1 .noteText {
             margin-top: 60px;
         }
 
         .text-box {
-            display: none;
+            display: flex;
             gap: 20px;
             text-align: center;
             padding: 10px 20px;
@@ -269,7 +269,9 @@
 
         .basicSlider_slides>li.page {
             padding: 20px 28px 0 40px;
-        } #wrap {
+        }
+
+        #wrap {
             box-shadow: none;
         }
     </style>
@@ -434,20 +436,6 @@
                     $('header .title-text').addClass('gap');
                 } else {
                     $('header .title-text').removeClass('gap');
-                }
-            });
-            $(document).on('click', '.speech', function () {
-                KmAudioPlayer.buttonClick();
-                var $data_popup = $(this).attr('data-popup');
-                if ($(this).hasClass('active')) {
-                    $(this).removeClass('active');
-                    $('.text-box[data-show="' + $data_popup + '"]').hide();
-                    $('.close-speech-button' + $data_popup).remove();
-                }
-                else {
-                    $(this).addClass('active');
-                    $('.text-box[data-show="' + $data_popup + '"]').css('display', 'flex');
-                    $('.text-box[data-show="' + $data_popup + '"]').parent().append('<div class="close-speech-button close-speech-button' + $data_popup + '"></div>');
                 }
             });
 
