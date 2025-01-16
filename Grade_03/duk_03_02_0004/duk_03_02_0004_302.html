@@ -347,7 +347,8 @@
                 if ($(this).hasClass('ans')) {
                     KmAudioPlayer.correct();
                     $(this).addClass('on');
-                }else {
+                    $(this).parent().find('.wrap').css('pointer-events', 'none');
+                } else {
                     KmAudioPlayer.incorrect();
                     $(this).removeClass('on');
                 }
