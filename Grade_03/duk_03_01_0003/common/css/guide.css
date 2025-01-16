@@ -347,6 +347,7 @@ h2.dot span:before {
     font-family: 'YGJAL';
     min-width: 132px;
     white-space: nowrap;
+    width: 132px;
 }
 
 #wrap header .title-icon>em {
