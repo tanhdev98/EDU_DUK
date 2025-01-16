@@ -223,9 +223,8 @@
         #tsViewer .pageTitle,
         #tsViewer .contentsStudy {
             height: 39px;
-        }
-        .contentsBox .basicSlider_slides {
-            z-index: 100;
+        } #tsViewer .contentsStudy {
+            height: 40px !important;
         }
     </style>
 </head>
@@ -234,7 +233,7 @@
     <div id="wrap" class="math">
         <header class="twoLine">
             <div class="title-icon blue" data-show="1">실천 <em>쑥쑥</em></div>
-            <div class="title-text">‘카멜레온 말하기’ 토의를 하며 상대방의 관점에서 생각하는 연습을 해 봅시다.</div>
+            <div class="title-text" style="letter-spacing: -2px;">‘카멜레온 말하기’ 토의를 하며 상대방의 관점에서 생각하는 연습을 해 봅시다.</div>
         </header>
         <main>
             <!-- FRAME OF PAGE -->
@@ -246,7 +245,7 @@
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1" data-quiz="toggle">
                         <div class="basicSlider contentsBox doItContent" data-slide-container="">
-                            <div class="moveButtonContainer" data-slide-btn-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="" style="z-index: 1000;">
                                 <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
                                 <ul class="basicSlider_circle_tabs" data-tabs="">
                                     <li data-hover=""></li>
@@ -417,7 +416,7 @@
 
         <section class="popup_container" data-popup-container="">
             <ul class="popup_pages">
-                <li class="min" data-popup-page="1" data-drag="">
+                <li class="min" data-popup-page="1" data-drag="" >
                     <h2 class="blue">Tip</h2>
                     <div class="popup_contents ls1">
                         이 이야기는 도덕적 문제 상황에서 도덕적 행동에 관한 서로 다른 관점이 존재함을 보여 줘요. 나와 다른 관점을 수용하는 태도가 도덕적 행동을 하는 데 어떤 역할을 하는지
