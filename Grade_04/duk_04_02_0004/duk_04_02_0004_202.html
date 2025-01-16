@@ -11,10 +11,12 @@
     <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
 
 
-    <style>#tsViewer .pageTitle,
+    <style>
+        #tsViewer .pageTitle,
         #tsViewer .contentsStudy {
             height: 39px;
         }
+
         header.twoLine .title-icon {
             top: -30px;
         }
@@ -520,6 +522,11 @@
                 $(this).remove();
                 $('.click-finger-Btn').removeClass('blinkOn').removeClass('blinkOpacity');
                 $('.click-finger-Btn').show();
+            });
+            $(document).on('click', '.mouse.mouse1', function () {
+                setTimeout(function () {
+                    $('.popup_pages .click-finger-Btn').removeClass('blinkOpacity');
+                }, 3000)
             });
         });
     </script>
