@@ -4,8 +4,8 @@
 }
 
 #wrap header.gap {
-            padding-bottom: 21.5px;
-        }
+    padding-bottom: 21.5px;
+}
 
 #wrap header .title {
     position: relative;
@@ -348,7 +348,6 @@ h2.dot span:before {
     min-width: 132px;
     white-space: nowrap;
     width: 132px;
-}
 }
 
 #wrap header .title-icon>em {
