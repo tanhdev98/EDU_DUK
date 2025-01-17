@@ -83,6 +83,7 @@
         .noteText:after {
             z-index: 2;
         }
+
         #tsViewer .pageTitle,
         #tsViewer .contentsStudy {
             height: 39px;
@@ -140,7 +141,7 @@
                             </div>
                             <div class="text-exam flex-wrap">
                                 <div class="blueT" id="blueT">
-                                    <iframe id="iframe_note1" src="./noteText1_w.html" frameborder="0" width="1220px"
+                                    <iframe id="iframe_note1" src="./noteText1.html" frameborder="0" width="1220px"
                                         height="360px"></iframe>
                                 </div>
                             </div>
@@ -225,62 +226,62 @@
                 }
             });
 
-            // kiểm tra thiết bị window ios
-            function detectOS() {
-                const userAgent = window.navigator.userAgent.toLowerCase();
-                const platform = window.navigator.platform.toLowerCase();
+            // // kiểm tra thiết bị window ios
+            // function detectOS() {
+            //     const userAgent = window.navigator.userAgent.toLowerCase();
+            //     const platform = window.navigator.platform.toLowerCase();
 
-                // Kiểm tra Windows
-                const isWindows =
-                    platform.includes('win') ||
-                    userAgent.includes('win');
+            //     // Kiểm tra Windows
+            //     const isWindows =
+            //         platform.includes('win') ||
+            //         userAgent.includes('win');
 
-                // Kiểm tra macOS/iOS 
-                const isApple =
-                    platform.includes('mac') ||
-                    userAgent.includes('mac') ||
-                    userAgent.includes('iphone') ||
-                    userAgent.includes('ipad');
+            //     // Kiểm tra macOS/iOS 
+            //     const isApple =
+            //         platform.includes('mac') ||
+            //         userAgent.includes('mac') ||
+            //         userAgent.includes('iphone') ||
+            //         userAgent.includes('ipad');
 
-                // Kiểm tra iOS cụ thể
-                const isIOS =
-                    /iPad|iPhone|iPod/.test(navigator.userAgent) &&
-                    !window.MSStream;
+            //     // Kiểm tra iOS cụ thể
+            //     const isIOS =
+            //         /iPad|iPhone|iPod/.test(navigator.userAgent) &&
+            //         !window.MSStream;
 
-                // Kiểm tra Android
-                const isAndroid =
-                    userAgent.includes('android');
+            //     // Kiểm tra Android
+            //     const isAndroid =
+            //         userAgent.includes('android');
 
-                // Kiểm tra Linux
-                const isLinux =
-                    platform.includes('linux') &&
-                    !isAndroid;
+            //     // Kiểm tra Linux
+            //     const isLinux =
+            //         platform.includes('linux') &&
+            //         !isAndroid;
 
-                return {
-                    windows: isWindows,
-                    macOS: isApple && !isIOS,
-                    iOS: isIOS,
-                    android: isAndroid,
-                    linux: isLinux
-                };
-            }
+            //     return {
+            //         windows: isWindows,
+            //         macOS: isApple && !isIOS,
+            //         iOS: isIOS,
+            //         android: isAndroid,
+            //         linux: isLinux
+            //     };
+            // }
 
-            // Sử dụng
-            const os = detectOS();
-            console.log(os);
+            // // Sử dụng
+            // const os = detectOS();
+            // console.log(os);
 
-            // Kiểm tra Windows hoặc Android
-            if (os.windows || os.android) {
-                $('#iframe_note1').attr('src', './noteText1_w.html');
-            }
-            // Kiểm tra macOS hoặc iOS
-            else if (os.macOS || os.iOS) {
-                $('#iframe_note1').attr('src', './noteText1.html');
-            }
-            // Trường hợp còn lại (Linux)
-            else {
-                console.log('Hệ điều hành khác');
-            }
+            // // Kiểm tra Windows hoặc Android
+            // if (os.windows || os.android) {
+            //     $('#iframe_note1').attr('src', './noteText1_w.html');
+            // }
+            // // Kiểm tra macOS hoặc iOS
+            // else if (os.macOS || os.iOS) {
+            //     $('#iframe_note1').attr('src', './noteText1.html');
+            // }
+            // // Trường hợp còn lại (Linux)
+            // else {
+            //     console.log('Hệ điều hành khác');
+            // }
         });
         $(document).on('click', '.page_1 .writeBtn', function () {
             if ($(this).hasClass('reset')) {
