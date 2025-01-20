@@ -57,6 +57,18 @@
             background-image: url('../ko/contents/images/character/girl_3.png') !important;
         }
 
+        .page_2 .noteText {
+            height: 470px;
+        }
+
+        .page_2 .noteText .textareaWrap {
+            height: 370px;
+        }
+
+        #girl_3_c .balloon {
+            background-color: #FDF3E7 !important;
+        }
+
         /* Page 3 */
         .additional-question {
             position: absolute;
@@ -84,12 +96,8 @@
             padding: 0 30px;
         }
 
-        .page_2 .noteText {
-            height: 470px;
-        }
-
-        .page_2 .noteText .textareaWrap {
-            height: 370px;
+        .popup_pages>li.whole h2 {
+            margin-bottom: 50px;
         }
     </style>
 </head>
@@ -125,7 +133,7 @@
                                         <div class="topText">
                                             가정용 인공지능 로봇
                                         </div>
-                                        <div class="details">
+                                        <div class="details" style="text-indent: 20px;">
                                             가정용 인공지능 로봇은 가족에게 행복을 주도록 스스로 움직이고
                                             대화를 할 수 있게 만들어졌어요. 아이와 친구처럼 놀아 주기도 하고,
                                             집안일을 도우며, 아픈 사람을 돌보는 역할도 해요. 우리는 로봇에게
@@ -214,7 +222,7 @@
                                 3
                             </div>
                             <div class="text" style="letter-spacing: -2px;">
-                                각 가족 구성원을 행복하게 해 주는 ‘텔레비전’, ‘청소기’ 등의 도구를
+                                각 가족 구성원을 행복하게 해 주는 ‘텔레비전’, ‘청소기’ 등의 도구를<br>
                                 각각 생각 그물로 이어서 연결합니다.
                             </div>
                         </li>
@@ -284,13 +292,17 @@
 
             if ($(".page_2 .noteLine").not(".noLine").length > 0) {
                 console.log('dasdasda');
-                
+
                 $(".page_2 .noteLine").not(".noLine").find(".textareaWrap").each(function () {
                     for (var i = 1; i <= 6; i++) {
                         $(this).append("<span class='underline' style='position:absolute; left:20px; top:" + (i * 60 + 34) + "px; width:calc(100% - 40px); height:1px; background-color:#cccccc;'></span>");
                     }
                 })
             }
+
+            $(document).on('click', '#girl_3_c', function () {
+                KmAudioPlayer.buttonClick();
+            })
         });
 
     </script>
