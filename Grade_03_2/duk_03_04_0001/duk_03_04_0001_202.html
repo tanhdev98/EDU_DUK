@@ -340,6 +340,12 @@
         #girl_4_c .balloon {
             background-color: #f5f7e5 !important;
         }
+
+        .balloon span {
+            width: 100%;
+            cursor: pointer;
+            display: inline-block;
+        }
     </style>
 </head>
 
@@ -869,10 +875,9 @@
             $(document).on('click', '.popup_closeBtn, .icon-char', function () {
                 $('.popup_pages li.min').attr('style', '');
             });
-
-            $(document).on('click', '#girl_4_c', function () {
+            $(document).on('click', '.page_3 .characterWrap, .page_3 .balloon > span', function () {
                 KmAudioPlayer.buttonClick();
-            })
+            });
         });
 
     </script>
