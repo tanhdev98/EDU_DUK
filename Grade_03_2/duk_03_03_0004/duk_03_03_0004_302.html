@@ -153,8 +153,8 @@
                     <li data-hover="" data-text="3단원을 마치며 스스로의 모습을 되돌아봅시다.">자기 점검</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
-                    <li class="page_1" data-quiz="dragDrop" data-option="answer" data-quiz-name="dragdrop"
-                        data-total-complete-count="6">
+                    <li class="page_1" data-quiz="dragDrop" data-option="answer, copy" data-quiz-name="dragdrop"
+                        data-total-complete-count="">
                         <div class="dragDropContainer bogi">
                             <div class="lineBox">
                                 <div class="bogi-icon"></div>
@@ -213,7 +213,7 @@
                                                 <div class="js-dropArea a3 clearArea" data-drop-area-answer="3, 4">
                                                 </div>
                                                 하는 마음,
-                                                <div class="js-dropArea a4 clearArea" data-drop-area-answer="3, 4">
+                                                <div class="js-dropArea a4 clearArea" data-drop-area-answer="4, 3">
                                                 </div>
                                                 하는 마음을 표현해 봅시다.
                                             </div>
@@ -368,20 +368,45 @@
             });
 
             $(document).on('mouseup touchend', '.js-dragObj', function () {
+                const draggedIdx = $(this).attr('class').split(' ')[1];
+                console.log(draggedIdx);
+                let id = 0;
 
                 $('.js-dropArea').each(function () {
                     const $dropArea = $(this);
                     const $dragObjs = $dropArea.find('.js-dragObj');
 
                     if ($dragObjs.length > 1) {
-                        const idx = $dragObjs.first().attr('class').split(' ')[1];
-                        console.log(idx);
-                        $('.drag-zone > .' + idx).removeClass('dragObjComplete');
+                        const firstIdx = $dragObjs.first().attr('class').split(' ')[1];
+
+                        $('.drag-zone > .' + firstIdx).removeClass('dragObjComplete');
                         $dragObjs.first().remove();
                     }
 
+                    if ($dropArea.find('.' + draggedIdx).length === 1) {
+                        id = 1;
+                    }
                 });
-            })
+
+                if (id === 1) {
+                    $(this).addClass('dragObjComplete');
+                }
+                setTimeout(function () {
+                    if ($('.drag-zone>.js-dragObj.dragObjComplete').length == 6) {
+                        $('.buttonContainer .dapCheckBtn').addClass('reset');
+                    }
+                })
+
+            });
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                if ($(this).hasClass('reset')) {
+                    $('.js-dropArea.a3 .js-dragObj:not(:first-child)').remove();
+                    $('.js-dropArea.a4 .js-dragObj:not(:last-child)').remove();
+                }
+            });
+
+
         });
     </script>
 </body>
