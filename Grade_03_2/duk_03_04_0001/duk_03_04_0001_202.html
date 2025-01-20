@@ -82,7 +82,7 @@
         }
 
         .popup_pages .note-4 {
-            top: 465px;
+            top: 475px;
             left: 568px;
             width: 230px;
             height: 40px;
@@ -100,6 +100,11 @@
         .popup_pages .note-6 {
             top: 410px;
             left: 223px;
+        }
+
+        .popup_pages .note-7 {
+            top: 260px;
+            left: 470px;
         }
 
         .popup_pages .noteText.noLine .textareaWrap {
@@ -331,6 +336,10 @@
         .page_3 .topText {
             padding-left: 20px;
         }
+
+        #girl_4_c .balloon {
+            background-color: #f5f7e5 !important;
+        }
     </style>
 </head>
 
@@ -371,7 +380,7 @@
                                 <div class="bullet number orange inline">
                                     2
                                 </div>
-                                <div class="text">
+                                <div class="text" style="letter-spacing: -1.1px;">
                                     친구가 생각하는 나의 모습을 물어보거나 스스로 생각하는 나의 모습을
                                     떠올리며 써 봅니다.
                                 </div>
@@ -381,7 +390,7 @@
                                     3
                                 </div>
                                 <div class="text" style="letter-spacing: -2px;">
-                                    내 특징을 종합하여 ‘나와 같은 인공지능 로봇’의 이름을 지어서 생각
+                                    내 특징을 종합하여 ‘나와 같은 인공지능 로봇’의 이름을 지어서 생각<br>
                                     그물 중앙에 써 봅니다.
                                 </div>
                             </li>
@@ -512,7 +521,6 @@
                 </li>
                 <li class="fullLine whole image" data-popup-page="2" data-quiz="toggle">
                     <div class="full_content">
-                        <h2>생활 속 효의 실천 방법</h2>
                         <div class="page_zoom zoom_img">
                             <div class="zoomContainer horizon pointerOff">
                                 <div class="zoomArea">
@@ -608,7 +616,19 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
+                                                <div class="noteText noLine note-7">
+                                                    <div class="textareaWrap">
+                                                        <textarea class="textLine afterDisplay" type="text"
+                                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                            onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                            spellcheck="false"></textarea>
+                                                    </div>
+                                                    <div class="text-exam flex-wrap">
+                                                        <div class="blueT">
+                                                            <p>장하윤</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -624,7 +644,7 @@
                     <h2 class="blue">Tip</h2>
                     <div class="popup_contents ls1">
                         <p>
-                            한 가지라도 소개 정보를 잘못 입력하여 내가 아닌 다른 인공지능 로봇이 생긴다면 어떨지 상상해서 이야기해 봐도 좋아요.
+                            한 가지라도 소개 정보를 잘못 입력하여 내가 아닌 다른 인공지능 로봇이 생긴다면 어떨지 상상해서 이야기해 봐도 좋습니다.
                         </p>
                     </div>
                 </li>
@@ -849,6 +869,10 @@
             $(document).on('click', '.popup_closeBtn, .icon-char', function () {
                 $('.popup_pages li.min').attr('style', '');
             });
+
+            $(document).on('click', '#girl_4_c', function () {
+                KmAudioPlayer.buttonClick();
+            })
         });
 
     </script>

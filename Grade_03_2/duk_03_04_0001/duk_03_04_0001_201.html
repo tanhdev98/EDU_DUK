@@ -103,8 +103,14 @@
             position: absolute;
             left: 0;
             top: 20px;
-        }.sideTopSlider_tabs>li{
+        }
+
+        .sideTopSlider_tabs>li {
             min-height: 120px;
+        }
+
+        .popup_pages .contentsBox .basicSlider_slides>li {
+            padding: 20px;
         }
     </style>
 </head>
@@ -268,6 +274,11 @@
             $(document).on('click', '.sideTopSlider_tabs li', function () {
                 $('.fullLine.whole').addClass('on');
             });
+
+            $(document).on('click', '.linkBtn', function () {
+                KmAudioPlayer.buttonClick();
+            });
+
             function makeDraggable(element) {
                 let isDragging = false;
                 let startX = 0, startY = 0;
