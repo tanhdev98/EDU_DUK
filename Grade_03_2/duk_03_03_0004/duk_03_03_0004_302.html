@@ -210,9 +210,11 @@
                                         <div class="flex">
                                             <div class="items item-3">
                                                 가족에게
-                                                <div class="js-dropArea a3 clearArea" data-drop-area-answer="3"></div>
+                                                <div class="js-dropArea a3 clearArea" data-drop-area-answer="3, 4">
+                                                </div>
                                                 하는 마음,
-                                                <div class="js-dropArea a4 clearArea" data-drop-area-answer="4"></div>
+                                                <div class="js-dropArea a4 clearArea" data-drop-area-answer="3, 4">
+                                                </div>
                                                 하는 마음을 표현해 봅시다.
                                             </div>
                                             <div class="items item-4">
@@ -365,7 +367,21 @@
                 $('.page_1 .basicSlider_slides li.innerTab_2').show();
             });
 
+            $(document).on('mouseup touchend', '.js-dragObj', function () {
 
+                $('.js-dropArea').each(function () {
+                    const $dropArea = $(this);
+                    const $dragObjs = $dropArea.find('.js-dragObj');
+
+                    if ($dragObjs.length > 1) {
+                        const idx = $dragObjs.first().attr('class').split(' ')[1];
+                        console.log(idx);
+                        $('.drag-zone > .' + idx).removeClass('dragObjComplete');
+                        $dragObjs.first().remove();
+                    }
+
+                });
+            })
         });
     </script>
 </body>
