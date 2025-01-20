@@ -11,10 +11,12 @@
     <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
 
 
-    <style>#tsViewer .pageTitle,
+    <style>
+        #tsViewer .pageTitle,
         #tsViewer .contentsStudy {
             height: 39px;
         }
+
         header.twoLine .title-icon {
             top: -30px;
         }
@@ -250,6 +252,7 @@
         #boy_2_c {
             left: 50px;
             top: 0;
+            pointer-events: none !important;
         }
 
         .balloon {
@@ -258,8 +261,12 @@
         }
 
         #boy_2_c .balloon {
+            display: block !important;
             top: 10px !important;
             left: 220px !important;
+            pointer-events: none !important;
+            border-color: #FFD89E;
+            background-color: #FDF3E7;
         }
 
 
@@ -275,12 +282,9 @@
             width: 170px;
         }
 
-        .characterWrap.speech.right:before {
-            background: url('../ko/contents/images/button/btn_speech_balloon_left1.png') no-repeat;
-        }
-
-        .characterWrap.speech.right:hover:before {
-            background: url('../ko/contents/images/button/btn_speech_balloon_left1_hover.png') no-repeat;
+        .characterWrap.speech.right:before,
+        .page_2 .close-speech-button {
+            display: none;
         }
 
         #boy_2_c .charSpriteAni {
@@ -340,8 +344,8 @@
 
         .page_3 .mouse.item1 {
             position: absolute;
-            left: 190px;
-            top: 320px;
+            left: 227px;
+            top: 12px;
         }
 
         [data-popup-page="5"] table td {
@@ -356,7 +360,10 @@
 
         [data-popup-page="2"] .ls-2h {
             text-align: left;
-        }
+        }.mouse {
+    animation: clickInduceMotion 1s 3 ease-in;
+    -webkit-animation: clickInduceMotion 1s 3 ease-in;
+}
     </style>
 </head>
 
@@ -392,7 +399,7 @@
                                 <li class="innerTab_1" data-quiz="toggle">
                                     <img class="img img1" src="./images/duk_04_04_0002_201/img_01.png" alt="">
                                     <img class="img img2" src="./images/duk_04_04_0002_201/img_02.png" alt="">
-                                    <p class="text text1">소희의 입장에서 생각해 보면<br>
+                                    <p class="text text1"><span style="font-family: 'YGJAL';">소희의 입장에서 생각해 보면</span><br>
                                         은채가 다른 친구들과 놀이터에 놀러 갔다고
                                     </p>
                                     <div class="flex_text">
@@ -400,13 +407,14 @@
                                         <div class="noteText noLine note1">
                                             <div class="textareaWrap">
                                                 <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
-                                                    data-input-obj="" data-answer=" " onfocus=""
-                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    style="text-align: center;" data-input-obj="" data-answer=" "
+                                                    onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
                                                     spellcheck="false"></textarea>
                                             </div>
                                             <div class="text-exam flex-wrap">
-                                                <div class="blueT" style="margin-top: 5px;">
-                                                    <p>친구</p>
+                                                <div class="blueT"
+                                                    style="margin-top: 5px; display: flex; justify-content: center; width: 100%;">
+                                                    <p>속상한</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -434,19 +442,20 @@
                                     <div class="popBtn additional-question" data-popup-btn="2">추가 질문</div>
                                     <img class="img img1" src="./images/duk_04_04_0002_201/img_03.png" alt="">
                                     <img class="img img2" src="./images/duk_04_04_0002_201/img_02.png" alt="">
-                                    <p class="text text1">은채의 입장에서 생각해 보면<br>
+                                    <p class="text text1"><span style="font-family: 'YGJAL';">은채의 입장에서 생각해 보면</span><br>
                                         다른 친구들이 놀이터에 가자고 자꾸 조르면
                                     </p>
                                     <div class="flex_text">
                                         <div class="noteText noLine note1">
                                             <div class="textareaWrap">
                                                 <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
-                                                    data-input-obj="" data-answer=" " onfocus=""
-                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    style="text-align: center;" data-input-obj="" data-answer=" "
+                                                    onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
                                                     spellcheck="false"></textarea>
                                             </div>
                                             <div class="text-exam flex-wrap">
-                                                <div class="blueT" style="margin-top: 5px;">
+                                                <div class="blueT"
+                                                    style="margin-top: 5px; display: flex; justify-content: center; width: 100%;">
                                                     <p>함께 놀고 싶은</p>
                                                 </div>
                                             </div>
@@ -502,10 +511,10 @@
                                 <div class="table-box color-01">
                                     <table>
                                         <colgroup>
+                                            <col style="width:22%">
                                             <col style="width:20%">
-                                            <col style="width:20%">
-                                            <col style="width:20%">
-                                            <col style="width:40%">
+                                            <col style="width:19%">
+                                            <col style="width:39%">
                                         </colgroup>
                                         <thead>
                                             <tr>
@@ -534,7 +543,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="popBtn mouse item1" data-hover="" data-popup-btn="5"
+                                                    <div class="popBtn popBtnMouse mouse item1" data-hover="" data-popup-btn="5"
                                                         data-targetSlideNum="1">
                                                     </div>
                                                 </td>
@@ -629,7 +638,8 @@
                                                 <div class="toggle examBtn box" data-toggle-obj="1" data-hover>
                                                     <div class="answer" data-toggle-target="1">
                                                         <div class="ls-2h">
-                                                            <p class="dot">은채가 소희의 입장이었다면 자신에게 거짓말을 한 행동에
+                                                            <p class="dot" style="letter-spacing:  -2.8px;">은채가 소희의
+                                                                입장이었다면 자신에게 거짓말을 한 행동에
                                                                 배신감을 느꼈을 것 같습니다.
                                                             </p>
                                                             <p class="dot">소희가 은채의 입장이었다면 자신의 배려를 이해해주지 않아 서운했을 것 같습니다.
@@ -656,7 +666,8 @@
                                                         <div class="ls-2h">
                                                             <p class="dot">단짝 친구인 소희가 아픈 자신을 두고 혼자 놀이터에 가서
                                                                 속상할 수도 있을 것 같습니다.</p>
-                                                            <p class="dot">오히려 솔직한 소희의 모습에 소희에 대한 믿음이 생길 수도 있습니다.</p>
+                                                            <p class="dot" style="letter-spacing: -3px;">오히려 솔직한 소희의 모습에
+                                                                소희에 대한 믿음이 생길 수도 있습니다.</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -966,6 +977,10 @@
                 else {
                     $('header').removeClass('twoLine');
                 }
+                $('.popBtnMouse').removeClass('mouse');
+                setTimeout(function () {
+                    $('.popBtnMouse').addClass('mouse');
+                }, 100);
             });
             $(document).on('click', '.whole .innerSlider_tabs li', function () {
                 let idx = $(this).index() + 1;

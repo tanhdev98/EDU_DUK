@@ -10,10 +10,12 @@
     <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
     <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
 
-    <style>#tsViewer .pageTitle,
+    <style>
+        #tsViewer .pageTitle,
         #tsViewer .contentsStudy {
             height: 39px;
         }
+
         /* Page 1 */
         .additional-question {
             position: absolute;
@@ -196,7 +198,7 @@
             border-radius: 15px;
             position: absolute;
             top: 60px;
-            left: 130px;
+            left: 150px;
             z-index: -1;
         }
 
@@ -225,35 +227,35 @@
         .old-man-desc {
             position: absolute;
             top: 235px;
-            left: 0;
+            left: 0px;
             text-align: center;
             font-size: 30px;
         }
 
         /* Page 2 */
-        .wrapImg {
+        .page_2 .wrapImg {
             position: relative;
         }
 
-        .wrapImg img {
+        .page_2 .wrapImg img {
             width: 100%;
             object-fit: fill;
             height: 500px;
         }
 
-        .innerTab_1 .wrapImg .text-item {
+        .page_2 .innerTab_1 .wrapImg .text-item {
             position: absolute;
-            top: 40px;
-            left: 90px;
+            top: 75px;
+            left: 160px;
             width: 1200px;
         }
 
-        .innerTab_2 img {
+        .page_2 .innerTab_2 img {
             margin-top: 50px;
             object-fit: contain;
         }
 
-        .box-click {
+        .page_2 .box-click {
             position: absolute;
             background: url(../ko/contents/images/button/btn_speech_balloon_right1.png) no-repeat;
             width: 64px;
@@ -261,42 +263,43 @@
             cursor: pointer;
         }
 
-        .box-click1 {
+        .page_2 .box-click1 {
             top: 220px;
             left: 90px;
             background: url(../ko/contents/images/button/btn_speech_balloon_right1.png) no-repeat;
         }
 
-        .box-click2 {
+        .page_2 .box-click2 {
             top: 210px;
             left: 1170px;
             background: url(../ko/contents/images/button/btn_speech_balloon_left1.png) no-repeat;
         }
 
-        .innerTab_2 .wrapImg .text-item {
+        .page_2 .innerTab_2 .wrapImg .text-item {
             position: absolute;
             font-size: 30px;
         }
 
-        .innerTab_2 .wrapImg .text-item.text-3 {
+        .page_2 .innerTab_2 .wrapImg .text-item.text-3 {
             top: 295px;
             left: 515px;
         }
 
-        .innerTab_2 .wrapImg .text-item.text-4 {
+        .page_2 .innerTab_2 .wrapImg .text-item.text-4 {
             top: 295px;
             left: 802px;
         }
 
-        .popupItem {
+        .page_2 .popupItem {
             position: absolute;
             text-align: center;
             padding: 10px 15px;
             border-radius: 15px;
             display: none;
+            width: max-content;
         }
 
-        .popupItem:before {
+        .page_2 .popupItem:before {
             position: absolute;
             content: "";
             clip-path: polygon(50% 100%, 5% 0, 95% 0);
@@ -307,25 +310,25 @@
             transform: translate(-50%, 100%);
         }
 
-        .popupItem1 {
+        .page_2 .popupItem1 {
             top: 0;
             left: 0;
             border: 4px solid #A8D6F6;
             background: #E7F4F9;
         }
 
-        .popupItem1:before {
+        .page_2 .popupItem1:before {
             background-color: #A8D6F6;
         }
 
-        .popupItem2 {
-            top: 0;
-            left: 920px;
+        .page_2 .popupItem2 {
+            top: 45px;
+            left: 900px;
             background: #FFEEF3;
             border: 4px solid #ffc4c9;
         }
 
-        .popupItem2:before {
+        .page_2 .popupItem2:before {
             background-color: #ffc4c9;
         }
 
@@ -341,6 +344,7 @@
             left: 50%;
             z-index: 1;
             transform: translateX(-50%);
+            font-family: 'YGJAL';
         }
     </style>
 </head>
@@ -391,7 +395,8 @@
                                             태오네 반에서는 고민 상담소를 운영하고 있습니다. <br>
                                             얼마 전 고민 상담소에 소희와 은채의 고민 쪽지가 왔습니다. <br>
                                             쪽지를 읽어 보니 친구 사이에서의 정직과 배려에 대한 고민이었습니다. <br>
-                                            그래서 태오네 반 친구들은 이 고민을 어떻게 해결하는 것이 좋을 지 함께 탐구해 보기로 했습니다.
+                                            그래서 태오네 반 친구들은 이 고민을 어떻게 해결하는 것이 <br>
+                                            좋을 지 함께 탐구해 보기로 했습니다.
                                         </div>
                                     </div>
                                 </li>
@@ -482,7 +487,7 @@
                                                             <p>
                                                                 동의합니다. 아무리 다른 좋은 것들을 갖추어도,<br>
                                                                 친구가 없으면 무척 외롭고 쓸쓸하기 때문입니다.
-                                                            </p><br>
+                                                            </p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -544,12 +549,18 @@
         document.addEventListener('DOMContentLoaded', function () {
             $(document).on('click', '.basicSlider_tabs li', function () {
                 if ($(this).data('text')) {
-                    $('header .title').text($(this).data('text'));
+                    $('header .title-text').text($(this).data('text'));
                 }
                 if ($(this).attr('data-gap') == 'true') {
-                    $('header .title').addClass('gap');
+                    $('header .title-text').addClass('gap');
                 } else {
-                    $('header .title').removeClass('gap');
+                    $('header .title-text').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
                 }
             });
             $prite.girl1({
@@ -574,7 +585,15 @@
                 $('[data-type="toggleButton"][data-active="on"] .toggle').addClass('complete');
             });
 
-            $(document).on('click', '.box-click', function () {
+
+            $(document).on('click', '.page_1 .characterWrap, .page_1 .balloon > span', function () {
+                KmAudioPlayer.buttonClick();
+            });
+            $(document).on('click', '.page_1 .character-item', function () {
+                $(this).find(".balloon").removeClass("fff");
+            });
+
+            $(document).on('click', '.page_2 .box-click', function () {
                 KmAudioPlayer.buttonClick();
                 $('.popupItem').hide();
                 $('.box-click').show();
@@ -588,7 +607,7 @@
                 $('.popupItem .close-speech-button').remove();
                 $('.popupItem[data-show="' + $data_popup + '"]').append('<div class="close-speech-button"></div>');
             });
-            $(document).on('click', '.close-speech-button', function () {
+            $(document).on('click', '.page_2 .close-speech-button', function () {
                 var $data_show = $(this).parent().attr('data-show');
                 $(this).parent().hide();
                 $(this).remove();

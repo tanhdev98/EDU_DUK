@@ -11,10 +11,12 @@
     <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
 
 
-    <style>#tsViewer .pageTitle,
+    <style>
+        #tsViewer .pageTitle,
         #tsViewer .contentsStudy {
             height: 39px;
         }
+
         header.twoLine .title-icon {
             top: -30px;
         }
@@ -184,7 +186,7 @@
 
         .page_2 .noteText {
             box-shadow: none;
-            height: 240px;
+            height: 250px;
             padding: 0;
             background-color: #fff;
         }
@@ -207,7 +209,7 @@
             border-radius: 15px;
             height: 495px;
             padding: 0 5px;
-            width: 400px;
+            width: 395px;
         }
 
         .page_2 .items .item.pink {
@@ -222,9 +224,13 @@
             background-color: #E7F4F9;
         }
 
+        .page_2 .blueT p {
+            text-align: center;
+        }
+
         .page_2 .items .topText {
             text-align: center;
-            height: 250px;
+            height: 240px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -252,10 +258,12 @@
         .line3 {
             top: 180px;
         }
-
-        .page_2 .blueT {
-            text-align: left;
+        .line4 {
+            top: 240px;
         }
+       .page_2 .noteText .textLine{
+        text-align: center;
+       }
 
         .toggle.complete .answer,
         .answer.on {
@@ -312,7 +320,8 @@
                             </div>
                             <ul class="basicSlider_slides" data-slides="">
                                 <li class="innerTab_1" data-quiz="toggle">
-                                    <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="1" style="right: -10px;"></div>
+                                    <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="1"
+                                        style="right: -10px;"></div>
                                     <div class="title-box">
                                         <div class="title">활동 방법</div>
                                     </div>
@@ -321,7 +330,7 @@
                                             <div class="bullet number orange inline">
                                                 1
                                             </div>
-                                            <div class="text">
+                                            <div class="text" style="letter-spacing: 3.2px;">
                                                 인형이나 말랑말랑한 물건 등 친구에게 안전하게 건넬 수 있는 <br>물건을 준비합니다.
                                             </div>
                                         </li>
@@ -329,7 +338,7 @@
                                             <div class="bullet number orange inline">
                                                 2
                                             </div>
-                                            <div class="text">
+                                            <div class="text" style="letter-spacing: 4px;">
                                                 준비물을 옆으로 돌리면서 차례대로 소감을 발표합니다.
                                             </div>
                                         </li>
@@ -337,14 +346,15 @@
                                             <div class="bullet number orange inline">
                                                 3
                                             </div>
-                                            <div class="text" style="letter-spacing: -2px;">
+                                            <div class="text" style="letter-spacing: 1px;">
                                                 아직 생각이 정리가 안 되었으면 ‘통과’라고 말하고 다른 친구들이<br> 발표하는 동안 생각을 정리해서 나중에 발표합니다.
                                             </div>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="innerTab_2" data-quiz="toggle">
-                                    <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="2"></div>
+                                    <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="2"
+                                        style="right: -10px;"></div>
                                     <div class="btn-praise right popBtn footer-item" data-popup-btn="3">
                                         <div class="item-title">핵심 <br>정리</div>
                                     </div>
@@ -358,6 +368,7 @@
                                                 <div class="line line1"></div>
                                                 <div class="line line2"></div>
                                                 <div class="line line3"></div>
+                                                <div class="line line4"></div>
                                                 <div class="textareaWrap">
                                                     <textarea class="textLine afterDisplay" type="text"
                                                         placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
@@ -380,6 +391,7 @@
                                                 <div class="line line1"></div>
                                                 <div class="line line2"></div>
                                                 <div class="line line3"></div>
+                                                <div class="line line4"></div>
                                                 <div class="textareaWrap">
                                                     <textarea class="textLine afterDisplay" type="text"
                                                         placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
@@ -402,6 +414,7 @@
                                                 <div class="line line1"></div>
                                                 <div class="line line2"></div>
                                                 <div class="line line3"></div>
+                                                <div class="line line4"></div>
                                                 <div class="textareaWrap">
                                                     <textarea class="textLine afterDisplay" type="text"
                                                         placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""

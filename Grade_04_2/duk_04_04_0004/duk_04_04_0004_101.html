@@ -11,10 +11,12 @@
     <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
 
 
-    <style>#tsViewer .pageTitle,
+    <style>
+        #tsViewer .pageTitle,
         #tsViewer .contentsStudy {
             height: 39px;
         }
+
         header.twoLine .title-icon {
             top: -30px;
         }
@@ -103,7 +105,7 @@
 
 
         .text2 {
-            left: 220px;
+            left: 210px;
             top: -10px;
         }
 
@@ -127,7 +129,7 @@
 
         .text3 {
             top: 30px;
-            left: -10px;
+            left: -25px;
         }
 
         .content3 {
@@ -185,10 +187,12 @@
             text-align: left;
             margin-top: 1px;
         }
-        .page_2 .additional-question{
+
+        .page_2 .additional-question {
             position: absolute;
             right: 0;
         }
+
         /* Popup page */
 
         .innerSlider_tabs>li {
@@ -301,7 +305,8 @@
             font-weight: normal;
             margin: auto;
         }
-        .noteText .textLine{
+
+        .noteText .textLine {
             text-align: left;
         }
     </style>
@@ -338,10 +343,11 @@
                                 <li class="innerTab_1" data-quiz="toggle">
                                     <div class="noteText noteLine green">
                                         <div class="noteText-content">
-                                            태오네 반 친구들은 찾아낸 해결 방법을 소희와 은채에게 전해
-                                            주었습니다. 소희와 은채는 반 친구들이 제시해 준 해결 방법을
-                                            따랐고 둘은 계속 좋은 관계를 유지할 수 있었습니다.<br>
-                                            태오네 반 친구들은 소희와 은채의 고민 상담을 하면서 도덕적인 고민을 깊게 하였습니다. 그리고 이제 각자의 생활을 돌아보기로 했습니다.
+                                            <p style="letter-spacing: 3.8px;">태오네 반 친구들은 찾아낸 해결 방법을 소희와 은채에게 전해</p>
+                                            <p style="letter-spacing: 3.3px;">주었습니다. 소희와 은채는 반 친구들이 제시해 준 해결 방법을</p>
+                                            <p>따랐고 둘은 계속 좋은 관계를 유지할 수 있었습니다.</p>
+                                            <p style="letter-spacing: 2.4px;">태오네 반 친구들은 소희와 은채의 고민 상담을 하면서 도덕적인</p>
+                                            <p style="letter-spacing: 2.3px;">고민을 깊게 하였습니다. 그리고 이제 각자의 생활을 돌아보기로 했습니다.</p>
                                         </div>
                                     </div>
                                 </li>
@@ -373,7 +379,8 @@
                             그냥 지나친 적이 있었어.
                         </div>
                         <div class="content content4">
-                            <span style="position: relative; top: -2px">나는</span> <div class="noteText noteLine">
+                            <span style="position: relative; top: -2px">나는</span>
+                            <div class="noteText noteLine">
                                 <div class="textareaWrap">
                                     <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
                                         data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
@@ -442,8 +449,8 @@
                                                 <div class="toggle examBtn box" data-toggle-obj="6" data-hover>
                                                     <div class="answer" data-toggle-target="6">
                                                         <div class="ls-2h">
-                                                           <p class="dot">거짓말을 하지 않고 솔직하게 사실을 말하고 싶습니다.</p>
-                                                           <p class="dot">다시 돌아가더라도 친구를 위해 배려할 것입니다.</p>
+                                                            <p class="dot">거짓말을 하지 않고 솔직하게 사실을 말하고 싶습니다.</p>
+                                                            <p class="dot">다시 돌아가더라도 친구를 위해 배려할 것입니다.</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -533,6 +540,13 @@
             $(document).on('click', '.additional-question', function () {
                 $('[data-type="toggleButton"][data-active="on"] .toggle').addClass('complete');
             });
+            if ($(".page_2 .noteLine").not(".noLine").length > 0) {
+                $(".page_2 .noteLine").not(".noLine").find(".textareaWrap").each(function () {
+                    for (var i = 1; i <= 6; i++) {
+                        $(this).append("<span class='underline' style='position:absolute; left:20px; top:" + (i * 60 + 34) + "px; width:calc(100% - 40px); height:1px; background-color:#cccccc;'></span>");
+                    }
+                })
+            }
         });
     </script>
 </body>

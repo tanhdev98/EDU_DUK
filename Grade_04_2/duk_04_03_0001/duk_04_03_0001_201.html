@@ -12,6 +12,10 @@
 
 
     <style>
+        .page_1 .popBtn.line {
+            height: 275px;
+        }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -66,16 +70,16 @@
         }
 
         .popup_pages .wrap-item img {
-            width: 700px;
+            width: 460px;
         }
 
         .popup_pages .wrap-item .box-text {
-            width: 100%;
+            width: 90%;
             text-align: center;
             background-color: #FDF3E7;
             padding: 20px 20px;
             border-radius: 20px;
-            margin-top: 30px;
+            margin: 30px auto auto auto;
         }
 
         .box-text span {
@@ -92,7 +96,9 @@
         .popup_pages .icon-char {
             top: 80px;
             right: 28px;
-        } #tsViewer .pageTitle,
+        }
+
+        #tsViewer .pageTitle,
         #tsViewer .contentsStudy {
             height: 39px;
         }
@@ -133,7 +139,7 @@
                             <div class="items">
                                 <div class="bullet number orange inline">3</div>
                                 <span class="imgWrap line popBtn" data-popup-btn="1" data-targetSlideNum="3">
-                                    <img src="./images/duk_04_03_0001_201/img_03.png">
+                                    <img src="./images/duk_04_03_0001_201/img_03.png" >
                                     <button class="popBtn zoomBtn" data-hover=""></button>
                                 </span>
                             </div>
@@ -246,7 +252,7 @@
                             <li class="innerTab_3 ">
                                 <h2>배려 실천 다짐하기</h2>
                                 <div class="wrap-item">
-                                    <img src="./images/duk_04_03_0001_201/img_03.png" />
+                                    <img src="./images/duk_04_03_0001_201/img_03.png" style="width: 793px;"/>
                                     <div class="box-text box3">
                                         새 붙임쪽지에 앞으로 내가 실천하고 싶은 배려 행동을 적어<br>
                                         칠판에 붙여 봅니다.
@@ -381,17 +387,10 @@
                     parentDocument.parentNode.parentNode.style.zIndex = 120;
                 }
             });
-            $(document).on('click', '.popCloseBtn', function () {
+            $(document).on('click', '.popup_closeBtn', function () {
                 const parentDocument = parent.document.querySelector('iframe');
                 if (parentDocument != null) {
                     parentDocument.parentNode.parentNode.style.zIndex = 0;
-                }
-            });
-            $(document).on('click', '.imgWrap.popBtn', function () {
-                $('[data-popup-page="1"]').addClass('on');
-                var parentDocument = parent.document.querySelector('iframe');
-                if (parentDocument != null) {
-                    parentDocument.parentNode.parentNode.style.zIndex = 120;
                 }
             });
         });

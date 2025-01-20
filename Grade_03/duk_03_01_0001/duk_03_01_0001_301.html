@@ -75,22 +75,22 @@
         }
 
         .page_1 .innerTab_2 .wrapImg .box2 {
-            top: 180px;
+            top: 190px;
             left: 830px;
         }
 
         .page_1 .innerTab_2 .wrapImg .box3 {
-            top: 350px;
+            top: 370px;
             left: 750px;
         }
 
         .page_1 .innerTab_2 .wrapImg .box4 {
-            top: 180px;
+            top: 190px;
             left: 130px;
         }
 
         .page_1 .innerTab_2 .wrapImg .box5 {
-            top: 350px;
+            top: 370px;
             left: 210px;
         }
 
@@ -200,21 +200,24 @@
             right: 48px;
             bottom: 20px;
         }
+        .lt-sp{
+            letter-spacing: -3px;
+        }
     </style>
 </head>
 
 <body>
     <div id="wrap" class="math">
-        <header class="twoLine">
+        <header class="gap">
             <div class="title-icon yellow" data-show="1">생각 <em>탄탄</em></div>
-            <div class="title-text">나에게 힘을 주는 말을 적고, 나를 소중히 여기는 마음을 다져 봅시다.</div>
+            <div class="title-text lt-sp">나에게 힘을 주는 말을 적고, 나를 소중히 여기는 마음을 다져 봅시다.</div>
         </header>
         <main>
             <!-- FRAME OF PAGE -->
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
-                    <li data-hover="" data-text="나에게 힘을 주는 말을 적고, 나를 소중히 여기는 마음을 다져 봅시다." class="twoLine">활동</li>
-                    <li data-hover="" data-text="배운 내용을 되돌아보며 자기 점검을 해 봅시다." data-gap="true">자기 점검</li>
+                    <li data-hover="" data-text="나에게 힘을 주는 말을 적고, 나를 소중히 여기는 마음을 다져 봅시다."  data-gap="true">활동</li>
+                    <li data-hover="" data-text="배운 내용을 되돌아보며 자기 점검을 해 봅시다.">자기 점검</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1">
@@ -477,22 +480,21 @@
                 if ($(this).data('text')) {
                     $('header .title-text').text($(this).data('text'));
                 }
+                if ($(this).data('text') === '나에게 힘을 주는 말을 적고, 나를 소중히 여기는 마음을 다져 봅시다.') {
+                    $('header .title-text').addClass('lt-sp');
+                }else{
+                    $('header .title-text').removeClass('lt-sp');
+                }
                 if ($(this).attr('data-gap') == 'true') {
-                    $('header .title-text').addClass('gap');
+                    $('header').addClass('gap');
                 } else {
-                    $('header .title-text').removeClass('gap');
+                    $('header').removeClass('gap');
                 }
                 if ($(this).hasClass('twoLine')) {
                     $('header').addClass('twoLine');
                 }
                 else {
                     $('header').removeClass('twoLine');
-                }
-                if ($(this).index() == 1) {
-                    $('.title-icon').css('margin-top', '-20px');
-                }
-                else {
-                    $('.title-icon').css('margin-top', '0px');
                 }
             });
             $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
