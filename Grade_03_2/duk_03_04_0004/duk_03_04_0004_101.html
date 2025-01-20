@@ -12,9 +12,10 @@
 
 
     <style>
-         header.twoLine .title-icon {
+        header.twoLine .title-icon {
             top: -30px;
         }
+
         .contentsBox {
             padding: 0;
         }
@@ -43,7 +44,7 @@
 
 <body>
     <div id="wrap" class="aniContainer">
-        <header class="twoLine"> 
+        <header class="twoLine">
             <div class="title-icon pink">마음 <em>똑똑</em></div>
             <div class="title-text">다음 영상을 시청하고 인공지능 로봇을 올바르게 사용해야 하는 까닭을 생각해 봅시다.</div>
         </header>
@@ -54,14 +55,14 @@
                     <li class="page_1" data-quiz="toggle">
                         <div class="videoBackground youtubeTitleWrap">
                             <div class="animationTitle">
-                               <div class="mediaSubContainer">
-                                  <h2>
-                                     <div class="orange">인공지능 윤리</div>의 필요성
-                                  </h2>
-                                  <button class="screenPlayBtn" title="재생" data-youtube-id="UrKtcGVWw-4"></button>
-                               </div>
+                                <div class="mediaSubContainer">
+                                    <h2>
+                                        <div class="orange">인공지능 윤리</div>의 필요성
+                                    </h2>
+                                    <button class="screenPlayBtn" title="재생" data-youtube-id="UrKtcGVWw-4"></button>
+                                </div>
                             </div>
-                         </div>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -108,6 +109,9 @@
                     $('header').removeClass('twoLine');
                 }
             });
+            $(document).on('click', '.screenPlayBtn', function () {
+                KmAudioPlayer.buttonClick();
+            })
         });
     </script>
 

@@ -63,7 +63,7 @@
             position: absolute;
             width: 1000px;
             border-radius: 20px;
-            height: 200px;
+            height: 180px;
             padding: 35px 20px;
             display: flex;
             align-items: center;
@@ -89,7 +89,7 @@
             border: 5px solid #fcce8b !important;
             background-color: #fff1d0 !important;
             left: 260px;
-            top: 50px;
+            top: 60px;
         }
 
         .page_3 .noteText.orange::before {
@@ -131,7 +131,7 @@
         .page_3 .noteText.purple {
             border: 5px solid #cabfe0 !important;
             background-color: #ece5ff !important;
-            bottom: 70px;
+            bottom: 80px;
             right: 260px;
         }
 
@@ -140,10 +140,7 @@
             position: absolute;
         }
 
-        .buttonContainer {
-            right: 28px;
-        }
-        .lt-sp{
+        .lt-sp {
             letter-spacing: -1.3px;
         }
     </style>
@@ -350,9 +347,9 @@
             $(document).on('click', '.basicSlider_tabs li', function () {
                 if ($(this).data('text')) {
                     $('header .title-text').html($(this).data('text'));
-                }if( $(this).data('text') === '내가 가지고 싶은 인공지능 로봇을 고르고 그 까닭을 생각해 봅시다.'){
+                } if ($(this).data('text') === '내가 가지고 싶은 인공지능 로봇을 고르고 그 까닭을 생각해 봅시다.') {
                     $('header .title-text').addClass('lt-sp');
-                }else{
+                } else {
                     $('header .title-text').removeClass('lt-sp');
                 }
                 if ($(this).attr('data-gap') == 'true') {
@@ -383,6 +380,7 @@
                     $(this).children().remove();
                 }
                 else {
+                    $('.check_box').empty().removeClass('check_ans');
                     $(this).addClass('check_ans');
                     $(this).append("<p class='red_check'></p>");
                 }
