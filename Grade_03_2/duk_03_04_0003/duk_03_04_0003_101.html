@@ -24,6 +24,11 @@
             position: relative;
             top: -10px;
         }
+        .page_1 .balloon span {
+            width: 100%;
+            cursor: pointer;
+            display: inline-block;
+        }
 
         /* Page 2 */
         .flex {
@@ -300,9 +305,9 @@
                 })
             }
 
-            $(document).on('click', '#girl_3_c', function () {
+            $(document).on('click', '.page_1 .characterWrap, .page_1 .balloon > span', function () {
                 KmAudioPlayer.buttonClick();
-            })
+            });
         });
 
     </script>
