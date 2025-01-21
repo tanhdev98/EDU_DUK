@@ -23,6 +23,12 @@
             top: 0;
         }
 
+        .page_1 .balloon span {
+            cursor: pointer;
+            width: 100%;
+            display: block;
+        }
+
         /* Page2  */
         .innerSlider_tabs>li {
             background-color: #F3DEC0;
@@ -212,6 +218,7 @@
 
         .balloon.right:after {
             transform: rotate(-90deg) translateX(50%);
+            top: 50%;
         }
 
         #girl_1_c .charSpriteAni {
@@ -246,7 +253,7 @@
         .page_2 .innerTab_1 .wrapImg .text-item {
             position: absolute;
             top: 75px;
-            left: 160px;
+            left: 135px;
             width: 1200px;
         }
 
@@ -278,16 +285,17 @@
         .page_2 .innerTab_2 .wrapImg .text-item {
             position: absolute;
             font-size: 30px;
+            font-family: 'YGJAL';
         }
 
         .page_2 .innerTab_2 .wrapImg .text-item.text-3 {
             top: 295px;
-            left: 515px;
+            left: 507px;
         }
 
         .page_2 .innerTab_2 .wrapImg .text-item.text-4 {
             top: 295px;
-            left: 802px;
+            left: 792px;
         }
 
         .page_2 .popupItem {
@@ -323,7 +331,7 @@
 
         .page_2 .popupItem2 {
             top: 45px;
-            left: 900px;
+            left: 880px;
             background: #FFEEF3;
             border: 4px solid #ffc4c9;
         }
@@ -568,10 +576,10 @@
                 circle: true,
                 speech: 'right',
                 sound: '',
-                text: '친구가 어떤 것보다도 <br>소중하다고 생각했기 때문인 것 같아요.',
+                text: '친구가 어떤 것보다도 <br>소중하다고 생각했기 때문인 것 같습니다.',
                 class: 'midle right',
                 balloon_bottom: 20,
-                balloon_left: -780,
+                balloon_left: -830,
             });
             $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
                 let idx = $(this).index() + 1;
