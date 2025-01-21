@@ -482,9 +482,9 @@
                 $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
             });
 
-            $(document).on('click', '.popup_closeBtn', function () {
-                $('.popBtn.popupOn').trigger('click');
-            });
+            // $(document).on('click', '.popup_closeBtn', function () {
+            //     $('.popBtn.popupOn').trigger('click');
+            // });
 
             $(document).on('click', '.popBtn', function () {
                 const parentDocument = parent.document.querySelector('iframe');
@@ -501,7 +501,7 @@
                 }
             });
 
-            $(document).on('click', '.popCloseBtn', function () {
+            $(document).on('click', '.popup_closeBtn', function () {
                 const parentDocument = parent.document.querySelector('iframe');
                 if (parentDocument != null) {
                     parentDocument.parentNode.parentNode.style.zIndex = 0;

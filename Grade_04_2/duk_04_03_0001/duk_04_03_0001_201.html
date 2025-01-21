@@ -100,8 +100,9 @@
 
         #tsViewer .pageTitle,
         #tsViewer .contentsStudy {
-            height: 39px;
+            height: 40px;
         }
+     
     </style>
 </head>
 
@@ -123,28 +124,28 @@
                         <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="2"></div>
                         <div class="grid">
                             <div class="items">
-                                <div class="bullet number orange inline">1</div>
+                                <div class="bullet number red inline">1</div>
                                 <span class="imgWrap line popBtn" data-popup-btn="1" data-targetSlideNum="1">
                                     <img src="./images/duk_04_03_0001_201/img_01.png">
                                     <button class="popBtn zoomBtn" data-hover=""></button>
                                 </span>
                             </div>
                             <div class="items">
-                                <div class="bullet number orange inline">2</div>
+                                <div class="bullet number red inline">2</div>
                                 <span class="imgWrap line popBtn" data-popup-btn="1" data-targetSlideNum="2">
                                     <img src="./images/duk_04_03_0001_201/img_02.png">
                                     <button class="popBtn zoomBtn" data-hover=""></button>
                                 </span>
                             </div>
                             <div class="items">
-                                <div class="bullet number orange inline">3</div>
+                                <div class="bullet number red inline">3</div>
                                 <span class="imgWrap line popBtn" data-popup-btn="1" data-targetSlideNum="3">
                                     <img src="./images/duk_04_03_0001_201/img_03.png" >
                                     <button class="popBtn zoomBtn" data-hover=""></button>
                                 </span>
                             </div>
                             <div class="items">
-                                <div class="bullet number orange inline">4</div>
+                                <div class="bullet number red inline">4</div>
                                 <span class="imgWrap line popBtn" data-popup-btn="1" data-targetSlideNum="4">
                                     <img src="./images/duk_04_03_0001_201/img_04.png">
                                     <button class="popBtn zoomBtn" data-hover=""></button>
@@ -392,6 +393,7 @@
                 if (parentDocument != null) {
                     parentDocument.parentNode.parentNode.style.zIndex = 0;
                 }
+                document.querySelector('.contentArea').style.zIndex = '0';
             });
         });
     </script>
