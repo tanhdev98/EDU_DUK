@@ -68,7 +68,8 @@
     <div id="wrap" class="math">
         <header class="gap">
             <div class="endUnit">단원 마무리</div>
-            <div class="title-text ">성실에 대한 설명을 읽고 알맞은 것을 찾아 &#9675;표를 해 봅시다.</div>
+            <div class="title-text" style="display: flex;">성실에 대한 설명으로 알맞은 것을 찾아 ( <span style="width: 20px;"></span> )
+                안에 O를 해 봅시다.</div>
         </header>
         <main>
 
@@ -76,8 +77,11 @@
             <!-- FRAME OF PAGE -->
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
-                    <li data-hover="" data-text="성실에 대한 설명을 읽고 알맞은 것을 찾아 &#9675;표를 해 봅시다." data-gap="true">활동 1</li>
-                    <li data-hover="" data-text="2단원을 마치며 스스로의 모습을 되돌아봅시다.">자기 점검</li>
+                    <li data-hover="" data-text='성실에 대한 설명으로 알맞은 것을 찾아 ( <span style=" width: 20px;"></span> ) 안에 O를 해
+                        봅시다.' data-gap="true">
+                        활동 1
+                    </li>
+                    <li data-hover="" data-text="2단원을 마치며 자신의 모습을 되돌아봅시다.">자기 점검</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1">
@@ -110,8 +114,7 @@
                                         </div>
                                         <div class="checkWrap">
                                             <div class="text_box">
-                                                성실은 참된 마음, 노력하는 마음, 참고 이겨 내는<br>
-                                                마음과 관련이 있어.
+                                                성실은 ‘참된 마음, 노력하는 마음, 참고 이겨 내는 마음’과 관련이 있어.
                                             </div>
                                             <div class="icon-box">
                                                 <div class="wrap ans">
@@ -139,7 +142,7 @@
                                     <div class="self-check">
                                         <div class="checkWrap">
                                             <div class="text_box">
-                                                성실한 생활을 하려면 나와의 약속만 잘 지키면 돼.
+                                                성실하게 생활하려면 나와 한 약속만 잘 지키면 돼.
                                             </div>
                                             <div class="icon-box">
                                                 <div class="wrap">
@@ -152,8 +155,8 @@
                                         </div>
                                         <div class="checkWrap">
                                             <div class="text_box">
-                                                과정이 성실하면 결과가 좋지 않아도 괜찮아. 네가<br>
-                                                열심히 한 노력이 모여서 멋진 너를 만들 수 있거든.
+                                                과정이 성실하면 결과가 좋지 않아도 괜찮아. 내가<br>
+                                                열심히 한 노력이 모여서 멋진 나를 만들 수 있거든.
                                             </div>
                                             <div class="icon-box">
                                                 <div class="wrap ans">
@@ -211,7 +214,7 @@
                                         </div>
                                         <div class="checkWrap">
                                             <div class="text_box">
-                                                성실하게 살아야 하는 까닭을 이해하고 있나요?
+                                                성실하게 살아야 하는 까닭을 이해했나요?
                                             </div>
                                             <div class="icon-box">
                                                 <div class="wrap">
@@ -323,7 +326,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             $(document).on('click', '.basicSlider_tabs li', function () {
                 if ($(this).data('text')) {
-                    $('header .title-text').text($(this).data('text'));
+                    $('header .title-text').html($(this).data('text'));
                 }
                 if ($(this).attr('data-gap') == 'true') {
                     $('header').addClass('gap');
