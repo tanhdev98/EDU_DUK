@@ -217,7 +217,7 @@
                                 하루하루가 모여 한 달이 되고 한 달이<br>
                                 모여 일 년이 됩니다. 그리고 일 년이 모여<br>
                                 일생(평생)이 되지요.<br>
-                                여러분은 어떻게 하루를 보내고 있나요?
+                                여러분은 하루를 어떻게 보내고 있나요?
                             </div>
                             <img src="./images/ton_03_02_0001_301/img_01.png" />
                         </div>
@@ -226,7 +226,7 @@
                         <div class="study_guide"><em>얼굴</em>를 <em>클릭</em>하세요.</div>
                         <div class="self-check">
                             <div class="checkWrap">
-                                <div class="text_box">성실이 어떤 뜻인지 알고 있나요?</div>
+                                <div class="text_box">성실의 의미를 알고 있나요?</div>
                                 <div class="icon-box">
                                     <div class="wrap">
                                         <div class="button-smile icon1"></div>
@@ -240,7 +240,7 @@
                                 </div>
                             </div>
                             <div class="checkWrap">
-                                <div class="text_box">성실과 관련 있는 마음가짐이 무엇인지 이해하고 있나요?</div>
+                                <div class="text_box">성실과 관련 있는 마음가짐이 무엇인지 이해했나요?</div>
                                 <div class="icon-box">
                                     <div class="wrap">
                                         <div class="button-smile icon1"></div>
@@ -457,30 +457,30 @@
         });
         // toggle
         $(document).on('click', '.toggle', function () {
-                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
-                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
-                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+            const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+            const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+            const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
 
-                if (toggleBtn.length == toggleCompleteBtn.length) {
-                    dapCheckBtn.addClass('reset');
-                } else {
-                    dapCheckBtn.removeClass('reset');
-                }
-            });
+            if (toggleBtn.length == toggleCompleteBtn.length) {
+                dapCheckBtn.addClass('reset');
+            } else {
+                dapCheckBtn.removeClass('reset');
+            }
+        });
 
-            $(document).on('click', '.dapCheckBtn', function () {
-                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
-                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+        $(document).on('click', '.dapCheckBtn', function () {
+            const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+            const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
 
-                if (!dapCheckBtn.hasClass('reset')) {
-                    toggleBtn.parent().removeAttr('data-active');
-                } else {
-                    toggleBtn.parent().attr('data-active', 'on');
-                }
-            });
-            $(document).on('click', '.btn-praise', function () {
-                $('[data-active="on"] .toggle').addClass('complete');
-            });
+            if (!dapCheckBtn.hasClass('reset')) {
+                toggleBtn.parent().removeAttr('data-active');
+            } else {
+                toggleBtn.parent().attr('data-active', 'on');
+            }
+        });
+        $(document).on('click', '.btn-praise', function () {
+            $('[data-active="on"] .toggle').addClass('complete');
+        });
     </script>
 </body>
 
