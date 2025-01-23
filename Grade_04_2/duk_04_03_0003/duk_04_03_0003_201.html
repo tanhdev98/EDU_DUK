@@ -11,13 +11,25 @@
     <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
 
 
-    <style>#tsViewer .pageTitle,
+    <style>
+        #tsViewer .pageTitle,
         #tsViewer .contentsStudy {
-            height: 39px;
+            height: 40px;
         }
-        .wrapImg {
+
+        .page_4 .wrapImg {
             width: 100%;
             height: 100%;
+        }
+
+        .page_1 .wrapImg {
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            margin-top: -10px;
+            justify-content: center;
         }
 
         .wrapImg img {
@@ -31,17 +43,17 @@
 
         .item1 {
             top: 30px;
-            left: 180px;
+            left: 350px;
         }
 
         .item2 {
-            top: 240px;
-            right: 570px;
+            top: 265px;
+            right: 633px;
         }
 
         .item3 {
             top: 30px;
-            right: 140px;
+            right: 312px;
         }
 
         .popupItem {
@@ -76,50 +88,54 @@
 
         .popupItem1 {
             top: 0px;
-            left: 390px;
+            left: 440px;
         }
 
         .popupItem1:before {
-            left: -190px;
+            left: -88px;
             transform: translateY(-50%);
+            top: 40px;
         }
 
         .popupItem1::after {
-            left: -190px;
-            width: 190px;
+            left: -80px;
+            width: 80px;
+            top: 40px;
         }
 
         .popupItem2 {
-            top: 0;
-            left: 500px;
+            top: 370px;
+            left: 470px;
         }
 
         .popupItem2:before {
             left: 50%;
-            top: 250px;
+            top: -105px;
             transform: translateX(-50%);
         }
 
         .popupItem2::after {
             left: 50%;
             width: 4px;
-            height: 130px;
+            height: 90px;
             transform: translateX(-50%);
-            top: 130px;
+            top: -90px;
         }
 
         .popupItem3 {
             top: 0px;
-            left: 500px;
+            left: 460px;
         }
 
         .popupItem3:before {
-            right: -260px;
+            right: -155px;
+            top: 40px;
         }
 
         .popupItem3::after {
-            right: -250px;
-            width: 250px;
+            right: -150px;
+            width: 150px;
+            top: 40px;
         }
 
         .popupItem>span {
@@ -274,8 +290,8 @@
 
         /* Page 4 */
         .page_4 .wrapImg img {
-            height: 345px;
-            margin-top: 30px;
+            height: 465px;
+            margin-top: -60px;
         }
 
         .page_4 .bullet.exam {
@@ -285,20 +301,24 @@
         .page_4 .top-text {
             font-size: 35px;
             margin-top: 40px;
+            z-index: 1;
+            position: relative;
+            top: 25px;
+            letter-spacing: -1.2px;
         }
 
         .page_4 .text1 {
             position: absolute;
             color: #FF6284;
-            top: 259px;
-            left: 71px;
+            top: 229px;
+            left: 65px;
         }
 
         .page_4 .text2 {
             position: absolute;
             color: #FF6284;
-            top: 259px;
-            left: 50px;
+            top: 229px;
+            left: 45px;
         }
 
         .page_4 .noteText {
@@ -308,24 +328,38 @@
             top: 120px;
             left: 251px;
             width: 1040px;
-            height: 310px;
+            height: 330px;
         }
 
         .page_4 .noteText .textLine {
             width: 970px;
+            line-height: 83px;
+        }
+
+        .page_4 .noteText p.dot::after {
+            top: 25px;
+        }
+
+        .page_4 .noteText .blueT {
+            margin-top: 5px;
+        }
+
+        .page_4 .noteText p.dot {
+            line-height: 83px;
+            text-align: left;
         }
 
         .page_4 .noteText .text-exam.flex-wrap {
-            padding: 0 40px;
+            padding: 0 30px 0px 40px;
             height: 300px;
         }
 
         .page_4 .noteText.note1 {
             position: absolute;
-            width: 240px;
+            width: 218px;
             height: 120px;
-            left: 4px;
-            top: 222px;
+            left: 19px;
+            top: 192px;
         }
 
         .page_4 .noteText.noLine .textareaWrap {
@@ -339,6 +373,15 @@
 
         .page_1 .close-speech-button {
             cursor: default;
+        }
+
+        .page_1 .click-finger-Btn.blinkOn.blinkOpacity {
+            animation: clickInduceMotion 1s 3 ease-in !important;
+            -webkit-animation: clickInduceMotion 1s 3 ease-in !important;
+        }
+
+        .page_2 .sideTopSlider .basicSlider_slides {
+            height: 405px;
         }
     </style>
 </head>
@@ -390,38 +433,40 @@
                         </div>
                     </li>
                     <li class="page_2" data-quiz="toggle">
-                        <div class="sideTopSlider contentsBox doItContent" data-slide-container=""
-                            style="margin-top: 45px;">
-                            <div class="sideTopButtonContainer" data-slide-btn-container="">
-                                <ul class="sideTopSlider_tabs" data-tabs="">
-                                    <li data-hover="">
-                                        ① 상황을 살펴보세요
-                                    </li>
-                                    <li data-hover="">
-                                        ② 공감해 보세요
-                                    </li>
+
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
                                 </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
                             </div>
                             <ul class="basicSlider_slides" data-slides="">
-                                <li class="innerTab innerTab_1">
-                                    <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
-                                    <div class="basicSlider contentsBox doItContent" data-slide-container="">
-                                        <div class="moveButtonContainer" data-slide-btn-container="">
-                                            <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
-                                            <ul class="basicSlider_circle_tabs" data-tabs="">
-                                                <li data-hover=""></li>
-                                                <li data-hover=""></li>
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="sideTopSlider contentsBox doItContent" data-slide-container=""
+                                        style="margin-top: 45px;">
+                                        <div class="sideTopButtonContainer" data-slide-btn-container="">
+                                            <ul class="sideTopSlider_tabs" data-tabs="">
+                                                <li data-hover="">
+                                                    ① 상황을 살펴보세요
+                                                </li>
+                                                <li data-hover="">
+                                                    ② 공감해 보세요
+                                                </li>
                                             </ul>
-                                            <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
                                         </div>
-                                        <ul class="basicSlider_slides transparent" data-slides="">
-                                            <li class="innerTab_1" data-quiz="toggle">
+                                        <ul class="basicSlider_slides" data-slides="">
+                                            <li class="innerTab innerTab_1">
+                                                <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
                                                 <p class="arrow">
                                                     주위의 많은 경우에는 어느 정도의 배려를 필요로 합니다.<br>
                                                     하지만, 상황에 따라 배려의 정도와 방식이 달라질 수 있으므로, 배려가 꼭 필요한지 살펴봐야 합니다.
                                                 </p>
                                             </li>
-                                            <li class="innerTab_2" data-quiz="toggle">
+                                            <li class="innerTab innerTab_2">
+                                                <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
                                                 <p class="arrow">
                                                     배려가 필요한 상황이라면, 상대방의 마음에 공감해 봅시다. 상대방이 어떤 생각과 느낌을 가지고 있을지 상상해 봅시다.
                                                 </p>
@@ -429,29 +474,35 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li class="innerTab innerTab_2">
-                                    <div class="basicSlider contentsBox doItContent" data-slide-container="">
-                                        <div class="moveButtonContainer" data-slide-btn-container="">
-                                            <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
-                                            <ul class="basicSlider_circle_tabs" data-tabs="">
-                                                <li data-hover=""></li>
-                                                <li data-hover=""></li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="sideTopSlider contentsBox doItContent" data-slide-container=""
+                                        style="margin-top: 45px;">
+                                        <div class="sideTopButtonContainer" data-slide-btn-container="">
+                                            <ul class="sideTopSlider_tabs" data-tabs="">
+                                                <li data-hover="">
+                                                    ③ 상대방에게 필요한 것을 찾아요
+                                                </li>
+                                                <li data-hover="">
+                                                    ④ 실천해요
+                                                </li>
                                             </ul>
-                                            <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
                                         </div>
-                                        <ul class="basicSlider_slides transparent" data-slides="">
-                                            <li class="innerTab_1" data-quiz="toggle">
+                                        <ul class="basicSlider_slides" data-slides="">
+                                            <li class="innerTab innerTab_1">
                                                 <p class="arrow">
                                                     상대방이 원하는 것은 무엇일까요? 무엇이 도움이 될까요?<br>
                                                     잘못된 배려는 오히려 부담을 줄 수 있습니다.<br>
                                                     관찰, 질문, 경청을 통해서 적절한 배려가 무엇인지 찾아봅시다.
                                                 </p>
                                             </li>
-                                            <li class="innerTab_2" data-quiz="toggle">
+                                            <li class="innerTab innerTab_2">
                                                 <p class="arrow">
                                                     준비가 되었다면, 용기 있게 배려를 실천해 봅시다.
                                                 </p>
-                                                <img src="./images/duk_04_03_0003_201/img_02.jpg" />
+                                                <div style="display: flex; justify-content: flex-end; width: 100%;">
+                                                    <img style="width: 400px;"
+                                                        src="./images/duk_04_03_0003_201/img_02.jpg" />
+                                                </div>
                                             </li>
                                         </ul>
                                     </div>
@@ -464,7 +515,7 @@
                         <div class="sideLeftSlider contentsBox doItContent" data-slide-container="">
                             <div class="sideLeftButtonContainer" data-slide-btn-container="">
                                 <ul class="sideLeftSlider_tabs" data-tabs="">
-                                    <li data-hover="">① 표현해요</li>
+                                    <li data-hover="" style="padding: 0;">① 표현해요</li>
                                     <li data-hover="">
                                         ② 배려를<br>
                                         되돌려줘요
@@ -588,15 +639,17 @@
                                         </div>
                                         <img src="./images/duk_04_03_0003_201/img_03.png" />
                                         <div class="noteText noLine note1">
-                                            <div class="textareaWrap">
+                                            <div class="textareaWrap" style="padding: 0;">
                                                 <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    style="width: 100%; line-height: 60px; text-align: center;"
                                                     data-input-obj="" data-answer=" " onfocus=""
                                                     onblur="placeholder='직접 쓰기'" autocomplete="off"
                                                     spellcheck="false"></textarea>
                                             </div>
-                                            <div class="text-exam flex-wrap">
-                                                <div class="blueT">
-                                                    <p>
+                                            <div class="text-exam flex-wrap"
+                                                style="justify-content: center; padding: 0 20px;">
+                                                <div class="blueT" style="margin-top: -3px;">
+                                                    <p style="text-align: center;">
                                                         건물<br>
                                                         입구에서
                                                     </p>
@@ -712,7 +765,6 @@
             });
 
             $(document).on('click', '.click-finger-Btn', function () {
-
                 $('.click-finger-Btn').show();
                 KmAudioPlayer.buttonClick();
                 var $data_popup = $(this).attr('data-popup');
@@ -720,13 +772,13 @@
                 $('.popupItem').find('.close-speech-button').remove();
                 $('.popupItem[data-show="' + $data_popup + '"]').show();
                 $('.popupItem[data-show="' + $data_popup + '"]').append('<div class="close-speech-button"></div>')
-                $(this).hide();
+                $(this).hide().removeClass('blinkOn').removeClass('blinkOpacity');
             });
 
             $(document).on('click', '.close-speech-button, .popupItem > span', function () {
                 var $data_show = $(this).parent().attr('data-show');
                 $(this).parent().hide();
-                $('.click-finger-Btn[data-popup="' + $data_show + '"]').show().removeClass('blinkOn').removeClass('blinkOpacity');
+                $('.click-finger-Btn[data-popup="' + $data_show + '"]').show();
                 $(this).parent().find($('.close-speech-button')).remove();
                 if ($(this).hasClass('close-speech-button')) {
                     $(this).remove();
@@ -735,7 +787,13 @@
                     $('.close-speech-button').remove();
                 }
             });
+            $(document).on('click', '.basicSlider_tabs li:not(:nth-child(1))', function () {
+                $('.click-finger-Btn').removeClass('blinkOn').removeClass('blinkOpacity');
+            });
 
+            $(document).on('click', '.basicSlider_tabs li:nth-child(1)', function () {
+                $('.click-finger-Btn').addClass('blinkOn').addClass('blinkOpacity');
+            });
             $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
                 let idx = $(this).index() + 1;
                 $('.popup_pages .innerSlider_tabs li').removeClass('on');

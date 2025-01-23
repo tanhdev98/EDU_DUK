@@ -14,7 +14,7 @@
     <style>
         #tsViewer .pageTitle,
         #tsViewer .contentsStudy {
-            height: 39px;
+            height: 40px;
         }
 
         header.twoLine .title-icon {
@@ -63,7 +63,7 @@
         [data-popup-page="2"] {
             width: max-content;
             top: 165px;
-            left: 650px;
+            left: 630px;
         }
 
         /* page 3 */
@@ -104,6 +104,7 @@
             right: 660px;
             border: 4px solid #A8D6F6;
             background-color: #E7F4F9;
+            width: max-content;
         }
 
         .popupItem1::before {
@@ -138,6 +139,10 @@
             height: 100px;
         }
 
+        .page_3 .click-finger-Btn.blinkOn.blinkOpacity{
+            animation: clickInduceMotion 1s 3 ease-in !important;
+            -webkit-animation: clickInduceMotion 1s 3 ease-in !important;
+        }
         .page_3 .click-finger-Btn.item1 {
             position: absolute;
             right: 960px;
@@ -247,7 +252,7 @@
         [data-popup-page="3"] {
             width: 927px;
             top: 200px;
-            left: 300px;
+            left: 330px;
         }
 
         /* page 4 */
@@ -318,7 +323,9 @@
             justify-content: center;
             align-items: center;
             gap: 10px;
-            width: 100%;
+            width: 260px;
+            flex-wrap: wrap;
+            margin-left: 10px;
         }
 
         .flex-star .star {
@@ -335,11 +342,12 @@
         }
 
         .page_5 .title_text {
-            width: 610px;
+            width: 620px;
             position: absolute;
-            left: 250px;
-            top: 40px;
-            text-align: left;
+            left: 259px;
+            top: 71px;
+            text-align: justify;
+            letter-spacing: -1px;
         }
 
         .additional-question {
@@ -357,6 +365,7 @@
             width: calc(100% - 56px);
             border-collapse: collapse;
             margin: auto;
+            font-size: 38px;
         }
 
         [data-popup-page="5"] td {
@@ -367,6 +376,16 @@
 
         [data-popup-page="5"] table tr:first-child td {
             background-color: #FD8E09;
+        }
+
+        .table-box.color-02 .sub-th,
+        .table-box.color-02 thead+tbody th {
+            background-color: #ffdfb9;
+            color: #a67058;
+        }
+
+        .popup_pages>li.whole h2 {
+            font-size: 38px;
         }
     </style>
 </head>
@@ -598,7 +617,7 @@
                                             </th>
                                         </tr>
                                         <tr>
-                                            <td colspan="2">
+                                            <td colspan="2" style="background-color: #FFEFDB;">
                                                 <div class="noteText noLine note2">
                                                     <div class="textareaWrap">
                                                         <textarea class="textLine afterDisplay" type="text"
@@ -608,12 +627,12 @@
                                                     </div>
                                                     <div class="text-exam flex-wrap">
                                                         <div class="blueT flex-center">
-                                                            ○월<br>○일
+                                                            ○월○일
                                                         </div>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td colspan="2">
+                                            <td colspan="2" style="background-color: #FFEFDB;">
                                                 <div class="noteText noLine note2">
                                                     <div class="textareaWrap">
                                                         <textarea class="textLine afterDisplay" type="text"
@@ -649,18 +668,16 @@
                                             </td>
                                             <td colspan="3" class="starActive">
                                                 <div class="flex-star">
-                                                    <div class="star"></div>
-                                                    <div class="star"></div>
-                                                    <div class="star"></div>
-                                                </div>
-                                                <div class="flex-star">
-                                                    <div class="star"></div>
-                                                    <div class="star"></div>
+                                                    <div class="star" data-index="1"></div>
+                                                    <div class="star" data-index="2"></div>
+                                                    <div class="star" data-index="3"></div>
+                                                    <div class="star" data-index="4"></div>
+                                                    <div class="star" data-index="5"></div>
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2">
+                                            <td colspan="2" style="background-color: #FFEFDB;">
                                                 <div class="noteText noLine note2">
                                                     <div class="textareaWrap">
                                                         <textarea class="textLine afterDisplay" type="text"
@@ -670,12 +687,12 @@
                                                     </div>
                                                     <div class="text-exam flex-wrap">
                                                         <div class="blueT flex-center">
-                                                            <p>○월<br>○일</p>
+                                                            <p>○월○일</p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td colspan="2">
+                                            <td colspan="2" style="background-color: #FFEFDB;">
                                                 <div class="noteText noLine note2">
                                                     <div class="textareaWrap">
                                                         <textarea class="textLine afterDisplay" type="text"
@@ -711,13 +728,11 @@
                                             </td>
                                             <td colspan="3">
                                                 <div class="flex-star">
-                                                    <div class="star"></div>
-                                                    <div class="star"></div>
-                                                    <div class="star"></div>
-                                                </div>
-                                                <div class="flex-star">
-                                                    <div class="star"></div>
-                                                    <div class="star"></div>
+                                                    <div class="star" data-index="1"></div>
+                                                    <div class="star" data-index="2"></div>
+                                                    <div class="star" data-index="3"></div>
+                                                    <div class="star" data-index="4"></div>
+                                                    <div class="star" data-index="5"></div>
                                                 </div>
                                             </td>
                                         </tr>
@@ -732,9 +747,9 @@
                     <li class="page_5">
                         <div class="popBtn additional-question" data-popup-btn="5">추가 질문</div>
                         <img src="./images/duk_04_03_0002_202/icon.png"
-                            style="width: 250px;position: absolute; left: 810px; top: 260px; z-index: 2;" alt="">
+                            style="width: 250px;position: absolute; left: 850px; top: 240px; z-index: 2;" alt="">
                         <img src="./images/duk_04_03_0002_202/letter.png"
-                            style="width: 750px; margin-top: 10px; margin-left: 190px;" alt="">
+                            style="width: 740px; margin-top: 25px; margin-left: 200px;" alt="">
                         <div class="title_text">비밀 친구 활동 기간이 끝나면 나의 활동 일지를 친구에게 전해 줍니다. 서로가 모르게 배려를 주고받았던 장면을 떠올리며 감사의
                             인사를 나눕니다. 일지 뒷면에는 친구에게 편지를 써 봅니다.</div>
                     </li>
@@ -767,7 +782,7 @@
                     <h2 class="blue">Tip</h2>
                     <div class="popup_contents ls1">
                         <p><ins class="dot"></ins>
-                            내가 배려해야 할 친구를 떠올려 보고, 친구가 좋아하는 거소가 싫어하는 것, 성격, 취미나 특기, 생활 속 습관, 건강 상태, 요즘 기분이나 관심사 등을 알아봅니다.
+                            내가 배려해야 할 친구를 떠올려 보고, 친구가 좋아하는 것과 싫어하는 것, 성격, 취미나 특기, 생활 속 습관, 건강 상태, 요즘 기분이나 관심사 등을 알아봅니다.
                         </p>
                         <p><ins class="dot"></ins>
                             내가 친구를 위해 배려할 수 있는 일 또는 친구에게 배려받고 싶은 것을 짝이나 모둠, 학급 전체의 다양한 생각을 주고받아 봅니다.
@@ -837,47 +852,62 @@
                 else {
                     $('header').removeClass('twoLine');
                 }
+                $('.click-finger-Btn').removeClass('blinkOn').removeClass('blinkOpacity');
+                setTimeout(function () {
+                    $('.click-finger-Btn').addClass('blinkOn').addClass('blinkOpacity');
+                }, 100);
             });
             $(document).on('click', '.click-finger-Btn', function () {
                 KmAudioPlayer.buttonClick();
-                $('.popupItem').hide();
-                $('.click-finger-Btn').show();
+                // $('.popupItem').hide();
+                // $('.click-finger-Btn').show();
                 var $data_popup = $(this).attr('data-popup');
                 var $currentPopup = $('.popupItem[data-show="' + $data_popup + '"]');
                 var maxZIndex = Math.max.apply(null, $('.popupItem:visible').map(function () {
                     return parseInt($(this).css('z-index')) || 0;
                 }).get());
                 $currentPopup.css('z-index', maxZIndex + 1).show();
-                $(this).hide();
-                $('.popupItem .close-speech-button').remove();
+                $(this).hide().removeClass('blinkOn').removeClass('blinkOpacity');
+                // $('.popupItem .close-speech-button').remove();
                 $('.popupItem[data-show="' + $data_popup + '"]').append('<div class="close-speech-button"></div>');
             });
             $(document).on('click', '.close-speech-button', function () {
                 var $data_show = $(this).parent().attr('data-show');
                 $(this).parent().hide();
                 $(this).remove();
-                $('.click-finger-Btn').show();
+                $('.click-finger-Btn[data-popup="' + $data_show + '"]').show();
             });
 
-            $(document).on('click', '.starActive .star', function () {
-                KmAudioPlayer.buttonClick();
-                if ($(this).hasClass('active')) {
-                    $(this).removeClass('active');
-                }
-                else {
-                    $(this).parents('.starActive').find('.star').removeClass('active');
-                    $(this).addClass('active');
-                }
-            });
+            $(document).ready(function () {
+                // Xử lý sự kiện click cho tất cả các tab có class .flex-star
+                $('.flex-star').each(function () {
+                    $(this).on('click', '.star', function () {
+                        // Lấy index của ngôi sao được click
+                        var clickedIndex = $(this).data('index');
 
+                        // Tìm container cha (tab) của ngôi sao được click
+                        var $container = $(this).closest('.flex-star');
+
+                        // Xóa active của tất cả các ngôi sao trong tab này
+                        $container.find('.star').removeClass('active');
+
+                        // Active các ngôi sao từ 1 đến index được click trong tab này
+                        $container.find('.star').each(function () {
+                            if ($(this).data('index') <= clickedIndex) {
+                                $(this).addClass('active');
+                            }
+                        });
+                    });
+                });
+            });
 
             $(document).on('click', '.page_4 .writeBtn', function () {
                 if ($(this).hasClass('reset')) {
-                    $('.starActive .star').addClass('active');
+                    $('.flex-star .star').addClass('active');
                     $('.star').css('pointer-events', 'none');
 
                 } else {
-                    $('.starActive .star').removeClass('active');
+                    $('.flex-star .star').removeClass('active');
                     $('.star').css('pointer-events', 'auto');
                 }
 

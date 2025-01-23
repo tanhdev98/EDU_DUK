@@ -11,10 +11,12 @@
     <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
 
 
-    <style>#tsViewer .pageTitle,
+    <style>
+        #tsViewer .pageTitle,
         #tsViewer .contentsStudy {
-            height: 39px;
+            height: 40px;
         }
+
         .toggle.complete .answer,
         .answer.on {
             font-weight: normal;
@@ -117,7 +119,7 @@
 
         /* Page 2 */
         .page_2 .self-check {
-            margin-top: 50px;
+            margin-top: 120px;
         }
 
         .page_2 .btn-praise {
@@ -184,6 +186,9 @@
             left: 0;
             transform: translateY(-50%);
         }
+        .popup_pages .items .item.itemLine2::before{
+            top: 27%;
+        }
 
         .popup_pages .items .item .toggle {
             width: fit-content;
@@ -191,6 +196,13 @@
 
         .pointContainer .dapCheckBtn {
             right: 48px;
+        }
+
+        .popup_pages [data-type="toggleButton"] {
+            cursor: pointer;
+            height: 100%;
+            width: max-content;
+            display: inline-block;
         }
     </style>
 </head>
@@ -317,29 +329,34 @@
                                 </div>
                                 은 무엇인가요?
                             </div>
-                            <div class="item" data-type="toggleButton">
-                                해결 방법의
-                                <div class="toggle box" data-toggle-obj="2">
-                                    <div class="answer" data-toggle-target="2">
-                                        <div>장점</div>
+                            <div class="item">
+                                <div data-type="toggleButton">
+                                    해결 방법의
+                                    <div class="toggle box" data-toggle-obj="2">
+                                        <div class="answer" data-toggle-target="2">
+                                            <div>장점</div>
+                                        </div>
                                     </div>
+                                    과
                                 </div>
-                                과
-                                <div class="toggle box" data-toggle-obj="3">
-                                    <div class="answer" data-toggle-target="3">
-                                        <div>딘점</div>
+                                <div data-type="toggleButton">
+                                    <div class="toggle box" data-toggle-obj="3">
+                                        <div class="answer" data-toggle-target="3">
+                                            <div>딘점</div>
+                                        </div>
                                     </div>
+                                    은 무엇일까요?
                                 </div>
-                                은 무엇일까요?
                             </div>
-                            <div class="item" data-type="toggleButton">
+
+                            <div class="item itemLine2" data-type="toggleButton">
                                 어떻게 하면 해결 방법의 장점은 살리고 단점은
                                 <div class="toggle box" data-toggle-obj="4">
                                     <div class="answer" data-toggle-target="4">
                                         <div>보완</div>
                                     </div>
                                 </div>
-                                할 수 있을까요?
+                                할 수<br> 있을까요?
                             </div>
                             <div class="item" data-type="toggleButton">
                                 해결 방법이 두 친구 모두에게

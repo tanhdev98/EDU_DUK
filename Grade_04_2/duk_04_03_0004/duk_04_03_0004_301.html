@@ -11,10 +11,12 @@
     <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
 
 
-    <style>#tsViewer .pageTitle,
+    <style>
+        #tsViewer .pageTitle,
         #tsViewer .contentsStudy {
-            height: 39px;
+            height: 40px;
         }
+
         header.twoLine .title-icon {
             top: -30px;
         }
@@ -181,6 +183,7 @@
 
         .pointContainer .dapCheckBtn {
             right: 28px;
+            bottom: 20px;
         }
     </style>
 </head>
@@ -189,7 +192,7 @@
     <div id="wrap" class="math">
         <header>
             <div class="title-icon pink" data-show="1">마음 <em>탄탄</em></div>
-            <div class="title-text">비밀 친구 활동을 한 소감을 나눠 봅시다.</div>
+            <div class="title-text">배려하는 마음을 다져 봅시다.</div>
         </header>
         <main>
 
@@ -229,15 +232,15 @@
                                     <div class="itemText">배려하는 행동을 할 것을 다짐하는 짧은 글을 쓰고, 친구들 앞에서 읽어 봅시다.</div>
                                     <div class="noteText noteLine pink">
                                         <div class="textareaWrap">
-                                            <textarea style="text-align: left; letter-spacing: -0.2px;" class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            <textarea style=" letter-spacing: -0.2px;"
+                                                class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
                                                 data-input-obj="" data-answer=" " onfocus=""
                                                 onblur="placeholder='직접 쓰기'" autocomplete="off"
                                                 spellcheck="false"></textarea>
                                         </div>
                                         <div class="text-exam flex-wrap">
                                             <div class="blueT">
-                                                <p style="text-align: left; letter-spacing: -0.2px;">저는 앞으로 배려를 실천하는 사람이 되기 위해 친구와 주위 사람의
-                                                    마음에 공감하고 필요를 찾아 용기 있게 행동하겠습니다.</p>
+                                                <p style="letter-spacing: -0.2px;">저는 앞으로 배려를 실천하는 사람이 되기 위해 친구와 주위 사람의 마음에 공감하고 필요를 찾아 용기 있게 행동하겠습니다.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -273,13 +276,12 @@
                                         <tr>
                                             <td class="first-column">
                                                 <div class="cho">
-                                                    <div class="choWrap">
+                                                    <div class="choWrap" style="margin-right: 7px; margin-top: -3px;">
                                                         <div class="choBox">
                                                             <span class="dir-rect" data-cho="ㅂ" data-letter="배"></span>
                                                             <span class="dir-rect" data-cho="ㄹ" data-letter="려"></span>
                                                         </div>
-                                                    </div>
-                                                    이야기하기
+                                                    </div> 이야기하기
                                                 </div>
                                             </td>
                                             <td>친구들과 둘러앉아 우리 반의 배려에 관해 이야기하기</td>
@@ -304,7 +306,7 @@
                                         <tr>
                                             <td class="first-column">
                                                 <div class="cho">
-                                                    <div class="choWrap">
+                                                    <div class="choWrap" style="margin-right: 7px; margin-top: -3px;">
                                                         <div class="choBox">
                                                             <span class="dir-rect" data-cho="ㅁ" data-letter="무"></span>
                                                             <span class="dir-rect" data-cho="ㅈ" data-letter="장"></span>
@@ -319,7 +321,7 @@
                                         </tr>
                                         <tr>
                                             <td class="first-column">시 이어 짓기</td>
-                                            <td>‘배려는 ___(이)다.’라는 표현을 모둠 친구들과 이어 쓰며 함께 배려 시 지어 보기
+                                            <td>‘배려는 <span style="display: inline-block; width: 60px; height: 4px; background-color: #000;"></span>(이)다.’라는 표현을 모둠 친구들과 이어 쓰며 함께 배려 시 지어 보기
                                             </td>
                                         </tr>
                                         <tr>
@@ -378,6 +380,7 @@
                 $(this).addClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+                KmAudioPlayer.buttonClick();
             });
 
 
