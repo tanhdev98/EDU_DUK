@@ -816,6 +816,14 @@
                 $('.popupItem[data-show="' + $data_popup + '"]').append('<div class="close-speech-button"></div>');
             });
 
+            $(document).on('click', '.close-speech-button', function () {
+                var _id = $(this).parent().attr('data-show');
+                $(this).parent().hide();
+                $(`[data-popup=${_id}]`).show().removeClass('ans').removeClass('blinkOn').removeClass('blinkOpacity');;
+                $(this).remove();
+            });
+
+            
         });
 
     </script>
