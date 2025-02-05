@@ -72,6 +72,10 @@
         #tsViewer .contentsStudy {
             height: 40px;
         }
+
+        .noteText .text-exam.flex-wrap {
+            padding-right: 20px;
+        }
     </style>
 </head>
 
@@ -221,67 +225,7 @@
                 KmAudioPlayer.buttonClick();
                 $('.popup_pages .textLine').val('');
             });
-
-
-            // kiểm tra thiết bị window ios
-            function detectOS() {
-                const userAgent = window.navigator.userAgent.toLowerCase();
-                const platform = window.navigator.platform.toLowerCase();
-
-                // Kiểm tra Windows
-                const isWindows =
-                    platform.includes('win') ||
-                    userAgent.includes('win');
-
-                // Kiểm tra macOS/iOS 
-                const isApple =
-                    platform.includes('mac') ||
-                    userAgent.includes('mac') ||
-                    userAgent.includes('iphone') ||
-                    userAgent.includes('ipad');
-
-                // Kiểm tra iOS cụ thể
-                const isIOS =
-                    /iPad|iPhone|iPod/.test(navigator.userAgent) &&
-                    !window.MSStream;
-
-                // Kiểm tra Android
-                const isAndroid =
-                    userAgent.includes('android');
-
-                // Kiểm tra Linux
-                const isLinux =
-                    platform.includes('linux') &&
-                    !isAndroid;
-
-                return {
-                    windows: isWindows,
-                    macOS: isApple && !isIOS,
-                    iOS: isIOS,
-                    android: isAndroid,
-                    linux: isLinux
-                };
-            }
-
-            // Sử dụng
-            const os = detectOS();
-            console.log(os);
-
-            // Kiểm tra Windows hoặc Android
-            if (os.windows || os.android) {
-                $('#iframe_note2').attr('src', './noteText2_w.html');
-            }
-            // Kiểm tra macOS hoặc iOS
-            else if (os.macOS || os.iOS) {
-                $('#iframe_note2').attr('src', './noteText2.html');
-            }
-            // Trường hợp còn lại (Linux)
-            else {
-                console.log('Hệ điều hành khác');
-            }
-
         });
-
         $(document).on('click', '.page_2 .writeBtn', function () {
             if ($(this).hasClass('reset')) {
                 $('.page_2 .underline').css('display', 'none');
@@ -291,6 +235,25 @@
                 $('.page_2 .noteText').addClass('noteLine').removeClass('noLine');
             }
         });
-    </script>
+        $(document).on('click', '.writeBtn', function () {
+            const blueT = document.querySelector('.blueT');
 
+            blueT.addEventListener('scroll', () => {
+                const scrollPosition = blueT.scrollTop;
+                const lineHeight = 60;
+                const lineCount = Math.floor(scrollPosition / lineHeight);
+                console.log(lineCount);
+                const existingLines = document.querySelectorAll('.line');
+                existingLines.forEach(line => line.remove());
+
+                for (let i = 1; i <= lineCount; i++) {
+                    const line = document.createElement('div');
+                    line.classList.add('line');
+                    line.style.top = `${i * lineHeight}px`;
+                    blueT.appendChild(line);
+                }
+            });
+        })
+
+    </script>
 </body>

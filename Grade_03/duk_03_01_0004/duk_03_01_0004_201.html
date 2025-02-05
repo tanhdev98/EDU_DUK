@@ -41,6 +41,10 @@
             width: max-content;
         }
 
+        .title-box {
+            margin-top: 50px;
+        }
+
         [data-popup-page="2"] {
             top: 123px;
             left: 708px;
@@ -147,10 +151,12 @@
         .page_1 .noteText.note-5 {
             height: 125px;
         }
-        .mgr-5{
+
+        .mgr-5 {
             margin-right: 5px;
         }
-        .blueT{
+
+        .blueT {
             margin-top: 0;
         }
     </style>
@@ -215,7 +221,8 @@
                                                 <img src="./images/duk_03_01_0004_201/line_yellow.png" alt="">
                                                 <img style="top: 201px;"
                                                     src="./images/duk_03_01_0004_201/line_yellow.png" alt="">
-                                                <img style="top: 255px;" src="./images/duk_03_01_0004_201/line_yellow.png" alt="">
+                                                <img style="top: 255px;"
+                                                    src="./images/duk_03_01_0004_201/line_yellow.png" alt="">
                                                 <p>나만의</p>
                                                 <p>긍정</p>
                                                 <p>좌우명</p>
@@ -354,7 +361,7 @@
             $(document).on('click', '.moveButtonContainer', function () {
                 if ($('.page_1 .innerTab_2').hasClass('on')) {
                     $('header .title-text .text-child').removeClass('mgr-5');
-                }else{
+                } else {
                     $('header .title-text .text-child').addClass('mgr-5');
                 }
             });
