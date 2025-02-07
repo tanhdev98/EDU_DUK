@@ -139,10 +139,11 @@
             height: 100px;
         }
 
-        .page_3 .click-finger-Btn.blinkOn.blinkOpacity{
+        .page_3 .click-finger-Btn.blinkOn.blinkOpacity {
             animation: clickInduceMotion 1s 3 ease-in !important;
             -webkit-animation: clickInduceMotion 1s 3 ease-in !important;
         }
+
         .page_3 .click-finger-Btn.item1 {
             position: absolute;
             right: 960px;
@@ -278,7 +279,6 @@
         .noteText.note2 .textareaWrap,
         .noteText.note3 .textareaWrap {
             height: 100%;
-            padding: 0;
         }
 
         .page_4 .noteText .textLine {
@@ -335,7 +335,8 @@
             cursor: pointer;
         }
 
-        .flex-star .star.active {
+        .flex-star .star.active,
+        .flex-star .star.show {
             width: 60px;
             height: 60px;
             background: url('./images/duk_04_03_0002_202/star-active.png') no-repeat center /100%;
@@ -426,7 +427,7 @@
                             <div class="text-exam flex-wrap">
                                 <div class="blueT">
                                     <p class="dot">하루 한 번 악수하기</p><br>
-                                    <p class="dot">‘좋아.’라는 말 세 번 하기</p><br>
+                                    <p class="dot">“좋아.”라는 말 세 번 하기</p><br>
                                     <p class="dot">눈을 맞추고 밝게 인사하기</p>
                                 </div>
                             </div>
@@ -550,7 +551,7 @@
                                         </div>
                                         <div class="box-question green">
                                             <div class="box-title">
-                                                친구가 좋아하는 것은?
+                                                친구가 필요한 것은?
                                             </div>
                                             <div class="box-content">
                                                 <div data-type="toggleButton">
@@ -632,7 +633,7 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td colspan="2" style="background-color: #FFEFDB;">
+                                            <td colspan="2">
                                                 <div class="noteText noLine note2">
                                                     <div class="textareaWrap">
                                                         <textarea class="textLine afterDisplay" type="text"
@@ -692,7 +693,7 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td colspan="2" style="background-color: #FFEFDB;">
+                                            <td colspan="2">
                                                 <div class="noteText noLine note2">
                                                     <div class="textareaWrap">
                                                         <textarea class="textLine afterDisplay" type="text"
@@ -750,8 +751,10 @@
                             style="width: 250px;position: absolute; left: 850px; top: 240px; z-index: 2;" alt="">
                         <img src="./images/duk_04_03_0002_202/letter.png"
                             style="width: 740px; margin-top: 25px; margin-left: 200px;" alt="">
-                        <div class="title_text">비밀 친구 활동 기간이 끝나면 나의 활동 일지를 친구에게 전해 줍니다. 서로가 모르게 배려를 주고받았던 장면을 떠올리며 감사의
-                            인사를 나눕니다. 일지 뒷면에는 친구에게 편지를 써 봅니다.</div>
+                        <div class="title_text">
+                            비밀 친구 활동 기간이 끝나면 나의 활동 일지를 친구에게 전해 줍니다. 서로가 모르게 배려를 주고받았던 장면을 떠올리며 감사
+                            인사를 나눕니다. 일지 뒷면에는 친구에게 편지를 써 봅니다.
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -793,7 +796,7 @@
                     <h2 class="blue">Tip</h2>
                     <div class="popup_contents ls1">
                         <p>
-                            비밀 친구 활동 기간을 정하고, 최선을 다해 활동해 봅시다. 활동 일지를 기록하여 특별한 추억을 만들어 봅시다.
+                            비밀 친구 활동 기간을 정하고 최선을 다해 활동해 봅시다. 활동 일지를 기록하며 친구와 특별한 추억을 만들어 봅시다.
                         </p>
                     </div>
                 </li>
@@ -903,11 +906,11 @@
 
             $(document).on('click', '.page_4 .writeBtn', function () {
                 if ($(this).hasClass('reset')) {
-                    $('.flex-star .star').addClass('active');
+                    $('.flex-star .star').addClass('show');
                     $('.star').css('pointer-events', 'none');
 
                 } else {
-                    $('.flex-star .star').removeClass('active');
+                    $('.flex-star .star').removeClass('show');
                     $('.star').css('pointer-events', 'auto');
                 }
 
