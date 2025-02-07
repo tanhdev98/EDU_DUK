@@ -183,15 +183,15 @@
 
 <body>
     <div id="wrap" class="math">
-        <header class="twoLine">
+        <header class="gap">
             <div class="title-icon blue" data-show="1">실천 <em>쑥쑥</em></div>
-            <div class="title-text">내가 할 수 있는 효의 실천 방법을 찾아보고 역할놀이로 표현해 봅시다.</div>
+            <div class="title-text">내가 효를 실천할 방법을 찾아보고 역할놀이로 표현해 봅시다.</div>
         </header>
         <main>
             <!-- FRAME OF PAGE -->
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
-                    <li data-hover="" data-text="내가 할 수 있는 효의 실천 방법을 찾아보고 역할놀이로 표현해 봅시다." class="twoLine">활동 1</li>
+                    <li data-hover="" data-text="내가 효를 실천할 방법을 찾아보고 역할놀이로 표현해 봅시다." data-gap="true">활동 1</li>
                     <li data-hover="" data-text="생활 속 효의 실천 방법을 알아봅시다.">활동 2</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
@@ -215,7 +215,7 @@
                                     2
                                 </div>
                                 <div class="text">
-                                    다른 모둠 친구들 앞에서 말을 하지 않고 몸으로만 그 상황을<br>
+                                    반 친구들 앞에서 말을 하지 않고 몸으로만 그 상황을<br>
                                     표현합니다.
                                 </div>
                             </li>
@@ -224,7 +224,7 @@
                                     3
                                 </div>
                                 <div class="text" style="letter-spacing: -2px;">
-                                    표현을 본 다른 모둠의 친구들이 어떤 상황인지 알아맞혀 봅니다.
+                                    표현을 본 반 친구들이 어떤 상황인지 알아맞혀 봅니다.
                                 </div>
                             </li>
                             <li>
@@ -232,8 +232,7 @@
                                     4
                                 </div>
                                 <div class="text" style="letter-spacing: -2px;">
-                                    몸으로 상황을 표현한 친구들은 반 친구들에게 효의 실천 방법을<br>
-                                    이야기합니다.
+                                    상황을 표현한 모둠은 반 친구들에게 효를 실천하는 방법을<br> 이야기합니다.
                                 </div>
                             </li>
                         </ul>
@@ -391,7 +390,7 @@
                                                     <img src="./images/duk_03_03_0002_202/img_04.png" />
                                                     <div class="box-text box4">
                                                         아빠, 어제<br>
-                                                        추구 연습 도와주셔서<br>
+                                                        축구 연습 도와주셔서<br>
                                                         감사해요.<br>
                                                         정말 즐거웠어요.
                                                     </div>
@@ -463,9 +462,9 @@
                     $('header .title-text').text($(this).data('text'));
                 }
                 if ($(this).attr('data-gap') == 'true') {
-                    $('header .title-text').addClass('gap');
+                    $('header').addClass('gap');
                 } else {
-                    $('header .title-text').removeClass('gap');
+                    $('header').removeClass('gap');
                 }
                 if ($(this).hasClass('twoLine')) {
                     $('header').addClass('twoLine');
@@ -499,6 +498,8 @@
                 if (parentDocument != null) {
                     parentDocument.parentNode.parentNode.style.zIndex = 120;
                 }
+                $('.popup_pages li[data-popup-page="1"] .moveButtonContainer').click();
+
             });
 
             $(document).on('click', '.popup_closeBtn', function () {

@@ -24,7 +24,7 @@
         }
 
         .noteText {
-            margin-top: 40px;
+            margin-top: -15px;
         }
 
         .noteText p.dot::after {
@@ -48,6 +48,23 @@
             background-color: #FFF5D1;
             border: 4px solid #FFE899;
         }
+
+        .page_1 .voca {
+            top: -156px;
+            left: 276px;
+            transition: none;
+        }
+
+        .page_1 .voca>span {
+            position: relative;
+            display: inline-block;
+        }
+
+        .popup_pages [data-popup-page="1"] {
+            top: 114px;
+            left: 296px;
+            width: 707px;
+        }
     </style>
 </head>
 
@@ -64,12 +81,12 @@
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1">
+                        <span class="voca" data-hover="" data-popup-btn="1"><span
+                                style="width: 22px; left: -20px;">『</span>사자소학<span style="width: 20px;">』</span></span>
                         <div class="basicSlider contentsBox doItContent" data-slide-container="">
                             <div class="moveButtonContainer" data-slide-btn-container="">
                                 <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
                                 <ul class="basicSlider_circle_tabs" data-tabs="">
-                                    <li data-hover=""></li>
-                                    <li data-hover=""></li>
                                     <li data-hover=""></li>
                                     <li data-hover=""></li>
                                     <li data-hover=""></li>
@@ -82,9 +99,10 @@
                                         <div class="top-text">
                                             효에 관한 글
                                         </div>
-                                        <p class="dot">부모님께서 나를 부르시거든 빨리 대답하고 달려 나아가라.</p>
-                                        <p class="dot">부모님께서 나에게 일을 시키시면 거스르지 말고 게을리하지 말아라.</p>
                                         <p class="dot">밖에 나갈 때는 부모님께 반드시 말씀드리고 돌아오면 부모님을 반드시 뵈어라.</p>
+                                        <p class="dot">부모님께서 입을 만한 옷이 없으면 내가 입을 옷을 생각하지 말고, 부모님께서 드실 음식이 없으면 내가 먹을 것을
+                                            생각하지 말아라.
+                                        </p>
                                     </div>
                                 </li>
                                 <li class="innerTab_2" data-quiz="toggle">
@@ -92,23 +110,13 @@
                                         <div class="top-text">
                                             효에 관한 글
                                         </div>
-                                        <p class="dot">부모님께서 입을 만한 옷이 없으면 내가 입을 옷을 생각하지 말고, 부모님께서 드실 음식이 없으면 내가 먹을 것을
-                                            생각하지 말아라.
-                                        </p>
                                         <p class="dot">내 신체와 머리털과 피부를 훼손하지도 말고 상하게 하지도 말아라.</p>
+                                        <p class="dot">
+                                            부모님께서 나를 사랑해 주시면 기뻐하며 잊지 말고, 부모님께서 나를 꾸짖으시면 반성하고 원망하지 말아라.
+                                        </p>
                                     </div>
                                 </li>
                                 <li class="innerTab_3" data-quiz="toggle">
-                                    <div class="noteText noLine pink">
-                                        <div class="top-text">
-                                            효에 관한 글
-                                        </div>
-                                        <p class="dot">
-                                            부모님께서 나를 사랑해 주시면 기뻐하며 잊지 말고 부모님께서 나를 꾸짖으시면 반성하고 원망하지 말아라.
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="innerTab_4" data-quiz="toggle">
                                     <div class="noteText noLine orange">
                                         <div class="top-text">
                                             우애에 관한 글
@@ -116,17 +124,7 @@
                                         <p class="dot">형제가 서로 화합하여 길을 갈 때는 기러기 떼처럼 나란히 가라.</p>
                                         <p class="dot">잠잘 때는 이불을 나란히 덮고 밥 먹을 때는 밥상을 함께 하라.</p>
                                         <p class="dot">형제에게 어려운 일이 있으면 근심하고 구해줄 것을 생각하라.</p>
-                                        <p class="dot">한 잔의 물이라도 반드시 나누어 마시고, 한 알의 밥이라도 반드시 나누어 먹어라.</p>
-                                    </div>
-                                </li>
-                                <li class="innerTab_5" data-quiz="toggle">
-                                    <div class="noteText noLine orange">
-                                        <div class="top-text">
-                                            우애에 관한 글
-                                        </div>
-                                        <p class="dot">
-                                            형이 비록 나를 꾸짖더라도 감히 대들거나 화내지 말고 동생에게 비록 잘못이 있더라도 모름지기 큰소리로 꾸짖지 말아라.
-                                        </p>
+                                        <p class="dot">물 한 잔이라도 반드시 나눠 마시고, 밥 한 알이라도 반드시 나눠 먹어라.</p>
                                     </div>
                                 </li>
                             </ul>
@@ -138,7 +136,17 @@
 
         <section class="popup_container" data-popup-container="">
             <ul class="popup_pages">
-
+                <li class="min word" data-popup-page="1" data-drag="">
+                    <h2>낱말 익히기</h2>
+                    <div class="popup_contents ls1">
+                        <p>
+                            <span style="color: #7142B8;">사자소학</span>
+                        </p>
+                        <p>
+                            우리가 배워서 반시 지켜야 할 규칙과 어른 을 공경하는 방법 등을 가르치는 글
+                        </p>
+                    </div>
+                </li>
             </ul>
         </section>
     </div>

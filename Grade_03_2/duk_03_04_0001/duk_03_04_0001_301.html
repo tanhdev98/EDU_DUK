@@ -240,7 +240,7 @@
         <header class="twoLine">
             <div class="title-icon yellow" data-show="1">생각 <em>똑똑</em></div>
             <div class="title-text">
-                ‘나와 같은 인공지능 로봇’이 있다면, 이 로봇과 인간으로서의 ‘진짜 나’는 어떤 점이 다른지 써 봅시다.
+                ‘나와 같은 인공지능 로봇’이 있다면 이 로봇과 ‘진짜 나’는 어떤 점이 다른지 써 봅시다.
             </div>
         </header>
         <main>
@@ -259,8 +259,11 @@
                             </div>
                             <div class="text-exam flex-wrap">
                                 <div class="blueT">
-                                    <iframe id="iframe_note1" src="./noteText1_w.html" frameborder="0" width="1220px"
-                                        height="355px"></iframe>
+                                    <!-- <iframe id="iframe_note1" src="./noteText1_w.html" frameborder="0" width="1220px"
+                                        height="355px"></iframe> -->
+                                    <p class="dot">저는 부모님의 자녀이지만, 인공지능은 그렇지 않습니다.</p>
+                                    <p class="dot">저는 진심으로 기쁘거나 슬퍼하지만, 인공지능 로봇은 그렇지 않습니다.</p>
+                                    <p class="dot">저는 하고 싶은 대로 행동하지만, 인공지능 로봇은 명령대로 행동합니다.</p>
                                 </div>
                             </div>
                         </div>
@@ -468,79 +471,7 @@
                 balloon_bottom: 220,
                 balloon_left: -196,
             });
-
-
-
-            // kiểm tra thiết bị window ios
-            function detectOS() {
-                const userAgent = window.navigator.userAgent.toLowerCase();
-                const platform = window.navigator.platform.toLowerCase();
-
-                // Kiểm tra Windows
-                const isWindows =
-                    platform.includes('win') ||
-                    userAgent.includes('win');
-
-                // Kiểm tra macOS/iOS 
-                const isApple =
-                    platform.includes('mac') ||
-                    userAgent.includes('mac') ||
-                    userAgent.includes('iphone') ||
-                    userAgent.includes('ipad');
-
-                // Kiểm tra iOS cụ thể
-                const isIOS =
-                    /iPad|iPhone|iPod/.test(navigator.userAgent) &&
-                    !window.MSStream;
-
-                // Kiểm tra Android
-                const isAndroid =
-                    userAgent.includes('android');
-
-                // Kiểm tra Linux
-                const isLinux =
-                    platform.includes('linux') &&
-                    !isAndroid;
-
-                return {
-                    windows: isWindows,
-                    macOS: isApple && !isIOS,
-                    iOS: isIOS,
-                    android: isAndroid,
-                    linux: isLinux
-                };
-            }
-
-            // Sử dụng
-            const os = detectOS();
-            console.log(os);
-
-            // Kiểm tra Windows hoặc Android
-            if (os.windows || os.android) {
-                $('#iframe_note1').attr('src', './noteText1_w.html');
-            }
-            // Kiểm tra macOS hoặc iOS
-            else if (os.macOS || os.iOS) {
-                $('#iframe_note1').attr('src', './noteText1.html');
-            }
-            // Trường hợp còn lại (Linux)
-            else {
-                console.log('Hệ điều hành khác');
-            }
-
         });
-
-
-        $(document).on('click', '.page_1 .writeBtn', function () {
-            if ($(this).hasClass('reset')) {
-                $('.page_1 .underline').css('display', 'none');
-                $('.page_1 .noteText').removeClass('noteLine').addClass('noLine');
-            } else {
-                $('.page_1 .underline').css('display', 'block');
-                $('.page_1 .noteText').addClass('noteLine').removeClass('noLine');
-            }
-        });
-
 
         // toggle
         $(document).on('click', '.toggle', function () {

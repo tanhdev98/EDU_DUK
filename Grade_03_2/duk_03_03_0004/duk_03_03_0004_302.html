@@ -390,6 +390,7 @@
 
                 if (id === 1) {
                     $(this).addClass('dragObjComplete');
+                    KmAudioPlayer.correct();
                 }
                 setTimeout(function () {
                     if ($('.drag-zone>.js-dragObj.dragObjComplete').length == 6) {

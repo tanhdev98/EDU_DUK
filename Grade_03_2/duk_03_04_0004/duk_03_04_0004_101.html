@@ -24,42 +24,72 @@
             padding: 20px 28px 0 28px;
         }
 
-        .videoBackground {
-            background: url('./images/duk_03_04_0004_101/img_bg.png') no-repeat center / 100% 100%;
+        .char-box-03 .balloon {
+            top: -235px;
+            left: -158px;
         }
 
-        .youtubeTitleWrap .mediaSubContainer .screenPlayBtn:hover {
-            background: #d04511 url('../ko/contents/images/icon/icon_play.svg') 28px center/27px no-repeat;
+        .char-box-04 .balloon {
+            top: -295px;
+            left: -160px;
         }
 
-        .aniContainer .mediaSubContainer {
-            pointer-events: none;
+        .char-box-05 .balloon {
+            top: -240px;
+            left: -210px;
         }
 
-        .youtubeTitleWrap .screenPlayBtn {
-            pointer-events: auto;
+        .contentsBox .basicSlider_slides {
+            z-index: 100;
         }
     </style>
 </head>
 
 <body>
     <div id="wrap" class="aniContainer">
-        <header class="twoLine">
+        <header>
             <div class="title-icon pink">마음 <em>똑똑</em></div>
-            <div class="title-text">다음 영상을 시청하고 인공지능 로봇을 올바르게 사용해야 하는 까닭을 생각해 봅시다.</div>
+            <div class="title-text">인공지능 로봇을 올바르게 사용해야 하는 까닭을 생각해 봅시다.</div>
         </header>
         <main>
             <!-- FRAME OF PAGE -->
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1" data-quiz="toggle">
-                        <div class="videoBackground youtubeTitleWrap">
-                            <div class="animationTitle">
-                                <div class="mediaSubContainer">
-                                    <h2>
-                                        <div class="orange">인공지능 윤리</div>의 필요성
-                                    </h2>
-                                    <button class="screenPlayBtn" title="재생" data-youtube-id="UrKtcGVWw-4"></button>
+                        <div class="tab-content-box">
+                            <div class="tab-content group-speech group-speech-02">
+                                <div class="char-box char-box-03" data-tail="tail-01" data-tail-direction="br">
+                                    <div class="char-image left"></div>
+                                    <div class="balloon green bottom">
+                                        <span>
+                                            인공지능 로봇을<br>
+                                            잘못 사용하면<br>
+                                            사람이 다칠 수 있습니다.
+                                        </span>
+                                        <div class="close-speech-button"></div>
+                                    </div>
+                                </div>
+                                <div class="char-box char-box-04" data-tail="tail-01" data-tail-direction="br">
+                                    <div class="char-image"></div>
+                                    <div class="balloon yellow bottom">
+                                        <span>인공지능 로봇에<br>
+                                            너무 많은 것을 의지하면<br>
+                                            사람과의 관계에<br>
+                                            문제가 생길 수 있습니다.
+                                        </span>
+                                        <div class="close-speech-button"></div>
+                                    </div>
+                                </div>
+                                <div class="char-box char-box-05" data-tail="tail-01" data-tail-direction="br">
+                                    <div class="char-image"></div>
+
+                                    <div class="balloon pink bottom">
+                                        <span>인공지능 로봇의 시스템 오류로<br>
+                                            잘못된 결과가<br>
+                                            생길 수 있습니다.
+                                        </span>
+                                        <div class="close-speech-button"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
