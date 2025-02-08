@@ -70,7 +70,7 @@
         }
 
         .noteText.note1 {
-            height: 65px;
+            height: 60px;
             width: 300px;
             padding: 0;
         }
@@ -382,8 +382,8 @@
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
                     <li data-hover="" data-text="소희와 은채 각각의 입장에서 생각해 볼까요?">활동 1</li>
-                    <li data-hover="" data-text="소희와 은채의 고민 해결을 위해 내가 생각한 해결 방법을 써 봅시다." class="twoLine">활동 2</li>
-                    <li data-hover="" data-text="각자 찾은 해결 방법의 장단점 및 보완 방법을 모둠 친구들과 이야기하고 가장 적절한 해결 방법을 찾아봅시다."
+                    <li data-hover="" data-text="소희와 은채의 고민을 해결하려고 내가 생각한 방법을 써 봅시다." data-gap="true">활동 2</li>
+                    <li data-hover="" data-text="각자 찾은 해결 방법의 장단점과 보완 방법을 모둠 친구들과 이야기하고 가장 적절한 해결 방법을 찾아봅시다."
                         class="twoLine">활동 3</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
@@ -462,7 +462,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <p>일이야.</p>
+                                        <p>마음이 들 거야.</p>
                                     </div>
                                     <p class="text text2">왜냐하면</p>
                                     <div class="noteText noteLine note2">
@@ -809,7 +809,7 @@
                         가장 적절한 해결 방법을 선택한 후 보완 방법을 생각해 볼 수도 있어요.
                     </div>
                 </li>
-                <li class="fullLine whole image" data-popup-page="5">
+                <li class="fullLine whole image" data-popup-page="5" style="transition: none;">
                     <div class="full_content">
                         <div class="basicSlider contentsBox doItContent" data-slide-container="">
                             <div class="moveButtonContainer" data-slide-btn-container="">
@@ -845,40 +845,40 @@
                                                         <tr>
                                                             <td>
                                                                 각자 솔직한 마음을
-                                                                편지로 써서 전달해요.
+                                                                편지로 써서 전달한다.
                                                             </td>
                                                             <td>
                                                                 편안하게
                                                                 글을 쓸 수 있고
-                                                                마음을 전할 수 있어요.
+                                                                마음을 전할 수 있다.
                                                             </td>
                                                             <td>
                                                                 글로 잘 표현하지
                                                                 못해서 오해가
-                                                                생길 수 있어요.
+                                                                생길 수 있다.
                                                             </td>
                                                             <td>
-                                                                우선 편지를 주고받고 꼭 만나서 푸는 과정을 추가해요.
+                                                                우선 편지를 주고받고 꼭 만나서 푸는 과정을 추가한다.
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>
                                                                 직접 만나<br>
                                                                 이야기를<br>
-                                                                나눠요
+                                                                나눈다
                                                             </td>
                                                             <td>
-                                                                누군가의 도움을 받지 않고 둘이 직접 해결할 수 있어요.
+                                                                누군가의 도움을 받지 않고 둘이 직접 해결할 수 있다.
                                                             </td>
                                                             <td>
                                                                 직접 만나서
                                                                 말하는 것이
-                                                                부담스러울 수 있어요.
+                                                                부담스러울 수 있다.
                                                             </td>
                                                             <td>
                                                                 다른 친구가
                                                                 중간에 도와줄 수
-                                                                있어요.
+                                                                도와준다.
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -912,24 +912,24 @@
                                                             <td>
                                                                 친구들의<br>
                                                                 도움을 얻어<br>
-                                                                화해해요.
+                                                                화해한다.
                                                             </td>
                                                             <td>
                                                                 직접 말하기<br>
                                                                 어려운 것을<br>
                                                                 전달해 줄 수<br>
-                                                                있어요.
+                                                                있다.
                                                             </td>
                                                             <td>
                                                                 친구들이 말을<br>
                                                                 잘못 전달해서<br>
                                                                 오해가 생길 수<br>
-                                                                있어요.
+                                                                있다.
                                                             </td>
                                                             <td>
                                                                 중요한 것은<br>
                                                                 쪽지에 써서<br>
-                                                                전달해요.
+                                                                전달한다.
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -969,9 +969,9 @@
                     $('header .title-text').text($(this).data('text'));
                 }
                 if ($(this).attr('data-gap') == 'true') {
-                    $('header .title-text').addClass('gap');
+                    $('header').addClass('gap');
                 } else {
-                    $('header .title-text').removeClass('gap');
+                    $('header').removeClass('gap');
                 }
                 if ($(this).hasClass('twoLine')) {
                     $('header').addClass('twoLine');
@@ -1016,7 +1016,7 @@
             });
 
             $(document).on('click', '.popup_pages .basicSlider_circle_tabs li, .popup_pages .basicSlider_btn', function () {
-                $(this).closest('.whole').addClass('on');
+                $(this).closest('.whole[data-popup-page="5"]').addClass('on');
             });
 
         });

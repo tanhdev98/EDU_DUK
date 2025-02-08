@@ -207,7 +207,7 @@
 
         .page_3 .wrapItem img {
             width: 100%;
-            height: 410px;
+            height: 360px;
             object-fit: contain;
         }
 
@@ -221,13 +221,13 @@
 
         .box-click1 {
             top: 180px;
-            left: 410px;
+            left: 430px;
             background: url(../ko/contents/images/button/btn_speech_balloon_right1.png) no-repeat;
         }
 
         .box-click2 {
-            top: 190px;
-            left: 850px;
+            top: 180px;
+            left: 830px;
             background: url(../ko/contents/images/button/btn_speech_balloon_left1.png) no-repeat;
         }
 
@@ -250,8 +250,8 @@
         }
 
         .popupItem1 {
-            top: 55px;
-            left: 0;
+            top: -5px;
+            left: 20px;
             border: 4px solid #A8D6F6;
             background: #E7F4F9;
             letter-spacing: -1px;
@@ -266,8 +266,8 @@
         }
 
         .popupItem2 {
-            top: 55px;
-            left: 835px;
+            top: -5px;
+            left: 855px;
             background: #FFEEF3;
             border: 4px solid #ffc4c9;
             letter-spacing: -1px;
@@ -382,6 +382,10 @@
         .lt-sp {
             letter-spacing: -1px;
         }
+
+        header.threeLine .title-icon {
+            top: -60px;
+        }
     </style>
 </head>
 
@@ -399,8 +403,9 @@
                 <ul class="basicSlider_tabs" data-tabs="">
                     <li data-hover="" data-text="아래의 질문을 참고하여 고민 해결을 위한 질문을 만들어 봅시다." data-gap="true">활동 1</li>
                     <li data-hover="" data-text="아래의 질문에 대해 생각하면서 선생님과 함께 나의 질문을 살피고 다듬어 봅시다." class="twoLine">활동 2</li>
-                    <li data-hover="" data-text="소희와 은채의 고민을 해결할 수 있는 대표 질문 하나를 정하고 모둠 토의를 하며 자유롭게 의견을 나누어 봅시다."
-                        class="twoLine">활동 3</li>
+                    <li data-hover=""
+                        data-text="태오네 반 친구들이 만든 질문, 각자 만든 질문 중 소희와 은채의 고민을 해결할 수 있는 대표 질문 하나를 정하고 모둠 토의를 하며 자유롭게 의견을 나눠 봅시다."
+                        class="threeLine">활동 3</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1" data-quiz="toggle">
@@ -412,7 +417,7 @@
                             </div>
                             <div class="wrapText">
                                 <p class="dot">
-                                    친구 사이에서는 꼭 사실만을 말해야 할까?
+                                    친구 사이에서는 꼭 사실만 말해야 할까?
 
                                 </p>
                                 <p class="dot">
@@ -657,11 +662,11 @@
                                                             </div>
                                                             <div class="text-exam flex-wrap">
                                                                 <div class="blueT">
-                                                                    <p class="dot" style="letter-spacing: -1px;">
-                                                                        사실을 숨긴 것은 내 마음이 편하고자 한 것이니 배려는 아님.
-                                                                    </p>
                                                                     <p class="dot">사실대로 말했을 때 친구가 상처받을 수 있음을 안다면 말하지
                                                                         않는 것이 배려일 수도 있음.
+                                                                    </p>
+                                                                    <p class="dot" style="letter-spacing: -1px;">
+                                                                        사실을 숨긴 것은 내 마음이 편하고자 한 것이니 배려는 아님.
                                                                     </p>
                                                                 </div>
                                                             </div>
@@ -771,7 +776,14 @@
                 }
                 if ($(this).hasClass('twoLine')) {
                     $('header').addClass('twoLine');
-                } else {
+                    $('header').removeClass('threeLine');
+                }
+                else if ($(this).hasClass('threeLine')) {
+                    $('header').removeClass('twoLine');
+                    $('header').addClass('threeLine');
+                }
+                else {
+                    $('header').removeClass('threeLine');
                     $('header').removeClass('twoLine');
                 }
             });
@@ -779,7 +791,7 @@
             $(document).on('click', '.box-click', function () {
                 KmAudioPlayer.buttonClick();
                 // $('.popupItem').hide();
-                $('.box-click').show();
+                // $('.box-click').show();
                 var $data_popup = $(this).attr('data-popup');
                 var $currentPopup = $('.popupItem[data-show="' + $data_popup + '"]');
                 var maxZIndex = Math.max.apply(null, $('.popupItem:visible').map(function () {
