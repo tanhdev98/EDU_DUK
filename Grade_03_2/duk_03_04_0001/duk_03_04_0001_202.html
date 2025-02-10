@@ -348,6 +348,10 @@
             cursor: pointer;
             display: inline-block;
         }
+
+        .ltsp {
+            letter-spacing: -2px;
+        }
     </style>
 </head>
 
@@ -735,6 +739,11 @@
             $(document).on('click', '.basicSlider_tabs li', function () {
                 if ($(this).data('text')) {
                     $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).data('text') === '‘나와 똑같이 생긴 인공지능 로봇’에게 위의 정보를 모두 입력한다면 이 로봇은 ‘나’와 같다고 할 수 있을까요?') {
+                    $('#wrap header').addClass('ltsp');
+                } else {
+                    $('#wrap header').removeClass('ltsp');
                 }
                 if ($(this).attr('data-gap') == 'true') {
                     $('header .title-text').addClass('gap');
