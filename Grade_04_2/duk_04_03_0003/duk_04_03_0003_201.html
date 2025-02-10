@@ -806,8 +806,11 @@
                 $('[data-active="on"] .toggle').addClass('complete');
             });
             $(document).on('click', '.page_2 .additional-question', function () {
-                $('data-popup-page="2"').addClass('on');
+                $('data-popup-page="1"').addClass('on');
                 $(this).addClass('popupOn');
+            });
+            $(document).on('click', '[data-popup-page="1"] .popup_closeBtn', function () {
+                $('data-popup-page="2"').removeClass('on');
             });
         });
     </script>
