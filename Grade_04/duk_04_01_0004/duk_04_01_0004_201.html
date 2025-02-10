@@ -88,6 +88,21 @@
         #tsViewer .contentsStudy {
             height: 40px;
         }
+
+        .page_1 .underLine {
+            position: relative;
+            border-bottom: none;
+        }
+
+        .page_1 .underLine::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 2px;
+            width: 102%;
+            height: 1px;
+            background-color: #cccccc;
+        }
     </style>
 </head>
 
@@ -139,10 +154,11 @@
                                     data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
                                     autocomplete="off" spellcheck="false"></textarea>
                             </div>
-                            <div class="text-exam flex-wrap">
-                                <div class="blueT" id="blueT">
-                                    <iframe id="iframe_note1" src="./noteText1.html" frameborder="0" width="1220px"
-                                        height="360px"></iframe>
+                            <div class="text-exam flex-wrap" style=" overflow-y: scroll; height: 100%; resize: none;">
+                                <div class="blueT" id="text" style=" width: calc(100% - 20px);">
+                                    산신령이 나무꾼에게 “이 금도끼가 네 금도끼냐?”라고 묻자, 나무꾼은 고민에 빠졌습니다. 금도끼를 갖고 싶은 욕심이 있었기 때문입니다. 그러나 나무꾼은 결심했다는 듯 고개를 저으며 산신령을 바라보고 말했습니다. “아니요, 산신령님. 그 금도끼는 제 도끼가 아닙니다. 사실 금도끼가 갖고 싶은 마음에 순간 거짓말을 하려고 했어요. 죄송합니다.” 나무꾼의 대답을 들은 산신령은 웃으며 말했습니다. “그래, 욕심을 버리고 솔직하게 말하다니 참 용기 있는 사람이구나.” 나무꾼과 산신령은 눈을 마주치며 환하게 웃었습니다.
+                                    <!-- <iframe id="iframe_note1" src="./noteText1.html" frameborder="0" width="1220px"
+                                        height="360px"></iframe> -->
                                 </div>
                             </div>
                         </div>
@@ -229,11 +245,71 @@
         $(document).on('click', '.page_1 .writeBtn', function () {
             if ($(this).hasClass('reset')) {
                 $('.page_1 .underline').css('display', 'none');
+                $('.page_1 .noteText').removeClass('noteLine').addClass('noLine');
             } else {
                 $('.page_1 .underline').css('display', 'block');
-
+                $('.page_1 .noteText').addClass('noteLine').removeClass('noLine');
             }
         });
+        $(document).on('click', '.writeBtn', function () {
+            const blueT = document.querySelector('.blueT');
+
+            blueT.addEventListener('scroll', () => {
+                const scrollPosition = blueT.scrollTop;
+                const lineHeight = 60;
+                const lineCount = Math.floor(scrollPosition / lineHeight);
+                console.log(lineCount);
+                const existingLines = document.querySelectorAll('.line');
+                existingLines.forEach(line => line.remove());
+
+                for (let i = 1; i <= lineCount; i++) {
+                    const line = document.createElement('div');
+                    line.classList.add('line');
+                    line.style.top = `${i * lineHeight}px`;
+                    blueT.appendChild(line);
+                }
+            });
+        })
+        const textElement = document.getElementById('text');
+        const content = textElement.innerText;
+        textElement.innerHTML = '';
+
+        const container = document.createElement('div');
+        document.body.appendChild(container);
+
+        const tempSpan = document.createElement('span');
+        tempSpan.style.visibility = 'hidden';
+        tempSpan.style.position = 'absolute';
+        tempSpan.style.whiteSpace = 'nowrap';
+        tempSpan.style.fontSize = '45px';
+        tempSpan.style.lineHeight = '60px';
+        tempSpan.style.letterSpacing = '1px';
+        container.appendChild(tempSpan);
+
+        let currentLine = '';
+        for (let char of content) {
+            tempSpan.innerText = currentLine + char;
+            if (tempSpan.offsetWidth > textElement.offsetWidth) {
+                const lineDiv = document.createElement('span');
+                lineDiv.className = 'underLine';
+                lineDiv.innerText = currentLine;
+                textElement.appendChild(lineDiv);
+                currentLine = char;
+            } else {
+                currentLine += char;
+            }
+        }
+        if (currentLine) {
+            const lineDiv = document.createElement('span');
+            lineDiv.className = 'underLine';
+            lineDiv.innerText = currentLine;
+            textElement.appendChild(lineDiv);
+        }
+        container.remove();
+        const allUnderLines = textElement.querySelectorAll('.underLine');
+        if (allUnderLines.length > 0) {
+            allUnderLines[0].remove();
+        }
     </script>
 </body>
 
