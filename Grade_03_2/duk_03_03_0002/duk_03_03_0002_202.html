@@ -524,6 +524,11 @@
                 loadScriptFile("common/js/zoomImage.js", function () {
                     zoomInstance = new ZoomImage(QS('.popup_pages li[data-popup-page="1"] .basicSlider_slides li:nth-child(' + $idx + ')').querySelector(".zoomContainer"));
                 });
+                setTimeout(function () {
+                    if ($('.innerTab_1 .zoomController').length > 1) {
+                        $('.innerTab_1 .zoomController').first().remove();
+                    }
+                }, 300)
             });
 
             $(document).on('click', '.imgWrap.popBtn', function () {
