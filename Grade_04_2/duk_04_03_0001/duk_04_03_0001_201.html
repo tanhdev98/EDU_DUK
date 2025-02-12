@@ -398,7 +398,7 @@
                 $('[data-popup-page="1"]').addClass('on');
                 var parentDocument = parent.document.querySelector('iframe');
                 if (parentDocument != null) {
-                    parentDocument.parentNode.parentNode.style.zIndex = 120;
+                    parentDocument.parentNode.parentNode.parentNode.style.zIndex = 120;
                 }
                 $('.popup_pages li[data-popup-page="1"] .moveButtonContainer').click();
 
@@ -407,7 +407,7 @@
             $(document).on('click', '.popup_closeBtn', function () {
                 const parentDocument = parent.document.querySelector('iframe');
                 if (parentDocument != null) {
-                    parentDocument.parentNode.parentNode.style.zIndex = 0;
+                    parentDocument.parentNode.parentNode.parentNode.style.zIndex = 0;
                 }
             });
 
