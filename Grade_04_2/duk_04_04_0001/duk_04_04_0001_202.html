@@ -24,7 +24,7 @@
         /* Page 1 */
         .wrapImg {
             width: 80%;
-            height: 270px;
+            height: 240px;
             position: relative;
             margin: 0 auto;
         }
@@ -56,11 +56,14 @@
             position: absolute;
             top: 80px;
             left: 50px;
+            line-height: 40px;
         }
 
         .wrapImg .wrapText p.dot {
             padding-left: 30px;
             position: relative;
+            font-size: 40px;
+            top: 5px;
         }
 
         .wrapImg .wrapText p.dot:before {
@@ -83,7 +86,7 @@
             padding: 10px 20px;
             border-radius: 15px;
             background-color: #f7f7f7;
-            margin-top: 20px;
+            margin-top: 15px;
         }
 
         .wrapBoxInput .textleft {
@@ -393,9 +396,9 @@
 
 <body>
     <div id="wrap" class="math">
-        <header class="gap">
+        <header class="twoLine">
             <div class="title-icon yellow" data-show="1">생각 <em>쑥쑥</em></div>
-            <div class="title-text lt-sp">아래의 질문을 참고하여 고민 해결을 위한 질문을 만들어 봅시다.</div>
+            <div class="title-text lt-sp">아래의 질문을 참고하여 소희와 은채의 고민 해결을 돕는 질문을 만들어 봅시다.</div>
         </header>
         <main>
 
@@ -403,7 +406,7 @@
             <!-- FRAME OF PAGE -->
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
-                    <li data-hover="" data-text="아래의 질문을 참고하여 고민 해결을 위한 질문을 만들어 봅시다." data-gap="true">활동 1</li>
+                    <li data-hover="" data-text="아래의 질문을 참고하여 소희와 은채의 고민 해결을 돕는 질문을 만들어 봅시다." class="twoLine">활동 1</li>
                     <li data-hover="" data-text="아래의 질문에 대해 생각하면서 선생님과 함께 나의 질문을 살피고 다듬어 봅시다." class="twoLine">활동 2</li>
                     <li data-hover=""
                         data-text="태오네 반 친구들이 만든 질문, 각자 만든 질문 중 소희와 은채의 고민을 해결할 수 있는 대표 질문 하나를 정하고 모둠 토의를 하며 자유롭게 의견을 나눠 봅시다."
@@ -419,8 +422,7 @@
                             </div>
                             <div class="wrapText">
                                 <p class="dot">
-                                    친구 사이에서는 꼭 사실만 말해야 할까?
-
+                                    친구 사이는 꼭 사실만 말해야 할까?
                                 </p>
                                 <p class="dot">
                                     친구에게 사실을 숨기는 것이 배려일까?
@@ -585,7 +587,10 @@
                                     <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="2"
                                         style="margin-top: -10px;"></div>
                                     <div class="wrapItem">
-                                        <div class="topText">친구에게 사실을 숨기는 것이 배려일까?</div>
+                                        <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+                                            <div class="exam bullet" style="scale: 1.25;margin-top: 0.6em;">예</div>
+                                            <div class="topText">친구에게 사실을 숨기는 것이 배려일까?</div>
+                                        </div>
                                         <img src="./images/duk_04_04_0001_202/img_02.png" />
                                         <div class="box-click box-click1" data-popup="1"></div>
                                         <div class="box-click box-click2" data-popup="2"></div>
@@ -599,7 +604,7 @@
                                             <span>
                                                 의견 잘 들었습니다. 하지만 저는 사실을 숨기는 것은 배려가 아니라고 생각합니다. <span
                                                     style="letter-spacing: -4.6px;">왜냐하면 사실을 숨긴 것은</span> 친구를 위해서라기보다
-                                                나의 마음이 편하고자 한 것이기 때문입니다.
+                                                나의 마음이 편하려고 한 것이기 때문입니다.
                                             </span>
                                         </div>
                                     </div>
@@ -664,7 +669,9 @@
                                                             </div>
                                                             <div class="text-exam flex-wrap">
                                                                 <div class="blueT">
-                                                                    <p class="dot" style="line-height: 50px; margin-top: 15px;">사실대로 말했을 때 친구가 상처받을 수 있음을 안다면 말하지
+                                                                    <p class="dot"
+                                                                        style="line-height: 50px; margin-top: 15px;">
+                                                                        사실대로 말했을 때 친구가 상처받을 수 있음을 안다면 말하지
                                                                         않는 것이 배려일 수도 있음.
                                                                     </p>
                                                                     <p class="dot" style="letter-spacing: -1px;">

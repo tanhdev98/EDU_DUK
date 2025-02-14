@@ -441,7 +441,7 @@
                             </div>
                         </div>
                         <div class="buttonContainer">
-                            <button class="writeBtn" data-answer-btn=""></button>
+                            <button class="examViewBtn" data-answer-btn=""></button>
                         </div>
                     </li>
                     <li class="page_3">
@@ -729,6 +729,14 @@
             });
             $(document).on('click', '.additional-question', function () {
                 $('[data-type="toggleButton"][data-active="on"] .toggle').addClass('complete');
+            });
+            $(document).on('click', '.page_2 .examViewBtn', function () {
+
+                if ($(this).hasClass('reset')) {
+                    $('.page_2 .noteText .text-exam.flex-wrap').css('display', 'flex');
+                } else {
+                    $('.page_2 .noteText .text-exam.flex-wrap').css('display', 'none');
+                }
             });
         });
 
