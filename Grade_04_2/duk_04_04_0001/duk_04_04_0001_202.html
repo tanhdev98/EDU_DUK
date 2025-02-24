@@ -800,8 +800,6 @@
 
             $(document).on('click', '.box-click', function () {
                 KmAudioPlayer.buttonClick();
-                // $('.popupItem').hide();
-                // $('.box-click').show();
                 var $data_popup = $(this).attr('data-popup');
                 var $currentPopup = $('.popupItem[data-show="' + $data_popup + '"]');
                 var maxZIndex = Math.max.apply(null, $('.popupItem:visible').map(function () {
@@ -809,7 +807,6 @@
                 }).get());
                 $currentPopup.css('z-index', maxZIndex + 1).show();
                 $(this).hide();
-                // $('.popupItem .close-speech-button').remove();
                 $('.popupItem[data-show="' + $data_popup + '"]').append('<div class="close-speech-button"></div>');
             });
             $(document).on('click', '.close-speech-button', function () {
