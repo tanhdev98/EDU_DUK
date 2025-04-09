@@ -253,7 +253,7 @@
         }
 
         .popupItem1 {
-            top: -5px;
+            top: 55px;
             left: 20px;
             border: 4px solid #A8D6F6;
             background: #E7F4F9;
@@ -269,7 +269,7 @@
         }
 
         .popupItem2 {
-            top: -5px;
+            top: 55px;
             left: 835px;
             background: #FFEEF3;
             border: 4px solid #ffc4c9;
@@ -587,7 +587,8 @@
                                     <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="2"
                                         style="margin-top: -10px;"></div>
                                     <div class="wrapItem">
-                                        <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+                                        <div
+                                            style="display: flex; justify-content: center; align-items: center; gap: 10px;">
                                             <div class="exam bullet" style="scale: 1.25;margin-top: 0.6em;">예</div>
                                             <div class="topText">친구에게 사실을 숨기는 것이 배려일까?</div>
                                         </div>
@@ -595,15 +596,15 @@
                                         <div class="box-click box-click1" data-popup="1"></div>
                                         <div class="box-click box-click2" data-popup="2"></div>
                                         <div class="popupItem purple popupItem1" data-show="1">
-                                            <span>
+                                            <span style="font-size: 35px;">
                                                 저는 친구의 마음을 생각해서 사실을 말하지 않은 것을 배려라고 생각합니다. 그 까닭은 사실대로 말했을 때 친구가 상처받을 수 있기
                                                 때문입니다.
                                             </span>
                                         </div>
                                         <div class="popupItem purple popupItem2" data-show="2">
-                                            <span>
-                                                의견 잘 들었습니다. 하지만 저는 사실을 숨기는 것은 배려가 아니라고 생각합니다. <span
-                                                    style="letter-spacing: -4.6px;">왜냐하면 사실을 숨긴 것은</span> 친구를 위해서라기보다
+                                            <span style="font-size: 35px;">
+                                                의견 잘 들었습니다. 하지만 저는 사실을 숨기는 것은 배려가 아니라고 생각합니다.
+                                                <br>왜냐하면 사실을 숨긴 것은<br> 친구를 위해서라기보다
                                                 나의 마음이 편하려고 한 것이기 때문입니다.
                                             </span>
                                         </div>
@@ -799,8 +800,6 @@
 
             $(document).on('click', '.box-click', function () {
                 KmAudioPlayer.buttonClick();
-                // $('.popupItem').hide();
-                // $('.box-click').show();
                 var $data_popup = $(this).attr('data-popup');
                 var $currentPopup = $('.popupItem[data-show="' + $data_popup + '"]');
                 var maxZIndex = Math.max.apply(null, $('.popupItem:visible').map(function () {
@@ -808,7 +807,6 @@
                 }).get());
                 $currentPopup.css('z-index', maxZIndex + 1).show();
                 $(this).hide();
-                // $('.popupItem .close-speech-button').remove();
                 $('.popupItem[data-show="' + $data_popup + '"]').append('<div class="close-speech-button"></div>');
             });
             $(document).on('click', '.close-speech-button', function () {
