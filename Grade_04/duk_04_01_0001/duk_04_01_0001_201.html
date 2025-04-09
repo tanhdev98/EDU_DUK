@@ -274,6 +274,10 @@
         #wrap {
             box-shadow: none;
         }
+
+        header.twoLine .title-icon {
+            top: -20px;
+        }
     </style>
 </head>
 
@@ -288,7 +292,8 @@
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
                     <li data-hover="" data-text="두 친구의 일기를 읽고 정직의 의미를 생각해 봅시다.">물음 1</li>
-                    <li data-hover="" data-text="정직한 사람은 어떤 마음과 자세로 살아가는 사람일까요?" data-gap="true">물음 2</li>
+                    <li data-hover="" data-text="정직한 사람은 어떤 마음과 자세로 살아가는 사람일까요?" class="twoLine" data-gap="true">물음 2
+                    </li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page page_1">
@@ -382,10 +387,12 @@
                             <img src="./images/duk_04_01_0001_201/img_03.png" />
                             <div class="topText text1">믿음이 오가는 분실물함</div>
                             <div class="detail">
-                                우리 학교 복도엔 주인을 잃은 물건을 보관하는 분실물함이 있다. 누군가 분실물함을 지키거나 누구의 물건인지 묻지 않아도 물건의 주인이 아니면 누구도 분실물함에
-                                함부로 손대지 않는다. “저건 내 거야.”라며 주인 행세를 하는 친구도 없다.<br>
-                                ‘나도 학교 어딘가에서 물건을 잃어버린다면, 물건을 찾은 친구가 분실물함에 넣어 주겠지?’ 나는 우리의 정직한 마음과 행동으로 지켜지는 이 분실물 함이
-                                자랑스럽다.
+                                <p style="text-indent: 40px;">우리 학교 복도엔 주인을 잃은 물건을 보관하는 분실물함이 있다. 누군가 분실물함을 지키거나 누구의
+                                    물건인지 묻지 않아도 물건의 주인이 아니면 누구도 분실물함에
+                                    함부로 손대지 않는다. “저건 내 거야.”라며 주인 행세를 하는 친구도 없다.</p>
+                                <p style="text-indent: 40px;">‘나도 학교 어딘가에서 물건을 잃어버린다면, 물건을 찾은 친구가 분실물함에 넣어 주겠지?’ 나는 우리의
+                                    정직한 마음과 행동으로 지켜지는 이 분실물함이
+                                    자랑스럽다.</p>
                             </div>
                         </div>
                     </div>
@@ -396,12 +403,15 @@
                             <img src="./images/duk_04_01_0001_201/img_04.png" />
                             <div class="topText text2">후회 없는 나의 선택</div>
                             <div class="detail">
-                                우리 반은 늘 자신의 시험지를 스스로 채점한다. 지난번 시험을 망쳐서 오늘은 꼭 잘 보고 싶었는데 또 실수를 하고 말았다.<br>
-                                ‘이건 계산 실수야. 다 아는 문제잖아. 답을 살짝 고치면 안 될까? 다음에 다시 안 틀리면 되잖아…….’<br>
-                                주위를 둘러봤을 때 아무도 나를 보고 있지 않았다. 내가 쓴 답을 고치려고 지우개를 드는 순간 가슴이 방망이질하듯 뛰었고 얼굴까지 화끈거렸다. 내 마음에 나쁜
-                                마음이
-                                들어올 것만 같았다. 결국 나는 지우개를 내려놓고 틀린 문제 위에 틀렸다는 표시를 했다. 점수가 조금 부끄럽고, 혼날까 봐 걱정도 됐지만 후련한 마음이
-                                들었다.
+                                <p style="text-indent: 40px;">우리 반은 늘 자신의 시험지를 스스로 채점한다. 지난번 시험을 망쳐서 오늘은 꼭 잘 보고 싶었는데 또
+                                    실수를 하고 말았다.</p>
+                                <p style="text-indent: 40px;">‘이건 계산 실수야. 다 아는 문제잖아. 답을 살짝 고치면 안 될까? 다음에 다시 안 틀리면
+                                    되잖아…….’<br>
+                                    주위를 둘러봤을 때 아무도 나를 보고 있지 않았다. 내가 쓴 답을 고치려고 지우개를 드는 순간 가슴이 방망이질하듯 뛰었고 얼굴까지 화끈거렸다. 내
+                                    마음에 나쁜
+                                    마음이
+                                    들어올 것만 같았다. 결국 나는 지우개를 내려놓고 틀린 문제 위에 틀렸다는 표시를 했다. 점수가 조금 부끄럽고, 혼날까 봐 걱정도 됐지만 후련한 마음이
+                                    들었다.</p>
                             </div>
                         </div>
                     </div>
@@ -433,9 +443,9 @@
                     $('header .title-text').text($(this).data('text'));
                 }
                 if ($(this).attr('data-gap') == 'true') {
-                    $('header .title-text').addClass('gap');
+                    $('header').addClass('gap');
                 } else {
-                    $('header .title-text').removeClass('gap');
+                    $('header').removeClass('gap');
                 }
             });
 

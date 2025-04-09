@@ -404,7 +404,7 @@
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
                     <li data-hover="" data-text="우리 주위에서 배려해야 할 대상을 찾아봅시다." data-gap="true">활동 1</li>
-                    <li data-hover="" data-text="배려할 때 고민해야 할 것을 생각해 봅시다.">활동 2</li>
+                    <li data-hover="" data-text="배려할 때 고민해야 할 것을 알아 봅시다.">활동 2</li>
                     <li data-hover="" data-text="배려를 받았을 때 꼭 해야 할 것을 알아봅시다." data-gap="true">활동 3</li>
                     <li data-hover="" data-text="내가 실천할 수 있는 배려에는 무엇이 있는지 생각해 봅시다." data-gap="true">활동 4</li>
                 </ul>
@@ -420,7 +420,7 @@
                                 data-popup="3"></span>
                             <div class="popupItem purple popupItem1" data-show="1">
                                 <span>부모님, 조부모님,<br>
-                                    반려동물, 반려 식물 등
+                                    애완동물, 반려 식물 등
                                 </span>
                             </div>
                             <div class="popupItem purple popupItem2" data-show="2">
@@ -466,7 +466,7 @@
                                             <li class="innerTab innerTab_1">
                                                 <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
                                                 <p class="arrow">
-                                                    우리 주위에는 배려해야 하는 상황이 많습니다. <br>하지만 상황에 따라 배려의 정도와 방식이 달라질 수 있으므로<br> 배려가 꼭 필요한 방식인지 살펴봐야 합니다.
+                                                    우리 주위에는 배려해야 하는 상황이 많습니다. <br>하지만 상황에 따라 배려의 정도와 방식이 달라질 수 있으므로<br> 배려가 꼭 필요한 상황인지 살펴봐야 합니다.
                                                 </p>
                                             </li>
                                             <li class="innerTab innerTab_2">
@@ -611,7 +611,7 @@
                                     <div class="wrapImg">
                                         <div class="top-text">
                                             <div class="exam bullet">예</div>
-                                            이웃을 위해 버려진 쓰레기를 주워서 쓰레기통에 넣어요.
+                                            이웃을 위해 길에 버려진 쓰레기를 주워서 쓰레기통에 넣어요.
                                         </div>
                                         <img src="./images/duk_04_03_0003_201/img_03.png" />
                                         <div class="text text2">동네에서</div>
@@ -665,8 +665,6 @@
                                             <div class="text-exam flex-wrap">
                                                 <div class="blueT">
                                                     <p class="dot" style="top: -81px;">문을 열고 지나갈 때 뒷사람을 위해 살짝 잡아 줘요.</p>
-                                                    <p class="dot" style="top: -81px;">문을 열고 잠깐 잡아 뒷사람이 문에 부딪히지 않게 배려해요.
-                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -809,7 +807,10 @@
                 $(this).addClass('popupOn');
             });
             $(document).on('click', '[data-popup-page="1"] .popup_closeBtn', function () {
-                $('data-popup-page="2"').removeClass('on');
+                $('[data-popup-page="2"]').removeClass('on');
+            });
+            $(document).on('click', '[data-popup-page="2"] .popup_closeBtn', function () {
+                $('[data-popup-page="1"]').removeClass('on');
             });
 
             $(document).on('click', '.popBtn', function () {

@@ -133,6 +133,8 @@
             transform: translate(1000%, 1000%);
         }
 
+        .js-dropArea.a2,
+        .js-dropArea.a3,
         .js-dropArea.a1 {
             transform: translate(0%, 0%) !important;
         }
@@ -340,13 +342,13 @@
                                         <div class="box-item yellow">
                                             <p>인공지능 로봇을 사용할</p>
                                             <div class="flex" style="margin-top: 0;">
-                                                <span>때의</span><span class="js-dropArea a1 clearArea boxDrag"
-                                                    data-drop-area-answer="3"></span>
+                                                <span>때의</span><span class="js-dropArea a2 clearArea boxDrag"
+                                                    data-drop-area-answer="3, 1"></span>
                                                 <span>과</span>
                                             </div>
                                             <div class="flex" style="margin-top: 0;">
-                                                <span class="js-dropArea a1 clearArea boxDrag"
-                                                    data-drop-area-answer="1"></span>
+                                                <span class="js-dropArea a3 clearArea boxDrag"
+                                                    data-drop-area-answer="1, 3"></span>
                                                 <span>을 생각해</span>
                                             </div>
                                             <p>봐야 합니다.</p>
@@ -530,6 +532,44 @@
                 $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
             });
 
+            $(document).on('mouseup touchend', '.js-dragObj', function () {
+                const draggedIdx = $(this).attr('class').split(' ')[1];
+                console.log(draggedIdx);
+                let id = 0;
+
+                $('.js-dropArea').each(function () {
+                    const $dropArea = $(this);
+                    const $dragObjs = $dropArea.find('.js-dragObj');
+
+                    if ($dragObjs.length > 1) {
+                        const firstIdx = $dragObjs.first().attr('class').split(' ')[1];
+
+                        $('.drag-zone > .' + firstIdx).removeClass('dragObjComplete');
+                        $dragObjs.first().remove();
+                    }
+
+                    if ($dropArea.find('.' + draggedIdx).length === 1) {
+                        id = 1;
+                    }
+                });
+
+                if (id === 1) {
+                    $(this).addClass('dragObjComplete');
+                    KmAudioPlayer.correct();
+                }
+                setTimeout(function () {
+                    if ($('.drag-zone>.js-dragObj.dragObjComplete').length == 6) {
+                        $('.buttonContainer .dapCheckBtn').addClass('reset');
+                    }
+                })
+
+            });
+            $(document).on('click', '.dapCheckBtn', function () {
+                if ($(this).hasClass('reset')) {
+                    $('.js-dropArea.a2 .js-dragObj:not(:first-child)').remove();
+                    $('.js-dropArea.a3 .js-dragObj:not(:last-child)').remove();
+                }
+            });
 
             //drag drop
             // var data_id_complete = [];

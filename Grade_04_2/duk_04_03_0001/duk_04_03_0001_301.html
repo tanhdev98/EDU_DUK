@@ -30,7 +30,7 @@
 
         .char-box-02 .balloon {
             top: -240px;
-            left: -205px;
+            left: -225px;
         }
 
         .btn-praise {
@@ -208,8 +208,8 @@
             <!-- FRAME OF PAGE -->
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
-                    <li data-hover="" data-text="">물음</li>
-                    <li data-hover="" data-text="">자기 점검</li>
+                    <li data-hover="" data-text="배려하는 우리 반이 되면 좋은 점을 생각해 봅시다.">물음</li>
+                    <li data-hover="" data-text="배운 내용을 되돌아보며 자기 점검을 해 봅시다.">자기 점검</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1">
@@ -232,7 +232,7 @@
                                         <span>
                                             상대방을 보살펴 주고<br>
                                             상황을 이해하게 함으로써<br>
-                                            더욱 친밀한 관계를 갖습니다.
+                                            더욱 친밀한 관계를 갖게 합니다.
                                         </span>
                                         <div class="close-speech-button"></div>
                                     </div>
@@ -376,12 +376,12 @@
         document.addEventListener('DOMContentLoaded', function () {
             $(document).on('click', '.basicSlider_tabs li', function () {
                 if ($(this).data('text')) {
-                    $('header .title').text($(this).data('text'));
+                    $('header .title-text').text($(this).data('text'));
                 }
                 if ($(this).attr('data-gap') == 'true') {
-                    $('header .title').addClass('gap');
+                    $('header').addClass('gap');
                 } else {
-                    $('header .title').removeClass('gap');
+                    $('header').removeClass('gap');
                 }
             });
             $(document).on('click', '.additional-question', function () {

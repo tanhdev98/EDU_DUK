@@ -219,9 +219,9 @@
                                             </div>
                                             <div class="items item-4">
                                                 서로 이해하고 배려하는 마음을 실천하며 함께
-                                                <div class="js-dropArea a5 clearArea" data-drop-area-answer="5"></div>
+                                                <div class="js-dropArea a5 clearArea" data-drop-area-answer="5, 6"></div>
                                                 하고
-                                                <div class="js-dropArea a5 clearArea" data-drop-area-answer="6"></div>
+                                                <div class="js-dropArea a6 clearArea" data-drop-area-answer="6, 5"></div>
                                                 한 가족을 만들어 갑시다.
                                             </div>
                                         </div>
@@ -404,6 +404,8 @@
                 if ($(this).hasClass('reset')) {
                     $('.js-dropArea.a3 .js-dragObj:not(:first-child)').remove();
                     $('.js-dropArea.a4 .js-dragObj:not(:last-child)').remove();
+                    $('.js-dropArea.a5 .js-dragObj:not(:first-child)').remove();
+                    $('.js-dropArea.a6 .js-dragObj:not(:last-child)').remove();
                 }
             });
 

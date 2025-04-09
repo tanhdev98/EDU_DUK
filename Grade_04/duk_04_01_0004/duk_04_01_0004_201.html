@@ -126,7 +126,7 @@
                         <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="2"></div>
                         <div style="display: flex;justify-content: space-between;">
                             <div class="flex">
-                                <div class="check_list">
+                                <div class="check_list check_list1">
                                     <div class="check_view no_sound">
                                         <div class="check_box"></div>
                                     </div>
@@ -140,7 +140,7 @@
                                 </div>
                             </div>
                             <div class="flex" style="margin-left: 60px;">
-                                <div class="check_list">
+                                <div class="check_list check_list2">
                                     <div class="check_view no_sound">
                                         <div class="check_box"></div>
                                     </div>
@@ -169,7 +169,8 @@
                                     </div>
                                     <div class="blueT nd-blueT hide">
                                         <p>나무꾼의 대답을 들은 산신령은 웃으며 말했습니다.</p>
-                                        <p>“그래, 욕심을 버리고 솔직하게 말하다니 참 용기 있는 사람이구나.” 나무꾼과 산신령은 눈을 마주치며 환하게
+                                        <p style="letter-spacing: -1px;">“그래, 욕심을 버리고 솔직하게 말하다니 참 용기 있는 사람이구나.” 나무꾼과
+                                            산신령은 눈을 마주치며 환하게
                                             웃었습니다.</p>
                                     </div>
                                 </div>
@@ -189,7 +190,7 @@
                     <h2 class="blue">Tip</h2>
                     <div class="popup_contents ls1">
                         <p><ins class="dot"></ins>
-                            선택 1: 세 거짓말쟁이 중 한 명의 이야기를 골라, 이야기 속에서 정직한 말과 행동을 했다면 달라졌을 뒷이야기를 상상하여 바꾸기
+                            선택 1: 세 거짓말쟁이 중 한 인물의 이야기를 골라 그 인물이 정직하게 행동했을 때 이어질 뒷이야기를 상상하여 바꾸기
                         </p>
                         <p><ins class="dot"></ins>
                             선택 2: 우리 반 정직 약속을 실천하며 느낀 점이나 평소에 경험한 정직과 관련 있는 이야기를 바탕으로 ‘나의 정직 이야기’ 쓰기
@@ -258,10 +259,15 @@
         $(document).on('click', '.writeBtn', function () {
             if ($(this).hasClass('reset')) {
                 $('.moveButtonContainer').css('display', 'flex');
+                $('.check_list.check_list1 .check_box').addClass('check_ans').append("<p class='red_check'></p>");
             }
             else {
                 $('.moveButtonContainer').css('display', 'none');
+                $('.check_list .check_box').removeClass('check_ans').children().remove();
             }
+        });
+        $(document).on('click', '.moveButtonContainer', function () {
+            KmAudioPlayer.buttonClick();
         });
 
         $(document).on('click', '.basicSlider_circle_tabs li', function () {
