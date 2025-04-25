@@ -544,8 +544,8 @@
                     if ($dragObjs.length > 1) {
                         const firstIdx = $dragObjs.first().attr('class').split(' ')[1];
 
-                        $('.drag-zone > .' + firstIdx).removeClass('dragObjComplete');
-                        $dragObjs.first().remove();
+                        // $('.drag-zone > .' + firstIdx).removeClass('dragObjComplete');
+                        $dragObjs.last().remove();
                     }
 
                     if ($dropArea.find('.' + draggedIdx).length === 1) {
