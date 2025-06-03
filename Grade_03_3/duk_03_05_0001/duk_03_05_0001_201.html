@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        /* Page 1 */
+
+        .page_1 .content {
+            position: absolute;
+            top: calc(50% + 10px);
+            transform: translateY(-50%);
+            left: 50px;
+        }
+
+        .page_1 .content span {
+            font-family: 'NotoB';
+        }
+
+        .page_1 .additional-question {
+            position: absolute;
+            right: 0;
+        }
+
+        .toggle.complete .answer,
+        .answer.on {
+            font-weight: normal;
+        }
+
+        .innerSlider_tabs>li {
+            background-color: #F3DEC0;
+        }
+
+        .innerSlider_tabs>li.on {
+            background-color: #F3B05B;
+        }
+
+        .innerButtonContainer {
+            position: absolute;
+            right: 40px;
+            top: 76px;
+        }
+
+        .innerButtonContainer::before {
+            display: none;
+        }
+
+        .popup_pages>li.image .basicSlider {
+            padding: 0;
+        }
+
+        .popup_pages .contentsBox .basicSlider_slides>li {
+            padding: 0;
+        }
+
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: fit-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+        }
+
+        [data-type="toggleButton"] {
+            height: fit-content;
+            margin-top: 70px;
+        }
+
+        [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            justify-content: center;
+        }
+
+        .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+
+        .popup_pages .fullLine.whole .noteText {
+            height: 100%;
+            box-shadow: unset;
+            padding: 0;
+        }
+
+        .popup_pages .fullLine.whole .noteText .text-exam.flex-wrap {
+            padding: 0 20px;
+        }
+
+        .popup_pages .fullLine.whole .noteText .textareaWrap {
+            height: 100%;
+        }
+
+        .popup_pages .fullLine.whole .buttonContainer {
+            right: 48px;
+            bottom: 20px;
+        }
+
+        .popup_pages .fullLine.whole .blueT {
+            color: #006ee6;
+            line-height: 60px;
+            margin-top: 2px;
+            letter-spacing: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        [data-popup-page="2"] .innerTab_2 .popup-boxes,
+        [data-popup-page="4"] .innerTab_2 .popup-boxes,
+        [data-popup-page="4"] .innerTab_3 .popup-boxes {
+            top: calc(50% + 20px);
+        }
+
+        .icon-char[data-popup-btn="6"] {
+            top: -10px;
+            left: unset;
+            right: 0px;
+        }
+
+        .min[data-popup-page="6"] {
+            top: 145px;
+            left: 490px;
+            width: 769px;
+        }
+
+        /* .page_2 */
+        .page_2 .innerTab_1 .toggle {
+            width: 100%;
+            background-color: transparent;
+            justify-content: unset;
+        }
+
+        .page_2 .toggle {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .page_2 .toggle .ls-1h {
+            text-align: center;
+        }
+
+        .page_2 .innerTab_1 .toggle .ls-1h {
+            text-align: left;
+        }
+
+        .page_2 .innerTab_3 .noteText {
+            height: 300px;
+            box-shadow: unset;
+            background-color: #F7F7F7;
+        }
+
+        .page_2 .innerTab_3 .noteText .textareaWrap {
+            height: 100%;
+        }
+
+        .additional-question {
+            width: max-content;
+            position: absolute;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon yellow" data-show="1">생각 <em>똑똑</em></div>
+            <div class="title-text">「가만히 들어 주었어」를 읽고 질문에 답해 봅시다.</div>
+        </header>
+        <main>
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="「가만히 들어 주었어」를 읽고 질문에 답해 봅시다.">이야기</li>
+                    <li data-hover="" data-text="「가만히 들어 주었어」를 읽고 질문에 답해 봅시다.">물음</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1">
+                                    <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
+                                    <img src="./images/duk_03_05_0001/img01.png" alt="" style="margin-top: 50px;">
+                                    <div class="content"> 어느 날, 테일러는 뭔가를 만들기로 했어.<br />
+                                        뭔가 새로운 거. 뭔가 특별한 거. 뭔가 놀라운 거.<br />
+                                        테일러는 정말 뿌듯했지.<br />
+                                        그런데 난데없이 새들이 날아와......<br />
+                                        모든 게 무너져 버리고 말았어.
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="popBtn additional-question" data-popup-btn="2">추가 질문</div>
+                                    <img src="./images/duk_03_05_0001/img01.png" alt="" style="margin-top: 50px;">
+                                    <img src="./images/duk_03_05_0001/img02.png" alt="" style="position: absolute; right: 160px;
+                                    bottom: 100px;
+                                    width: 350px;">
+                                    <div class="content">
+                                        처음 알아챈 건 닭이었어.<br />
+                                        “꼬꼬댁 꼬꼬꼬! 이를 어째, 어떻게 이런 일이!<br />
+                                        말해 봐. 말해 봐. 어떻게 된 건지 말해 봐!<br />
+                                        꼬꼬댁 꼬꼬꼬!”<br />
+                                        하지만 테일러는 말하고 싶지 않았어.<br />
+                                        그래서 닭은 그만 가 버렸지.
+                                    </div>
+                                </li>
+                                <li class="innerTab_3">
+                                    <div class="popBtn additional-question" data-popup-btn="3">추가 질문</div>
+                                    <img src="./images/duk_03_05_0001/img01.png" alt="" style="margin-top: 50px;">
+                                    <img src="./images/duk_03_05_0001/img03.png" alt="" style="position: absolute; left: 40px;
+                                    bottom: 100px;
+                                    width: 350px;">
+                                    <div class="content" style="left: 400px;">
+                                        다음엔 곰이 왔어.<br />
+                                        “이런, 끔찍해. 정말 화나겠다.<br />
+                                        그럴 땐 소리를 질러!<br />
+                                        <span style="font-size: 60px; font-weight: bolder;">크와아아아아앙!”</span><br />
+                                        하지만 테일러는 소리 지르고 싶지 않았어. <br />
+                                        그래서 곰도 그만 가 버렸지.
+                                    </div>
+                                </li>
+                                <li class="innerTab_4">
+                                    <div class="popBtn additional-question" data-popup-btn="4">추가 질문</div>
+                                    <img src="./images/duk_03_05_0001/img01.png" alt="" style="margin-top: 50px;">
+                                    <img src="./images/duk_03_05_0001/img04.png" alt="" style="position: absolute; right: 160px;
+                                    bottom: 100px;
+                                    width: 350px;">
+                                    <div class="content">
+                                        다음에 다가온 건 코끼리였어.<br />
+                                        “뿌우우우! 내가 고쳐 줄게. <br />
+                                        원래 어떤 모양이었는지 잘 떠올려 봐.”<br />
+                                        하지만 테일러는 떠올리고 싶지 않았어. <br />
+                                        그래서 코끼리도 그만 가 버렸지.<br />
+                                        <br />
+                                        테일러는 혼자 남았어.
+                                    </div>
+                                </li>
+                                <li class="innerTab_5">
+                                    <img src="./images/duk_03_05_0001/img01.png" alt="" style="margin-top: 50px;">
+                                    <img src="./images/duk_03_05_0001/img05.png" alt="" style="position: absolute; right: 160px;
+                                    bottom: 130px;
+                                    width: 280px;">
+                                    <div class="content">
+                                        너무 조용해서 테일러는 토끼가 다가오는 <br />
+                                        줄도 전혀 몰랐어.<br />
+                                        토끼는 조금씩, 조금씩 다가왔지.<br />
+                                        테일러가 따뜻한 체온을 느낄 때까지,<br />
+                                        둘은 말없이 앉아 있었어.
+                                    </div>
+                                </li>
+                                <li class="innerTab_6">
+                                    <div class="popBtn additional-question" data-popup-btn="5" style="right: 100px;">추가
+                                        질문</div>
+                                    <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="6"></div>
+                                    <img src="./images/duk_03_05_0001/img01.png" alt="" style="margin-top: 50px;">
+                                    <img src="./images/duk_03_05_0001/img06.png" alt="" style="position: absolute;     right: 90px;
+                                    bottom: 100px;
+                                    width: 210px;">
+                                    <div class="content">
+                                        이윽고 테일러가 말했어. “나랑 같이 있어 줄래?”<br />
+                                        토끼는 테일러의 이야기를 가만히 들어 주었어.<br />
+                                        토끼는 테일러가 소리 지르는 것도 가만히 들어 주었어.<br />
+                                        토끼는 테일러가 기억해 내고......<br />
+                                        우는 것도 들어 주었어.<br />
+                                        <br />
+                                        그러는 내내, 토끼는 테일러의 곁을 떠나지 않았어.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="page_2">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <h2 class="dot">
+                                        <ins class="dot"></ins>
+                                        <span>
+                                            친구들은 슬퍼하는 테일러에게 어떤 말이나 행동으로 공감해 주었나요?
+                                        </span>
+                                    </h2>
+                                    <div class="table-box color-02">
+                                        <rowgroup>
+                                            <row style="width: 280px;"></row>
+                                        </rowgroup>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2">친구</th>
+                                                    <th colspan="8">테일러에게 공감해 준 방법</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th colspan="2">
+                                                        닭
+                                                    </th>
+                                                    <td colspan="8">
+                                                        <div class="toggle" data-toggle-obj="1">
+                                                            <div class="answer" data-toggle-target="1">
+                                                                <div class="ls-1h">어떻게 된 건지 말해 보라고 했습니다.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th colspan="2">
+                                                        곰
+                                                    </th>
+                                                    <td colspan="8">
+                                                        <div class="toggle" data-toggle-obj="2">
+                                                            <div class="answer" data-toggle-target="2">
+                                                                <div class="ls-1h">소리 지르면서 화를 풀어 보라고 했습니다.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th colspan="2">
+                                                        코끼리
+                                                    </th>
+                                                    <td colspan="8">
+                                                        <div class="toggle" data-toggle-obj="3">
+                                                            <div class="answer" data-toggle-target="3">
+                                                                <div class="ls-1h">부서진 장난감을 고쳐 주려고 했습니다.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th colspan="2">
+                                                        토끼
+                                                    </th>
+                                                    <td colspan="8">
+                                                        <div class="toggle" data-toggle-obj="4">
+                                                            <div class="answer" data-toggle-target="4">
+                                                                <div class="ls-1h">테일러 옆에 가만히 있어 줬습니다.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <button class="dapCheckBtn" data-answer-btn=""></button>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <h2 class="dot" style="margin-top: 60px;">
+                                        <ins class="dot"></ins>
+                                        <span>
+                                            테일러에게 필요한 공감 방법은 무엇이었나요?
+                                        </span>
+                                    </h2>
+                                    <div class="toggle" data-toggle-obj="5">
+                                        <div class="answer" data-toggle-target="5">
+                                            <div class="ls-1h">가만히 옆에 있어 주는 것이었습니다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h2 class="dot" style="margin-top: 60px;">
+                                        <ins class="dot"></ins>
+                                        <span>
+                                            토끼는 테일러에게 필요한 공감 방법을 어떻게 알았을까요?
+                                        </span>
+                                    </h2>
+                                    <div class="toggle" data-toggle-obj="6">
+                                        <div class="answer" data-toggle-target="6">
+                                            <div class="ls-1h">토끼는 자신의 공감 방법을 강요하지 않고<br />
+                                                테일러에게 필요한 공감하는 방법이 무엇인지 살펴보았습니다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="dapCheckBtn" data-answer-btn=""></button>
+                                </li>
+                                <li class="innerTab_3" data-quiz="toggle">
+                                    <div class="popBtn additional-question" data-popup-btn="7">추가 질문</div>
+                                    <h2 class="dot" style="margin-top: 60px;">
+                                        <ins class="dot"></ins>
+                                        <span>
+                                            만약에 여러분이 테일러와 같은 상황이라면 친구들이 어떻게 해 주는 것이 좋은가요?
+                                        </span>
+                                    </h2>
+
+                                    <div class="noteText noLine">
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p>저는 부서진 것을 같이 고쳐 주는 것이 좋습니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image" data-popup-page="1" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="innerButtonContainer">
+                                <ul class="innerSlider_tabs">
+                                    <li data-hover="" class="on">1</li>
+                                    <li data-hover="" class="">2</li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            새들이 날아와 만든 것이 부서졌을 때<br />
+                                            테일러는 어떤 생각이 들었을까요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div class="noteText noLine note1">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        <p>‘뭐야? 갑자기 무슨 일이지?’란<br />
+                                                            생각이 들었을 것 같습니다.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            새들이 날아와 만든 것이 부서졌을 때<br />
+                                            테일러는 어떤 감정을 느꼈을까요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div class="noteText noLine note1">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        <p>자신이 노력해서 만든 것이<br />
+                                                            무너져 버려서 슬픈 감정을 느꼈을 것 같습니다.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="buttonContainer">
+                        <button class="writeBtn" data-answer-btn=""></button>
+                    </div>
+                </li>
+                <li class="fullLine whole image" data-popup-page="2" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="innerButtonContainer">
+                                <ul class="innerSlider_tabs">
+                                    <li data-hover="" class="on">1</li>
+                                    <li data-hover="" class="">2</li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            닭은 왜 테일러에게 <br />
+                                            말해 보라고 했을까요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div class="noteText noLine note1">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        <p>닭은 이야기를 하면서<br />
+                                                            테일러의 기분을 풀어 주려고 한 것 같습니다.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que" style="height: 190px;">
+                                            닭이 말하는 것처럼 친구들과 말을 하면 감정이 <br />
+                                            풀리기도 합니다. 그런데 왜 테일러는<br />
+                                            말하고 싶지 않았을까요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div class="noteText noLine note1">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        <p>테일러는 너무 속상해서<br />
+                                                            말하고 싶지 않았을 것 같습니다.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="buttonContainer">
+                        <button class="writeBtn" data-answer-btn=""></button>
+                    </div>
+                </li>
+                <li class="fullLine whole image" data-popup-page="3" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="innerButtonContainer">
+                                <ul class="innerSlider_tabs">
+                                    <li data-hover="" class="on">1</li>
+                                    <li data-hover="" class="">2</li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            곰은 왜 테일러에게<br />
+                                            소리를 질러 보라고 했을까요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div class="noteText noLine note1">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        <p>곰은 테일러가 자신처럼 소리를 지르면<br>
+                                                            화가 풀릴 거라고 생각한 것 같습니다.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            곰처럼 화가 날 때 소리를 지르면 화가 풀리기도 합니다. <br />
+                                            그런데 왜 테일러는 소리 지르고 싶지 않았을까요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div class="noteText noLine note1">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        <p>테일러는 슬퍼서 소리를 지를 만큼의<br />
+                                                            기운이 없었을 것 같습니다.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="buttonContainer">
+                        <button class="writeBtn" data-answer-btn=""></button>
+                    </div>
+                </li>
+                <li class="fullLine whole image" data-popup-page="4" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="innerButtonContainer">
+                                <ul class="innerSlider_tabs">
+                                    <li data-hover="" class="on">1</li>
+                                    <li data-hover="" class="">2</li>
+                                    <li data-hover="" class="">3</li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            코끼리는 왜 테일러에게 고쳐 준다고 했을까요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div class="noteText noLine note1">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        <p>코끼리는 부서진 것을 고쳐 주면<br />
+                                                            테일러의 문제가 해결된다고 생각한 것 같습니다.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que" style="height: 190px;">
+                                            코끼리가 부서진 것을 고쳐 주면 테일러의 문제는<br />
+                                            해결됩니다. 그런데 왜 테일러는 <br />
+                                            원래 어떤 모양이었는지 떠올리고 싶지 않았을까요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div class="noteText noLine note1">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        <p>테일러는 너무 화가 나서<br />
+                                                            아무것도 하기 싫었을 것입니다.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que" style="height: 190px;">
+                                            여러분이 테일러처럼 힘들 때 닭, 곰, 코끼리처럼 행동하는 친구가 있었나요? 혹은 친구가 테일러처럼 힘들어할 때<br />
+                                            여러분이 닭, 곰, 코끼리처럼 행동한 적이 있었나요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div class="noteText noLine note1">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        <p>네, 있었습니다. 제가 만화 영화를 보고 울 때,<br /> 친구는 제가 왜 우는지 이해를 하지 못했습니다.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="buttonContainer">
+                        <button class="writeBtn" data-answer-btn=""></button>
+                    </div>
+                </li>
+                <li class="fullLine whole image" data-popup-page="5" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="innerButtonContainer">
+                                <ul class="innerSlider_tabs">
+                                    <li data-hover="" class="on">1</li>
+                                    <li data-hover="" class="">2</li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            토끼는 왜 테일러 옆에<br />
+                                            가만히 있어 줬을까요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div class="noteText noLine note1">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        <p>너무 화가 나고 슬퍼서 아무것도 하기 싫은<br />
+                                                            테일러의 마음을 알아차렸기 때문입니다.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            토끼가 테일러 옆에 말없이 앉아 있었던<br />
+                                            까닭은 무엇일까요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div class="noteText noLine note1">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        <p>테일러 옆에 말없이 앉아 있어 주는 것만으로도<br />
+                                                            테일러에게 위로가 된다는 것을 알았기 때문입니다.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="buttonContainer">
+                        <button class="writeBtn" data-answer-btn=""></button>
+                    </div>
+                </li>
+                <li class="min" data-popup-page="6" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        <p>
+                            공감에는 여러 모습이 있지만 토끼는 가만히 있어 주는 것만으로도 테일러와 충분한 공감을 할 수 있었습니다.
+                        </p>
+                    </div>
+                </li>
+                <li class="fullLine whole image" data-popup-page="7" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="innerButtonContainer">
+                                <ul class="innerSlider_tabs">
+                                    <li data-hover="" class="on">1</li>
+                                    <li data-hover="" class="">2</li>
+                                    <li data-hover="" class="">3</li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            여러분도 주인공처럼<br />
+                                            공감받고 싶은 적이 있었나요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div class="noteText noLine note1">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        <p>네, 있었습니다. 용돈을 모아서 산<br />
+                                                            축구공을 잃어 버렸을 때입니다.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            이야기 속 토끼처럼 말없이 옆에 누군가가<br />
+                                            있어 주어서 위로가 된 적이 있나요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div class="noteText noLine note1">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        <p>네, 있었습니다.<br />
+                                                            철수와 주혁이가 제 옆에 있어 주었습니다.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            공감에는 여러 가지 모습이 있습니다.<br />
+                                            여러분은 어떤 공감을 받아 보았나요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div class="noteText noLine note1">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        <p>
+                                                            시험 성적이 좋지 않아 기분이 안 좋을 때,<br />
+                                                            친구가 큰 목소리로 좋아하는 노래를 불러 보라고 했습니다.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="buttonContainer">
+                        <button class="writeBtn" data-answer-btn=""></button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                } if ($(this).data('text') === '내가 가지고 싶은 인공지능 로봇을 고르고 그 까닭을 생각해 봅시다.') {
+                    $('header .title-text').addClass('lt-sp');
+                } else {
+                    $('header .title-text').removeClass('lt-sp');
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+            });
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(document).on('click', '.additional-question', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs>li', function () {
+                KmAudioPlayer.buttonClick();
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

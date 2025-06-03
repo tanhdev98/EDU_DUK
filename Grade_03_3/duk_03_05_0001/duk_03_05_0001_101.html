@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+
+    <style>
+        /* Page 1 */
+        .page_1 textarea {
+            padding: 0;
+        }
+
+        .page_1 .noteText {
+            box-shadow: none;
+            position: absolute;
+            width: 1000px;
+            border-radius: 20px;
+            height: 200px;
+            padding: 35px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .page_1 .noteText .textareaWrap {
+            height: 182px;
+        }
+
+        .page_1 .noteText::after {
+            display: none;
+        }
+
+        #boy_4_c,
+        #boy_3_c {
+            top: 90px;
+            left: 70px;
+        }
+
+        .page_1 .noteText.green {
+            background: #F5F7E5;
+            border: 5px solid #D7DEA3 !important;
+            left: 290px;
+            top: 70px;
+        }
+
+        .page_1 .noteText.purple {
+            background: #F6EFFB;
+            border: 5px solid #CABEE0 !important;
+            left: 290px;
+            top: 70px;
+        }
+
+        .page_1 .noteText::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-right: 30px solid #D7DEA3;
+            left: -30px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        .page_1 .noteText.purple::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-right: 30px solid #CABEE0;
+            left: -30px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        #girl_1_c,
+        #girl_1_2_c {
+            right: 70px;
+            bottom: 75px;
+        }
+
+        .noteText.pink::before {
+            border-left: 30px solid #ffc4c9;
+            border-right: none;
+            left: unset;
+            right: -30px;
+        }
+
+        .noteText.pink {
+            background: #FFEEF3;
+            border: 5px solid #ffc4c9 !important;
+            bottom: 65px;
+            right: 290px;
+            padding: 0px;
+        }
+
+        .page_1 .character-item {
+            pointer-events: none;
+            position: absolute;
+        }
+
+        .page_1 .toggle.examBtn.box {
+            background-color: transparent;
+            height: 100%;
+        }
+
+        .page_1 .toggle .answer {
+            /* display: block; */
+            flex-direction: column;
+        }
+
+        .icon-char[data-popup-btn="2"] {
+            top: 0px;
+            left: unset;
+            right: 0px;
+        }
+
+        .min[data-popup-page="2"] {
+            top: 145px;
+            left: 542px;
+            width: 718px;
+        }
+
+        .page_1 .innerTab_2 .toggle.examBtn.box {
+            background-color: transparent;
+            height: 100%;
+            width: 100%;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon yellow" data-show="1">생각 <em>똑똑</em></div>
+            <div class="title-text">나에게 소중한 것이 무엇인지 떠올리며 질문에 답해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="2"></div>
+                                    <div id="boy_4_c" class="character-item"></div>
+                                    <div class="noteText noLine green">
+                                        소중한 것이 망가지거나 소중한 것을<br />
+                                        잃어버린 경험이 있나요?
+                                    </div>
+                                    <div id="girl_1_c" class="character-item"></div>
+                                    <div class="noteText noLine pink">
+                                        <div data-type="toggleButton" class="box">
+                                            <div class="toggle examBtn box" data-toggle-obj="1">
+                                                <div class="answer" data-toggle-target="1">
+                                                    <p class="dot">아끼는 필통을 잃어버린 적이 있습니다.</p>
+                                                    <p class="dot">친구가 미술 작품을 망친 적이 있습니다.</p>
+                                                    <p class="dot">동생이 장난감을 망가뜨린 적이 있습니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div id="boy_3_c" class="character-item"></div>
+                                    <div class="noteText noLine purple">
+                                        그때 어떤 마음이 들었나요?
+                                    </div>
+                                    <div id="girl_1_2_c" class="character-item"></div>
+                                    <div class="noteText noLine pink">
+                                        <div data-type="toggleButton" class="box">
+                                            <div class="toggle examBtn box" data-toggle-obj="2">
+                                                <div class="answer" data-toggle-target="2">
+                                                    <p class="dot">화가 났습니다.</p>
+                                                    <p class="dot">속상했습니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="2" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        <p><ins class="dot"></ins>어떤 사건이 일어난 뒤에는 그 사건에 대한 감정이 생겨납니다.</p>
+                        <p><ins class="dot"></ins>감정은 어떤 일에 대해 일어나는 마음이나 느끼는 기분입니다.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(document).on('click', '.additional-question', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs>li', function () {
+                KmAudioPlayer.buttonClick();
+            });
+            $prite.girl1({
+                id: '#girl_1_c',
+                circle: true,
+            });
+            $prite.boy4({
+                id: '#boy_4_c',
+                circle: true,
+            });
+
+            $prite.girl1({
+                id: '#girl_1_2_c',
+                circle: true,
+            });
+            $prite.boy3({
+                id: '#boy_3_c',
+                circle: true,
+            });
+        });
+
+    </script>
+</body>
+
+</html>

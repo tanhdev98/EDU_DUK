@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        /* Page 1 */
+
+        .page_1 .content {
+            position: absolute;
+            top: calc(50% + 10px);
+            transform: translateY(-50%);
+            left: 50px;
+        }
+
+        .page_1 .content span {
+            font-family: 'NotoB';
+        }
+
+        .page_1 .additional-question {
+            position: absolute;
+            right: 0;
+        }
+
+        .toggle.complete .answer,
+        .answer.on {
+            font-weight: normal;
+        }
+
+        .innerSlider_tabs>li {
+            background-color: #F3DEC0;
+        }
+
+        .innerSlider_tabs>li.on {
+            background-color: #F3B05B;
+        }
+
+        .innerButtonContainer {
+            position: absolute;
+            right: 40px;
+            top: 76px;
+        }
+
+        .innerButtonContainer::before {
+            display: none;
+        }
+
+        .popup_pages>li.image .basicSlider {
+            padding: 0;
+        }
+
+        .popup_pages .contentsBox .basicSlider_slides>li {
+            padding: 0;
+        }
+
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: fit-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+        }
+
+        [data-type="toggleButton"] {
+            height: fit-content;
+            margin-top: 70px;
+        }
+
+        [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            justify-content: center;
+        }
+
+        .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+
+        .popup_pages .fullLine.whole .noteText {
+            height: 100%;
+            box-shadow: unset;
+            padding: 0;
+        }
+
+        .popup_pages .fullLine.whole .noteText .text-exam.flex-wrap {
+            padding: 0 20px;
+        }
+
+        .popup_pages .fullLine.whole .noteText .textareaWrap {
+            height: 100%;
+        }
+
+        .popup_pages .fullLine.whole .buttonContainer {
+            right: 28px;
+        }
+
+        .popup_pages .fullLine.whole .blueT {
+            color: #006ee6;
+            line-height: 60px;
+            margin-top: 2px;
+            letter-spacing: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        [data-popup-page="2"] .innerTab_2 .popup-boxes,
+        [data-popup-page="4"] .innerTab_2 .popup-boxes,
+        [data-popup-page="4"] .innerTab_3 .popup-boxes {
+            top: calc(50% + 20px);
+        }
+
+        .icon-char[data-popup-btn="6"] {
+            top: -10px;
+            left: unset;
+            right: 0px;
+        }
+
+        .min[data-popup-page="6"] {
+            top: 145px;
+            left: 490px;
+            width: 769px;
+        }
+
+        /* .page_2 */
+        .page_2 .innerTab_1 .toggle {
+            width: 100%;
+            background-color: transparent;
+            justify-content: unset;
+        }
+
+        .page_2 .toggle {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .page_2 .toggle .ls-1h {
+            text-align: center;
+        }
+
+        .page_2 .innerTab_1 .toggle .ls-1h {
+            text-align: left;
+        }
+
+        .page_2 .innerTab_3 .noteText {
+            height: 300px;
+            box-shadow: unset;
+            background-color: #F7F7F7;
+        }
+
+        .page_2 .innerTab_3 .noteText .textareaWrap {
+            height: 100%;
+        }
+
+        .additional-question {
+            width: max-content;
+            position: absolute;
+            right: 0;
+        }
+
+        .btn-praise {
+            right: -28px;
+            top: 430px;
+        }
+
+        .popup_pages .items .item .toggle.box {
+            width: fit-content;
+            background-color: #F7F7F7;
+        }
+
+        .pointContainer .pointTitle {
+            display: block;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .pointContainer .pointTitle .titleText {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 45px;
+            line-height: 50px;
+            font-family: 'YGJAL';
+            color: #ff6600;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+        }
+
+        .pointContainer .pointTitle .titleText:before {
+            content: "]";
+            right: -20px;
+        }
+
+        .pointContainer .pointTitle .titleText:after {
+            content: "[";
+            left: -20px;
+        }
+
+        .pointContainer .pointTitle .titleText:after,
+        .pointContainer .pointTitle .titleText:before {
+            position: absolute;
+            top: 0px;
+            height: 50px;
+            font-size: 40px;
+            line-height: 50px;
+            font-family: 'YGJAL';
+            color: #e4caa9;
+        }
+
+        .popup_pages [data-type="toggleButton"] {
+            height: fit-content;
+            margin-top: 50px;
+        }
+
+        .popup_pages .pointContainer .dapCheckBtn {
+            right: 48px;
+            bottom: 20px;
+        }
+
+        .popup_pages .items .item {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .popup_pages .items .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 33px;
+            left: 0;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="gap">
+            <div class="title-icon yellow" data-show="1">생각 <em>탄탄</em></div>
+            <div class="title-text">내 감정을 다른 사람이 알아주길 바랐던 경험을 이야기해 봅시다.</div>
+        </header>
+        <main>
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="내 감정을 다른 사람이 알아주길 바랐던 경험을 이야기해 봅시다." data-gap="true">활동 1</li>
+                    <li data-hover="" data-text="다른 사람이 내 감정을 알아줬을 때 좋았던 점을 이야기해 봅시다." data-gap="true">활동 2</li>
+                    <li data-hover="" data-text="배운 내용을 되돌아보며 자기 점검을 해 봅시다.">자기 점검</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="noteText noteLine green" style="margin-top: 30px;">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p class="dot">
+                                        상을 받았을 때 기뻐서 다른 사람에게 말하고 싶었습니다.
+                                    </p>
+                                    <p class="dot">
+                                        친구들이 내 마음을 몰라줘서 섭섭한 점이 있었습니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="noteText noteLine purple" style="margin-top: 30px;">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    그림 그리기 대회에서 상을 받았을 때 친구가 함께 기뻐해 줘서 좋았습니다. 상을 받은 걸 다른 사람에게 말하고 싶었는데, 친구가 먼저 축하해 주고 함께
+                                    기뻐해 줬기 때문입니다.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                    <li class="page_3">
+                        <div class="study_guide"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
+                        <div class="self-check" style="margin-top: 60px;">
+                            <div class="checkWrap">
+                                <div class="text_box">공감이 어떤 뜻인지 알고 있나요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">적절하게 공감해 주려면 무엇을 살펴야 할지 알게 됐나요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">공감이 왜 필요한지 이해했나요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="example-box">
+                                <div class="exampleIcoWrap">
+                                    <div class="example ico-01">
+                                        매우 그렇다
+                                    </div>
+                                    <div class="example ico-02">
+                                        그렇다
+                                    </div>
+                                    <div class="example ico-03">
+                                        좀 더 노력해야 한다
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-praise right popBtn footer-item" data-popup-btn="1">
+                            <div class="item-title">핵심 <br>정리</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image pointContainer" data-popup-page="1" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="pointTitle">
+                            <div class="titleText">공감이 필요한 까닭</div>
+                        </div>
+                        <div class="items">
+                            <div class="item">
+                                <div class="toggle box" data-toggle-obj="1">
+                                    <div class="answer" data-toggle-target="1">
+                                        <div>공감</div>
+                                    </div>
+                                </div> 은 다른 사람의 감정을 같이 느끼는 것으로,
+                                말과 행동 등 여러 모습이 있습니다.
+                            </div>
+                            <div class="item">
+                                어떠한 사건으로 일어난 감정은 혼자서 극복할 수 있지만 다른 사람의
+                                <div class="toggle box" data-toggle-obj="2">
+                                    <div class="answer" data-toggle-target="2">
+                                        <div>도움</div>
+                                    </div>
+                                </div> 이 필요할 수 있습니다.
+                            </div>
+                            <div class="item">
+                                공감 받고 싶은 사람
+                                <div class="toggle box" data-toggle-obj="3">
+                                    <div class="answer" data-toggle-target="3">
+                                        <div>감정</div>
+                                    </div>
+                                </div> 에 집중해 공감해줘야 합니다.
+                            </div>
+
+                        </div>
+                    </div>
+                    <button class="dapCheckBtn" data-answer-btn=""></button>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                } if ($(this).data('text') === '내가 가지고 싶은 인공지능 로봇을 고르고 그 까닭을 생각해 봅시다.') {
+                    $('header .title-text').addClass('lt-sp');
+                } else {
+                    $('header .title-text').removeClass('lt-sp');
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+            });
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(document).on('click', '.additional-question', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs>li', function () {
+                KmAudioPlayer.buttonClick();
+            });
+
+            $(document).on('click', '.btn-praise', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+                if ($('.toggle.complete').length == $('.toggle').length) {
+                    $('.dapCheckBtn').addClass('reset');
+                }
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
