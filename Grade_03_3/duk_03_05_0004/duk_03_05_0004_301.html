@@ -13,34 +13,30 @@
 
     <style>
         /* Page 1 */
-        .contentsBox {
-            padding: 0;
+        .noteText {
+            height: 400px;
+            padding-top: 92px;
+            margin-top: 55px;
+            width: 93%;
         }
 
-        .bgImg>img,
-        .bgImg,
-        .zoomImg,
-        .zoomContainer .zoomImgContainer,
-        .zoomArea,
-        .zoomContainer {
-            width: 100%;
-            height: 100%;
+        .blueT {
+            margin-top: 62px;
         }
 
-        .bgImg>img {
-            object-fit: contain;
+        .noteText .textLine {
+            letter-spacing: -2px;
         }
 
-        .zoomContainer.horizon .zoomController {
-            top: 20px;
-            left: 28px;
+        .noteText .textareaWrap {
+            height: 242px;
         }
 
         .additional-question {
             position: absolute;
-            right: 28px;
-            top: 20px;
+            right: 0;
         }
+
 
         .innerSlider_tabs>li {
             background-color: #F3DEC0;
@@ -153,34 +149,139 @@
         .popup_pages .toggle {
             height: 100%;
         }
-        .popup_pages .toggle.complete .answer{
+
+        .popup_pages .toggle.complete .answer {
             text-align: center;
+        }
+
+        .popup_pages [data-popup-page="2"] [data-type="toggleButton"] .toggle {
+            width: max-content;
+        }
+
+        .btn-praise {
+            top: 330px;
+            right: -28px;
+        }
+
+       
+        .popup_pages .buttonContainer {
+            right: 28px;
+        }
+
+        .pointContainer .pointTitle {
+            text-align: center;
+        }
+
+        .pointContainer .pointTitle .titleText {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 45px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #ff6600;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+        }
+
+        .pointContainer .pointTitle .titleText:after,
+        .pointContainer .pointTitle .titleText:before {
+            position: absolute;
+            top: 0px;
+            height: 50px;
+            font-size: 40px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #e4caa9;
+        }
+
+        .pointContainer .pointTitle .titleText:after {
+            content: "[";
+            left: -20px;
+        }
+
+        .pointContainer .pointTitle .titleText:before {
+            content: "]";
+            right: -20px;
+        }
+
+        .popup_pages .cho {
+            background-color: transparent;
+        }
+
+        .popup_pages .choWrap {
+            text-align: left;
+        }
+
+        .btn-praise {
+            right: -28px;
+        }
+
+        .popup_pages .items .item {
+            position: relative;
+        }
+
+        .popup_pages .items .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 33px;
+            left: -8px;
+            transform: translateY(-50%);
+        }
+
+        .popup_pages .items .item {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .popup_pages [data-popup-page="2"] [data-type="toggleButton"] .toggle {
+            background-color: #f7f7f7;
+        }
+        .popup_pages [data-popup-page="2"] .dapCheckBtn {
+            right: 48px;
+            bottom: 20px;
         }
     </style>
 </head>
 
 <body>
     <div id="wrap" class="math">
-        <header class="gap">
+        <header class="twoLine">
             <div class="title-icon pink">마음 <em>똑똑</em></div>
-            <div class="title-text">나는 평소에 다른 사람에게 공감을 잘하고 있는지 되돌아봅시다.</div>
+            <div class="title-text">친구에게 공감했던 경험을 떠올리며 공감을 잘하겠다는 다짐을 글로 써 봅시다.</div>
         </header>
         <main>
             <!-- FRAME OF PAGE -->
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_slides" data-slides="">
-                    <li class="page_1 page_zoom zoom_img">
+                    <li class="page_1" data-quiz="toggle">
                         <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
-                        <div class="zoomContainer horizon pointerOff">
-                            <div class="zoomArea">
-                                <div class="zoomImgContainer pointerOff">
-                                    <div class="zoomImg">
-                                        <div class="bgImg">
-                                            <img src="./images/img1.png" />
-                                        </div>
-                                    </div>
+                        <div class="noteText noteLine purple">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p style="letter-spacing: -2px;">운동에 별로 관심이 없어서 다른 친구가 운동 경기의 주지 못했습니다. 앞으로는 그 친구가 왜
+                                        운동 경기 결과에 따라 감정이 달라졌는지 생각해
+                                        보고, 친구의 입장이 돼 같이 공감해 주겠습니다.</p>
                                 </div>
                             </div>
+                        </div>
+                        <div class="btn-praise right popBtn footer-item" data-popup-btn="2">
+                            <div class="item-title">핵심 <br>정리</div>
+                        </div>
+                        <div class=" buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
                         </div>
                     </li>
                 </ul>
@@ -196,16 +297,13 @@
                                 <ul class="innerSlider_tabs">
                                     <li data-hover="" class="on">1</li>
                                     <li data-hover="" class="">2</li>
-                                    <li data-hover="" class="">3</li>
-                                    <li data-hover="" class="">4</li>
-                                    <li data-hover="" class="">5</li>
                                 </ul>
                             </div>
                             <ul class="basicSlider_slides innerTab" data-slides="">
                                 <li class="innerTab_1">
                                     <div class="popup-boxes">
                                         <div class="box-item ico_que">
-                                            두 친구의 마음에 모두 공감해 줄 수 있나요?
+                                            공감이 필요한 까닭은 무엇인가요?
                                             <img src="./common/images/ico_que.png" class="ico">
                                         </div>
                                         <div class="box-item ico_ans">
@@ -213,7 +311,9 @@
                                             <div data-type="toggleButton" class="box">
                                                 <div class="toggle examBtn box" data-toggle-obj="1">
                                                     <div class="answer" data-toggle-target="1">
-                                                        <div class="ls-2h">공감해 주기 어렵습니다.</div>
+                                                        <div class="ls-2h">다른 사람의 마음을 이해하면 서로 더 잘 지내고 <br />
+                                                            도와줄 수 있기 때문입니다.
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -223,7 +323,7 @@
                                 <li class="innerTab_2">
                                     <div class="popup-boxes">
                                         <div class="box-item ico_que">
-                                            세상의 모든 일에 공감해 준다면 어떤 일이 생길까요?
+                                            공감하는 방법 중에 잘 실천한 것은 무엇인가요?
                                             <img src="./common/images/ico_que.png" class="ico">
                                         </div>
                                         <div class="box-item ico_ans">
@@ -231,71 +331,7 @@
                                             <div data-type="toggleButton" class="box">
                                                 <div class="toggle examBtn box" data-toggle-obj="2">
                                                     <div class="answer" data-toggle-target="2">
-                                                        <div class="ls-2h">다른 사람이 올바르지 않은 행동을 할 때 말릴 수 없습니다.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="innerTab_3">
-                                    <div class="popup-boxes">
-                                        <div class="box-item ico_que" style="letter-spacing: -3px;">
-                                            반칙을 해서라도 이기겠다는 마음과<br />
-                                            자기만 책을 보려고 숨기려는 친구의 마음에 공감해줄 수 있나요?
-                                            <img src="./common/images/ico_que.png" class="ico">
-                                        </div>
-                                        <div class="box-item ico_ans">
-                                            <img src="./common/images/ico_ans.png" class="ico">
-                                            <div data-type="toggleButton" class="box">
-                                                <div class="toggle examBtn box" data-toggle-obj="3">
-                                                    <div class="answer" data-toggle-target="3">
-                                                        <div class="ls-2h">다른 사람에게 피해가 가는 행동이기 때문에<br />
-                                                            공감해 주기 어려울 것 같습니다.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="innerTab_4">
-                                    <div class="popup-boxes">
-                                        <div class="box-item ico_que">
-                                            다른 사람의 마음에 모두 공감해 준다면 어떤 일이 생길까요?
-                                            <img src="./common/images/ico_que.png" class="ico">
-                                        </div>
-                                        <div class="box-item ico_ans">
-                                            <img src="./common/images/ico_ans.png" class="ico">
-                                            <div data-type="toggleButton" class="box">
-                                                <div class="toggle examBtn box" data-toggle-obj="4">
-                                                    <div class="answer" data-toggle-target="4">
-                                                        <div class="ls-2h">서로 더 잘 이해하고 사이좋게 지낼 수 있습니다.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="innerTab_5">
-                                    <div class="popup-boxes">
-                                        <div class="box-item ico_que">
-                                            공감해 주는 사람은 때로는 공감하기 어려운 상황을 <br />
-                                            만나기도 합니다. 그럴 때는 어떻게 해야 할까요?
-                                            <img src="./common/images/ico_que.png" class="ico">
-                                        </div>
-                                        <div class="box-item ico_ans">
-                                            <img src="./common/images/ico_ans.png" class="ico">
-                                            <div data-type="toggleButton" class="box">
-                                                <div class="toggle examBtn box" data-toggle-obj="5">
-                                                    <div class="answer" data-toggle-target="5" style="text-align: left;">
-                                                        <div class="ls-2h">
-                                                            <p class="dot">공감이 어려울 땐 친구의 입장에서 생각해 보려고 합니다.
-                                                            </p>
-                                                            <p class="dot">또는 잘 모르겠으면 그냥 조용히 들어줍니다.
-                                                            </p>
+                                                        <div class="ls-2h">친구와 눈을 마주치고 친구의 말에 귀를 기울여 듣습니다.
                                                         </div>
                                                     </div>
                                                 </div>
@@ -305,6 +341,54 @@
                                 </li>
                             </ul>
                         </div>
+                    </div>
+                </li>
+                <li class="fullLine whole image pointContainer" data-popup-page="2" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="pointTitle">
+                            <div class="titleText">나와 같은 인공지능 로봇 연구실</div>
+                        </div>
+                        <div class="items">
+                            <div class="item" data-type="toggleButton">
+                                친구와
+                                <div class="toggle box" data-toggle-obj="3">
+                                    <div class="answer" data-toggle-target="3">
+                                        <div>눈</div>
+                                    </div>
+                                </div> 을 마주치고 친구의 말에
+                                <div class="toggle box" data-toggle-obj="4">
+                                    <div class="answer" data-toggle-target="4">
+                                        <div>귀</div>
+                                    </div>
+                                </div>
+                                를 기울여 듣습니다.
+                            </div>
+                            <div class="item" data-type="toggleButton">
+                                친구의 말을 들을 때
+                                <div class="toggle box" data-toggle-obj="5">
+                                    <div class="answer" data-toggle-target="5">
+                                        <div>고개</div>
+                                    </div>
+                                </div>
+                                를 끄덕이거나 친구와 같은
+                                <div class="toggle box" data-toggle-obj="6">
+                                    <div class="answer" data-toggle-target="6">
+                                        <div>표정</div>
+                                    </div>
+                                </div>
+                                을 지어 줍니다.
+                            </div>
+                            <div class="item" data-type="toggleButton">
+                                친구의
+                                <div class="toggle box" data-toggle-obj="7">
+                                    <div class="answer" data-toggle-target="7">
+                                        <div>감정</div>
+                                    </div>
+                                </div>
+                                을 읽고 친구에게 “그랬구나.”와 같은 말로 표현해 줍니다.
+                            </div>
+                        </div>
+                        <button class="dapCheckBtn" data-answer-btn=""></button>
                     </div>
                 </li>
             </ul>
@@ -332,14 +416,21 @@
         document.addEventListener('DOMContentLoaded', function () {
             $(document).on('click', '.basicSlider_tabs li', function () {
                 if ($(this).data('text')) {
-                    $('header .title-text').text($(this).data('text'));
+                    $('header .title-text').html($(this).data('text'));
                 }
                 if ($(this).attr('data-gap') == 'true') {
                     $('header').addClass('gap');
                 } else {
                     $('header').removeClass('gap');
                 }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
             });
+
             $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
                 let idx = $(this).index() + 1;
                 $('.popup_pages .innerSlider_tabs li').removeClass('on');
@@ -370,7 +461,6 @@
             });
 
         });
-
     </script>
 </body>
 

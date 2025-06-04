@@ -65,6 +65,7 @@
             flex-direction: column;
             height: max-content;
             box-shadow: unset;
+            text-align: center;
         }
 
         .page_1 .toggle.box {
@@ -251,11 +252,11 @@
                                     object-fit: contain;
                                     position: absolute;
                                     bottom: 210px;
-                                    left: -40px;
+                                    left: -20px;
                                     z-index: 1;
                                     transform: rotate(-5deg);">
                                     <img src="./images/img2.png" alt="" class="img2" style="left: 360px; top: -25px;">
-                                    <img src="./images/img1.png" alt="" class="img1" style="    width: 500px;
+                                    <img src="./images/img1.png" alt="" class="img1" style="    width: 430px;
                                     height: auto;
                                     object-fit: contain;
                                     position: absolute;
@@ -395,7 +396,7 @@
                                             </div>
                                             <div class="text-exam flex-wrap">
                                                 <div class="blueT">
-                                                    <p class="dot">정말 축하해! 뽑혀서 기분 좋았겠다.</p>
+                                                    <p class="dot" style="letter-spacing: -1.2px;">정말 축하해! 뽑혀서 기분 좋았겠다.</p>
                                                     <p class="dot">나도 정말 기뻐!</p>
                                                 </div>
                                             </div>
@@ -419,8 +420,8 @@
                             </div>
                             <div class="text-exam flex-wrap">
                                 <div class="blueT">
-                                    <p class="dot">내가 노력해서 태권도 검은 띠로 승급했을 때 기쁜 마음을 공감받고 싶었습니다.</p>
-                                    <p class="dot">열심히 준비해서 운동 경기를 했는데 결과가 좋지 않을 때 공감받고 싶었습니다.</p>
+                                    <p class="dot" style="letter-spacing: -1px;">내가 노력해서 태권도 검은 띠로 승급했을 때 기쁜 마음을 공감받고 싶었습니다.</p>
+                                    <p class="dot" style="letter-spacing: -1px;">열심히 준비해서 운동 경기를 했는데 결과가 좋지 않을 때 공감받고 싶었습니다.</p>
                                     <p class="dot">달리기에서 1등을 해서 기쁠 때 공감받고 싶었습니다.</p>
                                 </div>
                             </div>
@@ -438,12 +439,11 @@
                 <li class="fullLine whole image" data-popup-page="1" data-quiz="toggle">
                     <div class="full_content">
                         <div class="basicSlider contentsBox doItContent" data-slide-container="">
-                            <!-- <div class="innerButtonContainer">
+                            <div class="innerButtonContainer" style="visibility: hidden;">
                                 <ul class="innerSlider_tabs">
                                     <li data-hover="" class="on">1</li>
-                                    <li data-hover="" class="">2</li>
                                 </ul>
-                            </div> -->
+                            </div>
                             <ul class="basicSlider_slides innerTab" data-slides="">
                                 <li class="innerTab_1">
                                     <div class="popup-boxes">
@@ -473,12 +473,11 @@
                 <li class="fullLine whole image" data-popup-page="2" data-quiz="toggle">
                     <div class="full_content">
                         <div class="basicSlider contentsBox doItContent" data-slide-container="">
-                            <!-- <div class="innerButtonContainer">
+                            <div class="innerButtonContainer" style="visibility: hidden;">
                                 <ul class="innerSlider_tabs">
                                     <li data-hover="" class="on">1</li>
-                                    <li data-hover="" class="">2</li>
                                 </ul>
-                            </div> -->
+                            </div>
                             <ul class="basicSlider_slides innerTab" data-slides="">
                                 <li class="innerTab_1">
                                     <div class="popup-boxes">
@@ -712,8 +711,8 @@
             $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
                 let idx = $(this).index() + 1;
                 $('.popup_pages .innerSlider_tabs li').removeClass('on');
-                $(this).addClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $(this).addClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
             });
             $(document).on('click', '.additional-question', function () {
@@ -722,6 +721,20 @@
 
             $(document).on('click', '.popup_pages .innerSlider_tabs>li', function () {
                 KmAudioPlayer.buttonClick();
+            });
+
+
+            const buttons = document.querySelectorAll('.popBtn.additional-question');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                    $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                    const value = this.getAttribute('data-popup-btn');
+                    const popup = document.querySelector(`[data-popup-page="${value}"] .innerSlider_tabs li:first-child`);
+                    popup.classList.add('on');
+                    $('.popup_pages .innerSlider_tabs li:first-child').addClass('on');
+                    $('.popup_pages .basicSlider_slides.innerTab li:first-child').addClass('on');
+                });
             });
 
             $(document).on('click', '.btn-praise', function () {
