@@ -48,7 +48,151 @@
             background-color: #fff;
             left: 740px;
             z-index: 2;
-            top: 30px;
+            top: 50px;
+        }
+
+        .titleText2 {
+            position: absolute;
+            font-size: 38px;
+            color: #C00000;
+            left: 620px;
+            z-index: 2;
+            top: 130px;
+        }
+
+        .page_1 .toggle .answer {
+            flex-direction: column;
+            height: max-content;
+            box-shadow: unset;
+        }
+
+        .page_1 .toggle.box {
+            position: absolute;
+            z-index: 2;
+            top: 200px;
+            width: 482px;
+            left: 599px;
+        }
+
+        .page_1 .additional-question {
+            position: absolute;
+            right: 0;
+        }
+
+        .innerSlider_tabs>li {
+            background-color: #F3DEC0;
+        }
+
+        .innerSlider_tabs>li.on {
+            background-color: #F3B05B;
+        }
+
+        .innerButtonContainer {
+            position: absolute;
+            right: 40px;
+            top: 76px;
+        }
+
+        .innerButtonContainer::before {
+            display: none;
+        }
+
+        .popup_pages>li.image .basicSlider {
+            padding: 0;
+        }
+
+        .popup_pages .contentsBox .basicSlider_slides>li {
+            padding: 0;
+        }
+
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: fit-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+        }
+
+        .popup_pages [data-type="toggleButton"] {
+            height: fit-content;
+            margin-top: 70px;
+        }
+
+        .popup_pages [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            justify-content: center;
+        }
+
+        .popup_pages .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .popup_pages .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+
+        .popup_pages [data-type="toggleButton"] {
+            height: 100%;
+            margin: 0;
+        }
+
+        .popup_pages .toggle {
+            height: 100%;
+        }
+
+        .popup_pages .toggle .answer {
+            text-align: center;
         }
     </style>
 </head>
@@ -67,12 +211,24 @@
                     <li data-hover="" data-text="공감받고 싶었던 상황을 떠올려 봅시다.">활동 2</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
-                    <li class="page_1">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
                         <img src="./images/img5.png" alt="" class="img5">
                         <img src="./images/img1.png" alt="" class="img1">
                         <img src="./images/img2.png" alt="" class="img2">
                         <div class="titleText">공감 1단계</div>
                         <div class="titleText2">친구의 말에 귀를 기울여 주기</div>
+                        <div data-type="toggleButton" class="box">
+                            <div class="toggle examBtn box" data-toggle-obj="1">
+                                <div class="answer noteText" data-toggle-target="1">
+                                    <p class="dot">다정하게 눈 마주치며
+                                        관심 갖기.
+                                    </p>
+                                    <p class="dot">친구가 말할 때까지
+                                        기다려 주기.</p>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     <li class="page_2">
 
@@ -86,18 +242,17 @@
                 <li class="fullLine whole image" data-popup-page="1" data-quiz="toggle">
                     <div class="full_content">
                         <div class="basicSlider contentsBox doItContent" data-slide-container="">
-                            <div class="innerButtonContainer">
+                            <!-- <div class="innerButtonContainer">
                                 <ul class="innerSlider_tabs">
                                     <li data-hover="" class="on">1</li>
                                     <li data-hover="" class="">2</li>
                                 </ul>
-                            </div>
+                            </div> -->
                             <ul class="basicSlider_slides innerTab" data-slides="">
                                 <li class="innerTab_1">
                                     <div class="popup-boxes">
                                         <div class="box-item ico_que">
-                                            친구의 자기 감정 설명서 내용 중에<br />
-                                            나의 자기 감정 설명서와 비슷한 내용이 있었나요?
+                                            친구에게 공감하기 위해서 눈을 마주쳐야 하는 까닭은 무엇일까요?
                                             <img src="./common/images/ico_que.png" class="ico">
                                         </div>
                                         <div class="box-item ico_ans">
@@ -106,8 +261,8 @@
                                                 <div class="toggle examBtn box" data-toggle-obj="5" data-hover="">
                                                     <div class="answer" data-toggle-target="5">
                                                         <div class="ls-2h">
-                                                            저는 슬프면 책상에 엎드려서 우는데 <br />
-                                                            친구도 똑같이 엎드려서 운다고 했습니다.
+                                                            눈을 마주치면 친구가 자신의 이야기를<br />
+                                                            잘 들어준다고 느낄 수 있습니다.
                                                         </div>
                                                     </div>
                                                 </div>
