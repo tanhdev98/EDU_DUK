@@ -175,6 +175,18 @@
         [data-popup-page="1"] .toggle.box .answer {
             text-align: center;
         }
+
+        .icon-char[data-popup-btn="2"] {
+            top: 60px;
+            left: unset;
+            right: 0px;
+        }
+
+        .min[data-popup-page="2"] {
+            top: 265px;
+            left: 625px;
+            width: 636px;
+        }
     </style>
 </head>
 
@@ -190,6 +202,7 @@
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1">
                         <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
+                        <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="2"></div>
                         <img src="./images/duk_03_05_0002_101/imgBg.png" alt=""
                             style="height: calc(100% - 60px); margin-top: 60px; object-fit: contain;">
                     </li>
@@ -226,15 +239,13 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="buttonContainer">
-                        <button class="writeBtn" data-answer-btn=""></button>
-                    </div>
                 </li>
                 <li class="min" data-popup-page="2" data-drag>
                     <h2 class="blue">Tip</h2>
                     <div class="popup_contents ls1">
-                        <p><ins class="dot"></ins>어떤 사건이 일어난 뒤에는 그 사건에 대한 감정이 생겨납니다.</p>
-                        <p><ins class="dot"></ins>감정은 어떤 일에 대해 일어나는 마음이나 느끼는 기분입니다.</p>
+                        <p>
+                            사람은 똑같은 상황을 겪어도 서로 다르게 생각하거나 느낄 수 있고, 그에 따라 행동까지 달라질 수 있습니다.
+                        </p>
                     </div>
                 </li>
             </ul>
@@ -268,6 +279,10 @@
                 } else {
                     $('header').removeClass('gap');
                 }
+            });
+
+            $(document).on('click', '.additional-question', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
             });
         });
 

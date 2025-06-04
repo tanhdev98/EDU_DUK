@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        /* Page 1 */
+        .bgImg>img,
+        .bgImg,
+        .zoomImg,
+        .zoomContainer .zoomImgContainer,
+        .zoomArea,
+        .zoomContainer {
+            width: 100%;
+            height: 100%;
+        }
+
+        .bgImg>img {
+            object-fit: contain;
+        }
+
+        .zoomContainer.horizon .zoomController {
+            top: 20px;
+            left: 28px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="gap">
+            <div class="title-icon blue">실천 <em>똑똑</em></div>
+            <div class="title-text">나는 평소에 다른 사람에게 공감을 잘하고 있는지 되돌아봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1 page_zoom zoom_img">
+                        <div class="zoomContainer horizon pointerOff">
+                            <div class="zoomArea">
+                                <div class="zoomImgContainer pointerOff">
+                                    <div class="zoomImg">
+                                        <div class="bgImg">
+                                            <img src="./images/img1.png" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image" data-popup-page="1" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="innerButtonContainer">
+                                <ul class="innerSlider_tabs">
+                                    <li data-hover="" class="on">1</li>
+                                    <li data-hover="" class="">2</li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            두 그림 중 어떤 그림이 공감을 잘해 주는 모습인가요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton" class="box">
+                                                <div class="toggle examBtn box" data-toggle-obj="1">
+                                                    <div class="answer" data-toggle-target="1">
+                                                        <div class="ls-2h">첫 번째 그림이 잘 공감을 해주고 있는 모습입니다.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            공감을 잘해 주고 있다는 것을 어떻게 알 수 있나요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton" class="box">
+                                                <div class="toggle examBtn box" data-toggle-obj="2">
+                                                    <div class="answer" data-toggle-target="2">
+                                                        <div class="ls-2h">왜냐하면 친구의 마음을 잘 이해해 주고 있기 때문입니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(document).on('click', '.additional-question', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs>li', function () {
+                KmAudioPlayer.buttonClick();
+            });
+
+
+            const buttons = document.querySelectorAll('.popBtn.additional-question');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                    $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                    const value = this.getAttribute('data-popup-btn');
+                    const popup = document.querySelector(`[data-popup-page="${value}"] .innerSlider_tabs li:first-child`);
+                    popup.classList.add('on');
+                    $('.popup_pages .innerSlider_tabs li:first-child').addClass('on');
+                    $('.popup_pages .basicSlider_slides.innerTab li:first-child').addClass('on');
+                });
+            });
+
+        });
+
+    </script>
+</body>
+
+</html>
