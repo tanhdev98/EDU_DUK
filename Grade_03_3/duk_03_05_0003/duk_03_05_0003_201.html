@@ -33,12 +33,13 @@
         }
 
         .img2 {
-            width: 600px;
+            width: 580px;
             position: absolute;
             left: 540px;
             top: -17px;
             z-index: 2;
         }
+
 
         .titleText {
             position: absolute;
@@ -46,7 +47,7 @@
             padding: 5px 15px;
             border-radius: 10px;
             background-color: #fff;
-            left: 740px;
+            left: 731px;
             z-index: 2;
             top: 50px;
         }
@@ -57,7 +58,7 @@
             color: #C00000;
             left: 620px;
             z-index: 2;
-            top: 130px;
+            top: 128px;
         }
 
         .page_1 .toggle .answer {
@@ -69,12 +70,12 @@
         .page_1 .toggle.box {
             position: absolute;
             z-index: 2;
-            top: 200px;
-            width: 482px;
-            left: 599px;
+            top: 190px;
+            width: 442px;
+            left: 610px;
         }
 
-        .page_1 .additional-question {
+         .additional-question {
             position: absolute;
             right: 0;
         }
@@ -207,31 +208,226 @@
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
                     <li data-hover="" data-text="공감하는 방법을 알아봅시다.">활동 1</li>
-                    <li data-hover="" data-text="공감 1, 2, 3단계를 아래의 상황에 맞춰 연습해 봅시다.">활동 2</li>
+                    <li data-hover="" data-text="공감 1, 2, 3단계를 아래의 상황에 맞춰 연습해 봅시다." data-gap="true">활동 2</li>
                     <li data-hover="" data-text="공감받고 싶었던 상황을 떠올려 봅시다.">활동 2</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1" data-quiz="toggle">
-                        <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
-                        <img src="./images/img5.png" alt="" class="img5">
-                        <img src="./images/img1.png" alt="" class="img1">
-                        <img src="./images/img2.png" alt="" class="img2">
-                        <div class="titleText">공감 1단계</div>
-                        <div class="titleText2">친구의 말에 귀를 기울여 주기</div>
-                        <div data-type="toggleButton" class="box">
-                            <div class="toggle examBtn box" data-toggle-obj="1">
-                                <div class="answer noteText" data-toggle-target="1">
-                                    <p class="dot">다정하게 눈 마주치며
-                                        관심 갖기.
-                                    </p>
-                                    <p class="dot">친구가 말할 때까지
-                                        기다려 주기.</p>
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
+                                    <img src="./images/img5.png" alt="" class="img5">
+                                    <img src="./images/img1.png" alt="" class="img1">
+                                    <img src="./images/img2.png" alt="" class="img2">
+                                    <div class="titleText">공감 1단계</div>
+                                    <div class="titleText2">친구의 말에 귀를 기울여 주기</div>
+                                    <div data-type="toggleButton" class="box">
+                                        <div class="toggle examBtn box" data-toggle-obj="1">
+                                            <div class="answer noteText" data-toggle-target="1">
+                                                <p class="dot">다정하게 눈 마주치며
+                                                    관심 갖기.
+                                                </p>
+                                                <p class="dot">친구가 말할 때까지
+                                                    기다려 주기.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="popBtn additional-question" data-popup-btn="2">추가 질문</div>
+
+                                    <img src="./images/img1.png" alt="" class="img1" style="    width: 500px;
+                                    height: auto;
+                                    object-fit: contain;
+                                    position: absolute;
+                                    bottom: 210px;
+                                    left: -40px;
+                                    z-index: 1;
+                                    transform: rotate(-5deg);">
+                                    <img src="./images/img2.png" alt="" class="img2" style="left: 360px; top: -25px;">
+                                    <img src="./images/img1.png" alt="" class="img1" style="    width: 500px;
+                                    height: auto;
+                                    object-fit: contain;
+                                    position: absolute;
+                                    bottom: 300px;
+                                    left: 910px;
+                                    z-index: 1;
+                                    transform: rotate(-173deg);">
+
+                                    <div class="titleText" style="left: 553px;">공감 2단계</div>
+                                    <div class="titleText2" style='left:437px'>친구의 말을 들으며 반응하기</div>
+                                    <div data-type="toggleButton" class="box">
+                                        <div class="toggle examBtn box" data-toggle-obj="2" style="left: 430px;">
+                                            <div class="answer noteText" data-toggle-target="2">
+                                                <p class="dot">친구를 보며 미소 짓기
+                                                </p>
+                                                <p class="dot">고개 끄덕이기
+                                                </p>
+                                                <p class="dot">친구와 이야기하며<br />
+                                                    같은 표정 지어 주기
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3" data-quiz="toggle">
+                                    <div class="popBtn additional-question" data-popup-btn="3">추가 질문</div>
+
+                                    <img src="./images/img2.png" alt="" class="img2" style="left: 60px; top: -25px;">
+                                    <img src="./images/img1.png" alt="" class="img1" style="width: 390px;
+                                    height: auto;
+                                    object-fit: contain;
+                                    position: absolute;
+                                    bottom: 166px;
+                                    left: 44%;
+                                    z-index: 1;">
+
+                                    <div class="titleText" style="left: 253px; top: 29px;">공감 3단계</div>
+                                    <div class="titleText2" style='left:137px; top: 98px; text-align: center;'>친구의 감정을
+                                        읽고<br />
+                                        친구의 마음을 말로 표현하기</div>
+                                    <div data-type="toggleButton" class="box">
+                                        <div class="toggle examBtn box" data-toggle-obj="3"
+                                            style="left: 184px; top: 200px; width: 332px;">
+                                            <div class="answer noteText" data-toggle-target="3">
+                                                <p class="dot">“그랬구나.”</p>
+                                                <p class="dot">“너는 ~한 <br />
+                                                    마음이겠구나.”</p>
+                                                <p class="dot">“너는 ~라고 <br />
+                                                    생각했구나.”
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <img src="./images/img6.png" alt="" style="    width: 450px;
+                                    position: absolute;
+                                    right: 0;
+                                    top: 70px;
+                                    z-index: 2;">
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <img src="./images/img3.png" alt="" style="    position: absolute;
+                                    width: 220px;
+                                    height: 100px;">
+                                    <div class="titleImg" style="position: absolute;
+                                    color: #fff;
+                                    top: 24px;
+                                    left: 60px;">상황1</div>
+                                    <div class="titlePage" style="position: absolute;
+                                    left: 250px;
+                                    top: 24px;">친구가 키우는 강아지가 아파서 슬퍼할 때</div>
+                                    <div class="flex">
+                                        <img src="./images/img7.png" alt="" style="    position: absolute;
+                                        width: 500px;
+                                        top: 130px;">
+                                        <div class="noteText noteLine purple" style="    width: 750px;
+                                        position: absolute;
+                                        right: 0;
+                                        bottom: 70px;
+                                        height: 400px;">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    <p class="dot">강아지가 아파서 많이 걱정됐겠다.</p>
+                                                    <p class="dot">강아지가 빨리 나았으면 좋겠다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <img src="./images/img3.png" alt="" style="    position: absolute;
+                                    width: 220px;
+                                    height: 100px;">
+                                    <div class="titleImg" style="position: absolute;
+                                    color: #fff;
+                                    top: 24px;
+                                    left: 60px;">상황2</div>
+                                    <div class="titlePage" style="position: absolute;
+                                    left: 250px;
+                                    top: 24px;">친구가 학급 회장에 뽑혀서 기뻐할 때</div>
+                                    <div class="flex">
+                                        <img src="./images/img8.png" alt="" style="    position: absolute;
+                                        width: 500px;
+                                        top: 130px;">
+                                        <div class="noteText noteLine purple" style="    width: 750px;
+                                        position: absolute;
+                                        right: 0;
+                                        bottom: 70px;
+                                        height: 400px;">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    <p class="dot">정말 축하해! 뽑혀서 기분 좋았겠다.</p>
+                                                    <p class="dot">나도 정말 기뻐!</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </li>
+                    <li class="page_3" data-quiz="toggle">
+                        <div class="popBtn additional-question" data-popup-btn="4">추가 질문</div>
+                        <div class="noteText noteLine pink" style="margin-top: 70px;">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p class="dot">내가 노력해서 태권도 검은 띠로 승급했을 때 기쁜 마음을 공감받고 싶었습니다.</p>
+                                    <p class="dot">열심히 준비해서 운동 경기를 했는데 결과가 좋지 않을 때 공감받고 싶었습니다.</p>
+                                    <p class="dot">달리기에서 1등을 해서 기쁠 때 공감받고 싶었습니다.</p>
                                 </div>
                             </div>
                         </div>
-                    </li>
-                    <li class="page_2">
-
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -270,10 +466,25 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="innerTab_2">
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="fullLine whole image" data-popup-page="2" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <!-- <div class="innerButtonContainer">
+                                <ul class="innerSlider_tabs">
+                                    <li data-hover="" class="on">1</li>
+                                    <li data-hover="" class="">2</li>
+                                </ul>
+                            </div> -->
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1">
                                     <div class="popup-boxes">
                                         <div class="box-item ico_que">
-                                            친구들이 붙인 붙임쪽지 중에 인상적인 내용은 무엇인가요?
+                                            친구의 이야기를 들을 때 미소를 짓거나 고개를 끄덕이면서<br />
+                                            반응해 줘야 하는 까닭은 무엇일까요?
                                             <img src="./common/images/ico_que.png" class="ico">
                                         </div>
                                         <div class="box-item ico_ans">
@@ -282,9 +493,9 @@
                                                 <div class="toggle examBtn box" data-toggle-obj="6" data-hover="">
                                                     <div class="answer" data-toggle-target="6">
                                                         <div class="ls-2h">
-                                                            저는 화가 나면 말을 하지 않는데, <br />
-                                                            친구가 그걸 모르고 화났을 때 자꾸 말을 걸어서 <br />
-                                                            미안하다고 붙임쪽지를 써 줬습니다.
+                                                            친구가 말할 때 미소를 짓거나 고개를 끄덕이면,<br />
+                                                            잘 듣고 있다는 걸 보여줄 수 있습니다. <br />
+                                                            그러면 친구도 기분이 좋아집니다.
                                                         </div>
                                                     </div>
                                                 </div>
@@ -292,6 +503,166 @@
                                         </div>
                                     </div>
                                 </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="fullLine whole image" data-popup-page="3" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="innerButtonContainer">
+                                <ul class="innerSlider_tabs">
+                                    <li data-hover="" class="on">1</li>
+                                    <li data-hover="" class="">2</li>
+                                    <li data-hover="" class="">3</li>
+                                    <li data-hover="" class="">4</li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            친구의 감정을 파악하고 파악한 것을<br />
+                                            말로 어떻게 표현해 줄 수 있을까요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="7" data-hover="">
+                                                    <div class="answer" data-toggle-target="7">
+                                                        <div class="ls-2h">
+                                                            친구가 슬퍼 보이면 “속상했겠다.” 하고 말해 줄 수 있습니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            친구가 화를 내거나 슬퍼할 때 친구의 감정을<br />
+                                            말로 표현해 준 적이 있나요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="8" data-hover="">
+                                                    <div class="answer" data-toggle-target="8">
+                                                        <div class="ls-2h">
+                                                            친구가 화가 났을 때 “많이 속상했겠다.” 라고<br />
+                                                            말해 준 적이 있습니다.<br />
+                                                            그랬더니 친구가 조금 마음이 편해졌다고 했습니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            친구가 기뻐할 때 어떤 말을 해 줬나요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="9" data-hover="">
+                                                    <div class="answer" data-toggle-target="9">
+                                                        <div class="ls-2h">
+                                                            “정말 잘했네! 축하해!” 라고 말해 줬습니다.<br />
+                                                            친구가 더 기뻐했습니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_4">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            친구의 감정을 읽고 마음을 알아줬을 때<br />
+                                            친구는 어떤 말과 행동을 했나요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="10" data-hover="">
+                                                    <div class="answer" data-toggle-target="10">
+                                                        <div class="ls-2h">
+                                                            친구가 “고마워.” 라고 말하면서 웃었습니다. <br />
+                                                            그리고 더 다정하게 이야기해 줬습니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="fullLine whole image" data-popup-page="4" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="innerButtonContainer">
+                                <ul class="innerSlider_tabs">
+                                    <li data-hover="" class="on">1</li>
+                                    <li data-hover="" class="">2</li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            기쁘거나 좋았을 때는 언제인가요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="10" data-hover="">
+                                                    <div class="answer" data-toggle-target="10">
+                                                        <div class="ls-2h" style="text-align: left;">
+                                                           <p class="dot">친구랑 놀 때 정말 즐겁고 좋습니다.</p>
+                                                           <p class="dot">웃으면서 신나게 놀면 기분이 좋아집니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            기쁘거나 좋아서 공감받고 싶었을 때는 언제인가요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="11" data-hover="">
+                                                    <div class="answer" data-toggle-target="11">
+                                                        <div class="ls-2h">
+                                                            시험에서 좋은 점수를 받았을 때 기뻐서 <br />
+                                                            공감받고 싶었습니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                               
                             </ul>
                         </div>
                     </div>
