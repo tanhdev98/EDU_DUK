@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        /* Page 1 */
+        .page_1 .titleText {
+            position: absolute;
+            top: 50px;
+            left: 150px;
+        }
+
+        .noteText {
+            box-shadow: unset;
+            width: 1053px;
+            left: 145px;
+            top: 110px;
+            background-color: #f7f7f7;
+            height: 302px;
+        }
+
+        .noteText .textareaWrap .underline {
+            background-color: #006ee6 !important;
+        }
+
+        .noteText .textareaWrap {
+            height: 270px;
+        }
+
+        .noteText p.dot {
+            letter-spacing: -1px;
+        }
+
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        .page_1 .underline:last-child {
+            display: none !important;
+        }
+
+        /* popup */
+        .popup_pages>li.fullLine>.full_content {
+            top: 65px;
+            height: calc(100% - 65px);
+        }
+
+        .tabs-popup {
+            top: -33px;
+            right: 60px;
+            left: unset;
+            justify-content: end;
+            height: 33px;
+        }
+
+        .tabs-popup>li {
+            background-color: #B1A493 !important;
+
+        }
+
+        .tabs-popup>li.on {
+            background-color: #E79702 !important;
+        }
+
+        /* thinkNet */
+        .thinkNet_wrap {
+            position: relative;
+            height: 410px;
+            top: 50px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            padding: 0 80px;
+        }
+
+        .thinkNet_wrap .row {
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        .thinkNet_wrap .toggle.box {
+            width: 310px;
+            height: 170px;
+            border-radius: 8px;
+            text-align: center;
+            box-sizing: border-box;
+            font-family: 'YGJAL';
+        }
+
+        .thinkNet_wrap .inner_box.tit {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #fff;
+            border: 8px solid #efcfa6;
+            width: 340px;
+            height: 170px;
+            border-radius: 20px;
+            font-family: 'YGJAL';
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 15px;
+        }
+
+        .thinkNet_wrap .think_arrow {
+            position: absolute;
+            display: inline-block;
+            width: 100px;
+            height: 70px;
+            background: url('./common/images/thinkNet_arrow.png') no-repeat;
+            background-size: 230px auto;
+        }
+
+        .thinkNet_wrap .thinkNet_arrow2 {
+            background: url('./common/images/thinkNet_arrow2.png') no-repeat;
+            background-size: 150px;
+            top: -160px;
+            transform: rotate(-90deg);
+            background-position: 25px 0;
+            left: 615px;
+
+        }
+
+        .thinkNet_wrap .think_arrow.left.top {
+            left: 750px;
+            bottom: 284px;
+            background-position: -132px 0;
+        }
+
+        .thinkNet_wrap .think_arrow.right.top {
+            right: 750px;
+            bottom: 284px;
+            background-position: 0 0;
+        }
+
+        .thinkNet_wrap .think_arrow.left.bottom {
+            right: 750px;
+            top: 284px;
+            background-position: 0 -95px;
+        }
+
+        .thinkNet_wrap .think_arrow.right.bottom {
+            left: 750px;
+            top: 284px;
+            background-position: -132px -95px;
+        }
+
+        .thinkNet_wrap [data-type="toggleButton"] {
+            cursor: pointer;
+            height: max-content;
+        }
+
+        .thinkNet_wrap.col [data-type="toggleButton"] {
+            display: flex;
+            justify-content: center;
+        }
+
+        .thinkNet_wrap .toggle .answer {
+            margin: auto;
+            text-align: center;
+            font-weight: normal;
+        }
+
+        .thinkNet_wrap .box.pink {
+            background-color: #FED1D7;
+        }
+
+        .thinkNet_wrap .box.blue {
+            background-color: #E1F2F7;
+        }
+
+        .thinkNet_wrap .box.green {
+            background-color: #EFF7BD;
+        }
+
+        .thinkNet_wrap .box.purple {
+            background-color: #E3D7FF;
+        }
+
+        /* innerTab2 */
+        .thinkNet_wrap.col {
+            top: 280px;
+            padding: 0;
+        }
+
+        .thinkNet_wrap.col .inner_box.tit {
+            top: -220px;
+            width: 520px;
+            height: max-content;
+        }
+
+        .thinkNet_wrap.col .think_arrow.right.top {
+            right: 865px;
+            bottom: 530px;
+            transform: rotate(-90deg);
+        }
+
+        .thinkNet_wrap.col .think_arrow.left.top {
+            left: 865px;
+            bottom: 530px;
+            transform: rotate(90deg);
+        }
+
+        .thinkNet_wrap.col .groupbox {
+            flex-direction: column;
+            display: flex;
+            margin-top: -90px;
+        }
+
+        .thinkNet_wrap.col .toggle.box {
+            width: 350px;
+            height: 70px;
+            margin-bottom: -20px;
+        }
+
+        .thinkNet_wrap.col .question.box {
+            width: 565px;
+            height: 220px;
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .innerTab_2 [data-type="toggleButton"] {
+            width: max-content;
+            margin: auto;
+        }
+
+        /* dapCheckBtn */
+        .pointContainer .dapCheckBtn {
+            right: 28px;
+            bottom: 10px;
+        }
+
+        /* title thinknet */
+        .pointContainer .pointTitle {
+            display: block;
+            text-align: center;
+        }
+
+        .pointContainer .pointTitle .titleText {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 45px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #ff6600;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+        }
+
+        .pointContainer .pointTitle .titleText:after,
+        .pointContainer .pointTitle .titleText:before {
+            position: absolute;
+            top: 0px;
+            height: 50px;
+            font-size: 40px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #e4caa9;
+        }
+
+        .pointContainer .pointTitle .titleText:after {
+            content: "[";
+            left: -20px;
+        }
+
+        .pointContainer .pointTitle .titleText:before {
+            content: "]";
+            right: -20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="twoLine">
+            <div class="title-icon yellow">생각 <em>쑥쑥</em></div>
+            <div class="title-text">우리 주변에서 볼 수 있는 공정한 상황 또는 공정하지 않은 상황은 무엇인지 써 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="우리 주변에서 볼 수 있는 공정한 상황 또는 공정하지 않은 상황은 무엇인지 써 봅시다." class="twoLine">활동
+                    </li>
+                    <li data-hover="" data-text="배운 내용을 되돌아보며 자기 점검을 해 봅시다.">자기 점검
+                    </li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <img src="./images/img2.png" alt="" style="
+                        width: 1250px;
+                        height: 450px;
+                        position: absolute;
+                        left: 20px;">
+
+                        <div class="titleText">우리 주변에서 (공정한 / 공정하지 않은 ) 상황은</div>
+                        <div class="noteText noteLine">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p class="dot">우리 주변에서 공정한 상황은 친구들이 순서를 정해서 사이좋게 놀잇감을 가지고 노는 모습입니다.</p>
+                                    <p class="dot">우리 주변에서 공정하지 않은 상황은 순서를 지키지 않고 새치기를 하는 것입니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                    <li class="page_2">
+                        <div class="study_guide"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
+                        <div class="self-check" style="margin-top: 60px;">
+                            <div class="checkWrap">
+                                <div class="text_box">공정이 어떤 뜻인지 알고 있나요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">공정이 언제 필요한지 말할 수 있나요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">우리 주변에서 공정을 찾을 수 있나요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="example-box">
+                                <div class="exampleIcoWrap">
+                                    <div class="example ico-01">
+                                        매우 그렇다
+                                    </div>
+                                    <div class="example ico-02">
+                                        그렇다
+                                    </div>
+                                    <div class="example ico-03">
+                                        좀 더 노력해야 한다
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-praise right popBtn footer-item" data-popup-btn="1"
+                            style="top: 430px; right: -28px;">
+                            <div class="item-title">핵심<br>정리</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image pointContainer" data-popup-page="1">
+                    <div class="full_content" data-quiz="toggle">
+                        <div class="pointTitle">
+                            <div class="titleText">공정이란 무엇일까요?</div>
+                        </div>
+                        <div class="thinkNet_wrap col">
+                            <div class="inner_box tit">
+                                <p>공정의 두 가지 뜻</p>
+                            </div>
+                            <div class="row">
+                                <div class="groupbox">
+                                    <div style="display: flex; justify-content: center;">
+                                        <div class="toggle box" data-toggle-obj="5">
+                                            <div class="answer" data-toggle-target="5">
+                                                <span>같은 것은 같게</span>
+                                            </div>
+                                        </div>
+                                        <div class="think_arrow right top"></div>
+                                    </div>
+                                    <div class="question box pink">
+                                        <span>같은 양의 일을 했다면 <br />
+                                            똑같이 보상받고 , 같은 <br />
+                                            상황이라면 차별하지 않는 것 </span>
+                                    </div>
+                                </div>
+
+                                <div class="groupbox">
+                                    <div style="display: flex; justify-content: center;">
+                                        <div class="toggle box" data-toggle-obj="7">
+                                            <div class="answer" data-toggle-target="7">
+                                                <span>다른 것은 다르게</span>
+                                            </div>
+                                        </div>
+                                        <div class="think_arrow left top"></div>
+                                    </div>
+                                    <div class="question box green">
+                                        <span>다른 양의 일을 했다면 <br />
+                                            다르게 보상받고, 상황에 <br />
+                                            맞게 대하고 배려해주는 것</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="dapCheckBtn" data-answer-btn=""></button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(document).on('click', '.additional-question', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs>li', function () {
+                KmAudioPlayer.buttonClick();
+            });
+
+
+            const buttons = document.querySelectorAll('.popBtn.additional-question');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                    $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                    const value = this.getAttribute('data-popup-btn');
+                    const popup = document.querySelector(`[data-popup-page="${value}"] .innerSlider_tabs li:first-child`);
+                    popup.classList.add('on');
+                    $('.popup_pages .innerSlider_tabs li:first-child').addClass('on');
+                    $('.popup_pages .basicSlider_slides.innerTab li:first-child').addClass('on');
+                });
+            });
+
+        });
+
+    </script>
+</body>
+
+</html>

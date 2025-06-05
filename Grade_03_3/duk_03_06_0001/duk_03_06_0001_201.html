@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        /* Page 1 */
+        .page_1 .items .item {
+            position: relative;
+        }
+
+        .page_1 .items .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 33px;
+            left: -8px;
+            transform: translateY(-50%);
+        }
+
+        .page_1 .items .item {
+            padding-left: 30px;
+            position: relative;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .page_1 .toggle.box {
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        .page_1 .toggle.box .answer {
+            text-align: center;
+        }
+
+        .page_1 .videoSubPlayBtn.youtube {
+            right: 0;
+        }
+
+        /* page 2 */
+        .page-inner {
+            height: 75%;
+            margin: 65px 0 0 0;
+        }
+
+        .drag-line .dragLineArea::after {
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: none;
+        }
+
+        .dragLineArea.pink::after {
+            content: "";
+            display: inline-block;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            border: none;
+        }
+
+        .drag-line {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        .list-image {
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            gap: 45px;
+            margin-top: 15px;
+        }
+
+        .list-image img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 15px;
+            margin-top: 15px;
+            scale: 1.15;
+        }
+
+        .group-flex {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            top: -50px;
+        }
+
+        .flex.bottom .list-image {
+            justify-content: center;
+            height: 100%;
+        }
+
+        .list-image p {
+            padding: 10px 15px;
+            border-radius: 10px;
+            background-color: #FDF3E7;
+        }
+
+        .c1.r1 {
+            left: 430px;
+            top: 5px;
+        }
+
+        .c1.r2 {
+            left: 430px;
+            top: 122px;
+        }
+
+        .c1.r3 {
+            left: 430px;
+            top: 241px;
+        }
+
+        .c1.r4 {
+            left: 430px;
+            top: 361px;
+        }
+
+
+        .c2.r1 {
+            left: 935px;
+            top: 130px;
+        }
+
+        .c2.r2 {
+            left: 935px;
+            top: 250px;
+        }
+
+        .popBtn.line {
+            min-width: 200px;
+        }
+
+        .page_2 .popBtn.line:hover {
+            border-color: #f4e8d2;
+            cursor: default;
+        }
+
+        .dragLineArea.sky::after {
+            background-color: #43a6ff;
+            border-color: #66c0ff;
+            border: 4px solid #66c0ff;
+        }
+
+
+        .dragLineArea.pink::after {
+            background-color: #ff6284;
+            border-color: #ff98ae;
+            border: 4px solid #ff98ae;
+        }
+
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        /* page 3 */
+        .additional-question {
+            position: absolute;
+            right: 0;
+        }
+
+
+        .innerSlider_tabs>li {
+            background-color: #F3DEC0;
+        }
+
+        .innerSlider_tabs>li.on {
+            background-color: #F3B05B;
+        }
+
+        .innerButtonContainer {
+            position: absolute;
+            right: 40px;
+            top: 76px;
+        }
+
+        .innerButtonContainer::before {
+            display: none;
+        }
+
+        .popup_pages>li.image .basicSlider {
+            padding: 0;
+        }
+
+        .popup_pages .contentsBox .basicSlider_slides>li {
+            padding: 0;
+        }
+
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: fit-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+        }
+
+        .popup_pages [data-type="toggleButton"] {
+            height: 100%;
+        }
+
+        .popup_pages [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .popup_pages .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .popup_pages .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+
+        /* page 3 */
+        .page_3 .tab-content {
+            margin-top: 65px;
+        }
+
+        .page_3 .noteText {
+            box-shadow: none;
+            padding: 0;
+        }
+
+        .page_3 .table-box tbody th,
+        .page_3 td {
+            padding: 4px 0;
+        }
+
+        .page_3 th .noteText {
+            height: 60px;
+        }
+
+        .page_3 td .noteText {
+            height: 250px;
+        }
+
+        .page_3 .noteText.noLine .textareaWrap {
+            height: 100%;
+            padding: 0 15px;
+        }
+
+        .page_3 .noteText .text-exam.flex-wrap {
+            padding: 0 15px;
+        }
+
+        .page_3 th .noteText .text-exam.flex-wrap {
+            justify-content: center;
+        }
+
+        .page_3 .noteText .textLine,
+        .page_3 .blueT {
+            line-height: 60px;
+            text-align: left;
+        }
+
+        .page_3 .blueT {
+            margin-top: 5px;
+        }
+
+        .page_3 .choXandO {
+            justify-content: center;
+            display: flex;
+            font-size: 60px;
+            gap: 5px;
+        }
+
+        .page_3 .choXandO span {
+            cursor: pointer;
+            pointer-events: all;
+        }
+
+        .page_3 .circleAns {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 6px solid #E13632;
+            position: absolute;
+            display: none;
+        }
+
+        .page_3 .circleAns.ansO {
+            display: block;
+            left: 324px;
+            top: 227px;
+            pointer-events: none;
+        }
+
+        .page_3 .circleAns.ansX {
+            display: block;
+            left: 397px;
+            top: 226px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon yellow">생각 <em>쑥쑥</em></div>
+            <div class="title-text">공정의 뜻과 필요성을 알아봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="공정의 뜻과 필요성을 알아봅시다.">활동 1</li>
+                    <li data-hover="" data-text="생각 똑똑에서 친구들이 말한 불만을 해결할 수 있는 공정의 뜻을 선으로 연결해 봅시다." class="twoLine">활동 2
+                    </li>
+                    <li data-hover="" data-text="생각 똑똑의 상황이 공정하지 그렇지 않은지 생각해 보고, 그 상황이 계속된다면 어떤 일이 생길지 생각해 봅시다."
+                        class="twoLine">활동 3</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <a class="videoSubPlayBtn large youtube" data-youtube-id="bubC2LMlYK8" target="_blank">참고 영상</a>
+                        <div class="items">
+                            <div class="item">
+                                ‘같은 것은 같게’ 대해야 한다는 것은 어떤 뜻일까요?
+                                <div class="toggle box" data-toggle-obj="1">
+                                    <div class="answer" data-toggle-target="1">
+                                        <div>같은 양의 일을 했다면 똑같이 보상받고, 같은 상황이라면 <br />
+                                            차별하지 않고 똑같이 대해 주는 것이 공정입니다.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                ‘다른 것은 다르게’ 대해야 한다는 것은 어떤 뜻일까요?
+                                <div class="toggle box" data-toggle-obj="2">
+                                    <div class="answer" data-toggle-target="2">
+                                        <div>다른 양의 일을 했다면 다르게 보상받고, 다른 상황이라면 그 상황에 <br />
+                                            맞게 대해 주고 배려해 주는 것이 공정입니다.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="dapCheckBtn" data-answer-btn=""></button>
+                    </li>
+                    <li class="page_2" data-quiz="dragLine" data-total-complete-count="4">
+                        <div class="page-inner">
+                            <div class="drag-line" data-type="center-col">
+                                <svg class="js-svgContainer svgContainer"></svg>
+                                <div class="group-flex">
+                                    <div class="flex top">
+                                        <div class="list-image">
+                                            <p>축구 경기를 할 때</p>
+                                            <p>집 청소를 할 때</p>
+                                            <p>간식을 나눠 먹을 때</p>
+                                            <p>손을 다쳤을 때</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex bottom">
+                                        <div class="list-image">
+                                            <p>같은 것은 같게</p>
+                                            <p>다른 것은 다르게</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="c1 r1 sky js-dragLineArea dragLineArea" data-group="1" data-answer="1"
+                                    data-name="dragLine"></div>
+                                <div class="c1 r1 sky js-dragLineObj dragLineObj" data-group="1" data-answer="1"
+                                    data-name="dragLine" data-complete-count="1"></div>
+                                <div class="c1 r2 sky js-dragLineArea dragLineArea" data-group="1" data-answer="2"
+                                    data-name="dragLine2"></div>
+                                <div class="c1 r2 sky js-dragLineObj dragLineObj" data-group="1" data-answer="2"
+                                    data-name="dragLine2" data-complete-count="1"></div>
+                                <div class="c1 r3 sky js-dragLineArea dragLineArea" data-group="1" data-answer="3"
+                                    data-name="dragLine3"></div>
+                                <div class="c1 r3 sky js-dragLineObj dragLineObj" data-group="1" data-answer="3"
+                                    data-name="dragLine3" data-complete-count="1"></div>
+                                <div class="c1 r4 sky js-dragLineArea dragLineArea" data-group="1" data-answer="4"
+                                    data-name="dragLine4"></div>
+                                <div class="c1 r4 sky js-dragLineObj dragLineObj" data-group="1" data-answer="4"
+                                    data-name="dragLine4" data-complete-count="1"></div>
+                            </div>
+
+                            <!-- ================ -->
+
+                            <div class="c2 r1 pink js-dragLineArea dragLineArea" data-group="2" data-answer="1,3"
+                                data-name="dragLine6"></div>
+                            <div class="c2 r1 pink js-dragLineObj dragLineObj" data-group="2" data-answer="1,3"
+                                data-name="dragLine6" data-complete-count="1"></div>
+
+                            <div class="c2 r2 pink js-dragLineArea dragLineArea" data-group="2" data-answer="2,4"
+                                data-name="dragLine7"></div>
+                            <div class="c2 r2 pink js-dragLineObj dragLineObj" data-group="2" data-answer="2,4"
+                                data-name="dragLine7" data-complete-count="1"></div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="dapCheckBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                    <li class="page_3">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
+                                    <div class="tab-content-box">
+                                        <div class="tab-content content-02">
+                                            <div class="table-box color-02 ">
+                                                <table>
+                                                    <colgroup>
+                                                        <col style="width:20%">
+                                                        <col style="width:20%">
+                                                        <col style="width:60%">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>상황</th>
+                                                            <th>공정한가요?</th>
+                                                            <th>그 상황이 계속된다면 어떤 일이 생길까요?</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>
+                                                                <p>축구 경기를 할 때</p>
+                                                            </th>
+                                                            <td>
+                                                                <p class="choXandO">
+                                                                    <span class="ansDap ansO">O</span>
+                                                                    <span>/</span>
+                                                                    <span class="ansDap ansX ans">X</span>
+                                                                    <span class="circleAns"></span>
+                                                                </p>
+                                                            </td>
+                                                            <td>
+                                                                <div class="noteText noLine">
+                                                                    <div class="textareaWrap">
+                                                                        <textarea class="textLine afterDisplay"
+                                                                            type="text" placeholder="직접 쓰기"
+                                                                            data-input-obj="" data-answer=" " onfocus=""
+                                                                            onblur="placeholder='직접 쓰기'"
+                                                                            autocomplete="off"
+                                                                            spellcheck="false"></textarea>
+                                                                    </div>
+                                                                    <div class="text-exam flex-wrap">
+                                                                        <div class="blueT">
+                                                                            <p>심판이 양쪽 팀을 똑같이 대하지 않았습니다. 그러면 경기 결과를 인정할 수
+                                                                                없을 것 같습니다.</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
+                                    <div class="tab-content-box">
+                                        <div class="tab-content content-02">
+                                            <div class="table-box color-02 ">
+                                                <table>
+                                                    <colgroup>
+                                                        <col style="width:20%">
+                                                        <col style="width:20%">
+                                                        <col style="width:60%">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>상황</th>
+                                                            <th>공정한가요?</th>
+                                                            <th>그 상황이 계속된다면 어떤 일이 생길까요?</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>
+                                                                <p>집 청소를<br /> 할 때</p>
+                                                            </th>
+                                                            <td>
+                                                                <p class="choXandO">
+                                                                    <span class="ansDap ansO">O</span>
+                                                                    <span>/</span>
+                                                                    <span class="ansDap ansX ans">X</span>
+                                                                    <span class="circleAns"></span>
+                                                                </p>
+                                                            </td>
+                                                            <td>
+                                                                <div class="noteText noLine">
+                                                                    <div class="textareaWrap">
+                                                                        <textarea class="textLine afterDisplay"
+                                                                            type="text" placeholder="직접 쓰기"
+                                                                            data-input-obj="" data-answer=" " onfocus=""
+                                                                            onblur="placeholder='직접 쓰기'"
+                                                                            autocomplete="off"
+                                                                            spellcheck="false"></textarea>
+                                                                    </div>
+                                                                    <div class="text-exam flex-wrap">
+                                                                        <div class="blueT">
+                                                                            <p>언니보다 열심히 일을 했는데 똑같이 대접받는 것은 불공정합니다. 이런
+                                                                                상황이 계속 된다면 청소를 하기 싫어질 수 있습니다.</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3" data-quiz="toggle">
+                                    <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
+                                    <div class="tab-content-box">
+                                        <div class="tab-content content-02">
+                                            <div class="table-box color-02 ">
+                                                <table>
+                                                    <colgroup>
+                                                        <col style="width:20%">
+                                                        <col style="width:20%">
+                                                        <col style="width:60%">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>상황</th>
+                                                            <th>공정한가요?</th>
+                                                            <th>그 상황이 계속된다면 어떤 일이 생길까요?</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>
+                                                                <p>간식을<br />
+                                                                    나눠 먹을 때</p>
+                                                            </th>
+                                                            <td>
+                                                                <p class="choXandO">
+                                                                    <span class="ansDap ansO">O</span>
+                                                                    <span>/</span>
+                                                                    <span class="ansDap ansX ans">X</span>
+                                                                    <span class="circleAns"></span>
+                                                                </p>
+                                                            </td>
+                                                            <td>
+                                                                <div class="noteText noLine">
+                                                                    <div class="textareaWrap">
+                                                                        <textarea class="textLine afterDisplay"
+                                                                            type="text" placeholder="직접 쓰기"
+                                                                            data-input-obj="" data-answer=" " onfocus=""
+                                                                            onblur="placeholder='직접 쓰기'"
+                                                                            autocomplete="off"
+                                                                            spellcheck="false"></textarea>
+                                                                    </div>
+                                                                    <div class="text-exam flex-wrap">
+                                                                        <div class="blueT">
+                                                                            <p>친구들이 공정하게 대해 주지 않으면 앞으로는 간식을 나눠 먹지 않게 될
+                                                                                것입니다.</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_4" data-quiz="toggle">
+                                    <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
+                                    <div class="tab-content-box">
+                                        <div class="tab-content content-02">
+                                            <div class="table-box color-02 ">
+                                                <table>
+                                                    <colgroup>
+                                                        <col style="width:20%">
+                                                        <col style="width:20%">
+                                                        <col style="width:60%">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>상황</th>
+                                                            <th>공정한가요?</th>
+                                                            <th>그 상황이 계속된다면 어떤 일이 생길까요?</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>
+                                                                <p>손을<br />
+                                                                    다쳤을 때</p>
+                                                            </th>
+                                                            <td>
+                                                                <p class="choXandO">
+                                                                    <span class="ansDap ansO">O</span>
+                                                                    <span>/</span>
+                                                                    <span class="ansDap ansX ans">X</span>
+                                                                    <span class="circleAns"></span>
+                                                                </p>
+                                                            </td>
+                                                            <td>
+                                                                <div class="noteText noLine">
+                                                                    <div class="textareaWrap">
+                                                                        <textarea class="textLine afterDisplay"
+                                                                            type="text" placeholder="직접 쓰기"
+                                                                            data-input-obj="" data-answer=" " onfocus=""
+                                                                            onblur="placeholder='직접 쓰기'"
+                                                                            autocomplete="off"
+                                                                            spellcheck="false"></textarea>
+                                                                    </div>
+                                                                    <div class="text-exam flex-wrap">
+                                                                        <div class="blueT">
+                                                                            <p>다친 사람이 일인 일역을 다른 사람과 똑같이 하면 다친 곳이 낫지 않을 수
+                                                                                있습니다. 다른 사람과 같은 상황이 아닌 사람은 배려해야 합니다.</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image" data-popup-page="1" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="innerButtonContainer">
+                                <ul class="innerSlider_tabs">
+                                    <li data-hover="" class="on">1</li>
+                                    <li data-hover="" class="">2</li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            불공정한 대우를 받는다면 어떤 기분이 들까요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton" class="box">
+                                                <div class="toggle examBtn box" data-toggle-obj="1">
+                                                    <div class="answer" data-toggle-target="1">
+                                                        <div class="ls-2h">
+                                                            불공정한 일을 당하면 속상한 기분이 들 것 같습니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            친구들이 누군가를 불공정하게 대하는 것은 옳은 일일까요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton" class="box">
+                                                <div class="toggle examBtn box" data-toggle-obj="2">
+                                                    <div class="answer" data-toggle-target="2">
+                                                        <div class="ls-2h"> 옳지 않습니다. 당하는 사람이 속상할 것 같습니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(document).on('click', '.additional-question', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs>li', function () {
+                KmAudioPlayer.buttonClick();
+            });
+
+
+            const buttons = document.querySelectorAll('.popBtn.additional-question');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                    $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                    const value = this.getAttribute('data-popup-btn');
+                    const popup = document.querySelector(`[data-popup-page="${value}"] .innerSlider_tabs li:first-child`);
+                    popup.classList.add('on');
+                    $('.popup_pages .innerSlider_tabs li:first-child').addClass('on');
+                    $('.popup_pages .basicSlider_slides.innerTab li:first-child').addClass('on');
+                });
+            });
+
+            $(document).on('click', '.choXandO .ansDap', function () {
+                if ($(this).hasClass('ansO')) {
+                    if ($(this).hasClass('ans')) {
+                        KmAudioPlayer.correct();
+                        $(this).parent().find('.circleAns').addClass('ansO');
+                    } else {
+                        KmAudioPlayer.incorrect();
+                    }
+                } else {
+                    if ($(this).hasClass('ans')) {
+                        KmAudioPlayer.correct();
+                        $(this).parent().find('.circleAns').addClass('ansX');
+                    } else {
+                        KmAudioPlayer.incorrect();
+                    }
+                }
+            });
+
+        });
+
+    </script>
+</body>
+
+</html>
