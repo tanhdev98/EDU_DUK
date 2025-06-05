@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        /* Page 1 */
+        #wrap header .title-icon.green {
+            padding: 0 16px;
+            background: #00d045;
+            display: block !important;
+        }
+
+        .page_1 .bg {
+            height: calc(100% - 60px);
+            object-fit: contain;
+        }
+
+        .iconX,
+        .iconO {
+            height: 80px;
+            background-size: 70px;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            pointer-events: auto;
+
+        }
+
+        .iconX.ans,
+        .iconO.ans {
+            opacity: 1;
+            pointer-events: none;
+        }
+
+        .iconX {
+            background-image: url('../math/contents/images/icon/icon_X_title.png');
+        }
+
+        .iconO {
+            background-image: url('../math/contents/images/icon/icon_O_title.png');
+        }
+
+        .iconX1 {
+            top: 150px;
+            left: 380px;
+            width: 150px;
+        }
+
+        .iconX2 {
+            top: 260px;
+            left: 322px;
+            width: 170px;
+        }
+
+        .iconX3 {
+            top: 210px;
+            left: 882px;
+            width: 130px;
+        }
+
+        .iconO1 {
+            top: 211px;
+            left: 546px;
+            width: 110px;
+        }
+
+        .iconO2 {
+            top: 175px;
+            left: 736px;
+            width: 120px;
+        }
+
+        .iconO3 {
+            top: 338px;
+            left: 532px;
+            width: 120px;
+        }
+
+        .iconO4 {
+            top: 350px;
+            left: 735px;
+            width: 130px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="gap">
+            <div class="title-icon green">단원 마무리</div>
+            <div class="title-text">공감하는 말과 행동으로 알맞은 물고기를 찾아 O표 해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="공감하는 말과 행동으로 알맞은 물고기를 찾아 O표 해 봅시다." data-gap="true">활동</li>
+                    <li data-hover="" data-text="5단원을 마치며 자신의 모습을 되돌아봅시다.">자기 점검</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <img class="bg" src="./images/img2.png" alt="">
+                        <div class="group_ans">
+                            <div class="icon iconX iconX1"></div>
+                            <div class="icon iconX iconX2"></div>
+                            <div class="icon iconX iconX3"></div>
+                            <div class="icon iconO iconO1"></div>
+                            <div class="icon iconO iconO2"></div>
+                            <div class="icon iconO iconO3"></div>
+                            <div class="icon iconO iconO4"></div>
+                        </div>
+
+                        <button class="dapCheckBtn" data-answer-btn=""></button>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="study_guide"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
+                        <div class="self-check" style="margin-top: 60px;">
+                            <div class="checkWrap">
+                                <div class="text_box">공감이 필요한 까닭을 이해했나요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">다른 사람의 감정을 느낄 수 있나요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">공감하는 방법을 알고 있나요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">생활에서 공감을 실천할 수 있나요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="example-box">
+                                <div class="exampleIcoWrap">
+                                    <div class="example ico-01">
+                                        매우 그렇다
+                                    </div>
+                                    <div class="example ico-02">
+                                        그렇다
+                                    </div>
+                                    <div class="example ico-03">
+                                        좀 더 노력해야 한다
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+            });
+
+            $(document).on('click', '.page_1 .icon', function () {
+                if ($(this).hasClass('iconX')) {
+                    KmAudioPlayer.incorrect();
+                } else {
+                    KmAudioPlayer.correct();
+                }
+                $(this).addClass('ans');
+            });
+            $(document).on('click', '.dapCheckBtn', function () {
+                if ($(this).hasClass('reset')) {
+                    $('.page_1 .icon').addClass('ans');
+                } else {
+                    $('.page_1 .icon').removeClass('ans');
+                }
+            })
+
+        });
+    </script>
+</body>
+
+</html>
