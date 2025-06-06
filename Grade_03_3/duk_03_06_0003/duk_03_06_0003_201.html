@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        /* Page 1 */
+        .page_1 .flex {
+            display: flex;
+            gap: 20px;
+        }
+
+        .page_1 .item .title {
+            padding: 7px 0;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .page_1 .item {
+            flex: 1;
+            position: relative;
+        }
+
+        .page_1 .noteText {
+            height: 516px;
+        }
+
+        .page_1 .noteText .textareaWrap {
+            margin-top: 86px;
+        }
+
+        .page_1 .noteText .underline {
+            margin-top: 86px;
+        }
+
+        .page_1 .writeBtn {
+            right: 0px;
+        }
+
+        .page_1 .titleNoteText {
+            position: absolute;
+            z-index: 1;
+            left: 50px;
+            letter-spacing: -1px;
+        }
+
+        .page_1 .titleNoteText1 {
+            top: 52px;
+        }
+
+        .page_1 .titleNoteText2 {
+            top: 20px;
+        }
+
+        .page_1 .blueT {
+            margin-top: 88px;
+        }
+
+        .page_1 .textLine,
+        .page_1 .noteText p.dot {
+            letter-spacing: -1px;
+        }
+
+        /* page 2 */
+        .flex {
+            display: flex;
+            gap: 20px;
+        }
+
+        .flex .howtoBox {
+            width: 100%;
+            margin-top: 70px;
+        }
+
+        .flex .howtoBox .text-box {
+            text-align: center;
+        }
+
+        .howtoBox .pic-box .imageWrap {
+            padding: 0;
+        }
+
+        .howtoBox .pic-box .imageWrap>img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .page_2 .noteText {
+            box-shadow: none;
+            padding: 0;
+        }
+
+        .page_2 .table-box tbody th,
+        .page_2 td {
+            padding: 4px 0;
+        }
+
+        .page_2 th .noteText {
+            height: 60px;
+        }
+
+        .page_2 td .noteText {
+            height: 273px;
+        }
+
+        .page_2 td .noteText.note1 {
+            height: 120px;
+        }
+
+        .page_2 .noteText.noLine .textareaWrap {
+            height: 100%;
+            padding: 0 15px;
+        }
+
+        .page_2 .noteText .text-exam.flex-wrap {
+            padding: 0 15px;
+        }
+
+        .page_2 th .noteText .text-exam.flex-wrap {
+            justify-content: center;
+        }
+
+        .page_2 .noteText .textLine,
+        .page_2 .blueT {
+            line-height: 53px;
+            text-align: left;
+        }
+
+        .page_2 .blueT {
+            margin-top: 5px;
+        }
+
+        .page_2 .groupItem {
+            flex: 3;
+        }
+
+        .page_2 .tab-content-box {
+            flex: 8;
+        }
+
+        .icon-char[data-popup-btn="1"] {
+            top: 0px;
+            left: unset;
+            right: 0px;
+        }
+
+        .min[data-popup-page="1"] {
+            top: 145px;
+            left: 490px;
+            width: 769px;
+        }
+
+        .page_2 .item1 {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            top: 110px;
+        }
+
+        .page_2 .item1 .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s;
+            z-index: 1;
+        }
+
+        .page_2 .item1 .slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .page_2 .flex .groupButton {
+            display: flex;
+            gap: 30px;
+            margin-top: 115px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .page_2 .titleImg {
+            background-color: #e8d5f7;
+            border: 4px solid #d5c5e0;
+            padding: 5px 15px;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
+            top: 90px;
+            display: none;
+        }
+
+        .page_2 .titleImg.acitve {
+            display: block;
+        }
+
+        .page_2 .flex .basicSlider_btn {
+            position: static;
+            background-size: 12px;
+            width: 24px;
+            height: 24px;
+            background-position: 6px center;
+        }
+
+        .page_2 .numImage {
+            color: #a68965;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue" data-show="1">실천 <em>쑥쑥</em></div>
+            <div class="title-text">그네를 타는 공정한 규칙을 만들어 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="그네를 타는 공정한 규칙을 만들어 봅시다.">활동 1</li>
+                    <li data-hover="" data-text="생활에서 필요한 공정한 규칙을 만들어 봅시다.">활동 2
+                    </li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="flex">
+                            <div class="item">
+                                <div class="titleNoteText titleNoteText1">내가 생각한 규칙은 무엇인가요?</div>
+                                <div class="noteText noteLine orange">
+                                    <div class="textareaWrap">
+                                        <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                            autocomplete="off" spellcheck="false"></textarea>
+                                    </div>
+                                    <div class="text-exam flex-wrap">
+                                        <div class="blueT">
+                                            <p class="dot">학년별로 그네 타는 시간을 정합니다.</p>
+                                            <p class="dot">학년별로 그네 타는 요일을 정해서 탑니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="titleNoteText titleNoteText2">내가 생각한 규칙이 공정하려면<br />어떤 조건이 필요할까요?</div>
+                                <div class="noteText noteLine green">
+                                    <div class="textareaWrap">
+                                        <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                            autocomplete="off" spellcheck="false"></textarea>
+                                    </div>
+                                    <div class="text-exam flex-wrap">
+                                        <div class="blueT">
+                                            <p class="dot">모두가 동의할 수 있는지 생각해야 합니다.</p>
+                                            <p class="dot">규칙 때문에 일방적으로 손해 보는 사람이 없어야 합니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="writeBtn" data-answer-btn=""></button>
+                    </li>
+                    <li class="page_2">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="flex">
+                                        <div class="how-to-box howtoBox">
+                                            <div class="pic-box">
+                                                <div class="image-box">
+                                                    <div class="imageWrap">
+                                                        <img src="./images/Picture1.png">
+                                                    </div>
+                                                </div>
+                                                <div class="text-box">
+                                                    운동장에서
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="how-to-box howtoBox">
+                                            <div class="pic-box">
+                                                <div class="image-box">
+                                                    <div class="imageWrap">
+                                                        <img src="./images/Picture2.png">
+                                                    </div>
+                                                </div>
+                                                <div class="text-box">
+                                                    친구들과 놀 때
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="how-to-box howtoBox">
+                                            <div class="pic-box">
+                                                <div class="image-box">
+                                                    <div class="imageWrap">
+                                                        <img src="./images/Picture3.png">
+                                                    </div>
+                                                </div>
+                                                <div class="text-box">
+                                                    교실에서
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+
+                                    <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="1"></div>
+
+                                    <div class="flex">
+                                        <div class="groupItem">
+                                            <div class="item2">
+                                                <div class="titleImg titleImg1 acitve">운동장에서</div>
+                                                <div class="titleImg titleImg2">친구들과 놀 때</div>
+                                                <div class="titleImg titleImg3">교실에서</div>
+                                            </div>
+                                            <div class="item1">
+                                                <img src="./images/Picture1.png" class="slide active" />
+                                                <img src="./images/Picture2.png" class="slide" />
+                                                <img src="./images/Picture3.png" class="slide" />
+                                            </div>
+                                            <div class="groupButton">
+                                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                                <div class="numImage"></div>
+                                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-content-box">
+                                            <div class="tab-content content-03" style="margin-top: 90px;">
+                                                <div class="table-box color-03 ">
+                                                    <table>
+                                                        <colgroup>
+                                                            <col style="width:30%">
+                                                            <col style="width:70%">
+                                                        </colgroup>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th>
+                                                                    규칙이<br />
+                                                                    필요한 상황
+                                                                </th>
+                                                                <td>
+                                                                    <div class="noteText noLine note1">
+                                                                        <div class="textareaWrap">
+                                                                            <textarea class="textLine afterDisplay"
+                                                                                type="text" placeholder="직접 쓰기"
+                                                                                data-input-obj="" data-answer=" "
+                                                                                onfocus="" onblur="placeholder='직접 쓰기'"
+                                                                                autocomplete="off"
+                                                                                spellcheck="false"></textarea>
+                                                                        </div>
+                                                                        <div class="text-exam flex-wrap">
+                                                                            <div class="blueT">
+                                                                                <p>술래잡기할 때 술래 정하기</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>
+                                                                    내가 만든<br />
+                                                                    규칙
+                                                                </th>
+                                                                <td>
+                                                                    <div class="noteText noLine">
+                                                                        <div class="textareaWrap">
+                                                                            <textarea class="textLine afterDisplay"
+                                                                                type="text" placeholder="직접 쓰기"
+                                                                                data-input-obj="" data-answer=" "
+                                                                                onfocus="" onblur="placeholder='직접 쓰기'"
+                                                                                autocomplete="off"
+                                                                                spellcheck="false"></textarea>
+                                                                        </div>
+                                                                        <div class="text-exam flex-wrap">
+                                                                            <div class="blueT">
+                                                                                <p>술래를 하고 싶어 하는 사람이 있으면
+                                                                                    그 사람이 술래를 하고, 술래를 하고
+                                                                                    싶어 하는 사람이 없으면 가위바위보로
+                                                                                    술래를 정합니다.</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        <p>
+                            자기중심적인 규칙이 아닌 다른 사람이 동의할 수 있는 규칙을 만들 수 있도록 합니다.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(document).on('click', '.additional-question', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs>li', function () {
+                KmAudioPlayer.buttonClick();
+            });
+
+
+            const buttons = document.querySelectorAll('.popBtn.additional-question');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                    $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                    const value = this.getAttribute('data-popup-btn');
+                    const popup = document.querySelector(`[data-popup-page="${value}"] .innerSlider_tabs li:first-child`);
+                    popup.classList.add('on');
+                    $('.popup_pages .innerSlider_tabs li:first-child').addClass('on');
+                    $('.popup_pages .basicSlider_slides.innerTab li:first-child').addClass('on');
+                });
+            });
+
+            $(document).on('click', '.choXandO .ansDap', function () {
+                if ($(this).hasClass('ansO')) {
+                    if ($(this).hasClass('ans')) {
+                        KmAudioPlayer.correct();
+                        $(this).parent().find('.circleAns').addClass('ansO');
+                    } else {
+                        KmAudioPlayer.incorrect();
+                    }
+                } else {
+                    if ($(this).hasClass('ans')) {
+                        KmAudioPlayer.correct();
+                        $(this).parent().find('.circleAns').addClass('ansX');
+                    } else {
+                        KmAudioPlayer.incorrect();
+                    }
+                }
+            });
+
+            $(document).on('click', '.resetBtn', function () {
+                KmAudioPlayer.buttonClick();
+                $('.textLine').val('');
+            });
+
+
+
+        });
+
+
+        $(document).ready(function () {
+            var slides = $('.page_2 .item1 .slide');
+            var idx = 0;
+
+            slides.removeClass('active');
+            slides.eq(idx).addClass('active');
+            updateButtons();
+            updateNumImage();
+
+            $('.page_2 .flex .prev').addClass('off');
+
+            $('.page_2 .flex .next').click(function () {
+                if (idx < slides.length - 1) {
+                    slides.eq(idx).removeClass('active');
+                    idx++;
+                    slides.eq(idx).addClass('active');
+                    updateButtons();
+                    updateNumImage();
+                }
+            });
+
+            $('.page_2 .flex .prev').click(function () {
+                if (idx > 0) {
+                    slides.eq(idx).removeClass('active');
+                    idx--;
+                    slides.eq(idx).addClass('active');
+                    updateButtons();
+                    updateNumImage();
+                }
+            });
+
+            function updateButtons() {
+                $('.page_2 .flex .prev').prop('disabled', idx === 0);
+                $('.page_2 .flex .next').prop('disabled', idx === slides.length - 1);
+                if (idx === 0) {
+                    $('.page_2 .flex .prev').addClass('off');
+                } else {
+                    $('.page_2 .flex .prev').removeClass('off');
+                }
+                if (idx === slides.length - 1) {
+                    $('.page_2 .flex .next').addClass('off');
+                } else {
+                    $('.page_2 .flex .next').removeClass('off');
+                }
+            }
+
+            function updateNumImage() {
+                // Hiển thị số ảnh hiện tại (bắt đầu từ 1) / tổng số ảnh
+                $('.numImage').text((idx + 1) + ' / ' + slides.length);
+                $(`.titleImg`).removeClass('acitve');
+                $(`.titleImg${idx + 1}`).addClass('acitve');
+            }
+        });
+    </script>
+</body>
+
+</html>

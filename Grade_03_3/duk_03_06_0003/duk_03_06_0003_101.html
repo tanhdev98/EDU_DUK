@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        /* Page 1 */
+        .page_1 .noteText {
+            margin-top: 60px;
+        }
+
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        .additional-question {
+            position: absolute;
+            right: 0px;
+        }
+
+        .innerSlider_tabs>li {
+            background-color: #F3DEC0;
+        }
+
+        .innerSlider_tabs>li.on {
+            background-color: #F3B05B;
+        }
+
+        .innerButtonContainer {
+            position: absolute;
+            right: 40px;
+            top: 21px;
+        }
+
+        .innerButtonContainer::before {
+            display: none;
+        }
+
+        .popup_pages>li.image .basicSlider {
+            padding: 0;
+        }
+
+        .popup_pages .contentsBox .basicSlider_slides>li {
+            padding: 0;
+        }
+
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: fit-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: max-content;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 220px;
+            padding: 20px;
+        }
+
+        [data-type="toggleButton"] {
+            height: fit-content;
+            margin-top: 70px;
+        }
+
+        [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            justify-content: center;
+        }
+
+        .innerTab_3 .innerTab1 [data-type="toggleButton"] .toggle {
+            top: -20px;
+        }
+
+        .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+
+        [data-type="toggleButton"] {
+            height: 100%;
+            margin: 0;
+        }
+
+        .toggle {
+            height: 100%;
+        }
+
+
+        .popup_pages .innerButtonContainer {
+            top: 76px;
+        }
+
+        .popup_pages .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .popup_pages .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+        }
+
+        .popup_pages [data-type="toggleButton"] {
+            height: fit-content;
+            margin-top: 70px;
+        }
+
+        .popup_pages [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            justify-content: center;
+        }
+
+        .popup_pages .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .popup_pages .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+
+        .popup_pages [data-type="toggleButton"] {
+            height: 100%;
+            margin: 0;
+        }
+
+        .popup_pages .toggle {
+            height: 100%;
+        }
+
+        .popup_pages .toggle.complete .answer {
+            text-align: center;
+        }
+
+        .page_1 .items .item {
+            position: relative;
+        }
+
+        .page_1 .items .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 33px;
+            left: -8px;
+            transform: translateY(-50%);
+        }
+
+        .page_1 .items .item {
+            padding-left: 30px;
+            position: relative;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .page_1 .toggle.box {
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        .page_1 .toggle.box .answer {
+            text-align: center;
+        }
+
+        .page_1 .innerTab_3 [data-type="toggleButton"] {
+            height: max-content;
+        }
+
+        .page_1 .innerTab_3 [data-type="toggleButton"] .toggle {
+            background-color: #f7f7f7;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue" data-show="1">실천 <em>똑똑</em></div>
+            <div class="title-text">다음 이야기를 읽고 질문에 답해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="noteText noteLine blue">
+                                        <div class="noteText-content">
+                                            어느 초등학교의 점심시간, 학생들이 놀이터에서 즐겁게 놀고
+                                            있었습니다. 그런데 문제가 생겼습니다. 놀이터에 그네는 한 개
+                                            뿐인데 학생들이 모두 그네를 타고 싶어 했기 때문입니다. 학생들은
+                                            서로 그네를 타려고 다투기 시작했습니다.
+                                            “학년이 낮은 사람이 먼저 타야 해. 어린 사람한테 양보하는 게
+                                            당연한 거야!”
+                                            “줄 서서 기다린 순서대로 타야 해. 질서를 지켜야지.”
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="noteText noteLine blue">
+                                        <div class="noteText-content">
+                                            “나는 줄 선다고 한 적 없는데? 그네를 먼저 잡은 사람이 먼저
+                                            타야지.”
+                                            다툼이 계속되자 선생님께서 학생들을 불러 모아 말씀하셨습니다.
+                                            “우리 함께 공정한 규칙을 만들어 볼까?”
+                                            학생들은 모두 동의했고, 어떻게 하면 공정한 규칙을 만들 수 있을지
+                                            생각하기 시작했습니다.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3" data-quiz="toggle">
+                                    <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
+                                    <div class="items" style="margin-top: 60px;">
+                                        <div class="item" data-type="toggleButton">
+                                            학생들 사이에 문제가 생긴 까닭은 무엇인가요?
+                                            <div class="toggle box" data-toggle-obj="1">
+                                                <div class="answer" data-toggle-target="1">
+                                                    서로 그네를 타려고 해서 문제가 생겼습니다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item" data-type="toggleButton">
+                                            문제를 해결하려면 어떻게 해야 할까요?
+                                            <div class="toggle box" data-toggle-obj="2">
+                                                <div class="answer" data-toggle-target="2">
+                                                    모두 함께 의논하고 모두가 동의해야 합니다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image" data-popup-page="1" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="innerButtonContainer">
+                                <ul class="innerSlider_tabs">
+                                    <li data-hover="" class="on">1</li>
+                                    <li data-hover="" class="">2</li>
+                                    <li data-hover="" class="">3</li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            친구들이 규칙을 정하지 않고 서로 먼저<br />
+                                            그네를 타겠다고 다투면 어떻게 될까요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton" class="box">
+                                                <div class="toggle examBtn box" data-toggle-obj="1">
+                                                    <div class="answer" data-toggle-target="1"
+                                                        style="text-align: left;">
+                                                        <div class="ls-2h">
+                                                            <p class="dot">다투는 과정에서 다치는 친구가 생겨 위험할 것 같습니다.</p>
+                                                            <p class="dot">친구와 큰 갈등을 겪을 것 같습니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            친구들과 서로 먼저, 많이 또는 적게 하겠다고<br />
+                                            다툰 경우가 있었나요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton" class="box">
+                                                <div class="toggle examBtn box" data-toggle-obj="2">
+                                                    <div class="answer" data-toggle-target="2">
+                                                        <div class="ls-2h">
+                                                            과자를 더 많이 먹고 싶어서<br />
+                                                            친구와 다툰 적이 있습니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            여러분이 공정한 규칙을 만든다면<br />
+                                            어떤 규칙을 만들고 싶나요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton" class="box">
+                                                <div class="toggle examBtn box" data-toggle-obj="3">
+                                                    <div class="answer" data-toggle-target="3"
+                                                        style="text-align: left;">
+                                                        <div class="ls-2h">
+                                                            <p class="dot">모두가 같은 기회를 가질 수 있는 규칙을 만들고 싶습니다.</p>
+                                                            <p class="dot">모두가 행복할 수 있는 규칙을 만들고 싶습니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(document).on('click', '.additional-question', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs>li', function () {
+                KmAudioPlayer.buttonClick();
+            });
+
+
+            const buttons = document.querySelectorAll('.popBtn.additional-question');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                    $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                    const value = this.getAttribute('data-popup-btn');
+                    const popup = document.querySelector(`[data-popup-page="${value}"] .innerSlider_tabs li:first-child`);
+                    popup.classList.add('on');
+                    $('.popup_pages .innerSlider_tabs li:first-child').addClass('on');
+                    $('.popup_pages .basicSlider_slides.innerTab li:first-child').addClass('on');
+                });
+            });
+
+
+
+            $(document).on('click', '.page_1 .innerTab_3 .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.page_1 .innerTab_3 .innerSlider_tabs li').removeClass('on');
+                $('.page_1 .innerTab_3 .basicSlider_slides.innerTab li').removeClass('on');
+                $(this).addClass('on');
+                $('.page_1 .innerTab_3 .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(document).on('click', '.additional-question', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+            });
+
+            $(document).on('click', '.page_1 .innerTab_3 .innerSlider_tabs>li', function () {
+                KmAudioPlayer.buttonClick();
+            });
+
+        });
+
+    </script>
+</body>
+
+</html>
