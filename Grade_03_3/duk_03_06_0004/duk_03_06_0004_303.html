@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+
+    <style>
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        #wrap header .title-icon.orange {
+            padding: 0 16px;
+            background: #ff6600;
+            color: #fff;
+            display: block !important;
+        }
+
+        .title {
+            position: absolute;
+            top: 55px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon orange" data-show="3">생각 놀이터</em></div>
+            <div class="title-text">‘이누이트 마을의 나눔’을 읽어 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="title">이누이트 마을의 나눔</div>
+                                    <div class="noteText noteLine blue" style="padding-top: 170px; height: 530px;">
+                                        이누이트 마을 사람들은 사냥을 해서 얻은 먹을거리를 사냥에 함께
+                                        나가지 않은 마을 사람들에게도 나눠 줍니다. 심지어 마을 근처에 사는
+                                        북극곰들도 사냥을 해서 얻은 고기를 먹을 수 있게 남겨 둔답니다.
+                                        이누이트인들이 사는 추운 북극처럼 먹을 것을 구하기 어려운 환경
+                                        에서는 누구나 배고픈 상황에 처할 수 있기 때문입니다.
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="noteText noteLine blue" style="height: 530px;">
+                                        이누이트 마을에서는 사냥에 성공한 것이 자신의 능력만이 아니라
+                                        마을 사람들과 자연환경의 도움, 거기에 행운까지 겹친 덕분이라고
+                                        생각합니다. 그래서 자기 몫의 먹을거리를 마을 사람들과 북극곰
+                                        에게까지 나눠 주는 것입니다. 공정하게 하려면 때로는 다른 사람의
+                                        처지나 함께 살아가는 자연환경까지도 생각해야 합니다.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                }
+                else {
+                    $('header').removeClass('twoLine');
+                }
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(document).on('click', '.additional-question', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs>li', function () {
+                KmAudioPlayer.buttonClick();
+            });
+
+
+            const buttons = document.querySelectorAll('.popBtn.additional-question');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                    $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                    const value = this.getAttribute('data-popup-btn');
+                    const popup = document.querySelector(`[data-popup-page="${value}"] .innerSlider_tabs li:first-child`);
+                    popup.classList.add('on');
+                    $('.popup_pages .innerSlider_tabs li:first-child').addClass('on');
+                    $('.popup_pages .basicSlider_slides.innerTab li:first-child').addClass('on');
+                });
+            });
+
+
+
+            let numActive = 0;
+
+            $(document).on('click', '.choBox', function () {
+                if (!$(this).hasClass('active')) {
+                    $(this).addClass('active');
+                } else {
+                    $(this).removeClass('active');
+                }
+                numItem = $(this).parents('[data-quiz="toggle"]').find('.choBox').length;
+                numActive = $(this).parents('[data-quiz="toggle"]').find('.choBox.active').length;
+                console.log(numActive);
+                if (numActive === numItem) {
+                    $(this).parents('[data-quiz="toggle"]').find('.dapCheckBtn').addClass('reset');
+                } else {
+                    $(this).parents('[data-quiz="toggle"]').find('.dapCheckBtn').removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                let choBox = $(this).parent().parent().find('.choBox');
+                if (!$(this).hasClass('reset')) {
+                    $(this).removeClass('reset');
+                    choBox.removeClass('active');
+                    choBox.find('.dir-rect').removeClass('on');
+                    choBox.find('.dir-rect').each(function () {
+                        let dataCho = $(this).data('cho');
+                        $(this).text(dataCho);
+                    })
+                } else {
+                    $(this).addClass('reset');
+                    choBox.addClass('active');
+                    choBox.find('.dir-rect').addClass('on');
+                    choBox.find('.dir-rect').each(function () {
+                        let dataLetter = $(this).data('letter');
+                        $(this).text(dataLetter);
+                    })
+                }
+
+            });
+
+            $prite.girl1({
+                id: '#girl_1_c',
+                circle: true,
+                speech: 'right',
+                text: '모든 친구의 말에<br/>귀를 기울이겠습니다.',
+                class: 'bottom',
+                balloon_top: -180,
+                balloon_left: -125,
+            });
+
+            $(document).on('click', '.page_1 .character-item', function () {
+                $(this).find('.balloon').removeClass('fff');
+            });
+
+            $(document).on('click', '.page_1 .characterWrap, .page_1 .balloon > span', function () {
+                KmAudioPlayer.buttonClick();
+            });
+        });
+
+    </script>
+</body>
+
+</html>

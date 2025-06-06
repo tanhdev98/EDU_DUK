@@ -16,37 +16,45 @@
             top: -30px;
         }
 
-        /* Page 1 */
-        .page_1 .noteText .textareaWrap {
-            height: 100%;
+        .flex {
+            display: flex;
+            margin-top: 40px;
         }
 
-        .page_1 .noteText.note1 {
-            width: 280px;
-            height: 107px;
+        .flex .items:first-child {
+            width: 1080px;
+        }
+
+        .flex .items {
+            width: 100%;
+        }
+
+        #girl_1_c {
             position: absolute;
-            box-shadow: unset;
-
+            bottom: 90px;
+            left: 990px;
         }
 
-        .page_1 .noteText.note1 .underline {
-            display: none;
+        .characterWrap.speech.right:before {
+            background: url('../ko/contents/images/button/btn_speech_balloon_left1.png') no-repeat;
         }
 
-        .page_1 .noteText.note1 .textareaWrap {
-            padding: 0 32px;
+        .characterWrap.speech.right:hover:before {
+            background: url('../ko/contents/images/button/btn_speech_balloon_left1_hover.png') no-repeat;
         }
 
-        .page_1 .titleNote1 {
+        #girl_1_c .charSpriteAni {
+            background-image: url('../ko/contents/images/character/girl_1.png') !important;
+        }
+
+        .titleNoteText {
             position: absolute;
-            left: 280px;
-            top: 40px;
+            left: 45px;
+            top: 90px;
         }
 
-        .page_1 .titleNote2{
-            position: absolute;
-            left: 50px;
-            top: 112px;
+        .popup_pages .buttonContainer {
+            right: 28px;
         }
 
         .pointContainer .pointTitle {
@@ -88,14 +96,15 @@
 
         .popup_pages .cho {
             background-color: transparent;
-            height: 100%;
-            margin: 0;
         }
 
         .popup_pages .choWrap {
-            text-align: center;
+            text-align: left;
         }
 
+        .btn-praise {
+            right: -28px;
+        }
 
         .popup_pages .items .item {
             position: relative;
@@ -122,243 +131,55 @@
             bottom: 20px;
         }
 
-
-        /* title thinknet */
-        .popup_pages .pointContainer .pointTitle {
-            display: block;
-            text-align: center;
+        .noteText .text-exam.flex-wrap {
+            padding: 35px 20px 0px;
         }
 
-        .popup_pages .pointContainer .pointTitle .titleText {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 30px;
-            font-size: 45px;
-            line-height: 50px;
-            font-family: YGJAL;
-            color: #ff6600;
-            text-shadow: none;
-            -webkit-text-stroke: inherit;
-        }
-
-        .popup_pages .pointContainer .pointTitle .titleText:after,
-        .popup_pages .pointContainer .pointTitle .titleText:before {
-            position: absolute;
-            top: 0px;
-            height: 50px;
-            font-size: 40px;
-            line-height: 50px;
-            font-family: YGJAL;
-            color: #e4caa9;
-        }
-
-        .popup_pages .pointContainer .pointTitle .titleText:after {
-            content: "[";
-            left: -20px;
-        }
-
-        .popup_pages .pointContainer .pointTitle .titleText:before {
-            content: "]";
-            right: -20px;
-        }
-
-        .popup_pages .popup_pages .group-box .titleBox {
-            width: fit-content;
-            margin: 10px auto 0;
-            padding: 5px 15px;
-            background-color: #fff;
-            border: 4px solid #EFCFA6;
-            border-radius: 5px;
-            position: relative;
-            width: 700px;
-            height: 125px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .popup_pages .box-text {
-            width: 470px;
-            height: 300px;
-            border-radius: 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            margin-top: 10px;
-        }
-
-        .popup_pages .box-text.pink {
-            background-color: #FFDBDF;
-            top: 190px;
-            left: 100px;
-        }
-
-        .popup_pages .box-text.green {
-            background-color: #F2F7C8;
-            top: 190px;
-            left: 75%;
-            transform: translateX(-50%);
-        }
-
-        .popup_pages .box-text.blue {
-            background-color: #E7F4F9;
-            top: 190px;
-            right: 50px;
-        }
-
-        .popup_pages .box-text .wrapToggle {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0px;
-            left: 50%;
-            transform: translate(-50%, 0%);
-            padding: 5px;
-        }
-
-        .popup_pages .box-text .wrapToggle .toggle {
-            width: 100%;
-            height: 100%;
-            background-color: transparent;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .popup_pages .box-text .wrapToggle .toggle .answer {
-            text-align: center;
-            font-weight: normal;
-        }
-
-        .popup_pages .pointContainer .dapCheckBtn {
-            right: 28px;
-            bottom: 20px;
-        }
-
-        .popup_pages .arrow_right {
-            width: 50px;
-            top: 0px;
-            position: absolute;
-        }
-
-        .popup_pages .arrow_right.arrow1 {
-            left: calc(50% - 25px);
-        }
-
-        .popup_pages .arrow_right.arrow2 {
-            left: 856px;
+        .noteText .textareaWrap {
+            padding: 0;
         }
     </style>
 </head>
 
 <body>
     <div id="wrap" class="math">
-        <header class="twoLine">
+        <header>
             <div class="title-icon blue">실천 <em>탄탄</em></div>
-            <div class="title-text">친구들이 만든 생활 속 규칙을 살펴보고 어떤 규칙이 가장 공정한지 써 봅시다.</div>
+            <div class="title-text">공정한 사회를 만들려면 어떤 마음을 지녀야 할지 써 봅시다.</div>
         </header>
         <main>
             <!-- FRAME OF PAGE -->
             <div class="basicSlider contentsBox" data-slide-container="main">
-                <ul class="basicSlider_tabs" data-tabs="">
-                    <li data-hover="" data-text="친구들이 만든 생활 속 규칙을 살펴보고 어떤 규칙이 가장 공정한지 써 봅시다." class="twoLine">활동</li>
-                    <li data-hover="" data-text="배운 내용을 되돌아보며 자기 점검을 해 봅시다.">자기 점검</li>
-                </ul>
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1" data-quiz="toggle">
-                        <div class="noteText noteLine purple" style="padding-top: 92px;">
-                            <div class="textareaWrap" style="padding-left: 245px; height: 250px;">
-                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
-                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
-                                    autocomplete="off" spellcheck="false"></textarea>
+                        <div class="flex">
+                            <div class="btn-praise right popBtn footer-item" data-popup-btn="1"
+                                style="top: 400px; right: -28px;">
+                                <div class="item-title">핵심 <br>정리</div>
                             </div>
-                            <div class="text-exam flex-wrap" style="padding-left: 265px;">
-                                <div class="blueT" style="margin-top: 60px;">
-                                    <p>누구나 똑같은 기회를 가질 수 있기 때문입니다.</p>
-                                </div>
+                            <div class="items">
+                                <div id="girl_1_c" class="character-item"></div>
                             </div>
-                        </div>
-                        <div class="noteText noteLine note1">
-                            <div class="textareaWrap">
-                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
-                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
-                                    autocomplete="off" spellcheck="false"></textarea>
-                            </div>
-                            <div class="text-exam flex-wrap" style="padding-left: 55px;">
-                                <div class="blueT">
-                                    <p>지우</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="titleNote1">이/가 만든 규칙이 가장 공정하다고 생각합니다.</div>
-                        <div class="titleNote2">왜냐하면</div>
-                        <button class="writeBtn" data-answer-btn=""></button>
-                    </li>
-                    <li class="page_2">
-                        <div class="study_guide"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
-                        <div class="self-check" style="margin-top: 60px;">
-                            <div class="checkWrap">
-                                <div class="text_box">생활에서 공정을 실천하려면 규칙이<br />
-                                    필요하다는 것을 알고 있나요?</div>
-                                <div class="icon-box">
-                                    <div class="wrap">
-                                        <div class="button-smile icon1"></div>
+                            <div class="items">
+                                <div class="titleNoteText">나는 공정한 사회를 만들기 위해</div>
+                                <div class="noteText noteLine pink"
+                                    style="left: -495px; padding-top: 92px; width: 805px;">
+                                    <div class="textareaWrap" style="height: 250px;">
+                                        <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                            autocomplete="off" style="letter-spacing: -1px;"></textarea>
                                     </div>
-                                    <div class="wrap">
-                                        <div class="button-smile icon2"></div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="button-smile icon3"></div>
+                                    <div class="text-exam flex-wrap">
+                                        <div class="blueT" style="padding-top: 60px; letter-spacing: -1px;">
+                                            친구들 사이에서 문제가 생기면 그 문제를
+                                            공정하게 해결하려고 노력하겠습니다.
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="checkWrap">
-                                <div class="text_box">어떤 상황에서 공정한 규칙이 필요한지<br />
-                                    알고 있나요?
-                                </div>
-                                <div class="icon-box">
-                                    <div class="wrap">
-                                        <div class="button-smile icon1"></div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="button-smile icon2"></div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="button-smile icon3"></div>
-                                    </div>
+                                <div class="buttonContainer">
+                                    <button class="writeBtn" data-answer-btn=""></button>
                                 </div>
                             </div>
-                            <div class="checkWrap">
-                                <div class="text_box">규칙을 공정하게 만들 수 있나요?</div>
-                                <div class="icon-box">
-                                    <div class="wrap">
-                                        <div class="button-smile icon1"></div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="button-smile icon2"></div>
-                                    </div>
-                                    <div class="wrap">
-                                        <div class="button-smile icon3"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="example-box">
-                                <div class="exampleIcoWrap">
-                                    <div class="example ico-01">
-                                        매우 그렇다
-                                    </div>
-                                    <div class="example ico-02">
-                                        그렇다
-                                    </div>
-                                    <div class="example ico-03">
-                                        좀 더 노력해야 한다
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="btn-praise right popBtn footer-item" data-popup-btn="1"
-                            style="top: 460px; right: -28px;">
-                            <div class="item-title">핵심 <br>정리</div>
                         </div>
                     </li>
                 </ul>
@@ -370,41 +191,38 @@
                 <li class="fullLine whole image pointContainer" data-popup-page="1" data-quiz="toggle">
                     <div class="full_content">
                         <div class="pointTitle">
-                            <div class="titleText">생활에서 공정을 실천해요</div>
-                            <div class="group-box">
-                                <div class="box-text pink">
-                                    <div class="wrapToggle">
-                                        <div class="cho">
-                                            <div class="choWrap">
-                                                생활에서 공정을<br />실천하려면
-                                                <div class="choBox">
-                                                    <span class="dir-rect" data-cho="ㄱ" data-letter="규"></span>
-                                                    <span class="dir-rect" data-cho="ㅊ" data-letter="칙"></span>
-                                                </div>
-                                                이 필요합니다.
-                                            </div>
+                            <div class="titleText">성실한 모습 생각하기</div>
+                            <div class="items" style="margin-top: 100px;margin-left: 53px;">
+                                <div class="item">
+                                    <div class="cho">
+                                        <div class="choWrap">
+                                            사람들은 공정한 사회를 만들기 위해 많은
+                                            <div class="choBox">
+                                                <span class="dir-rect" data-cho="ㄴ" data-letter="노"></span>
+                                                <span class="dir-rect" data-cho="ㄹ" data-letter="력"></span>
+                                            </div>을 하고 있습니다.
                                         </div>
                                     </div>
                                 </div>
-                                <img src="./common/images/arrow_right.png" class="arrow_right arrow1" />
-                                <div class="box-text green">
-                                    <div class="wrapToggle">
-                                        <div class="cho">
-                                            <div class="choWrap">
-                                                모두가 동의하고<br />
-                                                동일한 기회를 가지도록
-                                                <div class="choBox">
-                                                    <span class="dir-rect" data-cho="ㄱ" data-letter="공"></span>
-                                                    <span class="dir-rect" data-cho="ㅈ" data-letter="정"></span>
-                                                </div>
-                                                하게 만들어야<br />합니다.
-                                            </div>
+                                <div class="item">
+                                    <div class="cho">
+                                        <div class="choWrap">
+                                            우리는 생활에서 공정을 <div class="choBox">
+                                                <span class="dir-rect" data-cho="ㅅ" data-letter="실"></span>
+                                                <span class="dir-rect" data-cho="ㅊ" data-letter="천"></span>
+                                            </div>하려는 <div class="choBox">
+                                                <span class="dir-rect" data-cho="ㅁ" data-letter="마"></span>
+                                                <span class="dir-rect" data-cho="ㅇ" data-letter="음"></span>
+                                            </div>을 가져야 합니다.
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
-                        <button class="dapCheckBtn" data-answer-btn=""></button>
+                        <div class="buttonContainer">
+                            <button class="dapCheckBtn" data-answer-btn=""></button>
+                        </div>
                     </div>
                 </li>
             </ul>
@@ -515,6 +333,24 @@
                     })
                 }
 
+            });
+
+            $prite.girl1({
+                id: '#girl_1_c',
+                circle: true,
+                speech: 'right',
+                text: '모든 친구의 말에<br/>귀를 기울이겠습니다.',
+                class: 'bottom',
+                balloon_top: -180,
+                balloon_left: -125,
+            });
+
+            $(document).on('click', '.page_1 .character-item', function () {
+                $(this).find('.balloon').removeClass('fff');
+            });
+
+            $(document).on('click', '.page_1 .characterWrap, .page_1 .balloon > span', function () {
+                KmAudioPlayer.buttonClick();
             });
         });
 

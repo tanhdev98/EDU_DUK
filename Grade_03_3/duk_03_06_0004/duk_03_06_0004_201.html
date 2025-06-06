@@ -27,31 +27,37 @@
             position: absolute;
             box-shadow: unset;
             left: 220px;
+            top: 50px;
+            padding: 32px 0 0;
         }
 
         .page_1 .noteText.note1 .underline {
             display: none;
         }
 
+        .page_1 .noteText.note1 .text-exam.flex-wrap{
+            padding: 35px 0px 10px 10px;
+        }
+
         .page_1 .noteText.note1 .textareaWrap {
-            padding: 0 32px;
+            padding: 0 10px;
         }
 
         .page_1 .titleNote1 {
             position: absolute;
             left: 55px;
-            top: 40px;
+            top: 90px;
         }
 
         .page_1 .titleNote2 {
             position: absolute;
             left: 970px;
-            top: 40px;
+            top: 90px;
         }
 
         .page_1 .titleNote3 {
             position: absolute;
-            top: 290px;
+            top: 340px;
             left: 1060px;
         }
 
@@ -272,7 +278,8 @@
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1" data-quiz="toggle">
-                        <div class="noteText noteLine purple" style="padding-top: 92px; padding-right: 220px;">
+                        <div class="noteText noteLine purple"
+                            style="padding-top: 92px; padding-right: 220px; top: 50px;">
                             <div class="textareaWrap" style="height: 250px;">
                                 <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
                                     data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
@@ -290,7 +297,7 @@
                                     data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
                                     autocomplete="off" spellcheck="false"></textarea>
                             </div>
-                            <div class="text-exam flex-wrap" style="padding-left: 52px;">
+                            <div class="text-exam flex-wrap">
                                 <div class="blueT">
                                     <p>친구들과 함께 타는 시소</p>
                                 </div>
@@ -362,7 +369,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="dapCheckBtn" data-answer-btn=""></button>
+                        <button class="writeBtn" data-answer-btn=""></button>
                     </div>
                 </li>
             </ul>
