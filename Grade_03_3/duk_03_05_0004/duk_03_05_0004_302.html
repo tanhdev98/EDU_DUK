@@ -241,12 +241,18 @@
             });
 
             $(document).on('click', '.page_1 .icon', function () {
+                
                 if ($(this).hasClass('iconX')) {
                     KmAudioPlayer.incorrect();
                 } else {
                     KmAudioPlayer.correct();
                 }
                 $(this).addClass('ans');
+                if ($('.group_ans .icon.ans').length === $('.group_ans .icon').length) {
+                    $('.dapCheckBtn').addClass('reset');
+                } else {
+                    $('.dapCheckBtn').removeClass('reset');
+                }
             });
             $(document).on('click', '.dapCheckBtn', function () {
                 if ($(this).hasClass('reset')) {
