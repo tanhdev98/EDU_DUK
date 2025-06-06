@@ -15,7 +15,6 @@
         /* Page 1 */
         .noteText {
             height: 400px;
-            padding-top: 92px;
             margin-top: 55px;
             width: 93%;
         }
@@ -245,6 +244,9 @@
             background-color: #f7f7f7;
         }
 
+        header.twoLine .title-icon {
+            top: -30px;
+        }
     </style>
 </head>
 
@@ -340,7 +342,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="fullLine whole image pointContainer" data-popup-page="2" >
+                <li class="fullLine whole image pointContainer" data-popup-page="2">
                     <div class="full_content">
                         <div class="basicSlider contentsBox doItContent" data-slide-container="">
                             <div class="moveButtonContainer" data-slide-btn-container="">
@@ -409,7 +411,7 @@
                                                 <div class="answer" data-toggle-target="8">
                                                     <div>감정</div>
                                                 </div>
-                                            </div>  을 친구에게 강요하지 않습니다.
+                                            </div> 을 친구에게 강요하지 않습니다.
                                         </div>
                                         <div class="item">
                                             다른 사람과 나의
@@ -494,7 +496,7 @@
                     $('.popup_pages .basicSlider_slides.innerTab li:first-child').addClass('on');
                 });
             });
-          
+
             $(document).on('click', '.popup_pages [data-popup-page="2"] .moveButtonContainer', function () {
                 $('.popup_pages [data-popup-page="2"]').addClass('on');
             });
