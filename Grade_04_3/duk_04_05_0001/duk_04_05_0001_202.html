@@ -311,6 +311,95 @@
         .popup_pages .zoomContainer .zoomImgContainer {
             pointer-events: all;
         }
+
+        header.twoLine .title-icon {
+            top: -30px;
+        }
+
+        /* page_4 */
+        .page_4 .flex {
+            display: flex;
+            gap: 20px;
+        }
+
+        .page_4 .flex .item:first-child {
+            width: 35%;
+        }
+
+        .page_4 .flex .item:last-child {
+            width: 65%;
+        }
+
+        .page_4 .flex .item img {
+            width: 418px;
+            object-fit: contain;
+            display: flex;
+            margin: auto;
+        }
+
+        .page_4 .innerTab_2 .flex .item img,
+        .page_4 .innerTab_3 .flex .item img {
+            width: 300px;
+            margin: 55px auto;
+            display: flex;
+        }
+
+        .page_4 .innerTab_4 .flex .item img {
+            width: 353px;
+        }
+
+        .page_4 .titleNote {
+            padding: 7px 20px;
+            border-radius: 15px;
+            text-align: center;
+            background-color: #FDF3E7;
+            border: 4px solid #FFD89E;
+            margin-bottom: 20px;
+        }
+
+        .page_4 .titleNote.green {
+            background-color: #F5F7E5;
+            border: 4px solid #D7DEA3;
+        }
+
+        .page_4 .titleNote.pink {
+            background-color: #FFEEF3;
+            border: 4px solid #FFC4C9;
+        }
+
+        .page_4 .titleNote.blue {
+            background-color: #E1F2F7;
+            border: 4px solid #1BB3E7;
+        }
+
+        .page_4 .innerTab_3 .flex .noteText {
+            height: 250px;
+        }
+
+        .page_4 .flex .noteText {
+            height: 300px;
+        }
+
+        .page_4 .flex .noteText .textareaWrap {
+            height: 190px;
+        }
+
+        .page_4 .flex .noteText .underline:nth-last-child(-n+2) {
+            display: none;
+        }
+
+        .videoSubPlayBtn.youtube {
+            background: #5e3e18 url(../ko/contents/images/icon/icon_ref.png) 15px center/26px no-repeat;
+            color: #fff;
+        }
+
+        .videoSubPlayBtn.youtube:hover {
+            background-color: #9d00c5;
+        }
+
+        .page_5 .noteText p.dot {
+            letter-spacing: -1px;
+        }
     </style>
 </head>
 
@@ -328,8 +417,10 @@
                         활동 1</li>
                     <li data-hover="" data-text='<span class="mgr-5">디지털 예절</span>이 필요한지 짝과 이야기해 봅시다.' data-gap="true">
                         물음 1</li>
-                    <li data-hover="" data-text="우리가 지켜야 할 디지털 예절에는 어떤 것이 있는지 알아보고 그 예절을 지켜야 하는 까닭을 찾아봅시다.">활동 2</li>
-                    <li data-hover="" data-text="우리가 지켜야 할 디지털 예절에는 어떤 것이 있는지 알아보고 그 예절을 지켜야 하는 까닭을 찾아봅시다.">물음 2</li>
+                    <li data-hover="" data-text="우리가 지켜야 할 디지털 예절에는 어떤 것이 있는지 알아보고 그 예절을 지켜야 하는 까닭을 찾아봅시다."
+                        class="twoLine">활동 2</li>
+                    <li data-hover="" data-text="우리가 지켜야 할 디지털 예절에는 어떤 것이 있는지 알아보고 그 예절을 지켜야 하는 까닭을 찾아봅시다."
+                        class="twoLine">물음 2</li>
                     <li data-hover="" data-text="이 밖에도 어떤 디지털 예절이 더 필요할지 적어 봅시다." data-gap="true">활동 3</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
@@ -400,6 +491,165 @@
                                     <button class="popBtn zoomBtn" data-hover=""></button>
                                 </span>
                             </div>
+                        </div>
+                    </li>
+                    <li class="page_4">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="flex">
+                                        <div class="item">
+                                            <img src="./images/duk_04_05_0001_202/img_01.png" alt="">
+                                        </div>
+                                        <div class="item">
+                                            <div class="titleNote">누리 소통망(SNS)에서는 왜 비속어를<br />사용하는 것에 더 주의해야 할까요?</div>
+                                            <div class="noteText noteLine orange">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        가상 공간 속 대화는 사라지지 않고
+                                                        기록이 남기 때문입니다.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <a class="videoSubPlayBtn large youtube" data-youtube-id="wHJXWzS1uKg"
+                                        target="_blank">참고 영상</a>
+                                    <div class="flex">
+                                        <div class="item">
+                                            <img src="./images/duk_04_05_0001_202/img_02.png" alt="">
+                                        </div>
+                                        <div class="item">
+                                            <div class="titleNote green">디지털 사회에서는 왜 개인 정보를<br />더 철저하게 보호해야 할까요?</div>
+                                            <div class="noteText noteLine green">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        기술 발달로 개인 정보 악용 방법이
+                                                        다양해졌기 때문입니다.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3" data-quiz="toggle">
+                                    <a class="videoSubPlayBtn large youtube" data-youtube-id="Cr_X_7hMHSk&t"
+                                        target="_blank">참고 영상</a>
+                                    <div class="flex">
+                                        <div class="item">
+                                            <img src="./images/duk_04_05_0001_202/img_03.png" alt="">
+                                        </div>
+                                        <div class="item">
+                                            <div class="titleNote pink">디지털 자료는 누군가 가져가거나 복사해도 사라지지 않습니다. 그런데 왜 다른 사람이
+                                                만든 자료를 함부로 사용하면 안 될까요?</div>
+                                            <div class="noteText noteLine pink">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        저작자가 창작 욕구를 상실할 수 있기
+                                                        때문입니다.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_4" data-quiz="toggle">
+                                    <div class="flex">
+                                        <div class="item">
+                                            <img src="./images/duk_04_05_0001_202/img_04.png" alt="">
+                                        </div>
+                                        <div class="item">
+                                            <div class="titleNote blue">디지털 기술을 잘 사용하지 못하는 사람을 왜 도와줘야 할까요? </div>
+                                            <div class="noteText noteLine blue">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        디지털 기술도 다양한 기술 중 하나일 뿐이며 공동체 구성원 모두의 협력이 필요하기 때문입니다.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="page_5" data-quiz="toggle">
+                        <a class="videoSubPlayBtn large youtube" data-youtube-id="dwxJUhxP1dk" target="_blank">딥페이크 피해
+                            사례</a>
+                        <img src="./images/duk_04_05_0001_202/imgbg.png" alt=""
+                            style="width: 95%; display: flex; justify-content: center; object-fit: contain;margin: 60px auto 0 auto;">
+                        <div class="noteText noteLine" style="position: absolute;
+                        box-shadow: unset;
+                        background-color: #f7f7f7;
+                        width: 80%;
+                        margin: auto;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        height: 360px;
+                        top: 90px;">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p class="dot">디지털 공간에서 이야기할 때는 존댓말을 사용합니다.</p>
+                                    <p class="dot">디지털 공간에서도 다른 친구를 놀리거나 괴롭히면 안 됩니다.</p>
+                                    <p class="dot">딥페이크 기술을 악용하는 것처럼 다른 사람의 사진이나 영상을 조작하면 안 됩니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
                         </div>
                     </li>
                 </ul>
