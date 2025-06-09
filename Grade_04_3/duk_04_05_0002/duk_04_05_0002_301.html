@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        /* page 1 */
+        .page_1 .items .item {
+            position: relative;
+        }
+
+        .page_1 .items .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 33px;
+            left: -8px;
+            transform: translateY(-50%);
+        }
+
+        .page_1 .items .item {
+            padding-left: 30px;
+            position: relative;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .page_1 .toggle.box {
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        .page_1 .toggle.box .answer {
+            text-align: center;
+        }
+
+        /* page 2 */
+        .page_2 .self-check {
+            margin-top: 70px;
+        }
+
+        .page_2 .btn-praise {
+            top: 480px;
+        }
+
+        /* popup */
+        .pointContainer .pointTitle {
+            display: block;
+            text-align: center;
+        }
+
+        .pointContainer .pointTitle .titleText {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 45px;
+            line-height: 50px;
+            font-family: 'YGJAL';
+            color: #ff6600;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+        }
+
+        .pointContainer .pointTitle .titleText:after,
+        .pointContainer .pointTitle .titleText:before {
+            position: absolute;
+            top: 0px;
+            height: 50px;
+            font-size: 40px;
+            line-height: 50px;
+            font-family: 'YGJAL';
+            color: #e4caa9;
+        }
+
+        .pointContainer .pointTitle .titleText:after {
+            content: "[";
+            left: -20px;
+        }
+
+        .pointContainer .pointTitle .titleText:before {
+            content: "]";
+            right: -20px;
+        }
+
+        .popup_pages .study_guide {
+            right: 20px;
+            top: 80px;
+        }
+
+        p.arrow {
+            display: flex;
+            padding-left: 30px;
+            margin: 20px 0px;
+            line-height: 60px;
+            position: relative;
+        }
+
+        p.arrow::before {
+            width: 20px;
+            height: 20px;
+            content: "";
+            background-image: url('./common/images/bullet_arrow.png');
+            background-size: 100% 100%;
+            position: absolute;
+            left: 0;
+            top: 20px;
+        }
+
+        .popup_pages .pointContainer .contentsBox {
+            flex-direction: row;
+            padding: 0 !important;
+            margin-top: 20px;
+            height: 450px;
+        }
+
+        .popup_pages .contentsBox .basicSlider_slides>li.innerTab {
+            padding-bottom: 20px;
+        }
+
+        .sideTopButtonContainer {
+            width: 210px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .sideTopSlider_tabs {
+            width: auto;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .sideTopSlider_tabs>li {
+            width: 100%;
+            min-height: 130px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: auto;
+            box-sizing: border-box;
+            cursor: pointer;
+            padding: 6px 13px 3px;
+            font-family: NotoB;
+            font-size: 35px;
+            color: #fff;
+            background-color: #CDCDCD;
+            border: 7px solid #E7E7E7;
+            border-radius: 9px 0 0 9px;
+            margin-top: 10px;
+            line-height: unset;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon yellow" data-show="1">생각 <em>탄탄</em></div>
+            <div class="title-text">디지털 사회의 도덕 문제를 설명해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="디지털 사회의 도덕 문제를 설명해 봅시다.">물음</li>
+                    <li data-hover="" data-text="배운 내용을 되돌아보며 자기 점검을 해 봅시다.">자기 점검</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="items">
+                            <div class="item">
+                                디지털 사회의 도덕 문제를 해결하는 방법은 어떻게 다를까요?
+                                <div data-type="toggleButton" class="box">
+                                    <div class="toggle examBtn box" data-toggle-obj="1">
+                                        <div class="answer" data-toggle-target="1">
+                                            <div class="ls-2h">디지털 기술이 가진 특징 때문에 특수한 도덕 문제가 생길 수 있습니다.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                디지털 사회에서도 도덕 문제를 해결하고자 노력해야 하는 까닭은
+                                무엇일까요?
+                                <div data-type="toggleButton" class="box">
+                                    <div class="toggle examBtn box" data-toggle-obj="2">
+                                        <div class="answer" data-toggle-target="2">
+                                            <div class="ls-2h">디지털 사회에서도 도덕 문제 때문에 피해를 입을 수 있기 때문입니다.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="examViewBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="study_guide"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
+                        <div class="self-check">
+                            <div class="checkWrap">
+                                <div class="text_box">디지털 예절이 무엇인지 이해했나요?</div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">디지털 사회에서 발생하는 도덕 문제를
+                                    이야기할 수 있나요?</div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">디지털 사회에서 발생하는 여러 도덕 문제를
+                                    해결하는 방법을 설명할 수 있나요?</div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="example-box">
+                                <div class="exampleIcoWrap">
+                                    <div class="example ico-01">
+                                        매우 그렇다
+                                    </div>
+                                    <div class="example ico-02">
+                                        그렇다
+                                    </div>
+                                    <div class="example ico-03">
+                                        좀 더 노력해야 한다
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-praise right popBtn footer-item" data-popup-btn="1">
+                            <div class="item-title">핵심<br>정리</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image pointContainer" data-popup-page="1">
+                    <div class="full_content">
+                        <div class="pointTitle">
+                            <div class="titleText">디지털 사회의 도덕 문제와 해결 방법</div>
+                        </div>
+                        <div class="study_guide"><em>각 탭</em>을 <em>클릭</em>하세요.</div>
+                        <div class="sideTopSlider contentsBox doItContent" data-slide-container="">
+                            <div class="sideTopButtonContainer" data-slide-btn-container="">
+                                <ul class="sideTopSlider_tabs" data-tabs="">
+                                    <li data-hover="">개인 정보<br> 유출</li>
+                                    <li data-hover="">사이버<br> 폭력</li>
+                                    <li data-hover="">가짜 영상</li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab innerTab_1">
+                                    <div>
+                                        <p class="arrow">첨단 조직 기술(딥페이크) 등 기술로 인해 개인 정보유출, 보이스 피싱 등의 피해를 당할 수 있습니다.</p>
+                                        <p class="arrow">개인 정보가 유출되지 않도록 누리 소통망(SNS) 등에 게시글을 올릴 때 내 얼굴이나 위치가 보이지 않게
+                                            조심합니다.</p>
+                                    </div>
+                                </li>
+                                <li class="innerTab innerTab_2">
+                                    <div>
+                                        <p class="arrow">사이버 폭력은 집에서도 쉴 수 없고 피할 수 없는
+                                            고통을 가할 수 있습니다.</p>
+                                        <p class="arrow">사이버 폭력을 겪었을 때에는 누군가가 나를 괴롭히며 보낸 문자와 전화 기록을 남기고 주변에 도움을 요청 합니다.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="innerTab innerTab_3">
+                                    <div>
+                                        <p class="arrow">재미 삼아 또는 생각 없이 가짜 뉴스를 만들거나
+                                            딥페이크 사진, 영상을 만들지 않도록 주의합니다.
+                                        </p>
+                                        <p class="arrow">인터넷에 있는 정보를 확인하지 않고 무조건 믿지
+                                            않도록 주의합니다.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+
+            $(document).on('click', '.sideTopSlider_tabs li', function () {
+                $('.fullLine.whole').addClass('on');
+            });
+
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.examViewBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    examViewBtn.addClass('reset');
+                } else {
+                    examViewBtn.removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.examViewBtn', function () {
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.examViewBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!examViewBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

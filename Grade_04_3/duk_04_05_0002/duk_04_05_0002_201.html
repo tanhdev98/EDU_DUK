@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        .min[data-popup-page="1"] {
+            top: 150px;
+            left: 505px;
+            width: max-content;
+        }
+
+        .main-title {
+            background-color: #FCECD0;
+            border: 4px solid #F9DAA5;
+            border-radius: 15px;
+            width: max-content;
+            margin: 0 auto;
+            padding: 5px 20px;
+        }
+
+        .toggle.box {
+            height: 100%;
+            background-color: #fff;
+        }
+
+        [data-type="toggleButton"] .toggle.complete {
+            background-color: transparent;
+        }
+
+        [data-type="toggleButton"].box {
+            position: absolute;
+        }
+
+        .innerTab_1 [data-type="toggleButton"].box {
+            height: 200px;
+            width: 350px;
+            top: 110px;
+            left: 160px;
+        }
+
+        .innerTab_2 [data-type="toggleButton"].box {
+            height: 170px;
+            width: 400px;
+            top: 110px;
+            right: 50px;
+        }
+
+        .innerTab_3 [data-type="toggleButton"].box {
+            height: 300px;
+            width: 500px;
+            top: 100px;
+            left: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon yellow" data-show="1">생각 <em>쑥쑥</em></div>
+            <div class="title-text" style="letter-spacing: -2.2px;">디지털 사회에서 발생하는 도덕 문제를 해결하는 방법은 무엇일까요?</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="main-title">개인 정보가 유출됐어요.</div>
+                                    <div class="icon-char" data-hover="" data-popup-btn="1"></div>
+                                    <img src="./images/duk_04_05_0002_201/img_01.png" alt="">
+                                    <div data-type="toggleButton" class="box">
+                                        <div class="toggle examBtn box" data-toggle-obj="1"></div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="main-title">사이버 폭력이 일어났어요.</div>
+                                    <div class="icon-char" data-hover="" data-popup-btn="1"></div>
+                                    <img src="./images/duk_04_05_0002_201/img_02.png" alt="">
+                                    <div data-type="toggleButton" class="box">
+                                        <div class="toggle examBtn box" data-toggle-obj="2"></div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3" data-quiz="toggle">
+                                    <div class="main-title">가짜 영상이 퍼졌어요.</div>
+                                    <div class="icon-char" data-hover="" data-popup-btn="1"></div>
+                                    <img src="./images/duk_04_05_0002_201/img_03.png" alt="">
+                                    <div data-type="toggleButton" class="box">
+                                        <div class="toggle examBtn box" data-toggle-obj="3"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents">
+                        <p>이 외에도 해결 방안을 다양하게 말해 봅시다.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

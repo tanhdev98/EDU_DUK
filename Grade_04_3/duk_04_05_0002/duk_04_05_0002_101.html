@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        /* page 1 */
+        .flex {
+            display: flex;
+            gap: 20px;
+        }
+
+        .flex .howtoBox {
+            width: 100%;
+            margin-top: 70px;
+        }
+
+        .flex .howtoBox .text-box {
+            text-align: center;
+        }
+
+        .popup_pages>li.whole h2 {
+            width: max-content;
+            margin: auto;
+        }
+
+        .popup_pages img {
+            height: auto;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        .icon-char[data-popup-btn="4"],
+        .icon-char[data-popup-btn="3"],
+        .icon-char[data-popup-btn="2"] {
+            top: 80px;
+            right: 20px;
+        }
+
+        .min[data-popup-page="2"] {
+            top: 87px;
+            left: 415px;
+            width: 850px;
+            z-index: 3 !important;
+        }
+
+        .min[data-popup-page="3"] {
+            top: 87px;
+            left: 470px;
+            width: 800px;
+            z-index: 3 !important;
+        }
+
+        .min[data-popup-page="4"] {
+            top: 87px;
+            left: 440px;
+            width: 830px;
+            z-index: 3 !important;
+        }
+
+        /* page 2 */
+        .page_2 .noteText {
+            box-shadow: none;
+            position: absolute;
+            width: 1000px;
+            border-radius: 20px;
+            height: 200px;
+            padding: 35px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .page_2 .noteText .textareaWrap {
+            height: 182px;
+            padding: 0;
+        }
+
+        .page_2 .noteText::after {
+            display: none;
+        }
+
+        #girl_4_c {
+            top: 70px;
+            left: 40px;
+        }
+
+        .page_2 .noteText.green {
+            background: #F5F7E5;
+            border: 5px solid #D7DEA3 !important;
+            left: 260px;
+            top: 60px;
+        }
+
+        .page_2 .noteText::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-right: 30px solid #D7DEA3;
+            left: -30px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        #boy_2_c {
+            right: 40px;
+            bottom: 90px;
+        }
+
+        .page_2 .noteText.orange::before {
+            border-left: 30px solid #FFD89E;
+            border-right: none;
+            left: unset;
+            right: -30px;
+        }
+
+        .page_2 .noteText.orange {
+            background: #FDF3E7;
+            border: 5px solid #FFD89E !important;
+            bottom: 80px;
+            right: 260px;
+        }
+
+        .page_2 .character-item {
+            pointer-events: none;
+            position: absolute;
+        }
+
+        .popBtn.text-box.box1:hover {
+            background-color: #5FA138;
+            border-color: #CED993;
+            color: #fff;
+        }
+
+        .popBtn.text-box.box2:hover {
+            background-color: #FB8408;
+            border-color: #FED08C;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon yellow" data-show="1">생각 <em>똑똑</em></div>
+            <div class="title-text">디지털 사회에는 어떤 도덕 문제가 있을까요?</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="디지털 사회에는 어떤 도덕 문제가 있을까요?">물음 1</li>
+                    <li data-hover="" data-text="이 밖에도 디지털 사회의 도덕 문제에는 어떤 것이 더 있을까요?" data-gap="true">물음 2</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="flex">
+                            <div class="how-to-box howtoBox">
+                                <div class="pic-box">
+                                    <span class="imgWrap popBtn" data-popup-btn="1" data-targetSlideNum="1">
+                                        <img src="./images/duk_04_05_0002_101/img_01.png">
+                                        <button class="popBtn zoomBtn" data-hover=""></button>
+                                    </span>
+                                    <div class="text-box">
+                                        개인 정보 유출
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="how-to-box howtoBox">
+                                <div class="pic-box">
+                                    <span class="imgWrap popBtn" data-popup-btn="1" data-targetSlideNum="2">
+                                        <img src="./images/duk_04_05_0002_101/img_02.png">
+                                        <button class="popBtn zoomBtn" data-hover=""></button>
+                                    </span>
+                                    <div class="text-box">
+                                        사이버 폭력
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="how-to-box howtoBox">
+                                <div class="pic-box">
+                                    <span class="imgWrap popBtn" data-popup-btn="1" data-targetSlideNum="3">
+                                        <img src="./images/duk_04_05_0002_101/img_03.png">
+                                        <button class="popBtn zoomBtn" data-hover=""></button>
+                                    </span>
+                                    <div class="text-box">
+                                        가짜 영상 제작
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div id="girl_4_c" class="character-item"></div>
+                        <div class="noteText noLine green">
+                            다른 사람의 글, 그림 등을<br>
+                            함부로 가져오는 문제가 있습니다.
+                        </div>
+                        <div id="boy_2_c" class="character-item"></div>
+                        <div class="noteText noLine orange">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="placeholder=''"
+                                    onblur="placeholder='직접 쓰기'" autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                        </div>
+                        <div class="buttonContainer" style="right: 28px;">
+                            <button class="resetBtn only-reset" data-type="reset" data-hover=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="whole image" data-popup-page="1" style="transition: none;">
+                    <div class="basicSlider" data-slide-container="popup">
+                        <ul class="basicSlider_slides" data-slides="">
+                            <li class="innerTab_1">
+                                <h2>개인 정보 유출</h2>
+                                <div class="icon-char" data-hover="" data-popup-btn="2"></div>
+                                <img src="./images/duk_04_05_0002_101/img_04.png" alt="">
+                            </li>
+                            <li class="innerTab_2">
+                                <h2>사이버 폭력</h2>
+                                <div class="icon-char" data-hover="" data-popup-btn="3"></div>
+                                <img src="./images/duk_04_05_0002_101/img_05.png" alt="">
+                            </li>
+                            <li class="innerTab_3">
+                                <h2>가짜 영상 제작</h2>
+                                <div class="icon-char" data-hover="" data-popup-btn="4"></div>
+                                <img src="./images/duk_04_05_0002_101/img_06.png" alt="">
+                            </li>
+                        </ul>
+
+                        <div class="moveButtonContainer" data-slide-btn-container="">
+                            <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                            <ul class="basicSlider_circle_tabs" data-tabs="">
+                                <li data-hover=""></li>
+                                <li data-hover=""></li>
+                                <li data-hover=""></li>
+                            </ul>
+                            <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="min" data-popup-page="2" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents">
+                        <p>
+                            첨단 조작 기술(딥페이크) 등 기술로 인해 개인 정보 유출, 보이스 피싱 등 피해를 당할 수 있습니다.
+                        </p>
+                    </div>
+                </li>
+                <li class="min" data-popup-page="3" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents">
+                        <p>
+                            사이버 폭력은 집에서도 쉴 수 없고 피할 수 없는 고통을 가할 수 있습니다.
+                        </p>
+                    </div>
+                </li>
+                <li class="min" data-popup-page="4" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents">
+                        <p>
+                            재미 삼아 또는 생각 없이 가짜 뉴스를 만들거나 딥페이크 사진, 영상을 만들지 않도록 주의합니다.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+
+            $(document).on('click', '.icon-char', function () {
+                $(this).parents('.whole').addClass('on');
+            })
+            $(document).on('click', '.popup_closeBtn, .basicSlider_circle_tabs > *, .basicSlider_btn', function () {
+                $('.popup_pages > li.min').removeClass('on');
+            });
+
+            $('.speech').trigger('click');
+
+            $prite.girl4({
+                id: '#girl_4_c',
+                circle: true,
+            });
+            $prite.boy2({
+                id: '#boy_2_c',
+                circle: true,
+            });
+            $(document).on('click', '.resetBtn', function () {
+                KmAudioPlayer.buttonClick();
+                $('.textLine').val('');
+            });
+        });
+    </script>
+</body>
+
+</html>
