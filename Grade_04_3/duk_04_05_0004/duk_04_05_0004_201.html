@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        /* page 1 */
+        .page_1 .title {
+            font-size: 30px;
+            text-align: end;
+            margin-top: 40px;
+        }
+
+        p.arrow {
+            display: flex;
+            padding-left: 30px;
+            margin: 20px 0px;
+            line-height: 60px;
+            position: relative;
+        }
+
+        p.arrow::before {
+            width: 20px;
+            height: 20px;
+            content: "";
+            background-image: url(./common/images/bullet_arrow.png);
+            background-size: 100% 100%;
+            position: absolute;
+            left: 0;
+            top: 20px;
+        }
+
+        /* page 2 */
+        .page_2 .flex {
+            display: flex;
+            gap: 15px;
+        }
+
+        .page_2 .column {
+            flex-direction: column;
+        }
+
+        .page_2 .box {
+            position: relative;
+            border-radius: 20px;
+            border: 20px solid #f6e7d4;
+            border-top: 80px solid #f6e7d4;
+        }
+
+        .page_2 .title {
+            color: #f60;
+            text-align: center;
+            position: absolute;
+            top: -70px;
+            left: 0;
+            right: 0;
+        }
+
+        .page_2 .noteText {
+            height: 120px;
+        }
+
+        .noteText {
+            box-shadow: none;
+            padding: 0;
+        }
+
+        .noteText .textareaWrap {
+            height: 100%;
+        }
+
+        .noteText .text-exam.flex-wrap {
+            padding: 0 20px;
+            top: 3px;
+        }
+
+        /* page 3 */
+        .page_3>img {
+            height: calc(100% - 70px);
+        }
+
+        .page_3 .noteText {
+            position: absolute;
+            right: 10px;
+            width: 710px;
+            height: 350px;
+            top: 95px;
+        }
+
+        .page_3 .noteText .text-exam.flex-wrap,
+        .page_3 .noteText .textareaWrap {
+            padding: 0;
+        }
+
+        .page_3 .noteText .textLine {
+            line-height: 85px;
+            font-size: 32px;
+        }
+
+        .page_3 .blueT {
+            font-size: 32px;
+            margin-top: 15px;
+        }
+
+        .page_3 .blueT>p:not(:last-child) {
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon pink" data-show="1">마음 <em>쑥쑥</em></div>
+            <div class="title-text">나의 디지털 생활 습관을 점검해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="나의 디지털 생활 습관을 점검해 봅시다.">활동 1</li>
+                    <li data-hover="" data-text="디지털 생활 습관 점검표를 참고해 디지털 기기를 사용하는 현재 나의 모습과 앞으로의 계획을 적어 봅시다.">활동 2</li>
+                    <li data-hover="" data-text="일상생활에서 디지털 기기를 올바르게 사용하려는 계획을 세워 봅시다.">활동 3</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="study_guide"><em>표</em>의 <em>점수칸</em>을 <em>클릭</em>하세요.</div>
+                        <div class="title">(항상 그렇다: 5점, 자주 그렇다: 4점, 그렇다: 3점, 그렇지 않다: 2점, 전혀 그렇지 않다: 1점)</div>
+                        <p class="arrow">각 질문에서 3점 이상이 나온다면 디지털 생활 습관이 좋지 않은 거예요.</p>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="flex column">
+                            <div class="box">
+                                <div class="title">현재 내가 지닌 습관이나 태도</div>
+                                <div class="noteText noLine">
+                                    <div class="textareaWrap">
+                                        <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                            autocomplete="off" spellcheck="false"></textarea>
+                                    </div>
+                                    <div class="text-exam flex-wrap">
+                                        <div class="blueT">
+                                            <p>게임을 하다 숙제를 못 한 경우가 많습니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box">
+                                <div class="title">앞으로 내가 지녀야 할 습관이나 태도</div>
+                                <div class="noteText noLine">
+                                    <div class="textareaWrap">
+                                        <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                            autocomplete="off" spellcheck="false"></textarea>
+                                    </div>
+                                    <div class="text-exam flex-wrap">
+                                        <div class="blueT">
+                                            <p>게임 시간을 정하고 조정합니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                    <li class="page_3" data-quiz="toggle">
+                        <img src="./images/duk_04_05_0004_201/img_01.png" alt="">
+                        <div class="noteText noLine">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p>디지털 기기에 지나치게 의존하지 않습니다.</p>
+                                    <p>디지털 기기를 사용할 때 비속어를 쓰지 않겠습니다.</p>
+                                    <p>디지털 기기 사용 시간을 정해 놓고 사용하겠습니다.</p>
+                                    <p>디지털 기기를 사용하느라 할 일을 미루지 않겠습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
