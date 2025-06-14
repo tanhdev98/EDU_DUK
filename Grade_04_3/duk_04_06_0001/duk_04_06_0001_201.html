@@ -66,6 +66,7 @@
 
         .big-bullet>span {
             color: #fff;
+            cursor: pointer;
         }
 
         .small-bullet>span {
@@ -73,12 +74,14 @@
             height: 50px;
             background-color: #fff;
             border-radius: 50%;
+            cursor: pointer;
         }
 
         .big-bullet>span>em {
             font-size: 25px;
         }
 
+        .small-bullet::before,
         .big-bullet::before {
             content: '';
             border-left: 15px dashed #5ABDB7;
@@ -87,6 +90,7 @@
             top: 150px;
         }
 
+        .small-bullet::after,
         .big-bullet::after {
             content: '';
             width: 35px;
@@ -98,6 +102,163 @@
             left: 1px;
             right: 0;
             margin: auto;
+        }
+
+        .small-bullet::before {
+            top: 100px;
+            height: 70px;
+        }
+
+        .small-bullet::after {
+            top: 180px;
+        }
+
+        .small-bullet-2 {
+            left: 830px;
+        }
+
+        .small-bullet,
+        .big-bullet {
+            cursor: pointer;
+            transition: all .2s;
+        }
+
+        .small-bullet:hover::before,
+        .big-bullet:hover::before {
+            border-color: #A6A6A6;
+        }
+
+        .small-bullet:hover::after,
+        .big-bullet:hover::after,
+        .small-bullet:hover,
+        .big-bullet:hover {
+            background: #A6A6A6;
+        }
+
+        .time-line-box>* {
+            position: absolute;
+        }
+
+        .img-1 {
+            top: 230px;
+        }
+
+        .img-2 {
+            top: 340px;
+            left: 510px;
+        }
+
+        .img-3 {
+            right: 190px;
+            top: 340px;
+            width: 300px;
+        }
+
+        .text-1 {
+            top: 400px;
+            left: 250px;
+        }
+
+        .text-2 {
+            top: 250px;
+            left: 580px;
+        }
+
+        .text-3 {
+            right: 120px;
+            top: 220px;
+        }
+
+        .innerTab_2 .time-line-arrow {
+            width: 1000px;
+        }
+
+        .big-bullet.end {
+            right: -90px;
+            left: auto;
+        }
+
+        .time-line-text {
+            position: absolute;
+            top: -60px;
+            right: 80px;
+            color: #5ABDB7;
+        }
+
+        .text-4 {
+            top: 450px;
+            right: 210px;
+        }
+
+        .img-4 {
+            right: 40px;
+            top: 210px;
+            width: 200px;
+        }
+
+        /* popup */
+        .popup_pages>li.whole h2 {
+            width: max-content;
+            margin: auto;
+        }
+
+        .popup_pages .flex {
+            display: flex;
+            gap: 20px;
+            padding: 0 40px;
+        }
+
+        .popup_pages .flex .howtoBox {
+            width: 100%;
+            margin-top: 70px;
+        }
+
+        .popup_pages .flex .howtoBox .text-box {
+            text-align: center;
+        }
+
+        .pic-box.flex-column {
+            display: flex;
+            height: 500px;
+        }
+
+        .pic-box.flex-column .image-box {
+            padding: 20px;
+            width: 1100px;
+        }
+
+        .howtoBox .pic-box.flex-column .imageWrap {
+            height: 100%;
+        }
+
+        .popup_pages .flex .howtoBox .flex-column .text-box {
+            flex-direction: column;
+            align-items: start;
+            height: 100%;
+            text-align: start;
+        }
+
+        [data-popup-page="2"] {
+            top: 80px;
+            left: 460px;
+            width: 780px;
+            z-index: 3 !important;
+        }
+
+        [data-popup-page="3"] {
+            top: 80px;
+            left: 90px;
+            width: 1150px;
+            z-index: 3 !important;
+        }
+
+        .popup_pages .icon-char {
+            top: 70px;
+            right: 50px;
+        }
+
+        .popup_pages .videoSubPlayBtn.youtube {
+            left: 40px;
         }
     </style>
 </head>
@@ -126,16 +287,54 @@
                                 <li class="innerTab_1" data-quiz="toggle">
                                     <div class="study_guide"><em>연표의 각 원</em>을 <em>클릭</em>하세요.</div>
                                     <div class="time-line-arrow">
-                                        <div class="big-bullet">
+                                        <div class="popBtn big-bullet" data-popup-btn="1" data-targetSlideNum="1">
                                             <span>1945<em>년</em></span>
                                         </div>
-                                        <div class="small-bullet">
+                                        <div class="popBtn small-bullet" data-popup-btn="1" data-targetSlideNum="2">
                                             <span></span>
+                                        </div>
+                                        <div class="popBtn small-bullet small-bullet-2" data-popup-btn="1"
+                                            data-targetSlideNum="3">
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                    <div class="time-line-box">
+                                        <img src="./images/duk_04_06_0001_201/img_01.png" class="img-1" alt="">
+                                        <div class="text text-1">8월 15일 광복</div>
+                                        <img src="./images/duk_04_06_0001_201/img_02.png" class="img-2" alt="">
+                                        <div class="text text-2">모스크바 3국<br>
+                                            외상회의
+                                        </div>
+                                        <img src="./images/duk_04_06_0001_201/img_03.png" class="img-3" alt="">
+                                        <div class="text text-3"> 대한민국 정부 수립<br>
+                                            북한 정권 수립
                                         </div>
                                     </div>
                                 </li>
                                 <li class="innerTab_2" data-quiz="toggle">
-
+                                    <div class="study_guide"><em>연표의 각 원</em>을 <em>클릭</em>하세요.</div>
+                                    <div class="time-line-arrow">
+                                        <div class="popBtn big-bullet" data-popup-btn="1" data-targetSlideNum="4">
+                                            <span>1950<em>년</em></span>
+                                        </div>
+                                        <div class="popBtn small-bullet" data-popup-btn="1" data-targetSlideNum="5">
+                                            <span></span>
+                                        </div>
+                                        <div class="popBtn big-bullet end" data-popup-btn="1" data-targetSlideNum="6">
+                                            <span>현재</span>
+                                        </div>
+                                        <div class="time-line-text">70년이 넘는 세월</div>
+                                    </div>
+                                    <div class="time-line-box">
+                                        <div class="text text-1">6·25 전쟁</div>
+                                        <div class="text text-2">분단으로 인한<br>
+                                            아픔
+                                        </div>
+                                        <img src="./images/duk_04_06_0001_201/img_04.png" class="img-4" alt="">
+                                        <div class="text text-4">남북교류<br>
+                                            통일 염원
+                                        </div>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -146,7 +345,154 @@
 
         <section class="popup_container" data-popup-container="">
             <ul class="popup_pages">
+                <li class="whole image" data-popup-page="1" style="transition: none;">
+                    <div class="basicSlider" data-slide-container="popup">
+                        <ul class="basicSlider_slides" data-slides="">
+                            <li class="innerTab_1">
+                                <h2>1945년 광복</h2>
+                                <div class="flex">
+                                    <div class="how-to-box howtoBox">
+                                        <div class="pic-box">
+                                            <div class="image-box">
+                                                <div class="imageWrap">
+                                                    <img src="./images/duk_04_06_0001_201/img_05.png">
+                                                </div>
+                                            </div>
+                                            <div class="text-box">
+                                                1945년 8월 15일, 일제의 지배에서 벗어나<br>
+                                                마침내 감격스러운 광복을 맞이했습니다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="innerTab_2">
+                                <h2>모스크바 3국 외상회의</h2>
+                                <div class="flex">
+                                    <div class="how-to-box howtoBox">
+                                        <div class="pic-box">
+                                            <div class="image-box">
+                                                <div class="imageWrap">
+                                                    <img src="./images/duk_04_06_0001_201/img_02.png">
+                                                </div>
+                                            </div>
+                                            <div class="text-box">
+                                                그러나 우리나라가 힘이 약해 큰 나라들 사이에서<br>
+                                                나라가 둘로 갈라질 위기에 놓였습니다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="innerTab_3">
+                                <h2>남북 분단</h2>
+                                <div class="flex">
+                                    <div class="how-to-box howtoBox">
+                                        <div class="pic-box flex-column">
+                                            <div class="image-box">
+                                                <div class="imageWrap">
+                                                    <img src="./images/duk_04_06_0001_201/img_03.png">
+                                                </div>
+                                            </div>
+                                            <div class="text-box">
+                                                우리나라 안에서도 서로 의견이 달라 뜻을 하나로 모으지 못하고, 결국 남과 북으로 갈라지고
+                                                말았습니다.<br>
+                                                <p><ins class="dot"></ins>대한민국 정부 수립(1948. 8.15)</p>
+                                                <p><ins class="dot"></ins>북한 정권 수립(1948. 9. 9.)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="innerTab_4">
+                                <h2>6·25 전쟁</h2>
+                                <div class="flex">
+                                    <div class="how-to-box howtoBox">
+                                        <div class="pic-box flex-column">
+                                            <div class="image-box">
+                                                <div class="imageWrap">
+                                                    <img src="./images/duk_04_06_0001_201/img_06.png">
+                                                </div>
+                                            </div>
+                                            <div class="text-box">
+                                                1950년 6월 25일, 북한이 남침해 한반도에 전쟁이 일어났습니다. 3년에 걸친 전쟁과 전쟁 끝의 휴전으로 남북 분단의 골은
+                                                더욱 깊어졌습니다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="innerTab_5">
+                                <h2>분단으로 인한 아픔</h2>
+                                <div class="icon-char" data-hover="" data-popup-btn="2"></div>
+                                <div class="flex">
+                                    <div class="how-to-box howtoBox">
+                                        <div class="pic-box flex-column">
+                                            <div class="image-box">
+                                                <div class="imageWrap">
+                                                    <img src="./images/duk_04_06_0001_201/img_07.png">
+                                                </div>
+                                            </div>
+                                            <div class="text-box">
+                                                이산가족의 슬픔, 전쟁의 두려움 등으로 남북 모두는 긴장과 갈등 속에서 살아왔습니다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="innerTab_6">
+                                <h2>통일을 위한 노력</h2>
+                                <a class="videoSubPlayBtn youtube" data-youtube-id="l7L5mUuz9og" target="_blank">참고
+                                    영상</a>
+                                <div class="icon-char" data-hover="" data-popup-btn="3"></div>
+                                <div class="flex">
+                                    <div class="how-to-box howtoBox">
+                                        <div class="pic-box flex-column">
+                                            <div class="image-box">
+                                                <div class="imageWrap">
+                                                    <img src="./images/duk_04_06_0001_201/img_08.png">
+                                                </div>
+                                            </div>
+                                            <div class="text-box">
+                                                지금도 한반도는 분단되어 있습니다. 하지만 통일을 이루려는 많은 사람의 노력은 계속 되고 있죠. 우리는 언제 다시 하나가 될
+                                                수 있을까요?
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
 
+                        <div class="moveButtonContainer" data-slide-btn-container="">
+                            <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                            <ul class="basicSlider_circle_tabs" data-tabs="">
+                                <li data-hover=""></li>
+                                <li data-hover=""></li>
+                                <li data-hover=""></li>
+                                <li data-hover=""></li>
+                                <li data-hover=""></li>
+                                <li data-hover=""></li>
+                            </ul>
+                            <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="min" data-popup-page="2" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents">
+                        <p><ins class="dot"></ins>이산가족 문제: 사람들은 자기가 살던 고장을 떠나야 했고, 사랑하는 가족들과도 헤어지게 되었습니다.</p>
+                        <p><ins class="dot"></ins>전쟁 위협: 휴전 이후에도 전쟁의 위험을 안고 살아가고 있으며, 군사적 위협이 있어 불안을 느낍니다.</p>
+                    </div>
+                </li>
+                <li class="min" data-popup-page="3" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents">
+                        <p>통일을 위해 남과 북은 다음과 같이 노력해 왔습니다.</p>
+                        <p><ins class="dot"></ins>평화 추구: 남북 모두가 자유롭고 평화로운 삶을 누리도록 한반도 평화 체제를 구축하려고 노력해 왔음.</p>
+                        <p><ins class="dot"></ins>자유 민주적 통일 추구: 자유 민주적 기본 질서에 입각해 통일돼야 함.</p>
+                        <p><ins class="dot"></ins>문화 교류: 남북이 교류에 힘써 왔으며 지속적으로 노력해 왔음.</p>
+                    </div>
+                </li>
             </ul>
         </section>
 
@@ -178,6 +524,14 @@
                 } else {
                     $('header').removeClass('gap');
                 }
+            });
+
+            $(document).on('click', '.icon-char', function () {
+                $(this).parents('.whole').addClass('on');
+            })
+
+            $(document).on('click', '.popup_closeBtn, .basicSlider_circle_tabs > *, .basicSlider_btn', function () {
+                $('.popup_pages > li.min').removeClass('on');
             });
         });
     </script>
