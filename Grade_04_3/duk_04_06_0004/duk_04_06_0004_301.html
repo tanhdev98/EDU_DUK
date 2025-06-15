@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        .page_1>img {
+            width: 670px;
+            margin: auto;
+        }
+
+        .page_1 .noteText {
+            box-shadow: none;
+            position: absolute;
+            width: 1000px;
+            border-radius: 20px;
+            height: 200px;
+            padding: 35px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .page_1 .noteText .textareaWrap {
+            height: 182px;
+            padding: 0;
+        }
+
+        .page_1 .noteText::after {
+            display: none;
+        }
+
+        .page_1 .noteText::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-right: 30px solid #FFC4C9;
+            left: -30px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        .page_1 .noteText.pink::before {
+            border-left: 30px solid #FFC4C9;
+            border-right: none;
+            left: unset;
+            right: -30px;
+        }
+
+        .page_1 .noteText.pink {
+            background: #FFEEF3;
+            border: 5px solid #FFC4C9 !important;
+            bottom: 260px;
+            right: 900px;
+            width: 350px;
+        }
+
+        .min[data-popup-page="1"] {
+            top: 150px;
+            left: 630px;
+            width: max-content;
+        }
+
+        .btn-praise {
+            top: 420px;
+            right: -28px;
+        }
+
+        /* popup */
+        .pointContainer .pointTitle {
+            display: block;
+            text-align: center;
+        }
+
+        .pointContainer .pointTitle .titleText {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 45px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #ff6600;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+        }
+
+        .pointContainer .pointTitle .titleText:after,
+        .pointContainer .pointTitle .titleText:before {
+            position: absolute;
+            top: 0px;
+            height: 50px;
+            font-size: 40px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #e4caa9;
+        }
+
+        .pointContainer .pointTitle .titleText:after {
+            content: "[";
+            left: -20px;
+        }
+
+        .pointContainer .pointTitle .titleText:before {
+            content: "]";
+            right: -20px;
+        }
+
+        .popup_pages .items .item {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .popup_pages .items .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 30px;
+            left: 0;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon pink" data-show="1">마음 <em>탄탄</em></div>
+            <div class="title-text">완성한 노래를 친구들과 함께 불러 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="icon-char" data-hover="" data-popup-btn="1"></div>
+                        <img src="./images/duk_04_06_0004_301/img_01.png" alt="">
+                        <div class="noteText noLine pink">
+                            통일을 기다리는<br>
+                            마음을 담아<br>
+                            함께 불러요.
+                        </div>
+                        <div class="btn-praise right popBtn footer-item" data-popup-btn="2">
+                            <div class="item-title">핵심<br>정리</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents">
+                        <p>다양한 방식으로 노래를 불러 봅니다.</p>
+                        <p><ins class="dot"></ins>모둠별로 부르기</p>
+                        <p><ins class="dot"></ins>학급이 한목소리로 부르기</p>
+                        <p><ins class="dot"></ins>영상으로 촬영하기</p>
+                        <p><ins class="dot"></ins>누리 소통망(SNS)에 공유하기</p>
+                    </div>
+                </li>
+                <li class="fullLine whole image pointContainer" data-popup-page="2">
+                    <div class="full_content">
+                        <div class="pointTitle">
+                            <div class="titleText">통일을 기다리는 마음</div>
+                        </div>
+                        <div class="items">
+                            <div class="item">
+                                통일을 바라고 소중히 여기는 마음을 기릅니다.
+                            </div>
+                            <div class="item">
+                                통일을 기다리는 마음을 담아 노래를 부릅니다.
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

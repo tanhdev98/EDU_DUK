@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        /* page 1 */
+        .contentsBox {
+            padding: 0;
+        }
+
+        .basicSlider[data-slide-container='main']>.basicSlider_slides>li:not(.page_1) {
+            padding: 20px 28px 0 28px;
+        }
+
+        .videoBackground {
+            background: url('./images/duk_04_06_0004_201/img_01.png') no-repeat center / 100% 100%;
+        }
+
+        .youtubeTitleWrap .mediaSubContainer .screenPlayBtn:hover {
+            background: #d04511 url('../ko/contents/images/icon/icon_play.svg') 28px center/27px no-repeat;
+        }
+
+        .aniContainer .mediaSubContainer {
+            pointer-events: none;
+        }
+
+        .youtubeTitleWrap .screenPlayBtn {
+            pointer-events: auto;
+        }
+
+        .zoomArea {
+            height: 100%;
+        }
+
+        .zoomContainer.horizon .zoomController {
+            top: 20px;
+            left: 28px;
+        }
+
+        /* page 2 */
+        .title-tag {
+            background: #FFE699;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+            text-align: center;
+            padding: 5px 0;
+            padding-left: 50px;
+            width: 400px;
+            position: relative;
+        }
+
+        .title-tag::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            margin: auto;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 50%;
+        }
+
+        .flex {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            height: 100%;
+            padding: 10px 0 70px;
+        }
+
+        .flex .items {
+            background: url('./images/duk_04_06_0004_201/img_03.png') no-repeat center / 100% 100%;
+            height: 100%;
+            flex: 1;
+        }
+
+        .flex .items:last-child {
+            background: url('./images/duk_04_06_0004_201/img_04.png') no-repeat center / 100% 100%;
+        }
+
+        .flex .items .title {
+            color: #fff;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .toggle.box {
+            justify-content: center;
+            height: 310px;
+            background: transparent;
+            padding: 20px 40px;
+            align-items: start;
+        }
+
+        p.dot {
+            position: relative;
+            padding-left: 18px;
+        }
+
+        p.dot::after {
+            content: "";
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+
+        .page_2 .noteText {
+            height: 280px;
+            box-shadow: none;
+            padding: 32px 30px 0;
+        }
+
+        .page_2 .noteText .textareaWrap {
+            height: 100%;
+        }
+
+        .page_2 .noteText .textareaWrap .underline {
+            left: 28px !important;
+            width: calc(100% - 55px) !important;
+        }
+
+        .page_2 .noteText .textareaWrap .underline:last-child {
+            display: none;
+        }
+
+        .buttonContainer {
+            right: 28px;
+        }
+
+        /* page 3 */
+        .page_3 .text {
+            position: absolute;
+            top: 140px;
+            left: 60px;
+        }
+
+        .page_3 .noteText {
+            height: 350px;
+            box-shadow: none;
+            position: absolute;
+            top: 160px;
+            width: 1310px;
+        }
+
+        .page_3>img {
+            margin-top: 70px;
+            height: 430px;
+        }
+
+        .min[data-popup-page="1"] {
+            top: 170px;
+            left: 480px;
+            width: 780px;
+        }
+
+        .icon-char {
+            right: 28px;
+            top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="aniContainer">
+        <header>
+            <div class="title-icon pink" data-show="1">마음 <em>쑥쑥</em></div>
+            <div class="title-text">‘너와 내가 만나면’ 노래를 함께 불러 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="‘너와 내가 만나면’ 노래를 함께 불러 봅시다.">노래 부르기</li>
+                    <li data-hover="" data-text="통일이 되어 북한의 친구들을 만날 수 있다면 무엇을 하고 싶은지 생각해 봅시다.">활동 1</li>
+                    <li data-hover="" data-text="생각한 내용을 바탕으로 나만의 노랫말을 만들어 봅시다." data-gap="true">활동 2</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="videoBackground youtubeTitleWrap">
+                                        <div class="animationTitle">
+                                            <div class="mediaSubContainer">
+                                                <h2>
+                                                    <div class="orange">너</div>와 <div class="orange">내</div>가 만나면
+                                                </h2>
+                                                <button class="screenPlayBtn" title="재생"
+                                                    data-youtube-id="TPHBkJOEbJ8"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2 page_zoom zoom_img" data-quiz="toggle">
+                                    <div class="zoomContainer horizon pointerOff">
+                                        <div class="zoomArea">
+                                            <div class="zoomImgContainer pointerOff">
+                                                <div class="zoomImg">
+                                                    <div class="bgImg"
+                                                        style="display: flex; justify-content: center;align-items: center;">
+                                                        <img style="width: 75%; height: auto;"
+                                                            src="./images/duk_04_06_0004_201/img_02.png">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="title-tag">너와 내가 만나면</div>
+                        <div class="flex">
+                            <div class="items">
+                                <div class="title">궁금한 것</div>
+                                <div data-type="toggleButton" class="box">
+                                    <div class="toggle examBtn box" data-toggle-obj="1">
+                                        <div class="answer" data-toggle-target="1">
+                                            <div class="ls-2h">
+                                                <p class="dot">친구들은<br> 무엇을 하며<br> 놀까?</p>
+                                                <p class="dot">좋아하는 책은<br> 뭘까?</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="items">
+                                <div class="title">같이 하고 싶은 것</div>
+                                <div data-type="toggleButton" class="box">
+                                    <div class="toggle examBtn box" data-toggle-obj="2">
+                                        <div class="answer" data-toggle-target="2">
+                                            <div class="ls-2h">
+                                                <p class="dot">좋아하는 음식<br> 함께 먹기</p>
+                                                <p class="dot">같이 운동하기</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="items">
+                                <div class="title">직접 쓰기</div>
+                                <div class="noteText noteLine">
+                                    <div class="textareaWrap">
+                                        <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                            autocomplete="off" spellcheck="false"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="resetBtn only-reset" data-type="reset" data-hover=""></button>
+                        </div>
+                    </li>
+                    <li class="page_3" data-quiz="toggle">
+                        <div class="icon-char" data-hover="" data-popup-btn="1"></div>
+                        <img src="./images/duk_04_06_0004_201/img_05.png" alt="">
+                        <div class="text">너와 내가 만나면</div>
+                        <div class="noteText noteLine">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p>신이 나서 함께 웃을 수 있지</p>
+                                    <p>좋아 좋아 서로의 꿈을 함께 만들 거야</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents">
+                        <p><ins class="dot"></ins>‘너와 내가 만나면’의 노랫말에서 다른 부분을 바꿔도 좋습니다. 노랫말에 통일을 기대하는 마음을 담아 봅시다.</p>
+                        <p><ins class="dot"></ins>노랫말에 어울리는 율동을 만들어 ‘60초 통일 노래 참여 잇기(챌린지)’ 활동을 할 수도 있습니다.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+
+    <script type="text/javascript" src="./common/js/zoomImage.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+
+            $(document).on('click', '.resetBtn', function () {
+                KmAudioPlayer.buttonClick();
+                $('.textLine').val('');
+            });
+        });
+    </script>
+</body>
+
+</html>
