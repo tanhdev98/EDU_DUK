@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        /* page 1 */
+        .min[data-popup-page="1"] {
+            top: 145px;
+            left: 490px;
+            width: 770px;
+        }
+
+        .page_1 .title-box {
+            margin-top: 50px;
+        }
+
+        .page_1 .blueText {
+            color: #006ee6;
+        }
+
+        /* page 2 */
+        .page_2 .bg {
+            width: 1150px;
+            margin: 0 auto;
+        }
+
+        .page_2 [data-type="toggleButton"] {
+            position: absolute;
+            width: 190px;
+            height: auto;
+        }
+
+        .page_2 .box {
+            justify-content: center;
+            background: #fff;
+            border-radius: 50px;
+            box-shadow: 10px 10px 10px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .page_2 .img-text {
+            width: 900px;
+            top: 100px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .page_2 .noteText {
+            height: 60px;
+            position: absolute;
+            padding: 0;
+            width: 220px;
+            box-shadow: 10px 10px 10px -5px rgba(0, 0, 0, 0.3);
+            background: #fff;
+            border-radius: 50px;
+        }
+
+        .noteText.noLine .textareaWrap {
+            height: 100%;
+        }
+
+        .page_2 .noteText1 {
+            top: 350px;
+            left: 350px;
+        }
+
+        .page_2 .noteText2 {
+            top: 350px;
+            right: 150px;
+        }
+
+        .page_2 .noteText:after {
+            display: none;
+        }
+
+        /* page 3 */
+        /* innerTab_1 */
+        .page_3 .innerTab_1>img {
+            width: 850px;
+            margin: auto auto 50px;
+        }
+
+        .page_3 .wrapImg {
+            text-align: center;
+            margin-top: 210px;
+        }
+
+        .page_3 img {
+            width: 600px;
+        }
+
+        .page_3 .bobText {
+            padding: 10px 20px;
+            border-radius: 15px;
+            position: absolute;
+            width: fit-content;
+            text-align: center;
+        }
+
+        .page_3 .bobText>em {
+            color: #006ee6;
+        }
+
+        .page_3 .bobText::after {
+            content: "";
+        }
+
+        .page_3 .bobText.bob1 {
+            border: 4px solid #A8D6F6;
+            background-color: #E7F4F9;
+            left: 50px;
+            top: 270px;
+        }
+
+        .page_3 .bobText.bob1::after {
+            background-color: #A8D6F6;
+            clip-path: polygon(100% 50%, 0 10%, 0 90%);
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translate(100%, -50%);
+            width: 30px;
+            height: 30px;
+        }
+
+        .page_3 .bobText.bob2 {
+            border: 4px solid #FFC3C9;
+            background-color: #FFEEF3;
+            left: 230px;
+            top: 60px;
+        }
+
+        .page_3 .bobText.bob2::after {
+            background-color: #FFC3C9;
+            clip-path: polygon(50% 100%, 10% 0, 90% 0);
+            position: absolute;
+            left: 73%;
+            bottom: 0;
+            transform: translate(-50%, 100%);
+            width: 30px;
+            height: 30px;
+        }
+
+        .page_3 .bobText.bob3 {
+            border: 4px solid #D7DEA3;
+            background-color: #F5F7E5;
+            left: 730px;
+            top: 60px;
+        }
+
+        .page_3 .bobText.bob3::after {
+            background-color: #D7DEA3;
+            clip-path: polygon(50% 100%, 10% 0, 90% 0);
+            position: absolute;
+            left: 10px;
+            bottom: 0;
+            transform: translate(0, 100%);
+            width: 30px;
+            height: 30px;
+        }
+
+        .page_3 .bobText.bob4 {
+            border: 4px solid #CABFE0;
+            background-color: #F6EFFB;
+            left: 920px;
+            top: 240px;
+            width: 390px;
+        }
+
+        .page_3 .bobText.bob4::after {
+            background-color: #CABFE0;
+            clip-path: polygon(100% 90%, 0 50%, 100% 10%);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translate(-100%, -50%);
+            width: 30px;
+            height: 30px;
+        }
+
+        /* innerTab_2 */
+        .page_3 .flex {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .page_3 .flex .items {
+            position: relative;
+        }
+
+        .page_3 .flex .title {
+            background: url('./images/duk_04_06_0002_201/img_05.png') no-repeat;
+            width: 330px;
+            height: 190px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            z-index: 1;
+            position: relative;
+        }
+
+        .page_3 .noteText {
+            padding: 30px;
+            box-shadow: none;
+            height: 180px;
+            width: 1080px;
+            position: absolute;
+            top: 0;
+            left: 220px;
+            background: url('./images/duk_04_06_0002_201/img_04.png') no-repeat center / 100% 100%;
+            padding-left: 90px;
+        }
+
+        .page_3 .noteText .text-exam.flex-wrap {
+            padding: 25px;
+            padding-left: 110px;
+        }
+
+        /* page 4 */
+        .page_4 .bg {
+            background-color: #DFF3F5;
+            width: 100%;
+            height: 490px;
+            border-radius: 50px;
+            padding: 60px;
+        }
+
+        .page_4 .items .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 33px;
+            left: -8px;
+            transform: translateY(-50%);
+        }
+
+        .page_4 .items .item {
+            padding-left: 30px;
+            position: relative;
+            margin: 30px 0;
+            text-align: left;
+            display: flex;
+        }
+
+        .page_4 .items .item .noteText {
+            width: 220px;
+            margin-left: 10px;
+            background: url('./images/duk_04_06_0002_201/img_06.png') no-repeat center / 100% 100%;
+            height: 70px;
+            padding: 0 15px;
+            border-bottom: 0;
+        }
+
+        .page_4 .noteText {
+            box-shadow: none;
+            padding: 0;
+            height: 60px;
+            border-bottom: 2px solid #ddd;
+            border-radius: 0;
+        }
+
+        .page_4 .items .item .noteText .text-exam.flex-wrap {
+            justify-content: center;
+        }
+
+        .page_4 .noteText.noLine .textareaWrap,
+        .page_4 .noteText .text-exam.flex-wrap,
+        .page_4 .noteText .textLine {
+            padding: 0;
+        }
+
+        .page_4 .blueT {
+            margin-top: 0;
+        }
+
+        .page_4 .noteText:after {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue" data-show="1">실천 <em>쑥쑥</em></div>
+            <div class="title-text">디지털 사회에는 어떤 도덕 문제가 있을까요?</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="디지털 사회에는 어떤 도덕 문제가 있을까요?">활동 방법</li>
+                    <li data-hover="" data-text='<span style="letter-spacing: -1.8px;">‘분단’과 ‘통일’ 관련 낱말 중 가장 많이 등장하는 낱말은
+                        무엇인가요?</span>' data-gap="true">활동 1</li>
+                    <li data-hover="" data-text="떠올린 낱말을 사용해 우리에게 통일이 필요한 까닭을 써 봅시다." data-gap="true">활동 2</li>
+                    <li data-hover="" data-text="친구들과 이야기하며 통일이 필요한 까닭을 더 생각해 봅시다." data-gap="true">활동 3</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="icon-char" data-hover="" data-popup-btn="1"></div>
+                        <a class="videoSubPlayBtn large youtube" data-youtube-id="J5AivH_jO8k" target="_blank">
+                            통일이 된다면?
+                        </a>
+                        <div class="title-box">
+                            <div class="title">활동 방법</div>
+                        </div>
+                        <ul class="how-to-play">
+                            <li>
+                                <div class="blueText">준비물 |</div>
+                                <div class="text">붙임쪽지 여러 장</div>
+                            </li>
+                            <li>
+                                <div class="bullet number orange inline">
+                                    1
+                                </div>
+                                <div class="text">
+                                    분단과 통일을 생각하면 떠오르는 낱말은 무엇인가요?
+                                </div>
+                            </li>
+                            <li>
+                                <div class="bullet number orange inline">
+                                    2
+                                </div>
+                                <div class="text">
+                                    떠올린 낱말을 붙임쪽지 한 장에 하나씩 적어 봅니다.<br> 최대한 많이 적습니다.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="bullet number orange inline">
+                                    3
+                                </div>
+                                <div class="text">
+                                    붙임쪽지를 칠판에 붙이고 친구들의 생각을 살펴봅니다.
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <img src="./images/duk_04_06_0002_201/img_01.png" alt="" class="bg">
+                        <div data-type="toggleButton" style="top: 50px;left: 110px;">
+                            <div class="toggle examBtn box" data-toggle-obj="1">
+                                <div class="answer" data-toggle-target="1">
+                                    <div class="ls-2h">풍요</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-type="toggleButton" style="top: 50px;left: 350px;">
+                            <div class="toggle examBtn box" data-toggle-obj="2">
+                                <div class="answer" data-toggle-target="2">
+                                    <div class="ls-2h">평화</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-type="toggleButton" style="top: 50px;left: 750px;">
+                            <div class="toggle examBtn box" data-toggle-obj="3">
+                                <div class="answer" data-toggle-target="3">
+                                    <div class="ls-2h">고통</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-type="toggleButton" style="top: 50px;left: 1010px;">
+                            <div class="toggle examBtn box" data-toggle-obj="4">
+                                <div class="answer" data-toggle-target="4">
+                                    <div class="ls-2h">전쟁</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-type="toggleButton" style="top: 350px;left: 110px;">
+                            <div class="toggle examBtn box" data-toggle-obj="5">
+                                <div class="answer" data-toggle-target="5">
+                                    <div class="ls-2h">자유</div>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="./images/duk_04_06_0002_201/img_02.png" alt="" class="img-text">
+                        <div class="noteText noLine noteText1">
+                            <div class="textareaWrap">
+                                <input class="textLine afterDisplay" type="text" placeholder="직접 쓰기" data-input-obj=""
+                                    data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                    spellcheck="false"></input>
+                            </div>
+                        </div>
+                        <div class="noteText noLine noteText2">
+                            <div class="textareaWrap">
+                                <input class="textLine afterDisplay" type="text" placeholder="직접 쓰기" data-input-obj=""
+                                    data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                    spellcheck="false"></input>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="examViewBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                    <li class="page_3">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="wrapImg">
+                                        <img src="./images/duk_04_06_0002_201/img_03.png" />
+                                    </div>
+                                    <div class="bobText bob1">
+                                        통일은<br>
+                                        왜 필요할까?
+                                    </div>
+                                    <div class="bobText bob2">
+                                        남북한을<br>
+                                        <em>‘자유’</em>롭게 오갈 수 있어.
+                                    </div>
+                                    <div class="bobText bob3">
+                                        남북한이 서로<br>
+                                        <em>‘비난’</em>하지 않아도 돼.
+                                    </div>
+                                    <div class="bobText bob4">
+                                        <em>‘전쟁’</em>의 <em>‘위협’</em>에서
+                                        벗어날 수 있어.
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="flex">
+                                        <div class="items">
+                                            <div class="title">내가<br>
+                                                선택한 낱말
+                                            </div>
+                                            <div class="noteText noLine">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT" style="margin-top: 10px;">
+                                                        <p>평화</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="items">
+                                            <div class="title">통일이<br>
+                                                필요한 이유
+                                            </div>
+                                            <div class="noteText noLine">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        <p>전쟁 위협이 없이<br>
+                                                            평화롭고 편안한 삶을 살 수 있습니다.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="page_4" data-quiz="toggle">
+                        <div class="bg">
+                            <div class="flex">
+                                <div class="items">
+                                    <div class="item">친구 <div class="noteText noLine">
+                                            <div class="textareaWrap">
+                                                <input class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></input>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    <p>규리</p>
+                                                </div>
+                                            </div>
+                                        </div>(이)의 생각</div>
+                                    <div class="noteText noLine">
+                                        <div class="textareaWrap">
+                                            <input class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></input>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p>이산가족이 슬픔과 고통에서 벗어날 수 있습니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">친구 <div class="noteText noLine">
+                                            <div class="textareaWrap">
+                                                <input class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></input>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    <p>재율</p>
+                                                </div>
+                                            </div>
+                                        </div>(이)의 생각</div>
+                                    <div class="noteText noLine">
+                                        <div class="textareaWrap">
+                                            <input class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></input>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p>주위 여러 나라도 전쟁 위협이 줄어들어 평화로워질 수 있습니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents">
+                        <p>
+                            부정적인 낱말은 분단 상태에서 우리가 겪어야 하는 불편함이며, 이를 해소해야 합니다.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.examViewBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    examViewBtn.addClass('reset');
+                } else {
+                    examViewBtn.removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.examViewBtn', function () {
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.examViewBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!examViewBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
