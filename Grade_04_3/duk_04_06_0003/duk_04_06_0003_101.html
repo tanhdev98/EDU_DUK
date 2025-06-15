@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        /* page 1 */
+        .page_1 .items .item {
+            position: relative;
+        }
+
+        .page_1 .items .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 33px;
+            left: -8px;
+            transform: translateY(-50%);
+        }
+
+        .page_1 .items .item {
+            padding-left: 30px;
+            position: relative;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .page_1 .noteText {
+            box-shadow: unset;
+            height: 70px;
+            background-color: #F7F7F7;
+            margin-top: 15px;
+            padding: 0;
+        }
+
+        .noteText.noLine .textareaWrap {
+            height: 100%;
+        }
+
+        .noteText:after {
+            display: none;
+        }
+
+        .noteText .text-exam.flex-wrap {
+            padding: 0 20px;
+        }
+
+        .min[data-popup-page="1"] {
+            top: 150px;
+            left: 530px;
+            width: 730px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue" data-show="1">실천 <em>똑똑</em></div>
+            <div class="title-text">통일을 이루기 위해 내가 노력해야 하는 까닭을 생각해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="icon-char" data-hover="" data-popup-btn="1"></div>
+                        <div class="items">
+                            <div class="item">
+                                통일을 위해 노력해 본 적이 있나요?
+                                <div class="noteText noLine">
+                                    <div class="textareaWrap">
+                                        <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                            autocomplete="off" spellcheck="false"></textarea>
+                                    </div>
+                                    <div class="text-exam flex-wrap">
+                                        <div class="blueT">
+                                            <p>통일에 관심을 두고 이해하려고 노력해 왔습니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                통일을 이루기 위해 나의 노력이 중요한 까닭은 무엇인가요?
+                                <div class="noteText noLine" style="height: 130px;">
+                                    <div class="textareaWrap">
+                                        <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                            autocomplete="off" spellcheck="false"></textarea>
+                                    </div>
+                                    <div class="text-exam flex-wrap">
+                                        <div class="blueT">
+                                            <p>나부터 시작해서 모두가 함께 마음을 모아야
+                                                통일에 가까워질 수 있기 때문입니다.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents">
+                        <p>진정한 통일은 사람의 통일이라는 관점에서 접근해, 통일을 위해 나의 노력이 중요함을 이해해 봅니다.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

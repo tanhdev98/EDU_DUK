@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        /* page 2 */
+        .min[data-popup-page="1"] {
+            top: 210px;
+            left: 530px;
+            width: 730px;
+        }
+
+        .page_2 .noteText {
+            box-shadow: none;
+            height: 380px;
+            margin-top: 70px;
+            background: url('./images/duk_04_06_0003_201/img_01.png') no-repeat center / 100% 100%;
+            padding-left: 110px;
+        }
+
+        .page_2 .noteText .text-exam.flex-wrap {
+            padding-left: 140px;
+        }
+
+        .page_2 .underline {
+            width: calc(100% - 137px) !important;
+            left: unset !important;
+            right: 28px;
+        }
+
+        /* page 3 */
+        .flex .howtoBox {
+            width: 100%;
+            margin-top: 70px;
+        }
+
+        .flex .howtoBox .text-box {
+            text-align: center;
+            display: block;
+            padding: 0;
+        }
+
+        .howtoBox .pic-box .imageWrap {
+            padding: 0;
+            height: 235px;
+        }
+
+        .howtoBox .pic-box {
+            height: 366px;
+        }
+
+        .dragDropContainer.bogi .bogi-icon {
+            width: max-content;
+            text-align: center;
+            left: -2px;
+            top: -1px;
+            left: 0;
+            right: unset;
+            margin: auto;
+            border-radius: 0 0 18px 0px;
+            font-size: 22px;
+            height: max-content;
+            padding: 2px 10px;
+        }
+
+        .dragDropContainer.bogi .bogi-icon:after {
+            content: "보기";
+        }
+
+        .dragDropContainer.bogi .lineBox {
+            width: 1200px;
+            height: 80px;
+        }
+
+        .js-dragObj {
+            cursor: pointer;
+            position: absolute;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            border-radius: 15px;
+            font-family: 'NotoB';
+        }
+
+        .d1 {
+            top: 15px;
+            left: 125px;
+        }
+
+        .d2 {
+            top: 15px;
+            left: calc(85px + 300px*1);
+        }
+
+        .d3 {
+            top: 15px;
+            left: calc(85px + 300px*2);
+        }
+
+        .d4 {
+            top: 15px;
+            left: calc(85px + 300px*3);
+        }
+
+        .clearArea {
+            z-index: 2;
+            width: 140px;
+            height: 140px;
+            border-radius: 20px;
+            top: 287px;
+            left: 732px;
+        }
+
+        .boxDrag {
+            border-radius: 12px;
+            background-color: #f5f5f5;
+        }
+
+        .clearArea,
+        .boxDrag {
+            width: 160px;
+            height: 55px;
+            display: inline-block;
+            margin: auto 10px;
+        }
+
+        .js-dragObj.dragObjComplete {
+            opacity: 1;
+            cursor: auto;
+            width: 100%;
+            text-align: center;
+        }
+
+        .clearArea .js-dragObj.dragObjComplete {
+            color: #006ee6;
+        }
+
+        .dragObjComplete {
+            top: -3px;
+            left: 0;
+        }
+
+        .drag-zone .dragObjComplete {
+            opacity: 0;
+        }
+
+        .js-dropArea {
+            transform: translate(1000%, 1000%);
+        }
+
+        .js-dropArea.a2,
+        .js-dropArea.a3,
+        .js-dropArea.a1 {
+            transform: translate(0%, 0%) !important;
+        }
+
+        [data-quiz="dragDrop"] .flex {
+            display: flex;
+            align-items: center;
+            margin-top: -65px;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /*  */
+        .box-click {
+            position: absolute;
+            background: url('../ko/contents/images/button/btn_speech_balloon_right1.png') no-repeat;
+            width: 64px;
+            height: 64px;
+            cursor: pointer;
+        }
+
+        .box-click1 {
+            top: 30px;
+            left: 560px;
+            background: url('../ko/contents/images/button/btn_speech_balloon_left1.png') no-repeat;
+        }
+
+        .box-click2 {
+            top: 30px;
+            left: 530px;
+            background: url('../ko/contents/images/button/btn_speech_balloon_left1.png') no-repeat;
+        }
+
+        .popupItem {
+            position: absolute;
+            text-align: center;
+            padding: 10px 15px;
+            border-radius: 15px;
+            display: none;
+            width: max-content;
+            font-size: 35px;
+            background: #FFEEF3;
+            border: 4px solid #ffc4c9;
+        }
+
+        .popupItem:before {
+            position: absolute;
+            content: "";
+            clip-path: polygon(0 0, 0% 100%, 100% 50%);
+            width: 30px;
+            height: 30px;
+            right: -45px;
+            bottom: 110px;
+            transform: translate(-50%, 100%);
+            background-color: #ffc4c9;
+        }
+
+        .popupItem1 {
+            top: 60px;
+            left: 40px;
+        }
+
+        .popupItem2 {
+            top: 60px;
+            left: 40px;
+        }
+
+        /* innerTab_3 */
+        .page_3 .innerTab_3>img {
+            width: 400px;
+            margin: auto;
+        }
+
+        .min[data-popup-page="2"] {
+            top: 210px;
+            left: 540px;
+            width: max-content;
+        }
+
+        .page_3 .noteText {
+            box-shadow: none;
+            position: absolute;
+            width: 1000px;
+            border-radius: 20px;
+            height: 150px;
+            padding: 35px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .page_3 .noteText .textareaWrap {
+            height: 182px;
+            padding: 0;
+        }
+
+        .page_3 .noteText::after {
+            display: none;
+        }
+
+        .page_3 .noteText.orange {
+            border: 5px solid #FFD89E;
+            background-color: #FDF3E7;
+            left: 830px;
+            top: 210px;
+            width: 470px;
+        }
+
+        .page_3 .noteText::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-right: 30px solid #FFD89E;
+            left: -30px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        .page_3 .noteText.blue::before {
+            border-left: 30px solid #A8D6F6;
+            border-right: none;
+            left: unset;
+            right: -30px;
+        }
+
+        .page_3 .noteText.blue {
+            background: #E7F4F9;
+            border: 5px solid #A8D6F6 !important;
+            bottom: 170px;
+            right: 820px;
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue" data-show="1">실천 <em>쑥쑥</em></div>
+            <div class="title-text">남이와 북이의 이야기를 살펴 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="남이와 북이의 이야기를 살펴 봅시다.">이야기</li>
+                    <li data-hover="" data-text="남이와 북이가 화해하려면 어떻게 해야 할까요? 친구들과 이야기해 봅시다.">활동 1</li>
+                    <li data-hover="" data-text="남이와 북이가 화해하는 방법을 떠올리며 남북한의 바람직한 통일 방법을 알아봅시다.">활동 2</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="noteText noteLine green">
+                            “너랑은 다신 안 놀아!”<br>
+                            “흥, 누가 아쉬워할 줄 알고?”<br>
+                            단짝이라고 소문난 남이와 북이. 오늘따라 두 친구의 토라진 모습이 오래갈 것 같다. 오늘 우리 모둠의 임무는 두 친구를 화해시키는 것! 어떻게 하면 남이와
+                            북이가 화해할 수 있을까?
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="icon-char" data-hover="" data-popup-btn="1"></div>
+                        <div class="noteText noteLine">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p class="dot">두 친구가 마음을 터놓고 이야기할 수 있는 시간과 장소가 필요합니다.</p>
+                                    <p class="dot" style="letter-spacing: -3.2px;">선물을 교환하거나, 필요한 것을 빌려주면 마음이 풀릴 수 있습니다.
+                                    </p>
+                                    <p class="dot">공통의 관심사를 찾아서 함께 즐겨도 좋을 것 같습니다.</p>
+                                    <p class="dot">믿을 만한 친구들이 힘을 모아 화해를 돕습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                    <li class="page_3">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="dragDrop" data-option="answer"
+                                    data-quiz-name="dragDrop" data-total-complete-count="2">
+                                    <div class="dragDropContainer bogi">
+                                        <div class="it-start-wrap dragBox lineBox dragObjUL">
+                                            <div class="bogi-icon"></div>
+                                            <div class="drag-zone">
+                                                <div class="js-dragObj d1" data-drag-obj-answer="1" data-ps="free">
+                                                    한마음</div>
+                                                <div class="js-dragObj d2" data-drag-obj-answer="2" data-ps="free">
+                                                    협력</div>
+                                                <div class="js-dragObj d3" data-drag-obj-answer="3" data-ps="free">
+                                                    대화</div>
+                                                <div class="js-dragObj d4" data-drag-obj-answer="4" data-ps="free">
+                                                    문화</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="how-to-box howtoBox">
+                                            <div class="pic-box">
+                                                <div class="bullet number orange inline">1</div>
+                                                <div class="image-box">
+                                                    <div class="imageWrap">
+                                                        <img src="./images/duk_04_06_0003_201/img_02.png">
+                                                        <div class="box-click box-click1" data-popup="1"></div>
+                                                        <div class="popupItem popupItem1" data-show="1">
+                                                            <span>
+                                                                먼저 두 친구가 마음을<br>
+                                                                열고 대화하는 시간을<br>
+                                                                갖게 돕는 건 어때?
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-box">
+                                                    남한과 북한이<br> 평화로운<div
+                                                        style="position: relative; top: 10px; display: inline-block;">
+                                                        <span class="js-dropArea a1 clearArea boxDrag"
+                                                            data-drop-area-answer="3"></span>
+                                                    </div>을/를
+                                                    해요.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="how-to-box howtoBox">
+                                            <div class="pic-box">
+                                                <div class="bullet number orange inline">2</div>
+                                                <div class="image-box">
+                                                    <div class="imageWrap">
+                                                        <img src="./images/duk_04_06_0003_201/img_03.png">
+                                                    </div>
+                                                </div>
+                                                <div class="text-box">
+                                                    서로에게 필요한 것을 나누며<br>
+                                                    <div style="position: relative; top: 10px; display: inline-block;">
+                                                        <span class="js-dropArea a2 clearArea boxDrag"
+                                                            data-drop-area-answer="2"></span>
+                                                    </div>해요.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="dapCheckBtn" data-answer-btn=""></button>
+                                </li>
+                                <li class="innerTab_2" data-quiz="dragDrop" data-option="answer"
+                                    data-quiz-name="dragDrop" data-total-complete-count="2">
+                                    <div class="dragDropContainer bogi">
+                                        <div class="it-start-wrap dragBox lineBox dragObjUL">
+                                            <div class="bogi-icon"></div>
+                                            <div class="drag-zone">
+                                                <div class="js-dragObj d1" data-drag-obj-answer="1" data-ps="free">
+                                                    한마음</div>
+                                                <div class="js-dragObj d2" data-drag-obj-answer="2" data-ps="free">
+                                                    협력</div>
+                                                <div class="js-dragObj d3" data-drag-obj-answer="3" data-ps="free">
+                                                    대화</div>
+                                                <div class="js-dragObj d4" data-drag-obj-answer="4" data-ps="free">
+                                                    문화</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="how-to-box howtoBox">
+                                            <div class="pic-box">
+                                                <div class="bullet number orange inline">3</div>
+                                                <div class="image-box">
+                                                    <div class="imageWrap">
+                                                        <img src="./images/duk_04_06_0003_201/img_04.png">
+                                                    </div>
+                                                </div>
+                                                <div class="text-box">
+                                                    우리의 <div
+                                                        style="position: relative; top: 10px; display: inline-block;">
+                                                        <span class="js-dropArea a1 clearArea boxDrag"
+                                                            data-drop-area-answer="4"></span>
+                                                    </div>을/를 함께 즐겨요.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="how-to-box howtoBox">
+                                            <div class="pic-box">
+                                                <div class="bullet number orange inline">4</div>
+                                                <div class="image-box">
+                                                    <div class="imageWrap">
+                                                        <img src="./images/duk_04_06_0003_201/img_05.png">
+                                                        <div class="box-click box-click2" data-popup="2"></div>
+                                                        <div class="popupItem popupItem2" data-show="2">
+                                                            <span>
+                                                                주위에 있는 여러 친구도<br>
+                                                                도와야 해. 우리 함께<br>
+                                                                관심을 두고 힘을 합치자.
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-box">
+                                                    세계 여러 나라가<br>
+                                                    <div style="position: relative; top: 10px; display: inline-block;">
+                                                        <span class="js-dropArea a2 clearArea boxDrag"
+                                                            data-drop-area-answer="1"></span>
+                                                    </div>(으)로
+                                                    노력해요.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="dapCheckBtn" data-answer-btn=""></button>
+                                </li>
+                                <li class="innerTab_3" data-quiz="toggle">
+                                    <div class="icon-char" data-hover="" data-popup-btn="2"></div>
+                                    <img src="./images/duk_04_06_0003_201/img_06.png" alt="">
+                                    <div class="noteText noLine blue">
+                                        우리도 통일을 이루도록<br>
+                                        도울 수 있어!
+                                    </div>
+                                    <div class="noteText noLine orange">
+                                        더 좋은 방법이 있는지<br>
+                                        생각해 볼까?
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents">
+                        <p><ins class="dot"></ins>모둠별로 돌아가며 말하거나, 발상 모으기(브레인스토밍) 기법을 활용해 자유롭게 말합니다.</p>
+                        <p><ins class="dot"></ins>말한 내용을 남북 관계와 연관 지어 설명해 봅니다.</p>
+                    </div>
+                </li>
+                <li class="min" data-popup-page="2" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents">
+                        <p>다음과 같은 추가 활동도 해볼 수 있습니다.</p>
+                        <p><ins class="dot"></ins>북한 또래는 어떻게 지내는지 조사하기</p>
+                        <p><ins class="dot"></ins>한반도 지도 그려 보기</p>
+                        <p><ins class="dot"></ins>통일과 관련된 퀴즈 만들어 보기</p>
+                        <p><ins class="dot"></ins>통일 그림책, 캐릭터 만들어 보기</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+
+            $(document).on('click', '.box-click', function () {
+                KmAudioPlayer.buttonClick();
+                $('.popupItem').hide();
+                $('.box-click').show();
+                var $data_popup = $(this).attr('data-popup');
+                var $currentPopup = $('.popupItem[data-show="' + $data_popup + '"]');
+                var maxZIndex = Math.max.apply(null, $('.popupItem:visible').map(function () {
+                    return parseInt($(this).css('z-index')) || 0;
+                }).get());
+                $currentPopup.css('z-index', maxZIndex + 1).show();
+                $(this).hide();
+                $('.popupItem .close-speech-button').remove();
+                $('.popupItem[data-show="' + $data_popup + '"]').append('<div class="close-speech-button"></div>');
+            });
+
+            $(document).on('click', '.close-speech-button', function () {
+                var $data_show = $(this).parent().attr('data-show');
+                $(this).parent().hide();
+                $(this).remove();
+                $('.box-click').show();
+            });
+        });
+    </script>
+</body>
+
+</html>

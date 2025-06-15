@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        /* page 1 */
+        .contentsBox {
+            padding: 0;
+        }
+
+        .basicSlider[data-slide-container='main']>.basicSlider_slides>li:not(.page_1) {
+            padding: 20px 28px 0 28px;
+        }
+
+        .page_1>img {
+            height: 100%;
+        }
+
+        .page_1 .popupItem {
+            display: none;
+            position: absolute;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 4px solid #A8D6F6;
+            background-color: #E7F4F9;
+            text-align: center;
+        }
+
+        .page_1 .popupItem::before {
+            content: "";
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            position: absolute;
+            background-color: #A8D6F6;
+        }
+
+        .page_1 .popupItem::after {
+            position: absolute;
+            content: "";
+            top: 257px;
+            height: 150px;
+            width: 4px;
+            background-color: #A8D6F6;
+        }
+
+        .item1 {
+            top: 360px;
+            left: 240px;
+        }
+
+        .item2 {
+            top: 290px;
+            left: 500px;
+        }
+
+        .item3 {
+            right: 440px;
+            top: 280px;
+        }
+
+        .item4 {
+            right: 160px;
+            top: 210px;
+        }
+
+        .page_1 .popupItem1 {
+            bottom: 10px;
+            left: 100px;
+        }
+
+        .page_1 .popupItem1::before {
+            right: 130px;
+            top: -35px;
+        }
+
+        .page_1 .popupItem1::after {
+            right: 135px;
+            top: -30px;
+            height: 30px;
+        }
+
+        .page_1 .popupItem2 {
+            bottom: 10px;
+            left: 350px;
+        }
+
+        .page_1 .popupItem2::before {
+            right: 130px;
+            top: -50px;
+        }
+
+        .page_1 .popupItem2::after {
+            right: 135px;
+            top: -45px;
+            height: 45px;
+        }
+
+        .page_1 .popupItem3 {
+            bottom: 35px;
+            left: 600px;
+        }
+
+        .page_1 .popupItem3::before {
+            right: 130px;
+            top: -150px;
+        }
+
+        .page_1 .popupItem3::after {
+            right: 135px;
+            top: -150px;
+        }
+
+        .page_1 .popupItem4 {
+            bottom: 115px;
+            right: 60px;
+        }
+
+        .page_1 .popupItem4::before {
+            right: 130px;
+            top: -150px;
+        }
+
+        .page_1 .popupItem4::after {
+            right: 135px;
+            top: -150px;
+        }
+
+        /* page 2 */
+        .page_2>img {
+            margin-top: -10px;
+        }
+
+        .page_2 .noteText {
+            box-shadow: none;
+            width: 1240px;
+            position: absolute;
+            left: 60px;
+            top: 100px;
+        }
+
+        .page_2 .noteText .textareaWrap {
+            height: 100%;
+        }
+
+        .page_2 .buttonContainer {
+            right: 28px;
+        }
+
+        .videoSubPlayBtn {
+            right: 28px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue" data-show="1">마음 <em>쑥쑥</em></div>
+            <div class="title-text">통일을 이루기 위해 내가 할 수 있는 일을 실천해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="통일을 이루기 위해 내가 할 수 있는 일을 실천해 봅시다.">활동</li>
+                    <li data-hover="" data-text="또 무엇을 할 수 있을까요?">물음</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <img src="./images/duk_04_06_0003_202/img_01.png" alt="">
+                        <span class="click-finger-Btn blinkOn blinkOpacity item1" data-hover="" data-popup="1"></span>
+                        <div class="popupItem popupItem1" data-show="1">
+                            <span>
+                                우리와 비슷한<br>
+                                북한의 말과<br>
+                                문화 찾아보기
+                            </span>
+                        </div>
+
+                        <span class="click-finger-Btn blinkOn blinkOpacity item2" data-hover="" data-popup="2"></span>
+                        <div class="popupItem popupItem2" data-show="2">
+                            <span>
+                                가족, 친구들과<br>
+                                통일에 대해<br>
+                                이야기하고<br>
+                                관심 갖기
+                            </span>
+                        </div>
+
+                        <span class="click-finger-Btn blinkOn blinkOpacity item3" data-hover="" data-popup="3"></span>
+                        <div class="popupItem popupItem3" data-show="3">
+                            <span>
+                                통일을 다룬 책을<br>
+                                읽거나 영화 감상하기
+                            </span>
+                        </div>
+
+                        <span class="click-finger-Btn blinkOn blinkOpacity item4" data-hover="" data-popup="4"></span>
+                        <div class="popupItem popupItem4" data-show="4">
+                            <span>
+                                통일 교육 자료<br>
+                                찾아보기
+                            </span>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <a class="videoSubPlayBtn large youtube" data-youtube-id="9vjBctV0VFs" target="_blank"
+                            style="right: 278px;">초콜릿 장벽</a>
+                        <a class="videoSubPlayBtn large youtube" data-youtube-id="d4RUuCEvhqY" target="_blank">사라진 마법의
+                            구슬</a>
+                        <img src="./images/duk_04_06_0003_202/img_02.png" alt="">
+                        <div class="noteText noteLine">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p class="dot">북한의 말과 문화를 조사하여 나만의 작은 책 만들기</p>
+                                    <p class="dot">주위 사람들과 통일 문제에 대해 이야기하며 통일에 대해 계속 관심 갖기</p>
+                                    <p class="dot">통일의 기대감을 가지고 가상의 북한 친구에게 편지 써 보기</p>
+                                    <p class="dot">통일을 다룬 책이나 영상을 감상하고 감상문을 써 공유하기</p>
+                                    <p class="dot">통일교육원 누리집에 접속하여 흥미 있는 자료 탐색하기</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+
+                $('.click-finger-Btn').removeClass('blinkOn').removeClass('blinkOpacity');
+                setTimeout(function () {
+                    $('.click-finger-Btn').addClass('blinkOn').addClass('blinkOpacity');
+                }, 100);
+
+                if ($(this).index() === 4) {
+                    setTimeout(function () {
+                        $('.click-finger-Btn').removeClass('blinkOn').removeClass('blinkOpacity');
+                    }, 3000);
+                }
+            });
+
+            $(document).on('click', '.click-finger-Btn', function () {
+                KmAudioPlayer.buttonClick();
+                $('.popupItem').hide();
+                $('.click-finger-Btn').show();
+                var $data_popup = $(this).attr('data-popup');
+                var $currentPopup = $('.popupItem[data-show="' + $data_popup + '"]');
+                var maxZIndex = Math.max.apply(null, $('.popupItem:visible').map(function () {
+                    return parseInt($(this).css('z-index')) || 0;
+                }).get());
+                $currentPopup.css('z-index', maxZIndex + 1).show();
+                $(this).hide();
+                $('.popupItem .close-speech-button').remove();
+                $('.popupItem[data-show="' + $data_popup + '"]').append('<div class="close-speech-button"></div>');
+            });
+
+            $(document).on('click', '.close-speech-button', function () {
+                var _id = $(this).parent().attr('data-show');
+                $(this).parent().hide();
+                $(`[data-popup=${_id}]`).show().removeClass('ans').removeClass('blinkOn').removeClass('blinkOpacity');;
+                $(this).remove();
+            });
+
+        });
+    </script>
+</body>
+
+</html>
