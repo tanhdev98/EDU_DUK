@@ -15,13 +15,37 @@
         .page_1 .title {
             font-size: 30px;
             text-align: end;
-            margin-top: 40px;
+            margin-top: 30px;
+        }
+
+        .page_1 .boxCheckContainer {
+            cursor: pointer;
+        }
+
+        .page_1 .boxCheckContainer.active .boxCheck {
+            display: block;
+        }
+
+        .page_1 .boxCheckContainer .boxCheck {
+            display: none;
+        }
+
+        .page_1 .boxCheck {
+            background: url('./common/images/icon_subQuiz_O_over.png') no-repeat center / 100%;
+            width: 80px;
+            height: 80px;
+            margin: auto;
+        }
+
+        .page_1 .table-box td {
+            text-align: center;
+            color: #A67058;
         }
 
         p.arrow {
             display: flex;
             padding-left: 30px;
-            margin: 20px 0px;
+            margin: 0;
             line-height: 60px;
             position: relative;
         }
@@ -134,6 +158,93 @@
                     <li class="page_1">
                         <div class="study_guide"><em>표</em>의 <em>점수칸</em>을 <em>클릭</em>하세요.</div>
                         <div class="title">(항상 그렇다: 5점, 자주 그렇다: 4점, 그렇다: 3점, 그렇지 않다: 2점, 전혀 그렇지 않다: 1점)</div>
+                        <div class="table-box color-02 ">
+                            <table>
+                                <colgroup>
+                                    <col style="width:10%">
+                                    <col style="width:75%">
+                                    <col style="width:10%">
+                                    <col style="width:10%">
+                                    <col style="width:10%">
+                                    <col style="width:10%">
+                                    <col style="width:10%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th colspan="2">질문</th>
+                                        <th>5점</th>
+                                        <th>4점</th>
+                                        <th>3점</th>
+                                        <th>2점</th>
+                                        <th>1점</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>디지털 기기를 사용하느라<br>공부, 숙제 등을 미룬 적이 있나요?</td>
+                                        <td class="boxCheckContainer">
+                                            <div class="boxCheck"></div>
+                                        </td>
+                                        <td class="boxCheckContainer">
+                                            <div class="boxCheck"></div>
+                                        </td>
+                                        <td class="boxCheckContainer">
+                                            <div class="boxCheck"></div>
+                                        </td>
+                                        <td class="boxCheckContainer">
+                                            <div class="boxCheck"></div>
+                                        </td>
+                                        <td class="boxCheckContainer">
+                                            <div class="boxCheck"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>디지털 기기 사용 시간을<br>
+                                            스스로 조절하기 어려웠던 적이 있나요?
+                                        </td>
+                                        <td class="boxCheckContainer">
+                                            <div class="boxCheck"></div>
+                                        </td>
+                                        <td class="boxCheckContainer">
+                                            <div class="boxCheck"></div>
+                                        </td>
+                                        <td class="boxCheckContainer">
+                                            <div class="boxCheck"></div>
+                                        </td>
+                                        <td class="boxCheckContainer">
+                                            <div class="boxCheck"></div>
+                                        </td>
+                                        <td class="boxCheckContainer">
+                                            <div class="boxCheck"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td style="letter-spacing: -3px;">디지털 기기를 사용하지 못할 때,<br>
+                                            견디기 힘들었거나 불편했던 적이 있나요?
+                                        </td>
+                                        <td class="boxCheckContainer">
+                                            <div class="boxCheck"></div>
+                                        </td>
+                                        <td class="boxCheckContainer">
+                                            <div class="boxCheck"></div>
+                                        </td>
+                                        <td class="boxCheckContainer">
+                                            <div class="boxCheck"></div>
+                                        </td>
+                                        <td class="boxCheckContainer">
+                                            <div class="boxCheck"></div>
+                                        </td>
+                                        <td class="boxCheckContainer">
+                                            <div class="boxCheck"></div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
                         <p class="arrow">각 질문에서 3점 이상이 나온다면 디지털 생활 습관이 좋지 않은 거예요.</p>
                     </li>
                     <li class="page_2" data-quiz="toggle">
@@ -232,6 +343,13 @@
                 } else {
                     $('header').removeClass('gap');
                 }
+            });
+
+            $('.boxCheckContainer').on('click', function () {
+                KmAudioPlayer.buttonClick();
+                const $parentRow = $(this).closest('tr');
+                $parentRow.find('.boxCheckContainer').removeClass('active');
+                $(this).addClass('active');
             });
         });
     </script>

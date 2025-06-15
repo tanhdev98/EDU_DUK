@@ -20,10 +20,57 @@
             background: #00d045;
         }
 
+        header .boxCheck {
+            display: inline-block !important;
+        }
+
+        .boxCheck {
+            background: url('./common/images/icon_subQuiz_O_over.png') no-repeat center / 100%;
+            width: 50px;
+            height: 50px;
+            margin: auto;
+            /* display: none; */
+            position: relative;
+            top: 9px;
+        }
+
         /* page 1 */
         .page_1>img {
-            width: 1130px;
+            width: 1070px;
             margin: auto;
+        }
+
+        .boxCheckContainer {
+            cursor: pointer;
+            position: absolute;
+            top: 440px;
+            width: 110px;
+            height: 50px;
+        }
+
+        .boxCheckContainer .boxCheck {
+            display: none;
+        }
+
+        .boxCheckContainer.active .boxCheck {
+            display: block;
+            top: 0;
+        }
+
+        .box1 {
+            left: 245px;
+        }
+
+        .box2 {
+            left: 490px;
+        }
+
+        .box3 {
+            left: 755px;
+        }
+
+        .box4 {
+            left: 970px;
         }
 
         /* page 2 */
@@ -99,23 +146,37 @@
 
 <body>
     <div id="wrap" class="math">
-        <header class="gap">
+        <header>
             <div class="title-icon green">단원 마무리</div>
-            <div class="title-text" style="letter-spacing: -2.8px;">이번 단원에서 배운 내용을 바르게 말한 친구를 모두 골라 를 해 봅시다.</div>
+            <div class="title-text">이번 단원에서 배운 내용을 바르게 말한 친구를 모두 골라 <span class="boxCheck"></span>를 해 봅시다.</div>
         </header>
         <main>
             <!-- FRAME OF PAGE -->
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
-                    <li data-hover="" data-text="이번 단원에서 배운 내용을 바르게 말한 친구를 모두 골라 를 해 봅시다." data-gap="true">
+                    <li data-hover=""
+                        data-text='이번 단원에서 배운 내용을 바르게 말한 친구를 모두 골라 <span class="boxCheck"></span>를 해 봅시다.'>
                         활동 1</li>
                     <li data-hover="" data-text="이번 단원에서 배운 내용 중 인상 깊은 내용을 빈칸에 적어 봅시다." data-gap="true">활동 2</li>
                     <li data-hover="" data-text="5단원을 마치며 자신의 모습을 되돌아봅시다.">자기 점검</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
-                    <li class="page_1">
+                    <li class="page_1" data-quiz="toggle">
                         <div class="study_guide"><em>아래 빈칸</em>을 <em>클릭</em>하세요.</div>
                         <img src="./images/duk_04_05_0004_302/img_01.png" alt="">
+                        <div class="boxCheckContainer box1 ans">
+                            <div class="boxCheck"></div>
+                        </div>
+                        <div class="boxCheckContainer box2">
+                            <div class="boxCheck"></div>
+                        </div>
+                        <div class="boxCheckContainer box3 ans">
+                            <div class="boxCheck"></div>
+                        </div>
+                        <div class="boxCheckContainer box4 ans">
+                            <div class="boxCheck"></div>
+                        </div>
+                        <button class="dapCheckBtn" data-answer-btn=""></button>
                     </li>
                     <li class="page_2" data-quiz="toggle">
                         <img src="./images/duk_04_05_0004_302/img_02.png" alt="">
@@ -286,12 +347,32 @@
         document.addEventListener('DOMContentLoaded', function () {
             $(document).on('click', '.basicSlider_tabs li', function () {
                 if ($(this).data('text')) {
-                    $('header .title-text').text($(this).data('text'));
+                    $('header .title-text').html($(this).data('text'));
                 }
                 if ($(this).attr('data-gap') == 'true') {
                     $('header').addClass('gap');
                 } else {
                     $('header').removeClass('gap');
+                }
+            });
+
+            $(document).on('click', '.boxCheckContainer', function () {
+                if ($(this).hasClass('ans')) {
+                    KmAudioPlayer.correct();
+                    $(this).addClass('active');
+                } else {
+                    KmAudioPlayer.incorrect();
+                }
+
+                if ($('.boxCheckContainer.active').length === 3) {
+                    $('.dapCheckBtn').addClass('reset')
+                }
+            });
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                $('.boxCheckContainer').removeClass('active');
+                if ($(this).hasClass('reset')) {
+                    $('.boxCheckContainer.ans').addClass('active');
                 }
             });
         });
