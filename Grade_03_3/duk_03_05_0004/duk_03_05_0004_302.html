@@ -52,43 +52,43 @@
         }
 
         .iconX1 {
-            top: 150px;
-            left: 380px;
+            top: 160px;
+            left: 390px;
             width: 150px;
         }
 
         .iconX2 {
-            top: 260px;
-            left: 322px;
+            top: 250px;
+            left: 282px;
             width: 170px;
         }
 
         .iconX3 {
             top: 210px;
-            left: 882px;
+            left: 902px;
             width: 130px;
         }
 
         .iconO1 {
-            top: 211px;
-            left: 546px;
+            top: 201px;
+            left: 566px;
             width: 110px;
         }
 
         .iconO2 {
-            top: 175px;
+            top: 185px;
             left: 736px;
             width: 120px;
         }
 
         .iconO3 {
-            top: 338px;
-            left: 532px;
+            top: 325px;
+            left: 510px;
             width: 120px;
         }
 
         .iconO4 {
-            top: 350px;
+            top: 320px;
             left: 735px;
             width: 130px;
         }
@@ -99,13 +99,13 @@
     <div id="wrap" class="math">
         <header class="gap">
             <div class="title-icon green">단원 마무리</div>
-            <div class="title-text">공감하는 말과 행동으로 알맞은 물고기를 찾아 O표 해 봅시다.</div>
+            <div class="title-text">공감하는 말과 행동으로 알맞은 물고기를 찾아 O를 해 봅시다.</div>
         </header>
         <main>
             <!-- FRAME OF PAGE -->
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
-                    <li data-hover="" data-text="공감하는 말과 행동으로 알맞은 물고기를 찾아 O표 해 봅시다." data-gap="true">활동</li>
+                    <li data-hover="" data-text="공감하는 말과 행동으로 알맞은 물고기를 찾아 O를 해 봅시다." data-gap="true">활동</li>
                     <li data-hover="" data-text="5단원을 마치며 자신의 모습을 되돌아봅시다.">자기 점검</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
@@ -241,19 +241,19 @@
             });
 
             $(document).on('click', '.page_1 .icon', function () {
-
                 if ($(this).hasClass('iconX')) {
                     KmAudioPlayer.incorrect();
                 } else {
                     KmAudioPlayer.correct();
                 }
                 $(this).addClass('ans');
-                if ($('.group_ans .icon.ans').length === $('.group_ans .icon').length) {
+                if ($('.group_ans .iconO.ans').length === $('.group_ans .iconO').length) {
                     $('.dapCheckBtn').addClass('reset');
                 } else {
                     $('.dapCheckBtn').removeClass('reset');
                 }
             });
+
             $(document).on('click', '.dapCheckBtn', function () {
                 if ($(this).hasClass('reset')) {
                     $('.page_1 .icon').addClass('ans');

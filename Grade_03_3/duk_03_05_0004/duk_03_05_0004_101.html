@@ -28,7 +28,19 @@
         }
 
         .bgImg>img {
-            width: 90%;
+            position: absolute;
+            object-fit: contain;
+            top: 0;
+        }
+
+        .bgImg>img:nth-child(1) {
+            left: 50px;
+            width: 500px;
+        }
+
+        .bgImg>img:nth-child(2) {
+            right: 0;
+            width: 860px;
         }
 
         .zoomContainer.horizon .zoomController {
@@ -162,9 +174,9 @@
 
 <body>
     <div id="wrap" class="math">
-        <header class="gap">
+        <header>
             <div class="title-icon pink">마음 <em>똑똑</em></div>
-            <div class="title-text">나는 평소에 다른 사람에게 공감을 잘하고 있는지 되돌아봅시다.</div>
+            <div class="title-text">다른 사람의 마음에 공감해 줄 수 없었던 상황을 떠올려 봅시다.</div>
         </header>
         <main>
             <!-- FRAME OF PAGE -->
@@ -177,7 +189,8 @@
                                 <div class="zoomImgContainer pointerOff">
                                     <div class="zoomImg">
                                         <div class="bgImg">
-                                            <img src="./images/img1.png" />
+                                            <img src="./images/img_01.png" />
+                                            <img src="./images/img_02.png" />
                                         </div>
                                     </div>
                                 </div>

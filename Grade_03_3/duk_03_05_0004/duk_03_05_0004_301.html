@@ -110,11 +110,6 @@
             padding: 20px;
         }
 
-        .popup_pages [data-type="toggleButton"] {
-            height: fit-content;
-            margin-top: 70px;
-        }
-
         .popup_pages [data-type="toggleButton"] .toggle {
             background-color: transparent;
             justify-content: center;
@@ -142,8 +137,7 @@
         }
 
         .popup_pages [data-type="toggleButton"] {
-            height: 100%;
-            margin: 0;
+            display: inline-block;
         }
 
         .popup_pages .toggle {
@@ -272,9 +266,11 @@
                             </div>
                             <div class="text-exam flex-wrap">
                                 <div class="blueT">
-                                    <p style="letter-spacing: -2px;">운동에 별로 관심이 없어서 다른 친구가 운동 경기의 주지 못했습니다. 앞으로는 그 친구가 왜
-                                        운동 경기 결과에 따라 감정이 달라졌는지 생각해
-                                        보고, 친구의 입장이 돼 같이 공감해 주겠습니다.</p>
+                                    <p style="letter-spacing: -2px;">운동에 별로 관심이 없어서 다른 친구가 운동 경기의 결과에 따라 화를 내기도 하고 기뻐하기도
+                                        한 것에 잘 공감해 주지 못했습니다. 앞으로는 그 친구가 왜 운동 경기 결과에
+                                        따라 감정이 달라졌는지 생각해 보고, 친구의 입장이 돼 같이
+                                        공감해 주겠습니다.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -358,43 +354,50 @@
                             <ul class="basicSlider_slides innerTab" data-slides="">
                                 <li class="innerTab_1" data-quiz="toggle">
                                     <div class="pointTitle">
-                                        <div class="titleText">나와 같은 인공지능 로봇 연구실</div>
+                                        <div class="titleText">공감, 더 나아가기</div>
                                     </div>
                                     <div class="items">
                                         <div class="item">
                                             친구와
-                                            <div class="toggle box" data-toggle-obj="3">
-                                                <div class="answer" data-toggle-target="3">
-                                                    <div>눈</div>
+                                            <div data-type="toggleButton">
+                                                <div class="toggle box" data-toggle-obj="3">
+                                                    <div class="answer" data-toggle-target="3">
+                                                        <div>눈</div>
+                                                    </div>
                                                 </div>
                                             </div> 을 마주치고 친구의 말에
-                                            <div class="toggle box" data-toggle-obj="4">
-                                                <div class="answer" data-toggle-target="4">
-                                                    <div>귀</div>
+                                            <div data-type="toggleButton">
+                                                <div class="toggle box" data-toggle-obj="4">
+                                                    <div class="answer" data-toggle-target="4">
+                                                        <div>귀</div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             를 기울여 듣습니다.
                                         </div>
                                         <div class="item">
-                                            친구의 말을 들을 때
-                                            <div class="toggle box" data-toggle-obj="5">
-                                                <div class="answer" data-toggle-target="5">
-                                                    <div>고개</div>
+                                            친구의 말을 들을 때 <div data-type="toggleButton">
+                                                <div class="toggle box" data-toggle-obj="5">
+                                                    <div class="answer" data-toggle-target="5">
+                                                        <div>고개</div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            를 끄덕이거나 친구와 같은
-                                            <div class="toggle box" data-toggle-obj="6">
-                                                <div class="answer" data-toggle-target="6">
-                                                    <div>표정</div>
+                                            를 끄덕이거나 친구와 같은 <div data-type="toggleButton">
+                                                <div class="toggle box" data-toggle-obj="6">
+                                                    <div class="answer" data-toggle-target="6">
+                                                        <div>표정</div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             을 지어 줍니다.
                                         </div>
                                         <div class="item">
-                                            친구의
-                                            <div class="toggle box" data-toggle-obj="7">
-                                                <div class="answer" data-toggle-target="7">
-                                                    <div>감정</div>
+                                            친구의 <div data-type="toggleButton">
+                                                <div class="toggle box" data-toggle-obj="7">
+                                                    <div class="answer" data-toggle-target="7">
+                                                        <div>감정</div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             을 읽고 친구에게 “그랬구나.”와 같은 말로 표현해 줍니다.
@@ -404,22 +407,24 @@
                                 </li>
                                 <li class="innerTab_2" data-quiz="toggle">
                                     <div class="pointTitle">
-                                        <div class="titleText">나와 같은 인공지능 로봇 연구실</div>
+                                        <div class="titleText">공감, 더 나아가기</div>
                                     </div>
                                     <div class="items">
                                         <div class="item">
-                                            나의
-                                            <div class="toggle box" data-toggle-obj="8">
-                                                <div class="answer" data-toggle-target="8">
-                                                    <div>감정</div>
+                                            나의 <div data-type="toggleButton">
+                                                <div class="toggle box" data-toggle-obj="8">
+                                                    <div class="answer" data-toggle-target="8">
+                                                        <div>감정</div>
+                                                    </div>
                                                 </div>
                                             </div> 을 친구에게 강요하지 않습니다.
                                         </div>
                                         <div class="item">
-                                            다른 사람과 나의
-                                            <div class="toggle box" data-toggle-obj="9">
-                                                <div class="answer" data-toggle-target="9">
-                                                    <div>감정</div>
+                                            다른 사람과 나의 <div data-type="toggleButton">
+                                                <div class="toggle box" data-toggle-obj="9">
+                                                    <div class="answer" data-toggle-target="9">
+                                                        <div>감정</div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             이 서로 다를 수 있다는 것을 이해합니다.
@@ -462,12 +467,6 @@
                 } else {
                     $('header').removeClass('gap');
                 }
-                if ($(this).hasClass('twoLine')) {
-                    $('header').addClass('twoLine');
-                }
-                else {
-                    $('header').removeClass('twoLine');
-                }
             });
 
             $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
@@ -485,7 +484,6 @@
                 KmAudioPlayer.buttonClick();
             });
 
-
             const buttons = document.querySelectorAll('.popBtn.additional-question');
             buttons.forEach(btn => {
                 btn.addEventListener('click', function () {
@@ -501,6 +499,29 @@
 
             $(document).on('click', '.popup_pages [data-popup-page="2"] .moveButtonContainer', function () {
                 $('.popup_pages [data-popup-page="2"]').addClass('on');
+            });
+
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    examViewBtn.addClass('reset');
+                } else {
+                    examViewBtn.removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!examViewBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
             });
 
         });
