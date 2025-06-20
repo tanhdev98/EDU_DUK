@@ -13,12 +13,16 @@
 
     <style>
         /* Page 1 */
+        [data-type="toggleButton"] {
+            cursor: default;
+        }
+
         .img5 {
-            height: 330px;
+            height: 420px;
             object-fit: contain;
             position: absolute;
-            bottom: 50px;
-            left: 70px;
+            bottom: 0;
+            left: 0;
             z-index: 2;
         }
 
@@ -27,19 +31,19 @@
             height: auto;
             object-fit: contain;
             position: absolute;
-            bottom: 249px;
+            bottom: 270px;
             left: 250px;
             z-index: 1;
         }
 
         .img2 {
-            width: 580px;
+            width: 680px;
+            height: 560px;
             position: absolute;
-            left: 540px;
+            left: 500px;
             top: -17px;
             z-index: 2;
         }
-
 
         .titleText {
             position: absolute;
@@ -73,7 +77,7 @@
             z-index: 2;
             top: 190px;
             width: 442px;
-            left: 610px;
+            left: 620px;
         }
 
         .additional-question {
@@ -230,16 +234,17 @@
                                     <img src="./images/img5.png" alt="" class="img5">
                                     <img src="./images/img1.png" alt="" class="img1">
                                     <img src="./images/img2.png" alt="" class="img2">
+                                    <img src="./images/img1.png" alt="" class="img1" style="left: 900px;">
                                     <div class="titleText">공감 1단계</div>
                                     <div class="titleText2">친구의 말에 귀를 기울여 주기</div>
-                                    <div data-type="toggleButton" class="box">
+                                    <div data-type="toggleButton">
                                         <div class="toggle examBtn box" data-toggle-obj="1">
                                             <div class="answer noteText" data-toggle-target="1">
                                                 <p class="dot">다정하게 눈 마주치며
-                                                    관심 갖기.
+                                                    관심 갖기
                                                 </p>
-                                                <p class="dot">친구가 말할 때까지
-                                                    기다려 주기.</p>
+                                                <p class="dot">친구가 말할 때까지<br>
+                                                    기다려 주기</p>
                                             </div>
                                         </div>
                                     </div>
@@ -247,60 +252,35 @@
                                 <li class="innerTab_2" data-quiz="toggle">
                                     <div class="popBtn additional-question" data-popup-btn="2">추가 질문</div>
 
-                                    <img src="./images/img1.png" alt="" class="img1" style="    width: 500px;
-                                    height: auto;
-                                    object-fit: contain;
-                                    position: absolute;
-                                    bottom: 210px;
-                                    left: -20px;
-                                    z-index: 1;
-                                    transform: rotate(-5deg);">
-                                    <img src="./images/img2.png" alt="" class="img2" style="left: 360px; top: -25px;">
-                                    <img src="./images/img1.png" alt="" class="img1" style="    width: 430px;
-                                    height: auto;
-                                    object-fit: contain;
-                                    position: absolute;
-                                    bottom: 300px;
-                                    left: 910px;
-                                    z-index: 1;
-                                    transform: rotate(-173deg);">
-
+                                    <img src="./images/img1.png" alt="" class="img1"
+                                        style="width: 500px; bottom: 210px; left: -20px;">
+                                    <img src="./images/img2.png" alt="" class="img2" style="left: 320px; top: -15px;">
+                                    <img src="./images/img1.png" alt="" class="img1"
+                                        style="width: 430px; bottom: 300px; left: 910px; transform: rotate(-173deg);">
                                     <div class="titleText" style="left: 553px;">공감 2단계</div>
                                     <div class="titleText2" style='left:437px'>친구의 말을 들으며 반응하기</div>
-                                    <div data-type="toggleButton" class="box">
+                                    <div data-type="toggleButton">
                                         <div class="toggle examBtn box" data-toggle-obj="2" style="left: 430px;">
                                             <div class="answer noteText" data-toggle-target="2">
-                                                <p class="dot">친구를 보며 미소 짓기
-                                                </p>
-                                                <p class="dot">고개 끄덕이기
-                                                </p>
-                                                <p class="dot">친구와 이야기하며<br />
-                                                    같은 표정 지어 주기
-                                                </p>
+                                                <p class="dot">친구를 보며 미소 짓기</p>
+                                                <p class="dot">고개 끄덕이기</p>
+                                                <p class="dot">친구와 이야기하며<br /> 같은 표정 지어 주기</p>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="innerTab_3" data-quiz="toggle">
                                     <div class="popBtn additional-question" data-popup-btn="3">추가 질문</div>
-
-                                    <img src="./images/img2.png" alt="" class="img2" style="left: 60px; top: -25px;">
-                                    <img src="./images/img1.png" alt="" class="img1" style="    width: 343px;
-    height: auto;
-    object-fit: contain;
-    position: absolute;
-    bottom: 175px;
-    transform: rotate(6deg);
-    left: 44%;
-    z-index: 3;">
-
-                                    <div class="titleText" style="left: 253px; top: 29px;">공감 3단계</div>
-                                    <div class="titleText2" style='left:137px; top: 98px; text-align: center;'>친구의 감정을
+                                    <img src="./images/img2.png" alt="" class="img2" style="left: 60px; top: -15px;">
+                                    <img src="./images/img1.png" alt="" class="img1"
+                                        style="width: 343px; bottom: 175px;transform: rotate(6deg);left: 44%;">
+                                    <div class="titleText" style="left: 303px; top: 29px;">공감 3단계</div>
+                                    <div class="titleText2" style='left: 190px; top: 98px; text-align: center;'>친구의 감정을
                                         읽고<br />
                                         친구의 마음을 말로 표현하기</div>
                                     <div data-type="toggleButton" class="box">
                                         <div class="toggle examBtn box" data-toggle-obj="3"
-                                            style="left: 184px; top: 200px; width: 332px;">
+                                            style="left: 235px; top: 200px; width: 332px;">
                                             <div class="answer noteText" data-toggle-target="3">
                                                 <p class="dot">“그랬구나.”</p>
                                                 <p class="dot">“너는 ~한 <br />
@@ -311,11 +291,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <img src="./images/img6.png" alt="" style="    width: 450px;
-                                    position: absolute;
-                                    right: 0;
-                                    top: 70px;
-                                    z-index: 2;">
+                                    <img src="./images/img6.png" alt=""
+                                        style="width: 450px; position: absolute; right: 0; top: 70px;">
                                 </li>
                             </ul>
                         </div>
@@ -332,25 +309,17 @@
                             </div>
                             <ul class="basicSlider_slides" data-slides="">
                                 <li class="innerTab_1" data-quiz="toggle">
-                                    <img src="./images/img3.png" alt="" style="    position: absolute;
-                                    width: 220px;
-                                    height: 100px;">
-                                    <div class="titleImg" style="position: absolute;
-                                    color: #fff;
-                                    top: 24px;
-                                    left: 60px;">상황1</div>
-                                    <div class="titlePage" style="position: absolute;
-                                    left: 250px;
-                                    top: 24px;">친구가 키우는 강아지가 아파서 슬퍼할 때</div>
+                                    <img src="./images/img3.png" alt=""
+                                        style="position: absolute; width: 220px; height: 100px;">
+                                    <div class="titleImg"
+                                        style="position: absolute; color: #fff; top: 24px; left: 60px;">상황1</div>
+                                    <div class="titlePage" style="position: absolute; left: 250px;top: 24px;">
+                                        친구가 키우는 강아지가 아파서 슬퍼할 때</div>
                                     <div class="flex">
-                                        <img src="./images/img7.png" alt="" style="    position: absolute;
-                                        width: 450px;
-    top: 120px;">
-                                        <div class="noteText noteLine purple" style="    width: 750px;
-                                        position: absolute;
-                                        right: 0;
-                                        bottom: 70px;
-                                        height: 400px;">
+                                        <img src="./images/img7.png" alt=""
+                                            style="position: absolute; width: 450px; top: 120px;">
+                                        <div class="noteText noteLine purple"
+                                            style="width: 830px; position: absolute; right: 0; bottom: 70px; height: 400px;">
                                             <div class="textareaWrap">
                                                 <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
                                                     data-input-obj="" data-answer=" " onfocus=""
@@ -370,25 +339,17 @@
                                     </div>
                                 </li>
                                 <li class="innerTab_2" data-quiz="toggle">
-                                    <img src="./images/img3.png" alt="" style="    position: absolute;
-                                    width: 220px;
-                                    height: 100px;">
-                                    <div class="titleImg" style="position: absolute;
-                                    color: #fff;
-                                    top: 24px;
-                                    left: 60px;">상황2</div>
-                                    <div class="titlePage" style="position: absolute;
-                                    left: 250px;
-                                    top: 24px;">친구가 학급 회장에 뽑혀서 기뻐할 때</div>
+                                    <img src="./images/img3.png" alt=""
+                                        style="position: absolute; width: 220px; height: 100px;">
+                                    <div class="titleImg"
+                                        style="position: absolute; color: #fff; top: 24px; left: 60px;">상황2</div>
+                                    <div class="titlePage" style="position: absolute; left: 250px; top: 24px;">친구가 학급
+                                        회장에 뽑혀서 기뻐할 때</div>
                                     <div class="flex">
-                                        <img src="./images/img8.png" alt="" style="    position: absolute;
-                                        width: 450px;
-                                        top: 120px;">
-                                        <div class="noteText noteLine purple" style="    width: 750px;
-                                        position: absolute;
-                                        right: 0;
-                                        bottom: 70px;
-                                        height: 400px;">
+                                        <img src="./images/img8.png" alt=""
+                                            style="position: absolute; width: 450px; top: 120px;">
+                                        <div class="noteText noteLine purple"
+                                            style="width: 830px; position: absolute; right: 0; bottom: 70px; height: 400px;">
                                             <div class="textareaWrap">
                                                 <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
                                                     data-input-obj="" data-answer=" " onfocus=""
