@@ -146,14 +146,12 @@
 
         .icon-char[data-popup-btn="2"] {
             top: 60px;
-            left: unset;
-            right: 0px;
         }
 
         .min[data-popup-page="2"] {
-            top: 263px;
-            left: 418px;
-            width: 840px;
+            top: 265px;
+            left: 480px;
+            width: 778px;
         }
 
         .btn-praise {
@@ -234,6 +232,10 @@
             font-weight: normal;
         }
 
+        [data-popup-page="3"] [data-type="toggleButton"] {
+            display: inline-block;
+        }
+
         [data-popup-page="3"] [data-type="toggleButton"] .toggle {
             background-color: #F7F7F7;
         }
@@ -244,7 +246,8 @@
     <div id="wrap" class="math">
         <header class="twoLine">
             <div class="title-icon blue" data-show="1">실천 <em>탄탄</em></div>
-            <div class="title-text">친구의 감정에 대해 새롭게 알게 된 점은 무엇인지, 친구에게 어떻게 공감해주면 좋을지 이야기해 봅시다.</div>
+            <div class="title-text" style="letter-spacing: -1.3px;">친구의 감정에 대해 새롭게 알게 된 점은 무엇인지, 친구에게 어떻게 공감해주면 좋을지 이야기해
+                봅시다.</div>
         </header>
         <main>
             <div class="basicSlider contentsBox" data-slide-container="main">
@@ -302,8 +305,8 @@
                                         <div class="box-item ico_ans">
                                             <img src="./common/images/ico_ans.png" class="ico">
                                             <div data-type="toggleButton">
-                                                <div class="toggle examBtn box" data-toggle-obj="5" data-hover="">
-                                                    <div class="answer" data-toggle-target="5">
+                                                <div class="toggle examBtn box" data-toggle-obj="1" data-hover="">
+                                                    <div class="answer" data-toggle-target="1">
                                                         <div class="ls-2h">
                                                             민수와 저는 친구들과 놀이터에서 놀 때,<br />
                                                             기쁨과 즐거움을 느낍니다.
@@ -323,8 +326,8 @@
                                         <div class="box-item ico_ans">
                                             <img src="./common/images/ico_ans.png" class="ico">
                                             <div data-type="toggleButton">
-                                                <div class="toggle examBtn box" data-toggle-obj="6" data-hover="">
-                                                    <div class="answer" data-toggle-target="6">
+                                                <div class="toggle examBtn box" data-toggle-obj="2" data-hover="">
+                                                    <div class="answer" data-toggle-target="2">
                                                         <div class="ls-2h" style="text-align: start;">
                                                             <p class="dot">승진이랑 저는 친구가 전학 가서 헤어질 때 슬픕니다.</p>
                                                             <p class="dot">채린이와 저는 다른 사람이 저희 말을 무시할 때 화가 납니다.</p>
@@ -344,8 +347,8 @@
                                         <div class="box-item ico_ans">
                                             <img src="./common/images/ico_ans.png" class="ico">
                                             <div data-type="toggleButton">
-                                                <div class="toggle examBtn box" data-toggle-obj="6" data-hover="">
-                                                    <div class="answer" data-toggle-target="6">
+                                                <div class="toggle examBtn box" data-toggle-obj="3" data-hover="">
+                                                    <div class="answer" data-toggle-target="3">
                                                         <div class="ls-2h">
                                                             상욱이와 저는 감정 정보와 공감 정보가 비슷합니다.
                                                         </div>
@@ -374,23 +377,29 @@
                             <div class="titleText">감정 읽기</div>
                         </div>
                         <div class="items">
-                            <div class="item" data-type="toggleButton">
+                            <div class="item">
                                 사람마다 느끼는
-                                <div class="toggle box" data-toggle-obj="1">
-                                    <div class="answer" data-toggle-target="1">
-                                        <div>감정</div>
+                                <div data-type="toggleButton">
+                                    <div class="toggle box" data-toggle-obj="4">
+                                        <div class="answer" data-toggle-target="4">
+                                            <div>감정</div>
+                                        </div>
                                     </div>
-                                </div> 이 다름을 이해하고, 나와 타인의 <div class="toggle box" data-toggle-obj="2">
-                                    <div class="answer" data-toggle-target="2">
-                                        <div>감정</div>
+                                </div> 이 다름을 이해하고, 나와 타인의 <div data-type="toggleButton">
+                                    <div class="toggle box" data-toggle-obj="5">
+                                        <div class="answer" data-toggle-target="5">
+                                            <div>감정</div>
+                                        </div>
                                     </div>
                                 </div> 차이를 느낍니다.
                             </div>
-                            <div class="item" data-type="toggleButton">
+                            <div class="item">
                                 같은
-                                <div class="toggle box" data-toggle-obj="3">
-                                    <div class="answer" data-toggle-target="3">
-                                        <div>감정</div>
+                                <div data-type="toggleButton">
+                                    <div class="toggle box" data-toggle-obj="6">
+                                        <div class="answer" data-toggle-target="6">
+                                            <div>감정</div>
+                                        </div>
                                     </div>
                                 </div> 이라도 사람마다 표현하는 방법이 다릅니다.
                             </div>
@@ -424,23 +433,14 @@
             $(document).on('click', '.basicSlider_tabs li', function () {
                 if ($(this).data('text')) {
                     $('header .title-text').html($(this).data('text'));
-                } if ($(this).data('text') === '내가 가지고 싶은 인공지능 로봇을 고르고 그 까닭을 생각해 봅시다.') {
-                    $('header .title-text').addClass('lt-sp');
-                } else {
-                    $('header .title-text').removeClass('lt-sp');
                 }
                 if ($(this).attr('data-gap') == 'true') {
                     $('header').addClass('gap');
                 } else {
                     $('header').removeClass('gap');
                 }
-                if ($(this).hasClass('twoLine')) {
-                    $('header').addClass('twoLine');
-                }
-                else {
-                    $('header').removeClass('twoLine');
-                }
             });
+
             $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
                 let idx = $(this).index() + 1;
                 $('.popup_pages .innerSlider_tabs li').removeClass('on');
@@ -448,6 +448,7 @@
                 $(this).addClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
             });
+
             $(document).on('click', '.additional-question', function () {
                 $('[data-active="on"] .toggle').addClass('complete');
             });
@@ -455,7 +456,6 @@
             $(document).on('click', '.popup_pages .innerSlider_tabs>li', function () {
                 KmAudioPlayer.buttonClick();
             });
-
 
             const buttons = document.querySelectorAll('.popBtn.additional-question');
             buttons.forEach(btn => {
@@ -471,14 +471,35 @@
             });
             $(document).on('click', '.btn-praise', function () {
                 $('[data-active="on"] .toggle').addClass('complete');
-                if ($('.toggle.complete').length == $('.toggle').length) {
+                if ($('[data-popup-page="3"] .toggle.complete').length == $('[data-popup-page="3"] .toggle').length) {
                     $('.dapCheckBtn').addClass('reset');
+                }
+            });
+
+            $(document).on('click', '[data-popup-page="3"] .toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    examViewBtn.addClass('reset');
+                } else {
+                    examViewBtn.removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '[data-popup-page="3"] .dapCheckBtn', function () {
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!examViewBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
                 }
             });
         });
     </script>
-
-
 </body>
 
 </html>
