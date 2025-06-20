@@ -13,6 +13,9 @@
 
     <style>
         /* Page 1 */
+        .mx-m25 {
+            margin: 0 -25px;
+        }
 
         .page_1 .content {
             position: absolute;
@@ -107,16 +110,6 @@
             padding: 20px;
         }
 
-        [data-type="toggleButton"] {
-            height: fit-content;
-            margin-top: 70px;
-        }
-
-        [data-type="toggleButton"] .toggle {
-            background-color: transparent;
-            justify-content: center;
-        }
-
         .toggle.box p.dot {
             position: relative;
             padding-left: 30px;
@@ -145,7 +138,7 @@
         }
 
         .popup_pages .fullLine.whole .noteText .text-exam.flex-wrap {
-            padding: 0 20px;
+            padding: 0;
         }
 
         .popup_pages .fullLine.whole .noteText .textareaWrap {
@@ -154,7 +147,7 @@
 
         .popup_pages .fullLine.whole .buttonContainer {
             right: 48px;
-            bottom: 20px;
+            bottom: 0;
         }
 
         .popup_pages .fullLine.whole .blueT {
@@ -176,7 +169,7 @@
             top: calc(50% + 20px);
         }
 
-        .icon-char[data-popup-btn="6"] {
+        .icon-char {
             top: -10px;
             left: unset;
             right: 0px;
@@ -224,21 +217,24 @@
             right: 0;
         }
 
-        .icon-char[data-popup-btn="8"] {
-            top: -5px;
-            left: unset;
-            right: 0px;
-        }
-
         .min[data-popup-page="8"] {
             top: 145px;
             left: 470px;
             width: 791px;
         }
 
+        .page_1 .innerTab_6 .additional-question,
         .page_1 .innerTab_4 .additional-question {
             position: absolute;
             right: 90px;
+        }
+
+        [data-type="toggleButton"] {
+            height: auto;
+        }
+
+        .text-exam .blueT p {
+            cursor: pointer;
         }
     </style>
 </head>
@@ -246,14 +242,14 @@
 <body>
     <div id="wrap" class="math">
         <header>
-            <div class="title-icon yellow" data-show="1">생각 <em>똑똑</em></div>
-            <div class="title-text">「가만히 들어 주었어」를 읽고 질문에 답해 봅시다.</div>
+            <div class="title-icon yellow" data-show="1">생각 <em>쑥쑥</em></div>
+            <div class="title-text"><span class="mx-m25">「가만히 들어 주었어」</span>를 읽고 질문에 답해 봅시다.</div>
         </header>
         <main>
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
-                    <li data-hover="" data-text="「가만히 들어 주었어」를 읽고 질문에 답해 봅시다.">이야기</li>
-                    <li data-hover="" data-text="「가만히 들어 주었어」를 읽고 질문에 답해 봅시다.">물음</li>
+                    <li data-hover="" data-text="<span class='mx-m25'>「가만히 들어 주었어」</span>를 읽고 질문에 답해 봅시다.">이야기</li>
+                    <li data-hover="" data-text="<span class='mx-m25'>「가만히 들어 주었어」</span>를 읽고 질문에 답해 봅시다.">물음</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1">
@@ -277,7 +273,7 @@
                                     <div class="content"> 어느 날, 테일러는 뭔가를 만들기로 했어.<br />
                                         뭔가 새로운 거. 뭔가 특별한 거. 뭔가 놀라운 거.<br />
                                         테일러는 정말 뿌듯했지.<br />
-                                        그런데 난데없이 새들이 날아와......<br />
+                                        그런데 난데없이 새들이 날아와……<br />
                                         모든 게 무너져 버리고 말았어.
                                     </div>
                                 </li>
@@ -306,7 +302,7 @@
                                         다음엔 곰이 왔어.<br />
                                         “이런, 끔찍해. 정말 화나겠다.<br />
                                         그럴 땐 소리를 질러!<br />
-                                        <span style="font-size: 60px; font-weight: bolder;">크와아아아아앙!”</span><br />
+                                        <span style="font-size: 60px; font-weight: bolder;">크와아아아아앙!</span>”<br />
                                         하지만 테일러는 소리 지르고 싶지 않았어. <br />
                                         그래서 곰도 그만 가 버렸지.
                                     </div>
@@ -342,18 +338,17 @@
                                     </div>
                                 </li>
                                 <li class="innerTab_6">
-                                    <div class="popBtn additional-question" data-popup-btn="5" style="right: 100px;">추가
+                                    <div class="popBtn additional-question" data-popup-btn="5">추가
                                         질문</div>
                                     <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="6"></div>
                                     <img src="./images/duk_03_05_0001/img01.png" alt="" style="margin-top: 50px;">
-                                    <img src="./images/duk_03_05_0001/img06.png" alt="" style="position: absolute;     right: 90px;
-                                    bottom: 100px;
-                                    width: 270px;">
+                                    <img src="./images/duk_03_05_0001/img06.png" alt=""
+                                        style="position: absolute; right: 90px; bottom: 100px; width: 270px;">
                                     <div class="content">
                                         이윽고 테일러가 말했어. “나랑 같이 있어 줄래?”<br />
                                         토끼는 테일러의 이야기를 가만히 들어 주었어.<br />
                                         토끼는 테일러가 소리 지르는 것도 가만히 들어 주었어.<br />
-                                        토끼는 테일러가 기억해 내고......<br />
+                                        토끼는 테일러가 기억해 내고……<br />
                                         우는 것도 들어 주었어.<br />
                                         <br />
                                         그러는 내내, 토끼는 테일러의 곁을 떠나지 않았어.
@@ -398,9 +393,10 @@
                                                         닭
                                                     </th>
                                                     <td colspan="8">
-                                                        <div class="toggle" data-toggle-obj="1">
-                                                            <div class="answer" data-toggle-target="1">
-                                                                <div class="ls-1h">어떻게 된 건지 말해 보라고 했습니다.
+                                                        <div data-type="toggleButton">
+                                                            <div class="toggle" data-toggle-obj="1">
+                                                                <div class="answer" data-toggle-target="1">
+                                                                    <div class="ls-1h">어떻게 된 건지 말해 보라고 했습니다.</div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -411,9 +407,10 @@
                                                         곰
                                                     </th>
                                                     <td colspan="8">
-                                                        <div class="toggle" data-toggle-obj="2">
-                                                            <div class="answer" data-toggle-target="2">
-                                                                <div class="ls-1h">소리 지르면서 화를 풀어 보라고 했습니다.
+                                                        <div data-type="toggleButton">
+                                                            <div class="toggle" data-toggle-obj="2">
+                                                                <div class="answer" data-toggle-target="2">
+                                                                    <div class="ls-1h">소리 지르면서 화를 풀어 보라고 했습니다.</div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -424,9 +421,10 @@
                                                         코끼리
                                                     </th>
                                                     <td colspan="8">
-                                                        <div class="toggle" data-toggle-obj="3">
-                                                            <div class="answer" data-toggle-target="3">
-                                                                <div class="ls-1h">부서진 장난감을 고쳐 주려고 했습니다.
+                                                        <div data-type="toggleButton">
+                                                            <div class="toggle" data-toggle-obj="3">
+                                                                <div class="answer" data-toggle-target="3">
+                                                                    <div class="ls-1h">부서진 장난감을 고쳐 주려고 했습니다.</div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -437,9 +435,10 @@
                                                         토끼
                                                     </th>
                                                     <td colspan="8">
-                                                        <div class="toggle" data-toggle-obj="4">
-                                                            <div class="answer" data-toggle-target="4">
-                                                                <div class="ls-1h">테일러 옆에 가만히 있어 줬습니다.
+                                                        <div data-type="toggleButton">
+                                                            <div class="toggle" data-toggle-obj="4">
+                                                                <div class="answer" data-toggle-target="4">
+                                                                    <div class="ls-1h">테일러 옆에 가만히 있어 줬습니다.</div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -458,9 +457,10 @@
                                             테일러에게 필요한 공감 방법은 무엇이었나요?
                                         </span>
                                     </h2>
-                                    <div class="toggle" data-toggle-obj="5">
-                                        <div class="answer" data-toggle-target="5">
-                                            <div class="ls-1h">가만히 옆에 있어 주는 것이었습니다.
+                                    <div data-type="toggleButton">
+                                        <div class="toggle" data-toggle-obj="5">
+                                            <div class="answer" data-toggle-target="5">
+                                                <div class="ls-1h">가만히 옆에 있어 주는 것이었습니다.</div>
                                             </div>
                                         </div>
                                     </div>
@@ -1114,10 +1114,25 @@
                     $('.popup_pages .basicSlider_slides.innerTab li:first-child').addClass('on');
                 });
             });
+
+            $(document).on('click', '.text-exam .blueT > p', function () {
+                KmAudioPlayer.buttonClick();
+                const writeBtn = $(this).parents('[data-quiz="toggle"]').find('.writeBtn');
+                const textArea = $(this).parents('[data-quiz="toggle"]').find('.textLine');
+                const textExam = $(this).parents('[data-quiz="toggle"]').find('.text-exam');
+                if (writeBtn.hasClass('reset')) {
+                    textExam.css('display', 'none');
+                    writeBtn.removeClass('reset');
+                    textArea.attr('placeholder', '직접 쓰기');
+                    textArea.val('');
+                    textArea.css('display', 'block');
+                } else {
+                    textExam.css('display', 'flex');
+                    writeBtn.addClass('reset');
+                }
+            });
         });
     </script>
-
-
 </body>
 
 </html>
