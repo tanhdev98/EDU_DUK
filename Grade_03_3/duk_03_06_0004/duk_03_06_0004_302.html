@@ -399,101 +399,6 @@
                 } else {
                     $('header').removeClass('gap');
                 }
-                if ($(this).hasClass('twoLine')) {
-                    $('header').addClass('twoLine');
-                }
-                else {
-                    $('header').removeClass('twoLine');
-                }
-            });
-
-            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
-                let idx = $(this).index() + 1;
-                $('.popup_pages .innerSlider_tabs li').removeClass('on');
-                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
-                $(this).addClass('on');
-                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
-            });
-            $(document).on('click', '.additional-question', function () {
-                $('[data-active="on"] .toggle').addClass('complete');
-            });
-
-            $(document).on('click', '.popup_pages .innerSlider_tabs>li', function () {
-                KmAudioPlayer.buttonClick();
-            });
-
-
-            const buttons = document.querySelectorAll('.popBtn.additional-question');
-            buttons.forEach(btn => {
-                btn.addEventListener('click', function () {
-                    $('.popup_pages .innerSlider_tabs li').removeClass('on');
-                    $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
-                    const value = this.getAttribute('data-popup-btn');
-                    const popup = document.querySelector(`[data-popup-page="${value}"] .innerSlider_tabs li:first-child`);
-                    popup.classList.add('on');
-                    $('.popup_pages .innerSlider_tabs li:first-child').addClass('on');
-                    $('.popup_pages .basicSlider_slides.innerTab li:first-child').addClass('on');
-                });
-            });
-
-
-
-            let numActive = 0;
-
-            $(document).on('click', '.choBox', function () {
-                if (!$(this).hasClass('active')) {
-                    $(this).addClass('active');
-                } else {
-                    $(this).removeClass('active');
-                }
-                numItem = $(this).parents('[data-quiz="toggle"]').find('.choBox').length;
-                numActive = $(this).parents('[data-quiz="toggle"]').find('.choBox.active').length;
-                console.log(numActive);
-                if (numActive === numItem) {
-                    $(this).parents('[data-quiz="toggle"]').find('.dapCheckBtn').addClass('reset');
-                } else {
-                    $(this).parents('[data-quiz="toggle"]').find('.dapCheckBtn').removeClass('reset');
-                }
-            });
-
-            $(document).on('click', '.dapCheckBtn', function () {
-                let choBox = $(this).parent().parent().find('.choBox');
-                if (!$(this).hasClass('reset')) {
-                    $(this).removeClass('reset');
-                    choBox.removeClass('active');
-                    choBox.find('.dir-rect').removeClass('on');
-                    choBox.find('.dir-rect').each(function () {
-                        let dataCho = $(this).data('cho');
-                        $(this).text(dataCho);
-                    })
-                } else {
-                    $(this).addClass('reset');
-                    choBox.addClass('active');
-                    choBox.find('.dir-rect').addClass('on');
-                    choBox.find('.dir-rect').each(function () {
-                        let dataLetter = $(this).data('letter');
-                        $(this).text(dataLetter);
-                    })
-                }
-
-            });
-
-            $prite.girl1({
-                id: '#girl_1_c',
-                circle: true,
-                speech: 'right',
-                text: '모든 친구의 말에<br/>귀를 기울이겠습니다.',
-                class: 'bottom',
-                balloon_top: -180,
-                balloon_left: -125,
-            });
-
-            $(document).on('click', '.page_1 .character-item', function () {
-                $(this).find('.balloon').removeClass('fff');
-            });
-
-            $(document).on('click', '.page_1 .characterWrap, .page_1 .balloon > span', function () {
-                KmAudioPlayer.buttonClick();
             });
 
             $(document).on('mouseup touchend', '.js-dragObj', function () {
@@ -528,12 +433,6 @@
                 })
 
             });
-            // $(document).on('click', '.dapCheckBtn', function () {
-            //     if ($(this).hasClass('reset')) {
-            //         $('.js-dropArea.a2 .js-dragObj:not(:first-child)').remove();
-            //         $('.js-dropArea.a3 .js-dragObj:not(:last-child)').remove();
-            //     }
-            // });
         });
 
     </script>

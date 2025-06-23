@@ -206,7 +206,12 @@
             display: none;
         }
 
-        .page_2 .titleImg.acitve {
+        .page_2 .textLine {
+            display: none;
+        }
+
+        .page_2 .textLine.active,
+        .page_2 .titleImg.active {
             display: block;
         }
 
@@ -293,7 +298,7 @@
                                             <div class="pic-box">
                                                 <div class="image-box">
                                                     <div class="imageWrap">
-                                                        <img src="./images/Picture1.png">
+                                                        <img src="./images/duk_03_06_0003_201/img_01.png">
                                                     </div>
                                                 </div>
                                                 <div class="text-box">
@@ -305,7 +310,7 @@
                                             <div class="pic-box">
                                                 <div class="image-box">
                                                     <div class="imageWrap">
-                                                        <img src="./images/Picture2.png">
+                                                        <img src="./images/duk_03_06_0003_201/img_02.png">
                                                     </div>
                                                 </div>
                                                 <div class="text-box">
@@ -317,7 +322,7 @@
                                             <div class="pic-box">
                                                 <div class="image-box">
                                                     <div class="imageWrap">
-                                                        <img src="./images/Picture3.png">
+                                                        <img src="./images/duk_03_06_0003_201/img_03.png">
                                                     </div>
                                                 </div>
                                                 <div class="text-box">
@@ -328,20 +333,19 @@
                                     </div>
                                 </li>
                                 <li class="innerTab_2" data-quiz="toggle">
-
                                     <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="1"></div>
-
                                     <div class="flex">
                                         <div class="groupItem">
                                             <div class="item2">
-                                                <div class="titleImg titleImg1 acitve">운동장에서</div>
+                                                <div class="titleImg titleImg1 active">운동장에서</div>
                                                 <div class="titleImg titleImg2">친구들과 놀 때</div>
                                                 <div class="titleImg titleImg3">교실에서</div>
                                             </div>
                                             <div class="item1">
-                                                <img src="./images/Picture1.png" class="slide active" />
-                                                <img src="./images/Picture2.png" class="slide" />
-                                                <img src="./images/Picture3.png" class="slide" />
+                                                <img src="./images/duk_03_06_0003_201/img_01.png"
+                                                    class="slide active" />
+                                                <img src="./images/duk_03_06_0003_201/img_02.png" class="slide" />
+                                                <img src="./images/duk_03_06_0003_201/img_03.png" class="slide" />
                                             </div>
                                             <div class="groupButton">
                                                 <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
@@ -366,7 +370,22 @@
                                                                 <td>
                                                                     <div class="noteText noLine note1">
                                                                         <div class="textareaWrap">
-                                                                            <textarea class="textLine afterDisplay"
+                                                                            <textarea
+                                                                                class="textLine afterDisplay textLine1 active"
+                                                                                type="text" placeholder="직접 쓰기"
+                                                                                data-input-obj="" data-answer=" "
+                                                                                onfocus="" onblur="placeholder='직접 쓰기'"
+                                                                                autocomplete="off"
+                                                                                spellcheck="false"></textarea>
+                                                                            <textarea
+                                                                                class="textLine afterDisplay textLine2"
+                                                                                type="text" placeholder="직접 쓰기"
+                                                                                data-input-obj="" data-answer=" "
+                                                                                onfocus="" onblur="placeholder='직접 쓰기'"
+                                                                                autocomplete="off"
+                                                                                spellcheck="false"></textarea>
+                                                                            <textarea
+                                                                                class="textLine afterDisplay textLine3"
                                                                                 type="text" placeholder="직접 쓰기"
                                                                                 data-input-obj="" data-answer=" "
                                                                                 onfocus="" onblur="placeholder='직접 쓰기'"
@@ -389,7 +408,22 @@
                                                                 <td>
                                                                     <div class="noteText noLine">
                                                                         <div class="textareaWrap">
-                                                                            <textarea class="textLine afterDisplay"
+                                                                            <textarea
+                                                                                class="textLine afterDisplay textLine1 active"
+                                                                                type="text" placeholder="직접 쓰기"
+                                                                                data-input-obj="" data-answer=" "
+                                                                                onfocus="" onblur="placeholder='직접 쓰기'"
+                                                                                autocomplete="off"
+                                                                                spellcheck="false"></textarea>
+                                                                            <textarea
+                                                                                class="textLine afterDisplay textLine2"
+                                                                                type="text" placeholder="직접 쓰기"
+                                                                                data-input-obj="" data-answer=" "
+                                                                                onfocus="" onblur="placeholder='직접 쓰기'"
+                                                                                autocomplete="off"
+                                                                                spellcheck="false"></textarea>
+                                                                            <textarea
+                                                                                class="textLine afterDisplay textLine3"
                                                                                 type="text" placeholder="직접 쓰기"
                                                                                 data-input-obj="" data-answer=" "
                                                                                 onfocus="" onblur="placeholder='직접 쓰기'"
@@ -466,59 +500,6 @@
                 } else {
                     $('header').removeClass('gap');
                 }
-                if ($(this).hasClass('twoLine')) {
-                    $('header').addClass('twoLine');
-                }
-                else {
-                    $('header').removeClass('twoLine');
-                }
-            });
-
-            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
-                let idx = $(this).index() + 1;
-                $('.popup_pages .innerSlider_tabs li').removeClass('on');
-                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
-                $(this).addClass('on');
-                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
-            });
-            $(document).on('click', '.additional-question', function () {
-                $('[data-active="on"] .toggle').addClass('complete');
-            });
-
-            $(document).on('click', '.popup_pages .innerSlider_tabs>li', function () {
-                KmAudioPlayer.buttonClick();
-            });
-
-
-            const buttons = document.querySelectorAll('.popBtn.additional-question');
-            buttons.forEach(btn => {
-                btn.addEventListener('click', function () {
-                    $('.popup_pages .innerSlider_tabs li').removeClass('on');
-                    $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
-                    const value = this.getAttribute('data-popup-btn');
-                    const popup = document.querySelector(`[data-popup-page="${value}"] .innerSlider_tabs li:first-child`);
-                    popup.classList.add('on');
-                    $('.popup_pages .innerSlider_tabs li:first-child').addClass('on');
-                    $('.popup_pages .basicSlider_slides.innerTab li:first-child').addClass('on');
-                });
-            });
-
-            $(document).on('click', '.choXandO .ansDap', function () {
-                if ($(this).hasClass('ansO')) {
-                    if ($(this).hasClass('ans')) {
-                        KmAudioPlayer.correct();
-                        $(this).parent().find('.circleAns').addClass('ansO');
-                    } else {
-                        KmAudioPlayer.incorrect();
-                    }
-                } else {
-                    if ($(this).hasClass('ans')) {
-                        KmAudioPlayer.correct();
-                        $(this).parent().find('.circleAns').addClass('ansX');
-                    } else {
-                        KmAudioPlayer.incorrect();
-                    }
-                }
             });
 
             $(document).on('click', '.resetBtn', function () {
@@ -526,8 +507,11 @@
                 $('.textLine').val('');
             });
 
-
-
+            $(document).on('click', '.writeBtn', function () {
+                if (!$(this).hasClass('reset')) {
+                    $('.textLine').attr('style', '')
+                }
+            });
         });
 
 
@@ -580,8 +564,10 @@
             function updateNumImage() {
                 // Hiển thị số ảnh hiện tại (bắt đầu từ 1) / tổng số ảnh
                 $('.numImage').text((idx + 1) + ' / ' + slides.length);
-                $(`.titleImg`).removeClass('acitve');
-                $(`.titleImg${idx + 1}`).addClass('acitve');
+                $('.titleImg').removeClass('active');
+                $('.textLine').removeClass('active');
+                $(`.titleImg${idx + 1}`).addClass('active');
+                $(`.textLine${idx + 1}`).addClass('active');
             }
         });
     </script>
