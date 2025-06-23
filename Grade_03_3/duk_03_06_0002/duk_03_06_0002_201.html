@@ -13,6 +13,10 @@
 
     <style>
         /* Page 1 */
+        .how-to-box {
+            margin-top: 40px;
+        }
+
         .icon-char[data-popup-btn="1"] {
             top: 0px;
             left: unset;
@@ -76,6 +80,29 @@
             top: 200px;
         }
 
+        .titleNote2 span {
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+        }
+
+        .titleNote2 span:first-child.active::after {
+            width: 100px;
+        }
+
+        .titleNote2 span.active::after {
+            content: '';
+            position: absolute;
+            width: 140px;
+            height: 60px;
+            border-radius: 50%;
+            border: 7px solid #D85949;
+            left: -15px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
         .page_2 .titleNote1_child {
             top: 80px;
             left: 100px;
@@ -98,7 +125,6 @@
         header.twoLine .title-icon {
             top: -30px;
         }
-
     </style>
 </head>
 
@@ -113,7 +139,7 @@
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
                     <li data-hover="" data-text="공정 심판이 되어 공정한 것과 불공정한 것을 구별해 봅시다." data-gap="true">활동 1</li>
-                    <li data-hover="" data-text="공정 심판 활동을 하던 모습을 떠올리며 ‘공정 심판 보고서를’ 써 봅시다." class="twoLine">활동 2
+                    <li data-hover="" data-text="공정 심판 활동을 하던 모습을 떠올리며 ‘공정 심판 보고서를’<br/> 써 봅시다.">활동 2
                     </li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
@@ -234,10 +260,8 @@
                                 <li class="innerTab_2" data-quiz="toggle">
                                     <div class="noteText noteLine note1 purple"></div>
                                     <div class="titleNote titleNote1">③ 공정하거나 불공정하다고 결정하기 어려운 상황은 무엇이었나요?</div>
-                                    <img src="./images/img5.png" alt="" style="    position: absolute;
-                                    width: 50px;
-                                    top: 80px;
-                                    left: 40px;">
+                                    <img src="./images/img5.png" alt=""
+                                        style="position: absolute; width: 50px; top: 80px;left: 40px;">
                                     <div class="titleNote titleNote1_child">결정하기 어려운 상황은</div>
                                     <div class="noteText noteLine note2 line3" style="width: 60%; left: 40%;">
                                         <div class="textareaWrap">
@@ -247,11 +271,11 @@
                                                 spellcheck="false"></textarea>
                                         </div>
                                     </div>
-                                    <img src="./images/img5.png" alt="" style="    position: absolute;
-                                    width: 50px;
-                                    top: 200px;
-                                    left: 40px;">
-                                    <div class="titleNote titleNote2" style="left: 100px;">그것을 (공정/불공정)하다고 결정한 까닭은</div>
+                                    <img src="./images/img5.png" alt=""
+                                        style="position: absolute; width: 50px; top: 200px; left: 40px;">
+                                    <div class="titleNote titleNote2" style="left: 100px;">그것을
+                                        (<span>공정</span>/<span>불공정</span>)하다고
+                                        결정한 까닭은</div>
                                     <div class="noteText noteLine note3 line3">
                                         <div class="textareaWrap">
                                             <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
@@ -329,64 +353,19 @@
                 } else {
                     $('header').removeClass('gap');
                 }
-                if ($(this).hasClass('twoLine')) {
-                    $('header').addClass('twoLine');
-                }
-                else {
-                    $('header').removeClass('twoLine');
-                }
-            });
-
-            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
-                let idx = $(this).index() + 1;
-                $('.popup_pages .innerSlider_tabs li').removeClass('on');
-                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
-                $(this).addClass('on');
-                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
-            });
-            $(document).on('click', '.additional-question', function () {
-                $('[data-active="on"] .toggle').addClass('complete');
-            });
-
-            $(document).on('click', '.popup_pages .innerSlider_tabs>li', function () {
-                KmAudioPlayer.buttonClick();
-            });
-
-
-            const buttons = document.querySelectorAll('.popBtn.additional-question');
-            buttons.forEach(btn => {
-                btn.addEventListener('click', function () {
-                    $('.popup_pages .innerSlider_tabs li').removeClass('on');
-                    $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
-                    const value = this.getAttribute('data-popup-btn');
-                    const popup = document.querySelector(`[data-popup-page="${value}"] .innerSlider_tabs li:first-child`);
-                    popup.classList.add('on');
-                    $('.popup_pages .innerSlider_tabs li:first-child').addClass('on');
-                    $('.popup_pages .basicSlider_slides.innerTab li:first-child').addClass('on');
-                });
-            });
-
-            $(document).on('click', '.choXandO .ansDap', function () {
-                if ($(this).hasClass('ansO')) {
-                    if ($(this).hasClass('ans')) {
-                        KmAudioPlayer.correct();
-                        $(this).parent().find('.circleAns').addClass('ansO');
-                    } else {
-                        KmAudioPlayer.incorrect();
-                    }
-                } else {
-                    if ($(this).hasClass('ans')) {
-                        KmAudioPlayer.correct();
-                        $(this).parent().find('.circleAns').addClass('ansX');
-                    } else {
-                        KmAudioPlayer.incorrect();
-                    }
-                }
             });
 
             $(document).on('click', '.resetBtn', function () {
                 KmAudioPlayer.buttonClick();
                 $('.textLine').val('');
+                $('.titleNote2 span').removeClass('active');
+            });
+
+            $(document).on('click', '.titleNote2 span', function () {
+                KmAudioPlayer.buttonClick();
+                $('.titleNote2 span').removeClass('active');
+                $(this).addClass('active');
+
             });
         });
 

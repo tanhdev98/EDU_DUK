@@ -135,7 +135,7 @@
 <body>
     <div id="wrap" class="math">
         <header class="twoLine">
-            <div class="title-icon yellow">생각 <em>쑥쑥</em></div>
+            <div class="title-icon yellow">실천 <em>탄탄</em></div>
             <div class="title-text">공정 심판 활동을 하며 찾은 불공정한 모습을 공정하게 바꿔 봅시다.</div>
         </header>
         <main>
@@ -182,7 +182,9 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="writeBtn" data-answer-btn=""></button>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
                     </li>
                     <li class="page_2">
                         <div class="study_guide"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
@@ -252,8 +254,7 @@
                                             <div class="choBox">
                                                 <span class="dir-rect" data-cho="ㄱ" data-letter="공"></span>
                                                 <span class="dir-rect" data-cho="ㅈ" data-letter="정"></span>
-                                            </div>
-                                            함과
+                                            </div>함과
                                             <div class="choBox">
                                                 <span class="dir-rect" data-cho="ㅂ" data-letter="불"></span>
                                                 <span class="dir-rect" data-cho="ㄱ" data-letter="공"></span>
@@ -307,43 +308,47 @@
                 } else {
                     $('header').removeClass('gap');
                 }
-                if ($(this).hasClass('twoLine')) {
-                    $('header').addClass('twoLine');
+            });
+
+            let numActive = 0;
+
+            $(document).on('click', '.choBox', function () {
+                if (!$(this).hasClass('active')) {
+                    $(this).addClass('active');
+                } else {
+                    $(this).removeClass('active');
                 }
-                else {
-                    $('header').removeClass('twoLine');
+                numItem = $(this).parents('[data-quiz="toggle"]').find('.choBox').length;
+                numActive = $(this).parents('[data-quiz="toggle"]').find('.choBox.active').length;
+                console.log(numActive);
+                if (numActive === numItem) {
+                    $(this).parents('[data-quiz="toggle"]').find('.dapCheckBtn').addClass('reset');
+                } else {
+                    $(this).parents('[data-quiz="toggle"]').find('.dapCheckBtn').removeClass('reset');
                 }
             });
 
-            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
-                let idx = $(this).index() + 1;
-                $('.popup_pages .innerSlider_tabs li').removeClass('on');
-                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
-                $(this).addClass('on');
-                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
-            });
-            $(document).on('click', '.additional-question', function () {
-                $('[data-active="on"] .toggle').addClass('complete');
-            });
+            $(document).on('click', '.dapCheckBtn', function () {
+                let choBox = $(this).parent().parent().find('.choBox');
+                if (!$(this).hasClass('reset')) {
+                    $(this).removeClass('reset');
+                    choBox.removeClass('active');
+                    choBox.find('.dir-rect').removeClass('on');
+                    choBox.find('.dir-rect').each(function () {
+                        let dataCho = $(this).data('cho');
+                        $(this).text(dataCho);
+                    })
+                } else {
+                    $(this).addClass('reset');
+                    choBox.addClass('active');
+                    choBox.find('.dir-rect').addClass('on');
+                    choBox.find('.dir-rect').each(function () {
+                        let dataLetter = $(this).data('letter');
+                        $(this).text(dataLetter);
+                    })
+                }
 
-            $(document).on('click', '.popup_pages .innerSlider_tabs>li', function () {
-                KmAudioPlayer.buttonClick();
             });
-
-
-            const buttons = document.querySelectorAll('.popBtn.additional-question');
-            buttons.forEach(btn => {
-                btn.addEventListener('click', function () {
-                    $('.popup_pages .innerSlider_tabs li').removeClass('on');
-                    $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
-                    const value = this.getAttribute('data-popup-btn');
-                    const popup = document.querySelector(`[data-popup-page="${value}"] .innerSlider_tabs li:first-child`);
-                    popup.classList.add('on');
-                    $('.popup_pages .innerSlider_tabs li:first-child').addClass('on');
-                    $('.popup_pages .basicSlider_slides.innerTab li:first-child').addClass('on');
-                });
-            });
-
         });
 
     </script>
