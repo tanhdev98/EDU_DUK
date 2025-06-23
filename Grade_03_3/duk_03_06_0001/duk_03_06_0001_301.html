@@ -203,13 +203,13 @@
         }
 
         .thinkNet_wrap.col .think_arrow.right.top {
-            right: 865px;
+            right: 870px;
             bottom: 530px;
             transform: rotate(-90deg);
         }
 
         .thinkNet_wrap.col .think_arrow.left.top {
-            left: 865px;
+            left: 870px;
             bottom: 530px;
             transform: rotate(90deg);
         }
@@ -292,7 +292,7 @@
 <body>
     <div id="wrap" class="math">
         <header class="twoLine">
-            <div class="title-icon yellow">생각 <em>쑥쑥</em></div>
+            <div class="title-icon yellow">생각 <em>탄탄</em></div>
             <div class="title-text">우리 주변에서 볼 수 있는 공정한 상황 또는 공정하지 않은 상황은 무엇인지 써 봅시다.</div>
         </header>
         <main>
@@ -415,9 +415,11 @@
                             <div class="row">
                                 <div class="groupbox">
                                     <div style="display: flex; justify-content: center;">
-                                        <div class="toggle box" data-toggle-obj="5">
-                                            <div class="answer" data-toggle-target="5">
-                                                <span>같은 것은 같게</span>
+                                        <div data-type="toggleButton">
+                                            <div class="toggle box" data-toggle-obj="1">
+                                                <div class="answer" data-toggle-target="1">
+                                                    <span>같은 것은 같게</span>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="think_arrow right top"></div>
@@ -431,9 +433,11 @@
 
                                 <div class="groupbox">
                                     <div style="display: flex; justify-content: center;">
-                                        <div class="toggle box" data-toggle-obj="7">
-                                            <div class="answer" data-toggle-target="7">
-                                                <span>다른 것은 다르게</span>
+                                        <div data-type="toggleButton">
+                                            <div class="toggle box" data-toggle-obj="2">
+                                                <div class="answer" data-toggle-target="2">
+                                                    <span>다른 것은 다르게</span>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="think_arrow left top"></div>
@@ -481,43 +485,35 @@
                 } else {
                     $('header').removeClass('gap');
                 }
-                if ($(this).hasClass('twoLine')) {
-                    $('header').addClass('twoLine');
+            });
+
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    examViewBtn.addClass('reset');
+                } else {
+                    examViewBtn.removeClass('reset');
                 }
-                else {
-                    $('header').removeClass('twoLine');
+            });
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!examViewBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
                 }
             });
 
-            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
-                let idx = $(this).index() + 1;
-                $('.popup_pages .innerSlider_tabs li').removeClass('on');
-                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
-                $(this).addClass('on');
-                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            $(document).on('click', '.btn-praise', function () {
+                const toggleButton = $('[data-type="toggleButton"]');
+                toggleButton.attr('data-active', 'off');
             });
-            $(document).on('click', '.additional-question', function () {
-                $('[data-active="on"] .toggle').addClass('complete');
-            });
-
-            $(document).on('click', '.popup_pages .innerSlider_tabs>li', function () {
-                KmAudioPlayer.buttonClick();
-            });
-
-
-            const buttons = document.querySelectorAll('.popBtn.additional-question');
-            buttons.forEach(btn => {
-                btn.addEventListener('click', function () {
-                    $('.popup_pages .innerSlider_tabs li').removeClass('on');
-                    $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
-                    const value = this.getAttribute('data-popup-btn');
-                    const popup = document.querySelector(`[data-popup-page="${value}"] .innerSlider_tabs li:first-child`);
-                    popup.classList.add('on');
-                    $('.popup_pages .innerSlider_tabs li:first-child').addClass('on');
-                    $('.popup_pages .basicSlider_slides.innerTab li:first-child').addClass('on');
-                });
-            });
-
         });
 
     </script>

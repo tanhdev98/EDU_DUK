@@ -68,7 +68,7 @@
                                     transform: rotate(45deg);">
 
                                     <div class="titleText">어떤 경우에 <span style="color: #f60;">같은 것은 같게 </span>대해야 한다고
-                                        생각하나</div>
+                                        생각하나요?</div>
                                     <div class="noteText noteLine">
                                         <div class="textareaWrap">
                                             <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
@@ -156,8 +156,6 @@
             </div>
         </main>
 
-
-
     </div>
 
     <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
@@ -186,43 +184,7 @@
                 } else {
                     $('header').removeClass('gap');
                 }
-                if ($(this).hasClass('twoLine')) {
-                    $('header').addClass('twoLine');
-                }
-                else {
-                    $('header').removeClass('twoLine');
-                }
             });
-
-            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
-                let idx = $(this).index() + 1;
-                $('.popup_pages .innerSlider_tabs li').removeClass('on');
-                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
-                $(this).addClass('on');
-                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
-            });
-            $(document).on('click', '.additional-question', function () {
-                $('[data-active="on"] .toggle').addClass('complete');
-            });
-
-            $(document).on('click', '.popup_pages .innerSlider_tabs>li', function () {
-                KmAudioPlayer.buttonClick();
-            });
-
-
-            const buttons = document.querySelectorAll('.popBtn.additional-question');
-            buttons.forEach(btn => {
-                btn.addEventListener('click', function () {
-                    $('.popup_pages .innerSlider_tabs li').removeClass('on');
-                    $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
-                    const value = this.getAttribute('data-popup-btn');
-                    const popup = document.querySelector(`[data-popup-page="${value}"] .innerSlider_tabs li:first-child`);
-                    popup.classList.add('on');
-                    $('.popup_pages .innerSlider_tabs li:first-child').addClass('on');
-                    $('.popup_pages .basicSlider_slides.innerTab li:first-child').addClass('on');
-                });
-            });
-
         });
 
     </script>
