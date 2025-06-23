@@ -208,9 +208,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="buttonContainer">
-                            <button class="examViewBtn" data-answer-btn=""></button>
-                        </div>
                     </li>
                     <li class="page_2" data-quiz="toggle">
                         <div class="study_guide"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
@@ -361,29 +358,6 @@
 
             $(document).on('click', '.sideTopSlider_tabs li', function () {
                 $('.fullLine.whole').addClass('on');
-            });
-
-            $(document).on('click', '.toggle', function () {
-                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
-                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
-                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.examViewBtn');
-
-                if (toggleBtn.length == toggleCompleteBtn.length) {
-                    examViewBtn.addClass('reset');
-                } else {
-                    examViewBtn.removeClass('reset');
-                }
-            });
-
-            $(document).on('click', '.examViewBtn', function () {
-                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.examViewBtn');
-                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
-
-                if (!examViewBtn.hasClass('reset')) {
-                    toggleBtn.parent().removeAttr('data-active');
-                } else {
-                    toggleBtn.parent().attr('data-active', 'on');
-                }
             });
         });
     </script>

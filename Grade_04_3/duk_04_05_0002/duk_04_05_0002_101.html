@@ -48,22 +48,22 @@
 
         .min[data-popup-page="2"] {
             top: 87px;
-            left: 415px;
-            width: 850px;
+            left: 385px;
+            width: 880px;
             z-index: 3 !important;
         }
 
         .min[data-popup-page="3"] {
             top: 87px;
-            left: 470px;
-            width: 800px;
+            left: 600px;
+            width: 670px;
             z-index: 3 !important;
         }
 
         .min[data-popup-page="4"] {
             top: 87px;
-            left: 440px;
-            width: 830px;
+            left: 410px;
+            width: 860px;
             z-index: 3 !important;
         }
 
@@ -329,6 +329,10 @@
             });
 
             $('.speech').trigger('click');
+
+            $(document).on('click', '.popup_closeBtn', function () {
+                $('.popBtn.popupOn').trigger('click');
+            });
 
             $prite.girl4({
                 id: '#girl_4_c',
