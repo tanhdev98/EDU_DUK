@@ -25,7 +25,7 @@
             height: 40px;
             background: #5ABDB7;
             position: absolute;
-            top: 130px;
+            top: 90px;
         }
 
         .time-line-arrow::before {
@@ -140,33 +140,35 @@
         }
 
         .img-1 {
-            top: 230px;
+            top: 260px;
+            width: 170px;
+            left: 20px;
         }
 
         .img-2 {
             top: 340px;
-            left: 510px;
+            left: 530px;
         }
 
         .img-3 {
-            right: 190px;
-            top: 340px;
-            width: 300px;
+            right: 210px;
+            top: 350px;
+            width: 180px;
         }
 
         .text-1 {
-            top: 400px;
-            left: 250px;
+            top: 370px;
+            left: 255px;
         }
 
         .text-2 {
-            top: 250px;
+            top: 230px;
             left: 580px;
         }
 
         .text-3 {
-            right: 120px;
-            top: 220px;
+            right: 110px;
+            top: 230px;
         }
 
         .innerTab_2 .time-line-arrow {
@@ -224,7 +226,7 @@
 
         .pic-box.flex-column .image-box {
             padding: 20px;
-            width: 1100px;
+            width: 1030px;
         }
 
         .howtoBox .pic-box.flex-column .imageWrap {
@@ -351,7 +353,7 @@
                             <li class="innerTab_1">
                                 <h2>1945년 광복</h2>
                                 <div class="flex">
-                                    <div class="how-to-box howtoBox">
+                                    <div class="how-to-box howtoBox" style="margin-top: 100px;">
                                         <div class="pic-box">
                                             <div class="image-box">
                                                 <div class="imageWrap">
@@ -369,7 +371,7 @@
                             <li class="innerTab_2">
                                 <h2>모스크바 3국 외상회의</h2>
                                 <div class="flex">
-                                    <div class="how-to-box howtoBox">
+                                    <div class="how-to-box howtoBox" style="margin-top: 100px;">
                                         <div class="pic-box">
                                             <div class="image-box">
                                                 <div class="imageWrap">
@@ -532,6 +534,10 @@
 
             $(document).on('click', '.popup_closeBtn, .basicSlider_circle_tabs > *, .basicSlider_btn', function () {
                 $('.popup_pages > li.min').removeClass('on');
+            });
+
+            $(document).on('click', '.popup_closeBtn', function () {
+                $('.popBtn.popupOn').trigger('click');
             });
         });
     </script>
