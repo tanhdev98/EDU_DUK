@@ -11,6 +11,14 @@
     <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
 
     <style>
+        #wrap header {
+            align-items: start;
+        }
+
+        #wrap header .title-icon {
+            top: 10px;
+        }
+
         /* page 1 */
         .contentsBox {
             padding: 0;
@@ -55,6 +63,7 @@
             padding-left: 50px;
             width: 400px;
             position: relative;
+            font-family: 'YGJAL';
         }
 
         .title-tag::after {
@@ -92,13 +101,14 @@
             color: #fff;
             text-align: center;
             margin-top: 10px;
+            font-family: 'YGJAL';
         }
 
         .toggle.box {
             justify-content: center;
             height: 310px;
             background: transparent;
-            padding: 20px 40px;
+            padding: 20px 35px;
             align-items: start;
         }
 
@@ -144,6 +154,15 @@
 
         .buttonContainer {
             right: 28px;
+        }
+
+        .page_2 .title .textLine {
+            width: 360px;
+            text-align: center;
+        }
+
+        .page_2 .title .textLine::placeholder {
+            color: #fff !important;
         }
 
         /* page 3 */
@@ -240,12 +259,12 @@
                         <div class="title-tag">너와 내가 만나면</div>
                         <div class="flex">
                             <div class="items">
-                                <div class="title">궁금한 것</div>
+                                <div class="title" style="font-size: 40px; margin-top: 16px;">궁금한 것</div>
                                 <div data-type="toggleButton" class="box">
                                     <div class="toggle examBtn box" data-toggle-obj="1">
                                         <div class="answer" data-toggle-target="1">
                                             <div class="ls-2h">
-                                                <p class="dot">친구들은<br> 무엇을 하며<br> 놀까?</p>
+                                                <p class="dot">친구들은<br> 무엇을 하며 놀까?</p>
                                                 <p class="dot">좋아하는 책은<br> 뭘까?</p>
                                             </div>
                                         </div>
@@ -253,7 +272,7 @@
                                 </div>
                             </div>
                             <div class="items">
-                                <div class="title">같이 하고 싶은 것</div>
+                                <div class="title" style="font-size: 40px; margin-top: 16px;">같이 하고 싶은 것</div>
                                 <div data-type="toggleButton" class="box">
                                     <div class="toggle examBtn box" data-toggle-obj="2">
                                         <div class="answer" data-toggle-target="2">
@@ -266,7 +285,11 @@
                                 </div>
                             </div>
                             <div class="items">
-                                <div class="title">직접 쓰기</div>
+                                <div class="title">
+                                    <input class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                        data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                        autocomplete="off" spellcheck="false"></input>
+                                </div>
                                 <div class="noteText noteLine">
                                     <div class="textareaWrap">
                                         <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
@@ -283,7 +306,7 @@
                     <li class="page_3" data-quiz="toggle">
                         <div class="icon-char" data-hover="" data-popup-btn="1"></div>
                         <img src="./images/duk_04_06_0004_201/img_05.png" alt="">
-                        <div class="text">너와 내가 만나면</div>
+                        <div class="text" style="font-family: 'YGJAL';">너와 내가 만나면</div>
                         <div class="noteText noteLine">
                             <div class="textareaWrap">
                                 <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
@@ -297,7 +320,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class=" buttonContainer">
+                        <div class="buttonContainer">
                             <button class="writeBtn" data-answer-btn=""></button>
                         </div>
                     </li>
