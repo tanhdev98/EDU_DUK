@@ -13,9 +13,9 @@
     <style>
         /* page 1 */
         .min[data-popup-page="1"] {
-            top: 145px;
-            left: 490px;
-            width: 770px;
+            top: 150px;
+            left: 460px;
+            width: 800px;
         }
 
         .page_1 .title-box {
@@ -24,6 +24,7 @@
 
         .page_1 .blueText {
             color: #006ee6;
+            margin-right: 10px;
         }
 
         /* page 2 */
@@ -96,6 +97,7 @@
 
         .page_3 img {
             width: 600px;
+            height: 260px;
         }
 
         .page_3 .bobText {
@@ -104,6 +106,7 @@
             position: absolute;
             width: fit-content;
             text-align: center;
+            letter-spacing: -1px;
         }
 
         .page_3 .bobText>em {
@@ -172,7 +175,7 @@
             border: 4px solid #CABFE0;
             background-color: #F6EFFB;
             left: 920px;
-            top: 240px;
+            top: 280px;
             width: 390px;
         }
 
@@ -210,6 +213,7 @@
             text-align: center;
             z-index: 1;
             position: relative;
+            font-family: 'NotoB';
         }
 
         .page_3 .noteText {
@@ -298,15 +302,15 @@
 
 <body>
     <div id="wrap" class="math">
-        <header>
+        <header class="gap">
             <div class="title-icon blue" data-show="1">실천 <em>쑥쑥</em></div>
-            <div class="title-text">디지털 사회에는 어떤 도덕 문제가 있을까요?</div>
+            <div class="title-text">‘분단’과 ‘통일’을 생각하면 떠오르는 낱말을 자유롭게 써 봅시다.</div>
         </header>
         <main>
             <!-- FRAME OF PAGE -->
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
-                    <li data-hover="" data-text="디지털 사회에는 어떤 도덕 문제가 있을까요?">활동 방법</li>
+                    <li data-hover="" data-text="‘분단’과 ‘통일’을 생각하면 떠오르는 낱말을 자유롭게 써 봅시다." data-gap="true">활동 방법</li>
                     <li data-hover="" data-text='<span style="letter-spacing: -1.8px;">‘분단’과 ‘통일’ 관련 낱말 중 가장 많이 등장하는 낱말은
                         무엇인가요?</span>' data-gap="true">활동 1</li>
                     <li data-hover="" data-text="떠올린 낱말을 사용해 우리에게 통일이 필요한 까닭을 써 봅시다." data-gap="true">활동 2</li>
@@ -322,7 +326,7 @@
                             <div class="title">활동 방법</div>
                         </div>
                         <ul class="how-to-play">
-                            <li>
+                            <li style="margin-bottom: 40px;">
                                 <div class="blueText">준비물 |</div>
                                 <div class="text">붙임쪽지 여러 장</div>
                             </li>
