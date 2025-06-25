@@ -20,6 +20,11 @@
             padding: 20px 28px 0 28px;
         }
 
+        .click-finger-Btn.blinkOn.blinkOpacity {
+            animation: clickInduceMotion 1s 3 ease-in !important;
+            -webkit-animation: clickInduceMotion 1s 3 ease-in !important;
+        }
+
         .page_1>img {
             height: 100%;
         }
@@ -74,16 +79,16 @@
 
         .page_1 .popupItem1 {
             bottom: 10px;
-            left: 100px;
+            left: 10px;
         }
 
         .page_1 .popupItem1::before {
-            right: 130px;
+            right: 40px;
             top: -35px;
         }
 
         .page_1 .popupItem1::after {
-            right: 135px;
+            right: 45px;
             top: -30px;
             height: 30px;
         }
@@ -105,33 +110,34 @@
         }
 
         .page_1 .popupItem3 {
-            bottom: 35px;
+            bottom: 458px;
             left: 600px;
         }
 
         .page_1 .popupItem3::before {
             right: 130px;
-            top: -150px;
+            bottom: -160px;
         }
 
         .page_1 .popupItem3::after {
             right: 135px;
-            top: -150px;
+            top: 130px;
         }
 
         .page_1 .popupItem4 {
-            bottom: 115px;
+            bottom: 135px;
             right: 60px;
         }
 
         .page_1 .popupItem4::before {
             right: 130px;
-            top: -150px;
+            top: -100px;
         }
 
         .page_1 .popupItem4::after {
             right: 135px;
-            top: -150px;
+            top: -100px;
+            height: 100px;
         }
 
         /* page 2 */
@@ -145,6 +151,7 @@
             position: absolute;
             left: 60px;
             top: 100px;
+            height: 400px;
         }
 
         .page_2 .noteText .textareaWrap {
@@ -284,8 +291,6 @@
 
             $(document).on('click', '.click-finger-Btn', function () {
                 KmAudioPlayer.buttonClick();
-                $('.popupItem').hide();
-                $('.click-finger-Btn').show();
                 var $data_popup = $(this).attr('data-popup');
                 var $currentPopup = $('.popupItem[data-show="' + $data_popup + '"]');
                 var maxZIndex = Math.max.apply(null, $('.popupItem:visible').map(function () {
@@ -293,7 +298,6 @@
                 }).get());
                 $currentPopup.css('z-index', maxZIndex + 1).show();
                 $(this).hide();
-                $('.popupItem .close-speech-button').remove();
                 $('.popupItem[data-show="' + $data_popup + '"]').append('<div class="close-speech-button"></div>');
             });
 
@@ -303,6 +307,12 @@
                 $(`[data-popup=${_id}]`).show().removeClass('ans').removeClass('blinkOn').removeClass('blinkOpacity');;
                 $(this).remove();
             });
+
+            if ($(".page_2 .noteLine").not(".noLine").length > 0) {
+                $(".page_2 .noteLine").not(".noLine").find(".textareaWrap").each(function () {
+                    $(this).append("<span class='underline' style='position:absolute; left:20px; top:" + (6 * 60 + 34) + "px; width:calc(100% - 40px); height:1px; background-color:#cccccc;'></span>");
+                })
+            }
 
         });
     </script>
