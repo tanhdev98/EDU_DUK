@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        /* page 1 */
+        .page_1 .tab-content-box .table-box {
+            height: 100%;
+        }
+
+        .page_1 .tab-content-box .tab-content {
+            height: calc(100% - 80px);
+        }
+
+        .page_1 .table-box td {
+            display: flex;
+            align-items: start;
+            border: none;
+            flex-direction: column;
+        }
+
+        .bullet.exam {
+            margin-top: 10px;
+        }
+
+        .page_1 .noteText {
+            width: 1060px;
+            height: 400px;
+            margin-top: 10px;
+        }
+
+        /* page 2 */
+        /* popup */
+        .popup_pages .pointContainer .pointTitle {
+            display: block;
+            text-align: center;
+        }
+
+        .popup_pages .pointContainer .pointTitle .titleText {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 45px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #ff6600;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+        }
+
+        .popup_pages .pointContainer .pointTitle .titleText:after,
+        .popup_pages .pointContainer .pointTitle .titleText:before {
+            position: absolute;
+            top: 0px;
+            height: 50px;
+            font-size: 40px;
+            line-height: 50px;
+            font-family: 'YGJAL';
+            color: #e4caa9;
+        }
+
+        .popup_pages .pointContainer .pointTitle .titleText:after {
+            content: "[";
+            left: -20px;
+        }
+
+        .popup_pages .pointContainer .pointTitle .titleText:before {
+            content: "]";
+            right: -20px;
+        }
+
+        .pointContainer .dapCheckBtn {
+            right: 28px;
+        }
+
+        .popup_pages .table-box.color-02 th {
+            width: 500px;
+        }
+
+        .popup_pages [data-type="toggleButton"] {
+            width: max-content;
+            margin: auto;
+            height: auto;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon yellow" data-show="1">마음 <em>탄탄</em></div>
+            <div class="title-text">생명을 왜 존중해야 할까요?</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="생명을 왜 존중해야 할까요?">활동</li>
+                    <li data-hover="" data-text="배운 내용을 되돌아보며 자기 점검을 해 봅시다.">자기 점검</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="tab-content-box">
+                            <div class="tab-content content-01">
+                                <div class="table-box color-02">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:15%">
+                                            <col style="width:85%">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>
+                                                    생명을<br>
+                                                    존중해야 하는<br>
+                                                    까닭은?
+                                                </th>
+                                                <td>
+                                                    <div>
+                                                        <div class="exam bullet">예</div>
+                                                        생명이 있는 존재는 한 번만 살 수 있기 때문이다.
+                                                    </div>
+                                                    <div class="noteText noteLine pink">
+                                                        <div class="textareaWrap">
+                                                            <textarea class="textLine afterDisplay" type="text"
+                                                                placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                                onfocus="" onblur="placeholder='직접 쓰기'"
+                                                                autocomplete="off" spellcheck="false"></textarea>
+                                                        </div>
+                                                        <div class="text-exam flex-wrap">
+                                                            <div class="blueT">
+                                                                생명은 그 자체로 소중하고 다른 것과 바꿀 수 없기
+                                                                때문이다.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                    <li class="page_2">
+                        <div class="study_guide"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
+                        <div class="self-check" style="margin-top: 60px;">
+                            <div class="checkWrap">
+                                <div class="text_box">생명을 소중히 대한 경험을 말할 수 있나요?</div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">나를 제외한 다른 생명도 소중한 까닭을 설명할 수 있나요?</div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="example-box">
+                                <div class="exampleIcoWrap">
+                                    <div class="example ico-01">
+                                        매우 그렇다
+                                    </div>
+                                    <div class="example ico-02">
+                                        그렇다
+                                    </div>
+                                    <div class="example ico-03">
+                                        좀 더 노력해야 한다
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-praise right popBtn footer-item" data-popup-btn="1"
+                            style="top: 460px; right: -28px;">
+                            <div class="item-title">핵심 <br>정리</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image pointContainer" data-popup-page="1">
+                    <div class="full_content" data-quiz="toggle">
+                        <div class="pointTitle">
+                            <div class="titleText">생명의 소중함</div>
+                            <div class="group-box">
+                                <div class="table-box color-02">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <th>
+                                                    <div data-type="toggleButton">
+                                                        <div class="toggle" data-toggle-obj="1">
+                                                            <div class="answer" data-toggle-target="1">
+                                                                <div class="ls-1h">생명</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <td>
+                                                    살아 있는 것(<div class="exam bullet" style="margin-top: 15px;">예</div>
+                                                    사람, 동물, 식물 등)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>
+                                                    생명을 올바르게<br>
+                                                    대하는 태도
+                                                </th>
+                                                <td>
+                                                    생명을 함부로 <div data-type="toggleButton">
+                                                        <div class="toggle" data-toggle-obj="2">
+                                                            <div class="answer" data-toggle-target="2">
+                                                                <div class="ls-1h">해쳐서는</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>안 됩니다.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>
+                                                    생명이<br>
+                                                    소중한 이유
+                                                </th>
+                                                <td>
+                                                    생명은 <div data-type="toggleButton">
+                                                        <div class="toggle" data-toggle-obj="3">
+                                                            <div class="answer" data-toggle-target="3">
+                                                                <div class="ls-1h">하나</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>밖에 없으며, 다른 것과 바꿀 수 없기 때문입니다.
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="dapCheckBtn" data-answer-btn=""></button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    examViewBtn.addClass('reset');
+                } else {
+                    examViewBtn.removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!examViewBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        .min[data-popup-page="1"] {
+            top: 150px;
+            left: 470px;
+            width: 790px;
+        }
+
+        .bg {
+            border: 30px solid #F3C6ED;
+            border-radius: 50%;
+            width: 100%;
+            height: 90%;
+            position: relative;
+        }
+
+        .box-img {
+            position: absolute;
+            width: 140px;
+            height: 130px;
+            border-radius: 50%;
+            border: 5px solid #F3C2D1;
+            padding: 14px;
+            background: #fff;
+        }
+
+        .box-img>img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .box-img-1 {
+            top: -30px;
+            left: 250px;
+        }
+
+        .box-img-2 {
+            left: 550px;
+            top: -40px;
+        }
+
+        .box-img-3 {
+            top: -30px;
+            right: 250px;
+        }
+
+        .box-img-4 {
+            bottom: -30px;
+            left: 250px;
+        }
+
+        .box-img-5 {
+            left: 550px;
+            bottom: -40px;
+        }
+
+        .box-img-6 {
+            bottom: -30px;
+            right: 250px;
+        }
+
+        .bg>img {
+            position: absolute;
+            object-fit: contain;
+            width: 180px;
+            height: 340px;
+        }
+
+        .bg>img:first-child {
+            left: 420px;
+            top: 80px;
+        }
+
+        .bg>img:nth-child(2) {
+            top: 80px;
+            right: 420px;
+        }
+
+        .box-note {
+            width: 240px;
+            height: 230px;
+            border-radius: 50%;
+            border: 5px solid #B92D96;
+            position: absolute;
+            background: #fff;
+        }
+
+        .box-note .noteText {
+            box-shadow: none;
+            padding: 25px;
+            height: 100%;
+        }
+
+        .noteText .textareaWrap {
+            height: 100%;
+            padding: 0;
+        }
+
+        .noteText .text-exam.flex-wrap {
+            padding: 0;
+        }
+
+        .box-note-1 {
+            top: 120px;
+            left: -40px;
+        }
+
+        .box-note-2 {
+            top: 120px;
+            right: -40px;
+        }
+
+        /* innerPage 2 */
+        .items {
+            padding: 0 28px;
+            margin-top: 70px;
+        }
+
+        .items .item {
+            position: relative;
+        }
+
+        .items .item .toggle {
+            margin-top: 10px;
+            justify-content: center;
+            height: 130px;
+        }
+
+        .items .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 30px;
+            left: -30px;
+            transform: translateY(-50%);
+        }
+
+        .items .noteText {
+            height: 280px;
+            box-shadow: none;
+            background: #F7F7F7;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .items .noteText .text-exam.flex-wrap {
+            padding: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon yellow" data-show="1">생각 <em>쑥쑥</em></div>
+            <div class="title-text">소중한 생명을 가진 것을 적어 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="icon-char" data-hover="" data-popup-btn="1"></div>
+                                    <div class="bg">
+                                        <img src="./images/duk_03_07_0001_201/img_01.png" alt="">
+                                        <img src="./images/duk_03_07_0001_201/img_02.png" alt="">
+                                        <div class="box-img box-img-1">
+                                            <img src="./images/duk_03_07_0001_201/img_03.png" alt="">
+                                        </div>
+                                        <div class="box-img box-img-2">
+                                            <img src="./images/duk_03_07_0001_201/img_04.png" alt="">
+                                        </div>
+                                        <div class="box-img box-img-3">
+                                            <img src="./images/duk_03_07_0001_201/img_05.png" alt="">
+                                        </div>
+                                        <div class="box-img box-img-4">
+                                            <img src="./images/duk_03_07_0001_201/img_06.png" alt="">
+                                        </div>
+                                        <div class="box-img box-img-5">
+                                            <img src="./images/duk_03_07_0001_201/img_07.png" alt="">
+                                        </div>
+                                        <div class="box-img box-img-6">
+                                            <img src="./images/duk_03_07_0001_201/img_08.png" alt="">
+                                        </div>
+                                        <div class="box-note box-note-1">
+                                            <div class="noteText noLine">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT" style="margin-top: 30px; margin-left: 30px;">
+                                                        <p class="dot">나무</p>
+                                                        <p class="dot">친구들</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="box-note box-note-2">
+                                            <div class="noteText noLine">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT" style="margin-top: 30px; margin-left: 30px;">
+                                                        <p class="dot">메뚜기</p>
+                                                        <p class="dot">잠자리</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="items">
+                                        <div class="item">
+                                            생명이 하나밖에 없다는 것은 무슨 뜻일까요?
+                                            <div class="noteText noLine">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        한번 잃어버린 생명은 다시 찾을 수 없고,<br>
+                                                        다른 것으로 대신할 수 없다는 것입니다.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3" data-quiz="toggle">
+                                    <div class="items">
+                                        <div class="item">
+                                            생명은 왜 소중할까요?
+                                            <div class="noteText noLine">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        생명을 잃게 되면 다시 돌아오지 않기 때문입니다.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents">
+                        <p>
+                            사람뿐만 아니라 동물, 식물 등도 소중한 생명을 가지고 있습니다.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
