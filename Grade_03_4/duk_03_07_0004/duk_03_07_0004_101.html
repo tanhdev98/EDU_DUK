@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        .flex {
+            display: flex;
+            gap: 20px;
+        }
+
+        .flex .items {
+            flex: 1;
+        }
+
+        .flex .items .imgWrap {
+            border: 2px solid #F3E7D6;
+            width: 100%;
+            height: 300px;
+            border-radius: 20px;
+        }
+
+        .flex .items img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .flex .items .toggle.box {
+            margin-top: 20px;
+            display: block;
+            height: 180px;
+        }
+
+        .flex .items .toggle .answer {
+            height: 100%;
+            text-align: center;
+        }
+
+        [data-type="toggleButton"] {
+            height: auto;
+        }
+
+        .buttonContainer {
+            right: 28px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon pink">마음 <em>똑똑</em></div>
+            <div class="title-text">생명을 느껴 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="flex">
+                            <div class="items">
+                                <div class="imgWrap">
+                                    <img src="./images/duk_03_07_0004_101/img_01.png">
+                                </div>
+                                <div data-type="toggleButton">
+                                    <div class="toggle examBtn box" data-toggle-obj="1">
+                                        <div class="answer" data-toggle-target="1">
+                                            <div class="ls-2h">내 심장이 뛰는 것을<br>
+                                                느껴 봅시다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="items">
+                                <div class="imgWrap">
+                                    <img src="./images/duk_03_07_0004_101/img_02.png">
+                                </div>
+                                <div data-type="toggleButton">
+                                    <div class="toggle examBtn box" data-toggle-obj="2">
+                                        <div class="answer" data-toggle-target="2">
+                                            <div class="ls-2h">친구와 악수를 하며<br> 친구 손의 따뜻함을<br> 느껴 봅시다.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="items">
+                                <div class="imgWrap">
+                                    <img src="./images/duk_03_07_0004_101/img_03.png">
+                                </div>
+                                <div data-type="toggleButton">
+                                    <div class="toggle examBtn box" data-toggle-obj="3">
+                                        <div class="answer" data-toggle-target="3">
+                                            <div class="ls-2h">내 주위에서<br>
+                                                생명을 지닌 존재를<br>
+                                                느껴 봅시다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonConatiner">
+                            <button class="examViewBtn" type="button" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.examViewBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    examViewBtn.addClass('reset');
+                } else {
+                    examViewBtn.removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.examViewBtn', function () {
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.examViewBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!examViewBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

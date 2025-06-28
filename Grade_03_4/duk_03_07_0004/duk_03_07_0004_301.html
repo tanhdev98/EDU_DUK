@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        .page_1>img {
+            width: 95%;
+            height: 88%;
+        }
+
+        .note {
+            position: absolute;
+            top: 120px;
+            left: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            text-align: center;
+        }
+
+        .flex {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .noteText {
+            box-shadow: none;
+            padding: 0;
+            height: 60px;
+            width: 750px;
+            background: #f7f7f7;
+        }
+
+        .noteText .textareaWrap {
+            height: 100%;
+            padding: 0;
+        }
+
+        .noteText .text-exam.flex-wrap {
+            padding: 0;
+            top: 1px;
+            left: 5px;
+        }
+
+        .noteText .text-exam.flex-wrap .blueT {
+            margin-top: 0;
+        }
+
+        .noteText:after {
+            display: none;
+        }
+
+        /* popup */
+        .pointContainer .pointTitle {
+            display: block;
+            text-align: center;
+        }
+
+        .pointContainer .pointTitle .titleText {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 45px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #ff6600;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+        }
+
+        .pointContainer .pointTitle .titleText:after,
+        .pointContainer .pointTitle .titleText:before {
+            position: absolute;
+            top: 0px;
+            height: 50px;
+            font-size: 40px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #e4caa9;
+        }
+
+        .pointContainer .pointTitle .titleText:after {
+            content: "[";
+            left: -20px;
+        }
+
+        .pointContainer .pointTitle .titleText:before {
+            content: "]";
+            right: -20px;
+        }
+
+        /* thinkNet */
+        .thinkNet_wrap {
+            position: relative;
+            height: 410px;
+            top: 50px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            padding: 0 80px;
+        }
+
+        .thinkNet_wrap .row {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            position: relative;
+            left: 200px;
+            top: -15px;
+        }
+
+        .thinkNet_wrap .inner_box.tit {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #fff;
+            border: 4px solid #efcfa6;
+            width: 250px;
+            height: 120px;
+            border-radius: 20px;
+            font-family: 'NotoM';
+            top: 50%;
+            left: 130px;
+            transform: translate(-50%, -50%);
+            padding: 15px;
+        }
+
+        .thinkNet_wrap .think_arrow {
+            position: absolute;
+            display: inline-block;
+            width: 100px;
+            height: 70px;
+            background: url('./common/images/thinkNet_arrow.png') no-repeat;
+            background-size: 230px auto;
+        }
+
+        .thinkNet_wrap .thinkNet_arrow2 {
+            background: url('./common/images/thinkNet_arrow2.png') no-repeat;
+            background-size: 150px;
+            top: -160px;
+            transform: rotate(-90deg);
+            background-position: 25px 0;
+            left: 615px;
+
+        }
+
+        .thinkNet_wrap .think_arrow.left.top {
+            left: -110px;
+            bottom: 285px;
+            background-position: -132px 0;
+        }
+
+        .thinkNet_wrap .think_arrow.right.bottom {
+            left: -110px;
+            top: 275px;
+            background-position: -132px -95px;
+        }
+
+        .thinkNet_wrap .box {
+            width: 980px;
+            height: 210px;
+            border-radius: 20px;
+        }
+
+        .thinkNet_wrap .box.pink {
+            background-color: #FED1D7;
+        }
+
+        .thinkNet_wrap .box.green {
+            background-color: #EFF7BD;
+        }
+
+        .pointContainer .dapCheckBtn {
+            right: 40px;
+        }
+
+        .cho {
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            height: 100%;
+        }
+
+        .cho .choBox {
+            margin-left: 0;
+        }
+
+        .cho .dir-rect {
+            background-color: #fff;
+        }
+
+        .cho .choBox .dir-rect.on {
+            background-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon pink">마음 <em>탄탄</em></div>
+            <div class="title-text">내가 실천할 수 있는 생명 존중 활동을 적고 다짐해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <img src="./images/duk_03_07_0004_301/img_01.png" alt="">
+                        <div class="note">
+                            <p>나는 생명의 소중함을 알고 일상생활에서</p>
+                            <div class="flex">
+                                <div class="noteText noLine">
+                                    <div class="textareaWrap">
+                                        <input class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                            autocomplete="off" spellcheck="false"></input>
+                                    </div>
+                                    <div class="text-exam flex-wrap">
+                                        <div class="blueT">
+                                            <p>좋은 댓글을 달겠습니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span>을/를</span>
+                            </div>
+                            <p>꾸준히 실천하며 생명을 존중하겠습니다.</p>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                        <div class="btn-praise right popBtn footer-item" style="right: -28px; top: 410px;"
+                            data-popup-btn="1">
+                            <div class="item-title">핵심<br>정리</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image pointContainer" data-popup-page="1">
+                    <div class="full_content">
+                        <div class="basicSlider " data-slide-container="">
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="pointTitle">
+                                        <div class="titleText">생명을 존중하는 마음을 키워요</div>
+                                    </div>
+
+                                    <div class="thinkNet_wrap">
+                                        <div class="inner_box tit">
+                                            <p>생명 존중</p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="box pink">
+                                                <div class="cho">
+                                                    <div class="choWrap">
+                                                        우리 주위의 <div class="choBox">
+                                                            <span class="dir-rect" data-cho="ㅅ" data-letter="생"></span>
+                                                            <span class="dir-rect" data-cho="ㅁ" data-letter="명"></span>
+                                                        </div>을 <div class="choBox">
+                                                            <span class="dir-rect" data-cho="ㅈ" data-letter="존"></span>
+                                                            <span class="dir-rect" data-cho="ㅈ" data-letter="중"></span>
+                                                        </div>해야 합니다.
+                                                    </div>
+                                                </div>
+                                                <div class="think_arrow left top"></div>
+                                            </div>
+                                            <div class="box green">
+                                                <div class="cho">
+                                                    <div class="choWrap">
+                                                        생명의 소중함을 알고 <div class="choBox">
+                                                            <span class="dir-rect" data-cho="ㅇ" data-letter="일"></span>
+                                                            <span class="dir-rect" data-cho="ㅅ" data-letter="상"></span>
+                                                            <span class="dir-rect" data-cho="ㅅ" data-letter="생"></span>
+                                                            <span class="dir-rect" data-cho="ㅎ" data-letter="활"></span>
+                                                        </div>에서<br>
+                                                        꾸준히 실천할 수 있는 활동을 합니다.
+                                                    </div>
+                                                </div>
+                                                <div class="think_arrow right bottom"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="dapCheckBtn" data-answer-btn=""></button>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+
+            let numActive = 0;
+
+            $(document).on('click', '.choBox', function () {
+                if (!$(this).hasClass('active')) {
+                    $(this).addClass('active');
+                } else {
+                    $(this).removeClass('active');
+                }
+                numItem = $(this).parents('[data-quiz="toggle"]').find('.choBox').length;
+                numActive = $(this).parents('[data-quiz="toggle"]').find('.choBox.active').length;
+                console.log(numActive);
+                if (numActive === numItem) {
+                    $(this).parents('[data-quiz="toggle"]').find('.dapCheckBtn').addClass('reset');
+                } else {
+                    $(this).parents('[data-quiz="toggle"]').find('.dapCheckBtn').removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                let choBox = $(this).parent().parent().find('.choBox');
+                if (!$(this).hasClass('reset')) {
+                    $(this).removeClass('reset');
+                    choBox.removeClass('active');
+                    choBox.find('.dir-rect').removeClass('on');
+                    choBox.find('.dir-rect').each(function () {
+                        let dataCho = $(this).data('cho');
+                        $(this).text(dataCho);
+                    })
+                } else {
+                    $(this).addClass('reset');
+                    choBox.addClass('active');
+                    choBox.find('.dir-rect').addClass('on');
+                    choBox.find('.dir-rect').each(function () {
+                        let dataLetter = $(this).data('letter');
+                        $(this).text(dataLetter);
+                    })
+                }
+
+            });
+        });
+    </script>
+</body>
+
+</html>
