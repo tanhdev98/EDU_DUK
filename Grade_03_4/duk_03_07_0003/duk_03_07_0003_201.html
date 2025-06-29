@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        #wrap header {
+            align-items: start;
+        }
+
+        #wrap header .title-icon {
+            top: 10px;
+        }
+
+        /* page 1 */
+        .contentsBox {
+            padding: 0;
+        }
+
+        .contentsBox .basicSlider_slides>li.innerTab_3,
+        .contentsBox .basicSlider_slides>li.innerTab_2 {
+            padding: 20px 28px 0 28px;
+        }
+
+        .char-box-10 .balloon {
+            top: -120px;
+            left: -120px;
+        }
+
+        .char-box-11 .balloon {
+            top: -180px;
+            left: -200px;
+        }
+
+        .char-box-12 .balloon {
+            top: -180px;
+            left: -160px;
+        }
+
+        .char-box-13 .balloon {
+            top: -120px;
+            left: -80px;
+        }
+
+        .additional-question.popBtn {
+            position: absolute;
+            right: 28px;
+            top: 20px;
+        }
+
+        /* popup */
+
+        .innerSlider_tabs>li {
+            background-color: #F3DEC0;
+        }
+
+        .innerSlider_tabs>li.on {
+            background-color: #F3B05B;
+        }
+
+        .innerButtonContainer {
+            position: absolute;
+            right: 40px;
+            top: 76px;
+        }
+
+        .innerButtonContainer::before {
+            display: none;
+        }
+
+        .popup_pages>li.image .basicSlider {
+            padding: 0;
+        }
+
+        .popup_pages .contentsBox .basicSlider_slides>li {
+            padding: 0;
+        }
+
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: fit-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+        }
+
+        [data-type="toggleButton"] {
+            height: fit-content;
+            margin-top: 45px;
+        }
+
+        [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            justify-content: center;
+        }
+
+        .toggle.complete .answer,
+        .answer.on {
+            text-align: center;
+        }
+
+        .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+
+        /* page 2 */
+        .noteText .textLine {
+            height: 60px;
+            background: #F7F7F7;
+            position: absolute;
+            border-radius: 20px;
+            padding: 0 20px;
+        }
+
+        .boxTitle {
+            background: #FFDBDF;
+            border: 5px solid #FFC4C9;
+            border-radius: 20px;
+            padding: 0 10px;
+            width: max-content;
+            margin-bottom: 10px;
+        }
+
+        .text-exam-1,
+        .noteText .textLine.textLine-1 {
+            width: 930px;
+            top: 35px;
+            left: 300px;
+        }
+
+        .text-exam-2,
+        .noteText .textLine.textLine-2 {
+            top: 180px;
+            width: 1190px;
+        }
+
+        .text-exam-3,
+        .noteText .textLine.textLine-3 {
+            top: 320px;
+            width: 1190px;
+        }
+
+        .text-exam-4,
+        .noteText .textLine.textLine-4 {
+            top: 100px;
+            width: 1190px;
+        }
+
+        .text-exam-5,
+        .noteText .textLine.textLine-5 {
+            top: 240px;
+            width: 1190px;
+        }
+
+        .noteText .textareaWrap>p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 90px;
+        }
+
+        .noteText .textareaWrap>p::before {
+            content: '';
+            background: url('./images/duk_03_07_0003_201/star.png') no-repeat center / 100%;
+            width: 30px;
+            height: 30px;
+            transform: rotate(17deg);
+        }
+
+        .blueT>p {
+            background: #F7F7F7;
+            border-radius: 20px;
+            height: 60px;
+            position: absolute;
+            padding: 0 20px;
+        }
+
+        .buttonContainer {
+            right: 28px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue">실천 <em>쑥쑥</em></div>
+            <div class="title-text" style="letter-spacing: -1.3px;">모둠 친구들과 어떤 전시회를 열지 이야기를 나눠 보고, 가장 마음에
+                드는 활동으로 전시회를 계획해 봅시다.
+            </div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
+                                    <div class="tab-content-box">
+                                        <div class="tab-content group-speech group-speech-04">
+                                            <div class="char-box char-box-10 char-box-10_1" data-tail="tail-01"
+                                                data-tail-direction="br">
+                                                <div class="char-image left"></div>
+                                                <div class="balloon purple bottom">
+                                                    <span>준비물은 무엇일까?</span>
+                                                    <div class="close-speech-button"></div>
+                                                </div>
+                                            </div>
+                                            <div class="char-box char-box-11 char-box-11_1" data-tail="tail-01"
+                                                data-tail-direction="br">
+                                                <div class="char-image left"></div>
+                                                <div class="balloon yellow bottom">
+                                                    <span>전시회 제목은
+                                                        우리의 주제를<br>
+                                                        잘 전달할 수 있게
+                                                        지어야겠어.
+                                                    </span>
+                                                    <div class="close-speech-button"></div>
+                                                </div>
+                                            </div>
+                                            <div class="char-box char-box-12" data-tail="tail-01"
+                                                data-tail-direction="br">
+                                                <div class="char-image"></div>
+                                                <div class="balloon green bottom">
+                                                    <span>무엇을, 어떻게
+                                                        전시할지도<br>
+                                                        구체적으로 계획해 보자.
+                                                    </span>
+                                                    <div class="close-speech-button"></div>
+                                                </div>
+                                            </div>
+                                            <div class="char-box char-box-13" data-tail="tail-01"
+                                                data-tail-direction="br">
+                                                <div class="char-image"></div>
+                                                <div class="balloon purple bottom">
+                                                    <span>어떻게 준비할까?</span>
+                                                    <div class="close-speech-button"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="noteText noLine pink">
+                                        <div class="textareaWrap">
+                                            <div class="boxTitle">전시회 제목</div>
+                                            <input class="textLine afterDisplay textLine-1" type="text"
+                                                placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></input>
+                                            <p>누구와 함께 만들까요?</p>
+                                            <input class="textLine afterDisplay textLine-2" type="text"
+                                                placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></input>
+                                            <p>무엇을 전시할까요?</p>
+                                            <input class="textLine afterDisplay textLine-3" type="text"
+                                                placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></input>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p class="text-exam-1">생명 존중을 위한 마음가짐 팻말 전시회</p>
+                                                <p class="text-exam-2">3학년 ○반 ○모둠 친구들과 함께</p>
+                                                <p class="text-exam-3">모둠 친구들이 만든 생명 존중 팻말</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3" data-quiz="toggle">
+                                    <div class="noteText noLine pink">
+                                        <div class="textareaWrap">
+                                            <p>준비물은 무엇일까요?</p>
+                                            <input class="textLine afterDisplay textLine-4" type="text"
+                                                placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></input>
+                                            <p>어떻게 준비할까요?</p>
+                                            <input class="textLine afterDisplay textLine-5" type="text"
+                                                placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></input>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p class="text-exam-4">도화지, 색연필, 사인펜 등</p>
+                                                <p class="text-exam-5">일주일 동안 쉬는 시간과 점심시간에 모여서 팻말을 완성한다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image" data-popup-page="1" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            전시회를 더 잘하려면 무엇이 필요할까요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="1" data-hover="">
+                                                    <div class="answer" data-toggle-target="1">
+                                                        <div class="ls-2h">
+                                                            전시회를 할 때 학교 외벽 등을 활용해 외부 전시회를 열 수도 있고<br>
+                                                            가정과 가정이나 지역 사회와 연결된 전시회를 열 수 있습니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
