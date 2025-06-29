@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        .noteText {
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon yellow">생각 <em>탄탄</em></div>
+            <div class="title-text">활동 후 생각하고 느낀 점, 더 알고 싶은 점을 정리해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <a class="videoSubPlayBtn large youtube" data-youtube-id="IXjj669xHKU">“생명은 소중해”</a>
+                        <div class="noteText noteLine green">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p class="dot">식물이 나와는 다르지만 분명히 살아 있고 소중한 생명이라는 것</p>
+                                    <p class="dot">식물이 소중한 다른 까닭</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
