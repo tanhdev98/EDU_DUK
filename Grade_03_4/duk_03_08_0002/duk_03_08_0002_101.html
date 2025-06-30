@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        #wrap header {
+            align-items: start;
+        }
+
+        #wrap header .title-icon {
+            top: 10px;
+        }
+
+        /* page 1 */
+        .noteText {
+            text-indent: 40px;
+        }
+
+        .icon-char {
+            top: 20px;
+            right: 28px;
+        }
+
+        [data-popup-page="1"] {
+            top: 205px;
+            left: 340px;
+            width: 920px;
+        }
+
+        /* page 2 */
+        .contentsBox {
+            padding: 0;
+        }
+
+        .basicSlider[data-slide-container='main']>.basicSlider_slides>li:not(.page_2) {
+            padding: 20px 28px 0 28px;
+        }
+
+        .char-box-01 .balloon {
+            top: -180px;
+            left: -120px;
+        }
+
+        .char-box-02 .balloon {
+            top: -180px;
+            left: -170px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue">실천 <em>똑똑</em></div>
+            <div class="title-text">지혜네 반 친구들 이야기를 읽어 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="지혜네 반 친구들 이야기를 읽어 봅시다.">이야기</li>
+                    <li data-hover="" data-text="여러분도 지혜네 반 친구들처럼 다른 생명의 아픔에 공감해 본 적이 있나요?">물음</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="noteText noLine blue">
+                            지혜네 반 친구들은 생명의 소중함을 느끼고자 함께 텃밭을 가꾸며
+                            노력했습니다. 그러던 중 누군가 지혜네 반 식물을 일부러 꺾어 놓은
+                            흔적과 텃밭 주변의 나무에 써 놓은 낙서를 발견했습니다. 또 지나가던
+                            다른 반 아이들이 텃밭 주변에 사는 작은 벌레를 함부로 괴롭히는 모습도
+                            봤습니다. 이에 마음이 아팠던 지혜네 반 친구들은 사람들이 다른
+                            생명의 아픔에 공감할 수 있게 하는 활동을 하기로 했습니다.
+                        </div>
+                    </li>
+                    <li class="page_2">
+                        <div class="icon-char" data-hover="" data-popup-btn="1"></div>
+                        <div class="tab-content-box">
+                            <div class="tab-content group-speech group-speech-01">
+                                <div class="char-box char-box-01" data-tail="tail-01" data-tail-direction="br">
+                                    <div class="char-image left"></div>
+                                    <div class="balloon pink bottom">
+                                        <span>
+                                            주인 없이<br>
+                                            혼자 있는 강아지가<br>
+                                            외로워 보였어.
+                                        </span>
+                                        <div class="close-speech-button"></div>
+                                    </div>
+                                </div>
+                                <div class="char-box char-box-02" data-tail="tail-01" data-tail-direction="br">
+                                    <div class="char-image"></div>
+                                    <div class="balloon yellow bottom">
+                                        <span>
+                                            시든 식물을 보면<br>
+                                            꼭 나에게 목마르다고<br>
+                                            말하는 것 같아.
+                                        </span>
+                                        <div class="close-speech-button"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents">
+                        <p><ins class="dot"></ins>
+                            동물을 키우면서 동물의 슬픔, 배고픔 등에 공감해 보았거나, 식물이 시들거나 꺾여 있는 등의 모습을 보며 식물에게 공감했던 경험을 이야기할 수 있습니다.
+                        </p>
+                        <p><ins class="dot"></ins>
+                            주변의 곤충을 함부로 죽이거나 꽃이 핀 나뭇가지를 꺾은 이야기를 나누어 볼 수 있습니다.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

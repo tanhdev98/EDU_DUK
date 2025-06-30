@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        /* page 1 */
+        .page_1 .additional-question {
+            position: absolute;
+            right: 0;
+        }
+
+        .page_1>img {
+            width: 600px;
+            margin: auto;
+            margin-bottom: 30px;
+        }
+
+        .page_1 .thinkTail {
+            display: block !important;
+        }
+
+        .page_1 .balloon.purple {
+            background-color: #C8BFDE;
+            padding: 10px;
+            left: 310px;
+            top: 230px;
+            transform: rotate(-55deg) rotateY(180deg);
+        }
+
+        .page_1 .balloon.green {
+            background-color: #cee492;
+            border-color: #cee492;
+            padding: 10px;
+            right: 360px;
+            top: 230px;
+            transform: rotate(45deg);
+        }
+
+        .box_balloon {
+            width: 300px;
+            height: 100px;
+            border-radius: 20px;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .box_balloon.purple {
+            border: 4px solid #C8BFDE;
+            background-color: #F5EFFA;
+            top: 120px;
+            left: 70px;
+            width: 400px;
+        }
+
+        .box_balloon.green {
+            border: 4px solid #cee492;
+            background-color: #F5F7E7;
+            top: 120px;
+            right: 200px;
+        }
+
+        .click-finger-Btn.popBtn {
+            position: absolute;
+            bottom: -40px;
+            right: -20px;
+        }
+
+        .blinkOn.blinkOpacity {
+            animation: clickInduceMotion 1s 3 ease-in;
+            -webkit-animation: clickInduceMotion 1s 3 ease-in;
+        }
+
+        /* popup 1 */
+        .innerSlider_tabs>li {
+            background-color: #F3DEC0;
+        }
+
+        .innerSlider_tabs>li.on {
+            background-color: #F3B05B;
+        }
+
+        .innerButtonContainer {
+            position: absolute;
+            right: 40px;
+            top: 76px;
+        }
+
+        .innerButtonContainer::before {
+            display: none;
+        }
+
+        .popup_pages>li.image .basicSlider {
+            padding: 0;
+        }
+
+        .popup_pages .contentsBox .basicSlider_slides>li {
+            padding: 0;
+        }
+
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: fit-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+        }
+
+        [data-type="toggleButton"] {
+            height: fit-content;
+            margin-top: 70px;
+        }
+
+        [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            justify-content: center;
+        }
+
+        .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+            display: block;
+        }
+
+        .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+
+        /* popup 1 */
+        .popup_pages li:not(.min) h2 {
+            width: fit-content;
+            margin: 0 auto;
+            margin-top: -30px;
+        }
+
+        .title-box .title {
+            position: relative;
+            display: inline-flex;
+            font-family: 'YGJAL';
+            font-size: 25px;
+            color: #fff;
+            width: max-content;
+            line-height: unset;
+            min-height: unset;
+        }
+
+        .icon-char[data-popup-btn="5"],
+        .icon-char[data-popup-btn="4"] {
+            top: 50px;
+            right: 28px;
+        }
+
+        .min[data-popup-page="4"] {
+            top: 135px;
+            left: 415px;
+            width: 910px;
+            z-index: 3 !important;
+        }
+
+        .min[data-popup-page="5"] {
+            top: 135px;
+            left: 505px;
+            width: 820px;
+            z-index: 3 !important;
+        }
+
+        .full_content .flex {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .full_content .flex.column {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .full_content .titleBox {
+            width: 400px;
+            height: 130px;
+            border-radius: 20px;
+            border: 4px solid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .full_content .titleBox.blue {
+            background: #E9F4F8;
+            border-color: #B1D5F3;
+        }
+
+        .full_content .titleBox.orange {
+            background: #FCECD0;
+            border-color: #F9DAA5;
+        }
+
+        .full_content .flex.column>img {
+            width: 400px;
+            height: 100%;
+        }
+
+        [data-popup-page="2"] .full_content .noteText {
+            box-shadow: none;
+            padding: 33px 20px;
+            border: 4px solid;
+            border-radius: 20px;
+            width: 750px;
+        }
+
+        [data-popup-page="2"] .full_content .noteText::before {
+            content: '';
+            position: absolute;
+            clip-path: polygon(0 0, 0% 100%, 100% 0);
+            width: 40px;
+            height: 50px;
+            bottom: -50px;
+            right: 90px;
+        }
+
+        .full_content .noteText.blue::before {
+            background: #B1D5F3;
+        }
+
+        .full_content .noteText.blue {
+            background: #E9F4F8;
+            border-color: #B1D5F3;
+        }
+
+        .full_content .noteText.orange::before {
+            background: #F9DAA5;
+        }
+
+        .full_content .noteText.orange {
+            background: #FCECD0;
+            border-color: #F9DAA5;
+        }
+
+        .full_content .noteText:after {
+            display: none;
+        }
+
+        .full_content .inputBox>img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            position: absolute;
+            right: 200px;
+            bottom: 100px;
+        }
+
+        .full_content .buttonContainer {
+            right: 28px;
+        }
+
+        [data-popup-page="3"] .innerTab_3 img:nth-child(2),
+        [data-popup-page="3"] .innerTab_2 img:nth-child(2) {
+            height: 530px;
+            margin-top: 40px;
+        }
+
+        [data-popup-page="3"] .innerTab_3 img:nth-child(3),
+        [data-popup-page="3"] .innerTab_2 img:nth-child(3) {
+            position: absolute;
+            left: 40px;
+            width: 640px;
+            top: 38px;
+        }
+
+        [data-popup-page="3"] .noteText {
+            height: 60px;
+            box-shadow: none;
+            padding: 0;
+            width: 580px;
+            position: absolute;
+            top: 260px;
+            right: 50px;
+        }
+
+        [data-popup-page="3"] .noteText.area {
+            height: 230px;
+            top: 402px;
+        }
+
+        [data-popup-page="3"] .noteText.noLine .textareaWrap {
+            height: 100%;
+            padding: 0;
+        }
+
+        [data-popup-page="3"] .noteText .textLine {
+            padding: 0;
+            font-size: 25px;
+        }
+
+        [data-popup-page="3"] .noteText.area .textLine {
+            line-height: 54px;
+        }
+
+        [data-popup-page="3"] .noteText .text-exam.flex-wrap {
+            padding: 0;
+            font-size: 25px;
+        }
+
+        [data-popup-page="3"] .noteText.area .text-exam.flex-wrap .blueT {
+            line-height: 54px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue">실천 <em>쑥쑥</em></div>
+            <div class="title-text" style="letter-spacing: -2.4px;">지혜네 반 친구들처럼 다른 생명의 아픔에 공감하는 활동을 해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
+                        <img src="./images/duk_03_08_0002_201/img_01.jpg" alt="">
+                        <div class="balloon thinkTail deeppurple purple"></div>
+                        <div class="box_balloon purple">
+                            너의 목소리가 들려
+                            <span class="click-finger-Btn blinkOn blinkOpacity popBtn click1" data-popup-btn="2"
+                                data-targetSlideNum="1" data-hover=""></span>
+                        </div>
+                        <div class="balloon thinkTail deepgreen green"></div>
+                        <div class="box_balloon green">
+                            공감 뉴스
+                            <span class="click-finger-Btn blinkOn blinkOpacity popBtn click2" data-popup-btn="3"
+                                data-targetSlideNum="1" data-hover=""></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image" data-popup-page="1" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="innerButtonContainer">
+                                <ul class="innerSlider_tabs">
+                                    <li data-hover="" class="on">1</li>
+                                    <li data-hover="" class="">2</li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            인간 때문에 아파하고 있는 동식물에는
+                                            또 무엇이 있을까요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="1">
+                                                    <div class="answer" data-toggle-target="1">
+                                                        <div class="ls-2h">
+                                                            바닷 속 생물들이 인간이 버린 쓰레기를 먹고 아파합니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            인간이 동식물에게 아픔을 느끼게 하는 것처럼<br>
+                                            누군가가 우리에게 아픔을 준다면 어떤 마음이 들까요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton" style="margin-top: 40px;">
+                                                <div class="toggle examBtn box" data-toggle-obj="2"
+                                                    style="justify-content: start;">
+                                                    <div class="answer" data-toggle-target="2">
+                                                        <div class="ls-2h">
+                                                            <p class="dot">몹시 속상한 마음이 들 것 같습니다.</p>
+                                                            <p class="dot">화가 날 것 같습니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="fullLine whole image" data-popup-page="2" style="transition: none;">
+                    <div class="full_content whole image pointContainer">
+                        <div class="basicSlider" data-slide-container="popup">
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <h2>너의 목소리가 들려</h2>
+                                    <div class="icon-char" data-hover="" data-popup-btn="4"></div>
+                                    <div class="title-box">
+                                        <div class="title">활동 방법</div>
+                                    </div>
+                                    <ul class="how-to-play">
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                1
+                                            </div>
+                                            <div class="text">
+                                                만약에 내가 괴롭힙을 당하는 동식물이라면 마음이 어떨지 상상해
+                                                봅니다.
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                2
+                                            </div>
+                                            <div class="text">
+                                                만약에 괴롭힘을 당하는 동식물이 말을 할 수 있다면 어떤 말을 할지
+                                                생각해 봅니다.
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                3
+                                            </div>
+                                            <div class="text">
+                                                만약에 내가 괴롭힘을 당하는 동식물이라면 하고 싶은 말을 말풍선에
+                                                적어 봅니다.
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                4
+                                            </div>
+                                            <div class="text">
+                                                여러분이 상상하여 적은 말풍선의 내용을 친구들 앞에서 실감 나게
+                                                발표해 봅니다.
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <h2>너의 목소리가 들려</h2>
+                                    <div class="flex">
+                                        <div class="flex column">
+                                            <div class="titleBox blue">
+                                                누군가 장난으로<br>
+                                                꺾은 꽃
+                                            </div>
+                                            <img src="./images/duk_03_08_0002_201/img_02.png" alt="">
+                                        </div>
+                                        <div class="inputBox">
+                                            <div class="noteText noteLine blue">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        <p>건강하게 잘 자라고 싶어요.</p>
+                                                        <p>저를 가지고 장난치지 말아 주세요.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <img src="./images/duk_03_08_0002_201/img_08.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3" data-quiz="toggle">
+                                    <h2>너의 목소리가 들려</h2>
+                                    <div class="flex">
+                                        <div class="flex column">
+                                            <div class="titleBox orange">
+                                                아이들이 장난삼아<br>
+                                                괴롭히는 작은 벌레
+                                            </div>
+                                            <img src="./images/duk_03_08_0002_201/img_03.png" alt="">
+                                        </div>
+                                        <div class="inputBox">
+                                            <div class="noteText noteLine orange">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        <p>저는 안전하게 살고 싶어요.</p>
+                                                        <p>죽고 싶지 않아요.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <img src="./images/duk_03_08_0002_201/img_09.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="fullLine whole image" data-popup-page="3" style="transition: none;">
+                    <div class="full_content">
+                        <div class="basicSlider" data-slide-container="popup">
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <h2>공감 뉴스</h2>
+                                    <div class="icon-char" data-hover="" data-popup-btn="5"></div>
+                                    <div class="title-box">
+                                        <div class="title">활동 방법</div>
+                                    </div>
+                                    <ul class="how-to-play">
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                1
+                                            </div>
+                                            <div class="text">
+                                                만약에 식물이 감정을 느낄 수 있다면 사람들이 식물을 괴롭힐 때
+                                                어떤 감정일지 생각해 봅니다.
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="bullet number orange inline">
+                                                2
+                                            </div>
+                                            <div class="text">
+                                                식물의 감정이 드러나도록 공감 뉴스를 만들고 기자가 되어 친구들
+                                                앞에서 발표해 봅니다.
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <h2>공감 뉴스</h2>
+                                    <img src="./images/duk_03_08_0002_201/img_04.png" alt="">
+                                    <img src="./images/duk_03_08_0002_201/img_05.png" alt="">
+                                </li>
+                                <li class="innerTab_3" data-quiz="toggle">
+                                    <h2>공감 뉴스</h2>
+                                    <img src="./images/duk_03_08_0002_201/img_06.png" alt="">
+                                    <img src="./images/duk_03_08_0002_201/img_07.png" alt="">
+                                    <div class="noteText noLine">
+                                        <div class="textareaWrap">
+                                            <input class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></input>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p>산호 백화 현상으로 아름다운 색깔을 잃은 산호초의 모습</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="noteText noLine area">
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p>백화 현상은 다양한 빛깔의 산호가 색을 잃고 하얗게
+                                                    변하는 현상입니다. 산호에게 마음이 있다면 아름다운
+                                                    색깔을 잃어 매우 슬플 것입니다. 또한 산호에 살던
+                                                    물고기들도 살 곳을 잃어 매우 힘들지 않을까요?
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="min" data-popup-page="4" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents">
+                        <p>
+                            괴롭힘을 당하는 동식물 입장이 되어 말풍선에 들어갈 말을 적을 때 욕설, 비속어 등을 사용하지 않습니다.
+                        </p>
+                    </div>
+                </li>
+                <li class="min" data-popup-page="5" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents">
+                        <p>
+                            공감 뉴스를 영상으로 만들어 누리집에 올려 봐도 좋습니다.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+
+            $(document).on('click', '.additional-question', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs>li', function () {
+                KmAudioPlayer.buttonClick();
+            });
+
+            $(document).on('click', '.popup_closeBtn', function () {
+                $('.click-finger-Btn.popupOn').trigger('click');
+            });
+
+            $(document).on('click', '.icon-char', function () {
+                $(this).parents('.whole').addClass('on');
+            })
+
+            $(document).on('click', '.popup_closeBtn, .basicSlider_circle_tabs > *, .basicSlider_btn', function () {
+                $('.popup_pages > li.min').removeClass('on');
+            });
+        });
+    </script>
+</body>
+
+</html>
