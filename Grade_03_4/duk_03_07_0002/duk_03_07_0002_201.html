@@ -19,8 +19,227 @@
             top: 10px;
         }
 
+        /* page 1 */
         .title-text>span {
             margin-right: -20px;
+        }
+
+        .noteText {
+            height: 130px;
+            padding: 0;
+            box-shadow: none;
+        }
+
+        .noteText:after {
+            display: none;
+        }
+
+        .noteText .textLine {
+            padding: 0;
+        }
+
+        .noteText.noLine .textareaWrap {
+            height: 100%;
+            padding: 0;
+        }
+
+        .noteText .text-exam.flex-wrap {
+            padding: 0;
+            text-align: start;
+        }
+
+        .blueT {
+            margin-top: 0;
+        }
+
+        .content-01 {
+            margin-bottom: 20px;
+        }
+
+        /* page 2 */
+        .page_2 .innerTab_1>img {
+            width: 880px;
+            margin: auto;
+            margin-bottom: 60px;
+        }
+
+        .speech {
+            content: "";
+            display: block;
+            width: 64px;
+            height: 64px;
+            position: absolute;
+            z-index: 4;
+            pointer-events: auto;
+            background: url(../ko/contents/images/button/btn_speech_balloon_left1.png) no-repeat;
+            cursor: pointer;
+        }
+
+        .speech-right {
+            background: url(../ko/contents/images/button/btn_speech_balloon_right1.png) no-repeat;
+            transform: scaleX(-1);
+        }
+
+        .speech-left:hover {
+            background: url(../ko/contents/images/button/btn_speech_balloon_left1_hover.png) no-repeat;
+        }
+
+        .speech-right:hover {
+            background: url(../ko/contents/images/button/btn_speech_balloon_right1_hover.png) no-repeat;
+            transform: scaleX(-1);
+        }
+
+        .speech-left[data-popup="1"] {
+            top: 50px;
+            left: 200px;
+            transform: scaleX(-1);
+        }
+
+        .speech-left[data-popup="2"] {
+            top: 0;
+            left: 410px;
+            transform: scaleX(-1);
+        }
+
+        .speech-right {
+            top: 60px;
+            right: 245px;
+        }
+
+        .text-box {
+            padding: 5px 15px;
+            border-radius: 15px;
+            position: absolute;
+            display: none;
+            text-align: center;
+        }
+
+        .text-box.yellow {
+            background-color: #FDF3E7;
+            border: 4px solid #FFD89E;
+        }
+
+        .text-box.yellow:after {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-color: #FFD89E;
+            clip-path: polygon(50% 0, 0 100%, 100% 100%);
+            left: 50%;
+            top: -60px;
+            transform: translate(-50%, 100%);
+            position: absolute;
+        }
+
+        .text-box.green {
+            background-color: #F5F7E5;
+            border: 4px solid #D7DEA3;
+        }
+
+        .text-box.green:after {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-color: #D7DEA3;
+            clip-path: polygon(50% 0, 0 100%, 100% 100%);
+            left: 50%;
+            top: -60px;
+            transform: translate(-50%, 100%);
+            position: absolute;
+        }
+
+        .text-box.pink {
+            background-color: #FFEEF3;
+            border: 4px solid #f7c1c9;
+        }
+
+        .text-box.pink:after {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-color: #f7c1c9;
+            clip-path: polygon(50% 0, 0 100%, 100% 100%);
+            left: 50%;
+            top: -60px;
+            transform: translate(-50%, 100%);
+            position: absolute;
+        }
+
+        .text-1 {
+            top: 310px;
+            left: 40px;
+        }
+
+        .text-2 {
+            top: 200px;
+            left: 330px;
+        }
+
+        .text-3 {
+            top: 340px;
+            right: 110px;
+        }
+
+        /* innerPage 2 */
+        .page_2 .innerTab_2 .bg {
+            width: 100%;
+            height: 490px;
+            border-radius: 70px;
+            background: #FCF1AF;
+            padding: 20px 40px 20px 70px;
+            position: relative;
+        }
+
+        .page_2 .innerTab_2 .bg::before {
+            content: '';
+            background: url('./images/duk_03_07_0002_201/img_02.png') no-repeat center / 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 80px;
+        }
+
+        .page_2 .noteText {
+            height: 60px;
+            display: inline-block;
+            border-bottom: 1px solid #ddd;
+            border-radius: 0;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        .page_2 .dot {
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border: 5px solid #000;
+            border-radius: 50%;
+            background-color: #000;
+            margin: 0 13px 10px 0;
+            box-sizing: border-box;
+            display: inline-flex;
+        }
+
+        .page_2 .bg ul li.flex {
+            display: flex;
+            align-items: end;
+        }
+
+        .page_2 .bg ul li:not(.flex) {
+            margin-top: 20px;
+        }
+
+        .page_2 .bg ul li:first-child {
+            margin: 0;
+        }
+
+        .page_2 .blueT {
+            margin-top: -1px;
         }
     </style>
 </head>
@@ -41,7 +260,7 @@
                     <li data-hover="" data-text="이 밖에도 디지털 사회의 도덕 문제에는 어떤 것이 더 있을까요?" data-gap="true">활동 2</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
-                    <li class="page_1">
+                    <li class="page_1" data-quiz="toggle">
                         <div class="tab-content content-01">
                             <div class="table-box color-04">
                                 <table>
@@ -51,14 +270,41 @@
                                     </tr>
                                     <tr>
                                         <td>
+                                            <div class="noteText noLine">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        <p>다친 강아지를 도와주는 모습</p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </td>
                                         <td>
+                                            <div class="noteText noLine">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        <p>동물도 소중한 생명이기
+                                                            때문입니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </td>
                                     </tr>
                                 </table>
                             </div>
                         </div>
-                        <div class="tab-content content-01">
+                        <div class="tab-content content-02">
                             <div class="table-box color-03 ">
                                 <table class="table">
                                     <tbody>
@@ -68,13 +314,43 @@
                                         </tr>
                                         <tr>
                                             <td>
+                                                <div class="noteText noLine">
+                                                    <div class="textareaWrap">
+                                                        <textarea class="textLine afterDisplay" type="text"
+                                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                            onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                            spellcheck="false"></textarea>
+                                                    </div>
+                                                    <div class="text-exam flex-wrap">
+                                                        <div class="blueT">
+                                                            <p>연못에 쓰레기를 버리는 모습</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </td>
                                             <td>
+                                                <div class="noteText noLine">
+                                                    <div class="textareaWrap">
+                                                        <textarea class="textLine afterDisplay" type="text"
+                                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                            onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                            spellcheck="false"></textarea>
+                                                    </div>
+                                                    <div class="text-exam flex-wrap">
+                                                        <div class="blueT">
+                                                            <p>연못에 쓰레기를 버리면 물이
+                                                                오염되기 때문입니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
                         </div>
                     </li>
                     <li class="page_2">
@@ -89,10 +365,81 @@
                             </div>
                             <ul class="basicSlider_slides" data-slides="">
                                 <li class="innerTab_1" data-quiz="toggle">
-
+                                    <img src="./images/duk_03_07_0002_201/img_01.png" alt="">
+                                    <div class="speech speech-left" data-popup="1"></div>
+                                    <div class="speech speech-left" data-popup="2"></div>
+                                    <div class="speech speech-right" data-popup="3"></div>
+                                    <div class="text-box yellow text-1" data-show="1">
+                                        다른 생명체를 도울 때는<br>
+                                        상대가 원하는 방식으로<br>
+                                        도와야겠지?
+                                    </div>
+                                    <div class="text-box green text-2" data-show="2">
+                                        생명을 존중하려면<br>
+                                        어떤 마음을 지녀야 할까?
+                                    </div>
+                                    <div class="text-box pink text-3" data-show="3">
+                                        그러면 내가 좋아하는<br>
+                                        간식을 강아지한테 주면<br>
+                                        안 되는 건가?
+                                    </div>
                                 </li>
                                 <li class="innerTab_2" data-quiz="toggle">
-
+                                    <div class="bg">
+                                        <ul>
+                                            <li><ins class="dot"></ins>사람의 생명을 존중하려면</li>
+                                            <li class="flex">
+                                                <div class="noteText noLine">
+                                                    <div class="textareaWrap">
+                                                        <input class="textLine afterDisplay" type="text"
+                                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                            onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                            spellcheck="false"></input>
+                                                    </div>
+                                                    <div class="text-exam flex-wrap">
+                                                        <div class="blueT">
+                                                            <p>그 사람이 원할 때 도와줘야 합니다</p>
+                                                        </div>
+                                                    </div>
+                                                </div>.
+                                            </li>
+                                            <li><ins class="dot"></ins>동물이나 식물의 생명을 존중하려면</li>
+                                            <li class="flex">
+                                                <div class="noteText noLine">
+                                                    <div class="textareaWrap">
+                                                        <input class="textLine afterDisplay" type="text"
+                                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                            onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                            spellcheck="false"></input>
+                                                    </div>
+                                                    <div class="text-exam flex-wrap">
+                                                        <div class="blueT">
+                                                            <p>동식물에게 좋은 것을 해 줘야 합니다</p>
+                                                        </div>
+                                                    </div>
+                                                </div>.
+                                            </li>
+                                            <li><ins class="dot"></ins>생명을 존중하려면 우리는</li>
+                                            <li class="flex">
+                                                <div class="noteText noLine">
+                                                    <div class="textareaWrap">
+                                                        <input class="textLine afterDisplay" type="text"
+                                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                            onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                            spellcheck="false"></input>
+                                                    </div>
+                                                    <div class="text-exam flex-wrap">
+                                                        <div class="blueT">
+                                                            <p>상대를 배려하고 존중하는</p>
+                                                        </div>
+                                                    </div>
+                                                </div><span style="white-space: nowrap;">마음을 지녀야 합니다.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -135,6 +482,23 @@
                 } else {
                     $('header').removeClass('gap');
                 }
+            });
+
+            $(document).on('click', '.speech', function () {
+                KmAudioPlayer.buttonClick();
+                $('.page_2 .speech').show();
+                $('.page_2 .text-box').hide();
+                var $data_popup = $(this).attr('data-popup');
+                $('.page_2 .text-box[data-show="' + $data_popup + '"]').show().append('<div class="close-speech-button"></div>');
+                $(this).hide();
+            });
+
+            $(document).on('click', '.close-speech-button', function () {
+                var _id = $(this).parent().attr('data-show');
+                console.log(_id);
+                $(this).parent().hide();
+                $(`[data-popup=${_id}]`).show().removeClass('ans');
+                $(this).remove();
             });
         });
     </script>

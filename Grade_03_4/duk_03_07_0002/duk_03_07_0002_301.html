@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        /* page 1 */
+        .page_1 .howtoBox .pic-box {
+            overflow: unset;
+        }
+
+        .page_1 .flex {
+            display: flex;
+            gap: 20px;
+        }
+
+        .page_1 .flex .howtoBox {
+            width: 100%;
+            margin-top: 70px;
+        }
+
+        .page_1 .flex .howtoBox .text-box {
+            text-align: center;
+            padding: 0;
+            position: relative;
+        }
+
+        .page_1 .titleText {
+            background: url('./images/duk_03_07_0002_301/img_01.png') no-repeat center / 100%;
+            width: 130px;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: -60px;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* innerPage 2 */
+        .page_1 .noteText {
+            box-shadow: none;
+            padding: 0;
+            height: 310px;
+        }
+
+        .page_1 .noteText .textLine {
+            padding: 0;
+        }
+
+        .page_1 .noteText .text-exam.flex-wrap {
+            padding: 0;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+
+        .page_1 .tab-content {
+            margin-top: 60px;
+        }
+
+        /* page 2 */
+        .page_2 .items {
+            padding: 0 28px;
+            margin-bottom: 20px;
+        }
+
+        .page_2 .items .item {
+            position: relative;
+        }
+
+        .page_2 .items .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 30px;
+            left: -30px;
+            transform: translateY(-50%);
+        }
+
+        /* popup */
+        .pointContainer .pointTitle {
+            display: block;
+            text-align: center;
+        }
+
+        .pointContainer .pointTitle .titleText {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 45px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #ff6600;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+        }
+
+        .pointContainer .pointTitle .titleText:after,
+        .pointContainer .pointTitle .titleText:before {
+            position: absolute;
+            top: 0px;
+            height: 50px;
+            font-size: 40px;
+            line-height: 50px;
+            font-family: YGJAL;
+            color: #e4caa9;
+        }
+
+        .pointContainer .pointTitle .titleText:after {
+            content: "[";
+            left: -20px;
+        }
+
+        .pointContainer .pointTitle .titleText:before {
+            content: "]";
+            right: -20px;
+        }
+
+        [data-type="toggleButton"] {
+            position: absolute;
+            height: auto;
+            top: 200px;
+            width: max-content;
+        }
+
+        .toggle-1 {
+            left: 50px;
+        }
+
+        .toggle-2 {
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .toggle-3 {
+            right: 50px;
+        }
+
+        .toggle .answer {
+            margin: auto;
+            text-align: center;
+        }
+
+        .box.pink {
+            background-color: #FED1D7;
+        }
+
+        .box.blue {
+            background-color: #E1F2F7;
+        }
+
+        .box.green {
+            background-color: #EFF7BD;
+        }
+
+        .toggle.box {
+            width: 400px;
+            height: 200px;
+            border-radius: 8px;
+            text-align: center;
+            box-sizing: border-box;
+            font-family: 'YGJAL';
+        }
+
+        .btn-praise.popBtn {
+            position: absolute;
+            right: -28px;
+            top: 350px;
+        }
+
+        .pointContainer .dapCheckBtn {
+            right: 28px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue">실천 <em>탄탄</em></div>
+            <div class="title-text">생명 존중을 실천하는 사례를 찾아봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="생명 존중을 실천하는 사례를 찾아봅시다.">사례</li>
+                    <li data-hover="" data-text="위의 사례를 살펴본 뒤 다음을 생각해 봅시다.">물음</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="flex">
+                                        <div class="how-to-box howtoBox">
+                                            <div class="pic-box">
+                                                <div class="titleText">사람</div>
+                                                <div class="image-box">
+                                                    <div class="imageWrap">
+                                                        <img src="./images/duk_03_07_0002_301/img_02.jpg">
+                                                    </div>
+                                                </div>
+                                                <div class="text-box">
+                                                    응급 구조 중인<br>
+                                                    119 구급 대원
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="how-to-box howtoBox">
+                                            <div class="pic-box">
+                                                <div class="titleText">단체</div>
+                                                <div class="image-box">
+                                                    <div class="imageWrap">
+                                                        <img src="./images/duk_03_07_0002_301/img_03.png"
+                                                            style="width: 290px; object-fit: contain; margin-top: 30px;">
+                                                    </div>
+                                                </div>
+                                                <div class="text-box">
+                                                    몸이 아픈 사람을 돕는<br>
+                                                    의사 단체
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="how-to-box howtoBox">
+                                            <div class="pic-box">
+                                                <div class="titleText">시설</div>
+                                                <div class="image-box">
+                                                    <div class="imageWrap">
+                                                        <img src="./images/duk_03_07_0002_301/img_04.jpg">
+                                                    </div>
+                                                </div>
+                                                <div class="text-box">
+                                                    여러 식물을 보존하는<br>
+                                                    국립생태원
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="tab-content content-01">
+                                        <div class="table-box color-01 ">
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>사람</th>
+                                                        <th>단체</th>
+                                                        <th>시설</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="noteText noLine">
+                                                                <div class="textareaWrap">
+                                                                    <textarea class="textLine afterDisplay" type="text"
+                                                                        placeholder="직접 쓰기" data-input-obj=""
+                                                                        data-answer=" " onfocus=""
+                                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                                        spellcheck="false"></textarea>
+                                                                </div>
+                                                                <div class="text-exam flex-wrap">
+                                                                    <div class="blueT">
+                                                                        <p>의사, 간호사,<br>
+                                                                            응급 구조사</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="noteText noLine">
+                                                                <div class="textareaWrap">
+                                                                    <textarea class="textLine afterDisplay" type="text"
+                                                                        placeholder="직접 쓰기" data-input-obj=""
+                                                                        data-answer=" " onfocus=""
+                                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                                        spellcheck="false"></textarea>
+                                                                </div>
+                                                                <div class="text-exam flex-wrap">
+                                                                    <div class="blueT">
+                                                                        <p>유엔(UN) 등<br>
+                                                                            국제 기구</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="noteText noLine">
+                                                                <div class="textareaWrap">
+                                                                    <textarea class="textLine afterDisplay" type="text"
+                                                                        placeholder="직접 쓰기" data-input-obj=""
+                                                                        data-answer=" " onfocus=""
+                                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                                        spellcheck="false"></textarea>
+                                                                </div>
+                                                                <div class="text-exam flex-wrap">
+                                                                    <div class="blueT">
+                                                                        <p>국립 수목원,<br>
+                                                                            국립 공원</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="page_2">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="items">
+                                        <div class="item">
+                                            생명 존중을 실천하는 모습에서 배울 점은 무엇인가요?
+                                        </div>
+                                    </div>
+                                    <div class="noteText noteLine orange">
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p>생명을 존중히 대하는 모습, 다른 사람을 배려하는 모습을 배울 수 있습니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="items">
+                                        <div class="item">
+                                            생명 존중을 실천할 때 지녀야 할 마음가짐과 태도를 이야기해 봅시다.
+                                        </div>
+                                    </div>
+                                    <div class="noteText noteLine pink" style="width: 95%;">
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p>다른 생명을 존중하고 나만 생각하지 않는 마음가짐과 태도가 필요합니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                    <div class="btn-praise right popBtn footer-item" data-popup-btn="1">
+                                        <div class="item-title">우리<br>배움</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image pointContainer" data-popup-page="1">
+                    <div class="full_content">
+                        <div class="basicSlider " data-slide-container="">
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1 on" data-quiz="toggle">
+                                    <div class="pointTitle">
+                                        <div class="titleText">생명 존중 방법</div>
+                                    </div>
+
+                                    <div data-type="toggleButton" class="toggle-1">
+                                        <div class="toggle box pink" data-toggle-obj="1">
+                                            <div class="answer" data-toggle-target="1">
+                                                <span>그 사람이<br>
+                                                    원할 때<br>
+                                                    도와줘야 합니다.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div data-type="toggleButton" class="toggle-2">
+                                        <div class="toggle box green" data-toggle-obj="2">
+                                            <div class="answer" data-toggle-target="2">
+                                                <span>동식물에게<br>
+                                                    좋은 것을<br>
+                                                    해 줘야 합니다.
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-type="toggleButton" class="toggle-3">
+                                        <div class="toggle box blue" data-toggle-obj="3">
+                                            <div class="answer" data-toggle-target="3">
+                                                <span>상대를 배려하고<br>
+                                                    존중하는 마음을<br>
+                                                    지녀야 합니다.
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <button class="dapCheckBtn" data-answer-btn=""></button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+
+            // toggle
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    dapCheckBtn.addClass('reset');
+                } else {
+                    dapCheckBtn.removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!dapCheckBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
+            });
+
+            $(document).on('click', '.btn-praise', function () {
+                $('[data-type="toggleButton"][data-active="on"] .toggle').addClass('complete');
+                if ($('.innerTab_1 [data-type="toggleButton"][data-active="on"]').length == 3) {
+                    $('.innerTab_1 .dapCheckBtn').addClass('reset');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
