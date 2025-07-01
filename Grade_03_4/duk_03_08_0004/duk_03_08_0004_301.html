@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        #wrap header {
+            align-items: start;
+        }
+
+        #wrap header .title-icon {
+            top: 10px;
+        }
+
+        .noteText {
+            width: 95%;
+        }
+
+        .blueT {
+            margin-top: 60px;
+        }
+
+        /* popup */
+        .pointContainer .pointTitle {
+            text-align: center;
+        }
+
+        .pointContainer .pointTitle .titleText {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 45px;
+            line-height: 50px;
+            font-family: 'YGJAL';
+            color: #ff6600;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+        }
+
+        .pointContainer .pointTitle .titleText:after,
+        .pointContainer .pointTitle .titleText:before {
+            position: absolute;
+            top: 0px;
+            height: 50px;
+            font-size: 40px;
+            line-height: 50px;
+            font-family: 'YGJAL';
+            color: #e4caa9;
+        }
+
+        .pointContainer .pointTitle .titleText:after {
+            content: "[";
+            left: -20px;
+        }
+
+        .pointContainer .pointTitle .titleText:before {
+            content: "]";
+            right: -20px;
+        }
+
+        .popup_pages .cho {
+            background-color: transparent;
+        }
+
+        .popup_pages .choWrap {
+            text-align: left;
+        }
+
+
+        .popup_pages .items .item {
+            position: relative;
+        }
+
+        .popup_pages .items .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 33px;
+            left: -8px;
+            transform: translateY(-50%);
+        }
+
+        .cho .choBox {
+            margin-left: 0;
+        }
+
+        .popup_pages .buttonContainer {
+            bottom: 20px;
+            right: 28px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon pink">마음 <em>탄탄</em></div>
+            <div class="title-text">더 나은 세상을 만들려면 어떤 사람이 되어야 할지 그동안 느낀 마음을 바탕으로 자신의 다짐을 표현해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="btn-praise right popBtn footer-item" data-popup-btn="1"
+                            style="right: -28px; top: 300px;">
+                            <div class="item-title">핵심<br>정리</div>
+                        </div>
+                        <div class="noteText noteLine pink">
+                            <p style="padding: 0 20px;">나의 마음과 다짐</p>
+                            <div class="textareaWrap" style="margin-top: 6px;">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p>나는 다른 생명을 사랑하는 사람이 될 거예요. 텃밭 가꾸기를 하면서
+                                        우리를 살 수 있게 해 주는 다른 생명체에 고마웠고, 한편으로는 미안
+                                        하기도 했어요. 앞으로 더 나은 세상을 만들도록 다른 생명을 사랑
+                                        하겠어요.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image pointContainer" data-popup-page="1" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="pointTitle">
+                            <div class="titleText">생명을 지키고 돌보는 사람들의 마음은 어떨까요?</div>
+                            <div class="items" style="margin-top: 100px;margin-left: 53px;">
+                                <div class="item">
+                                    <div class="cho">
+                                        <div class="choWrap">
+                                            생명을 <div class="choBox">
+                                                <span class="dir-rect" data-cho="ㅈ" data-letter="지"></span>
+                                                <span class="dir-rect" data-cho="ㅋ" data-letter="키"></span>
+                                                <span class="dir-rect" data-cho="ㄱ" data-letter="고"
+                                                    style="margin-right: 10px;"></span>
+                                                <span class="dir-rect" data-cho="ㄷ" data-letter="돌"></span>
+                                                <span class="dir-rect" data-cho="ㅂ" data-letter="보"></span>
+                                                <span class="dir-rect" data-cho="ㄴ" data-letter="는"></span>
+                                            </div> 사람들은 일을 통해 보람과 뿌듯함을<br> 느낍니다.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="cho">
+                                        <div class="choWrap">
+                                            다른 생명을 사랑하고 보호하면서, <div class="choBox">
+                                                <span class="dir-rect" data-cho="ㄷ" data-letter="더"
+                                                    style="margin-right: 10px;"></span>
+                                                <span class="dir-rect" data-cho="ㄴ" data-letter="나"></span>
+                                                <span class="dir-rect" data-cho="ㅇ" data-letter="은"
+                                                    style="margin-right: 10px;"></span>
+                                                <span class="dir-rect" data-cho="ㅅ" data-letter="세"></span>
+                                                <span class="dir-rect" data-cho="ㅅ" data-letter="상"></span>
+                                            </div>을 만들어야<br> 합니다.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="dapCheckBtn" data-answer-btn=""></button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+
+            let numActive = 0;
+
+            $(document).on('click', '.choBox', function () {
+                if (!$(this).hasClass('active')) {
+                    $(this).addClass('active');
+                } else {
+                    $(this).removeClass('active');
+                }
+                numItem = $(this).parents('[data-quiz="toggle"]').find('.choBox').length;
+                numActive = $(this).parents('[data-quiz="toggle"]').find('.choBox.active').length;
+                console.log(numActive);
+                if (numActive === numItem) {
+                    $(this).parents('[data-quiz="toggle"]').find('.dapCheckBtn').addClass('reset');
+                } else {
+                    $(this).parents('[data-quiz="toggle"]').find('.dapCheckBtn').removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                let choBox = $(this).parent().parent().find('.choBox');
+                if (!$(this).hasClass('reset')) {
+                    $(this).removeClass('reset');
+                    choBox.removeClass('active');
+                    choBox.find('.dir-rect').removeClass('on');
+                    choBox.find('.dir-rect').each(function () {
+                        let dataCho = $(this).data('cho');
+                        $(this).text(dataCho);
+                    })
+                } else {
+                    $(this).addClass('reset');
+                    choBox.addClass('active');
+                    choBox.find('.dir-rect').addClass('on');
+                    choBox.find('.dir-rect').each(function () {
+                        let dataLetter = $(this).data('letter');
+                        $(this).text(dataLetter);
+                    })
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

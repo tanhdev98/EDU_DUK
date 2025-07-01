@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        /* page 1 */
+        .page_1 .noteText {
+            text-indent: 40px;
+        }
+
+        /* page 2 */
+        .page_2 .flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .page_2 .additional-question {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .page_2 .flex .items .box {
+            width: 600px;
+            height: 430px;
+            border-radius: 50px;
+            padding: 40px 20px 20px;
+            position: relative;
+        }
+
+        .page_2 .flex .items .box .title {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            text-align: center;
+        }
+
+        .box.green {
+            background: #F5F7E7;
+        }
+
+        .box.green .title {
+            color: #00B050;
+        }
+
+        .box.pink {
+            background: #FBF2F5;
+        }
+
+        .box.pink .title {
+            color: #FF6284;
+        }
+
+        .box.blue {
+            background: #F3F9FC;
+        }
+
+        .box.blue .title {
+            color: #0070C0;
+        }
+
+        .box.orange {
+            background: #FEF9E7;
+        }
+
+        .box.orange .title {
+            color: #FF9800;
+        }
+
+        .page_2 .noteText {
+            background: #fff;
+            box-shadow: none;
+            padding: 20px;
+            height: 330px;
+            margin-top: 40px;
+            border-radius: 50px;
+        }
+
+        .noteText.noLine .textareaWrap {
+            height: calc(100% - 50px);
+            padding: 0;
+        }
+
+        .noteText.noLine .textareaWrap .textLine {
+            padding: 0;
+        }
+
+        .noteText .text-exam.flex-wrap {
+            padding: 0 20px;
+            top: 72px;
+            height: auto;
+        }
+
+        /* popup */
+        .innerSlider_tabs>li {
+            background-color: #F3DEC0;
+        }
+
+        .innerSlider_tabs>li.on {
+            background-color: #F3B05B;
+        }
+
+        .innerButtonContainer {
+            position: absolute;
+            right: 40px;
+            top: 76px;
+        }
+
+        .innerButtonContainer::before {
+            display: none;
+        }
+
+        .popup_pages>li.image .basicSlider {
+            padding: 0;
+        }
+
+        .popup_pages .contentsBox .basicSlider_slides>li {
+            padding: 0;
+        }
+
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: fit-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+        }
+
+        [data-type="toggleButton"] {
+            height: fit-content;
+            margin-top: 60px;
+        }
+
+        [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            justify-content: center;
+        }
+
+        .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon pink">마음 <em>똑똑</em></div>
+            <div class="title-text">지혜네 반 친구들 이야기를 읽어 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="지혜네 반 친구들 이야기를 읽어 봅시다.">이야기</li>
+                    <li data-hover="" data-text="여러분이 알고 있는 ‘생명을 지키고 돌보는 사람’에는 누가 있나요?" data-gap="true">물음</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="noteText noLine pink">
+                            지혜네 반 친구들은 텃밭을 가꾸면서 생명을 지키고 돌보는 일의
+                            어려움을 느꼈습니다. 그래서 우리 주변에서 생명을 지키고 돌보는
+                            사람들을 찾아보고, 그 사람들의 마음을 알고자 가상 면담을 해 보기로
+                            했습니다.
+                        </div>
+                    </li>
+                    <li class="page_2">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="popBtn additional-question" data-popup-btn="1">
+                                        추가 질문</div>
+                                    <div class="flex">
+                                        <div class="items">
+                                            <div class="box green">
+                                                <div class="title">식물</div>
+                                                <div class="noteText noLine">
+                                                    <p>식물 관리사</p>
+                                                    <div class="textareaWrap">
+                                                        <textarea class="textLine afterDisplay" type="text"
+                                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                            onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                            spellcheck="false"></textarea>
+                                                    </div>
+                                                    <div class="text-exam flex-wrap">
+                                                        <div class="blueT">
+                                                            <p>
+                                                                식물원에서 일하는 분들
+                                                                산을 관리하는 공무원
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="items">
+                                            <div class="box pink">
+                                                <div class="title">동물</div>
+                                                <div class="noteText noLine">
+                                                    <p>수의사</p>
+                                                    <div class="textareaWrap">
+                                                        <textarea class="textLine afterDisplay" type="text"
+                                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                            onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                            spellcheck="false"></textarea>
+                                                    </div>
+                                                    <div class="text-exam flex-wrap">
+                                                        <div class="blueT">
+                                                            <p>
+                                                                동물 보호 단체에서 일하는
+                                                                분들
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="flex">
+                                        <div class="items">
+                                            <div class="box blue">
+                                                <div class="title">사람</div>
+                                                <div class="noteText noLine">
+                                                    <p>소방대원</p>
+                                                    <div class="textareaWrap">
+                                                        <textarea class="textLine afterDisplay" type="text"
+                                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                            onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                            spellcheck="false"></textarea>
+                                                    </div>
+                                                    <div class="text-exam flex-wrap">
+                                                        <div class="blueT">
+                                                            <p>
+                                                                의사, 간호사, 경찰, 부모
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="items">
+                                            <div class="box orange">
+                                                <div class="title">그 밖에</div>
+                                                <div class="noteText noLine">
+                                                    <div class="textareaWrap">
+                                                        <textarea class="textLine afterDisplay" type="text"
+                                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                            onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                            spellcheck="false"></textarea>
+                                                    </div>
+                                                    <div class="text-exam flex-wrap" style="top: 0;">
+                                                        <div class="blueT">
+                                                            <p>
+                                                                이모, 할머니, 할아버지,
+                                                                보육사, 노인 돌봄 지도사,
+                                                                야생 동물 보호가, 환경 운동가
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image" data-popup-page="1" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="innerButtonContainer">
+                                <ul class="innerSlider_tabs">
+                                    <li data-hover="" class="on">1</li>
+                                    <li data-hover="" class="">2</li>
+                                    <li data-hover="" class="">3</li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            어린아이들을 지키고 돌보는 사람들은 누구인가요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="1" data-hover="">
+                                                    <div class="answer" data-toggle-target="1">
+                                                        <div class="ls-2h">
+                                                            <p class="dot">이모나 할머니, 할아버지가 어린아이를 지키고 돌봅니다.</p>
+                                                            <p class="dot">보육사가 어린아이를 돌봅니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            힘이 없는 노인들을 지키고 돌보는 사람들은 누구인가요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="2" data-hover="">
+                                                    <div class="answer" data-toggle-target="2"
+                                                        style="text-align: center;">
+                                                        <div class="ls-2h">
+                                                            노인 돌봄 지도사가 힘이 없는 노인의 생활을 돕습니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            이 외에도 동식물 생태계를 지키고 돌보는 사람들은
+                                            누구인가요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="3" data-hover="">
+                                                    <div class="answer" data-toggle-target="3"
+                                                        style="text-align: center;">
+                                                        <div class="ls-2h">
+                                                            그린피스와 같은 비정부 기구에서 활동하는 사람들이
+                                                            생태계와 다양한 동식물을 보호하고자 노력합니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+
+            $(document).on('click', '.additional-question', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs>li', function () {
+                KmAudioPlayer.buttonClick();
+            });
+        });
+    </script>
+</body>
+
+</html>
