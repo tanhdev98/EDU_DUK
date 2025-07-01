@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        .page_1 .innerTab_1>img:nth-child(1) {
+            width: 900px;
+            height: 450px;
+            margin: auto;
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+
+        .page_1 .innerTab_1>img:nth-child(2) {
+            position: absolute;
+            right: 50px;
+            width: 200px;
+            bottom: 20px;
+        }
+
+        .items {
+            margin-top: 70px;
+            padding-left: 28px;
+        }
+
+        .items .item {
+            position: relative;
+        }
+
+        .items .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 30px;
+            left: -30px;
+            transform: translateY(-50%);
+        }
+
+        [data-popup-page="1"] {
+            top: 150px;
+            left: 270px;
+            width: 990px;
+        }
+
+        .noteText {
+            height: 290px;
+            box-shadow: none;
+            border: 4px solid;
+            margin-top: 20px;
+            background: #E9F4F8;
+            border: 4px solid #B1D5F3;
+            padding: 20px;
+        }
+
+        .noteText .textLine {
+            padding: 0;
+        }
+
+        .noteText.noLine .textareaWrap {
+            height: 100%;
+            padding: 0;
+        }
+
+        .noteText .text-exam.flex-wrap {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon yellow">생각 <em>똑똑</em></div>
+            <div class="title-text">다음 사진을 보고 질문에 답해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <img src="./images/duk_04_07_0001_101/img_01.jpg" alt="">
+                                    <img src="./images/duk_04_07_0001_101/img_02.png" alt="">
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="icon-char" data-hover="" data-popup-btn="1"></div>
+                                    <div class="items">
+                                        <div class="item">어린이는 쓰레기로 오염된 자연을 바라보며 어떤 생각을 하고 있을까요?</div>
+                                    </div>
+                                    <div class="noteText noLine">
+                                        <div class="textareaWrap">
+                                            <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                data-input-obj="" data-answer=" " onfocus=""
+                                                onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                spellcheck="false"></textarea>
+                                        </div>
+                                        <div class="text-exam flex-wrap">
+                                            <div class="blueT">
+                                                <p class="dot">심각하게 오염됐다고 생각하고 있을 것 같습니다.</p>
+                                                <p class="dot">이런 곳에서는 살 수 없겠다고 생각하고 있을 것 같습니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents">
+                        <p><ins class="dot"></ins>쓰레기를 바라보는 어린이가 불쌍하다는 인식이 아닌 인간 주변이 파괴되고 더럽혀진 이유를 함께 생각해야 합니다.</p>
+                        <p><ins class="dot"></ins>자연을 파괴하고 더럽힌 것은 인간이며 그런 인간의 행위로 인간이 다시 힘겨워질 수 있다는 것을 알아야 합니다.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
