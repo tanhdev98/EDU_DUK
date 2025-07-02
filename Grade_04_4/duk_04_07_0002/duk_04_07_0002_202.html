@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        /* page 1 */
+        .page_1 .title {
+            position: absolute;
+            top: 167px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            background: #FFD966;
+            border-radius: 50%;
+            width: 260px;
+            height: 230px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .page_1 .content {
+            background: #F2D7ED;
+            position: absolute;
+            border-radius: 60px;
+            width: 430px;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .page_1 .content>p {
+            width: 310px;
+        }
+
+        .page_1 .noteText {
+            height: 100%;
+            box-shadow: none;
+            padding: 0;
+        }
+
+        .page_1 .noteText.noLine .textareaWrap {
+            padding: 20px 10px;
+            height: 100%;
+        }
+
+        .page_1 .noteText .text-exam.flex-wrap {
+            padding: 0;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+
+        .page_1 .noteText:after {
+            display: none;
+        }
+
+        .page_1 .noteText .textLine {
+            padding: 0;
+        }
+
+        .blueT {
+            margin-top: 0;
+        }
+
+        .content-1 {
+            left: 170px;
+        }
+
+        .content-2 {
+            top: 193px;
+        }
+
+        .content-3 {
+            bottom: 20px;
+            left: 170px;
+        }
+
+        .content-4 {
+            right: 170px;
+        }
+
+        .page_1 .content-4 .noteText .text-exam.flex-wrap {
+            position: absolute;
+            width: 410px;
+            top: 2px;
+            left: 8px;
+        }
+
+        .content-5 {
+            right: 0;
+            top: 193px;
+        }
+
+        .content-6 {
+            bottom: 20px;
+            right: 170px;
+        }
+
+        .page_1 .bullet.exam {
+            margin-top: 30px;
+        }
+
+        .content::after {
+            content: '';
+            width: 50px;
+            height: 4px;
+            background: #F2D7ED;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .content-1::after {
+            right: 0;
+            top: 170px;
+            transform: rotate(35deg);
+        }
+
+        .content-2::after {
+            right: -100px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 100px;
+        }
+
+        .content-3::after {
+            right: 0;
+            bottom: 170px;
+            transform: rotate(-35deg);
+        }
+
+        .content-4::after {
+            left: 0;
+            top: 170px;
+            transform: rotate(135deg);
+        }
+
+        .content-5::after {
+            left: -100px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 100px;
+        }
+
+        .content-6::after {
+            left: 0;
+            bottom: 170px;
+            transform: rotate(-135deg);
+        }
+
+        [data-popup-page="1"] {
+            top: 150px;
+            left: 450px;
+            width: 810px;
+        }
+
+        /* page 2 */
+        [data-popup-page="2"] {
+            top: 150px;
+            left: 470px;
+            width: 790px;
+        }
+
+        .page_2 .title {
+            background: #FFEBCD;
+            border: 4px solid #FFD89E;
+            border-radius: 20px;
+            padding: 0 20px;
+            width: max-content;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+
+        .popBtn.additional-question {
+            position: absolute;
+            right: 80px;
+            top: 15px;
+        }
+
+        /* popup */
+        .popup_pages>li.image .basicSlider {
+            padding: 0;
+        }
+
+        .popup_pages .contentsBox .basicSlider_slides>li {
+            padding: 0;
+        }
+
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: fit-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+        }
+
+        [data-type="toggleButton"] {
+            height: fit-content;
+            margin-top: 20px;
+        }
+
+        [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            justify-content: center;
+        }
+
+        /* page 2 */
+        .page_2 .flex {
+            display: flex;
+            align-items: center;
+        }
+
+        .page_2 td>p {
+            display: inline-block;
+        }
+
+        .page_2 td>p span {
+            text-decoration: underline;
+            text-underline-offset: 8px;
+            text-decoration-color: #FFD966;
+            text-decoration-thickness: 3px;
+        }
+
+        .page_2 td .flex>p:nth-child(1) {
+            margin-left: 80px;
+        }
+
+        .page_2 td .flex>p:nth-child(2) {
+            margin-left: 30px;
+            margin-right: 310px;
+        }
+
+        .page_2 .noteText {
+            box-shadow: none;
+            padding: 10px;
+            height: 140px;
+        }
+
+        .page_2 .noteText.noLine .textareaWrap {
+            padding: 0;
+            height: 100%;
+        }
+
+        .page_2 .noteText .textLine {
+            padding: 0;
+        }
+
+        .page_2 .noteText .text-exam.flex-wrap {
+            padding: 10px;
+        }
+
+        .page_2 .blueT {
+            letter-spacing: -1px;
+            margin-top: -2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue">실천 <em>쑥쑥</em></div>
+            <div class="title-text">생활에서 실천할 ‘지구 지킴이 활동’을 써 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="디지털 사회에는 어떤 도덕 문제가 있을까요?">활동 1</li>
+                    <li data-hover="" data-text="자신이 실천할 ‘지구 지킴이 활동 계획’을 써 봅시다.">활동 2</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="icon-char" data-hover="" data-popup-btn="1"></div>
+                        <div class="title">지구 지킴이<br>
+                            활동</div>
+                        <div class="content content-1">
+                            <div class="exam bullet">예</div>
+                            <p>물은 필요할 때만 틀어서 사용해요.</p>
+                        </div>
+                        <div class="content content-2">
+                            <div class="noteText noLine">
+                                <div class="textareaWrap">
+                                    <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                        data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                        autocomplete="off" spellcheck="false"></textarea>
+                                </div>
+                                <div class="text-exam flex-wrap">
+                                    <div class="blueT">
+                                        <p>안 쓰는<br>
+                                            전등 끄기</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content content-3">
+                            <div class="noteText noLine">
+                                <div class="textareaWrap">
+                                    <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                        data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                        autocomplete="off" spellcheck="false"></textarea>
+                                </div>
+                                <div class="text-exam flex-wrap">
+                                    <div class="blueT">
+                                        <p>일회용 컵<br>
+                                            사용하지 않기</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content content-4">
+                            <div class="noteText noLine">
+                                <div class="textareaWrap">
+                                    <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                        data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                        autocomplete="off" spellcheck="false"></textarea>
+                                </div>
+                                <div class="text-exam flex-wrap">
+                                    <div class="blueT">
+                                        <p>재활용할 때는
+                                            비우고, 헹구고, 분리하기
+                                            종류별로 버리기</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content content-5">
+                            <div class="noteText noLine">
+                                <div class="textareaWrap">
+                                    <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                        data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                        autocomplete="off" spellcheck="false"></textarea>
+                                </div>
+                                <div class="text-exam flex-wrap">
+                                    <div class="blueT">
+                                        <p>음식은<br>
+                                            먹을 만큼만 받기</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content content-6">
+                            <div class="noteText noLine">
+                                <div class="textareaWrap">
+                                    <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                        data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                        autocomplete="off" spellcheck="false"></textarea>
+                                </div>
+                                <div class="text-exam flex-wrap">
+                                    <div class="blueT">
+                                        <p>사용하지 않는<br>
+                                            플러그 뽑아 두기
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="icon-char" data-hover="" data-popup-btn="2"></div>
+                        <div class="popBtn additional-question" data-popup-btn="3">추가 질문</div>
+                        <div class="title">지구 지킴이 활동 계획</div>
+                        <div class="table-box color-02 ">
+                            <table>
+                                <colgroup>
+                                    <col style="width:10%">
+                                    <col style="width:90%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th rowspan="3">
+                                            실천<br> 내용
+                                        </th>
+                                        <td>
+                                            <div class="bullet exam">예</div>
+                                            <p><span>집에서</span> <span>쉴 때</span> <span>안쓰는 전자제품의 플러그를 뽑아 둡니다.</span></p>
+                                            <div class="flex">
+                                                <p>장소</p>
+                                                <p>시간</p>
+                                                <p>내용</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="noteText noLine">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        <p class="dot">집에서 자기 전에 양치질할 때 컵을 사용해 물을 아끼겠습니다.</p>
+                                                        <p class="dot">등하교할 때 엘리베이터 대신 계단을 이용하겠습니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="noteText noLine">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        <p class="dot">집에서 쓰레기를 정해진 날짜와 시간에 분리배출하겠습니다.</p>
+                                                        <p class="dot">점심시간에 학교에서 급식을 먹을 때 먹을 만큼만 받겠습니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents">
+                        <p>
+                            ‘지구 지킴이 활동’이란 ‘하루에 한가지씩 지구를 구하자’는 뜻에서 매일 한 가지씩 지구를 구하는 활동을 실천 하는 것을 말합니다.
+                        </p>
+                    </div>
+                </li>
+                <li class="min" data-popup-page="2" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents">
+                        <p>
+                            ‘지구 지킴이 활동 계획’에는 언제, 어디서, 어떤 일을 할지 생각하며 실천 장소, 실천 시간, 실천 내용을 구체적으로 씁니다.
+                        </p>
+                    </div>
+                </li>
+                <li class="fullLine whole image" data-popup-page="3" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            절제하는 생활은 왜 중요할까요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="1" data-hover="">
+                                                    <div class="answer" data-toggle-target="1"
+                                                        style="text-align: center;">
+                                                        <div class="ls-2h">
+                                                            나에게 필요 없는 물건까지 사거나 지나친 욕심으로 음식을 남기면 낭비를 하는 것이고, 그것은 자연을
+                                                            무분별하게 이용하는 것이기 때문입니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
