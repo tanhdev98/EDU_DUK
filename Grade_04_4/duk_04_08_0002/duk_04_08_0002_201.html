@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        #wrap header {
+            align-items: start;
+        }
+
+        #wrap header .title-icon {
+            top: 10px;
+        }
+
+        /* page 1 */
+        .page_1 .items {
+            padding: 0 28px;
+        }
+
+        .page_1 .items .item {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .page_1 .items .item .toggle {
+            margin-top: 10px;
+        }
+
+        .page_1 .items .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 30px;
+            left: -30px;
+            transform: translateY(-50%);
+        }
+
+        .page_1 .buttonContainer {
+            right: 28px;
+        }
+
+        [data-type="toggleButton"] {
+            height: fit-content;
+        }
+
+        /* page 2 */
+        .title {
+            background: url('./images/duk_04_08_0002_201/title.png') no-repeat center / 100% 100%;
+            width: 690px;
+            height: 60px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            margin-left: 230px;
+            font-size: 35px;
+        }
+
+        .flex {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .flex .items {
+            flex: 1;
+        }
+
+        .flex .items:nth-child(2) {
+            flex: 3;
+        }
+
+        .study_guide {
+            top: 40px;
+            right: 70px;
+        }
+
+        .icon-char {
+            top: -10px;
+        }
+
+        .page_2 .noteText p.dot {
+            padding-left: 0;
+        }
+
+        .page_2 .noteText p.dot::after {
+            left: -20px;
+        }
+
+        .popBtn.imgWrap .popBtnTitle {
+            cursor: default;
+        }
+
+        .popBtn.imgWrap {
+            border: 2px solid #f4e8d2;
+            cursor: default;
+        }
+
+        .page_2 .noteText .textLine {
+            height: 250px;
+            margin-top: 5px;
+        }
+
+        [data-popup-page="1"] {
+            top: 140px;
+            left: 630px;
+            width: 630px;
+        }
+
+        /* page 3 */
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue">실천 <em>쑥쑥</em></div>
+            <div class="title-text">다음 질문에 유의하여 비무장 지대를 지키는 인공지능 로봇을 설계해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="다음 질문에 유의하여 비무장 지대를 지키는 인공지능 로봇을 설계해 봅시다.">활동 1</li>
+                    <li data-hover=""
+                        data-text="<span style='letter-spacing: -3px;'>비무장 지대를 지키는 인공지능 로봇을 설계해 봅시다.</span>">활동 2</li>
+                    <li data-hover="" data-text="비무장 지대를 지키는 인공지능 로봇을 설계할 때 어떤 기능에 중점을 둬야 할까요?">활동 3</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="items">
+                            <div class="item" data-type="toggleButton">
+                                비무장 지대에서는 어떤 점을 지켜야 할까요?
+                                <div class="toggle box" data-toggle-obj="1">
+                                    <div class="answer" data-toggle-target="1">
+                                        <div>다양한 동식물을 지켜야 합니다.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item" data-type="toggleButton">
+                                비무장 지대에서 사는 동식물에 어떤 도움이 필요할까요?
+                                <div class="toggle box" data-toggle-obj="2" style="letter-spacing: -1.8px;">
+                                    <div class="answer" data-toggle-target="2">
+                                        <div>
+                                            동식물의 생활을 방해하는 위험한 물건을 제거하는 도움이 필요합니다.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item" data-type="toggleButton">
+                                비무장 지대의 환경을 평화롭게 보존하려면 인공지능 로봇에
+                                어떤 기능이 필요할까요?
+                                <div class="toggle box" data-toggle-obj="3">
+                                    <div class="answer" data-toggle-target="3">
+                                        <div>
+                                            여러 동식물에게 피해를 주는 물건을 제거하는 기능이 필요합니다.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="title">비무장 지대를 지키는 인공지능 로봇 설계하기</div>
+                        <div class="icon-char" data-hover="" data-popup-btn="1"></div>
+                        <div class="study_guide"><em>수업 도구</em>의 <em>색연필</em>을 클릭하세요.</div>
+                        <div class="flex">
+                            <div class="items">
+                                <span class="imgWrap popBtn">
+                                    <div class="popBtnTitle">생김새</div>
+                                    <img src="./images/duk_04_08_0002_201/img_01.png">
+                                </span>
+                            </div>
+                            <div class="items">
+                                <div class="noteText noteLine orange">
+                                    <p style="padding: 0 20px;">갖춰야 할 기능</p>
+                                    <div class="textareaWrap">
+                                        <textarea class="textLine afterDisplay" type="text" style="text-align: left;"
+                                            placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                            onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                            spellcheck="false"></textarea>
+                                    </div>
+                                    <div class="text-exam flex-wrap">
+                                        <div class="blueT">
+                                            <p>&nbsp</p>
+                                            <p class="dot">지뢰를 탐지하는 능력과 지뢰를 발견했을 때 담당자에게 연락 후 지뢰를 완전히 제거하는 능력이 있습니다.</p>
+                                            <p class="dot">외래 식물을 발견했을 때 완벽하게 제거하는 능력이 있습니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                    <li class="page_3" data-quiz="toggle">
+                        <div class="noteText noteLine blue">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" style="text-align: left;"
+                                    placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                    onblur="placeholder='직접 쓰기'" autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    생태계를 보호하고 전쟁의 상흔으로 남은 물건들을 안전하게 치우도록 설계해야 합니다.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents">
+                        <p>
+                            교과서 공간이 좁은 경우 도화지 등을 활용하여 로봇 설계 활동을 진행할 수 있습니다.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

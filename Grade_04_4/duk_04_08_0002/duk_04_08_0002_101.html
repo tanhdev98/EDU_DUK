@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        .noteText {
+            margin-top: 20px;
+            text-align: justify;
+        }
+
+        .noteText h1 {
+            text-align: center;
+            font-family: 'NotoB';
+            margin-bottom: 20px;
+        }
+
+        .noteText p {
+            text-indent: 40px;
+        }
+
+        .flex {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-top: 70px;
+        }
+
+        .flex .items {
+            flex: 1;
+        }
+
+        .flex .items:nth-child(2) {
+            padding: 0 0 0 28px;
+            flex: 1.6;
+        }
+
+        .items .item {
+            position: relative;
+        }
+
+        .items .item .toggle {
+            margin-top: 10px;
+            justify-content: center;
+            height: 200px;
+        }
+
+        .items .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 30px;
+            left: -30px;
+            transform: translateY(-50%);
+        }
+
+        .toggle.complete .answer,
+        .answer.on {
+            flex-direction: column;
+        }
+
+        .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+
+        .popBtn.additional-question {
+            position: absolute;
+            right: 0;
+        }
+
+        /* popup */
+        .popup_pages .bgImg>img,
+        .popup_pages .bgImg,
+        .popup_pages .zoomImg,
+        .popup_pages .zoomContainer .zoomImgContainer,
+        .popup_pages .zoomArea,
+        .popup_pages .zoomContainer {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+        }
+
+        .popup_pages .zoomContainer {
+            height: 700px;
+            width: 1000px;
+            margin: auto;
+            margin-top: 70px;
+        }
+
+        .popup_pages .zoomContainer.horizon .zoomController {
+            top: 20px;
+            left: 28px;
+        }
+
+        /* popup 2 */
+        .innerSlider_tabs>li {
+            background-color: #F3DEC0;
+        }
+
+        .innerSlider_tabs>li.on {
+            background-color: #F3B05B;
+        }
+
+        .innerButtonContainer {
+            position: absolute;
+            right: 40px;
+            top: 76px;
+        }
+
+        .innerButtonContainer::before {
+            display: none;
+        }
+
+        .popup_pages>li.image .basicSlider {
+            padding: 0;
+        }
+
+        .popup_pages .contentsBox .basicSlider_slides>li {
+            padding: 0;
+        }
+
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: fit-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+        }
+
+        .popup_pages [data-type="toggleButton"] {
+            height: fit-content;
+            margin-top: 70px;
+        }
+
+        .popup_pages [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            justify-content: center;
+        }
+
+        .popup_pages .toggle.complete .answer,
+        .popup_pages .answer.on {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue">실천 <em>똑똑</em></div>
+            <div class="title-text">비무장 지대를 지키는 인공지능 로봇을 떠올려 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="noteText noLine green">
+                                        <h1>비무장 지대를 지키는 데 필요한 로봇 개발 의뢰서</h1>
+                                        <p>비무장 지대는 1953년 이후 일반인의 출입을 제한하면서 야생 동물의 안식처가 됐습니다. 그러나 여전히 전쟁에 따른 포탄, 지뢰, 철조망
+                                            등 위험 물질이 동식물에 피해를 주고 있습니다. 그런데 비무장 지대로 사람이 접근하기 어렵다는 문제가 있습니다.</p>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="noteText noLine green">
+                                        <p> 이에 인공지능 로봇을 사용하는 것이 문제를 해결하는 한 방법이 될 수 있습니다. 비무장 지대를 지키는 인공지능 로봇에는 비무장 지대의
+                                            환경을 관찰하고 위험 물질을 제거하는 기능이 있어야 합니다. 이를 고려해서 로봇을 구체적으로 설계해 주시면 좋겠습니다.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3" data-quiz="toggle">
+                                    <div class="popBtn additional-question" data-popup-btn="2">추가 질문</div>
+                                    <div class="flex">
+                                        <div class="items">
+                                            <span class="imgWrap line popBtn" data-popup-btn="1"
+                                                data-targetSlideNum="1">
+                                                <img src="./images/duk_04_08_0002_101/img_01.png">
+                                                <button class="popBtn zoomBtn" data-hover=""></button>
+                                            </span>
+                                        </div>
+                                        <div class="items">
+                                            <div class="item">
+                                                비무장 지대를 지키는 인공지능 로봇에는
+                                                또 어떤 기능이 있으면 좋을까요?
+                                                <div data-type="toggleButton">
+                                                    <div class="toggle examBtn box" data-toggle-obj="1">
+                                                        <div class="answer" data-toggle-target="1">
+                                                            <p class="dot">울퉁불퉁한 길도 어렵지 않게 이동할 수 있어야 합니다.</p>
+                                                            <p class="dot">여러 사물을 잘 식별할 수 있어야 합니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="whole image" data-popup-page="1">
+                    <div class="basicSlider" data-slide-container="popup">
+                        <ul class="basicSlider_slides" data-slides="">
+                            <li class="innerTab_1 page_zoom zoom_img">
+                                <div class="zoomContainer horizon pointerOff">
+                                    <div class="zoomArea">
+                                        <div class="zoomImgContainer pointerOff">
+                                            <div class="zoomImg">
+                                                <div class="bgImg">
+                                                    <img src="./images/duk_04_08_0002_101/img_01.png" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="fullLine whole image" data-popup-page="2" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="innerButtonContainer">
+                                <ul class="innerSlider_tabs">
+                                    <li data-hover="" class="on">1</li>
+                                    <li data-hover="" class="">2</li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            비무장 지대에서 활동하는 로봇은 어떻게 생기면 좋을까요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton" style="margin-top: 40px;">
+                                                <div class="toggle examBtn box" data-toggle-obj="1" data-hover="">
+                                                    <div class="answer" data-toggle-target="1">
+                                                        <div class="ls-2h">
+                                                            비무장 지대의 동물들이 낯설게 느끼지 않도록<br>
+                                                            익숙한 자연물처럼 생기면 좋을 것 같습니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            비무장 지대에서 인간 대신 로봇이 들어가<br>
+                                            활동해야 하는 까닭은 무엇 때문일까요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton" style="margin-top: 20px;">
+                                                <div class="toggle examBtn box" data-toggle-obj="2" data-hover="">
+                                                    <div class="answer" data-toggle-target="2">
+                                                        <div class="ls-2h">
+                                                            비무장 지대에는 지뢰, 포탄과 같은 위험 물질이 있어서<br>
+                                                            인간이 직접 활동하면 크게 다치거나<br>
+                                                            생명을 잃을 위험이 있기 때문입니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/zoomImage.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+
+            $(document).on('click', '.additional-question', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs>li', function () {
+                KmAudioPlayer.buttonClick();
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        .bg {
+            background: url('./images/duk_04_08_0002_301/img_01.png') no-repeat center / 100%;
+            width: 500px;
+            height: 100%;
+            margin: auto;
+        }
+
+        .bg>img {
+            position: absolute;
+            width: 200px;
+            height: auto;
+            top: 180px;
+            left: 520px;
+        }
+
+        .speech {
+            display: block;
+            width: 64px;
+            height: 64px;
+            position: absolute;
+            z-index: 4;
+            pointer-events: auto;
+            background: url(../ko/contents/images/button/btn_speech_balloon_left1.png) no-repeat;
+            cursor: pointer;
+            top: 150px;
+            right: 390px;
+        }
+
+        .speech-left:hover {
+            background: url(../ko/contents/images/button/btn_speech_balloon_left1_hover.png) no-repeat;
+        }
+
+        .balloon {
+            right: 225px;
+            top: -10px;
+        }
+
+        [data-popup-page="1"] {
+            top: 150px;
+            left: 600px;
+            width: 660px;
+        }
+
+        /* popup */
+        .pointContainer .pointTitle {
+            display: block;
+            text-align: center;
+        }
+
+        .pointContainer .pointTitle .titleText {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 45px;
+            line-height: 50px;
+            font-family: 'YGJAL';
+            color: #ff6600;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+        }
+
+        .pointContainer .pointTitle .titleText:after,
+        .pointContainer .pointTitle .titleText:before {
+            position: absolute;
+            top: 0px;
+            height: 50px;
+            font-size: 40px;
+            line-height: 50px;
+            font-family: 'YGJAL';
+            color: #e4caa9;
+        }
+
+        .pointContainer .pointTitle .titleText:after {
+            content: "[";
+            left: -20px;
+        }
+
+        .pointContainer .pointTitle .titleText:before {
+            content: "]";
+            right: -20px;
+        }
+
+        .popup_pages .items .item {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 30px;
+            pointer-events: none;
+        }
+
+        .popup_pages .items .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        .popBtn.btn-praise {
+            position: absolute;
+            right: -28px;
+            top: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon blue">실천 <em>탄탄</em></div>
+            <div class="title-text">내가 설계한 인공지능 로봇을 소개해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="icon-char" data-hover="" data-popup-btn="1"></div>
+                        <div class="bg">
+                            <img src="./images/duk_04_08_0002_301/img_02.png" alt="">
+                            <div class="speech speech-left" data-popup="1"></div>
+                            <div class="balloon yellow bottom" data-show="1">
+                                <span>
+                                    빠르고 정확한 지각 능력으로<br>
+                                    위험 물질을 잘 찾아냅니다.
+                                </span>
+                                <div class="close-speech-button"></div>
+                            </div>
+                        </div>
+                        <div class="btn-praise right popBtn footer-item" data-popup-btn="2">
+                            <div class="item-title">핵심<br>정리</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents">
+                        <p>
+                            인공지능 로봇의 기능과 역할에 중점을 두고 소개해 봅니다.
+                        </p>
+                    </div>
+                </li>
+                <li class="fullLine whole image pointContainer" data-popup-page="2" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="pointTitle">
+                            <div class="titleText">비무장 지대를 지키는 인공지능 로봇이 갖춰야 할 기능</div>
+                        </div>
+                        <div class="items" style="margin-top: 120px;">
+                            <div class="item">
+                                지뢰를 탐지하는 능력
+                            </div>
+                            <div class="item">
+                                지뢰를 발견한 후 완전히 제거하는 능력
+                            </div>
+                            <div class="item">
+                                외래 식물을 발견했을 때 완벽하게 제거하는 능력
+                            </div>
+                            <div class="item">
+                                생태계를 보호하고 전쟁의 상흔을 안전하게 치우는 능력
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+
+            $(document).on('click', '.speech', function () {
+                KmAudioPlayer.buttonClick();
+                $('.speech').show();
+                $('.balloon').hide();
+                var $data_popup = $(this).attr('data-popup');
+                $('.balloon[data-show="' + $data_popup + '"]').show().append('<div class="close-speech-button beforeNon"></div>');
+                $(this).hide();
+            });
+
+            $(document).on('click', '.close-speech-button', function () {
+                $(this).parent().hide();
+                $(this).remove();
+            });
+
+            $(document).on('click', '.balloon', function () {
+                $(this).hide();
+                $('.speech').show();
+                $(this).find('.close-speech-button');
+            });
+        });
+    </script>
+</body>
+
+</html>
