@@ -38,6 +38,10 @@
             font-weight: normal;
         }
 
+        .toggle.complete {
+            cursor: pointer;
+        }
+
         .innerSlider_tabs>li {
             background-color: #F3DEC0;
         }
@@ -146,7 +150,7 @@
         }
 
         .popup_pages .fullLine.whole .buttonContainer {
-            right: 48px;
+            right: 0px;
             bottom: 0;
         }
 
@@ -226,15 +230,11 @@
         .page_1 .innerTab_6 .additional-question,
         .page_1 .innerTab_4 .additional-question {
             position: absolute;
-            right: 90px;
+            right: 80px;
         }
 
         [data-type="toggleButton"] {
             height: auto;
-        }
-
-        .text-exam .blueT p {
-            cursor: pointer;
         }
     </style>
 </head>
@@ -470,10 +470,12 @@
                                             토끼는 테일러에게 필요한 공감 방법을 어떻게 알았을까요?
                                         </span>
                                     </h2>
-                                    <div class="toggle" data-toggle-obj="6">
-                                        <div class="answer" data-toggle-target="6">
-                                            <div class="ls-1h">토끼는 자신의 공감 방법을 강요하지 않고<br />
-                                                테일러에게 필요한 공감하는 방법이 무엇인지 살펴보았습니다.
+                                    <div data-type="toggleButton">
+                                        <div class="toggle" data-toggle-obj="6">
+                                            <div class="answer" data-toggle-target="6">
+                                                <div class="ls-1h">토끼는 자신의 공감 방법을 강요하지 않고<br />
+                                                    테일러에게 필요한 공감하는 방법이 무엇인지 살펴보았습니다.
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1115,22 +1117,56 @@
                 });
             });
 
-            $(document).on('click', '.text-exam .blueT > p', function () {
-                KmAudioPlayer.buttonClick();
-                const writeBtn = $(this).parents('[data-quiz="toggle"]').find('.writeBtn');
-                const textArea = $(this).parents('[data-quiz="toggle"]').find('.textLine');
-                const textExam = $(this).parents('[data-quiz="toggle"]').find('.text-exam');
-                if (writeBtn.hasClass('reset')) {
-                    textExam.css('display', 'none');
-                    writeBtn.removeClass('reset');
-                    textArea.attr('placeholder', '직접 쓰기');
-                    textArea.val('');
-                    textArea.css('display', 'block');
+            // $(document).on('click', '.text-exam .blueT > p', function () {
+            //     KmAudioPlayer.buttonClick();
+            //     const writeBtn = $(this).parents('[data-quiz="toggle"]').find('.writeBtn');
+            //     const textArea = $(this).parents('[data-quiz="toggle"]').find('.textLine');
+            //     const textExam = $(this).parents('[data-quiz="toggle"]').find('.text-exam');
+            //     if (writeBtn.hasClass('reset')) {
+            //         textExam.css('display', 'none');
+            //         writeBtn.removeClass('reset');
+            //         textArea.attr('placeholder', '직접 쓰기');
+            //         textArea.val('');
+            //         textArea.css('display', 'block');
+            //     } else {
+            //         textExam.css('display', 'flex');
+            //         writeBtn.addClass('reset');
+            //     }
+            // });
+
+            $(document).on('click', '.page_2 .innerTab_1 .toggle', function () {
+                if ($('.page_2 .innerTab_1 .toggle').length != $('.page_2 .innerTab_1 .toggle.complete').length) {
+                    $('.page_2 .innerTab_1 .dapCheckBtn').removeClass('reset');
                 } else {
-                    textExam.css('display', 'flex');
-                    writeBtn.addClass('reset');
+                    $('.page_2 .innerTab_1 .dapCheckBtn').addClass('reset');
                 }
-            });
+            })
+
+            $(document).on('click', '.page_2 .innerTab_1 .dapCheckBtn', function () {
+                if (!$(this).hasClass('reset')) {
+                    $('.page_2 .innerTab_1 div[data-type="toggleButton"]').attr('data-active', 'off');
+                } else {
+                    $('.page_2 .innerTab_1 div[data-type="toggleButton"]').attr('data-active', 'on');
+                }
+            })
+
+
+
+            $(document).on('click', '.page_2 .innerTab_2 .toggle', function () {
+                if ($('.page_2 .innerTab_2 .toggle').length != $('.page_2 .innerTab_2 .toggle.complete').length) {
+                    $('.page_2 .innerTab_2 .dapCheckBtn').removeClass('reset');
+                } else {
+                    $('.page_2 .innerTab_2 .dapCheckBtn').addClass('reset');
+                }
+            })
+
+            $(document).on('click', '.page_2 .innerTab_2 .dapCheckBtn', function () {
+                if (!$(this).hasClass('reset')) {
+                    $('.page_2 .innerTab_2 div[data-type="toggleButton"]').attr('data-active', 'off');
+                } else {
+                    $('.page_2 .innerTab_2 div[data-type="toggleButton"]').attr('data-active', 'on');
+                }
+            })
         });
     </script>
 </body>
