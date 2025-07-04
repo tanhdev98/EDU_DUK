@@ -16,6 +16,120 @@
             background: #00d045;
             display: block !important;
         }
+
+        /* page 1 */
+        .page-inner {
+            height: 75%;
+            margin: 65px 0 0 0;
+        }
+
+        .drag-line .dragLineArea::after {
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: none;
+        }
+
+        .dragLineArea.pink::after {
+            content: "";
+            display: inline-block;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            border: none;
+        }
+
+        .drag-line {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        .list-image {
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            gap: 45px;
+            margin-top: 15px;
+        }
+
+        .list-image img {
+            position: relative;
+            width: 950px;
+            height: 100%;
+            object-fit: contain;
+            margin-top: 0;
+        }
+
+        .group-flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            flex-direction: column;
+            top: -80px;
+            gap: 80px;
+            left: -80px;
+        }
+
+        .flex.bottom .list-image {
+            justify-content: center;
+            height: 100%;
+        }
+
+        .list-image p {
+            padding: 10px 15px;
+            border-radius: 10px;
+            background-color: #FDF3E7;
+        }
+
+        .c1 {
+            top: 310px;
+        }
+
+        .c2 {
+            top: 380px;
+        }
+
+        .r1 {
+            left: 190px;
+        }
+
+        .r2 {
+            left: 430px;
+        }
+
+        .r3 {
+            left: 710px;
+        }
+
+        .r4 {
+            left: 965px;
+        }
+
+        .dragLineArea.sky::after {
+            background-color: #43a6ff;
+            border-color: #66c0ff;
+            border: 4px solid #66c0ff;
+        }
+
+        .dragLineArea.pink::after {
+            background-color: #ff6284;
+            border-color: #ff98ae;
+            border: 4px solid #ff98ae;
+        }
+
+        .study_guide {
+            z-index: 1;
+        }
+
+        /* page 3 */
+        .self-check {
+            margin-top: 50px;
+        }
     </style>
 </head>
 
@@ -38,14 +152,154 @@
                     <li data-hover="" data-text="7단원을 마치며 자신의 모습을 되돌아봅시다.">자기 점검</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
-                    <li class="page_1">
+                    <li class="page_1" data-quiz="dragLine" data-total-complete-count="4">
+                        <div class="study_guide"><em>알맞은 낱말</em>을 <em>선</em>으로 <em>이어보세요</em>.</div>
+                        <div class="page-inner">
+                            <div class="drag-line" data-type="center-col">
+                                <svg class="js-svgContainer svgContainer"></svg>
+                                <div class="group-flex">
+                                    <div class="flex top">
+                                        <div class="list-image">
+                                            <img src="./images/duk_04_07_0004_302/img_01.png" alt="">
+                                        </div>
+                                    </div>
 
+                                    <div class="flex bottom">
+                                        <div class="list-image">
+                                            <img src="./images/duk_04_07_0004_302/img_02.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="c1 r1 sky js-dragLineArea dragLineArea" data-group="1" data-answer="1"
+                                    data-name="dragLine"></div>
+                                <div class="c1 r1 sky js-dragLineObj dragLineObj" data-group="1" data-answer="1"
+                                    data-name="dragLine" data-complete-count="1"></div>
+
+                                <div class="c1 r2 sky js-dragLineArea dragLineArea" data-group="1" data-answer="2"
+                                    data-name="dragLine2"></div>
+                                <div class="c1 r2 sky js-dragLineObj dragLineObj" data-group="1" data-answer="2"
+                                    data-name="dragLine2" data-complete-count="1"></div>
+
+                                <div class="c1 r3 sky js-dragLineArea dragLineArea" data-group="1" data-answer="3"
+                                    data-name="dragLine3"></div>
+                                <div class="c1 r3 sky js-dragLineObj dragLineObj" data-group="1" data-answer="3"
+                                    data-name="dragLine3" data-complete-count="1"></div>
+
+                                <div class="c1 r4 sky js-dragLineArea dragLineArea" data-group="1" data-answer="4"
+                                    data-name="dragLine4"></div>
+                                <div class="c1 r4 sky js-dragLineObj dragLineObj" data-group="1" data-answer="4"
+                                    data-name="dragLine4" data-complete-count="1"></div>
+                            </div>
+
+                            <!-- ================ -->
+
+                            <div class="c2 r1 pink js-dragLineArea dragLineArea" data-group="2" data-answer="4"
+                                data-name="dragLine6"></div>
+                            <div class="c2 r1 pink js-dragLineObj dragLineObj" data-group="2" data-answer="4"
+                                data-name="dragLine6" data-complete-count="1"></div>
+
+                            <div class="c2 r2 pink js-dragLineArea dragLineArea" data-group="2" data-answer="3"
+                                data-name="dragLine7"></div>
+                            <div class="c2 r2 pink js-dragLineObj dragLineObj" data-group="2" data-answer="3"
+                                data-name="dragLine7" data-complete-count="1"></div>
+
+                            <div class="c2 r3 pink js-dragLineArea dragLineArea" data-group="2" data-answer="2"
+                                data-name="dragLine8"></div>
+                            <div class="c2 r3 pink js-dragLineObj dragLineObj" data-group="2" data-answer="2"
+                                data-name="dragLine8" data-complete-count="1"></div>
+
+                            <div class="c2 r4 pink js-dragLineArea dragLineArea" data-group="2" data-answer="1"
+                                data-name="dragLine9"></div>
+                            <div class="c2 r4 pink js-dragLineObj dragLineObj" data-group="2" data-answer="1"
+                                data-name="dragLine9" data-complete-count="1"></div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="dapCheckBtn" data-answer-btn=""></button>
+                        </div>
                     </li>
-                    <li class="page_2">
-
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="noteText noteLine purple">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    인간과 자연은 서로를 존중하며 조화롭게 어울려 살아야 합니다. 그러기 위해서는 절제하는 생활 습관으로 환경을 보호하는 행동을 실천해야 합니다.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
                     </li>
                     <li class="page_3">
-
+                        <div class="study_guide"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
+                        <div class="self-check">
+                            <div class="checkWrap">
+                                <div class="text_box">자연과 인간이 함께 살아가는 데<br>
+                                    필요한 방법을 찾았나요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">자연과 인간이 함께 살아갈<br>
+                                    행동들을 실천했나요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">자연과 인간이 함께 살아야 함을 알고<br>
+                                    생명을 존중하는 마음을 길렀나요?
+                                </div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="example-box">
+                                <div class="exampleIcoWrap">
+                                    <div class="example ico-01">
+                                        매우 그렇다
+                                    </div>
+                                    <div class="example ico-02">
+                                        그렇다
+                                    </div>
+                                    <div class="example ico-03">
+                                        좀 더 노력해야 한다
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>

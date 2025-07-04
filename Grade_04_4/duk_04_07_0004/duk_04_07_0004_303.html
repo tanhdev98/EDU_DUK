@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        #wrap header .title-icon.orange {
+            padding: 0 16px;
+            background: #ff6600;
+            color: #fff;
+            display: block !important;
+        }
+
+        .flex {
+            display: flex;
+            height: 560px;
+            gap: 20px;
+            width: 1200px;
+            margin: auto;
+            margin-top: 0;
+        }
+
+        .flex>img {
+            width: 195px;
+            height: 100%;
+        }
+
+        .flex .grid {
+            display: grid;
+            grid-template: 1fr 1fr 1fr / 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .flex .grid .items {
+            position: relative;
+            border-radius: 30px;
+            padding: 10px 10px 10px 110px;
+            background: #E6B157;
+        }
+
+        .flex .grid .items:nth-child(2) {
+            background: #D37747;
+        }
+
+        .flex .grid .items:nth-child(3) {
+            background: #C14738;
+        }
+
+        .flex .grid .items:nth-child(4) {
+            background: #B03734;
+        }
+
+        .flex .grid .items:nth-child(5) {
+            background: #742928;
+        }
+
+        .flex .grid .items:nth-child(6) {
+            background: #2D1109;
+        }
+
+        .flex .grid .items>h1 {
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            color: #fff;
+        }
+
+        .flex .grid .items>p {
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            height: 100%;
+            border-radius: 30px;
+            padding: 10px;
+        }
+
+        .click-finger-Btn {
+            position: absolute;
+            right: 15px;
+            bottom: -15px;
+            z-index: 1;
+        }
+
+        .click-finger-Btn.blinkOn.blinkOpacity {
+            animation: clickInduceMotion 1s 3 ease-in;
+            -webkit-animation: clickInduceMotion 1s 3 ease-in;
+        }
+
+        .animation-off {
+            animation: none !important;
+            -webkit-animation: none !important;
+        }
+
+        .popupItem {
+            display: none;
+            position: absolute;
+            padding: 5px 20px;
+            border-radius: 20px;
+            border: 4px solid #FFE899;
+            background-color: #FFF5D1;
+            text-align: center;
+            z-index: 2;
+            width: max-content;
+        }
+
+        .popupItem::before {
+            content: "";
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            position: absolute;
+            background-color: #FFE899;
+        }
+
+        .popupItem::after {
+            position: absolute;
+            content: "";
+            top: 257px;
+            height: 50px;
+            width: 4px;
+            background-color: #FFE899;
+        }
+
+        .popupItem1 {
+            bottom: -310px;
+            right: -270px;
+        }
+
+        .popupItem1::before {
+            left: 480px;
+            top: -60px;
+        }
+
+        .popupItem1::after {
+            left: 485px;
+            top: -50px;
+        }
+
+        .popupItem2 {
+            bottom: -260px;
+            right: -40px;
+        }
+
+        .popupItem2::before {
+            left: 715px;
+            top: -60px;
+        }
+
+        .popupItem2::after {
+            left: 720px;
+            top: -50px;
+        }
+
+        .popupItem3 {
+            bottom: -215px;
+            right: -40px;
+        }
+
+        .popupItem3::before {
+            left: 645px;
+            top: -60px;
+        }
+
+        .popupItem3::after {
+            left: 650px;
+            top: -50px;
+        }
+
+        .popupItem4 {
+            bottom: -215px;
+            right: -40px;
+        }
+
+        .popupItem4::before {
+            left: 685px;
+            top: -60px;
+        }
+
+        .popupItem4::after {
+            left: 690px;
+            top: -50px;
+        }
+
+
+        .popupItem5 {
+            bottom: 170px;
+            right: -220px;
+        }
+
+        .popupItem5::before {
+            left: 465px;
+            bottom: -60px;
+        }
+
+        .popupItem5::after {
+            left: 470px;
+            top: 170px;
+        }
+
+        .popupItem6 {
+            bottom: 175px;
+            right: -40px;
+        }
+
+        .popupItem6::before {
+            left: 565px;
+            bottom: -60px;
+        }
+
+        .popupItem6::after {
+            left: 570px;
+            top: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon orange">생각 놀이터</div>
+            <div class="title-text">지구의 온도가 오르면 어떻게 될까요?</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="flex">
+                            <img src="./images/duk_04_07_0004_303/img_01.png" alt="">
+                            <div class="grid">
+                                <div class="items">
+                                    <h1>1℃</h1>
+                                    <p>집중 호우, 한파 등<br>
+                                        기상 현상 증가
+                                    </p>
+                                    <span class="click-finger-Btn blinkOn blinkOpacity item1" data-hover=""
+                                        data-popup="1"></span>
+                                    <div class="popupItem popupItem1" data-show="1">
+                                        <span>
+                                            지구 곳곳에 가뭄이 발생하고,<br>
+                                            킬리만자로의 만년빙이 녹습니다.<br>
+                                            집중 호우, 한파 등의 이상 기후가 심해지고,<br>
+                                            이런 기후 변화에 적응하지 못한<br>
+                                            희귀 동식물이 멸종합니다.
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="items">
+                                    <h1>2℃</h1>
+                                    <p>북극 생물의<br>
+                                        멸종 위기
+                                    </p>
+                                    <span class="click-finger-Btn blinkOn blinkOpacity item2" data-hover=""
+                                        data-popup="2"></span>
+                                    <div class="popupItem popupItem2" data-show="2">
+                                        <span>
+                                            그린란드의 빙하가 녹아 해수면이 상승하고,<br>
+                                            낮은 지대에 있는 도시들이 가라앉습니다.<br>
+                                            북극 생물이 살아가기 어려운 환경이 돼<br>
+                                            멸종 위기에 처합니다.
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="items">
+                                    <h1>3℃</h1>
+                                    <p>아마존<br>
+                                        열대 우림 파괴
+                                    </p>
+                                    <span class="click-finger-Btn blinkOn blinkOpacity item3" data-hover=""
+                                        data-popup="3"></span>
+                                    <div class="popupItem popupItem3" data-show="3">
+                                        <span>
+                                            온난화가 가속돼 아마존 열대 우림이<br>
+                                            파괴되고, 대지가 불탑니다.<br>
+                                            허리케인으로 식량 생산도 어려워지고,<br>
+                                            많은 사람이 굶주림으로 사망합니다.
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="items">
+                                    <h1>4℃</h1>
+                                    <p>남극의 빙하 붕괴
+                                    </p>
+                                    <span class="click-finger-Btn blinkOn blinkOpacity item4" data-hover=""
+                                        data-popup="4"></span>
+                                    <div class="popupItem popupItem4" data-show="4">
+                                        <span>
+                                            남극의 빙하가 붕괴하고,<br>
+                                            지중해 지역에는 살인적인 폭염과 가뭄이<br>
+                                            발생합니다. 러시아와 동유럽에<br>
+                                            더 이상 눈이 내리지 않습니다.
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="items">
+                                    <h1>5℃</h1>
+                                    <p>히말라야<br>
+                                        빙하 소멸
+                                    </p>
+                                    <span class="click-finger-Btn blinkOn blinkOpacity item5" data-hover=""
+                                        data-popup="5"></span>
+                                    <div class="popupItem popupItem5" data-show="5">
+                                        <span>
+                                            히말라야 산맥에 있는 빙하가 녹습니다.<br>
+                                            재난이 자주 발생해 사람이 살 수 있는<br>
+                                            곳으로 피난민이 몰려 갈등이 발생합니다.
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="items">
+                                    <h1>6℃</h1>
+                                    <p>대부분의<br>
+                                        생물체 멸종
+                                    </p>
+                                    <span class="click-finger-Btn blinkOn blinkOpacity item6" data-hover=""
+                                        data-popup="6"></span>
+                                    <div class="popupItem popupItem6" data-show="6">
+                                        <span>
+                                            많은 생물체의 대멸종이 시작됩니다.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+
+            $('.click-finger-Btn.blinkOn.blinkOpacity').removeClass('animation-off');
+
+            $('.click-finger-Btn').removeClass('blinkOn').removeClass('blinkOpacity');
+            setTimeout(function () {
+                $('.click-finger-Btn').addClass('blinkOn').addClass('blinkOpacity');
+            }, 100);
+
+            if ($(this).index() === 6) {
+                setTimeout(function () {
+                    $('.click-finger-Btn').removeClass('blinkOn').removeClass('blinkOpacity');
+                }, 3000);
+            }
+
+            $(document).on('click', '.click-finger-Btn', function () {
+                KmAudioPlayer.buttonClick();
+                $('.popupItem').hide();
+                $('.click-finger-Btn').show();
+                var $data_popup = $(this).attr('data-popup');
+                var $currentPopup = $('.popupItem[data-show="' + $data_popup + '"]');
+                var maxZIndex = Math.max.apply(null, $('.popupItem:visible').map(function () {
+                    return parseInt($(this).css('z-index')) || 0;
+                }).get());
+                $currentPopup.css('z-index', maxZIndex + 1).show();
+                $(this).hide();
+                $('.popupItem .close-speech-button').remove();
+                $('.popupItem[data-show="' + $data_popup + '"]').append('<div class="close-speech-button"></div>');
+            });
+
+            $(document).on('click', '.close-speech-button', function () {
+                var _id = $(this).parent().attr('data-show');
+                $(this).parent().hide();
+                $(`[data-popup=${_id}]`).show().removeClass('ans').removeClass('blinkOn').removeClass('blinkOpacity');;
+                $(this).remove();
+            });
+        });
+    </script>
+</body>
+
+</html>
