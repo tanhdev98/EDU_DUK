@@ -135,7 +135,7 @@
 <body>
     <div id="wrap" class="math">
         <header class="twoLine">
-            <div class="title-icon yellow">실천 <em>탄탄</em></div>
+            <div class="title-icon blue">실천 <em>탄탄</em></div>
             <div class="title-text">공정 심판 활동을 하며 찾은 불공정한 모습을 공정하게 바꿔 봅시다.</div>
         </header>
         <main>
@@ -265,7 +265,7 @@
                                 </div>
                                 <div class="item">
                                     <div class="cho">
-                                        <div class="choWrap">
+                                        <div class="choWrap" style="letter-spacing: -1.1px;">
                                             공정한 것과 불공정한 것을 구별할 때 친구들의 의견도 잘 들어줘야 합니다.
                                         </div>
                                     </div>
@@ -303,10 +303,10 @@
                 if ($(this).data('text')) {
                     $('header .title-text').html($(this).data('text'));
                 }
-                if ($(this).attr('data-gap') == 'true') {
-                    $('header').addClass('gap');
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
                 } else {
-                    $('header').removeClass('gap');
+                    $('header').removeClass('twoLine');
                 }
             });
 

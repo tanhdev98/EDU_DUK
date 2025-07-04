@@ -139,7 +139,7 @@
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
                     <li data-hover="" data-text="공정 심판이 되어 공정한 것과 불공정한 것을 구별해 봅시다." data-gap="true">활동 1</li>
-                    <li data-hover="" data-text="공정 심판 활동을 하던 모습을 떠올리며 ‘공정 심판 보고서를’<br/> 써 봅시다.">활동 2
+                    <li data-hover="" data-text="공정 심판 활동을 하던 모습을 떠올리며 ‘공정 심판 보고서를’<br/> 써 봅시다." class="twoLine">활동 2
                     </li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
@@ -175,10 +175,10 @@
                                             <div class="bullet number orange inline">
                                                 2
                                             </div>
-                                            <div class="text">
-                                                공정 심판은 ‘공정 문제 카드’를 한 장 골라 모둠 친구들에게 읽어<br />
-                                                주고, 모둠 친구들은 모두 돌아가며 카드의 상황이 공정한지<br />
-                                                불공정한지 공정 심판에게 의견을 이야기합니다.
+                                            <div class="text" style="letter-spacing: -1.1px;">
+                                                공정 심판은 ‘공정 문제 카드’를 한 장 골라 모둠 친구들에게 읽어 주고,<br />
+                                                모둠 친구들은 모두 돌아가며 카드의 상황이 공정한지 불공정한지 공정<br />
+                                                심판에게 의견을 이야기합니다.
                                             </div>
                                         </li>
                                     </ul>
@@ -347,6 +347,11 @@
             $(document).on('click', '.basicSlider_tabs li', function () {
                 if ($(this).data('text')) {
                     $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
+                } else {
+                    $('header').removeClass('twoLine');
                 }
                 if ($(this).attr('data-gap') == 'true') {
                     $('header').addClass('gap');
