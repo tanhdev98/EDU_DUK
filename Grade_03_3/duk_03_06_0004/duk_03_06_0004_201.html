@@ -159,10 +159,10 @@
                 if ($(this).data('text')) {
                     $('header .title-text').html($(this).data('text'));
                 }
-                if ($(this).attr('data-gap') == 'true') {
-                    $('header').addClass('gap');
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
                 } else {
-                    $('header').removeClass('gap');
+                    $('header').removeClass('twoLine');
                 }
             });
 
