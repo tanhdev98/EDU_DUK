@@ -365,6 +365,14 @@
             top: 226px;
             pointer-events: none;
         }
+
+        .answer {
+            font-family: 'NotoM';
+        }
+
+        #wrap header .title-text {
+            letter-spacing: -1.3px;
+        }
     </style>
 </head>
 
@@ -526,7 +534,8 @@
                                                                             spellcheck="false"></textarea>
                                                                     </div>
                                                                     <div class="text-exam flex-wrap">
-                                                                        <div class="blueT">
+                                                                        <div class="blueT"
+                                                                            style="letter-spacing: -1.9px;">
                                                                             <p>심판이 양쪽 팀을 똑같이 대하지 않았습니다. 그러면 경기 결과를 인정할 수
                                                                                 없을 것 같습니다.</p>
                                                                         </div>
@@ -645,7 +654,8 @@
                                                                             spellcheck="false"></textarea>
                                                                     </div>
                                                                     <div class="text-exam flex-wrap">
-                                                                        <div class="blueT">
+                                                                        <div class="blueT"
+                                                                            style="letter-spacing: -2.2px;">
                                                                             <p>친구들이 공정하게 대해 주지 않으면 앞으로는 간식을 나눠 먹지 않게 될
                                                                                 것입니다.</p>
                                                                         </div>
@@ -705,7 +715,8 @@
                                                                             spellcheck="false"></textarea>
                                                                     </div>
                                                                     <div class="text-exam flex-wrap">
-                                                                        <div class="blueT">
+                                                                        <div class="blueT"
+                                                                            style="letter-spacing: -1.8px;">
                                                                             <p>다친 사람이 일인 일역을 다른 사람과 똑같이 하면 다친 곳이 낫지 않을 수
                                                                                 있습니다. 다른 사람과 같은 상황이 아닌 사람은 배려해야 합니다.</p>
                                                                         </div>
@@ -810,10 +821,10 @@
                 if ($(this).data('text')) {
                     $('header .title-text').html($(this).data('text'));
                 }
-                if ($(this).attr('data-gap') == 'true') {
-                    $('header').addClass('gap');
+                if ($(this).hasClass('twoLine')) {
+                    $('header').addClass('twoLine');
                 } else {
-                    $('header').removeClass('gap');
+                    $('header').removeClass('twoLine');
                 }
             });
 
