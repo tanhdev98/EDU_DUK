@@ -56,7 +56,7 @@
 
         .btn-praise {
             right: -28px;
-            top: 410px;
+            top: 430px;
         }
 
         /* thinkNet */
@@ -496,7 +496,7 @@
                                     </div>
                                 </li>
                                 <li class="innerTab_2" data-quiz="toggle">
-                                    <div class="tab-content-box" style="margin-top: 60px;">
+                                    <div class="tab-content-box" style="margin-top: 80px;">
                                         <div class="tab-content content-03">
                                             <div class="table-box color-03 ">
                                                 <table>
@@ -636,7 +636,7 @@
                     </li>
                     <li class="page_2">
                         <div class="study_guide"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
-                        <div class="self-check" style="margin-top: 60px;">
+                        <div class="self-check" style="margin-top: 95px;">
                             <div class="checkWrap">
                                 <div class="text_box">친구의 말에 귀를 기울이며 잘 들어 줬나요?</div>
                                 <div class="icon-box">
@@ -828,6 +828,22 @@
                 }
             });
         });
+
+        $(document).on('click', '.popup_pages .toggle', function () {
+            if ($('.popup_pages .toggle').length != $('.popup_pages .toggle.complete').length) {
+                $('.popup_pages .dapCheckBtn').removeClass('reset');
+            } else {
+                $('.popup_pages .dapCheckBtn').addClass('reset');
+            }
+        })
+
+        $(document).on('click', '.popup_pages .dapCheckBtn', function () {
+            if (!$(this).hasClass('reset')) {
+                $('.popup_pages div[data-type="toggleButton"]').attr('data-active', 'off');
+            } else {
+                $('.popup_pages div[data-type="toggleButton"]').attr('data-active', 'on');
+            }
+        })
     </script>
 
 
