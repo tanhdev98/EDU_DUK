@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        #wrap header {
+            align-items: start;
+        }
+
+        #wrap header .title-icon {
+            top: 10px;
+        }
+
+        /* page 1 */
+        .page_1 .noteText {
+            box-shadow: none;
+            padding: 0;
+        }
+
+        .page_1 .blueT {
+            margin-top: -3px;
+            font-family: 'notoM';
+        }
+
+        .page_1 th,
+        .page_1 td {
+            padding: 4px 0;
+        }
+
+        .page_1 th .noteText {
+            height: 60px;
+        }
+
+        .page_1 td .noteText {
+            height: 120px;
+        }
+
+        .page_1 .noteText.noLine .textareaWrap {
+            height: 100%;
+        }
+
+        .page_1 .noteText .text-exam.flex-wrap {
+            padding: 0 20px;
+        }
+
+        .page_1 th .noteText .text-exam.flex-wrap {
+            justify-content: center;
+        }
+
+        /* page 2 */
+        .speech {
+            display: block;
+            width: 64px;
+            height: 64px;
+            position: absolute;
+            z-index: 4;
+            pointer-events: auto;
+            cursor: pointer;
+        }
+
+        .speech-left {
+            background: url(../ko/contents/images/button/btn_speech_balloon_left1.png) no-repeat;
+            top: 260px;
+            right: 310px;
+        }
+
+        .speech-left:hover {
+            background: url(../ko/contents/images/button/btn_speech_balloon_left1_hover.png) no-repeat;
+        }
+
+        .speech-right {
+            background: url(../ko/contents/images/button/btn_speech_balloon_right1.png) no-repeat;
+            left: 340px;
+            top: 240px;
+        }
+
+        .speech-right:hover {
+            background: url(../ko/contents/images/button/btn_speech_balloon_right1_hover.png) no-repeat;
+        }
+
+        .balloon.green {
+            left: 90px;
+            top: 10px;
+        }
+
+        .balloon.pink {
+            right: 95px;
+            top: -15px;
+        }
+
+        .page_2 .innerTab_1>img {
+            width: 860px;
+            margin: auto;
+            margin-top: 160px;
+        }
+
+        .page_2 .items {
+            padding: 0 0 0 28px;
+            margin-top: 60px;
+        }
+
+        .page_2 .items .item {
+            position: relative;
+        }
+
+        .page_2 .items .item .toggle {
+            margin-top: 10px;
+            justify-content: center;
+        }
+
+        .page_2 .items .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 30px;
+            left: -30px;
+            transform: translateY(-50%);
+        }
+
+        .page_2 .additional-question {
+            position: absolute;
+            right: 0;
+        }
+
+        .innerSlider_tabs>li {
+            background-color: #F3DEC0;
+        }
+
+        .innerSlider_tabs>li.on {
+            background-color: #F3B05B;
+        }
+
+        .innerButtonContainer {
+            position: absolute;
+            right: 40px;
+            top: 76px;
+        }
+
+        .innerButtonContainer::before {
+            display: none;
+        }
+
+        .popup_pages>li.image .basicSlider {
+            padding: 0;
+        }
+
+        .popup_pages .contentsBox .basicSlider_slides>li {
+            padding: 0;
+        }
+
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: fit-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+        }
+
+        .popup_pages [data-type="toggleButton"] {
+            height: fit-content;
+            margin-top: 40px;
+        }
+
+        .popup_pages [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            justify-content: center;
+        }
+
+        .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="gap">
+            <div class="title-icon blue">실천 <em>쑥쑥</em></div>
+            <div class="title-text"><span style="letter-spacing: -2.9px;">비무장 지대에서 인공지능 로봇이 마주칠 다양한 상황을 모둠 친구들과 예측해 보고,
+                    인공지능 로봇에 필요한 행동 규칙을 새로 만들어 봅시다.</span></div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-gap="true" data-hover="" data-text="<span style='letter-spacing: -2.9px;'>비무장 지대에서 인공지능 로봇이 마주칠 다양한 상황을 모둠 친구들과 예측해 보고,
+                            인공지능 로봇에 필요한 행동 규칙을 새로 만들어 봅시다.</span>">활동 1
+                    </li>
+                    <li data-hover=""
+                        data-text="모둠에서 만든 행동 규칙을 적용한 인공지능 로봇의 모습을 상상해 보고, 그 로봇이 작동할 때 어떤 일이 일어날지 이야기해 봅시다."
+                        data-gap="true">활동 2</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="table-box color-02 ">
+                            <table>
+                                <colgroup>
+                                    <col style="width:20%">
+                                    <col style="width:80%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            행동 규칙 1
+                                        </th>
+                                        <td>
+                                            <div class="noteText noLine">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        <p>사람과 토종 생물을 보호한다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            행동 규칙 2
+                                        </th>
+                                        <td>
+                                            <div class="noteText noLine">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT">
+                                                        <p>지뢰, 전쟁 잔해 등과 같이 생태계에 위협이 되는<br>
+                                                            대상은 안전하게 제거한다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            행동 규칙 3
+                                        </th>
+                                        <td>
+                                            <div class="noteText noLine">
+                                                <div class="textareaWrap">
+                                                    <textarea class="textLine afterDisplay" type="text"
+                                                        placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                                        onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                        spellcheck="false"></textarea>
+                                                </div>
+                                                <div class="text-exam flex-wrap">
+                                                    <div class="blueT" style="position: relative; top: 0px;">
+                                                        <p class="dot">생태계에 피해를 주는 외래 식물은 제거한다.</p>
+                                                        <p class="dot">외래 동물은 포획하여 관리소로 이동시킨다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                    <li class="page_2">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <img src="./images/duk_04_08_0003_202/img_01.png" alt="">
+                                    <div class="speech speech-right" data-popup="1"></div>
+                                    <div class="balloon green bottom" data-show="1">
+                                        <span>
+                                            우리 모둠은 비무장 지대의<br>
+                                            생물을 안전하게 지키도록 안전을<br>
+                                            최우선으로 하는 행동 규칙을 정했어.
+                                        </span>
+                                        <div class="close-speech-button"></div>
+                                    </div>
+                                    <div class="speech speech-left" data-popup="2"></div>
+                                    <div class="balloon pink bottom" data-show="2">
+                                        <span>
+                                            인공지능 로봇이 지뢰 같은<br>
+                                            위험 물질을 제거하면<br>
+                                            주변 자연환경을 훼손하지 않으므로<br>
+                                            자연을 보존할 수 있어.
+                                        </span>
+                                        <div class="close-speech-button"></div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="items">
+                                        <div class="item" data-type="toggleButton">
+                                            잘못된 행동 규칙을 학습한 인공지능 로봇이 작동한다면 어떤 문제가 생길까요?
+                                            <div class="toggle examBtn box" data-toggle-obj="1">
+                                                <div class="answer" data-toggle-target="1" style="text-align: center;">
+                                                    <div>비무장 지대의 환경을 파괴할 수도 있을 것 같습니다.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
+                                </li>
+                                <li class="innerTab_3" data-quiz="toggle">
+                                    <div class="items">
+                                        <div class="item" data-type="toggleButton">
+                                            비무장 지대를 지키는 데 필요한 인공지능 로봇의 행동 규칙은 어떤 사람들이 모여 정해야 할까요? 그래야 하는 까닭은 무엇일까요?
+                                            <div class="toggle examBtn box" data-toggle-obj="2">
+                                                <div class="answer" data-toggle-target="2" style="text-align: center;">
+                                                    <div>인공지능 로봇의 행동 규칙은 비무장 지대 생태계를 잘 아는<br>
+                                                        생태 전문가와 지뢰 등의 위험 물건들을 잘 아는 군사 전문가 등이<br>
+                                                        모여 정해야 비무장 지대 환경을 보호할 수 있을 것 같습니다.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="popBtn additional-question" data-popup-btn="1">추가 질문</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image" data-popup-page="1" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="innerButtonContainer">
+                                <ul class="innerSlider_tabs">
+                                    <li data-hover="" class="on">1</li>
+                                    <li data-hover="" class="">2</li>
+                                    <li data-hover="" class="">3</li>
+                                    <li data-hover="" class="">4</li>
+                                    <li data-hover="" class="">5</li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            모둠원들의 규칙 중 비슷한 종류의 규칙은 무엇인가요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="1" data-hover="">
+                                                    <div class="answer" data-toggle-target="1">
+                                                        <div class="ls-2h">
+                                                            <p class="dot">비무장 지대의 자연환경과 관련된 규칙입니다.</p>
+                                                            <p class="dot">비무장 지대의 동식물과 관련된 규칙입니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            비슷한 종류의 행동 규칙을 포괄하는 하나의<br>
+                                            행동 규칙으로 정리한다면 어떻게 표현할 수 있나요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton" style="margin-top: 20px;">
+                                                <div class="toggle examBtn box" data-toggle-obj="2" data-hover="">
+                                                    <div class="answer" data-toggle-target="2">
+                                                        <div class="ls-2h">
+                                                            <p class="dot">‘비무장 지대의 자연환경을 보존하라’로 표현할 수 있습니다.</p>
+                                                            <p class="dot">‘비무장 지대의 생명체들을 보호하라’로 표현할 수 있습니다.</p>
+                                                            <p class="dot">‘비무장 지대의 위험 물건을 제거하라’로 표현할 수 있습니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            발표한 행동 규칙을 지닌 인공지능 로봇이 비무장 지대에서<br>
+                                            임무를 시작한다면 우리에게 어떠한 편리함을 제공할까요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="3" data-hover="">
+                                                    <div class="answer" data-toggle-target="3"
+                                                        style="text-align: center;">
+                                                        <div class="ls-2h">
+                                                            위험을 무릅쓰지 않고도 지뢰, 전쟁 잔해 등의 위험 물질을
+                                                            안전하게 제거할 수 있습니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_4">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            모둠원들의 행동 규칙 중에서 서로 충돌하는 규칙이 있다면<br>
+                                            무엇이고, 어떻게 보완할 수 있을까요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton" style="margin-top: 20px;">
+                                                <div class="toggle examBtn box" data-toggle-obj="4" data-hover="">
+                                                    <div class="answer" data-toggle-target="4"
+                                                        style="text-align: center;">
+                                                        <div class="ls-2h">
+                                                            위험 물질을 찾아 제거할 때 오히려 주위 동물들이 위험에
+                                                            처할 수 있습니다. 지뢰를 제거하기 전에 주변에 동물이 있는지
+                                                            확인하고 사이렌을 울리는 방법으로 보완할 수 있습니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_5">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            정해진 행동 규칙에 따라 인공지능 로봇이 활동하여도<br>
+                                            꼭 인간의 판단을 거쳐야 하는 상황에는 무엇이 있을까요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="5" data-hover="">
+                                                    <div class="answer" data-toggle-target="5"
+                                                        style="text-align: center;">
+                                                        <div class="ls-2h">
+                                                            로봇의 행동이 수많은 생명체의 목숨을 앗아갈 수 있는<br>
+                                                            상황에는 인간의 판단을 거쳐야 합니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+
+            $(document).on('click', '.speech', function () {
+                KmAudioPlayer.buttonClick();
+                $('.speech').show();
+                $('.balloon').hide();
+                var $data_popup = $(this).attr('data-popup');
+                $('.balloon[data-show="' + $data_popup + '"]').show().append('<div class="close-speech-button beforeNon"></div>');
+                $(this).hide();
+            });
+
+            $(document).on('click', '.close-speech-button', function () {
+                $(this).parent().hide();
+                $(this).remove();
+            });
+
+            $(document).on('click', '.balloon', function () {
+                $(this).hide();
+                $('.speech').show();
+                $(this).find('.close-speech-button');
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+            $(document).on('click', '.additional-question', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs>li', function () {
+                KmAudioPlayer.buttonClick();
+            });
+        });
+    </script>
+</body>
+
+</html>
