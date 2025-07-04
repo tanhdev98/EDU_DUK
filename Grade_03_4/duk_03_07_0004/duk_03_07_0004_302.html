@@ -17,6 +17,152 @@
             display: block !important;
         }
 
+        /* page 1 */
+        .contentsBox {
+            padding: 0;
+        }
+
+        .basicSlider[data-slide-container='main']>.basicSlider_slides>li:not(.page_1) {
+            padding: 20px 28px 0 28px;
+        }
+
+        .page_1 .study_guide {
+            right: 28px;
+            top: 20px;
+        }
+
+        .page_2 .study_guide {
+            right: 28px;
+        }
+
+        .page_1 .buttonContainer {
+            right: 28px;
+        }
+
+        .zoomArea {
+            height: 100%;
+        }
+
+        .page_1 .bgImg img {
+            position: absolute;
+            object-fit: contain;
+            left: 20px;
+            top: 50px;
+            width: 1100px;
+            height: 550px;
+        }
+
+        /* ///////// */
+        .zoomContainer.horizon .zoomController {
+            top: 20px;
+            left: 28px;
+        }
+
+        .zoomImgContainer {
+            height: 100%;
+        }
+
+        .page_zoom {
+            height: 100%;
+        }
+
+        .zoomContainer {
+            height: 100%;
+        }
+
+        .zoomImg {
+            height: 100%;
+            width: 100%;
+        }
+
+        /* drag drop */
+        .dragDropContainer.bogi .bogi-icon {
+            width: max-content;
+            text-align: center;
+            left: -2px;
+            top: -1px;
+            left: 0;
+            right: unset;
+            margin: auto;
+            border-radius: 0 0 18px 0px;
+            font-size: 22px;
+            height: max-content;
+            padding: 2px 10px;
+        }
+
+        .dragDropContainer.bogi .lineBox {
+            position: absolute;
+            width: 175px;
+            height: 280px;
+            top: 160px;
+            left: 1130px;
+        }
+
+        .js-dragObj {
+            cursor: pointer;
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-repeat: no-repeat;
+            scale: 1.4;
+            background-size: contain;
+            padding: 0;
+            left: 67px;
+            top: 67px;
+        }
+
+        .d1 {
+            background-image: url("./images/duk_03_07_0004_302/icon_o.png");
+        }
+
+        .d2 {
+            background-image: url("./images/duk_03_07_0004_302/icon_x.png");
+            top: 170px;
+        }
+
+        .clearArea {
+            position: absolute;
+            z-index: 2;
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+        }
+
+        .a1 {
+            top: 98px;
+            left: 440px;
+        }
+
+        .a2 {
+            top: 225px;
+            left: 130px;
+        }
+
+        .a3 {
+            top: 325px;
+            left: 510px;
+        }
+
+        .a4 {
+            top: 361px;
+            left: 135px;
+        }
+
+        .a5 {
+            top: 288px;
+            left: 886px;
+        }
+
+        .js-dragObj.dragObjComplete {
+            opacity: 1;
+            cursor: auto;
+        }
+
+        .clearArea .dragObjComplete {
+            top: 23px;
+            left: 23px;
+        }
+
         /* page 2 */
         .self-check {
             margin-top: 50px;
@@ -38,9 +184,46 @@
                     <li data-hover="" data-text="7단원을 마치며 자신의 모습을 되돌아봅시다.">자기 점검</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
-                    <li class="page_1">
+                    <li class="page_1 page_zoom zoom_img" data-quiz="dragDrop" data-option="answer, copy"
+                        data-quiz-name="dragDrop" data-total-complete-count="5">
                         <div class="study_guide"><em>보기</em>에서 <em>끌어</em> 붙이세요.</div>
-
+                        <div class="zoomContainer horizon pointerOff">
+                            <div class="zoomArea">
+                                <div class="zoomImgContainer pointerOff">
+                                    <div class="zoomImg">
+                                        <div class="bgImg">
+                                            <img src="./images/duk_03_07_0004_302/img_01.png" alt="">
+                                            <div class="dragDropContainer bogi">
+                                                <div class="it-start-wrap dragBox lineBox dragObjUL">
+                                                    <div class="bogi-icon"></div>
+                                                    <div class="drag-zone">
+                                                        <div class="js-dragObj d1" data-drag-obj-answer="1"
+                                                            data-ps="free"></div>
+                                                        <div class="js-dragObj d2" data-drag-obj-answer="2"
+                                                            data-ps="free"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex-wrap bgDrop">
+                                                    <div class="js-dropArea a1 clearArea" data-drop-area-answer="1">
+                                                    </div>
+                                                    <div class="js-dropArea a2 clearArea" data-drop-area-answer="1">
+                                                    </div>
+                                                    <div class="js-dropArea a3 clearArea" data-drop-area-answer="1">
+                                                    </div>
+                                                    <div class="js-dropArea a4 clearArea" data-drop-area-answer="2">
+                                                    </div>
+                                                    <div class="js-dropArea a5 clearArea" data-drop-area-answer="2">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="dapCheckBtn" data-answer-btn=""></button>
+                        </div>
                     </li>
                     <li class="page_2">
                         <div class="study_guide"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
@@ -148,6 +331,7 @@
     <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
     <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
     <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/zoomImage.js"></script>
     <script type="text/javascript" src="./common/js/guide.js"></script>
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
@@ -161,6 +345,17 @@
                     $('header').removeClass('gap');
                 }
             });
+
+            $(document).on('click', '.page_1 .dapCheckBtn', function () {
+                if ($(this).hasClass('reset')) {
+                    $('.lineBox .js-dragObj').addClass('hide');
+                    $('.js-dropArea .js-dragObj').removeClass('hide');
+                } else {
+                    $('.lineBox .js-dragObj').removeClass('hide');
+                    $('.js-dropArea .js-dragObj').addClass('hide');
+                }
+            });
+
         });
     </script>
 </body>
