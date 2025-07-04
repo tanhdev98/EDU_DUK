@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        .page_1>img {
+            margin: auto;
+            height: 100%;
+            padding-bottom: 20px;
+        }
+
+        .speech {
+            display: block;
+            width: 64px;
+            height: 64px;
+            position: absolute;
+            z-index: 4;
+            pointer-events: auto;
+            cursor: pointer;
+        }
+
+        .speech-left {
+            background: url('../ko/contents/images/button/btn_speech_balloon_left1.png') no-repeat;
+            top: 310px;
+            right: 350px;
+        }
+
+        .speech-left:hover {
+            background: url('../ko/contents/images/button/btn_speech_balloon_left1_hover.png') no-repeat;
+        }
+
+        .balloon.blue {
+            border: 5px solid #A8D6F6;
+            background-color: #E7F4F9;
+            top: 230px;
+            left: -10px;
+        }
+
+        .balloon.blue::after {
+            border-bottom: 25px solid #A8D6F6;
+            transform: rotate(90deg);
+            bottom: 0;
+            top: 0;
+            margin: auto;
+        }
+
+        .min[data-popup-page="1"] {
+            top: 170px;
+            left: 520px;
+            width: 740px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="gap">
+            <div class="title-icon pink">마음 <em>쑥쑥</em></div>
+            <div class="title-text"><span style="letter-spacing: -2.2px;">우리 모둠이 설계한 인공지능 로봇을 학급 친구들에게 소개해 봅시다.</span>
+            </div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover=""
+                        data-text="<span style='letter-spacing: -2.2px;'>우리 모둠이 설계한 인공지능 로봇을 학급 친구들에게 소개해 봅시다.</span>"
+                        data-gap="true">
+                        활동 1</li>
+                    <li data-hover=""
+                        data-text="<span style='letter-spacing: -2.8px;'>친구들이 발표한 로봇 중 인상 깊은 로봇과 그 까닭을 함께 말해 봅시다.</span>"
+                        data-gap="true">활동 2</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="icon-char" data-hover="" data-popup-btn="1"></div>
+                        <img src="./images/duk_04_08_0004_201/img_01.png" alt="">
+                        <div class="speech speech-left" data-popup="1"></div>
+                        <div class="balloon blue right" data-show="1">
+                            <span>
+                                우리 모둠은 환경을 보호하는 쓰레기 로봇을<br>
+                                설계했어. 이 로봇에는 비무장 지대의<br>
+                                쓰레기를 제거하는 기능이 있어.<br>
+                                이때 다른 보호종 생물은 건드리지 않는<br>
+                                행동 규칙을 입력했지.
+                            </span>
+                            <div class="close-speech-button"></div>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <div class="noteText noteLine pink">
+                            <div class="textareaWrap">
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    3모둠이 발표한 로봇이 인상 깊었습니다. 위험한 순간에는 사이렌을 울려 야생 동물을 보호하는 행동 규칙을 입력한 점이 참신했습니다.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents">
+                        <p>
+                            다른 학급을 대상으로 서로 발표하고 반응을 나눌 수도 있습니다.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+
+            $(document).on('click', '.speech', function () {
+                KmAudioPlayer.buttonClick();
+                $('.speech').show();
+                $('.balloon').hide();
+                var $data_popup = $(this).attr('data-popup');
+                $('.balloon[data-show="' + $data_popup + '"]').show().append('<div class="close-speech-button beforeNon"></div>');
+                $(this).hide();
+            });
+
+            $(document).on('click', '.close-speech-button', function () {
+                $(this).parent().hide();
+                $(this).remove();
+            });
+
+            $(document).on('click', '.balloon', function () {
+                $(this).hide();
+                $('.speech').show();
+                $(this).find('.close-speech-button');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        /* page 1 */
+        .how-to-play li .text {
+            word-break: auto-phrase;
+        }
+
+        /* page 2 */
+        .page_2 h1 {
+            text-align: center;
+        }
+
+        .page_2 .innerTab_1 .noteText {
+            box-shadow: none;
+            border: 4px solid #FFC000;
+            margin-top: 10px;
+        }
+
+        .page_2 .title,
+        .page_2 .innerTab_1 .noteText>p {
+            color: #fff;
+            width: max-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #00B0F0;
+            padding: 5px 20px;
+            border-radius: 50px;
+            font-size: 35px;
+            line-height: 1;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .page_2 .study_guide {
+            right: 10px;
+            top: 10px;
+        }
+
+        .page_2 .innerTab_1 .noteText .text-exam>img {
+            position: absolute;
+            width: 400px;
+            height: auto;
+            top: 70px;
+            left: 200px;
+        }
+
+        .page_2 .innerTab_1 .noteText .text-box {
+            text-align: center;
+            padding: 10px 20px;
+            border: 4px solid #A8D6F6;
+            border-radius: 20px;
+            background: #E7F4F9;
+            top: 100px;
+            right: 50px;
+            position: absolute;
+        }
+
+        .page_2 .innerTab_1 .noteText .text-box::after {
+            content: '';
+            width: 130px;
+            height: 4px;
+            background: #A8D6F6;
+            position: absolute;
+            top: 50px;
+            bottom: 0;
+            left: -130px;
+        }
+
+        .page_2 .innerTab_1 .noteText .text-box::before {
+            content: '';
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #A8D6F6;
+            position: absolute;
+            left: -130px;
+            top: 45px;
+        }
+
+        .page_2 .title {
+            top: 60px;
+            left: 0;
+        }
+
+        .table-box table {
+            font-size: 38px;
+        }
+
+        .page_2 .innerTab_2 .noteText {
+            box-shadow: none;
+            padding: 0;
+        }
+
+        .page_2 .innerTab_2 .blueT {
+            margin-top: -3px;
+            font-family: 'notoM';
+        }
+
+        .page_2 .innerTab_2 .blueT>p {
+            padding-left: 60px;
+            position: relative;
+        }
+
+        .page_2 .innerTab_2 .blueT>p::before {
+            content: '';
+            width: 30px;
+            height: 30px;
+            border: 2px solid #006ee6;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            line-height: 1;
+            position: absolute;
+            left: 10px;
+            top: 15px;
+        }
+
+        .page_2 .innerTab_2 .blueT>p:first-child::before {
+            content: '1';
+        }
+
+        .page_2 .innerTab_2 .blueT>p:nth-child(2)::before {
+            content: '2';
+        }
+
+        .page_2 th,
+        .page_2 td {
+            padding: 4px 0;
+        }
+
+        .page_2 th .noteText {
+            height: 60px;
+        }
+
+        .page_2 td .noteText {
+            height: 180px;
+        }
+
+        .page_2 .innerTab_2 .noteText.noLine .textareaWrap {
+            padding: 0 10px;
+            height: 100%;
+        }
+
+        .page_2 .innerTab_2 .noteText .text-exam.flex-wrap {
+            justify-content: center;
+            padding: 0 10px;
+        }
+
+        .page_2 .innerTab_2 th .noteText .text-exam.flex-wrap {
+            justify-content: center;
+        }
+
+        .table-box {
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="gap">
+            <div class="title-icon pink">마음 <em>똑똑</em></div>
+            <div class="title-text">올바른 디지털 생활 습관을 다짐하는 서약서를 적어 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="올바른 디지털 생활 습관을 다짐하는 서약서를 적어 봅시다." data-gap="true">활동 방법</li>
+                    <li data-hover="" data-text="이 밖에도 디지털 사회의 도덕 문제에는 어떤 것이 더 있을까요?" data-gap="true">활동</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="title-box">
+                            <div class="title">활동 방법</div>
+                        </div>
+                        <ul class="how-to-play">
+                            <li>
+                                <div class="bullet number orange inline">
+                                    1
+                                </div>
+                                <div class="text">
+                                    우리 모둠이 설계한 인공지능 로봇을 살펴보며 이야기를 나눈 후, 모둠원의 의견을 모아서 비무장 지대를 지키는 인공지능 로봇의
+                                    생김새를 그려 봅니다.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="bullet number orange inline">
+                                    2
+                                </div>
+                                <div class="text">
+                                    우리 모둠이 설계한 인공지능 로봇의 기능을 간단하게 소개합니다.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="bullet number orange inline">
+                                    3
+                                </div>
+                                <div class="text" style="letter-spacing: -1.4px;">
+                                    우리 모둠이 설계한 인공지능 로봇의 행동 규칙을 간단하게 설명합니다.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="bullet number orange inline">
+                                    4
+                                </div>
+                                <div class="text">
+                                    우리 모둠이 설계한 인공지능 로봇을 활용하면 어떤 점이 좋은지
+                                    설명합니다.
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="page_2">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <h1>비무장 지대를 지키는 인공지능 로봇</h1>
+                                    <div class="noteText noText">
+                                        <p>생김새</p>
+                                        <div class="study_guide"><em>수업 도구</em>의 <em>색연필</em>을 클릭하세요.</div>
+                                        <div class="text-exam flex-wrap">
+                                            <img src="./images/duk_04_08_0004_101/img_01.png" alt="">
+                                            <div class="text-box">
+                                                로봇이 환경을 훼손하지 않고<br>
+                                                이동할 수 있게 바퀴 대신<br>
+                                                날개를 설치했습니다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <h1>비무장 지대를 지키는 인공지능 로봇</h1>
+                                    <div class="title">인공지능 로봇의 기능과 행동 규칙, 활용하면 좋은 점</div>
+                                    <div class="table-box color-02 ">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:15%">
+                                                <col style="width:85%">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th>
+                                                        행동<br>
+                                                        규칙
+                                                    </th>
+                                                    <td>
+                                                        <div class="noteText noLine">
+                                                            <div class="textareaWrap">
+                                                                <textarea class="textLine afterDisplay" type="text"
+                                                                    placeholder="직접 쓰기" data-input-obj=""
+                                                                    data-answer=" " onfocus=""
+                                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                                    spellcheck="false"></textarea>
+                                                            </div>
+                                                            <div class="text-exam flex-wrap">
+                                                                <div class="blueT">
+                                                                    <p>지뢰, 전쟁 무기 잔해 등을 발견하면 관련 단체에 연락 후 해체, 수거합니다.</p>
+                                                                    <p>이동할 때 생태계를 훼손하지 않도록 주의합니다.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        좋은 점
+                                                    </th>
+                                                    <td>
+                                                        <div class="noteText noLine">
+                                                            <div class="textareaWrap">
+                                                                <textarea class="textLine afterDisplay" type="text"
+                                                                    placeholder="직접 쓰기" data-input-obj=""
+                                                                    data-answer=" " onfocus=""
+                                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                                    spellcheck="false"></textarea>
+                                                            </div>
+                                                            <div class="text-exam flex-wrap">
+                                                                <div class="blueT">
+                                                                    <p>지뢰를 정확하게 발견하며 지뢰를 제거할 때에 안전에 대한 위험이 적습니다.</p>
+                                                                    <p>위험 물질을 안전하게 제거하여 생태계를 보호할 수 있습니다.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="buttonContainer">
+                                        <button class="writeBtn" data-answer-btn=""></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

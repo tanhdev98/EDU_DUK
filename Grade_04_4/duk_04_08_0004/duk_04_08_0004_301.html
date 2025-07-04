@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        #wrap header {
+            align-items: start;
+        }
+
+        #wrap header .title-icon {
+            top: 10px;
+        }
+
+        /* page 1 */
+        .page_1>img {
+            position: absolute;
+            width: 100%;
+            height: 460px;
+            z-index: -1;
+        }
+
+        .page_1 .bg {
+            padding: 0 20px;
+            width: 100%;
+            height: 465px;
+            background: url('./images/duk_04_08_0004_301/img_01.png') no-repeat center / 100% 100%;
+            font-size: 40px;
+        }
+
+        .page_1 .noteText {
+            padding: 15px 10px;
+            background: #fff;
+            height: 232px;
+            box-shadow: none;
+            margin-top: 10px;
+        }
+
+        .page_1 .noteText .text-exam.flex-wrap {
+            padding: 10px;
+        }
+
+        .noteText .textLine {
+            line-height: 50px;
+            padding: 0;
+        }
+
+        .noteText .textareaWrap {
+            height: 100%;
+            padding: 0 10px;
+        }
+
+        .noteText .textareaWrap :nth-child(2) {
+            top: 57px !important;
+        }
+
+        .noteText .textareaWrap :nth-child(3) {
+            top: 107px !important;
+        }
+
+        .noteText .textareaWrap :nth-child(4) {
+            top: 157px !important;
+        }
+
+        .noteText .textareaWrap :nth-child(5) {
+            top: 207px !important;
+        }
+
+        .noteText .textareaWrap :nth-child(6) {
+            display: none;
+        }
+
+        .noteText .blueT {
+            margin-top: 0;
+            line-height: 50px;
+        }
+
+        .page_1 .bg h1 {
+            text-align: center;
+            font-family: 'NotoB';
+            margin-top: 60px;
+        }
+
+        /* popup */
+        .pointContainer .pointTitle {
+            display: block;
+            text-align: center;
+        }
+
+        .pointContainer .pointTitle .titleText {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 45px;
+            line-height: 50px;
+            font-family: 'YGJAL';
+            color: #ff6600;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+        }
+
+        .pointContainer .pointTitle .titleText:after,
+        .pointContainer .pointTitle .titleText:before {
+            position: absolute;
+            top: 0px;
+            height: 50px;
+            font-size: 40px;
+            line-height: 50px;
+            font-family: 'YGJAL';
+            color: #e4caa9;
+        }
+
+        .pointContainer .pointTitle .titleText:after {
+            content: "[";
+            left: -20px;
+        }
+
+        .pointContainer .pointTitle .titleText:before {
+            content: "]";
+            right: -20px;
+        }
+
+        .popup_pages .items .item {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 30px;
+            pointer-events: none;
+        }
+
+        .popup_pages .items .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        .popup_pages .items .item .toggle {
+            width: max-content;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon pink">마음 <em>탄탄</em></div>
+            <div class="title-text">비무장 지대를 지키는 인공지능 로봇이 실제로 비무장 지대를 누비는 모습을 상상하며 신문 기사를 완성해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="btn-praise right popBtn footer-item" data-popup-btn="1"
+                            style="top: 100px; right: -28px;">
+                            <div class="item-title">핵심 <br>정리</div>
+                        </div>
+                        <div class="bg">
+                            <h1>“비무장 지대에 인공지능 로봇을 배치하다”</h1>
+                            <p>20○○년 ○○월 ○○일, 비무장 지대의 환경을 보존하려고<br>
+                                인공지능 로봇을 배치했습니다. 이 로봇은
+                            </p>
+                            <div class="noteText noteLine">
+                                <div class="textareaWrap">
+                                    <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                        data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                        autocomplete="off" spellcheck="false"></textarea>
+                                </div>
+                                <div class="text-exam flex-wrap">
+                                    <div class="blueT">
+                                        <p>땅에 숨어 있는 지뢰를 안전하게 제거할 수 있는 기능을 가지고 있으며, 비무장 지대의 동식물에게 피해를 줄 수 있는 물건들을 효과적으로
+                                            구별 하여
+                                            회수할 수 있습니다. 비무장 지대를 지키는 로봇으로 더 안전하게 비무장 지대 생태계를 보존할 수 있을 것으로 예상됩니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image pointContainer" data-popup-page="1" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="pointTitle">
+                            <div class="titleText">비무장 지대를 지키는 인공지능 로봇을 소개해 봐요</div>
+                        </div>
+                        <div class="items" style="margin-top: 120px;">
+                            <div class="item">
+                                비무장 지대를 지키는 인공지능 로봇을 소개하는 홍보물 만들기
+                            </div>
+                            <div class="item">
+                                우리 모둠이 설계한 비무장 지대를 지키는 인공지능 로봇 소개하기
+                            </div>
+                            <div class="item">
+                                비무장 지대를 지키는 로봇을 설명하는 신문 기사 완성하기
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
