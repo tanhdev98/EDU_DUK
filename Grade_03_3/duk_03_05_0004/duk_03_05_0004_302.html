@@ -241,16 +241,20 @@
             });
 
             $(document).on('click', '.page_1 .icon', function () {
-                if ($(this).hasClass('iconX')) {
-                    KmAudioPlayer.incorrect();
-                } else {
-                    KmAudioPlayer.correct();
-                }
                 $(this).addClass('ans');
                 if ($('.group_ans .iconO.ans').length === $('.group_ans .iconO').length) {
                     $('.dapCheckBtn').addClass('reset');
                 } else {
                     $('.dapCheckBtn').removeClass('reset');
+                }
+
+                if ($(this).hasClass('iconX')) {
+                    KmAudioPlayer.incorrect();
+                    setTimeout(() => {
+                        $(this).removeClass('ans');
+                    }, 1000);
+                } else {
+                    KmAudioPlayer.correct();
                 }
             });
 
