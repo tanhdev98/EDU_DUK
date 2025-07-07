@@ -139,19 +139,19 @@
         }
 
         .page_3 .noteText .textLine {
-            line-height: 78px;
+            line-height: 77px;
             font-size: 32px;
-            margin-top: 19px;
+            margin-top: 9px;
             height: 305px;
         }
 
         .page_3 .blueT {
             font-size: 32px;
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
         .page_3 .blueT>p:not(:last-child) {
-            margin-bottom: 18px;
+            margin-bottom: 17px;
         }
     </style>
 </head>
@@ -238,7 +238,7 @@
                                     </tr>
                                     <tr>
                                         <td>3</td>
-                                        <td style="letter-spacing: -3px;">디지털 기기를 사용하지 못할 때,<br>
+                                        <td>디지털 기기를 사용하지 못할 때,<br>
                                             견디기 힘들었거나 불편했던 적이 있나요?
                                         </td>
                                         <td class="boxCheckContainer">
@@ -262,6 +262,10 @@
                         </div>
 
                         <p class="arrow">각 질문에서 3점 이상이 나온다면 디지털 생활 습관이 좋지 않은 거예요.</p>
+
+                        <div class="buttonContainer">
+                            <button class="resetBtn only-reset" data-type="reset" data-hover=""></button>
+                        </div>
                     </li>
                     <li class="page_2" data-quiz="toggle">
                         <div class="flex column">
@@ -366,6 +370,11 @@
                 const $parentRow = $(this).closest('tr');
                 $parentRow.find('.boxCheckContainer').removeClass('active');
                 $(this).addClass('active');
+            });
+
+            $(document).on('click', '.resetBtn', function () {
+                KmAudioPlayer.buttonClick();
+                $('.boxCheckContainer').removeClass('active')
             });
         });
     </script>
