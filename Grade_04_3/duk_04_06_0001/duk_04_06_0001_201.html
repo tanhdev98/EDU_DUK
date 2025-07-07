@@ -183,8 +183,9 @@
         .time-line-text {
             position: absolute;
             top: -60px;
-            right: 80px;
+            right: 60px;
             color: #5ABDB7;
+            font-family: 'YGJAL';
         }
 
         .text-4 {
@@ -238,6 +239,7 @@
             align-items: start;
             height: 100%;
             text-align: start;
+            letter-spacing: -1px;
         }
 
         [data-popup-page="2"] {
@@ -248,9 +250,9 @@
         }
 
         [data-popup-page="3"] {
-            top: 80px;
-            left: 90px;
-            width: 1150px;
+            top: 75px;
+            left: 130px;
+            width: 1110px;
             z-index: 3 !important;
         }
 
@@ -539,6 +541,14 @@
             $(document).on('click', '.popup_closeBtn', function () {
                 $('.popBtn.popupOn').trigger('click');
             });
+
+            //Hide header - footer bar in view link
+            $(document).on('click', '.popup_pages .popup_closeBtn', function () {
+                var parentDocument = parent.document.querySelector('iframe');
+                if (parentDocument != null) {
+                    parentDocument.parentNode.parentNode.style = '';
+                }
+            })
         });
     </script>
 </body>
