@@ -223,7 +223,7 @@
                                     onblur="placeholder='직접 쓰기'" autocomplete="off" spellcheck="false"></textarea>
                             </div>
                         </div>
-                        <div class="buttonContainer" style="right: 28px;">
+                        <div class="buttonContainer">
                             <button class="resetBtn only-reset" data-type="reset" data-hover=""></button>
                         </div>
                     </li>
@@ -346,6 +346,14 @@
                 KmAudioPlayer.buttonClick();
                 $('.textLine').val('');
             });
+
+            //Hide header - footer bar in view link
+            $(document).on('click', '.popup_pages .popup_closeBtn', function () {
+                var parentDocument = parent.document.querySelector('iframe');
+                if (parentDocument != null) {
+                    parentDocument.parentNode.parentNode.style = '';
+                }
+            })
         });
     </script>
 </body>
