@@ -11,6 +11,10 @@
     <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
 
     <style>
+        #wrap main {
+            width: calc(100% + 1px);
+        }
+
         #wrap header {
             align-items: start;
         }
@@ -577,7 +581,8 @@
                                         target="_blank">참고 영상</a>
                                     <div class="flex">
                                         <div class="item">
-                                            <img src="./images/duk_04_05_0001_202/img_03.png" alt="">
+                                            <img src="./images/duk_04_05_0001_202/img_03.png" alt=""
+                                                style="width: 360px;">
                                         </div>
                                         <div class="item">
                                             <div class="titleNote pink">디지털 자료는 누군가 가져가거나 복사해도 사라지지 않습니다. 그런데 왜 다른 사람이
@@ -646,9 +651,9 @@
                         height: 360px;
                         top: 90px;">
                             <div class="textareaWrap">
-                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
-                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
-                                    autocomplete="off" spellcheck="false"></textarea>
+                                <textarea style="letter-spacing: -1px; text-align: start;" class="textLine afterDisplay"
+                                    type="text" placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                    onblur="placeholder='직접 쓰기'" autocomplete="off" spellcheck="false"></textarea>
                             </div>
                             <div class="text-exam flex-wrap">
                                 <div class="blueT">
