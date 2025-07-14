@@ -45,7 +45,9 @@
 
         .noteText .text-exam.flex-wrap {
             padding: 0;
-            text-align: start;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
         }
 
         .blueT {
@@ -495,7 +497,6 @@
 
             $(document).on('click', '.close-speech-button', function () {
                 var _id = $(this).parent().attr('data-show');
-                console.log(_id);
                 $(this).parent().hide();
                 $(`[data-popup=${_id}]`).show().removeClass('ans');
                 $(this).remove();
