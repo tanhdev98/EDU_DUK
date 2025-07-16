@@ -228,12 +228,15 @@
             display: flex;
             gap: 30px;
             justify-content: center;
-            margin-top: 20px;
+            align-items: center;
+            margin-top: 40px;
         }
+
 
         .full_content .flex.column {
             flex-direction: column;
             gap: 10px;
+            margin-top: 0;
         }
 
         .full_content .titleBox {
@@ -308,11 +311,12 @@
             object-fit: contain;
             position: absolute;
             right: 200px;
-            bottom: 100px;
+            bottom: 80px;
         }
 
         .full_content .buttonContainer {
             right: 28px;
+            bottom: 20px;
         }
 
         [data-popup-page="3"] .innerTab_3 img:nth-child(2),
@@ -324,9 +328,11 @@
         [data-popup-page="3"] .innerTab_3 img:nth-child(3),
         [data-popup-page="3"] .innerTab_2 img:nth-child(3) {
             position: absolute;
-            left: 40px;
-            width: 640px;
-            top: 38px;
+            left: 50px;
+            width: 625px;
+            height: 415px;
+            top: 208px;
+            object-fit: fill;
         }
 
         [data-popup-page="3"] .noteText {
@@ -335,13 +341,13 @@
             padding: 0;
             width: 580px;
             position: absolute;
-            top: 260px;
+            top: 250px;
             right: 50px;
         }
 
         [data-popup-page="3"] .noteText.area {
             height: 230px;
-            top: 402px;
+            top: 392px;
         }
 
         [data-popup-page="3"] .noteText.noLine .textareaWrap {
@@ -352,6 +358,7 @@
         [data-popup-page="3"] .noteText .textLine {
             padding: 0;
             font-size: 25px;
+            display: block;
         }
 
         [data-popup-page="3"] .noteText.area .textLine {
@@ -470,7 +477,7 @@
                                 <li class="innerTab_1" data-quiz="toggle">
                                     <h2>너의 목소리가 들려</h2>
                                     <div class="icon-char" data-hover="" data-popup-btn="4"></div>
-                                    <div class="title-box">
+                                    <div class="title-box" style="margin-top: 30px;">
                                         <div class="title">활동 방법</div>
                                     </div>
                                     <ul class="how-to-play">
@@ -496,7 +503,7 @@
                                             <div class="bullet number orange inline">
                                                 3
                                             </div>
-                                            <div class="text">
+                                            <div class="text" style="letter-spacing: -1.4px;">
                                                 만약에 내가 괴롭힘을 당하는 동식물이라면 하고 싶은 말을 말풍선에
                                                 적어 봅니다.
                                             </div>
@@ -598,7 +605,7 @@
                                 <li class="innerTab_1" data-quiz="toggle">
                                     <h2>공감 뉴스</h2>
                                     <div class="icon-char" data-hover="" data-popup-btn="5"></div>
-                                    <div class="title-box">
+                                    <div class="title-box" style="margin-top: 130px;">
                                         <div class="title">활동 방법</div>
                                     </div>
                                     <ul class="how-to-play">
@@ -607,7 +614,7 @@
                                                 1
                                             </div>
                                             <div class="text">
-                                                만약에 식물이 감정을 느낄 수 있다면 사람들이 식물을 괴롭힐 때
+                                                만약에 식물이 감정을 느낄 수 있다면 사람들이 식물을 괴롭힐 때<br>
                                                 어떤 감정일지 생각해 봅니다.
                                             </div>
                                         </li>

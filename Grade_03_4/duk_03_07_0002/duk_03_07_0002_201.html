@@ -36,6 +36,7 @@
 
         .noteText .textLine {
             padding: 0;
+            letter-spacing: -1px;
         }
 
         .noteText.noLine .textareaWrap {
@@ -92,19 +93,19 @@
         }
 
         .speech-left[data-popup="1"] {
-            top: 50px;
+            top: 80px;
             left: 200px;
             transform: scaleX(-1);
         }
 
         .speech-left[data-popup="2"] {
             top: 0;
-            left: 410px;
+            left: 450px;
             transform: scaleX(-1);
         }
 
         .speech-right {
-            top: 60px;
+            top: 90px;
             right: 245px;
         }
 
@@ -114,6 +115,7 @@
             position: absolute;
             display: none;
             text-align: center;
+            cursor: pointer;
         }
 
         .text-box.yellow {
@@ -259,7 +261,7 @@
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
                     <li data-hover="" data-text="<span> <실천 똑똑> </span>에서 생명을 존중하는 모습과 그렇지 않은 모습을 찾아봅시다.">활동 1</li>
-                    <li data-hover="" data-text="이 밖에도 디지털 사회의 도덕 문제에는 어떤 것이 더 있을까요?" data-gap="true">활동 2</li>
+                    <li data-hover="" data-text="친구들과 함께 생명을 존중하는 방법을 정리해 봅시다.">활동 2</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1" data-quiz="toggle">
@@ -296,8 +298,7 @@
                                                 </div>
                                                 <div class="text-exam flex-wrap">
                                                     <div class="blueT">
-                                                        <p>동물도 소중한 생명이기
-                                                            때문입니다.</p>
+                                                        <p style="letter-spacing: -1.7px;">동물도 소중한 생명이기 때문입니다.</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -450,12 +451,6 @@
             </div>
         </main>
 
-        <section class="popup_container" data-popup-container="">
-            <ul class="popup_pages">
-
-            </ul>
-        </section>
-
     </div>
 
     <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
@@ -498,8 +493,15 @@
             $(document).on('click', '.close-speech-button', function () {
                 var _id = $(this).parent().attr('data-show');
                 $(this).parent().hide();
-                $(`[data-popup=${_id}]`).show().removeClass('ans');
+                $(`[data-popup=${_id}]`).show();
                 $(this).remove();
+            });
+
+            $(document).on('click', '.text-box', function () {
+                KmAudioPlayer.buttonClick();
+                var _id = $(this).attr('data-show');
+                $(this).hide();
+                $('.speech[data-popup="' + _id + '"]').show();
             });
         });
     </script>

@@ -22,6 +22,15 @@
         /* page 1 */
         .page_1 .noteText {
             margin-top: 20px;
+            padding: 32px 10px 0;
+        }
+
+        .noteText.blue {
+            border-color: #2F92D0;
+        }
+
+        .noteText.green {
+            border-color: #36B449;
         }
 
         .min[data-popup-page="1"] {
@@ -72,8 +81,13 @@
         .noteText>p,
         .item>p {
             display: flex;
-            align-items: center;
+            align-items: start;
             gap: 10px;
+        }
+
+        .noteText>p span,
+        .item>p span {
+            flex: 1;
         }
 
         .noteText>p::before,
@@ -83,6 +97,7 @@
             width: 30px;
             height: 30px;
             transform: rotate(17deg);
+            margin-top: 15px;
         }
 
         .check_list {
@@ -108,6 +123,11 @@
 
         .page_2 .innerTab_2 .blueT {
             margin: auto;
+        }
+
+        .page_2 .innerTab_2 .blueT>img {
+            width: 410px;
+            margin-top: -10px;
         }
     </style>
 </head>
@@ -146,7 +166,7 @@
                                         <div class="titleBox blue" style="right: 170px;">네</div>
                                         <div class="titleBox blue" style="right: -10px;">아니요</div>
                                         <div class="item" style="margin-top: 30px;">
-                                            <p>나와 다른 생명에게 도움이 되는 활동인가요?</p>
+                                            <p><span>나와 다른 생명에게 도움이 되는 활동인가요?</span></p>
                                             <div class="check_list">
                                                 <div class="check_view no_sound">
                                                     <div class="check_box"></div>
@@ -157,7 +177,8 @@
                                             </div>
                                         </div>
                                         <div class="item">
-                                            <p>전시회 내용에 생명이 소중한 까닭이 담겨 있나요?</p>
+                                            <p style="letter-spacing: -1.3px;"><span>전시회 내용에 생명이 소중한 까닭이 담겨 있나요?</span>
+                                            </p>
                                             <div class="check_list">
                                                 <div class="check_view no_sound">
                                                     <div class="check_box"></div>
@@ -168,8 +189,8 @@
                                             </div>
                                         </div>
                                         <div class="item">
-                                            <p>나와 다른 생명체가 연결되어 있다는 것을
-                                                알고 있나요?</p>
+                                            <p style="letter-spacing: -3.6px;"><span>나와 다른 생명체가 연결되어 있다는 것을
+                                                    알고 있나요?</span></p>
                                             <div class="check_list">
                                                 <div class="check_view no_sound">
                                                     <div class="check_box"></div>
@@ -190,8 +211,8 @@
                                         <div class="titleBox blue" style="right: 170px;">네</div>
                                         <div class="titleBox blue" style="right: -10px;">아니요</div>
                                         <div class="item" style="margin-top: 30px;">
-                                            <p>나뿐만 아니라 내 주변의 다른 생명을 존중하는
-                                                내용도 담고 있나요?</p>
+                                            <p><span>나뿐만 아니라 내 주변의 다른 생명을 존중하는
+                                                    내용도 담고 있나요?</span></p>
                                             <div class="check_list">
                                                 <div class="check_view no_sound">
                                                     <div class="check_box"></div>
@@ -202,8 +223,8 @@
                                             </div>
                                         </div>
                                         <div class="item">
-                                            <p>동물이나 식물을 대할 때 그 행동이 동물과 식물에
-                                                좋은 것인지 고민해 봤나요?</p>
+                                            <p><span>동물이나 식물을 대할 때 그 행동이 동물과 식물에
+                                                    좋은 것인지 고민해 봤나요?</span></p>
                                             <div class="check_list">
                                                 <div class="check_view no_sound">
                                                     <div class="check_box"></div>
@@ -224,8 +245,8 @@
                                         <div class="titleBox green" style="right: 170px;">네</div>
                                         <div class="titleBox green" style="right: -10px;">아니요</div>
                                         <div class="item" style="margin-top: 30px;">
-                                            <p>가족 또는 친구 모두가 함께 참여할 수 있는
-                                                활동인가요?</p>
+                                            <p><span>가족 또는 친구 모두가 함께 참여할 수 있는
+                                                    활동인가요?</span></p>
                                             <div class="check_list">
                                                 <div class="check_view no_sound">
                                                     <div class="check_box"></div>
@@ -236,8 +257,8 @@
                                             </div>
                                         </div>
                                         <div class="item">
-                                            <p>전시회의 주제가 다른 사람에게 좋은 영향을
-                                                줄 수 있나요?</p>
+                                            <p><span>전시회의 주제가 다른 사람에게 좋은 영향을
+                                                    줄 수 있나요?</span></p>
                                             <div class="check_list">
                                                 <div class="check_view no_sound">
                                                     <div class="check_box"></div>
@@ -258,8 +279,8 @@
                                         <div class="titleBox green" style="right: 170px;">네</div>
                                         <div class="titleBox green" style="right: -10px;">아니요</div>
                                         <div class="item" style="margin-top: 30px;">
-                                            <p>다른 사람에게 피해를 주지 않는 방법으로
-                                                작품을 만드나요?
+                                            <p><span>다른 사람에게 피해를 주지 않는 방법으로
+                                                    작품을 만드나요?</span>
                                             </p>
                                             <div class="check_list">
                                                 <div class="check_view no_sound">

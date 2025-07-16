@@ -12,10 +12,25 @@
 
     <style>
         /* page 1 */
+        .page_1 .flex-wrap {
+            align-items: start;
+            flex-direction: column;
+            justify-content: center;
+            padding-bottom: 20px;
+        }
+
         .page_1 .flex {
             display: flex;
             gap: 10px;
             margin: 15px 0;
+        }
+
+        .bullet.orange.number {
+            margin-top: 8px;
+        }
+
+        .bullet.exam {
+            margin-top: 12px;
         }
 
         /* popup */
@@ -86,6 +101,11 @@
             right: 48px;
             bottom: 20px;
         }
+
+        .toggle.complete .answer,
+        .answer.on {
+            font-weight: normal;
+        }
     </style>
 </head>
 
@@ -104,22 +124,24 @@
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1">
-                        <div class="flex">
-                            <div class="bullet number orange inline">1</div>
-                            <p>모둠 친구들과 계획하고 점검한 대로 작품을 만들어 일주일 동안
-                                전시해 봅시다.</p>
-                        </div>
-                        <div class="flex">
-                            <div class="bullet number orange inline">2</div>
-                            <p>전시한 작품을 보며 생명 존중을 생각해 봅시다.</p>
-                        </div>
-                        <div class="flex">
-                            <div class="bullet number orange inline">3</div>
-                            <p>생명 존중 전시회를 하며 가장 인상 깊었던 점을 발표해 봅시다.</p>
-                        </div>
-                        <div class="flex">
-                            <div class="exam bullet">예</div>
-                            <p>생명 존중 팻말을 만들고 캠페인 활동을 하는 것이 재미있었습니다.</p>
+                        <div class="flex-wrap">
+                            <div class="flex">
+                                <div class="bullet number orange inline">1</div>
+                                <p>모둠 친구들과 계획하고 점검한 대로 작품을 만들어 일주일 동안
+                                    전시해 봅시다.</p>
+                            </div>
+                            <div class="flex">
+                                <div class="bullet number orange inline">2</div>
+                                <p>전시한 작품을 보며 생명 존중을 생각해 봅시다.</p>
+                            </div>
+                            <div class="flex">
+                                <div class="bullet number orange inline">3</div>
+                                <p>생명 존중 전시회를 하며 가장 인상 깊었던 점을 발표해 봅시다.</p>
+                            </div>
+                            <div class="flex">
+                                <div class="exam bullet">예</div>
+                                <p>생명 존중 팻말을 만들고 캠페인 활동을 하는 것이 재미있었습니다.</p>
+                            </div>
                         </div>
                     </li>
                     <li class="page_2">
