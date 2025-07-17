@@ -4,13 +4,13 @@
 
 function ZoomImage(container) {
   this.container = container;
-  this.maxZoom = container.hasAttribute('maxZoom')
-    ? parseInt(container.getAttribute('maxZoom'))
+  this.maxZoom = container.hasAttribute("maxZoom")
+    ? parseInt(container.getAttribute("maxZoom"))
     : 2;
-  this.zoomImg = this.container.querySelector('.zoomImgContainer');
+  this.zoomImg = this.container.querySelector(".zoomImgContainer");
   this.zoomImgPosition = {
     top: this.zoomImg.offsetTop,
-    left: this.zoomImg.offsetLeft,
+    left: this.zoomImg.offsetLeft
   };
 
   // this.zoomController = document.createElement('div', this.container, 'zoomController');
@@ -25,19 +25,19 @@ function ZoomImage(container) {
 
   this.zoomMinus = document.createElement("div");
   this.zoomMinus.className = "zoomMinus";
-  this.zoomController.appendChild(this.zoomMinus)
+  this.zoomController.appendChild(this.zoomMinus);
 
   this.zoomBar = document.createElement("div");
   this.zoomBar.className = "zoomBar";
-  this.zoomController.appendChild(this.zoomBar)
+  this.zoomController.appendChild(this.zoomBar);
 
   this.zoomPlus = document.createElement("div");
   this.zoomPlus.className = "zoomPlus";
-  this.zoomController.appendChild(this.zoomPlus)
+  this.zoomController.appendChild(this.zoomPlus);
 
   this.zoomReset = document.createElement("div");
   this.zoomReset.className = "zoomReset";
-  this.zoomController.appendChild(this.zoomReset)
+  this.zoomController.appendChild(this.zoomReset);
 
   this.zoomSpin = document.createElement("div");
   this.zoomSpin.className = "zoomSpin";
@@ -51,27 +51,27 @@ function ZoomImage(container) {
   this.zoomSpinMaxLeft = 150;
   this.imageZoomRate = 1;
 
-  this.zoomImg.style.position = 'absolute';
+  this.zoomImg.style.position = "absolute";
   new Drag({
-    name: 'mindmap',
+    name: "mindmap",
     element: this.zoomImg,
-    block: { top: 50 },
+    block: { top: 50 }
   });
   new Drag({
     element: this.zoomSpin,
-    type: 'horizon',
+    type: "horizon",
     limit: {
       left: this.zoomSpinLeft,
-      right: this.zoomSpinMaxLeft,
+      right: this.zoomSpinMaxLeft
     },
-    callBack: this.changeSpin.bind(this),
+    callBack: this.changeSpin.bind(this)
   });
 
-  this.zoomPlus.addEventListener('click', this.plusZoom.bind(this));
-  this.zoomMinus.addEventListener('click', this.minusZoom.bind(this));
-  this.zoomReset.addEventListener('click', this.resetZoom.bind(this));
+  this.zoomPlus.addEventListener("click", this.plusZoom.bind(this));
+  this.zoomMinus.addEventListener("click", this.minusZoom.bind(this));
+  this.zoomReset.addEventListener("click", this.resetZoom.bind(this));
 
-  if (window.addEventListener) window.addEventListener('DOMMouseScroll', wheel);
+  if (window.addEventListener) window.addEventListener("DOMMouseScroll", wheel);
   window.onmousewheel = document.onmousewheel = wheel;
 
   var self = this;
@@ -90,32 +90,28 @@ function ZoomImage(container) {
 
 ZoomImage.prototype.plusZoom = function () {
   this.imageZoomRate =
-    this.imageZoomRate > this.maxZoom - 0.1
-      ? this.maxZoom
-      : this.imageZoomRate + 0.1;
+    this.imageZoomRate > this.maxZoom - 0.1 ? this.maxZoom : this.imageZoomRate + 0.1;
   this.changeSpin();
-
 };
 ZoomImage.prototype.minusZoom = function () {
   this.imageZoomRate = this.imageZoomRate < 1.1 ? 1 : this.imageZoomRate - 0.1;
   this.changeSpin();
-
 };
 ZoomImage.prototype.resetZoom = function () {
   this.imageZoomRate = 1.0;
   this.changeSpin();
 };
 ZoomImage.prototype.changeZoomImage = function () {
-  this.zoomImg.style.transform = 'scale(' + this.imageZoomRate + ')';
-  this.zoomImg.style.MsTransform = 'scale(' + this.imageZoomRate + ')';
-  this.zoomImg.style.MozTransform = 'scale(' + this.imageZoomRate + ')';
-  this.zoomImg.style.WebkitTransform = 'scale(' + this.imageZoomRate + ')';
+  this.zoomImg.style.transform = "scale(" + this.imageZoomRate + ")";
+  this.zoomImg.style.MsTransform = "scale(" + this.imageZoomRate + ")";
+  this.zoomImg.style.MozTransform = "scale(" + this.imageZoomRate + ")";
+  this.zoomImg.style.WebkitTransform = "scale(" + this.imageZoomRate + ")";
 
   if (this.imageZoomRate === 1) {
     this.resetPosition();
-    this.zoomImg.classList.add('pointerOff');
+    this.zoomImg.classList.add("pointerOff");
   } else {
-    this.zoomImg.classList.remove('pointerOff');
+    this.zoomImg.classList.remove("pointerOff");
   }
 };
 ZoomImage.prototype.adjustPosition = function () {
@@ -125,21 +121,20 @@ ZoomImage.prototype.adjustPosition = function () {
       top: (-this.zoomImg.clientHeight / 2) * (this.imageZoomRate - 1),
       left: (-this.zoomImg.clientWidth / 2) * (this.imageZoomRate - 1),
       right: (this.zoomImg.clientWidth / 2) * (this.imageZoomRate - 1),
-      bottom: (this.zoomImg.clientHeight / 2) * (this.imageZoomRate - 1),
+      bottom: (this.zoomImg.clientHeight / 2) * (this.imageZoomRate - 1)
     };
 
   if (limit.top && top < limit.top) top = limit.top;
   else if (limit.bottom && top > limit.bottom) top = limit.bottom;
-  this.zoomImg.style.top = top + 'px';
+  this.zoomImg.style.top = top + "px";
 
   if (limit.left && left < limit.left) left = limit.left;
   else if (limit.right && left > limit.right) left = limit.right;
-  this.zoomImg.style.left = left + 'px';
+  this.zoomImg.style.left = left + "px";
 };
 ZoomImage.prototype.changeSpin = function (obj) {
   if (obj !== undefined) {
-    this.imageZoomRate =
-      (obj.offsetLeft - this.zoomSpinLeft) / this.zoomSpinMaxLeft + 1;
+    this.imageZoomRate = (obj.offsetLeft - this.zoomSpinLeft) / this.zoomSpinMaxLeft + 1;
 
     if (this.imageZoomRate > 2) {
       this.imageZoomRate = 2;
@@ -149,30 +144,26 @@ ZoomImage.prototype.changeSpin = function (obj) {
   }
 
   var changeLeft =
-    this.zoomSpinLeft +
-    (this.zoomSpinMaxLeft / (this.maxZoom - 1)) * (this.imageZoomRate - 1);
+    this.zoomSpinLeft + (this.zoomSpinMaxLeft / (this.maxZoom - 1)) * (this.imageZoomRate - 1);
 
   this.zoomSpin.style.left =
-    this.zoomSpinMaxLeft <= changeLeft
-      ? this.zoomSpinMaxLeft + 'px'
-      : changeLeft + 'px';
+    this.zoomSpinMaxLeft <= changeLeft ? this.zoomSpinMaxLeft + "px" : changeLeft + "px";
 
   this.changeZoomImage();
   this.adjustPosition();
 };
 ZoomImage.prototype.resetPosition = function () {
-  this.zoomImg.style.top = this.zoomImgPosition.top + 'px';
-  this.zoomImg.style.left = this.zoomImgPosition.left + 'px';
+  this.zoomImg.style.top = this.zoomImgPosition.top + "px";
+  this.zoomImg.style.left = this.zoomImgPosition.left + "px";
 };
 
 // drag
 function Drag(args) {
-  this.zoomImg = args.element
+  this.zoomImg = args.element;
   this.option = args;
 
-  window.addEventListener('mousedown', this.startDrag.bind(this));
-  window.addEventListener('touchstart', this.startDrag.bind(this));
-
+  window.addEventListener("mousedown", this.startDrag.bind(this));
+  window.addEventListener("touchstart", this.startDrag.bind(this));
 }
 Drag.prototype.startDrag = function (e) {
   var target = e.target;
@@ -188,46 +179,42 @@ Drag.prototype.startDrag = function (e) {
   */
 
   if (
-    (
-      !target.classList.contains('zoom_img') &&
-      !target.closest('.bgImg') &&
-      !target.closest('.zoomSpin')
-    ) ||
-    this.zoomImg.classList.contains('pointerOff')
+    (!target.classList.contains("zoom_img") &&
+      !target.closest(".bgImg") &&
+      !target.closest(".zoomSpin")) ||
+    this.zoomImg.classList.contains("pointerOff")
   ) {
     return;
   }
 
-  this.imageZoomRate = parseFloat(
-    this.zoomImg.style.transform.replace(/[^0-9|^\.]/gi, '')
-  );
+  this.imageZoomRate = parseFloat(this.zoomImg.style.transform.replace(/[^0-9|^\.]/gi, ""));
   var dragObj = this.option.element,
-    type = this.option.type ? this.option.type : 'all',
+    type = this.option.type ? this.option.type : "all",
     limit = {
       top:
         this.option.limit && this.option.limit.top
           ? this.option.limit.top
-          : this.option.name === 'mindmap'
-            ? (-this.zoomImg.clientHeight / 2) * (this.imageZoomRate - 1)
-            : null,
+          : this.option.name === "mindmap"
+          ? (-this.zoomImg.clientHeight / 2) * (this.imageZoomRate - 1)
+          : null,
       left:
         this.option.limit && this.option.limit.left
           ? this.option.limit.left
-          : this.option.name === 'mindmap'
-            ? (-this.zoomImg.clientWidth / 2) * (this.imageZoomRate - 1)
-            : null,
+          : this.option.name === "mindmap"
+          ? (-this.zoomImg.clientWidth / 2) * (this.imageZoomRate - 1)
+          : null,
       right:
         this.option.limit && this.option.limit.right
           ? this.option.limit.right
-          : this.option.name === 'mindmap'
-            ? (this.zoomImg.clientWidth / 2) * (this.imageZoomRate - 1)
-            : null,
+          : this.option.name === "mindmap"
+          ? (this.zoomImg.clientWidth / 2) * (this.imageZoomRate - 1)
+          : null,
       bottom:
         this.option.limit && this.option.limit.bottom
           ? this.option.limit.bottom
-          : this.option.name === 'mindmap'
-            ? (this.zoomImg.clientHeight / 2) * (this.imageZoomRate - 1)
-            : null,
+          : this.option.name === "mindmap"
+          ? (this.zoomImg.clientHeight / 2) * (this.imageZoomRate - 1)
+          : null
     },
     block = { top: 0, left: 0, right: 0, bottom: 0 },
     callBack = this.option.callBack ? this.option.callBack : null,
@@ -235,12 +222,8 @@ Drag.prototype.startDrag = function (e) {
     containerSize = {
       top: dragObj.getBoundingClientRect().top,
       left: dragObj.getBoundingClientRect().left,
-      right:
-        dragObj.getBoundingClientRect().left +
-        dragObj.getBoundingClientRect().width,
-      bottom:
-        dragObj.getBoundingClientRect().top +
-        dragObj.getBoundingClientRect().height,
+      right: dragObj.getBoundingClientRect().left + dragObj.getBoundingClientRect().width,
+      bottom: dragObj.getBoundingClientRect().top + dragObj.getBoundingClientRect().height
     },
     startX = e.clientX,
     startY = e.clientY,
@@ -254,35 +237,35 @@ Drag.prototype.startDrag = function (e) {
       // this.zoomRate = gameManager.zoomRate;
       this.zoomRate = 1;
 
-      if (type !== 'horizon') {
+      if (type !== "horizon") {
         if (limit.top && top < limit.top) top = limit.top;
         else if (limit.bottom && top > limit.bottom) top = limit.bottom;
-        dragObj.style.top = top + 'px';
+        dragObj.style.top = top + "px";
       }
-      if (type !== 'vertical') {
+      if (type !== "vertical") {
         if (limit.left && left < limit.left) left = limit.left;
         else if (limit.right && left > limit.right) left = limit.right;
-        dragObj.style.left = left + 'px';
+        dragObj.style.left = left + "px";
       }
 
       if (callBack) callBack(dragObj);
     },
     endDrag = function (e) {
       // console.log('endDrag', e);
-      window.removeEventListener('mousemove', drag);
-      window.removeEventListener('touchmove', drag);
-      window.removeEventListener('mouseup', endDrag);
-      window.removeEventListener('touchend', endDrag);
+      window.removeEventListener("mousemove", drag);
+      window.removeEventListener("touchmove", drag);
+      window.removeEventListener("mouseup", endDrag);
+      window.removeEventListener("touchend", endDrag);
     };
 
-  if (e.target.classList.contains('zoomArea')) return;
+  if (e.target.classList.contains("zoomArea")) return;
 
   if (this.option.block) {
     block = {
       top: this.option.block.top ? this.option.block.top : 0,
       left: this.option.block.left ? this.option.block.left : 0,
       right: this.option.block.right ? this.option.block.right : 0,
-      bottom: this.option.block.bottom ? this.option.block.bottom : 0,
+      bottom: this.option.block.bottom ? this.option.block.bottom : 0
     };
   }
 
@@ -293,9 +276,9 @@ Drag.prototype.startDrag = function (e) {
     e.clientY > containerSize.bottom - block.bottom;
 
   if (!isOverPosition) {
-    window.addEventListener('mousemove', drag);
-    window.addEventListener('touchmove', drag);
-    window.addEventListener('mouseup', endDrag);
-    window.addEventListener('touchend', endDrag);
+    window.addEventListener("mousemove", drag);
+    window.addEventListener("touchmove", drag);
+    window.addEventListener("mouseup", endDrag);
+    window.addEventListener("touchend", endDrag);
   } else endDrag(e);
 };

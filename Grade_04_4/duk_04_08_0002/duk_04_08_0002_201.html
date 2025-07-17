@@ -57,7 +57,7 @@
         /* page 2 */
         .title {
             background: url('./images/duk_04_08_0002_201/title.png') no-repeat center / 100% 100%;
-            width: 690px;
+            width: 670px;
             height: 60px;
             color: #fff;
             display: flex;
@@ -66,6 +66,7 @@
             margin: 0 auto;
             margin-left: 230px;
             font-size: 35px;
+            letter-spacing: -1px;
         }
 
         .flex {
@@ -84,8 +85,9 @@
         }
 
         .study_guide {
-            top: 40px;
+            top: 20px;
             right: 70px;
+            letter-spacing: -1px;
         }
 
         .icon-char {
@@ -107,11 +109,22 @@
         .popBtn.imgWrap {
             border: 2px solid #f4e8d2;
             cursor: default;
+            padding: 10px;
+            display: none;
+        }
+
+        .popBtn.imgWrap.active {
+            display: flex;
         }
 
         .page_2 .noteText .textLine {
             height: 250px;
             margin-top: 5px;
+        }
+
+        .page_2 .noteText {
+            width: 825px;
+            margin-left: auto;
         }
 
         [data-popup-page="1"] {
@@ -146,31 +159,37 @@
                 <ul class="basicSlider_slides" data-slides="">
                     <li class="page_1" data-quiz="toggle">
                         <div class="items">
-                            <div class="item" data-type="toggleButton">
+                            <div class="item">
                                 비무장 지대에서는 어떤 점을 지켜야 할까요?
-                                <div class="toggle box" data-toggle-obj="1">
-                                    <div class="answer" data-toggle-target="1">
-                                        <div>다양한 동식물을 지켜야 합니다.</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item" data-type="toggleButton">
-                                비무장 지대에서 사는 동식물에 어떤 도움이 필요할까요?
-                                <div class="toggle box" data-toggle-obj="2" style="letter-spacing: -1.8px;">
-                                    <div class="answer" data-toggle-target="2">
-                                        <div>
-                                            동식물의 생활을 방해하는 위험한 물건을 제거하는 도움이 필요합니다.
+                                <div data-type="toggleButton">
+                                    <div class="toggle box" data-toggle-obj="1">
+                                        <div class="answer" data-toggle-target="1">
+                                            <div>다양한 동식물을 지켜야 합니다.</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="item" data-type="toggleButton">
+                            <div class="item">
+                                비무장 지대에서 사는 동식물에 어떤 도움이 필요할까요?
+                                <div data-type="toggleButton">
+                                    <div class="toggle box" data-toggle-obj="2" style="letter-spacing: -2px;">
+                                        <div class="answer" data-toggle-target="2">
+                                            <div>
+                                                동식물의 생활을 방해하는 위험한 물건을 제거하는 도움이 필요합니다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
                                 비무장 지대의 환경을 평화롭게 보존하려면 인공지능 로봇에
                                 어떤 기능이 필요할까요?
-                                <div class="toggle box" data-toggle-obj="3">
-                                    <div class="answer" data-toggle-target="3">
-                                        <div>
-                                            여러 동식물에게 피해를 주는 물건을 제거하는 기능이 필요합니다.
+                                <div data-type="toggleButton">
+                                    <div class="toggle box" data-toggle-obj="3">
+                                        <div class="answer" data-toggle-target="3">
+                                            <div>
+                                                여러 동식물에게 피해를 주는 물건을 제거하는 기능이 필요합니다.
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -185,7 +204,7 @@
                             <div class="items">
                                 <span class="imgWrap popBtn">
                                     <div class="popBtnTitle">생김새</div>
-                                    <img src="./images/duk_04_08_0002_201/img_01.png">
+                                    <img src="./images/duk_04_08_0002_201/img_01.png" style="width: 440px;">
                                 </span>
                             </div>
                             <div class="items">
@@ -214,9 +233,9 @@
                     <li class="page_3" data-quiz="toggle">
                         <div class="noteText noteLine blue">
                             <div class="textareaWrap">
-                                <textarea class="textLine afterDisplay" type="text" style="text-align: left;"
-                                    placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
-                                    onblur="placeholder='직접 쓰기'" autocomplete="off" spellcheck="false"></textarea>
+                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                    data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                    autocomplete="off" spellcheck="false"></textarea>
                             </div>
                             <div class="text-exam flex-wrap">
                                 <div class="blueT">
@@ -273,6 +292,10 @@
                 } else {
                     $('header').removeClass('gap');
                 }
+            });
+
+            $(document).on('click', '.writeBtn', function () {
+                $('.popBtn.imgWrap').toggleClass('active');
             });
         });
     </script>

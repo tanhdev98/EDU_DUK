@@ -42,12 +42,14 @@
             width: 450px;
             display: block;
             margin: auto;
+            border-radius: 20px;
         }
 
-        .min[data-popup-page="1"] {
+        .min[data-popup-page="2"] {
             top: 230px;
             left: 495px;
             width: 770px;
+            letter-spacing: -1px;
         }
 
         /* page 2 */
@@ -171,7 +173,7 @@
                         <div class="study_guide"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
                         <div class="self-check">
                             <div class="checkWrap">
-                                <div class="text_box">비무장 지대의 뜻과 비무장 지대가 중요한 까닭을 알고 있나요?
+                                <div class="text_box">비무장 지대의 뜻과 비무장 지대가 중요한 까닭을<br> 알고 있나요?
                                 </div>
                                 <div class="icon-box">
                                     <div class="wrap">
@@ -186,7 +188,7 @@
                                 </div>
                             </div>
                             <div class="checkWrap">
-                                <div class="text_box">비무장 지대가 평화와 생명의 땅인 까닭을 설명할 수 있나요?
+                                <div class="text_box">비무장 지대가 평화와 생명의 땅인 까닭을<br> 설명할 수 있나요?
                                 </div>
                                 <div class="icon-box">
                                     <div class="wrap">
@@ -266,7 +268,7 @@
                             </div>
                         </div>
                         <div class="buttonContainer">
-                            <button class="dapCheckBtn" data-answer-btn=""></button>
+                            <button class="examViewBtn" data-answer-btn=""></button>
                         </div>
                     </div>
                 </li>
@@ -323,13 +325,13 @@
                 numActive = $(this).parents('[data-quiz="toggle"]').find('.choBox.active').length;
                 console.log(numActive);
                 if (numActive === numItem) {
-                    $(this).parents('[data-quiz="toggle"]').find('.dapCheckBtn').addClass('reset');
+                    $(this).parents('[data-quiz="toggle"]').find('.examViewBtn').addClass('reset');
                 } else {
-                    $(this).parents('[data-quiz="toggle"]').find('.dapCheckBtn').removeClass('reset');
+                    $(this).parents('[data-quiz="toggle"]').find('.examViewBtn').removeClass('reset');
                 }
             });
 
-            $(document).on('click', '.dapCheckBtn', function () {
+            $(document).on('click', '.examViewBtn', function () {
                 let choBox = $(this).parent().parent().find('.choBox');
                 if (!$(this).hasClass('reset')) {
                     $(this).removeClass('reset');

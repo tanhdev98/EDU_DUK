@@ -19,7 +19,15 @@
             top: 10px;
         }
 
+        #wrap header .title-text {
+            letter-spacing: -1px;
+        }
+
         /* page 1 */
+        .page_1 .table-box {
+            margin-top: 40px;
+        }
+
         .page_1 .noteText {
             box-shadow: none;
             padding: 0;
@@ -89,11 +97,13 @@
         .balloon.green {
             left: 90px;
             top: 10px;
+            letter-spacing: -1px;
         }
 
         .balloon.pink {
             right: 95px;
             top: -15px;
+            letter-spacing: -1px;
         }
 
         .page_2 .innerTab_1>img {
@@ -214,6 +224,7 @@
         .popup_pages [data-type="toggleButton"] .toggle {
             background-color: transparent;
             justify-content: center;
+            letter-spacing: -1px;
         }
 
         .toggle.box p.dot {
@@ -239,6 +250,11 @@
 
         .answer {
             font-family: 'NotoM';
+        }
+
+        .toggle.complete .answer,
+        .answer.on {
+            font-weight: normal;
         }
     </style>
 </head>
@@ -375,11 +391,14 @@
                                 </li>
                                 <li class="innerTab_2" data-quiz="toggle">
                                     <div class="items">
-                                        <div class="item" data-type="toggleButton">
+                                        <div class="item">
                                             잘못된 행동 규칙을 학습한 인공지능 로봇이 작동한다면 어떤 문제가 생길까요?
-                                            <div class="toggle examBtn box" data-toggle-obj="1">
-                                                <div class="answer" data-toggle-target="1" style="text-align: center;">
-                                                    <div>비무장 지대의 환경을 파괴할 수도 있을 것 같습니다.</div>
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="1">
+                                                    <div class="answer" data-toggle-target="1"
+                                                        style="text-align: center;">
+                                                        <div>비무장 지대의 환경을 파괴할 수도 있을 것 같습니다.</div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -388,13 +407,16 @@
                                 </li>
                                 <li class="innerTab_3" data-quiz="toggle">
                                     <div class="items">
-                                        <div class="item" data-type="toggleButton">
+                                        <div class="item">
                                             비무장 지대를 지키는 데 필요한 인공지능 로봇의 행동 규칙은 어떤 사람들이 모여 정해야 할까요? 그래야 하는 까닭은 무엇일까요?
-                                            <div class="toggle examBtn box" data-toggle-obj="2">
-                                                <div class="answer" data-toggle-target="2" style="text-align: center;">
-                                                    <div>인공지능 로봇의 행동 규칙은 비무장 지대 생태계를 잘 아는<br>
-                                                        생태 전문가와 지뢰 등의 위험 물건들을 잘 아는 군사 전문가 등이<br>
-                                                        모여 정해야 비무장 지대 환경을 보호할 수 있을 것 같습니다.</div>
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="2">
+                                                    <div class="answer" data-toggle-target="2"
+                                                        style="text-align: center;">
+                                                        <div>인공지능 로봇의 행동 규칙은 비무장 지대 생태계를 잘 아는<br>
+                                                            생태 전문가와 지뢰 등의 위험 물건들을 잘 아는 군사 전문가 등이<br>
+                                                            모여 정해야 비무장 지대 환경을 보호할 수 있을 것 같습니다.</div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

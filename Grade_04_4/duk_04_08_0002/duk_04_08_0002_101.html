@@ -18,12 +18,13 @@
 
         .noteText h1 {
             text-align: center;
-            font-family: 'NotoB';
+            font-family: 'YGJAL';
             margin-bottom: 20px;
         }
 
         .noteText p {
             text-indent: 40px;
+            letter-spacing: -1px;
         }
 
         .flex {
@@ -50,6 +51,7 @@
             margin-top: 10px;
             justify-content: center;
             height: 200px;
+            letter-spacing: -1px;
         }
 
         .items .item::before {
@@ -285,23 +287,21 @@
 
         <section class="popup_container" data-popup-container="">
             <ul class="popup_pages">
-                <li class="whole image" data-popup-page="1">
-                    <div class="basicSlider" data-slide-container="popup">
-                        <ul class="basicSlider_slides" data-slides="">
-                            <li class="innerTab_1 page_zoom zoom_img">
-                                <div class="zoomContainer horizon pointerOff">
-                                    <div class="zoomArea">
-                                        <div class="zoomImgContainer pointerOff">
-                                            <div class="zoomImg">
-                                                <div class="bgImg">
-                                                    <img src="./images/duk_04_08_0002_101/img_01.png" />
-                                                </div>
+                <li class="fullLine whole image" data-popup-page="1">
+                    <div class="full_content">
+                        <div class="page_zoom zoom_img" style="margin-top: -50px;">
+                            <div class="zoomContainer horizon pointerOff">
+                                <div class="zoomArea">
+                                    <div class="zoomImgContainer pointerOff">
+                                        <div class="zoomImg">
+                                            <div class="bgImg">
+                                                <img src="./images/duk_04_08_0002_101/img_01.png" />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
                 </li>
                 <li class="fullLine whole image" data-popup-page="2" data-quiz="toggle">
@@ -393,6 +393,14 @@
                     $('header').addClass('gap');
                 } else {
                     $('header').removeClass('gap');
+                }
+            });
+
+            $(document).on('click', '.imgWrap.popBtn', function () {
+                $('[data-popup-page="1"]').addClass('on');
+                var parentDocument = parent.document.querySelector('iframe');
+                if (parentDocument != null) {
+                    parentDocument.parentNode.parentNode.style.zIndex = 120;
                 }
             });
 

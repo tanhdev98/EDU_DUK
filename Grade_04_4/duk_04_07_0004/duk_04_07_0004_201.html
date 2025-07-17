@@ -51,11 +51,13 @@
         .page_1 .items .item {
             height: auto;
             position: relative;
+            letter-spacing: -1px;
         }
 
         .page_1 .items .item .toggle {
             margin-top: 10px;
             justify-content: center;
+            letter-spacing: -1px;
         }
 
         .page_1 .items .item:not(:first-child) {
@@ -100,6 +102,7 @@
         .page_2 .flex {
             display: flex;
             gap: 20px;
+            margin-top: 20px;
         }
 
         .page_2 .buttonContainer {
@@ -107,7 +110,7 @@
         }
 
         .page_2 .flex>img {
-            width: 520px;
+            width: 390px;
         }
 
         /* page 3 */
@@ -117,6 +120,25 @@
 
         .page_3 .noteText {
             height: 480px;
+        }
+
+        .toggle.complete .answer,
+        .answer.on {
+            font-family: 'NotoM';
+        }
+
+        .how-to-play li .text,
+        .noteText .textLine,
+        .blueT {
+            letter-spacing: -1px;
+        }
+
+        .bullet.exam {
+            margin-top: 12px;
+        }
+
+        .page_3 .textareaWrap {
+            margin-top: 6px;
         }
     </style>
 </head>
@@ -166,23 +188,28 @@
                                 </li>
                                 <li class="innerTab_2" data-quiz="toggle" style="padding: 20px 28px 0 28px;">
                                     <div class="items">
-                                        <div class="item" data-type="toggleButton">
+                                        <div class="item">
                                             멸종 위기에 처한 동식물에 관심을 기울여야 하는 까닭은 무엇일까요?
-                                            <div class="toggle examBtn  box" data-toggle-obj="1">
-                                                <div class="answer" data-toggle-target="1">
-                                                    <div>
-                                                        <p class="dot">자연과 인간은 상호 공존하기 때문입니다.</p>
-                                                        <p class="dot">지구상에 동물이 사라진다면 인간도 살지 못하게 되기 때문입니다.</p>
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn  box" data-toggle-obj="1">
+                                                    <div class="answer" data-toggle-target="1">
+                                                        <div>
+                                                            <p class="dot">자연과 인간은 상호 공존하기 때문입니다.</p>
+                                                            <p class="dot">지구상에 동물이 사라진다면 인간도 살지 못하게 되기 때문입니다.</p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="item" data-type="toggleButton">
+                                        <div class="item">
                                             생태계의 구성원 중 하나인 우리는 어떤 자세와 마음을 지녀야 할까요?
-                                            <div class="toggle examBtn  box" data-toggle-obj="2">
-                                                <div class="answer" data-toggle-target="2" style="text-align: center;">
-                                                    <div>지구상에 존재하는 모든 생물체에 관심을 가지고<br>
-                                                        공존하려는 마음을 가져야 합니다.
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn  box" data-toggle-obj="2">
+                                                    <div class="answer" data-toggle-target="2"
+                                                        style="text-align: center;">
+                                                        <div>지구상에 존재하는 모든 생물체에 관심을 가지고<br>
+                                                            공존하려는 마음을 가져야 합니다.
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -226,7 +253,7 @@
                             </div>
                             <ul class="basicSlider_slides" data-slides="">
                                 <li class="innerTab_1" data-quiz="toggle">
-                                    <div class="title-box">
+                                    <div class="title-box" style="margin-top: 110px;">
                                         <div class="title">활동 방법</div>
                                     </div>
                                     <ul class="how-to-play">
