@@ -54,6 +54,12 @@
 
         .noteText .textLine {
             padding: 0;
+            letter-spacing: -1px;
+        }
+
+        .blueT {
+            margin-top: -3px;
+            letter-spacing: -1px;
         }
 
         .noteText .text-exam.flex-wrap {
@@ -64,6 +70,7 @@
             top: 210px;
             left: 475px;
             width: max-content;
+            letter-spacing: -1px;
         }
 
         .popBtn.additional-question {
@@ -83,7 +90,7 @@
         .innerButtonContainer {
             position: absolute;
             right: 40px;
-            top: 76px;
+            top: 136px;
         }
 
         .innerButtonContainer::before {
@@ -107,7 +114,7 @@
             gap: 20px;
             background-color: #F7F7F7;
             position: absolute;
-            top: 50%;
+            top: 53%;
             left: 50%;
             transform: translate(-50%, -50%);
             border-radius: 20px;
@@ -178,7 +185,6 @@
         .popup_pages li:not(.min) h2 {
             width: fit-content;
             margin: 0 auto;
-            margin-top: -30px;
         }
 
         /* popup 3 */
@@ -255,7 +261,7 @@
         }
 
         .self-check {
-            margin-top: 60px;
+            margin-top: 150px;
         }
 
         .answer {
@@ -350,7 +356,7 @@
                             </div>
                         </div>
                         <div class="btn-praise right popBtn footer-item" data-popup-btn="3"
-                            style="top: 400px; right: -28px;">
+                            style="top: 430px; right: -28px;">
                             <div class="item-title">핵심<br>정리</div>
                         </div>
                     </li>
@@ -371,63 +377,61 @@
                         <p>5. 자연은 미래의 문제를 해결할 수 있습니다.</p>
                     </div>
                 </li>
-                <li class="fullLine whole image" data-popup-page="2" data-quiz="toggle">
-                    <div class="full_content">
-                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
-                            <div class="innerButtonContainer">
-                                <ul class="innerSlider_tabs">
-                                    <li data-hover="" class="on">1</li>
-                                    <li data-hover="" class="">2</li>
-                                </ul>
-                            </div>
-                            <ul class="basicSlider_slides innerTab" data-slides="">
-                                <li class="innerTab_1">
-                                    <h2>자연과 인간이 상호 보완하는 모습</h2>
-                                    <div class="popup-boxes">
-                                        <div class="box-item ico_que">
-                                            ‘자연이 인간에게 주는 것’은 무엇일까요?
-                                            <img src="./common/images/ico_que.png" class="ico">
-                                        </div>
-                                        <div class="box-item ico_ans">
-                                            <img src="./common/images/ico_ans.png" class="ico">
-                                            <div data-type="toggleButton">
-                                                <div class="toggle examBtn box" data-toggle-obj="1" data-hover="">
-                                                    <div class="answer" data-toggle-target="1">
-                                                        <div>
-                                                            살아갈 장소, 깨끗한 공기, 마시고 쓸 물입니다.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="innerTab_2">
-                                    <h2>자연과 인간이 상호 보완하는 모습</h2>
-                                    <div class="popup-boxes">
-                                        <div class="box-item ico_que">
-                                            ‘인간이 자연을 보호하는 모습’은 무엇일까요?
-                                            <img src="./common/images/ico_que.png" class="ico">
-                                        </div>
-                                        <div class="box-item ico_ans">
-                                            <img src="./common/images/ico_ans.png" class="ico">
-                                            <div data-type="toggleButton" style="margin-top: 20px;">
-                                                <div class="toggle examBtn box" data-toggle-obj="2" data-hover="">
-                                                    <div class="answer" data-toggle-target="2">
-                                                        <div>
-                                                            <p class="dot" style="letter-spacing: -1.4px;">에너지를 아껴서 탄소
-                                                                배출을 줄이고 나무를 심고 가꿉니다.</p>
-                                                            <p class="dot">쓰레기를 함부로 버리지 않습니다.</p>
-                                                            <p class="dot">물을 아껴 쓰고 깨끗하게 보존합니다.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+                <li class="whole image" data-popup-page="2" data-quiz="toggle">
+                    <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                        <div class="innerButtonContainer">
+                            <ul class="innerSlider_tabs">
+                                <li data-hover="" class="on">1</li>
+                                <li data-hover="" class="">2</li>
                             </ul>
                         </div>
+                        <ul class="basicSlider_slides innerTab" data-slides="">
+                            <li class="innerTab_1">
+                                <h2>자연과 인간이 상호 보완하는 모습</h2>
+                                <div class="popup-boxes">
+                                    <div class="box-item ico_que">
+                                        ‘자연이 인간에게 주는 것’은 무엇일까요?
+                                        <img src="./common/images/ico_que.png" class="ico">
+                                    </div>
+                                    <div class="box-item ico_ans">
+                                        <img src="./common/images/ico_ans.png" class="ico">
+                                        <div data-type="toggleButton">
+                                            <div class="toggle examBtn box" data-toggle-obj="1" data-hover="">
+                                                <div class="answer" data-toggle-target="1">
+                                                    <div>
+                                                        살아갈 장소, 깨끗한 공기, 마시고 쓸 물입니다.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="innerTab_2">
+                                <h2>자연과 인간이 상호 보완하는 모습</h2>
+                                <div class="popup-boxes">
+                                    <div class="box-item ico_que">
+                                        ‘인간이 자연을 보호하는 모습’은 무엇일까요?
+                                        <img src="./common/images/ico_que.png" class="ico">
+                                    </div>
+                                    <div class="box-item ico_ans">
+                                        <img src="./common/images/ico_ans.png" class="ico">
+                                        <div data-type="toggleButton" style="margin-top: 20px;">
+                                            <div class="toggle examBtn box" data-toggle-obj="2" data-hover="">
+                                                <div class="answer" data-toggle-target="2">
+                                                    <div>
+                                                        <p class="dot" style="letter-spacing: -1.4px;">에너지를 아껴서 탄소
+                                                            배출을 줄이고 나무를 심고 가꿉니다.</p>
+                                                        <p class="dot">쓰레기를 함부로 버리지 않습니다.</p>
+                                                        <p class="dot">물을 아껴 쓰고 깨끗하게 보존합니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </li>
                 <li class="fullLine whole image pointContainer" data-popup-page="3" data-quiz="toggle">
@@ -462,7 +466,7 @@
                                             인간은 자연을 <div class="choBox">
                                                 <span class="dir-rect" data-cho="ㅇ" data-letter="이"></span>
                                                 <span class="dir-rect" data-cho="ㅇ" data-letter="용"></span>
-                                            </div> 하되, 자연과 <div class="choBox">
+                                            </div>하되, 자연과 <div class="choBox">
                                                 <span class="dir-rect" data-cho="ㅇ" data-letter="어"></span>
                                                 <span class="dir-rect" data-cho="ㅇ" data-letter="우"></span>
                                                 <span class="dir-rect" data-cho="ㄹ" data-letter="러"></span>

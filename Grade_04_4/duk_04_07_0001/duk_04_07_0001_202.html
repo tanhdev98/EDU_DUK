@@ -18,6 +18,7 @@
             background: #E9F4F8;
             border: 4px solid #B1D5F3;
             margin: 0 auto;
+            text-align: center;
         }
 
         .flex {
@@ -36,6 +37,11 @@
             width: 100%;
             height: 300px;
             border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .innerTab_3 .flex .items .imgWrap {
+            height: 250px;
         }
 
         .flex .items img {
@@ -68,6 +74,7 @@
 
         .page_1 .toggle .answer {
             text-align: center;
+            letter-spacing: -1px;
         }
 
         .flex-center {
@@ -84,6 +91,16 @@
         .innerTab_3 .flex-center>img,
         .innerTab_2 .flex-center>img {
             left: 0;
+        }
+
+        .noteText .textLine {
+            text-align: start;
+            padding: 2px 0;
+            letter-spacing: -1px;
+        }
+
+        .blueT {
+            letter-spacing: -1px;
         }
 
         /* popup 2 */
@@ -225,13 +242,13 @@
             display: block !important;
             background-color: #ffc4c9;
             padding: 12px;
-            left: -100px;
+            left: -90px;
             top: 230px;
             transform: rotate(75deg);
         }
 
         .popup_pages .items>img {
-            width: 320px;
+            width: 400px;
             position: absolute;
             left: 0;
             right: 0;
@@ -301,14 +318,16 @@
                                             <div class="items">
                                                 <span class="imgWrap line popBtn" data-popup-btn="1"
                                                     data-targetSlideNum="3">
-                                                    <img src="./images/duk_04_07_0001_202/img_03.png">
+                                                    <img src="./images/duk_04_07_0001_202/img_03.png"
+                                                        style="scale: 1.1;">
                                                     <button class="popBtn zoomBtn" data-hover=""></button>
                                                 </span>
                                             </div>
                                             <div class="items">
                                                 <span class="imgWrap line popBtn" data-popup-btn="1"
                                                     data-targetSlideNum="4">
-                                                    <img src="./images/duk_04_07_0001_202/img_04.png">
+                                                    <img src="./images/duk_04_07_0001_202/img_04.png"
+                                                        style="scale: 1.1;">
                                                     <button class="popBtn zoomBtn" data-hover=""></button>
                                                 </span>
                                             </div>
@@ -337,14 +356,16 @@
                                             <div class="items">
                                                 <span class="imgWrap line popBtn" data-popup-btn="2"
                                                     data-targetSlideNum="2" style="width: 600px;">
-                                                    <img src="./images/duk_04_07_0001_202/img_06.png" class="contain">
+                                                    <img src="./images/duk_04_07_0001_202/img_06.png" class="contain"
+                                                        style="scale: 1.04;">
                                                     <button class="popBtn zoomBtn" data-hover=""></button>
                                                 </span>
                                             </div>
                                             <div class="items">
                                                 <span class="imgWrap line popBtn" data-popup-btn="2"
                                                     data-targetSlideNum="3">
-                                                    <img src="./images/duk_04_07_0001_202/img_07.png">
+                                                    <img src="./images/duk_04_07_0001_202/img_07.png"
+                                                        style="scale: 1.05;">
                                                     <button class="popBtn zoomBtn" data-hover=""></button>
                                                 </span>
                                             </div>
@@ -363,7 +384,7 @@
                                 <li class="innerTab_3" data-quiz="toggle">
                                     <div class="popBtn additional-question" data-popup-btn="4">
                                         추가 질문</div>
-                                    <div class="titleBlue">환경이 오염돼 환경 문제가 발생한 사례 이야기하기</div>
+                                    <div class="titleBlue">환경 문제가 자연재해가 돼 인간에게<br> 피해로 되돌아온 사례 이야기하기</div>
                                     <div class="flex-center">
                                         <div class="flex">
                                             <div class="items">
@@ -376,21 +397,24 @@
                                             <div class="items">
                                                 <span class="imgWrap line popBtn" data-popup-btn="3"
                                                     data-targetSlideNum="2">
-                                                    <img src="./images/duk_04_07_0001_202/img_09.png">
+                                                    <img src="./images/duk_04_07_0001_202/img_09.png"
+                                                        style="scale: 1.07;">
                                                     <button class="popBtn zoomBtn" data-hover=""></button>
                                                 </span>
                                             </div>
                                             <div class="items">
                                                 <span class="imgWrap line popBtn" data-popup-btn="3"
                                                     data-targetSlideNum="3">
-                                                    <img src="./images/duk_04_07_0001_202/img_10.png" class="contain">
+                                                    <img src="./images/duk_04_07_0001_202/img_10.png" class="contain"
+                                                        style="scale: 1.1;">
                                                     <button class="popBtn zoomBtn" data-hover=""></button>
                                                 </span>
                                             </div>
                                             <div class="items">
                                                 <span class="imgWrap line popBtn" data-popup-btn="3"
                                                     data-targetSlideNum="4">
-                                                    <img src="./images/duk_04_07_0001_202/img_11.png">
+                                                    <img src="./images/duk_04_07_0001_202/img_11.png"
+                                                        style="scale: 1.07;">
                                                     <button class="popBtn zoomBtn" data-hover=""></button>
                                                 </span>
                                             </div>
@@ -491,8 +515,7 @@
                                             </div>
                                             <div class="text-exam flex-wrap">
                                                 <div class="blueT">
-                                                    물건을 많이 만들어 내는 만큼
-                                                    쓰레기를 많이 만듭니다.
+                                                    물건을 많이 만들어 내는 만큼 쓰레기를 많이 만듭니다.
                                                 </div>
                                             </div>
                                         </div>
@@ -865,6 +888,10 @@
                 $(this).addClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
                 $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+
+            $(document).on('click', '.popup_closeBtn', function () {
+                $('.popBtn.popupOn').trigger('click');
             });
 
             $(document).on('click', '.additional-question', function () {

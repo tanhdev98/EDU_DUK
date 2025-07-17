@@ -387,7 +387,7 @@
     <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
     <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
     <!-- <script type="text/javascript" src="./ko/contents.js"></script> -->
-    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <!-- <script type="text/javascript" src="./common/js/guide.js"></script> -->
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
             $(document).on('click', '.basicSlider_tabs li', function () {
@@ -399,39 +399,6 @@
                 } else {
                     $('header').removeClass('gap');
                 }
-            });
-
-            $(document).on('mouseup touchend', '.js-dragObj', function () {
-                const draggedIdx = $(this).attr('class').split(' ')[1];
-                console.log(draggedIdx);
-                let id = 0;
-
-                $('.js-dropArea').each(function () {
-                    const $dropArea = $(this);
-                    const $dragObjs = $dropArea.find('.js-dragObj');
-
-                    if ($dragObjs.length > 1) {
-                        const firstIdx = $dragObjs.first().attr('class').split(' ')[1];
-
-                        // $('.drag-zone > .' + firstIdx).removeClass('dragObjComplete');
-                        $dragObjs.last().remove();
-                    }
-
-                    if ($dropArea.find('.' + draggedIdx).length === 1) {
-                        id = 1;
-                    }
-                });
-
-                if (id === 1) {
-                    $(this).addClass('dragObjComplete');
-                    KmAudioPlayer.correct();
-                }
-                setTimeout(function () {
-                    if ($('.drag-zone>.js-dragObj.dragObjComplete').length == 6) {
-                        $('.buttonContainer .dapCheckBtn').addClass('reset');
-                    }
-                })
-
             });
         });
 
