@@ -356,6 +356,42 @@
                 }
             });
 
+            $(document).on('mouseup touchend', '.js-dragObj', function () {
+                const dragObj = $(this);
+                const dragOffset = dragObj.offset();
+                const dragWidth = dragObj.outerWidth();
+                const dragHeight = dragObj.outerHeight();
+
+                let played = false;
+
+                $('.js-dropArea').each(function () {
+                    const dropArea = $(this);
+                    const dropOffset = dropArea.offset();
+                    const dropWidth = dropArea.outerWidth();
+                    const dropHeight = dropArea.outerHeight();
+
+                    // Kiểm tra va chạm giữa drag và drop
+                    // const isIntersecting =
+                    //     dragOffset.left < dropOffset.left + dropWidth &&
+                    //     dragOffset.left + dragWidth > dropOffset.left &&
+                    //     dragOffset.top < dropOffset.top + dropHeight &&
+                    //     dragOffset.top + dragHeight > dropOffset.top;
+
+                    // if (isIntersecting && !played) {
+                    //     const answer = dropArea.data('drop-area-answer');
+
+                    //     if (answer === 1 || answer === 1) {
+                    //         KmAudioPlayer.correct();
+                    //     } else if (answer === 2 || answer === 2) {
+                    //         KmAudioPlayer.incorrect();
+                    //     }
+
+                    //     played = true;
+                    // }
+
+                });
+            });
+
         });
     </script>
 </body>

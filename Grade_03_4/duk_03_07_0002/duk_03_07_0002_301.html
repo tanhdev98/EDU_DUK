@@ -57,6 +57,7 @@
         .page_1 .noteText .textLine {
             padding: 0;
             text-align: start;
+            word-break: auto-phrase;
         }
 
         .page_1 .noteText .text-exam.flex-wrap {
@@ -95,6 +96,10 @@
             top: 30px;
             left: -30px;
             transform: translateY(-50%);
+        }
+
+        .page_2 .noteText .textLine {
+            text-align: start;
         }
 
         /* popup */
@@ -192,6 +197,12 @@
 
         .pointContainer .dapCheckBtn {
             right: 28px;
+            bottom: 20px;
+        }
+
+        .toggle.complete .answer,
+        .answer.on {
+            font-family: 'NotoM';
         }
     </style>
 </head>
