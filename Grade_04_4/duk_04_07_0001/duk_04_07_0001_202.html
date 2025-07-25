@@ -11,6 +11,10 @@
     <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
 
     <style>
+        #wrap main {
+            width: calc(100% + 1px);
+        }
+
         .titleBlue {
             width: max-content;
             padding: 5px 20px;
@@ -259,6 +263,7 @@
 
         .popup_pages .buttonContainer {
             right: 28px;
+            bottom: 20px;
         }
 
         .popup_pages .flex .items:first-child {
@@ -406,7 +411,7 @@
                                                 <span class="imgWrap line popBtn" data-popup-btn="3"
                                                     data-targetSlideNum="3">
                                                     <img src="./images/duk_04_07_0001_202/img_10.png" class="contain"
-                                                        style="scale: 1.1;">
+                                                        style="scale: 1.2;">
                                                     <button class="popBtn zoomBtn" data-hover=""></button>
                                                 </span>
                                             </div>
@@ -679,9 +684,9 @@
                                         <div class="balloon thinkTail deeppink pink"></div>
                                         <div class="noteText noLine">
                                             <div class="textareaWrap">
-                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
-                                                    data-input-obj="" data-answer=" " onfocus=""
-                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                <textarea class="textLine afterDisplay" style="letter-spacing: -2px;"
+                                                    type="text" placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                    onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
                                                     spellcheck="false"></textarea>
                                             </div>
                                             <div class="text-exam flex-wrap">
@@ -900,6 +905,20 @@
 
             $(document).on('click', '.popup_pages .innerSlider_tabs>li', function () {
                 KmAudioPlayer.buttonClick();
+            });
+
+            $(document).on('click', '.imgWrap.popBtn', function () {
+                const parentDocument = parent.document.querySelector('iframe');
+                if (parentDocument != null) {
+                    parentDocument.parentNode.parentNode.style.zIndex = 120;
+                }
+            });
+
+            $(document).on('click', '.popup_closeBtn', function () {
+                const parentDocument = parent.document.querySelector('iframe');
+                if (parentDocument != null) {
+                    parentDocument.parentNode.parentNode.style.zIndex = 0;
+                }
             });
         });
     </script>
