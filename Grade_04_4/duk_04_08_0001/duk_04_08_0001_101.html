@@ -11,6 +11,10 @@
     <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
 
     <style>
+        #wrap main {
+            width: calc(100% + 1px);
+        }
+
         /* page 1 */
         .contentsBox {
             padding: 0;
@@ -152,9 +156,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="buttonContainer">
-                                        <button class="examViewBtn" data-answer-btn=""></button>
-                                    </div>
                                 </li>
                                 <li class="innerTab_2" data-quiz="toggle">
                                     <div class="icon-char" data-hover="" data-popup-btn="1"></div>
@@ -180,7 +181,6 @@
                                 </li>
                             </ul>
                         </div>
-
                     </li>
                 </ul>
             </div>
@@ -227,6 +227,10 @@
                 } else {
                     $('header').removeClass('gap');
                 }
+            });
+
+            $(document).on('click', '.screenPlayBtn', function () {
+                KmAudioPlayer.buttonClick()
             });
         });
     </script>

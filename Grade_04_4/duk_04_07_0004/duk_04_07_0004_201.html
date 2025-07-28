@@ -357,6 +357,10 @@
                     $(this).append("<span class='underline' style='position:absolute; left:20px; top:" + (6 * 60 + 34) + "px; width:calc(100% - 40px); height:1px; background-color:#cccccc;'></span>");
                 })
             }
+
+            $(document).on('click', '.screenPlayBtn', function () {
+                KmAudioPlayer.buttonClick()
+            });
         });
     </script>
 </body>

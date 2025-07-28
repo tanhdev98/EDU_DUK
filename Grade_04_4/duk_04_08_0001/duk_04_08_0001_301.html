@@ -65,6 +65,7 @@
         /* title thinknet */
         .popup_pages .buttonContainer {
             right: 28px;
+            bottom: 20px;
         }
 
         .pointContainer .pointTitle {
@@ -268,7 +269,7 @@
                             </div>
                         </div>
                         <div class="buttonContainer">
-                            <button class="examViewBtn" data-answer-btn=""></button>
+                            <button class="dapCheckBtn" data-answer-btn=""></button>
                         </div>
                     </div>
                 </li>
@@ -325,13 +326,13 @@
                 numActive = $(this).parents('[data-quiz="toggle"]').find('.choBox.active').length;
                 console.log(numActive);
                 if (numActive === numItem) {
-                    $(this).parents('[data-quiz="toggle"]').find('.examViewBtn').addClass('reset');
+                    $(this).parents('[data-quiz="toggle"]').find('.dapCheckBtn').addClass('reset');
                 } else {
-                    $(this).parents('[data-quiz="toggle"]').find('.examViewBtn').removeClass('reset');
+                    $(this).parents('[data-quiz="toggle"]').find('.dapCheckBtn').removeClass('reset');
                 }
             });
 
-            $(document).on('click', '.examViewBtn', function () {
+            $(document).on('click', '.dapCheckBtn', function () {
                 let choBox = $(this).parent().parent().find('.choBox');
                 if (!$(this).hasClass('reset')) {
                     $(this).removeClass('reset');

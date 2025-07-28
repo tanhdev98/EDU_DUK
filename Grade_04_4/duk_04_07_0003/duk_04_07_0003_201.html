@@ -11,6 +11,10 @@
     <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
 
     <style>
+        #wrap main {
+            width: calc(100% + 1px);
+        }
+
         #wrap header {
             align-items: start;
             letter-spacing: -1px;
@@ -374,7 +378,7 @@
                                                 <p class="arrow">종량제 봉투에 넣어서 배출</p>
                                             </li>
                                             <li class="innerTab innerTab_2">
-                                                <p class="arrow" style="margin-top: -180px;">부착물·테이프 등 제거 후 배출</p>
+                                                <p class="arrow">부착물·테이프 등 제거 후 배출</p>
                                                 <img src="./images/duk_04_07_0003_201/img_10.jpg" alt=""
                                                     style="width: 450px;right: 40px;top: 0;">
                                             </li>
@@ -384,7 +388,7 @@
                                                 </p>
                                             </li>
                                             <li class="innerTab innerTab_4">
-                                                <p class="arrow" style="margin-top: -180px;">전용 수거함에 배출</p>
+                                                <p class="arrow">전용 수거함에 배출</p>
                                                 <img src="./images/duk_04_07_0003_201/img_11.jpg" alt=""
                                                     style="width: 330px;right: 40px;top: 0;">
                                             </li>
@@ -456,6 +460,10 @@
             $(document).on('click', '.resetBtn', function () {
                 KmAudioPlayer.buttonClick();
                 $('.textLine').val('');
+            });
+
+            $(document).on('click', '.linkBtn', function () {
+                KmAudioPlayer.buttonClick();
             });
         });
     </script>
