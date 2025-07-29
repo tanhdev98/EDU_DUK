@@ -40,16 +40,14 @@
         }
 
         .zoomArea {
-            height: 100%;
+            height: 540px;
+            margin-top: 50px;
+            margin-left: 20px;
         }
 
         .page_1 .bgImg img {
-            position: absolute;
-            object-fit: contain;
-            left: 20px;
-            top: 50px;
-            width: 1100px;
-            height: 550px;
+            width: 100%;
+            height: 100%;
         }
 
         /* ///////// */
@@ -66,13 +64,15 @@
             height: 100%;
         }
 
+        .zoomImg,
         .zoomContainer {
-            height: 100%;
+            height: 540px;
+            width: 1100px;
         }
 
-        .zoomImg {
-            height: 100%;
+        .bgImg {
             width: 100%;
+            height: 100%;
         }
 
         /* drag drop */
@@ -129,28 +129,28 @@
         }
 
         .a1 {
-            top: 98px;
-            left: 440px;
+            top: 35px;
+            left: 390px;
         }
 
         .a2 {
-            top: 225px;
-            left: 130px;
+            top: 171px;
+            left: 155px;
         }
 
         .a3 {
-            top: 325px;
-            left: 510px;
+            top: 255px;
+            left: 520px;
         }
 
         .a4 {
-            top: 361px;
-            left: 135px;
+            top: 326px;
+            left: 51px;
         }
 
         .a5 {
-            top: 288px;
-            left: 886px;
+            top: 188px;
+            left: 930px;
         }
 
         .js-dragObj.dragObjComplete {
@@ -184,36 +184,34 @@
                     <li data-hover="" data-text="7단원을 마치며 자신의 모습을 되돌아봅시다.">자기 점검</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">
-                    <li class="page_1 page_zoom zoom_img" data-quiz="dragDrop" data-option="answer, copy"
-                        data-quiz-name="dragDrop" data-total-complete-count="5">
+                    <li class="page_1 page_zoom zoom_img" data-quiz="dragDrop" data-option="answer, copy, correct"
+                        data-quiz-name="dragDrop" data-total-complete-count="">
                         <div class="study_guide"><em>보기</em>에서 <em>끌어</em> 붙이세요.</div>
+                        <div class="dragDropContainer bogi">
+                            <div class="it-start-wrap dragBox lineBox dragObjUL">
+                                <div class="bogi-icon"></div>
+                                <div class="drag-zone">
+                                    <div class="js-dragObj d1" data-drag-obj-answer="1" data-ps="free"></div>
+                                    <div class="js-dragObj d2" data-drag-obj-answer="2" data-ps="free"></div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="zoomContainer horizon pointerOff">
                             <div class="zoomArea">
                                 <div class="zoomImgContainer pointerOff">
                                     <div class="zoomImg">
                                         <div class="bgImg">
                                             <img src="./images/duk_03_07_0004_302/img_01.png" alt="">
-                                            <div class="dragDropContainer bogi">
-                                                <div class="it-start-wrap dragBox lineBox dragObjUL">
-                                                    <div class="bogi-icon"></div>
-                                                    <div class="drag-zone">
-                                                        <div class="js-dragObj d1" data-drag-obj-answer="1"
-                                                            data-ps="free"></div>
-                                                        <div class="js-dragObj d2" data-drag-obj-answer="2"
-                                                            data-ps="free"></div>
-                                                    </div>
+                                            <div class="flex-wrap bgDrop">
+                                                <div class="js-dropArea a1 clearArea" data-drop-area-answer="1">
                                                 </div>
-                                                <div class="flex-wrap bgDrop">
-                                                    <div class="js-dropArea a1 clearArea" data-drop-area-answer="1">
-                                                    </div>
-                                                    <div class="js-dropArea a2 clearArea" data-drop-area-answer="1">
-                                                    </div>
-                                                    <div class="js-dropArea a3 clearArea" data-drop-area-answer="1">
-                                                    </div>
-                                                    <div class="js-dropArea a4 clearArea" data-drop-area-answer="2">
-                                                    </div>
-                                                    <div class="js-dropArea a5 clearArea" data-drop-area-answer="2">
-                                                    </div>
+                                                <div class="js-dropArea a2 clearArea" data-drop-area-answer="1">
+                                                </div>
+                                                <div class="js-dropArea a3 clearArea" data-drop-area-answer="1">
+                                                </div>
+                                                <div class="js-dropArea a4 clearArea" data-drop-area-answer="2">
+                                                </div>
+                                                <div class="js-dropArea a5 clearArea" data-drop-area-answer="2">
                                                 </div>
                                             </div>
                                         </div>
@@ -357,39 +355,39 @@
             });
 
             $(document).on('mouseup touchend', '.js-dragObj', function () {
-                const dragObj = $(this);
-                const dragOffset = dragObj.offset();
-                const dragWidth = dragObj.outerWidth();
-                const dragHeight = dragObj.outerHeight();
-
-                let played = false;
+                const draggedIdx = $(this).data('drag-obj-answer');
+                // let flag = false;
 
                 $('.js-dropArea').each(function () {
-                    const dropArea = $(this);
-                    const dropOffset = dropArea.offset();
-                    const dropWidth = dropArea.outerWidth();
-                    const dropHeight = dropArea.outerHeight();
+                    const $dropArea = $(this);
+                    const $dragObjs = $dropArea.find('.js-dragObj');
 
-                    // Kiểm tra va chạm giữa drag và drop
-                    // const isIntersecting =
-                    //     dragOffset.left < dropOffset.left + dropWidth &&
-                    //     dragOffset.left + dragWidth > dropOffset.left &&
-                    //     dragOffset.top < dropOffset.top + dropHeight &&
-                    //     dragOffset.top + dragHeight > dropOffset.top;
+                    if ($dragObjs.length > 1) {
+                        const firstIdx = $dragObjs.first().attr('class').split(' ')[1];
 
-                    // if (isIntersecting && !played) {
-                    //     const answer = dropArea.data('drop-area-answer');
+                        $('.drag-zone > .' + firstIdx).removeClass('dragObjComplete');
+                        $dragObjs.first().remove();
+                    }
 
-                    //     if (answer === 1 || answer === 1) {
-                    //         KmAudioPlayer.correct();
-                    //     } else if (answer === 2 || answer === 2) {
-                    //         KmAudioPlayer.incorrect();
-                    //     }
-
-                    //     played = true;
+                    // if ($dropArea.data('drop-area-answer') === draggedIdx) {
+                    //     $(this).append($('.js-dragObj.' + draggedIdx));
+                    //     $(this).find('.js-dragObj').addClass('dragObjComplete');
+                    //     flag = true;
+                    // } else {
+                    //     flag = false;
                     // }
-
                 });
+
+                // if (flag === true) {
+                //     KmAudioPlayer.correct();
+                // }
+
+                setTimeout(function () {
+                    if ($('.js-dragObj.dragObjComplete').length == 5) {
+                        $('.buttonContainer .dapCheckBtn').addClass('reset');
+                    }
+                })
+
             });
 
         });
