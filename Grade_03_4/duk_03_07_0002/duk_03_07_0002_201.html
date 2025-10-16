@@ -20,10 +20,6 @@
         }
 
         /* page 1 */
-        .title-text>span {
-            margin-right: -20px;
-        }
-
         .noteText {
             height: 130px;
             padding: 0;
@@ -251,17 +247,19 @@
 
 <body>
     <div id="wrap" class="math">
-        <header>
+        <header class="gap">
             <div class="title-icon blue" data-show="1">실천 <em>쑥쑥</em></div>
-            <div class="title-text"><span>
-                    <실천 똑똑>
-                </span>에서 생명을 존중하는 모습과 그렇지 않은 모습을 찾아봅시다.</div>
+            <div class="title-text"><span style="letter-spacing: -3.4px;">실천 똑똑 에서 생명을 존중하는 모습과 그렇지 않은 모습을 찾아봅시다.</span>
+            </div>
         </header>
         <main>
             <!-- FRAME OF PAGE -->
             <div class="basicSlider contentsBox" data-slide-container="main">
                 <ul class="basicSlider_tabs" data-tabs="">
-                    <li data-hover="" data-text="<span> <실천 똑똑> </span>에서 생명을 존중하는 모습과 그렇지 않은 모습을 찾아봅시다.">활동 1</li>
+                    <li data-hover=""
+                        data-text="<span style='letter-spacing: -3.4px;'>실천 똑똑 에서 생명을 존중하는 모습과 그렇지 않은 모습을 찾아봅시다.</span>"
+                        data-gap="true">
+                        활동 1</li>
                     <li data-hover="" data-text="친구들과 함께 생명을 존중하는 방법을 정리해 봅시다.">활동 2</li>
                 </ul>
                 <ul class="basicSlider_slides" data-slides="">

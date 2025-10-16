@@ -270,7 +270,7 @@
                                     <div class="popBtn additional-question" data-popup-btn="1">추가 자료</div>
                                     <div class="content">
                                         첫째, 인간은 자연을 변화시키지 않고 자연에 맞춰 적응하며 살아갑니다. 눈이 많이 내리는 지역에서는 지붕에 눈이 쌓여
-                                        지붕이 무너지지 않도록 지붕을 뾰족하게 만들고, 바람이 부는
+                                        지붕이 무너지지 않도록 지붕을 뾰족하게 만들고, 바람이 많이 부는
                                         바닷가 마을에서는 지붕이 바람에 날아가지 않도록 지붕을
                                         낮게 만듭니다. 자연은 인간에게 큰 영향을 미치고, 인간은 이런 자연에 적응하며 살아간다는 것을 보여 주죠.
                                         <div class="popBtn mouse mouse1" data-hover="" data-popup-btn="3"
@@ -644,6 +644,14 @@
 
             $(document).on('click', '.popup_pages .innerSlider_tabs>li', function () {
                 KmAudioPlayer.buttonClick();
+            });
+
+            $(document).on('click', '.popup_pages .popup_closeBtn', function () {
+                $('.popBtn.mouse').removeClass('popupOn')
+            });
+
+            $(document).on('click', '.popBtn[data-popup-btn="3"]', function () {
+                $('.whole.image[data-popup-page="3"]').addClass('on')
             });
         });
     </script>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        #wrap main {
+            width: calc(100% + 1px);
+        }
+
+        #wrap header {
+            align-items: start;
+        }
+
+        #wrap header .title-icon {
+            top: 10px;
+        }
+
+        .page_1 img {
+            height: calc(100% - 80px);
+        }
+
+        .noteText {
+            position: absolute;
+            box-shadow: none;
+            padding: 0;
+            height: 60px;
+        }
+
+        .noteText .textLine {
+            text-align: center;
+        }
+
+        .noteText .textareaWrap {
+            height: 100%;
+            padding: 0;
+        }
+
+        .noteText .text-exam.flex-wrap {
+            padding: 0;
+            top: 1px;
+            left: 5px;
+            justify-content: center;
+        }
+
+        .page_2 .noteText .text-exam.flex-wrap,
+        .noteText2 .text-exam.flex-wrap,
+        .noteText3 .text-exam.flex-wrap,
+        .noteText4 .text-exam.flex-wrap,
+        .noteText5 .text-exam.flex-wrap {
+            left: 0;
+        }
+
+        .noteText .text-exam.flex-wrap .blueT {
+            margin-top: -1px;
+        }
+
+        .noteText:after {
+            display: none;
+        }
+
+        .page_1 .noteText1 {
+            top: 235px;
+            left: 110px;
+            width: 1130px;
+        }
+
+        .page_1 .noteText2 {
+            width: 100px;
+            top: 357px;
+            left: 286px;
+        }
+
+        .page_1 .noteText3 {
+            width: 100px;
+            top: 357px;
+            left: 431px;
+        }
+
+        .page_1 .noteText4 {
+            width: 100px;
+            top: 357px;
+            left: 575px;
+        }
+
+        .page_1 .noteText5 {
+            width: 260px;
+            top: 355px;
+            left: 837px;
+        }
+
+        .page_1 .noteText2 input::placeholder,
+        .page_1 .noteText3 input::placeholder,
+        .page_1 .noteText4 input::placeholder {
+            font-size: 22px;
+        }
+
+        /* page 2 */
+        .page_2 .noteText1 {
+            width: 290px;
+            top: 93px;
+            left: 490px;
+        }
+
+        .page_2 .noteText2 {
+            width: 295px;
+            top: 186px;
+            left: 176px;
+        }
+
+        .page_2 .noteText3 {
+            top: 281px;
+            left: 89px;
+            width: 830px;
+        }
+
+        .btn-praise {
+            right: -28px;
+            top: 370px;
+        }
+
+        /* popup */
+        .pointContainer .pointTitle {
+            display: block;
+            text-align: center;
+        }
+
+        .pointContainer .pointTitle .titleText {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 45px;
+            line-height: 50px;
+            font-family: 'YGJAL';
+            color: #ff6600;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+        }
+
+        .pointContainer .pointTitle .titleText:after,
+        .pointContainer .pointTitle .titleText:before {
+            position: absolute;
+            top: 0px;
+            height: 50px;
+            font-size: 40px;
+            line-height: 50px;
+            font-family: 'YGJAL';
+            color: #e4caa9;
+        }
+
+        .pointContainer .pointTitle .titleText:after {
+            content: "[";
+            left: -20px;
+        }
+
+        .pointContainer .pointTitle .titleText:before {
+            content: "]";
+            right: -20px;
+        }
+
+        [data-type="toggleButton"] {
+            max-height: max-content;
+            margin-top: 40px;
+        }
+
+        .toggle.complete .answer,
+        .answer.on {
+            font-weight: normal;
+            margin: auto;
+        }
+
+        .pointContainer .dapCheckBtn {
+            right: 28px;
+            bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header class="gap">
+            <div class="title-icon pink" data-show="1">마음 <em>탄탄</em></div>
+            <div class="title-text">올바른 디지털 생활 습관을 다짐하는 서약서를 적어 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="올바른 디지털 생활 습관을 다짐하는 서약서를 적어 봅시다." data-gap="true">활동 1</li>
+                    <li data-hover="" data-text="나의 다짐을 친구들과 공유하고 친구가 계획을 잘 실천하도록 격려해 봅시다.">활동 2</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <img src="./images/duk_04_05_0004_301/img_01.png" alt="">
+                        <div class="noteText noLine noteText1">
+                            <div class="textareaWrap">
+                                <input class="textLine afterDisplay" style="text-align: start;" type="text"
+                                    placeholder="직접 쓰기" data-input-obj="" data-answer=" " onfocus=""
+                                    onblur="placeholder='직접 쓰기'" autocomplete="off" spellcheck="false"></input>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p>좋은 댓글을 달겠습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="noteText noLine noteText2">
+                            <div class="textareaWrap">
+                                <input class="textLine afterDisplay" type="text" placeholder="직접 쓰기" data-input-obj=""
+                                    data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                    spellcheck="false"></input>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p>○○</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="noteText noLine noteText3">
+                            <div class="textareaWrap">
+                                <input class="textLine afterDisplay" type="text" placeholder="직접 쓰기" data-input-obj=""
+                                    data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                    spellcheck="false"></input>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p>○○</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="noteText noLine noteText4">
+                            <div class="textareaWrap">
+                                <input class="textLine afterDisplay" type="text" placeholder="직접 쓰기" data-input-obj=""
+                                    data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                    spellcheck="false"></input>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p>○○</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="noteText noLine noteText5">
+                            <div class="textareaWrap">
+                                <input class="textLine afterDisplay" type="text" placeholder="직접 쓰기" data-input-obj=""
+                                    data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                    spellcheck="false"></input>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p>최민지</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                    <li class="page_2" data-quiz="toggle">
+                        <img src="./images/duk_04_05_0004_301/img_02.png" alt="">
+
+                        <div class="noteText noLine noteText1">
+                            <div class="textareaWrap">
+                                <input class="textLine afterDisplay" type="text" placeholder="직접 쓰기" data-input-obj=""
+                                    data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                    spellcheck="false"></input>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p>내 짝 정우</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="noteText noLine noteText2">
+                            <div class="textareaWrap">
+                                <input class="textLine afterDisplay" type="text" placeholder="직접 쓰기" data-input-obj=""
+                                    data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                    spellcheck="false"></input>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p>정우</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="noteText noLine noteText3">
+                            <div class="textareaWrap">
+                                <input class="textLine afterDisplay" type="text" placeholder="직접 쓰기" data-input-obj=""
+                                    data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                    spellcheck="false"></input>
+                            </div>
+                            <div class="text-exam flex-wrap">
+                                <div class="blueT">
+                                    <p>“우리 같이 노력하자!”</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+
+                        <div class="btn-praise right popBtn footer-item" data-popup-btn="1">
+                            <div class="item-title">핵심<br>정리</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="fullLine whole image pointContainer" data-popup-page="1">
+                    <div class="full_content" data-quiz="toggle">
+                        <div class="pointTitle">
+                            <div class="titleText">올바른 디지털 생활 습관</div>
+                        </div>
+                        <div data-type="toggleButton">
+                            <div class="toggle box" data-toggle-obj="1" data-hover="">
+                                <div class="answer" data-toggle-target="1">
+                                    <div class="ls-2h">
+                                        디지털 기기에 지나치게 의존하지 않아요.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-type="toggleButton">
+                            <div class="toggle box" data-toggle-obj="2" data-hover="">
+                                <div class="answer" data-toggle-target="2">
+                                    <div class="ls-2h">
+                                        디지털 기기를 사용할 때 비속어를 쓰지 않아요.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-type="toggleButton">
+                            <div class="toggle box" data-toggle-obj="3" data-hover="">
+                                <div class="answer" data-toggle-target="3">
+                                    <div class="ls-2h">
+                                        디지털 기기 사용 시간을 정해 놓고 사용해요.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-type="toggleButton">
+                            <div class="toggle box" data-toggle-obj="4" data-hover="">
+                                <div class="answer" data-toggle-target="4">
+                                    <div class="ls-2h">
+                                        디지털 기기를 사용하느라 할 일을 미루지 않아요.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="dapCheckBtn" data-answer-btn=""></button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+
+
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    dapCheckBtn.addClass('reset');
+                } else {
+                    dapCheckBtn.removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                const dapCheckBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!dapCheckBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
+            });
+            $(document).on('click', '.btn-praise', function () {
+                $('[data-type="toggleButton"][data-active="on"] .toggle').addClass('complete');
+                if ($('[data-type="toggleButton"][data-active="on"]').length == 4) {
+                    $('.dapCheckBtn').addClass('reset');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

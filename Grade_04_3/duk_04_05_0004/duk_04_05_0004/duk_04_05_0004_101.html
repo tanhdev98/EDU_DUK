@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        #wrap main {
+            width: calc(100% + 1px);
+        }
+
+        .innerTab_1>img {
+            margin: 110px auto;
+            width: 1000px;
+        }
+
+        .innerTab_1 .toggle.box {
+            height: 100%;
+            background-color: #fde9da;
+            border-radius: 50%;
+        }
+
+        .innerTab_1 [data-type="toggleButton"] .toggle.complete {
+            background-color: transparent;
+        }
+
+        .innerTab_1 [data-type="toggleButton"].box {
+            position: absolute;
+            height: 150px;
+            top: 230px;
+        }
+
+        .box1 {
+            left: 174px;
+            width: 160px !important;
+        }
+
+        .box2 {
+            left: 367px;
+            width: 188px !important;
+        }
+
+        .box3 {
+            right: 363px;
+            width: 170px !important;
+        }
+
+        .box4 {
+            right: 155px;
+            width: 170px !important;
+        }
+
+        [data-popup-page="1"] {
+            top: 150px;
+            left: 480px;
+            width: 780px;
+        }
+
+        .innerTab_2 .items {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: calc(100% - 50px);
+        }
+
+        .innerTab_2 .items .item {
+            position: relative;
+            letter-spacing: -1px;
+        }
+
+        .innerTab_2 .items .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 33px;
+            left: -8px;
+            transform: translateY(-50%);
+        }
+
+        .innerTab_2 .items .item {
+            padding-left: 30px;
+            position: relative;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .innerTab_2 .toggle.box {
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        .innerTab_2 .toggle.box .answer {
+            text-align: center;
+            font-family: 'NotoM';
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon pink" data-show="1">마음 <em>똑똑</em></div>
+            <div class="title-text">디지털 사회에서는 무엇이 바른 모습일까요?</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="icon-char blinkOpacity" data-hover="" data-popup-btn="1"></div>
+                                    <img src="./images/duk_04_05_0004_101/img_01.png" alt="">
+                                    <div data-type="toggleButton" class="box box1">
+                                        <div class="toggle box" data-toggle-obj="1"></div>
+                                    </div>
+                                    <div data-type="toggleButton" class="box box2">
+                                        <div class="toggle box" data-toggle-obj="2"></div>
+                                    </div>
+                                    <div data-type="toggleButton" class="box box3">
+                                        <div class="toggle box" data-toggle-obj="3"></div>
+                                    </div>
+                                    <div data-type="toggleButton" class="box box4">
+                                        <div class="toggle box" data-toggle-obj="4"></div>
+                                    </div>
+                                    <button class="dapCheckBtn" data-answer-btn=""></button>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="items">
+                                        <div class="item">
+                                            디지털 기기를 지나치게 사용하는 우리는 어떤 모습일까요?
+                                            <div data-type="toggleButton" class="box">
+                                                <div class="toggle examBtn box" data-toggle-obj="5">
+                                                    <div class="answer" data-toggle-target="5">
+                                                        <div class="ls-2h">디지털 기기 없이는 불안한 모습일 것입니다.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            디지털 기기를 적정 시간 사용한다면 우리의 모습은 어떻게 달라질까요?
+                                            <div data-type="toggleButton" class="box">
+                                                <div class="toggle examBtn box" data-toggle-obj="6">
+                                                    <div class="answer" data-toggle-target="6">
+                                                        <div class="ls-2h">디지털 기기가 없어도 불안하지 않고 편안할 것입니다.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag="">
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents ls1">
+                        <p><b><ins class="dot"></ins>디지털 거리 두기</b></p>
+                        <p>디지털 기기 사용으로 인한 스트레스를 줄이고, 건강한 디지털 생활 습관을 들이려는 노력</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').text($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+
+            $(document).on('click', '.toggle', function () {
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+                const toggleCompleteBtn = $(this).parents('[data-quiz=toggle]').find('.toggle.complete');
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+
+                if (toggleBtn.length == toggleCompleteBtn.length) {
+                    examViewBtn.addClass('reset');
+                } else {
+                    examViewBtn.removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                const examViewBtn = $(this).parents('[data-quiz=toggle]').find('.dapCheckBtn');
+                const toggleBtn = $(this).parents('[data-quiz=toggle]').find('.toggle');
+
+                if (!examViewBtn.hasClass('reset')) {
+                    toggleBtn.parent().removeAttr('data-active');
+                } else {
+                    toggleBtn.parent().attr('data-active', 'on');
+                }
+            });
+
+        });
+    </script>
+</body>
+
+</html>

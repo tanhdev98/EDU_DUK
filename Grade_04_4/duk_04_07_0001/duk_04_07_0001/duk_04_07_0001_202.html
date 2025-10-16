@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        #wrap main {
+            width: calc(100% + 1px);
+        }
+
+        .titleBlue {
+            width: max-content;
+            padding: 5px 20px;
+            border-radius: 15px;
+            background: #E9F4F8;
+            border: 4px solid #B1D5F3;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .flex {
+            display: flex;
+            gap: 20px;
+        }
+
+        .flex .items {
+            flex: 1;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .flex .items .imgWrap {
+            border: 2px solid #F3E7D6;
+            width: 100%;
+            height: 300px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .innerTab_3 .flex .items .imgWrap {
+            height: 250px;
+        }
+
+        .flex .items img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .flex .items img.contain {
+            object-fit: contain;
+        }
+
+        .flex .items .toggle.box {
+            margin-top: 20px;
+            display: block;
+        }
+
+        .page_1 .toggle.complete {
+            justify-content: center;
+        }
+
+        .flex .items .toggle .answer {
+            height: 100%;
+            text-align: center;
+        }
+
+        .page_1 [data-type="toggleButton"] {
+            height: auto;
+            width: 79%;
+        }
+
+        .page_1 .toggle .answer {
+            text-align: center;
+            letter-spacing: -1px;
+        }
+
+        .flex-center {
+            gap: 20px;
+        }
+
+        .flex-center>img {
+            position: absolute;
+            width: 120px;
+            right: 0;
+            bottom: 73px;
+        }
+
+        .innerTab_3 .flex-center>img,
+        .innerTab_2 .flex-center>img {
+            left: 0;
+        }
+
+        .noteText .textLine {
+            text-align: start;
+            padding: 2px 0;
+            letter-spacing: -1px;
+        }
+
+        .blueT {
+            letter-spacing: -1px;
+        }
+
+        /* popup 2 */
+        .innerSlider_tabs>li {
+            background-color: #F3DEC0;
+        }
+
+        .innerSlider_tabs>li.on {
+            background-color: #F3B05B;
+        }
+
+        .innerButtonContainer {
+            position: absolute;
+            right: 40px;
+            top: 76px;
+        }
+
+        .innerButtonContainer::before {
+            display: none;
+        }
+
+        .popup_pages>li.image .basicSlider {
+            padding: 0;
+        }
+
+        .popup_pages .contentsBox .basicSlider_slides>li {
+            padding: 0;
+        }
+
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: fit-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+        }
+
+        .popup-boxes [data-type="toggleButton"] {
+            height: fit-content;
+            margin-top: 50px;
+        }
+
+        .popup-boxes [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            justify-content: center;
+        }
+
+        .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+
+        .page_1 .additional-question {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        /* popup 1 */
+        .popup_pages>li.whole h2 {
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .popup_pages .noteText {
+            padding: 20px;
+            border: 4px solid #f7c1c9;
+            background-color: #FFEEF3;
+            box-shadow: none;
+            position: relative;
+            right: 50px;
+        }
+
+        .popup_pages .noteText.noLine .textareaWrap {
+            padding: 0;
+            height: 100%;
+        }
+
+        .popup_pages .noteText .text-exam.flex-wrap {
+            padding: 20px;
+            text-align: start;
+        }
+
+        .balloon.pink {
+            display: block !important;
+            background-color: #ffc4c9;
+            padding: 12px;
+            left: -90px;
+            top: 230px;
+            transform: rotate(75deg);
+        }
+
+        .popup_pages .items>img {
+            width: 400px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            bottom: 0;
+            height: auto;
+        }
+
+        .popup_pages .buttonContainer {
+            right: 28px;
+            bottom: 20px;
+        }
+
+        .popup_pages .flex .items:first-child {
+            flex: .9;
+        }
+
+        .popup_pages .flex .items {
+            margin-top: 100px;
+        }
+
+        .answer {
+            font-family: 'NotoM';
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon yellow">생각 <em>쑥쑥</em></div>
+            <div class="title-text">자연과 인간이 함께 살아야 하는 까닭을 생각해 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="moveButtonContainer" data-slide-btn-container="">
+                                <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                                <ul class="basicSlider_circle_tabs" data-tabs="">
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                    <li data-hover=""></li>
+                                </ul>
+                                <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                            </div>
+                            <ul class="basicSlider_slides" data-slides="">
+                                <li class="innerTab_1" data-quiz="toggle">
+                                    <div class="titleBlue">인간이 자연을 함부로 사용하는 사례 이야기하기</div>
+                                    <div class="flex-center">
+                                        <div class="flex">
+                                            <div class="items">
+                                                <span class="imgWrap line popBtn" data-popup-btn="1"
+                                                    data-targetSlideNum="1">
+                                                    <img src="./images/duk_04_07_0001_202/img_01.png" class="contain">
+                                                    <button class="popBtn zoomBtn" data-hover=""></button>
+                                                </span>
+                                            </div>
+                                            <div class="items">
+                                                <span class="imgWrap line popBtn" data-popup-btn="1"
+                                                    data-targetSlideNum="2">
+                                                    <img src="./images/duk_04_07_0001_202/img_02.png" class="contain">
+                                                    <button class="popBtn zoomBtn" data-hover=""></button>
+                                                </span>
+                                            </div>
+                                            <div class="items">
+                                                <span class="imgWrap line popBtn" data-popup-btn="1"
+                                                    data-targetSlideNum="3">
+                                                    <img src="./images/duk_04_07_0001_202/img_03.png"
+                                                        style="scale: 1.1;">
+                                                    <button class="popBtn zoomBtn" data-hover=""></button>
+                                                </span>
+                                            </div>
+                                            <div class="items">
+                                                <span class="imgWrap line popBtn" data-popup-btn="1"
+                                                    data-targetSlideNum="4">
+                                                    <img src="./images/duk_04_07_0001_202/img_04.png"
+                                                        style="scale: 1.1;">
+                                                    <button class="popBtn zoomBtn" data-hover=""></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div data-type="toggleButton">
+                                            <div class="toggle box" data-toggle-obj="1">
+                                                <div class="answer" data-toggle-target="1">
+                                                    <div>인간이 자연을 무분별하게 이용하면서<br> 자연을 파괴하고 오염시켰습니다.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="./images/duk_04_07_0001_202/arrow.png" alt="">
+                                    </div>
+                                </li>
+                                <li class="innerTab_2" data-quiz="toggle">
+                                    <div class="titleBlue">환경이 오염돼 환경 문제가 발생한 사례 이야기하기</div>
+                                    <div class="flex-center">
+                                        <div class="flex">
+                                            <div class="items">
+                                                <span class="imgWrap line popBtn" data-popup-btn="2"
+                                                    data-targetSlideNum="1">
+                                                    <img src="./images/duk_04_07_0001_202/img_05.png" class="contain">
+                                                    <button class="popBtn zoomBtn" data-hover=""></button>
+                                                </span>
+                                            </div>
+                                            <div class="items">
+                                                <span class="imgWrap line popBtn" data-popup-btn="2"
+                                                    data-targetSlideNum="2" style="width: 600px;">
+                                                    <img src="./images/duk_04_07_0001_202/img_06.png" class="contain"
+                                                        style="scale: 1.04;">
+                                                    <button class="popBtn zoomBtn" data-hover=""></button>
+                                                </span>
+                                            </div>
+                                            <div class="items">
+                                                <span class="imgWrap line popBtn" data-popup-btn="2"
+                                                    data-targetSlideNum="3">
+                                                    <img src="./images/duk_04_07_0001_202/img_07.png"
+                                                        style="scale: 1.05;">
+                                                    <button class="popBtn zoomBtn" data-hover=""></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <img src="./images/duk_04_07_0001_202/arrow.png" alt="">
+                                        <div data-type="toggleButton">
+                                            <div class="toggle box" data-toggle-obj="2">
+                                                <div class="answer" data-toggle-target="2">
+                                                    <div>그 결과 가뭄, 폭염 등 자연에 여러 가지<br>
+                                                        문제가 생겼습니다.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_3" data-quiz="toggle">
+                                    <div class="popBtn additional-question" data-popup-btn="4">
+                                        추가 질문</div>
+                                    <div class="titleBlue">환경 문제가 자연재해가 돼 인간에게<br> 피해로 되돌아온 사례 이야기하기</div>
+                                    <div class="flex-center">
+                                        <div class="flex">
+                                            <div class="items">
+                                                <span class="imgWrap line popBtn" data-popup-btn="3"
+                                                    data-targetSlideNum="1">
+                                                    <img src="./images/duk_04_07_0001_202/img_08.png">
+                                                    <button class="popBtn zoomBtn" data-hover=""></button>
+                                                </span>
+                                            </div>
+                                            <div class="items">
+                                                <span class="imgWrap line popBtn" data-popup-btn="3"
+                                                    data-targetSlideNum="2">
+                                                    <img src="./images/duk_04_07_0001_202/img_09.png"
+                                                        style="scale: 1.07;">
+                                                    <button class="popBtn zoomBtn" data-hover=""></button>
+                                                </span>
+                                            </div>
+                                            <div class="items">
+                                                <span class="imgWrap line popBtn" data-popup-btn="3"
+                                                    data-targetSlideNum="3">
+                                                    <img src="./images/duk_04_07_0001_202/img_10.png" class="contain"
+                                                        style="scale: 1.2;">
+                                                    <button class="popBtn zoomBtn" data-hover=""></button>
+                                                </span>
+                                            </div>
+                                            <div class="items">
+                                                <span class="imgWrap line popBtn" data-popup-btn="3"
+                                                    data-targetSlideNum="4">
+                                                    <img src="./images/duk_04_07_0001_202/img_11.png"
+                                                        style="scale: 1.07;">
+                                                    <button class="popBtn zoomBtn" data-hover=""></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <img src="./images/duk_04_07_0001_202/arrow.png" alt="">
+                                        <div data-type="toggleButton">
+                                            <div class="toggle box" data-toggle-obj="2">
+                                                <div class="answer" data-toggle-target="2">
+                                                    <div>그리고 이제는 자연에 발생한 문제가 큰 자연재해가 되어<br> 인간에게 피해로 되돌아오고 있습니다.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="whole image" data-popup-page="1">
+                    <div class="basicSlider" data-slide-container="popup">
+                        <ul class="basicSlider_slides" data-slides="">
+                            <li class="innerTab_1" data-quiz="toggle">
+                                <h2>자연을 함부로 사용하는 사례</h2>
+                                <div class="flex">
+                                    <div class="items">
+                                        <img src="./images/duk_04_07_0001_202/img_01.png" alt="">
+                                    </div>
+                                    <div class="items">
+                                        <div class="balloon thinkTail deeppink pink"></div>
+                                        <div class="noteText noLine">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    비닐봉지, 빨대 등 일회용품과
+                                                    플라스틱을 많이 사용해 썩지 않는
+                                                    쓰레기를 만들어 환경을 오염시킵니다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="buttonContainer">
+                                    <button class="writeBtn" data-answer-btn=""></button>
+                                </div>
+                            </li>
+                            <li class="innerTab_2" data-quiz="toggle">
+                                <h2>자연을 함부로 사용하는 사례</h2>
+                                <div class="flex">
+                                    <div class="items">
+                                        <img src="./images/duk_04_07_0001_202/img_02.png" alt="">
+                                    </div>
+                                    <div class="items">
+                                        <div class="balloon thinkTail deeppink pink"></div>
+                                        <div class="noteText noLine">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    <p class="dot">많은 재화를 생산하며 많은 매연을 만들어 냅니다.</p>
+                                                    <p class="dot">공장에서 물건을 만들면서 에너지를 많이 사용합니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="buttonContainer">
+                                    <button class="writeBtn" data-answer-btn=""></button>
+                                </div>
+                            </li>
+                            <li class="innerTab_3" data-quiz="toggle">
+                                <h2>자연을 함부로 사용하는 사례</h2>
+                                <div class="flex">
+                                    <div class="items">
+                                        <img src="./images/duk_04_07_0001_202/img_03.png" alt="">
+                                    </div>
+                                    <div class="items">
+                                        <div class="balloon thinkTail deeppink pink"></div>
+                                        <div class="noteText noLine">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    물건을 많이 만들어 내는 만큼 쓰레기를 많이 만듭니다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="buttonContainer">
+                                    <button class="writeBtn" data-answer-btn=""></button>
+                                </div>
+                            </li>
+                            <li class="innerTab_4" data-quiz="toggle">
+                                <h2>자연을 함부로 사용하는 사례</h2>
+                                <div class="flex">
+                                    <div class="items">
+                                        <img src="./images/duk_04_07_0001_202/img_04.png" alt="">
+                                    </div>
+                                    <div class="items">
+                                        <div class="balloon thinkTail deeppink pink"></div>
+                                        <div class="noteText noLine">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    개발하려고 나무를 많이 벱니다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="buttonContainer">
+                                    <button class="writeBtn" data-answer-btn=""></button>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="moveButtonContainer" data-slide-btn-container="">
+                            <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                            <ul class="basicSlider_circle_tabs" data-tabs="">
+                                <li data-hover=""></li>
+                                <li data-hover=""></li>
+                                <li data-hover=""></li>
+                                <li data-hover=""></li>
+                            </ul>
+                            <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="whole image" data-popup-page="2">
+                    <div class="basicSlider" data-slide-container="popup">
+                        <ul class="basicSlider_slides" data-slides="">
+                            <li class="innerTab_1" data-quiz="toggle">
+                                <h2>환경 문제가 발생한 사례</h2>
+                                <div class="flex">
+                                    <div class="items">
+                                        <img src="./images/duk_04_07_0001_202/img_05.png" alt="">
+                                    </div>
+                                    <div class="items">
+                                        <div class="balloon thinkTail deeppink pink"></div>
+                                        <div class="noteText noLine">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    가뭄이 발생합니다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="buttonContainer">
+                                    <button class="writeBtn" data-answer-btn=""></button>
+                                </div>
+                            </li>
+                            <li class="innerTab_2" data-quiz="toggle">
+                                <h2>환경 문제가 발생한 사례</h2>
+                                <div class="flex">
+                                    <div class="items">
+                                        <img src="./images/duk_04_07_0001_202/img_06.png" alt=""
+                                            style="width: 400px; height: 300px; object-fit: fill; left: -50px;">
+                                    </div>
+                                    <div class="items">
+                                        <div class="balloon thinkTail deeppink pink"></div>
+                                        <div class="noteText noLine">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    <p class="dot" style="letter-spacing: -1px;">온도 변화와 날씨 변화가 심합니다.</p>
+                                                    <p class="dot">지구의 온도가 올라갑니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="buttonContainer">
+                                    <button class="writeBtn" data-answer-btn=""></button>
+                                </div>
+                            </li>
+                            <li class="innerTab_3" data-quiz="toggle">
+                                <h2>환경 문제가 발생한 사례</h2>
+                                <div class="flex">
+                                    <div class="items">
+                                        <img src="./images/duk_04_07_0001_202/img_07.png" alt="">
+                                    </div>
+                                    <div class="items">
+                                        <div class="balloon thinkTail deeppink pink"></div>
+                                        <div class="noteText noLine">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    빙하가 녹아서 해수면이 높아져서 섬이 물에 잠깁니다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="buttonContainer">
+                                    <button class="writeBtn" data-answer-btn=""></button>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="moveButtonContainer" data-slide-btn-container="">
+                            <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                            <ul class="basicSlider_circle_tabs" data-tabs="">
+                                <li data-hover=""></li>
+                                <li data-hover=""></li>
+                                <li data-hover=""></li>
+                            </ul>
+                            <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="whole image" data-popup-page="3">
+                    <div class="basicSlider" data-slide-container="popup">
+                        <ul class="basicSlider_slides" data-slides="">
+                            <li class="innerTab_1" data-quiz="toggle">
+                                <h2>자연재해로 인간에게 피해가 된 사례</h2>
+                                <div class="flex">
+                                    <div class="items">
+                                        <img src="./images/duk_04_07_0001_202/img_08.png" alt=""
+                                            style="object-fit: fill;height: 320px; top: 0; border-radius: 20px;">
+                                    </div>
+                                    <div class="items">
+                                        <div class="balloon thinkTail deeppink pink"></div>
+                                        <div class="noteText noLine">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" style="letter-spacing: -2px;"
+                                                    type="text" placeholder="직접 쓰기" data-input-obj="" data-answer=" "
+                                                    onfocus="" onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT" style="letter-spacing: -2px;">
+                                                    지엽적인 호우와 일시적으로 쏟아지는 비로 잦은 홍수가 일어납니다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="buttonContainer">
+                                    <button class="writeBtn" data-answer-btn=""></button>
+                                </div>
+                            </li>
+                            <li class="innerTab_2" data-quiz="toggle">
+                                <h2>자연재해로 인간에게 피해가 된 사례</h2>
+                                <div class="flex">
+                                    <div class="items">
+                                        <img src="./images/duk_04_07_0001_202/img_09.png" alt="">
+                                    </div>
+                                    <div class="items">
+                                        <div class="balloon thinkTail deeppink pink"></div>
+                                        <div class="noteText noLine">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    건조한 날씨가 계속돼 산불이 자주 발생합니다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="buttonContainer">
+                                    <button class="writeBtn" data-answer-btn=""></button>
+                                </div>
+                            </li>
+                            <li class="innerTab_3" data-quiz="toggle">
+                                <h2>자연재해로 인간에게 피해가 된 사례</h2>
+                                <div class="flex">
+                                    <div class="items">
+                                        <img src="./images/duk_04_07_0001_202/img_10.png" alt="">
+                                    </div>
+                                    <div class="items">
+                                        <div class="balloon thinkTail deeppink pink"></div>
+                                        <div class="noteText noLine">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    강력한 태풍이 발생해 인명과 재산 피해가 발생합니다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="buttonContainer">
+                                    <button class="writeBtn" data-answer-btn=""></button>
+                                </div>
+                            </li>
+                            <li class="innerTab_4" data-quiz="toggle">
+                                <h2>자연재해로 인간에게 피해가 된 사례</h2>
+                                <div class="flex">
+                                    <div class="items">
+                                        <img src="./images/duk_04_07_0001_202/img_11.png" alt="">
+                                    </div>
+                                    <div class="items">
+                                        <div class="balloon thinkTail deeppink pink"></div>
+                                        <div class="noteText noLine">
+                                            <div class="textareaWrap">
+                                                <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                                    data-input-obj="" data-answer=" " onfocus=""
+                                                    onblur="placeholder='직접 쓰기'" autocomplete="off"
+                                                    spellcheck="false"></textarea>
+                                            </div>
+                                            <div class="text-exam flex-wrap">
+                                                <div class="blueT">
+                                                    <p class="dot">불안정한 기후로 식량 위기가 발생합니다.</p>
+                                                    <p class="dot">수온의 변화와 오염으로 바다의 산호초가 죽게 돼 바다 생태계가 파괴됩니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="buttonContainer">
+                                    <button class="writeBtn" data-answer-btn=""></button>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="moveButtonContainer" data-slide-btn-container="">
+                            <div class="basicSlider_btn prev" data-btn-prev="" data-hover=""></div>
+                            <ul class="basicSlider_circle_tabs" data-tabs="">
+                                <li data-hover=""></li>
+                                <li data-hover=""></li>
+                                <li data-hover=""></li>
+                                <li data-hover=""></li>
+                            </ul>
+                            <div class="basicSlider_btn next" data-btn-next="" data-hover=""></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="fullLine whole image" data-popup-page="4" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                            <div class="innerButtonContainer">
+                                <ul class="innerSlider_tabs">
+                                    <li data-hover="" class="on">1</li>
+                                    <li data-hover="" class="">2</li>
+                                </ul>
+                            </div>
+                            <ul class="basicSlider_slides innerTab" data-slides="">
+                                <li class="innerTab_1">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            인간은 자연을 어떻게 대했나요?<br>그 결과 자연은 어떻게 됐나요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="1" data-hover="">
+                                                    <div class="answer" data-toggle-target="1"
+                                                        style="text-align: center;">
+                                                        <div>
+                                                            인간은 자연을 이용하면서 환경을 파괴했습니다.<br>
+                                                            그 결과 가뭄과 폭염 등 환경 문제가 생겼습니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="innerTab_2">
+                                    <div class="popup-boxes">
+                                        <div class="box-item ico_que">
+                                            앞으로 인간은 자연을 어떻게 대해야 할까요?
+                                            <img src="./common/images/ico_que.png" class="ico">
+                                        </div>
+                                        <div class="box-item ico_ans">
+                                            <img src="./common/images/ico_ans.png" class="ico">
+                                            <div data-type="toggleButton">
+                                                <div class="toggle examBtn box" data-toggle-obj="2" data-hover="">
+                                                    <div class="answer" data-toggle-target="2">
+                                                        <div>
+                                                            <p class="dot">자연을 아껴야 합니다.</p>
+                                                            <p class="dot">자연과 조화를 이루려는 마음을 지녀야 합니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+
+            $(document).on('click', '.popup_closeBtn', function () {
+                $('.popBtn.popupOn').trigger('click');
+            });
+
+            $(document).on('click', '.additional-question', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs>li', function () {
+                KmAudioPlayer.buttonClick();
+            });
+
+            $(document).on('click', '.imgWrap.popBtn', function () {
+                const parentDocument = parent.document.querySelector('iframe');
+                if (parentDocument != null) {
+                    parentDocument.parentNode.parentNode.style.zIndex = 120;
+                }
+            });
+
+            $(document).on('click', '.popup_closeBtn', function () {
+                const parentDocument = parent.document.querySelector('iframe');
+                if (parentDocument != null) {
+                    parentDocument.parentNode.parentNode.style.zIndex = 0;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

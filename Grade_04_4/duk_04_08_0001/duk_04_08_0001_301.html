@@ -167,7 +167,7 @@
                             </div>
                         </div>
                         <div class="buttonContainer">
-                            <button class="writeBtn" data-answer-btn=""></button>
+                            <button class="examViewBtn" data-answer-btn=""></button>
                         </div>
                     </li>
                     <li class="page_2">
@@ -353,7 +353,7 @@
                 }
 
             });
-            $(document).on('click', '.writeBtn', function () {
+            $(document).on('click', '.examViewBtn', function () {
                 if (!$(this).hasClass('reset')) {
                     $(this).removeClass('reset');
                     $('.noteText .textareaWrap .textLine').show();

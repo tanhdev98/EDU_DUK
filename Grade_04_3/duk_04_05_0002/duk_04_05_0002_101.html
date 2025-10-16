@@ -11,6 +11,10 @@
     <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
 
     <style>
+        #wrap {
+            box-shadow: none;
+        }
+
         /* page 1 */
         .page_1 .popBtn.imgWrap {
             background: #fff;
@@ -358,6 +362,13 @@
                     parentDocument.parentNode.parentNode.style = '';
                 }
             })
+
+            $(document).on('click', '.icon-char', function () {
+                const parentDocument = parent.document.querySelector('iframe');
+                if (parentDocument != null) {
+                    parentDocument.parentNode.parentNode.style.zIndex = 120;
+                }
+            });
         });
     </script>
 </body>

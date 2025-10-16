@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../ko/libs/css/master.css">
+    <link rel="stylesheet" type="text/css" href="./common/css/guide.css">
+
+    <style>
+        #wrap main {
+            width: calc(100% + 1px);
+        }
+
+        #wrap header {
+            align-items: start;
+        }
+
+        #wrap header .title-icon {
+            top: 10px;
+        }
+
+        /* page 1 */
+        .flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 70px;
+        }
+
+        .flex>img {
+            width: 290px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .page_1 .box {
+            background: url('./images/duk_04_07_0001_301/img_02.png') no-repeat center / 100% 100%;
+            padding: 20px 20px 40px 40px;
+            width: 100%;
+            height: 380px;
+        }
+
+        .page_1 .box .noteText {
+            box-shadow: none;
+            background: #fff;
+            padding: 10px;
+            height: 100%;
+        }
+
+        .noteText.noLine .textareaWrap {
+            padding: 0;
+            height: 100%;
+        }
+
+        .noteText .textLine {
+            padding: 0;
+            letter-spacing: -1px;
+        }
+
+        .blueT {
+            margin-top: -3px;
+            letter-spacing: -1px;
+        }
+
+        .noteText .text-exam.flex-wrap {
+            padding: 10px;
+        }
+
+        .min[data-popup-page="1"] {
+            top: 210px;
+            left: 475px;
+            width: max-content;
+            letter-spacing: -1px;
+        }
+
+        .popBtn.additional-question {
+            position: absolute;
+            right: 80px;
+            top: 15px;
+        }
+
+        .innerSlider_tabs>li {
+            background-color: #F3DEC0;
+        }
+
+        .innerSlider_tabs>li.on {
+            background-color: #F3B05B;
+        }
+
+        .innerButtonContainer {
+            position: absolute;
+            right: 40px;
+            top: 136px;
+        }
+
+        .innerButtonContainer::before {
+            display: none;
+        }
+
+        .popup_pages>li.image .basicSlider {
+            padding: 0;
+        }
+
+        .popup_pages .contentsBox .basicSlider_slides>li {
+            padding: 0;
+        }
+
+        .popup-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            gap: 20px;
+            background-color: #F7F7F7;
+            position: absolute;
+            top: 53%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .popup-boxes .box-item {
+            background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .popup-boxes .box-item img.ico {
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            height: 30px;
+            width: fit-content;
+            transform: translateX(-70%);
+        }
+
+        .popup-boxes .box-item.ico_que {
+            height: 150px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .popup-boxes .box-item.ico_ans {
+            height: 250px;
+            padding: 20px;
+        }
+
+        [data-type="toggleButton"] {
+            height: fit-content;
+            margin-top: 70px;
+        }
+
+        [data-type="toggleButton"] .toggle {
+            background-color: transparent;
+            justify-content: center;
+        }
+
+        .toggle.box p.dot {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .toggle.box p.dot::after {
+            content: '';
+            background: #006ee6;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-self: flex-start;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 13px 10px -2px;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 15px;
+        }
+
+        .popup_pages li:not(.min) h2 {
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        /* popup 3 */
+        .pointContainer .pointTitle {
+            text-align: center;
+        }
+
+        .pointContainer .pointTitle .titleText {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 45px;
+            line-height: 50px;
+            font-family: 'YGJAL';
+            color: #ff6600;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+        }
+
+        .pointContainer .pointTitle .titleText:after,
+        .pointContainer .pointTitle .titleText:before {
+            position: absolute;
+            top: 0px;
+            height: 50px;
+            font-size: 40px;
+            line-height: 50px;
+            font-family: 'YGJAL';
+            color: #e4caa9;
+        }
+
+        .pointContainer .pointTitle .titleText:after {
+            content: "[";
+            left: -20px;
+        }
+
+        .pointContainer .pointTitle .titleText:before {
+            content: "]";
+            right: -20px;
+        }
+
+        .popup_pages .cho {
+            background-color: transparent;
+        }
+
+        .popup_pages .choWrap {
+            text-align: left;
+        }
+
+
+        .popup_pages .items .item {
+            position: relative;
+        }
+
+        .popup_pages .items .item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 5px solid #FF6500;
+            border-radius: 50%;
+            box-sizing: border-box;
+            top: 33px;
+            left: -8px;
+            transform: translateY(-50%);
+        }
+
+        .cho .choBox {
+            margin-left: 0;
+        }
+
+        .popup_pages .buttonContainer {
+            bottom: 20px;
+            right: 28px;
+        }
+
+        .self-check {
+            margin-top: 150px;
+        }
+
+        .answer {
+            font-family: 'NotoM';
+        }
+
+        .popup_pages>li.image.whole {
+            width: calc(100% + 1px);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="math">
+        <header>
+            <div class="title-icon yellow">생각 <em>탄탄</em></div>
+            <div class="title-text">자연과 인간이 함께 살아야 하는 까닭을 정리해 보고, 친구들과 이야기를 나눠 봅시다.</div>
+        </header>
+        <main>
+            <!-- FRAME OF PAGE -->
+            <div class="basicSlider contentsBox" data-slide-container="main">
+                <ul class="basicSlider_tabs" data-tabs="">
+                    <li data-hover="" data-text="자연과 인간이 함께 살아야 하는 까닭을 정리해 보고, 친구들과 이야기를 나눠 봅시다.">활동</li>
+                    <li data-hover="" data-text="배운 내용을 되돌아보며 자기 점검을 해 봅시다.">자기 점검</li>
+                </ul>
+                <ul class="basicSlider_slides" data-slides="">
+                    <li class="page_1" data-quiz="toggle">
+                        <div class="popBtn additional-question" data-popup-btn="2">추가 질문</div>
+                        <div class="icon-char" data-hover="" data-popup-btn="1"></div>
+                        <div class="flex">
+                            <img src="./images/duk_04_07_0001_301/img_01.png" alt="">
+                            <div class="box">
+                                <div class="noteText noLine">
+                                    <div class="textareaWrap">
+                                        <textarea class="textLine afterDisplay" type="text" placeholder="직접 쓰기"
+                                            data-input-obj="" data-answer=" " onfocus="" onblur="placeholder='직접 쓰기'"
+                                            autocomplete="off" spellcheck="false"></textarea>
+                                    </div>
+                                    <div class="text-exam flex-wrap">
+                                        <div class="blueT">
+                                            인간은 자연 속에서 살아가면서 자연을 이용합니다. 자연이 망가지면 그 속에 살고 있는 인간도 살기 어려워질 것입니다. 인간에게 다가오는
+                                            여러 환경 문제는 자연과 함께 살아가야 하는 관계임을 이해하는 것에서부터 풀어갈 수 있을 것입니다.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="writeBtn" data-answer-btn=""></button>
+                        </div>
+                    </li>
+                    <li class="page_2">
+                        <div class="study_guide"><em>얼굴</em>을 <em>클릭</em>하세요.</div>
+                        <div class="self-check">
+                            <div class="checkWrap">
+                                <div class="text_box">인간이 자연을 바라보는 관점에는<br>
+                                    어떤 것이 있는지 알고 있나요?</div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkWrap">
+                                <div class="text_box">자연과 인간이 함께 살아야 하는 까닭을 이해했나요?</div>
+                                <div class="icon-box">
+                                    <div class="wrap">
+                                        <div class="button-smile icon1"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon2"></div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="button-smile icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="example-box">
+                                <div class="exampleIcoWrap">
+                                    <div class="example ico-01">
+                                        매우 그렇다
+                                    </div>
+                                    <div class="example ico-02">
+                                        그렇다
+                                    </div>
+                                    <div class="example ico-03">
+                                        좀 더 노력해야 한다
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-praise right popBtn footer-item" data-popup-btn="3"
+                            style="top: 430px; right: -28px;">
+                            <div class="item-title">핵심<br>정리</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="popup_container" data-popup-container="">
+            <ul class="popup_pages">
+                <li class="min" data-popup-page="1" data-drag>
+                    <h2 class="blue">Tip</h2>
+                    <div class="popup_contents">
+                        <p>생물 다양성이 우리를 지켜 주는 다섯 가지 방식</p>
+                        <p>1. 자연은 우리에게 필요한 것을 제공합니다.</p>
+                        <p>2. 자연은 우리를 보호해 줍니다.</p>
+                        <p>3. 자연은 무기 원소를 순환하게 합니다.</p>
+                        <p>4. 자연은 우리의 정신을 풍요롭게 합니다.</p>
+                        <p>5. 자연은 미래의 문제를 해결할 수 있습니다.</p>
+                    </div>
+                </li>
+                <li class="whole image" data-popup-page="2" data-quiz="toggle">
+                    <div class="basicSlider contentsBox doItContent" data-slide-container="">
+                        <div class="innerButtonContainer">
+                            <ul class="innerSlider_tabs">
+                                <li data-hover="" class="on">1</li>
+                                <li data-hover="" class="">2</li>
+                            </ul>
+                        </div>
+                        <ul class="basicSlider_slides innerTab" data-slides="">
+                            <li class="innerTab_1">
+                                <h2>자연과 인간이 상호 보완하는 모습</h2>
+                                <div class="popup-boxes">
+                                    <div class="box-item ico_que">
+                                        ‘자연이 인간에게 주는 것’은 무엇일까요?
+                                        <img src="./common/images/ico_que.png" class="ico">
+                                    </div>
+                                    <div class="box-item ico_ans">
+                                        <img src="./common/images/ico_ans.png" class="ico">
+                                        <div data-type="toggleButton">
+                                            <div class="toggle examBtn box" data-toggle-obj="1" data-hover="">
+                                                <div class="answer" data-toggle-target="1">
+                                                    <div>
+                                                        살아갈 장소, 깨끗한 공기, 마시고 쓸 물입니다.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="innerTab_2">
+                                <h2>자연과 인간이 상호 보완하는 모습</h2>
+                                <div class="popup-boxes">
+                                    <div class="box-item ico_que">
+                                        ‘인간이 자연을 보호하는 모습’은 무엇일까요?
+                                        <img src="./common/images/ico_que.png" class="ico">
+                                    </div>
+                                    <div class="box-item ico_ans">
+                                        <img src="./common/images/ico_ans.png" class="ico">
+                                        <div data-type="toggleButton" style="margin-top: 20px;">
+                                            <div class="toggle examBtn box" data-toggle-obj="2" data-hover="">
+                                                <div class="answer" data-toggle-target="2">
+                                                    <div>
+                                                        <p class="dot" style="letter-spacing: -1.4px;">에너지를 아껴서 탄소
+                                                            배출을 줄이고 나무를 심고 가꿉니다.</p>
+                                                        <p class="dot">쓰레기를 함부로 버리지 않습니다.</p>
+                                                        <p class="dot">물을 아껴 쓰고 깨끗하게 보존합니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="fullLine whole image pointContainer" data-popup-page="3" data-quiz="toggle">
+                    <div class="full_content">
+                        <div class="pointTitle">
+                            <div class="titleText">자연과 인간</div>
+                            <div class="items" style="margin-top: 100px;">
+                                <div class="item">
+                                    <div class="cho">
+                                        <div class="choWrap">
+                                            인간은 자연을 변화시키지 않고 자연에 맞춰 <div class="choBox">
+                                                <span class="dir-rect" data-cho="ㅈ" data-letter="적"></span>
+                                                <span class="dir-rect" data-cho="ㅇ" data-letter="응"></span>
+                                            </div>하며 살아갑니다.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="cho">
+                                        <div class="choWrap">
+                                            인간은 자연을 인간에게 맞게 <div class="choBox">
+                                                <span class="dir-rect" data-cho="ㅂ" data-letter="바"></span>
+                                                <span class="dir-rect" data-cho="ㄲ" data-letter="꾸"></span>
+                                                <span class="dir-rect" data-cho="ㅁ" data-letter="며"></span>
+                                            </div> 살아갑니다.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="cho">
+                                        <div class="choWrap">
+                                            인간은 자연을 <div class="choBox">
+                                                <span class="dir-rect" data-cho="ㅇ" data-letter="이"></span>
+                                                <span class="dir-rect" data-cho="ㅇ" data-letter="용"></span>
+                                            </div>하되, 자연과 <div class="choBox">
+                                                <span class="dir-rect" data-cho="ㅇ" data-letter="어"></span>
+                                                <span class="dir-rect" data-cho="ㅇ" data-letter="우"></span>
+                                                <span class="dir-rect" data-cho="ㄹ" data-letter="러"></span>
+                                                <span class="dir-rect" data-cho="ㅈ" data-letter="진"
+                                                    style="margin-right: 10px;"></span>
+                                                <span class="dir-rect" data-cho="ㅅ" data-letter="삶"></span>
+                                            </div>을 생각합니다.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="dapCheckBtn" data-answer-btn=""></button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="../ko/libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/ts.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/animate.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/dragdrop.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/slider.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/popup.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/scroll.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/controller.js"></script>
+    <script type="text/javascript" src="../ko/libs/js/appear.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/quiz/quiz.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/pageManager.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/sprite.js"></script>
+    <script type="text/javascript" src="../ko/contents/js/kmCommon.js"></script>
+    <script type="text/javascript" src="./ko/contents.js"></script>
+    <script type="text/javascript" src="./common/js/guide.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.basicSlider_tabs li', function () {
+                if ($(this).data('text')) {
+                    $('header .title-text').html($(this).data('text'));
+                }
+                if ($(this).attr('data-gap') == 'true') {
+                    $('header').addClass('gap');
+                } else {
+                    $('header').removeClass('gap');
+                }
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs li', function () {
+                let idx = $(this).index() + 1;
+                $('.popup_pages .innerSlider_tabs li').removeClass('on');
+                $(this).addClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li').removeClass('on');
+                $('.popup_pages .basicSlider_slides.innerTab li:nth-child(' + idx + ')').addClass('on');
+            });
+
+            $(document).on('click', '.additional-question', function () {
+                $('[data-active="on"] .toggle').addClass('complete');
+            });
+
+            $(document).on('click', '.popup_pages .innerSlider_tabs>li', function () {
+                KmAudioPlayer.buttonClick();
+            });
+
+            let numActive = 0;
+
+            $(document).on('click', '.choBox', function () {
+                if (!$(this).hasClass('active')) {
+                    $(this).addClass('active');
+                } else {
+                    $(this).removeClass('active');
+                }
+                numItem = $(this).parents('[data-quiz="toggle"]').find('.choBox').length;
+                numActive = $(this).parents('[data-quiz="toggle"]').find('.choBox.active').length;
+                console.log(numActive);
+                if (numActive === numItem) {
+                    $(this).parents('[data-quiz="toggle"]').find('.dapCheckBtn').addClass('reset');
+                } else {
+                    $(this).parents('[data-quiz="toggle"]').find('.dapCheckBtn').removeClass('reset');
+                }
+            });
+
+            $(document).on('click', '.dapCheckBtn', function () {
+                let choBox = $(this).parent().parent().find('.choBox');
+                if (!$(this).hasClass('reset')) {
+                    $(this).removeClass('reset');
+                    choBox.removeClass('active');
+                    choBox.find('.dir-rect').removeClass('on');
+                    choBox.find('.dir-rect').each(function () {
+                        let dataCho = $(this).data('cho');
+                        $(this).text(dataCho);
+                    })
+                } else {
+                    $(this).addClass('reset');
+                    choBox.addClass('active');
+                    choBox.find('.dir-rect').addClass('on');
+                    choBox.find('.dir-rect').each(function () {
+                        let dataLetter = $(this).data('letter');
+                        $(this).text(dataLetter);
+                    })
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
